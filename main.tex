@@ -70,8 +70,16 @@ ddd
 Define the dynamic regret as
 \begin{align}
 \nonumber
-\Rcal_T = & \sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t}) - f_t(\x_t^\ast).
-\end{align} The budget of the dynamics is defined as
+\Rcal_T^{DOG} = & \EE_{\xi}\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t};\xi) - f_{i,t}(\x_t^\ast;\xi),
+\end{align} where, for any $\x$,
+\begin{align}
+\nonumber
+f_{i,t}(\x;\xi) := \beta \bar{f}_{i,t}(\x) + (1-\beta) f(\x; \xi),
+\end{align} and $\xi$ is a random variable drawn from an unknown distribution. $\bar{f}_{i,t}$ is an adversary loss function, and $f$ is a given loss function.
+
+
+
+The budget of the dynamics is defined as
 \begin{align}
 \nonumber
 \sum_{t=1}^T \lrnorm{\x_{t+1}^\ast - \x_t^\ast} \le D.
@@ -123,21 +131,47 @@ For any $i\in[n]$ and $t\in[T]$, we assume the function $f_{i,t}(\x)$ is differe
 
 
 \begin{Theorem}
+\label{theorem_regret_upper_bound}
 Using Assumptions \ref{assumption_bounded_gradient_domain} and \ref{assumption_differentiable}, and choosing $\eta>0$ in Algorithm \ref{algo_dog}, we have
 
 \begin{align}
 \nonumber
 \Rcal_T^{DOG} = & \sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t}) - f_t(\x_t^\ast) \\ \nonumber
-\le & TGn \eta + \frac{Gn}{2(1-\rho)^2} \sum_{t=1}^T \eta  + \frac{2\sqrt{R}n}{\eta}D + \frac{Rn}{2\eta}.
+\le & 13nT\beta G \eta + \lrincir{ (1-\beta)  \lrincir{ L + \frac{\eta L^2}{\beta} + 3\eta L^2 } + \frac{\beta}{\eta} } \frac{nT G \eta^2}{(1-\rho)^2} \\ \nonumber 
+&+ n\lrincir{\frac{1}{\beta} + 2}\lrincir{f(\bar{\x}_1) - f(\bar{\x}_{T+1})}   + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}D + R  }.
 \end{align}
 
 
 \end{Theorem}
+
+
+\begin{Corollary}
+Using Assumptions \ref{assumption_bounded_gradient_domain} and \ref{assumption_differentiable}, and choosing $\eta = \frac{1}{\sqrt{\beta T}}$ in Algorithm \ref{algo_dog}, we have
+\begin{align}
+\nonumber
+\Rcal_T^{DOG} \le \Ocal{n\sqrt{\beta T}}.
+\end{align}
+
+
+
+
+\end{Corollary}
+
+
+
+
+
+
+
+
+\section*{Appendix}
+
+\textbf{Proof details of Theorem \ref{theorem_regret_upper_bound}:}
 \begin{proof}
 \begin{align}
 \nonumber
 & \EE \frac{1}{n}\sum_{i=1}^n f_{i,t}(\x_{i,t}) - f_t(\x_t^\ast) \\ \nonumber
-=& \frac{1}{n}\sum_{i=1}^n \beta \lrincir{\bar{f}_{i,t}(\x_{i,t}) - f_t(\x_t^\ast)} + (1-\beta) \EE \lrincir{f(\x_{i,t};\xi_i) - f(\x_t^\ast)} \\ \nonumber
+=& \frac{1}{n}\sum_{i=1}^n \beta \lrincir{\bar{f}_{i,t}(\x_{i,t}) - f_t(\x_t^\ast)} + (1-\beta) \EE \lrincir{f(\x_{i,t};\xi) - f(\x_t^\ast)} \\ \nonumber
 =& \frac{1}{n}\sum_{i=1}^n \beta \lrincir{\bar{f}_{i,t}(\x_{i,t}) - f_t(\x_t^\ast)} + (1-\beta) \lrincir{f(\x_{i,t}) - f(\x_t^\ast)} \\ \nonumber 
 \le & \frac{1}{n}\sum_{i=1}^n \beta \lrangle{\nabla \bar{f}_{i,t}(\x_{i,t}), \x_{i,t} - \x_t^\ast } + (1-\beta) \lrangle{\nabla f(\x_{i,t}), \x_{i,t} - \x_t^\ast } \\ \nonumber
  = & \frac{1}{n}\sum_{i=1}^n \beta \lrincir{\lrangle{\nabla \bar{f}_{i,t}(\x_{i,t}), \x_{i,t} - \bar{\x}_t } + \lrangle{\nabla \bar{f}_{i,t}(\x_{i,t}), \bar{\x}_t - \bar{\x}_{t+1} + \lrangle{\nabla \bar{f}_{i,t}(\x_{i,t}), \bar{\x}_{t+1} - \x_t^\ast } } } \\ \nonumber 
