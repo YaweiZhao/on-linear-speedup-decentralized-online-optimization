@@ -74,8 +74,8 @@ Define the dynamic regret as
 \end{align} where, for any $\x$,
 \begin{align}
 \nonumber
-f_{i,t}(\x;\xi) := \beta \bar{f}_{i,t}(\x) + (1-\beta) f(\x; \xi),
-\end{align} and $\xi$ is a random variable drawn from an unknown distribution. $\bar{f}_{i,t}$ is an adversary loss function, and $f$ is a given loss function.
+f_{i,t}(\x;\xi) := \beta \bar{f}_{i,t}(\x) + (1-\beta) f(\x; \xi)
+\end{align} with $0<\beta<1$, and $\xi$ is a random variable drawn from an unknown distribution. $\bar{f}_{i,t}$ is an adversary loss function, and $f$ is a given loss function.
 
 
 
@@ -191,11 +191,11 @@ I_1(t) \le & \frac{\beta}{n}\sum_{i=1}^n \lrincir{ \frac{\eta}{2}\lrnorm{\nabla 
 Now, we begin to bound $I_2(t)$.
 \begin{align}
 \nonumber
-I_2(t) = & (1-\beta) \lrincir{\underbrace{ \frac{1}{n}\sum_{i=1}^n\lrangle{\nabla f(\x_{i,t}), \x_{i,t} - \bar{\x}_t } }_{I_{22}(t)} +  \underbrace{ \frac{1}{n}\sum_{i=1}^n\lrangle{\nabla f(\x_{i,t}), \bar{\x}_t - \bar{\x}_{t+1} }}_{I_{23}(t)}}.
-\end{align} For $I_{22}(t)$, we have
+I_2(t) = & (1-\beta) \lrincir{\underbrace{ \frac{1}{n}\sum_{i=1}^n\lrangle{\nabla f(\x_{i,t}), \x_{i,t} - \bar{\x}_t } }_{J_1(t)} +  \underbrace{ \frac{1}{n}\sum_{i=1}^n\lrangle{\nabla f(\x_{i,t}), \bar{\x}_t - \bar{\x}_{t+1} }}_{J_2(t)}}.
+\end{align} For $J_1(t)$, we have
 \begin{align}
 \nonumber
-I_{22}(t) = & \frac{1}{n}\sum_{i=1}^n\lrangle{\nabla f(\x_{i,t}), \x_{i,t} - \bar{\x}_t } \\ \nonumber
+J_1(t) = & \frac{1}{n}\sum_{i=1}^n\lrangle{\nabla f(\x_{i,t}), \x_{i,t} - \bar{\x}_t } \\ \nonumber
 = & \frac{1}{n}\sum_{i=1}^n\lrangle{\nabla f(\x_{i,t}) - \nabla f(\bar{\x}_t), \x_{i,t} - \bar{\x}_t } + \frac{1}{n}\sum_{i=1}^n\lrangle{\nabla f(\bar{\x}_t), \x_{i,t} - \bar{\x}_t } \\ \nonumber
 \le & \frac{L}{n}\sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t}^2 + \frac{1}{n}\sum_{i=1}^n\lrangle{\nabla f(\bar{\x}_t), \x_{i,t} - \bar{\x}_t } \\ \label{equa_theorem_temp0}
 \le & \frac{L}{n}\sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t}^2 + \frac{1}{n}\sum_{i=1}^n\lrincir{\frac{\eta}{2\beta}\lrnorm{\nabla f(\bar{\x}_t)}^2 + \frac{\beta}{2\eta}\lrnorm{\x_{i,t} - \bar{\x}_t }^2 }.
@@ -210,14 +210,14 @@ According to Lemma \ref{lemma_gradient_norm_bound}, we have
 \end{align} Substituting \eqref{equa_theorem_temp1} into \eqref{equa_theorem_temp0}, we obtain
 \begin{align}
 \nonumber
-I_{22}(t) \le & \frac{L}{n}\sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t}^2 + \lrincir{ \frac{1}{\beta}\lrincir{f(\bar{\x}_t) - f(\bar{\x}_{t+1})} + 4G\eta\beta +  \frac{\eta L^2(1-\beta)^2}{n\beta}\sum_{i=1}^n\lrnorm{\bar{\x}_t - \x_{i,t} }^2 + \frac{\beta}{2n\eta}\sum_{i=1}^n\lrnorm{\x_{i,t} - \bar{\x}_t }^2 } \\ \nonumber
+J_1(t) \le & \frac{L}{n}\sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t}^2 + \lrincir{ \frac{1}{\beta}\lrincir{f(\bar{\x}_t) - f(\bar{\x}_{t+1})} + 4G\eta\beta +  \frac{\eta L^2(1-\beta)^2}{n\beta}\sum_{i=1}^n\lrnorm{\bar{\x}_t - \x_{i,t} }^2 + \frac{\beta}{2n\eta}\sum_{i=1}^n\lrnorm{\x_{i,t} - \bar{\x}_t }^2 } \\ \nonumber
 = & \lrincir{ \frac{L}{n} + \frac{\eta L^2(1-\beta)^2}{n\beta} + \frac{\beta}{2n\eta} }\sum_{i=1}^n\lrnorm{\x_{i,t} - \bar{\x}_t }^2 + \frac{1}{\beta}\lrincir{f(\bar{\x}_t) - f(\bar{\x}_{t+1})} + 4G\eta\beta.
 \end{align}
 
-For $I_{23}(t)$, we have
+For $J_2(t)$, we have
 \begin{align}
 \nonumber
-I_{23}(t) = & \frac{1}{n}\sum_{i=1}^n\lrangle{\nabla f(\x_{i,t}), \bar{\x}_t - \bar{\x}_{t+1} } \\ \nonumber
+J_2(t) = & \frac{1}{n}\sum_{i=1}^n\lrangle{\nabla f(\x_{i,t}), \bar{\x}_t - \bar{\x}_{t+1} } \\ \nonumber
 \le & \frac{1}{n}\sum_{i=1}^n\lrincir{\frac{\eta}{2}\lrnorm{\nabla f(\x_{i,t})}^2 + \frac{1}{2\eta} \lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 } \\ \nonumber
 \le & \frac{1}{n}\sum_{i=1}^n\lrincir{\frac{\eta}{2}\lrnorm{\nabla f(\x_{i,t}) - \nabla f(\bar{\x}_t) + \nabla f(\bar{\x}_t)}^2 + \frac{1}{2\eta} \lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 } \\ \nonumber
 \le & \frac{1}{n}\sum_{i=1}^n\lrincir{ \eta\lrnorm{\nabla f(\x_{i,t}) - \nabla f(\bar{\x}_t)}^2 + \eta \lrnorm{\nabla f(\bar{\x}_t)}^2 + \frac{1}{2\eta} \lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 } \\ \nonumber
@@ -225,13 +225,13 @@ I_{23}(t) = & \frac{1}{n}\sum_{i=1}^n\lrangle{\nabla f(\x_{i,t}), \bar{\x}_t - \
 \end{align} Recall Lemma \ref{lemma_gradient_norm_bound}, and we have
 \begin{align}
 \nonumber
-I_{23}(t) = & \frac{1}{n}\sum_{i=1}^n\lrincir{ \eta L^2 \lrnorm{\x_{i,t} - \bar{\x}_t}^2 + \lrincir{ 2(f(\bar{\x}_t) - f(\bar{\x}_{t+1})) + 8G\eta\beta^2 +  \frac{2\eta L^2(1-\beta)^2}{n}\sum_{i=1}^n\lrnorm{\bar{\x}_t - \x_{i,t} }^2 } }  + \frac{1}{2\eta} \lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 \\ \nonumber
+J_2(t) = & \frac{1}{n}\sum_{i=1}^n\lrincir{ \eta L^2 \lrnorm{\x_{i,t} - \bar{\x}_t}^2 + \lrincir{ 2(f(\bar{\x}_t) - f(\bar{\x}_{t+1})) + 8G\eta\beta^2 +  \frac{2\eta L^2(1-\beta)^2}{n}\sum_{i=1}^n\lrnorm{\bar{\x}_t - \x_{i,t} }^2 } }  + \frac{1}{2\eta} \lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 \\ \nonumber
 = & \frac{\eta L^2(1+2(1-\beta)^2)}{n}\sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t}^2 + 2(f(\bar{\x}_t) - f(\bar{\x}_{t+1})) + 8G\eta\beta^2 + \frac{1}{2\eta} \lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 \\ \nonumber
 \le & \frac{3\eta L^2}{n}\sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t}^2 + 2(f(\bar{\x}_t) - f(\bar{\x}_{t+1})) + 8G\eta\beta^2 + \frac{1}{2\eta} \lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2.
 \end{align} Therefore, we obtain
 \begin{align}
 \nonumber
-I_2(t) = & (1-\beta)(I_{22}(t) + I_{23}(t)) \\ \nonumber
+I_2(t) = & (1-\beta)(J_1(t) + J_2(t)) \\ \nonumber
 \le & (1-\beta) \lrincir{ \lrincir{ \frac{L}{n} + \frac{\eta L^2(1-\beta)^2}{n\beta} + \frac{\beta}{2n\eta} + \frac{3\eta L^2}{n} }\sum_{i=1}^n\lrnorm{\x_{i,t} - \bar{\x}_t }^2 + \lrincir{\frac{1}{\beta} + 2}\lrincir{f(\bar{\x}_t) - f(\bar{\x}_{t+1})} }\\ \nonumber 
 &+ (1-\beta) \lrincir{ 4G\eta\beta(1 + 2\beta) +  \frac{1}{2\eta} \lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 }.
 \end{align}
@@ -258,7 +258,7 @@ Combine those bounds of $I_1(t)$ and $I_2(t)$. We thus have
 
 
 
-According to \ref{lemma_x_variance_norm_square}, we have
+According to Lemma \ref{lemma_x_variance_norm_square}, we have
 \begin{align}
 \nonumber
 \frac{1}{n}\sum_{i=1}^n \sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2 \le \frac{1}{(1-\rho)^2} \sum_{t=1}^T \eta^2 G.
@@ -442,13 +442,13 @@ Therefore,
 \refabovecir{=}{\textcircled{1}} & \sum_{i=1}^n \lrnorm{ \sum_{s=1}^{t-1} \eta \bar{\G}_s - \eta \G_s \W^{t-s-1}\e_i }^2   \\ \nonumber
 \refabovecir{=}{\textcircled{2}} & \lrnorm{ \sum_{s=1}^{t-1} \eta \G_s\v_1 \v_1\Tr - \eta \G_s \W^{t-s-1} }^2_F   \\ \nonumber
 \refabovecir{\le}{\textcircled{3}} & \lrincir{ \eta \rho^{t-s-1} \lrnorm{\sum_{s=1}^{t-1}\G_s}_F}^2 \\ \nonumber
-\le & \lrincir{ \sum_{s=1}^{t-1} \eta \rho^{t-s-1} \lrnorm{\G_t}_F}^2.
+\le & \lrincir{ \sum_{s=1}^{t-1} \eta \rho^{t-s-1} \lrnorm{\G_s}_F}^2.
 \end{align} $\textcircled{1}$ holds due to $\e_i$ is a unit basis vector, whose $i$-th element is $1$ and other elements are $0$s. $\textcircled{2}$ holds due to $\v_1 = \frac{\1_n}{\sqrt{n}}$. $\textcircled{3}$ holds due to Lemma \ref{lemma_hanlin_1}. 
 
-According to Lemma \ref{lemma_hanlin_2}, letting $a_{t-1} = \sum_{s=1}^{t-1} \rho^{t-s-1} \lrnorm{\G_t}_F$ and $b_{t-1} = \lrnorm{\G_t}_F$, we have
+According to Lemma \ref{lemma_hanlin_2}, we have
 \begin{align}
 \nonumber
-\frac{1}{n}\sum_{i=1}^n \sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2 \le & \frac{1}{n(1-\rho)^2} \sum_{t=1}^T \eta^2 \lrnorm{\G_t}_F^2 \\ \nonumber
+\frac{1}{n}\sum_{i=1}^n \sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2 \le & \frac{1}{n(1-\rho)^2} \sum_{t=1}^T \eta^2 \lrnorm{\G_s}_F^2 \\ \nonumber
 \le & \frac{1}{(1-\rho)^2} \sum_{t=1}^T \eta^2 G.
 \end{align}
 It completes the proof.
