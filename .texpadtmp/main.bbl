@@ -1,0 +1,13 @@
+\begin{thebibliography}{1}
+\providecommand{\natexlab}[1]{#1}
+\providecommand{\url}[1]{\texttt{#1}}
+\expandafter\ifx\csname urlstyle\endcsname\relax
+  \providecommand{\doi}[1]{doi: #1}\else
+  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi
+
+\bibitem[Tang et~al.(2018)Tang, Gan, Zhang, Zhang, and Liu]{Tang:2018un}
+H.~Tang, S.~Gan, C.~Zhang, T.~Zhang, and J.~Liu.
+\newblock {Communication Compression for Decentralized Training}.
+\newblock \emph{arXiv.org}, Mar. 2018.
+
+\end{thebibliography}
