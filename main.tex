@@ -64,6 +64,20 @@ ddd
 \section{Notations and assumptions}
 
 
+{\color{red}
+\begin{align}
+\nonumber
+\Rcal_T^{DOG} = & \sum_{i=1}^n\sum_{t=1}^T \EE_{\xi_{i,t} \sim D_{i,t}}f_{i,t}(\x_{i,t};\xi_{i,t}) - \EE_{\xi_{i,t} \sim D_{i,t} }f_{i,t}(\x_t^\ast;\xi_{i,t}),
+\end{align} where, for any $\x$,
+\begin{align}
+\nonumber
+f_{i,t}(\x;\xi_{i,t}) := \beta g_{i,t}(\x) + (1-\beta) h_{t}(\x; \xi_{i,t})
+\end{align} with $0<\beta<1$
+
+}
+
+
+
 
 
 
@@ -138,8 +152,7 @@ Using Assumptions \ref{assumption_bounded_gradient_domain}, and choosing $\eta>0
 \nonumber
 \Rcal_T \le &  \sum_{t=1}^T\sum_{i=1}^n \EE_{\xi}f_{i,t}(\x_{i,t};\xi) - \EE_{\xi}f_{i,t}(\x_t^\ast;\xi) \\ \nonumber
 \le & \lrincir{1 + 4\beta\lrincir{\frac{1}{\sqrt{\beta^2 + \frac{1}{n}}}+4}}nT\beta G \eta + \lrincir{ L + \frac{2\eta L^2(1-\beta)^2}{\sqrt{\beta^2 + \frac{1}{n}}} + \frac{\sqrt{\beta^2 + \frac{1}{n}}}{2\eta} + 10\eta L^2  + \frac{\beta}{2\eta} } \frac{nT \eta^2 G}{(1-\rho)^2} \\ \nonumber 
-&+ n\lrincir{\frac{1}{\sqrt{\beta^2 + \frac{1}{n}}} + 4}\lrincir{f(\bar{\x}_1) - f(\bar{\x}_{T+1})} + T\eta \sigma^2 (1-\beta)\lrincir{\frac{2}{\sqrt{\beta^2 + \frac{1}{n}}}+9}   + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}D + R  }.
-\end{align}
+&+ n\lrincir{\frac{1}{\sqrt{\beta^2 + \frac{1}{n}}} + 4}\lrincir{f(\bar{\x}_1) - f(\bar{\x}_{T+1})} + T\eta \sigma^2 (1-\beta)\lrincir{\frac{2}{\sqrt{\beta^2 + \frac{1}{n}}}+9}   + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}D + R  }.\end{align}
 
 
 \end{Theorem}
