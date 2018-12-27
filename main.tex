@@ -63,7 +63,7 @@
 ddd
 \end{abstract}
 
-\section{Notations and assumptions}
+\section{Problem setup}
 
 For any $i\in[n]$ and $t\in[T]$, the random variable $\xi_{i,t}$ is subject to a distribution $D_{i,t}$, that is,
 \begin{align}
@@ -103,31 +103,13 @@ F_{i,t}(\cdot) = \EE_{\xi_{i,t} \sim D_{i,t}} f_{i,t}(\cdot; \xi_{i,t}).
 
 The budget of the dynamics is defined as
 \begin{align}
-\nonumber
+\label{equa_define_M}
 \sum_{t=1}^T \lrnorm{\x_{t+1}^\ast - \x_t^\ast} \le M.
 \end{align}
 
 
 
-\begin{Assumption}
-\label{assumption_bounded_gradient_domain}
-We make the following assumptions.
-\begin{itemize}
-\item For any $i\in[n]$ and $t\in[T]$, there exists a constant $G$ such that
-\begin{align}
-\nonumber
-\max\left\{ \EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2,  \lrnorm{\nabla g_{i,t}(\x)}^2 \right\} \le G,
-\end{align} and 
-\begin{align}
-\nonumber
-\EE_{ \xi_{i,t} \sim D_{i,t} } \lrnorm{\nabla h_t(\x; \xi_{i,t}) - \nabla H_t(\x)}^2 \le \sigma_{i,t}^2.
-\end{align}
-\item For any $\x$ and $\y$, we assume $\lrnorm{\x-\y}^2 \le R$.
-\item For any $i\in[n]$ and $t\in[T]$, we assume the function $f_{i,t}$ is convex and differentiable, and the function $H_t$ has  $L$-Lipschitz gradients.
-\end{itemize}
 
- 
-\end{Assumption}
 
 
 
@@ -153,18 +135,70 @@ We make the following assumptions.
 \end{algorithm}
 
 
+The decentralized online gradient method, namely \textit{DOG}, is presented in Algorithm \ref{algo_dog}. Comparing with the sequential online gradient method, every node needs to collect the decision variables from its neighbours, and then update its decision variable. The update rule is 
+\begin{align}
+\nonumber
+\x_{i,t+1} = \sum_{j=1}^n \W_{i,j}\x_{j,t} - \eta \nabla f_{i,t}(\x_{i,t};\xi_{i,t}).
+\end{align} Here, $\W \in\RR^{n \times n}$ is the confusion matrix. It is a doublely stochastic matrix, which implies that every element of $\W$ is non-negative, $\W \1 = \1$, and $\1\Tr\W  = \1\Tr$. 
+   
+
+
+
+
+
+\section{Theoretical analysis}
+
+
+\subsection{Assumptions}
+\begin{Assumption}
+\label{assumption_bounded_gradient_domain}
+We make the following assumptions.
+\begin{itemize}
+\item For any $i\in[n]$, $t\in[T]$, and $\x$, there exists a constant $G$ such that
+\begin{align}
+\nonumber
+\max\left\{ \EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2,  \lrnorm{\nabla g_{i,t}(\x)}^2 \right\} \le G,
+\end{align} and 
+\begin{align}
+\nonumber
+\EE_{ \xi_{i,t} \sim D_{i,t} } \lrnorm{\nabla h_t(\x; \xi_{i,t}) - \nabla H_t(\x)}^2 \le \sigma_{i,t}^2.
+\end{align}
+\item For any $\x$ and $\y$, we assume $\lrnorm{\x-\y}^2 \le R$.
+\item For any $i\in[n]$ and $t\in[T]$, we assume the function $f_{i,t}$ is convex and differentiable, and the function $H_t$ has  $L$-Lipschitz gradients.
+\end{itemize}
+\end{Assumption}
+
+\begin{Assumption}
+\label{assumption_difference_bound_distributions}
+For any sequence $\{\u_t\}_{t=2}^{T}$, there exists a constant $V$ such that
+\begin{align}
+\nonumber
+\sum_{t=1}^{T-1} \lrincir{ H_{t+1}(\u_{t+1}) - H_t(\u_{t+1}) } \le V.
+\end{align}
+\end{Assumption}
+
+Recall that  $ H_t(\cdot) = \EE_{\xi_{i,t} \sim D_{i,t}} h_t(\cdot; \xi_{i,t})$.
+Assumption \ref{assumption_difference_bound_distributions} implies that the  distribution $D_{i,t}$ cannot changes arbitrarily with the increase of $t$.  
+
+
+
+
 
 
 
 \begin{Theorem}
 \label{theorem_regret_upper_bound}
-For any $0\le \beta \le 1$ and $\eta>0$, we denote 
+Denote 
+\begin{align}
+\nonumber
+C_1 = & 15G\beta + 4\beta\sigma_{i,t-1}^2 + \frac{6G\eta}{(1-\rho)^2}\lrincir{ L + \frac{\eta L^2}{\beta} + 6\eta L^2 + \frac{\beta}{\eta} } + 3GL\eta\lrincir{\frac{1}{\beta} + 4}; \\ \nonumber
+C_2 = & \lrincir{ L + \frac{\eta L^2}{\beta}  + 6\eta L^2  + \frac{\beta}{\eta} } \frac{4\eta^2}{(1-\rho)^2} + \frac{\beta(\eta + 8nL\eta^2) + 2nL\eta^2}{n\beta}.
+\end{align} Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing $\eta>0$ in Algorithm \ref{algo_dog}, we have 
 \begin{align}
 \nonumber
 & \Rcal_T^{DOG} \\ \nonumber 
-\le &  \eta nT\lrincir{ 15G\beta + 4\beta\sigma_{i,t-1}^2 + \frac{6G\eta}{(1-\rho)^2}\lrincir{ L + \frac{\eta L^2}{\beta} + 6\eta L^2 + \frac{\beta}{\eta} } + 3GL\eta\lrincir{\frac{1}{\beta} + 4}  } + \lrincir{\frac{1}{\beta}+4}n \lrincir{H_t(\bar{\x}_1) - H_t(\bar{\x}_{t+1})} \\ \nonumber
-& + \lrincir{ \lrincir{ L + \frac{\eta L^2}{\beta}  + 6\eta L^2  + \frac{\beta}{\eta} } \frac{4\eta^2}{(1-\rho)^2} + \frac{\beta(\eta + 8nL\eta^2) + 2nL\eta^2}{n\beta} } \sum_{t=1}^T\sum_{i=1}^n \sigma_{i,t}^2 + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  }.
-\end{align} 
+\le & C_1 \eta nT + \lrincir{\frac{1}{\beta}+4}n \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\lrincir{H_1(\bar{\x}_1) - H_T(\bar{\x}_{T+1}) + V} + C_2 \sum_{t=1}^T\sum_{i=1}^n \sigma_{i,t}^2 + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  },
+\end{align} holds for any $0\le \beta \le 1$.
 
 
 \end{Theorem}
@@ -215,9 +249,9 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing
 Now, we begin to bound $I_1(t)$.
 \begin{align}
 \nonumber
-I_1(t) \le & \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\frac{\beta}{n}\sum_{i=1}^n \lrincir{ \frac{\eta}{2}\lrnorm{\nabla g_{i,t}(\x_{i,t})}^2 + \frac{1}{2\eta}\lrnorm{\x_{i,t} - \bar{\x}_t}^2  + \frac{\eta}{2}\lrnorm{\nabla g_{i,t}(\x_{i,t})}^2 + \frac{1}{2\eta}\lrnorm{\bar{\x}_t - \bar{\x}_{t+1}}^2 }\\ \nonumber
-\refabovecir{\le}{\textcircled{1}} & \beta G \eta + \frac{\beta}{2n\eta } \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t}^2 + \frac{\beta }{2\eta }\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrnorm{\bar{\x}_t - \bar{\x}_{t+1}}^2.
-\end{align} $\textcircled{1}$ holds due to our assumption, that is, $\lrnorm{\nabla g_{i,t}(\x_{i,t})}^2 \le G$, and $\lrangle{\a,\b} \le \frac{\eta}{2}\lrnorm{\a}^2 + \frac{1}{2\eta}\lrnorm{\b}^2$ holds for any $\eta>0$.
+I_1(t) \refabovecir{\le}{\textcircled{1}} & \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\frac{\beta}{n}\sum_{i=1}^n \lrincir{ \frac{\eta}{2}\lrnorm{\nabla g_{i,t}(\x_{i,t})}^2 + \frac{1}{2\eta}\lrnorm{\x_{i,t} - \bar{\x}_t}^2  + \frac{\eta}{2}\lrnorm{\nabla g_{i,t}(\x_{i,t})}^2 + \frac{1}{2\eta}\lrnorm{\bar{\x}_t - \bar{\x}_{t+1}}^2 }\\ \nonumber
+\refabovecir{\le}{\textcircled{2}} & \beta G \eta + \frac{\beta}{2n\eta } \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t}^2 + \frac{\beta }{2\eta }\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrnorm{\bar{\x}_t - \bar{\x}_{t+1}}^2.
+\end{align} $\textcircled{1}$ holds due to $\lrangle{\a,\b} \le \frac{\eta}{2}\lrnorm{\a}^2 + \frac{1}{2\eta}\lrnorm{\b}^2$ holds for any $\eta>0$. $\textcircled{2}$ holds due to our assumption, that is, $\lrnorm{\nabla g_{i,t}(\x_{i,t})}^2 \le G$.
 
 Now, we begin to bound $I_2(t)$.
 \begin{align}
@@ -324,11 +358,22 @@ Therefore, we have
 \nonumber
 &\sum_{t=1}^T (I_1(t) + I_2(t)) \\ \nonumber
 \le & \lrincir{1 + 2\beta\lrincir{\frac{3}{\nu}+4}}T\beta G \eta + \frac{4T\eta \beta^2 \sigma_{i,t-1}^2}{\nu} + \lrincir{ \frac{L}{n} + \frac{\eta L^2}{n\nu} + \frac{\nu}{2n\eta} + \frac{6\eta L^2}{n}  + \frac{\beta}{2n\eta} }\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T\sum_{i=1}^n\lrnorm{\x_{i,t} - \bar{\x}_t }^2 \\ \nonumber 
-&+ \lrincir{\frac{1}{\nu} + 4}\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\lrincir{H_1(\bar{\x}_1) - H_{T+1}(\bar{\x}_{T+1})} + \frac{1}{2\eta}\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 \\ \nonumber 
+&+ \lrincir{\frac{1}{\nu} + 4}\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})} + \frac{1}{2\eta}\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 \\ \label{equa_H_bound_temp0} 
+& + 3TLG\eta^2\lrincir{ \frac{1}{\nu} + 4 } + \frac{\nu(\eta + 8nL\eta^2) + 2nL\eta^2}{n^2\nu} \sum_{t=1}^T\sum_{i=1}^n\sigma_{i,t}^2.
+\end{align} According to Assumption \ref{assumption_difference_bound_distributions}, we have
+\begin{align}
+\nonumber
+& \sum_{t=1}^T \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})} \\ \nonumber
+= & \lrincir{H_1(\bar{\x}_1) - H_T(\bar{\x}_{T+1})} + \sum_{t=1}^{T-1} \lrincir{H_{t+1}(\bar{\x}_{t+1}) - H_t(\bar{\x}_{t+1})} \\ \label{equa_H_bound_temp1}
+\le & \lrincir{H_1(\bar{\x}_1) - H_T(\bar{\x}_{T+1})} + V.
+\end{align} Substituting \eqref{equa_H_bound_temp1} into \eqref{equa_H_bound_temp0}, we obtain
+\begin{align}
+\nonumber
+& \sum_{t=1}^T (I_1(t) + I_2(t)) \\ \nonumber
+\le & \lrincir{1 + 2\beta\lrincir{\frac{3}{\nu}+4}}T\beta G \eta + \frac{4T\eta \beta^2 \sigma_{i,t-1}^2}{\nu} + \lrincir{ \frac{L}{n} + \frac{\eta L^2}{n\nu} + \frac{\nu}{2n\eta} + \frac{6\eta L^2}{n}  + \frac{\beta}{2n\eta} }\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T\sum_{i=1}^n\lrnorm{\x_{i,t} - \bar{\x}_t }^2 \\ \nonumber 
+&+ \lrincir{\frac{1}{\nu} + 4}\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \lrincir{H_1(\bar{\x}_1) - H_T(\bar{\x}_{T+1}) + V} + \frac{1}{2\eta}\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 \\ \nonumber 
 & + 3TLG\eta^2\lrincir{ \frac{1}{\nu} + 4 } + \frac{\nu(\eta + 8nL\eta^2) + 2nL\eta^2}{n^2\nu} \sum_{t=1}^T\sum_{i=1}^n\sigma_{i,t}^2.
 \end{align}
-
-
 
 
 
@@ -337,7 +382,7 @@ Now, we begin to bound $I_3(t)$. Recall that the update rule is
 \begin{align}
 \nonumber
 \x_{i,t+1} = \sum_{j=1}^n \W_{ij}\x_{j,t} - \eta \nabla f_{i,t}(\x_{i,t};\xi_{i,t}).
-\end{align} By taking average over $i\in[n]$ on both sides, we have 
+\end{align}  According to Lemma \ref{lemma_average_update_rule}, we have 
 \begin{align}
 \label{equa_thoerem_update_rule_equivalent}
 \bar{\x}_{t+1} = \bar{\x}_t - \eta \lrincir{\frac{1}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}.
@@ -351,7 +396,7 @@ Denote a new auxiliary function $\phi(\z)$ as
 It is trivial to verify that \eqref{equa_thoerem_update_rule_equivalent} satisfies the first-order optimality condition of the optimization problem: $\min_{\z\in\RR^d} \phi(\z)$, that is,
 \begin{align}
 \nonumber
-\nabla \phi(\bar{\x}_{t+1}) = 0.
+\nabla \phi(\bar{\x}_{t+1}) = \0.
 \end{align} We thus have 
 \begin{align}
 \nonumber
@@ -391,7 +436,7 @@ Thus, telescoping $I_3(t)$ over $t\in[T]$, we have
 & \sum_{t=1}^T I_3(t) \\ \nonumber 
 \le & \frac{1}{2\eta}\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\lrincir{ 4\sqrt{R}\sum_{t=1}^T\lrnorm{\x_{t+1}^\ast - \x_t^\ast} + \lrnorm{\bar{\x}_1^\ast - \bar{\x}_1}^2 - \lrnorm{\bar{\x}_T^\ast - \bar{\x}_{T+1}}^2 } - \frac{1}{2\eta} \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T \lrnorm{\bar{\x}_t - \bar{\x}_{t+1}}^2 \\ \nonumber
 \le & \frac{1}{2\eta}\lrincir{ 4\sqrt{R} M + R } - \frac{1}{2\eta} \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T \lrnorm{\bar{\x}_t - \bar{\x}_{t+1} }^2.
-\end{align} 
+\end{align} Here, $M$ the budget of the dynamics, which is defined in \eqref{equa_define_M}.
 
 
 Combining those bounds of $I_1(t)$, $I_2(t)$ and $I_3(t)$ together, we finally obtain
@@ -400,10 +445,10 @@ Combining those bounds of $I_1(t)$, $I_2(t)$ and $I_3(t)$ together, we finally o
 & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T\sum_{i=1}^n f_{i,t}(\x_{i,t};\xi_{i,t}) - f_t(\x_t^\ast;\xi_{i,t}) \\ \nonumber
 \le & n \sum_{t=1}^T \lrincir{ I_1(t) + I_2(t) + I_3(t) } \\ \nonumber
 \le & \lrincir{1 + 2\beta\lrincir{\frac{3}{\nu}+4}}nT\beta G \eta + \frac{4nT\eta \beta^2 \sigma_{i,t-1}^2}{\nu} + \lrincir{ L + \frac{\eta L^2}{\nu} + \frac{\nu}{2\eta} + 6\eta L^2  + \frac{\beta}{2\eta} }\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T\sum_{i=1}^n\lrnorm{\x_{i,t} - \bar{\x}_t }^2 \\ \nonumber 
-&+ \lrincir{\frac{1}{\nu} + 4}n\lrincir{H_t(\bar{\x}_1) - H_t(\bar{\x}_{t+1})}  \\ \nonumber 
+&+ \lrincir{\frac{1}{\nu} + 4}n \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \lrincir{H_1(\bar{\x}_1) - H_T(\bar{\x}_{T+1}) + V}  \\ \nonumber 
 & + 3nTLG\eta^2\lrincir{ \frac{1}{\nu} + 4 } + \frac{\nu(\eta + 8nL\eta^2) + 2nL\eta^2}{n\nu} \sum_{t=1}^T\sum_{i=1}^n\sigma_{i,t}^2  + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  } \\ \nonumber
 \refabovecir{\le}{\textcircled{1}} & \lrincir{1 + 2\beta\lrincir{\frac{3}{\nu}+4}}nT\beta G \eta + \frac{4nT\eta \beta^2 \sigma_{i,t-1}^2}{\nu} + \lrincir{ L + \frac{\eta L^2}{\nu} + \frac{\nu}{2\eta} + 6\eta L^2  + \frac{\beta}{2\eta} }\frac{\eta^2}{(1-\rho)^2}   \lrincir{ 6nTG + 4\sum_{t=1}^T\sum_{i=1}^n \sigma_{i,t}^2 } \\ \nonumber 
-&+ \lrincir{\frac{1}{\nu} + 4}n\lrincir{H_t(\bar{\x}_1) - H_t(\bar{\x}_{t+1})}  \\ \nonumber 
+&+ \lrincir{\frac{1}{\nu} + 4}n\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\lrincir{H_1(\bar{\x}_1) - H_T(\bar{\x}_{T+1}) + V}  \\ \nonumber 
 & + 3nTLG\eta^2\lrincir{ \frac{1}{\nu} + 4 } + \frac{\nu(\eta + 8nL\eta^2) + 2nL\eta^2}{n\nu} \sum_{t=1}^T\sum_{i=1}^n\sigma_{i,t}^2  + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  }.
 \end{align}  $\textcircled{1}$ holds due to Lemma \ref{lemma_x_variance_norm_square}, that is, 
 \begin{align}
@@ -418,19 +463,14 @@ When $\nu = \beta$, we finally have
 & \Rcal_T^{DOG} \\ \nonumber 
 = & \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \sum_{t=1}^T\sum_{i=1}^n f_{i,t}(\x_{i,t};\xi_{i,t}) - f_t(\x_t^\ast;\xi_{i,t}) \\ \nonumber
 \le & 15 nT\beta G \eta + 4nT\eta \beta\sigma_{i,t-1}^2 + \lrincir{ L + \frac{\eta L^2}{\beta}  + 6\eta L^2  + \frac{\beta}{\eta} } \frac{\eta^2}{(1-\rho)^2}   \lrincir{ 6nTG + 4\sum_{t=1}^T\sum_{i=1}^n \sigma_{i,t}^2 } \\ \nonumber 
-&+ \lrincir{\frac{1}{\beta} + 4}n\lrincir{H_t(\bar{\x}_1) - H_t(\bar{\x}_{t+1})}  + 3nTLG\eta^2\lrincir{ \frac{1}{\beta} + 4 } \\ \nonumber 
+&+ \lrincir{\frac{1}{\beta} + 4}n\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\lrincir{H_1(\bar{\x}_1) - H_T(\bar{\x}_{T+1}) + V}  + 3nTLG\eta^2\lrincir{ \frac{1}{\beta} + 4 } \\ \nonumber 
 & + \frac{\beta(\eta + 8nL\eta^2) + 2nL\eta^2}{n\beta} \sum_{t=1}^T\sum_{i=1}^n\sigma_{i,t}^2  + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  } \\ \nonumber
-= &  \eta nT\lrincir{ 15G\beta + 4\beta\sigma_{i,t-1}^2 + \frac{6G\eta}{(1-\rho)^2}\lrincir{ L + \frac{\eta L^2}{\beta} + 6\eta L^2 + \frac{\beta}{\eta} } + 3GL\eta\lrincir{\frac{1}{\beta} + 4}  } + \lrincir{\frac{1}{\beta}+4}n \lrincir{H_t(\bar{\x}_1) - H_t(\bar{\x}_{t+1})} \\ \nonumber
+= &  \eta nT\lrincir{ 15G\beta + 4\beta\sigma_{i,t-1}^2 + \frac{6G\eta}{(1-\rho)^2}\lrincir{ L + \frac{\eta L^2}{\beta} + 6\eta L^2 + \frac{\beta}{\eta} } + 3GL\eta\lrincir{\frac{1}{\beta} + 4}  } \\ \nonumber 
+& + \lrincir{\frac{1}{\beta}+4}n \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\lrincir{H_1(\bar{\x}_1) - H_T(\bar{\x}_{T+1}) + V} \\ \nonumber
 & + \lrincir{ \lrincir{ L + \frac{\eta L^2}{\beta}  + 6\eta L^2  + \frac{\beta}{\eta} } \frac{4\eta^2}{(1-\rho)^2} + \frac{\beta(\eta + 8nL\eta^2) + 2nL\eta^2}{n\beta} } \sum_{t=1}^T\sum_{i=1}^n \sigma_{i,t}^2 + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  }.
 \end{align} 
 
 It completes the proof.
-
-
-
-
-
-
 
 
 
@@ -439,7 +479,7 @@ It completes the proof.
 
 \begin{Lemma}
 \label{lemma_stochastic_gradient_norm_bound}
-
+Using Assumption \ref{assumption_bounded_gradient_domain}, we have
 \begin{align}
 \nonumber
 \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 \le 6G  + 4 \sigma_{i,t}^2.
@@ -459,16 +499,13 @@ It completes the proof.
 \le & 2G\beta^2  + 4(1-\beta)^2 \sigma_{i,t}^2 + 4(1-\beta)^2 G \\ \nonumber 
 \le & 6G  + 4 \sigma_{i,t}^2.
 \end{align} The last inequality holds due to $0\le \beta \le 1$.
-
-
-
 \end{proof}
 
 
 
 \begin{Lemma}
 \label{lemma_gradient_norm_bound}
-
+Using Assumption \ref{assumption_bounded_gradient_domain}, and setting $\eta>0$ in Algorithm \ref{algo_dog}, we have 
 \begin{align}
 \nonumber
 & \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t)}^2  \\ \nonumber 
@@ -524,8 +561,51 @@ Finally, we obtain
 
 
 \begin{Lemma}
-\label{lemma_x_variance_norm_square}
+\label{lemma_average_update_rule}
+Denote $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$. We have
+\begin{align}
+\nonumber
+\bar{\x}_{t+1} =  \bar{\x}_{t} - \eta \lrincir{\frac{1}{n} \sum_{i=1}^n \nabla f_{i,t}(\x_{i,t}; \xi_{i,t})}. 
+\end{align}
+\end{Lemma}
+\begin{proof}
+Denote 
+\begin{align}
+\nonumber
+\X_t = &  [\x_{1,t}, \x_{2,t}, ..., \x_{n,t}] \in \RR^{d\times n}, \\ \nonumber
+\G_t = & [\nabla f_{1,t}(\x_{1,t};\xi_{1,t}), \nabla f_{2,t}(\x_{2,t};\xi_{2,t}), ..., \nabla f_{n,t}(\x_{n,t};\xi_{n,t})] \in \RR^{d\times n}.
+\end{align}
 
+Recall that 
+\begin{align}
+\nonumber
+\x_{i,t+1} = \sum_{j=1}^n \W_{ij}\x_{j,t} - \eta \nabla f_{i,t}(\x_{i,t};\xi_{i,t}).
+\end{align} Equivalently, we re-formulate the update rule as
+\begin{align}
+\nonumber
+\X_{t+1} = \X_{t}\W - \eta \G_t.
+\end{align} Since the confusion matrix $\W$ is doublely stochastic, we have
+\begin{align}
+\nonumber
+\W \1 = \1.
+\end{align} Thus, we have
+\begin{align}
+\nonumber
+\bar{\x}_{t+1} = & \frac{1}{n}\sum_{i=1}^n \x_{i,t+1} \\ \nonumber
+= & \X_{t+1}\frac{\1}{n} \\ \nonumber 
+= & \X_{t}\W\frac{\1}{n} - \eta \G_t\frac{\1}{n} \\ \nonumber
+= & \X_{t}\frac{\1}{n} - \eta \G_t\frac{\1}{n} \\ \nonumber
+=& \bar{\x}_{t} - \eta \lrincir{\frac{1}{n} \sum_{i=1}^n \nabla f_{i,t}(\x_{i,t}; \xi_{i,t})}. 
+\end{align}
+\end{proof}
+
+
+
+
+
+\begin{Lemma}
+\label{lemma_x_variance_norm_square}
+Using Assumption \ref{assumption_bounded_gradient_domain}, and setting $\eta>0$ in Algorithm \ref{algo_dog}, we have 
 \begin{align}
 \nonumber
 \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{i=1}^n\sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2 \le \frac{\eta^2}{(1-\rho)^2}   \lrincir{ 6nTG + 4\sum_{t=1}^T\sum_{i=1}^n \sigma_{i,t}^2 }.
@@ -538,8 +618,8 @@ Finally, we obtain
 Recall that 
 \begin{align}
 \nonumber
-\x_{i,t+1} = \sum_{j=1}^n \W_{ij}\x_{j,t} - \eta \nabla f_{i,t}(\x_{i,t};\xi_{i,t}),
-\end{align} and 
+\x_{i,t+1} = \sum_{j=1}^n \W_{ij}\x_{j,t} - \eta \nabla f_{i,t}(\x_{i,t};\xi_{i,t}), 
+\end{align} and according to Lemma \ref{lemma_average_update_rule}, we have 
 \begin{align}
 \nonumber
 \bar{\x}_{t+1} = \bar{\x}_t - \eta \lrincir{\frac{1}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}.
