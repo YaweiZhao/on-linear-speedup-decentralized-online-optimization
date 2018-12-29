@@ -194,13 +194,13 @@ Denote
 C_0 := & n\lrincir{\frac{1}{\beta + \eta} + 4}; \\ \nonumber
 C_1 := & L +  \frac{\eta L^2}{\beta + \eta} + \frac{2\beta + \eta}{2\eta} + 6\eta L^2; \\ \nonumber
 C_2 := & \frac{T\beta(\eta + 8nL\eta^2 + 16n\eta\beta^2) + 2nTL\eta^2}{\beta + \eta }.
-\end{align} Using Assumption \ref{assumption_bounded_gradient_domain} and \ref{assumption_difference_bound_distributions}, and choosing $\eta>0$ in Algorithm \ref{algo_dog}, we have
+\end{align} Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing $\eta>0$ in Algorithm \ref{algo_dog}, we have
 
 \begin{align}
 \nonumber
 \Rcal_T^{DOG} = & \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \sum_{t=1}^T\sum_{i=1}^n f_{i,t}(\x_{i,t};\xi_{i,t}) - f_t(\x_t^\ast;\xi_{i,t}) \\ \nonumber
 \le & 31 nT\beta G \eta + 4(1-\beta)nT\eta \beta\sigma^2 +  \frac{\eta^2C_1}{(1-\rho)^2}   \lrincir{ 6nTG + 4(1-\beta)nT \sigma^2 } \\ \nonumber 
-&+ (1-\beta) C_0  \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\lrincir{H_1(\bar{\x}_1) - H_T(\bar{\x}_{T+1}) + V} + 3TLG\eta^2C_0 \\ \nonumber 
+&+ (1-\beta) C_0  \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})} + 3TLG\eta^2C_0 \\ \nonumber 
 & + (1-\beta) C_2  \sigma^2  + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  }.
 \end{align} 
 \end{Theorem}
@@ -215,7 +215,7 @@ Using Assumption \ref{assumption_bounded_gradient_domain} and \ref{assumption_di
 \end{align} in Algorithm \ref{algo_dog}, we have
 \begin{align}
 \nonumber
-\Rcal_T^{DOG} \lesssim \sqrt{ n^2 \beta MTG + (n^2\beta + n)MT(1-\beta)\sigma^2 } + C_0 (1-\beta) \lrincir{  \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\lrincir{H_1(\bar{\x}_1) - H_T(\bar{\x}_{T+1}) + V} }.
+\Rcal_T^{DOG} \lesssim \sqrt{ n^2 \beta MTG + (n^2\beta + n)MT(1-\beta)\sigma^2 } + C_0 (1-\beta) \lrincir{ \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})} }.
 \end{align}
 
 
@@ -365,20 +365,27 @@ Therefore, we have
 \le & \lrincir{1 + 6\beta\lrincir{\frac{1}{\nu}+4}}T\beta G \eta + \frac{4T\eta (1-\beta)\beta^2 \sigma^2}{\nu} + \lrincir{ \frac{L}{n} + \frac{\eta L^2}{n\nu} + \frac{\nu}{2n\eta} + \frac{6\eta L^2}{n}  + \frac{\beta}{2n\eta} }\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T\sum_{i=1}^n\lrnorm{\x_{i,t} - \bar{\x}_t }^2 \\ \nonumber 
 &+ (1-\beta) \lrincir{\frac{1}{\nu} + 4}\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})} + \frac{1}{2\eta}\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 \\ \label{equa_H_bound_temp0} 
 & + 3TLG\eta^2\lrincir{ \frac{1}{\nu} + 4 } + (1-\beta)\frac{T\nu(\eta + 8nL\eta^2 + 16n\eta\beta^2) + 2nTL\eta^2}{n\nu} \sigma^2.
-\end{align} According to Assumption \ref{assumption_difference_bound_distributions}, we have
-\begin{align}
-\nonumber
-& \sum_{t=1}^T \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})} \\ \nonumber
-= & \lrincir{H_1(\bar{\x}_1) - H_T(\bar{\x}_{T+1})} + \sum_{t=1}^{T-1} \lrincir{H_{t+1}(\bar{\x}_{t+1}) - H_t(\bar{\x}_{t+1})} \\ \label{equa_H_bound_temp1}
-\le & \lrincir{H_1(\bar{\x}_1) - H_T(\bar{\x}_{T+1})} + V.
-\end{align} Substituting \eqref{equa_H_bound_temp1} into \eqref{equa_H_bound_temp0}, we obtain
-\begin{align}
-\nonumber
-& \sum_{t=1}^T (I_1(t) + I_2(t)) \\ \nonumber
-\le & \lrincir{1 + 6\beta\lrincir{\frac{1}{\nu}+4}}T\beta G \eta + \frac{4T\eta (1-\beta) \beta^2 \sigma^2}{\nu} + \lrincir{ \frac{L}{n} + \frac{\eta L^2}{n\nu} + \frac{\nu}{2n\eta} + \frac{6\eta L^2}{n}  + \frac{\beta}{2n\eta} }\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T\sum_{i=1}^n\lrnorm{\x_{i,t} - \bar{\x}_t }^2 \\ \nonumber 
-&+(1-\beta) \lrincir{\frac{1}{\nu} + 4}\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \lrincir{H_1(\bar{\x}_1) - H_T(\bar{\x}_{T+1}) + V} + \frac{1}{2\eta}\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 \\ \nonumber 
-& + 3TLG\eta^2\lrincir{ \frac{1}{\nu} + 4 } + (1-\beta)\frac{T\nu(\eta + 8nL\eta^2 + 16n\eta\beta^2) + 2nTL\eta^2}{n\nu} \sigma^2.
-\end{align}
+\end{align} 
+
+
+
+
+%%%%using assumption 2
+%According to Assumption \ref{assumption_difference_bound_distributions}, we have
+%\begin{align}
+%\nonumber
+%& \sum_{t=1}^T \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})} \\ \nonumber
+%= & \lrincir{H_1(\bar{\x}_1) - H_T(\bar{\x}_{T+1})} + \sum_{t=1}^{T-1} \lrincir{H_{t+1}(\bar{\x}_{t+1}) - H_t(\bar{\x}_{t+1})} \\ \label{equa_H_bound_temp1}
+%\le & \lrincir{H_1(\bar{\x}_1) - H_T(\bar{\x}_{T+1})} + V.
+%\end{align} Substituting \eqref{equa_H_bound_temp1} into \eqref{equa_H_bound_temp0}, we obtain
+%\begin{align}
+%\nonumber
+%& \sum_{t=1}^T (I_1(t) + I_2(t)) \\ \nonumber
+%\le & \lrincir{1 + 6\beta\lrincir{\frac{1}{\nu}+4}}T\beta G \eta + \frac{4T\eta (1-\beta) \beta^2 \sigma^2}{\nu} + \lrincir{ \frac{L}{n} + \frac{\eta L^2}{n\nu} + \frac{\nu}{2n\eta} + \frac{6\eta L^2}{n}  + \frac{\beta}{2n\eta} }\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T\sum_{i=1}^n\lrnorm{\x_{i,t} - \bar{\x}_t }^2 \\ \nonumber 
+%&+(1-\beta) \lrincir{\frac{1}{\nu} + 4}\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \lrincir{H_1(\bar{\x}_1) - H_T(\bar{\x}_{T+1}) + V} + \frac{1}{2\eta}\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 \\ \nonumber 
+%& + 3TLG\eta^2\lrincir{ \frac{1}{\nu} + 4 } + (1-\beta)\frac{T\nu(\eta + 8nL\eta^2 + 16n\eta\beta^2) + 2nTL\eta^2}{n\nu} \sigma^2.
+%\end{align}
+%%%%%%%%%%
 
 
 
@@ -450,10 +457,10 @@ Combining those bounds of $I_1(t)$, $I_2(t)$ and $I_3(t)$ together, we finally o
 & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T\sum_{i=1}^n f_{i,t}(\x_{i,t};\xi_{i,t}) - f_t(\x_t^\ast;\xi_{i,t}) \\ \nonumber
 \le & n \sum_{t=1}^T \lrincir{ I_1(t) + I_2(t) + I_3(t) } \\ \nonumber
 \le & \lrincir{1 + 6\beta\lrincir{\frac{1}{\nu}+4}}nT\beta G \eta + \frac{4(1-\beta)nT\eta \beta^2 \sigma^2}{\nu} + \lrincir{ L + \frac{\eta L^2}{\nu} + \frac{\nu}{2\eta} + 6\eta L^2  + \frac{\beta}{2\eta} }\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T\sum_{i=1}^n\lrnorm{\x_{i,t} - \bar{\x}_t }^2 \\ \nonumber 
-&+ (1-\beta)\lrincir{\frac{1}{\nu} + 4}n \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \lrincir{H_1(\bar{\x}_1) - H_T(\bar{\x}_{T+1}) + V}  \\ \nonumber 
+&+ (1-\beta)\lrincir{\frac{1}{\nu} + 4}n \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})}  \\ \nonumber 
 & + 3nTLG\eta^2\lrincir{ \frac{1}{\nu} + 4 } + (1-\beta)\frac{T\nu(\eta + 8nL\eta^2 + 16n\eta\beta^2) + 2nTL\eta^2}{\nu} \sigma^2  + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  } \\ \nonumber
 \refabovecir{\le}{\textcircled{1}} & \lrincir{1 + 6\beta\lrincir{\frac{1}{\nu}+4}}nT\beta G \eta + \frac{4(1-\beta)nT\eta \beta^2 \sigma^2}{\nu} + \lrincir{ L + \frac{\eta L^2}{\nu} + \frac{\nu}{2\eta} + 6\eta L^2  + \frac{\beta}{2\eta} }\frac{\eta^2}{(1-\rho)^2}   \lrincir{ 6nTG + 4(1-\beta)nT\sigma^2 } \\ \nonumber 
-&+ (1-\beta) \lrincir{\frac{1}{\nu} + 4}n\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\lrincir{H_1(\bar{\x}_1) - H_T(\bar{\x}_{T+1}) + V}  \\ \nonumber 
+&+ (1-\beta) \lrincir{\frac{1}{\nu} + 4}n\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})} \\ \nonumber 
 & + 3nTLG\eta^2\lrincir{ \frac{1}{\nu} + 4 } + (1-\beta)\frac{T\nu(\eta + 8nL\eta^2 + 16n\eta\beta^2) + 2nTL\eta^2}{\nu} \sigma^2  + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  }.
 \end{align}  $\textcircled{1}$ holds due to Lemma \ref{lemma_x_variance_norm_square}, that is, 
 \begin{align}
@@ -477,7 +484,7 @@ Setting
 & \Rcal_T^{DOG} \\ \nonumber 
 = & \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \sum_{t=1}^T\sum_{i=1}^n f_{i,t}(\x_{i,t};\xi_{i,t}) - f_t(\x_t^\ast;\xi_{i,t}) \\ \nonumber
 \le & 31 nT\beta G \eta + 4(1-\beta)nT\eta \beta\sigma^2 + \lrincir{ L +  \frac{\eta L^2}{\beta + \eta} + \frac{2\beta + \eta}{2\eta} + 6\eta L^2 } \frac{\eta^2}{(1-\rho)^2}   \lrincir{ 6nTG + 4(1-\beta)nT \sigma^2 } \\ \nonumber 
-&+ (1-\beta)n \lrincir{\frac{1}{\beta + \eta} + 4}  \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\lrincir{H_1(\bar{\x}_1) - H_T(\bar{\x}_{T+1}) + V} + 3nTLG\eta^2\lrincir{ \frac{1}{\beta + \eta} + 4 } \\ \nonumber 
+&+ (1-\beta)n \lrincir{\frac{1}{\beta + \eta} + 4} \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})} + 3nTLG\eta^2\lrincir{ \frac{1}{\beta + \eta} + 4 } \\ \nonumber 
 & + (1-\beta) \frac{T\beta(\eta + 8nL\eta^2 + 16n\eta\beta^2) + 2nTL\eta^2}{\beta + \eta }  \sigma^2  + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  }.
 \end{align} 
 
