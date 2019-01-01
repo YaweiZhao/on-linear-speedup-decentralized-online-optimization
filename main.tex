@@ -272,26 +272,6 @@ I_2(t) = & (1-\beta)  \lrincir{\underbrace{ \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\f
 \le & \frac{L}{n}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t}^2 + \frac{\eta}{2\nu}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t)}^2 + \frac{\nu}{2\eta n}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\sum_{i=1}^n\lrnorm{\x_{i,t} - \bar{\x}_t }^2. 
 \end{align} $\textcircled{1}$ holds due to $H_t$ has $L$-Lipschitz gradients. $\textcircled{2}$ holds because that $\lrangle{\a,\b} \le \frac{\nu}{2}\lrnorm{\a}^2 + \frac{1}{2\nu}\lrnorm{\b}^2$ holds for any $\nu>0$. 
 
-According to Lemma \ref{lemma_gradient_norm_bound}, we have
-\begin{align}
-\nonumber
-& \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t)}^2  \\ \nonumber
-\le & \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})} + 2\eta\beta^2(3G + 2\sigma^2) +  \frac{\eta L^2(1-\beta)^2}{n}\sum_{i=1}^n\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\bar{\x}_t - \x_{i,t} }^2 \\ \label{equa_theorem_temp1}  
-& + 3GL\eta^2  + 2L\eta^2 \sigma^2.
-\end{align}
-
-Substituting \eqref{equa_theorem_temp1} into \eqref{equa_theorem_temp0}, we obtain
-\begin{align}
-\nonumber
-& J_1(t) \\ \nonumber 
-\le & \frac{L}{n}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t}^2 +  \frac{1}{\nu} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})} \\ \nonumber 
-& + \frac{2\eta\beta^2(3G + 2\sigma^2)}{\nu} +  \frac{\eta L^2(1-\beta)^2}{n\nu}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\sum_{i=1}^n\lrnorm{\bar{\x}_t - \x_{i,t} }^2  \\ \nonumber 
-&+ \frac{3GL \eta^2}{\nu} + \frac{2L\eta^2}{\nu} \sigma^2  + \frac{\nu}{2n\eta}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\sum_{i=1}^n\lrnorm{\x_{i,t} - \bar{\x}_t }^2  \\ \nonumber
-= & \lrincir{ \frac{L}{n} + \frac{\eta L^2(1-\beta)^2}{n\nu} + \frac{\nu}{2n\eta} }\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\sum_{i=1}^n\lrnorm{\x_{i,t} - \bar{\x}_t }^2 + \frac{1}{\nu} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})} \\ \nonumber 
-& + \frac{\eta(2\beta^2(3G + 2\sigma^2) + 3GL \eta)}{\nu}  + \frac{2L\eta^2}{\nu} \sigma^2 \\ \nonumber
-\le & \lrincir{ \frac{L}{n} + \frac{\eta L^2}{n\nu} + \frac{\nu}{2n\eta} }\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\sum_{i=1}^n\lrnorm{\x_{i,t} - \bar{\x}_t }^2 + \frac{1}{\nu} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})} \\ \nonumber 
-& + \frac{\eta(2\beta^2(3G + 2\sigma^2) + 3GL \eta)}{\nu}  + \frac{2L\eta^2}{\nu} \sigma^2.
-\end{align}
 
 For $J_2(t)$, we have
 \begin{align}
@@ -317,54 +297,35 @@ For $J_2(t)$, we have
 \le & \frac{1}{n} \sigma^2.
 \end{align} $\textcircled{2}$ holds due to $H_t$ has $L$ Lipschitz gradients.
 
-
-Substituting \eqref{equa_theorem_temp1} into \eqref{equa_j2_temp}, and we have
-\begin{align}
-\nonumber
-& J_2(t) \\ \nonumber 
-\le & \frac{\eta}{n} \sigma^2 + \frac{2\eta L^2}{n}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t }^2 + 4\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})} + 8\eta \beta^2 \lrincir{ 3G + 2\sigma^2}   \\ \nonumber
-& + \frac{4\eta L^2 (1-\beta)^2}{n}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t}^2 + 12GL\eta^2 + 8L\eta^2 \sigma^2  + \frac{1}{2\eta} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 \\ \nonumber
-\le & \frac{\eta + 8nL\eta^2 + 16n\eta\beta^2}{n} \sigma^2 + \lrincir{ 2\eta L^2 + 4\eta L^2(1-\beta)^2 }\frac{1}{n}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t}^2 + 4\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})} \\ \nonumber 
-& + 24G\eta \beta^2 + 12GL\eta^2 + \frac{1}{2\eta} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 \\ \nonumber
-\le & \frac{\eta + 8nL\eta^2 + 16n\eta\beta^2}{n} \sigma^2 + \frac{6\eta L^2}{n}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t}^2 + 4\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})} \\ \nonumber 
-& + 24G\eta \beta^2 + 12GL\eta^2 + \frac{1}{2\eta} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2.
-\end{align} Therefore, we obtain
+ Therefore, we obtain
 \begin{align}
 \nonumber
 & I_2(t) \\ \nonumber 
 = & (1-\beta)(J_1(t) + J_2(t)) \\ \nonumber
-= &  (1-\beta)\lrincir{ \frac{L}{n} + \frac{\eta L^2}{n\nu} + \frac{\nu}{2n\eta} + \frac{6\eta L^2}{n} }\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\sum_{i=1}^n\lrnorm{\x_{i,t} - \bar{\x}_t }^2  + (1-\beta)\lrincir{\frac{1}{\nu} + 4} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})}\\ \nonumber 
-&+ (1-\beta) \lrincir{ 2\eta\beta^2\lrincir{\frac{3G + 2\sigma^2}{\nu} + 12G} +  \frac{1}{2\eta} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 } \\ \nonumber 
-& + (1-\beta)3LG\eta^2 \lrincir{ \frac{1}{\nu} + 4 }  + (1-\beta)\frac{\nu(\eta + 8nL\eta^2 + 16n\eta\beta^2) + 2nL\eta^2}{n\nu} \sigma^2 \\ \nonumber
-\le &  \lrincir{ \frac{L}{n} + \frac{\eta L^2}{n\nu} + \frac{\nu}{2n\eta} + \frac{6\eta L^2}{n} }\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\sum_{i=1}^n\lrnorm{\x_{i,t} - \bar{\x}_t }^2  + (1-\beta)\lrincir{\frac{1}{\nu} + 4}\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})}\\ \nonumber 
-&+  2\eta\beta^2\lrincir{\frac{3G + 2(1-\beta)\sigma^2}{\nu} + 12G} +  \frac{1-\beta}{2\eta} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 \\ \nonumber 
-& + 3LG\eta^2 \lrincir{ \frac{1}{\nu} + 4 }  + (1-\beta)\frac{\nu(\eta + 8nL\eta^2 + 16n\eta\beta^2) + 2nL\eta^2}{n\nu} \sigma^2.
+= &  (1-\beta)\lrincir{ \frac{L}{n}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t}^2 + \frac{\eta}{2\nu}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t)}^2 + \frac{\nu}{2\eta n}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\sum_{i=1}^n\lrnorm{\x_{i,t} - \bar{\x}_t }^2 } \\ \nonumber
+& + (1-\beta)\lrincir{ \frac{\eta}{n} \sigma^2 + \frac{2\eta L^2}{n}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t }^2 } \\ \nonumber 
+& + (1-\beta)\lrincir{ 2\eta \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t)}^2 + \frac{1}{2\eta} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 } \\ \nonumber
+\le &  \lrincir{ \frac{L}{n} + \frac{\nu}{2n\eta} + \frac{2\eta L^2}{n} }\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\sum_{i=1}^n\lrnorm{\x_{i,t} - \bar{\x}_t }^2   + \lrincir{ \frac{\eta}{2\nu} + 2\eta }\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t)}^2 \\ \nonumber 
+&+ \frac{\eta (1-\beta)\sigma^2}{n} +  \frac{1-\beta}{2\eta} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2.
 \end{align}
-
-
-
-
 
 Combine those bounds of $I_1(t)$ and $I_2(t)$. We thus have
 \begin{align}
 \nonumber
 & I_1(t) + I_2(t) \\ \nonumber 
 \le & \beta G \eta + \frac{\beta}{2n\eta }\sum_{i=1}^n \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\x_{i,t} - \bar{\x}_t}^2 + \frac{\beta }{2\eta } \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{\bar{\x}_t - \bar{\x}_{t+1}}^2 \\ \nonumber
-& +  \lrincir{ \frac{L}{n} + \frac{\eta L^2}{n\nu} + \frac{\nu}{2n\eta} + \frac{6\eta L^2}{n} }\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\sum_{i=1}^n\lrnorm{\x_{i,t} - \bar{\x}_t }^2 + (1-\beta)\lrincir{\frac{1}{\nu} + 4}\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})}\\ \nonumber 
-&+ 2\eta\beta^2\lrincir{\frac{3G + 2(1-\beta)\sigma^2}{\nu} + 12G} +  \frac{1-\beta}{2\eta} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 \\ \nonumber
-& + 3LG\eta^2\lrincir{ \frac{1}{\nu} + 4 } + (1-\beta)\frac{\nu(\eta + 8nL\eta^2 + 16n\eta\beta^2) + 2nL\eta^2}{n\nu} \sigma^2\\ \nonumber
-\le & \lrincir{1 + 6\beta\lrincir{\frac{1}{\nu}+4}}\beta G \eta + \frac{4\eta (1-\beta)\beta^2 \sigma^2}{\nu} + \lrincir{ \frac{L}{n} + \frac{\eta L^2}{n\nu} + \frac{\nu}{2n\eta} + \frac{6\eta L^2}{n}  + \frac{\beta}{2n\eta} }\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\sum_{i=1}^n\lrnorm{\x_{i,t} - \bar{\x}_t }^2 \\ \nonumber 
-&+ (1-\beta)\lrincir{\frac{1}{\nu} + 4}\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})} + \frac{1}{2\eta}\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 \\ \nonumber 
-& + 3LG\eta^2\lrincir{ \frac{1}{\nu} + 4 } + (1-\beta)\frac{\nu(\eta + 8nL\eta^2 + 16n\eta\beta^2) + 2nL\eta^2}{n\nu} \sigma^2.
+& + \lrincir{ \frac{L}{n} + \frac{\nu}{2n\eta} + \frac{2\eta L^2}{n} }\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\sum_{i=1}^n\lrnorm{\x_{i,t} - \bar{\x}_t }^2   + \lrincir{ \frac{\eta}{2\nu} + 2\eta }\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t)}^2 \\ \nonumber 
+&+ \frac{\eta (1-\beta)\sigma^2}{n} +  \frac{1-\beta}{2\eta} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 \\ \nonumber
+= & \eta\lrincir{ \beta G + \frac{(1-\beta)\sigma^2}{n}} + \lrincir{\frac{\beta}{2n\eta } +\frac{L}{n} + \frac{\nu}{2n\eta} + \frac{2\eta L^2}{n} }\sum_{i=1}^n \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\x_{i,t} - \bar{\x}_t}^2 + \frac{1}{2\eta } \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{\bar{\x}_t - \bar{\x}_{t+1}}^2 \\ \nonumber
+&  + \lrincir{ \frac{\eta}{2\nu} + 2\eta }\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t)}^2. 
 \end{align}
 
 Therefore, we have 
 \begin{align}
 \nonumber
 &\sum_{t=1}^T (I_1(t) + I_2(t)) \\ \nonumber
-\le & \lrincir{1 + 6\beta\lrincir{\frac{1}{\nu}+4}}T\beta G \eta + \frac{4T\eta (1-\beta)\beta^2 \sigma^2}{\nu} + \lrincir{ \frac{L}{n} + \frac{\eta L^2}{n\nu} + \frac{\nu}{2n\eta} + \frac{6\eta L^2}{n}  + \frac{\beta}{2n\eta} }\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T\sum_{i=1}^n\lrnorm{\x_{i,t} - \bar{\x}_t }^2 \\ \nonumber 
-&+ (1-\beta) \lrincir{\frac{1}{\nu} + 4}\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})} + \frac{1}{2\eta}\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 \\ \label{equa_H_bound_temp0} 
-& + 3TLG\eta^2\lrincir{ \frac{1}{\nu} + 4 } + (1-\beta)\frac{T\nu(\eta + 8nL\eta^2 + 16n\eta\beta^2) + 2nTL\eta^2}{n\nu} \sigma^2.
+\le & \eta T \lrincir{ \beta G + \frac{(1-\beta)\sigma^2}{n}} + \lrincir{\frac{\beta}{2n\eta } +\frac{L}{n} + \frac{\nu}{2n\eta} + \frac{2\eta L^2}{n} } \EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} }\sum_{i=1}^n \sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2  \\ \nonumber
+& + \frac{1}{2\eta } \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T \lrnorm{\bar{\x}_t - \bar{\x}_{t+1}}^2 + \lrincir{ \frac{\eta}{2\nu} + 2\eta }\EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} }\sum_{t=1}^T\lrnorm{\nabla H_t(\bar{\x}_t)}^2.
 \end{align} 
 
 
@@ -456,17 +417,58 @@ Combining those bounds of $I_1(t)$, $I_2(t)$ and $I_3(t)$ together, we finally o
 \nonumber
 & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T\sum_{i=1}^n f_{i,t}(\x_{i,t};\xi_{i,t}) - f_t(\x_t^\ast;\xi_{i,t}) \\ \nonumber
 \le & n \sum_{t=1}^T \lrincir{ I_1(t) + I_2(t) + I_3(t) } \\ \nonumber
-\le & \lrincir{1 + 6\beta\lrincir{\frac{1}{\nu}+4}}nT\beta G \eta + \frac{4(1-\beta)nT\eta \beta^2 \sigma^2}{\nu} + \lrincir{ L + \frac{\eta L^2}{\nu} + \frac{\nu}{2\eta} + 6\eta L^2  + \frac{\beta}{2\eta} }\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T\sum_{i=1}^n\lrnorm{\x_{i,t} - \bar{\x}_t }^2 \\ \nonumber 
-&+ (1-\beta)\lrincir{\frac{1}{\nu} + 4}n \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})}  \\ \nonumber 
-& + 3nTLG\eta^2\lrincir{ \frac{1}{\nu} + 4 } + (1-\beta)\frac{T\nu(\eta + 8nL\eta^2 + 16n\eta\beta^2) + 2nTL\eta^2}{\nu} \sigma^2  + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  } \\ \nonumber
-\refabovecir{\le}{\textcircled{1}} & \lrincir{1 + 6\beta\lrincir{\frac{1}{\nu}+4}}nT\beta G \eta + \frac{4(1-\beta)nT\eta \beta^2 \sigma^2}{\nu} + \lrincir{ L + \frac{\eta L^2}{\nu} + \frac{\nu}{2\eta} + 6\eta L^2  + \frac{\beta}{2\eta} }\frac{\eta^2}{(1-\rho)^2}   \lrincir{ 6nTG + 4(1-\beta)nT\sigma^2 } \\ \nonumber 
-&+ (1-\beta) \lrincir{\frac{1}{\nu} + 4}n\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{t=1}^T \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})} \\ \nonumber 
-& + 3nTLG\eta^2\lrincir{ \frac{1}{\nu} + 4 } + (1-\beta)\frac{T\nu(\eta + 8nL\eta^2 + 16n\eta\beta^2) + 2nTL\eta^2}{\nu} \sigma^2  + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  }.
-\end{align}  $\textcircled{1}$ holds due to Lemma \ref{lemma_x_variance_norm_square}, that is, 
+\le & \eta T \lrincir{ n\beta G + (1-\beta)\sigma^2} + \lrincir{\frac{\beta}{2\eta } +L + \frac{\nu}{2\eta} + 2\eta L^2 } \EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} }\sum_{i=1}^n \sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2  \\ \label{equa_theorem_i123_temp}
+& + n\lrincir{ \frac{\eta}{2\nu} + 2\eta }\EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} }\sum_{t=1}^T\lrnorm{\nabla H_t(\bar{\x}_t)}^2  + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  }.
+\end{align}  
+According to Lemma \ref{lemma_gradient_norm_bound}, we have
 \begin{align}
 \nonumber
-\EE_{ \Xi_{n,T}\sim \Dcal_{n,T} } \sum_{i=1}^n\sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2 \le \frac{\eta^2}{(1-\rho)^2}   \lrincir{ 6nTG + 4nT \sigma^2 }.
+& \frac{\eta\lrincir{ 1-(1+\alpha)^2\beta^2 }}{4} \EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} }\sum_{t=1}^T\lrnorm{\nabla H_t(\bar{\x}_t)}^2 \\ \label{equa_gradient_H_t_temp}
+\le &  L\eta^2 \lrincir{ 2G\beta^2  +  4(1-\beta)^2 \sigma^2 }  + \EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} } \sum_{t=1}^T \lrincir{ H_t(\bar{\x}_t) -  H_t(\bar{\x}_{t+1}) } + \frac{T \eta \beta^2}{2} (1+\alpha) \lrincir{1+\frac{1}{\alpha}}  G.
+\end{align} According to Lemma \ref{lemma_x_variance_norm_square}, we have
+\begin{align}
+\label{equa_x_variance_norm_square_temp}
+\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{i=1}^n\sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2 \le \frac{\eta^2}{(1-\rho)^2} \lrincir{ 4nTG\beta^2  +  8nT(1-\beta)^2 \sigma^2 + 16n(1-\beta)^2 \sum_{t=1}^T \lrnorm{\nabla H_t(\bar{\x}_t)}^2 }.
+\end{align} Substituting \eqref{equa_gradient_H_t_temp} into \eqref{equa_x_variance_norm_square_temp}, we obtain
+\begin{align}
+\nonumber
+& \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{i=1}^n\sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2 \\ \nonumber 
+\le & \frac{\eta^2}{(1-\rho)^2} \lrincir{ 4nTG\beta^2  +  8nT(1-\beta)^2 \sigma^2 } \\ \nonumber 
+& + \frac{\eta^2 16n(1-\beta)^2}{(1-\rho)^2}  \lrincir{ L\eta^2 \lrincir{ 2G\beta^2  +  4(1-\beta)^2 \sigma^2 }  + \EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} } \sum_{t=1}^T \lrincir{ H_t(\bar{\x}_t) -  H_t(\bar{\x}_{t+1}) } + \frac{T \eta \beta^2}{2} (1+\alpha) \lrincir{1+\frac{1}{\alpha}}  G  } 
 \end{align}
+
+
+
+
+
+
+
+
+
+
+Substituting \eqref{equa_lemma_gradient_norm_bound_result_temp1} and \eqref{equa_lemma_x_variance_norm_square_result_temp1} into \eqref{equa_theorem_i123_temp}, we have
+\begin{align}
+\nonumber
+& \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T\sum_{i=1}^n f_{i,t}(\x_{i,t};\xi_{i,t}) - f_t(\x_t^\ast;\xi_{i,t}) \\ \nonumber
+\le & \eta T \lrincir{ n\beta G + (1-\beta)\sigma^2} + \lrincir{\frac{\beta}{2\eta } +L + \frac{\nu}{2\eta} + 2\eta L^2 } \frac{\eta^2}{(1-\rho)^2} \lrincir{  \sum_{t=1}^T \sum_{i=1}^n \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrnorm{\nabla f_{i,t}(\x_{i,t}; \xi_{i,t})}^2 }  \\ \nonumber
+& + n\lrincir{ \frac{1}{\nu} + 4 } \frac{L \eta^2(1-\rho)^2 + \eta^3 L^2\lrincir{1+\frac{1}{\alpha}}(1-\beta)^2}{2n(1-\rho)^2 \lrincir{1-(1+\alpha)^2\beta^2} }  \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{i=1}^n \sum_{t=1}^T\lrnorm{ \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 \\ \nonumber 
+& + n\lrincir{ \frac{1}{\nu} + 4 }\EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} } \sum_{t=1}^T \lrincir{ H_t(\bar{\x}_t) -  H_t(\bar{\x}_{t+1}) } +  n\lrincir{ \frac{1}{\nu} + 4 }\frac{T\eta \beta^2}{2} (1+\alpha) \lrincir{1+\frac{1}{\alpha}}  G  + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  } \\ \nonumber
+\refabovecir{\le}{\textcircled{1}} & \eta T \lrincir{ n\beta G + (1-\beta)\sigma^2} + \lrincir{\frac{\beta}{2\eta } +L + \frac{\nu}{2\eta} + 2\eta L^2 } \frac{\eta^2}{(1-\rho)^2} nT\lrincir{6G  + 4 (1-\beta)\sigma^2}  \\ \nonumber
+& + n\lrincir{ \frac{1}{\nu} + 4 } \frac{L \eta^2(1-\rho)^2 + \eta^3 L^2\lrincir{1+\frac{1}{\alpha}}(1-\beta)^2}{2(1-\rho)^2 \lrincir{1-(1+\alpha)^2\beta^2} }  T\lrincir{6G  + 4 (1-\beta)\sigma^2} \\ \nonumber 
+& + n\lrincir{ \frac{1}{\nu} + 4 }\EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} } \sum_{t=1}^T \lrincir{ H_t(\bar{\x}_t) -  H_t(\bar{\x}_{t+1}) } +  n\lrincir{ \frac{1}{\nu} + 4 }\frac{T\eta \beta^2}{2} (1+\alpha) \lrincir{1+\frac{1}{\alpha}}  G  + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  } \\ \nonumber
+\end{align} $\textcircled{1}$ holds due to Lemma \ref{lemma_stochastic_gradient_norm_bound}, that is, 
+\begin{align}
+\nonumber
+\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 \le 6G  + 4 (1-\beta)\sigma^2.
+\end{align}
+
+
+
+
+
+
+
+
 
 
 Setting 
@@ -500,7 +502,7 @@ It completes the proof.
 Using Assumption \ref{assumption_bounded_gradient_domain}, we have
 \begin{align}
 \nonumber
-\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 \le 6G  + 4 (1-\beta)\sigma^2.
+\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 \le 2G\beta^2  +  4(1-\beta)^2 \sigma^2 +  8(1-\beta)^2 L^2 \lrnorm{ \x_{i,t} - \bar{\x}_t }^2 + 8(1-\beta)^2 \lrnorm{\nabla H_t(\bar{\x}_t)}^2.
 \end{align}
 
 
@@ -513,10 +515,11 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, we have
 = & \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \beta \nabla g_{i,t}(\x_{i,t}) + (1-\beta)\nabla h_t(\x_{i,t};\xi_{i,t})}^2 \\ \nonumber 
 \le &  2\beta^2 \lrnorm{ \nabla g_{i,t}(\x_{i,t}) }^2 + 2(1-\beta)^2 \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrnorm{ \nabla h_t(\x_{i,t};\xi_{i,t}) }^2 \\ \nonumber 
 \le & 2G\beta^2  + 2(1-\beta)^2 \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrnorm{ \nabla h_t(\x_{i,t};\xi_{i,t}) - \nabla H_t(\x_{i,t}) + \nabla H_t(\x_{i,t})}^2 \\ \nonumber 
-\le & 2G\beta^2  +  4(1-\beta)^2 \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrnorm{ \nabla h_t(\x_{i,t};\xi_{i,t}) - \nabla H_t(\x_{i,t}) }^2 +  4(1-\beta)^2 \lrnorm{ \nabla H_t(\x_{i,t})}^2 \\ \nonumber 
-\le & 2G\beta^2  + 4(1-\beta)^2 \sigma^2 + 4(1-\beta)^2 G \\ \nonumber 
-\le & 6G  + 4 (1-\beta)\sigma^2.
-\end{align} The last inequality holds due to $0\le \beta \le 1$.
+\le & 2G\beta^2  +  4(1-\beta)^2 \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrnorm{ \nabla h_t(\x_{i,t};\xi_{i,t}) - \nabla H_t(\x_{i,t}) }^2 +  4(1-\beta)^2 \lrnorm{ \nabla H_t(\x_{i,t})}^2 \\ \nonumber
+\le & 2G\beta^2  +  4(1-\beta)^2 \sigma^2 +  4(1-\beta)^2 \lrnorm{ \nabla H_t(\x_{i,t}) - \nabla H_t(\bar{\x}_t) + \nabla H_t(\bar{\x}_t)}^2 \\ \nonumber
+\le & 2G\beta^2  +  4(1-\beta)^2 \sigma^2 +  8(1-\beta)^2 \lrnorm{ \nabla H_t(\x_{i,t}) - \nabla H_t(\bar{\x}_t) }^2 + 8(1-\beta)^2 {\nabla H_t(\bar{\x}_t)}^2 \\ \nonumber
+\le & 2G\beta^2  +  4(1-\beta)^2 \sigma^2 +  8(1-\beta)^2 L^2 \lrnorm{ \x_{i,t} - \bar{\x}_t }^2 + 8(1-\beta)^2 \lrnorm{\nabla H_t(\bar{\x}_t)}^2.
+\end{align} 
 \end{proof}
 
 
@@ -526,10 +529,11 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, we have
 Using Assumption \ref{assumption_bounded_gradient_domain}, and setting $\eta>0$ in Algorithm \ref{algo_dog}, we have 
 \begin{align}
 \nonumber
-& \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t)}^2  \\ \nonumber 
-\le & \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})} + 2\eta\beta^2(3G + 2\sigma^2) +  \frac{\eta L^2(1-\beta)^2}{n}\sum_{i=1}^n\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\bar{\x}_t - \x_{i,t} }^2 \\ \label{equa_lemma_gradient_norm_bound}  
-& + 3GL\eta^2  + 2L\eta^2 \sigma^2.
+& \frac{\eta\lrincir{ 1-(1+\alpha)^2\beta^2 }}{4} \EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} }\sum_{t=1}^T\lrnorm{\nabla H_t(\bar{\x}_t)}^2 \\ \nonumber 
+\le &  L\eta^2 \lrincir{ 2G\beta^2  +  4(1-\beta)^2 \sigma^2 }  + \EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} } \sum_{t=1}^T \lrincir{ H_t(\bar{\x}_t) -  H_t(\bar{\x}_{t+1}) } + \frac{T \eta \beta^2}{2} (1+\alpha) \lrincir{1+\frac{1}{\alpha}}  G.
 \end{align}
+
+
 \end{Lemma}
 \begin{proof}
 
@@ -542,39 +546,93 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, and setting $\eta>0$ 
 = & \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } H_t(\bar{\x}_t) + \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } \lrincir{ \lrnorm{\nabla H_t(\bar{\x}_t) -\frac{1}{n}\sum_{i=1}^n \nabla F_{i,t}(\x_{i,t})}^2 - \lrnorm{\nabla H_t(\bar{\x}_t)}^2 - \lrnorm{\frac{1}{n}\sum_{i=1}^n \nabla F_{i,t}(\x_{i,t})}^2 } \\ \nonumber 
 & + \frac{L\eta^2}{2n}\sum_{i=1}^n\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 \\ \nonumber
 \refabovecir{\le}{\textcircled{2}} & \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } H_t(\bar{\x}_t) + \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } \lrnorm{\nabla H_t(\bar{\x}_t) -\frac{1}{n}\sum_{i=1}^n (\beta \nabla g_{i,t}(\x_{i,t}) + (1-\beta)\nabla H_t(\x_{i,t}))}^2 \\ \nonumber 
-& - \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } \lrnorm{\nabla H_t(\bar{\x}_t)}^2 - \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } \lrnorm{\frac{1}{n}\sum_{i=1}^n \nabla F_{i,t}(\x_{i,t})}^2 + 3GL\eta^2  + 2L\eta^2 \sigma^2 \\ \nonumber
-\le & \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } H_t(\bar{\x}_t) - \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t)}^2 - \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\frac{1}{n}\sum_{i=1}^n \nabla F_{i,t}(\x_{i,t})}^2  + 3GL\eta^2  + 2L\eta^2 \sigma^2 \\ \nonumber
-& + \frac{\eta}{2}\lrincir{2\beta^2\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t) -\frac{1}{n}\sum_{i=1}^n \nabla g_{i,t}(\x_{i,t})}^2 + 2(1-\beta)^2\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t) -\frac{1}{n}\sum_{i=1}^n \nabla H_t(\x_{i,t})}^2  }  \\ \nonumber
-\le & \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } H_t(\bar{\x}_t) - \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t)}^2 - \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\frac{1}{n}\sum_{i=1}^n \nabla F_{i,t}(\x_{i,t})}^2  + 3GL\eta^2  + 2L\eta^2 \sigma^2 \\ \nonumber
-& + \frac{\eta}{2n}\sum_{i=1}^n\lrincir{2\beta^2\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t) - \nabla g_{i,t}(\x_{i,t})}^2 + 2(1-\beta)^2\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t) - \nabla H_t(\x_{i,t})}^2  }  \\ \nonumber
-\le & \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } H_t(\bar{\x}_t) - \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t)}^2 - \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\frac{1}{n}\sum_{i=1}^n \nabla F_{i,t}(\x_{i,t})}^2  + 3GL\eta^2  + 2L\eta^2 \sigma^2 \\ \nonumber
-& + \frac{\eta}{2n}\sum_{i=1}^n\lrincir{2\beta^2\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrincir{2\lrnorm{\nabla H_t(\bar{\x}_t) }^2 + 2\lrnorm{\nabla g_{i,t}(\x_{i,t})}^2} + 2(1-\beta)^2\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t) - \nabla H_t(\x_{i,t})}^2  }  \\ \nonumber
-\refabovecir{\le}{\textcircled{3}} & \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } H_t(\bar{\x}_t) - \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t)}^2 - \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\frac{1}{n}\sum_{i=1}^n \nabla F_{i,t}(\x_{i,t})}^2  + 3GL\eta^2  + 2L\eta^2 \sigma^2 \\ \nonumber
-& + \frac{\eta}{2n}\sum_{i=1}^n\lrincir{2\beta^2\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrincir{2\lrnorm{\nabla H_t(\bar{\x}_t) }^2 + 2G} + 2(1-\beta)^2 L^2\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{ \bar{\x}_t - \x_{i,t} }^2  }  \\ \nonumber
-\refabovecir{\le}{\textcircled{4}} & \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }H_t(\bar{\x}_t) + \frac{\eta}{2}\lrincir{4\beta^2 (3G + 2\sigma^2) + 2(1-\beta)^2 L^2\frac{1}{n}\sum_{i=1}^n \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\bar{\x}_t -\x_{i,t}}^2  }  \\ \nonumber 
-& - \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t)}^2 - \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\frac{1}{n}\sum_{i=1}^n \nabla F_{i,t}(\x_{i,t})}^2  + 3GL\eta^2  + 2L\eta^2 \sigma^2  \\ \nonumber
-= & \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }H_t(\bar{\x}_t) + 2\eta\beta^2 (3G + 2\sigma^2) + \eta(1-\beta)^2 L^2\lrincir{\frac{1}{n}\sum_{i=1}^n \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\bar{\x}_t -\x_{i,t}}^2} \\ \nonumber 
-& - \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t)}^2 - \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\frac{1}{n}\sum_{i=1}^n \nabla F_{i,t}(\x_{i,t})}^2  +  3GL\eta^2  + 2L\eta^2 \sigma^2.
-\end{align} $\textcircled{1}$ holds due to $F_{i,t}(\x_{i,t}) = \EE_{\xi_{i,t} \sim D_{i,t}} f_{i,t}(\x_{i,t}; \xi_{i,t})$, and $\lrnorm{\frac{1}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 \le \frac{1}{n}\sum_{i=1}^n\lrnorm{\nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2$. $\textcircled{2}$ holds due to Lemma \ref{lemma_stochastic_gradient_norm_bound}. $\textcircled{3}$ holds due to our assumption, that is, $\lrnorm{\nabla g_{i,t}(\x_{i,t})}^2\le G$, and $H_t$ has $L$ Lipschitz gradient. $\textcircled{4}$ holds due to 
+& - \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } \lrnorm{\nabla H_t(\bar{\x}_t)}^2 - \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } \lrnorm{\frac{1}{n}\sum_{i=1}^n \nabla F_{i,t}(\x_{i,t})}^2 + \frac{L\eta^2}{2n}\sum_{i=1}^n\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 \\ \nonumber
+\le & \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } H_t(\bar{\x}_t) - \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t)}^2 - \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\frac{1}{n}\sum_{i=1}^n \nabla F_{i,t}(\x_{i,t})}^2  + \frac{L\eta^2}{2n}\sum_{i=1}^n\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 \\ \nonumber
+& + \frac{\eta}{2}\lrincir{(1+\alpha)\beta^2\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t) -\frac{1}{n}\sum_{i=1}^n \nabla g_{i,t}(\x_{i,t})}^2 } \\ \nonumber 
+& + \frac{\eta}{2}\lrincir{\lrincir{1+\frac{1}{\alpha}}(1-\beta)^2\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t) -\frac{1}{n}\sum_{i=1}^n \nabla H_t(\x_{i,t})}^2  }  \\ \nonumber
+\le & \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } H_t(\bar{\x}_t) - \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t)}^2 - \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\frac{1}{n}\sum_{i=1}^n \nabla F_{i,t}(\x_{i,t})}^2  + \frac{L\eta^2}{2n}\sum_{i=1}^n\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 \\ \nonumber
+& + \frac{\eta}{2n}\sum_{i=1}^n\lrincir{(1+\alpha)\beta^2\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t) - \nabla g_{i,t}(\x_{i,t})}^2 } \\ \nonumber 
+& + \frac{\eta}{2n}\sum_{i=1}^n\lrincir{ \lrincir{1+\frac{1}{\alpha}} (1-\beta)^2\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t) - \nabla H_t(\x_{i,t})}^2  }  \\ \nonumber
+\le & \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } H_t(\bar{\x}_t) - \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t)}^2 - \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\frac{1}{n}\sum_{i=1}^n \nabla F_{i,t}(\x_{i,t})}^2  + \frac{L\eta^2}{2n}\sum_{i=1}^n\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 \\ \nonumber
+& + \frac{\eta}{2n}\sum_{i=1}^n\lrincir{(1+\alpha)\beta^2\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrincir{ (1+\alpha)  \lrnorm{\nabla H_t(\bar{\x}_t) }^2 +  \lrincir{1+\frac{1}{\alpha}}   \lrnorm{\nabla g_{i,t}(\x_{i,t})}^2 } } \\ \nonumber 
+& + \frac{\eta}{2n}\sum_{i=1}^n\lrincir{ \lrincir{1+\frac{1}{\alpha}}(1-\beta)^2\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t) - \nabla H_t(\x_{i,t})}^2  }  \\ \nonumber
+\refabovecir{\le}{\textcircled{3}} & \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } H_t(\bar{\x}_t) - \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t)}^2 - \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\frac{1}{n}\sum_{i=1}^n \nabla F_{i,t}(\x_{i,t})}^2  + \frac{L\eta^2}{2n}\sum_{i=1}^n\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 \\ \nonumber
+& + \frac{\eta}{2n}\sum_{i=1}^n\lrincir{(1+\alpha)\beta^2\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrincir{ (1+\alpha)  \lrnorm{\nabla H_t(\bar{\x}_t) }^2 +  \lrincir{1+\frac{1}{\alpha}}   \lrnorm{\nabla g_{i,t}(\x_{i,t})}^2 } } \\ \nonumber 
+& + \frac{\eta L^2}{2n} \lrincir{1+\frac{1}{\alpha}}(1-\beta)^2\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\sum_{i=1}^n\lrnorm{\bar{\x}_t - \x_{i,t}}^2    \\ \nonumber
+\le & \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } H_t(\bar{\x}_t) - \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t)}^2 - \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\frac{1}{n}\sum_{i=1}^n \nabla F_{i,t}(\x_{i,t})}^2  + \frac{L\eta^2}{2n}\sum_{i=1}^n\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 \\ \nonumber
+& + \frac{\eta}{2n}\sum_{i=1}^n\lrincir{(1+\alpha)\beta^2\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrincir{ (1+\alpha)  \lrnorm{\nabla H_t(\bar{\x}_t) }^2 +  \lrincir{1+\frac{1}{\alpha}}  G } } \\ \nonumber 
+& + \frac{\eta L^2}{2n} \lrincir{1+\frac{1}{\alpha}}(1-\beta)^2\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\sum_{i=1}^n\lrnorm{\bar{\x}_t - \x_{i,t}}^2    \\ \nonumber
+= & \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } H_t(\bar{\x}_t) - \frac{\eta}{2} \lrincir{ 1-(1+\alpha)^2\beta^2 } \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t)}^2 \\ \nonumber 
+& - \frac{\eta}{2}  \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\frac{1}{n}\sum_{i=1}^n \nabla F_{i,t}(\x_{i,t})}^2  + \frac{L\eta^2}{2n}\sum_{i=1}^n\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 \\ \nonumber
+& + \frac{\eta \beta^2}{2} (1+\alpha) \lrincir{1+\frac{1}{\alpha}}  G  + \frac{\eta L^2}{2n} \lrincir{1+\frac{1}{\alpha}}(1-\beta)^2\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\sum_{i=1}^n\lrnorm{\bar{\x}_t - \x_{i,t}}^2.
+\end{align} $\textcircled{1}$ holds due to $F_{i,t}(\x_{i,t}) = \EE_{\xi_{i,t} \sim D_{i,t}} f_{i,t}(\x_{i,t}; \xi_{i,t})$, and $\lrnorm{\frac{1}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 \le \frac{1}{n}\sum_{i=1}^n\lrnorm{\nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2$. $\textcircled{2}$ holds due to Lemma \ref{lemma_stochastic_gradient_norm_bound}. $\textcircled{3}$ holds due to our assumption, that is, $\lrnorm{\nabla g_{i,t}(\x_{i,t})}^2\le G$, and $H_t$ has $L$ Lipschitz gradient. 
+
+
+Recall Lemma \ref{lemma_x_variance_norm_square}, and we obtain
 \begin{align}
 \nonumber
-& \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t) }^2 \\ \nonumber 
-= & \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } \lrnorm{\nabla H_t(\bar{\x}_t) - \nabla h_t(\bar{\x}_t; \xi_{i,t-1}) + \nabla h_t(\bar{\x}_t; \xi_{i,t-1}) }^2 \\ \nonumber
-\le & 2\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } \lrnorm{\nabla H_t(\bar{\x}_t) - \nabla h_t(\bar{\x}_t; \xi_{i,t-1}) }^2 + 2\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } \lrnorm{\nabla h_t(\bar{\x}_t; \xi_{i,t-1}) }^2 \\ \nonumber
-\le & 2\sigma^2 + 2G.
+\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{i=1}^n\sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2  \le \frac{\eta^2}{(1-\rho)^2} \lrincir{  \sum_{t=1}^T \sum_{i=1}^n \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrnorm{\nabla f_{i,t}(\x_{i,t}; \xi_{i,t})}^2 }.
+\end{align}
+
+Thus, we have
+\begin{align}
+\nonumber
+& \frac{\eta}{2} \lrincir{ 1-(1+\alpha)^2\beta^2 } \EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} }\sum_{t=1}^T\lrnorm{\nabla H_t(\bar{\x}_t)}^2 + \frac{\eta}{2}  \EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} }\sum_{t=1}^T\lrnorm{\frac{1}{n}\sum_{i=1}^n \nabla F_{i,t}(\x_{i,t})}^2 \\ \nonumber 
+\le &  \lrincir{\frac{L\eta^2}{2n} + \frac{\eta^3 L^2}{2n(1-\rho)^2} \lrincir{1+\frac{1}{\alpha}}(1-\beta)^2 } \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\sum_{i=1}^n \sum_{t=1}^T\lrnorm{ \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 \\ \nonumber
+& + \EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} } \sum_{t=1}^T \lrincir{ H_t(\bar{\x}_t) -  H_t(\bar{\x}_{t+1}) } + \frac{T \eta \beta^2}{2} (1+\alpha) \lrincir{1+\frac{1}{\alpha}}  G.
+\end{align} Recall Lemma \ref{lemma_stochastic_gradient_norm_bound}, and we have
+\begin{align}
+\nonumber
+& \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 \\ \nonumber
+\le & 2G\beta^2  +  4(1-\beta)^2 \sigma^2 +  8(1-\beta)^2 L^2 \lrnorm{ \x_{i,t} - \bar{\x}_t }^2 + 8(1-\beta)^2 \lrnorm{\nabla H_t(\bar{\x}_t)}^2 \\ \nonumber
+\le & 2G\beta^2  +  4(1-\beta)^2 \sigma^2 +  8 L^2 \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \x_{i,t} - \bar{\x}_t }^2 + 8 \lrnorm{\nabla H_t(\bar{\x}_t)}^2.
+\end{align}
+
+Thus, we obtain
+\begin{align}
+\nonumber
+& \lrincir{\frac{\eta\lrincir{ 1-(1+\alpha)^2\beta^2 }}{2} - \frac{4L\eta^2}{n} - \frac{4\eta^3 L^2}{n(1-\rho)^2} \lrincir{1+\frac{1}{\alpha}}(1-\beta)^2} \EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} }\sum_{t=1}^T\lrnorm{\nabla H_t(\bar{\x}_t)}^2 \\ \nonumber 
+\le & \lrincir{\frac{\eta\lrincir{ 1-(1+\alpha)^2\beta^2 }}{2} - \frac{4L\eta^2}{n} - \frac{4\eta^3 L^2}{n(1-\rho)^2} \lrincir{1+\frac{1}{\alpha}}(1-\beta)^2} \EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} }\sum_{t=1}^T\lrnorm{\nabla H_t(\bar{\x}_t)}^2 \\ \nonumber 
+&+ \frac{\eta}{2}  \EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} }\sum_{t=1}^T\lrnorm{\frac{1}{n}\sum_{i=1}^n \nabla F_{i,t}(\x_{i,t})}^2 \\ \nonumber 
+\le &  \lrincir{\frac{L\eta^2}{2n} + \frac{\eta^3 L^2}{2n(1-\rho)^2} \lrincir{1+\frac{1}{\alpha}}(1-\beta)^2 } n T \lrincir{ 2G\beta^2  +  4(1-\beta)^2 \sigma^2 } \\ \nonumber
+& + \EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} } \sum_{t=1}^T \lrincir{ H_t(\bar{\x}_t) -  H_t(\bar{\x}_{t+1}) } + \frac{T \eta \beta^2}{2} (1+\alpha) \lrincir{1+\frac{1}{\alpha}}  G \\ \nonumber
+& + 8L^2\lrincir{\frac{L\eta^2}{2n} + \frac{\eta^3 L^2}{2n(1-\rho)^2} \lrincir{1+\frac{1}{\alpha}}(1-\beta)^2 } \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{i=1}^n \sum_{t=1}^T \lrnorm{ \x_{i,t} - \bar{\x}_t }^2  \\ \nonumber
+\le &  \lrincir{\frac{L\eta^2}{2} + \frac{\eta^3 L^2}{2(1-\rho)^2} \lrincir{1+\frac{1}{\alpha}}(1-\beta)^2 }  T \lrincir{ 2G\beta^2  +  4(1-\beta)^2 \sigma^2 } \\ \nonumber
+& + \EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} } \sum_{t=1}^T \lrincir{ H_t(\bar{\x}_t) -  H_t(\bar{\x}_{t+1}) } + \frac{T \eta \beta^2}{2} (1+\alpha) \lrincir{1+\frac{1}{\alpha}}  G \\ \nonumber
+& + 8L^2\lrincir{\frac{L\eta^2}{2} + \frac{\eta^3 L^2}{2(1-\rho)^2} \lrincir{1+\frac{1}{\alpha}}(1-\beta)^2 } \lrincir{ \frac{\eta^2}{(1-\rho)^2} \lrincir{ 4TG\beta^2  +  8T(1-\beta)^2 \sigma^2 + 16(1-\beta)^2 \sum_{t=1}^T \lrnorm{\nabla H_t(\bar{\x}_t)}^2 }  }. 
+\end{align} The last inequality holds due to Lemma \ref{lemma_x_variance_norm_square}.
+
+Setting 
+\begin{align}
+\nonumber
+\eta \le \min\left\{ \frac{n\lrincir{ 1-(1+\alpha)^2\beta^2 }}{32L}, \frac{(1-\rho)^2}{L\lrincir{1+\frac{1}{\alpha}}(1-\beta)^2} \right\},
+\end{align}
+ we have
+\begin{align}
+\nonumber
+\frac{L\eta^2}{2n} \le & \frac{\eta\lrincir{ 1-(1+\alpha)^2\beta^2 }}{8}, \\ \nonumber
+\frac{\eta^3 L^2}{2(1-\rho)^2} \lrincir{1+\frac{1}{\alpha}}(1-\beta)^2 \le & \frac{\eta\lrincir{ 1-(1+\alpha)^2\beta^2 }}{8}, \\ \nonumber
+\frac{\eta^3 L^2}{2n(1-\rho)^2} \lrincir{1+\frac{1}{\alpha}}(1-\beta)^2 \le & \frac{L\eta^2}{2n}.
+\end{align} Thus, we obtain
+\begin{align}
+\nonumber
+& \frac{\eta\lrincir{ 1-(1+\alpha)^2\beta^2 }}{4} \EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} }\sum_{t=1}^T\lrnorm{\nabla H_t(\bar{\x}_t)}^2 \\ \nonumber 
+\le &  LT\eta^2 \lrincir{ 2G\beta^2  +  4(1-\beta)^2 \sigma^2 }  + \EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} } \sum_{t=1}^T \lrincir{ H_t(\bar{\x}_t) -  H_t(\bar{\x}_{t+1}) } + \frac{T \eta \beta^2}{2} (1+\alpha) \lrincir{1+\frac{1}{\alpha}}  G \\ \nonumber
+& +   \frac{8L^3\eta^4}{(1-\rho)^2} \lrincir{ 4TG\beta^2  +  8T(1-\beta)^2 \sigma^2 + 16(1-\beta)^2 \EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} }\sum_{t=1}^T \lrnorm{\nabla H_t(\bar{\x}_t)}^2 }  
 \end{align}
 
 
 
 
-Finally, we obtain
-\begin{align}
-\nonumber
-& \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t)}^2  \\ \nonumber
-\le & \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\nabla H_t(\bar{\x}_t)}^2 + \frac{\eta}{2}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\frac{1}{n}\sum_{i=1}^n \nabla F_{i,t}(\x_{i,t})}^2 \\ \nonumber 
-\le & \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})} + 2\eta\beta^2(3G + 2\sigma^2) +  \frac{\eta L^2(1-\beta)^2}{n}\sum_{i=1}^n\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\bar{\x}_t - \x_{i,t} }^2 \\ \nonumber 
-& + 3GL\eta^2  + 2L\eta^2 \sigma^2.
-\end{align} It completes the proof.
+
+
+
+
+
+
+
+
+
 \end{proof}
 
 
@@ -626,7 +684,7 @@ Recall that
 Using Assumption \ref{assumption_bounded_gradient_domain}, and setting $\eta>0$ in Algorithm \ref{algo_dog}, we have 
 \begin{align}
 \nonumber
-\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{i=1}^n\sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2 \le \frac{\eta^2}{(1-\rho)^2}   \lrincir{ 6nTG + 4(1-\beta)nT \sigma^2 }.
+\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{i=1}^n\sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2 \le \frac{\eta^2}{(1-\rho)^2} \lrincir{ 4nTG\beta^2  +  8nT(1-\beta)^2 \sigma^2 + 16n(1-\beta)^2 \sum_{t=1}^T \lrnorm{\nabla H_t(\bar{\x}_t)}^2 }.
 \end{align}
 
 \end{Lemma}
@@ -674,10 +732,20 @@ Thus, we  have
 \le & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T \lrincir{ \sum_{s=1}^{t-1} \eta \rho^{t-s-1} \lrnorm{\G_s}_F}^2  \\ \nonumber
 \refabovecir{\le}{\textcircled{1}} & \frac{\eta^2}{(1-\rho)^2} \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \lrincir{  \sum_{t=1}^T \lrnorm{\G_t}_F^2 } \\ \nonumber
 = & \frac{\eta^2}{(1-\rho)^2} \lrincir{ \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T \sum_{i=1}^n  \lrnorm{\nabla f_{i,t}(\x_{i,t}; \xi_{i,t})}^2 } \\ \nonumber
-= & \frac{\eta^2}{(1-\rho)^2} \lrincir{  \sum_{t=1}^T \sum_{i=1}^n \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrnorm{\nabla f_{i,t}(\x_{i,t}; \xi_{i,t})}^2 } \\ \nonumber
-\refabovecir{\le}{\textcircled{2}} & \frac{\eta^2}{(1-\rho)^2} \lrincir{  6nTG + 4nT (1-\beta) \sigma^2 }.
-\end{align} $\textcircled{1}$ holds due to Lemma \ref{lemma_hanlin_2}. $\textcircled{2}$ holds due to Lemma \ref{lemma_stochastic_gradient_norm_bound}.
-It completes the proof.
+= & \frac{\eta^2}{(1-\rho)^2} \lrincir{ 2nTG\beta^2  +  4nT(1-\beta)^2 \sigma^2 +  8(1-\beta)^2 L^2 \sum_{t=1}^T \sum_{i=1}^n \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \x_{i,t} - \bar{\x}_t }^2 + 8n(1-\beta)^2 \sum_{t=1}^T \lrnorm{\nabla H_t(\bar{\x}_t)}^2 }.
+\end{align} $\textcircled{1}$ holds due to Lemma \ref{lemma_hanlin_2}. 
+We thus have
+\begin{align}
+\nonumber
+& \lrincir{ 1 - \frac{8(1-\beta)^2L^2\eta^2}{(1-\rho)^2} }\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{i=1}^n\sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2 \\ \nonumber 
+\le & \frac{\eta^2}{(1-\rho)^2} \lrincir{ 2nTG\beta^2  +  4nT(1-\beta)^2 \sigma^2 + 8n(1-\beta)^2 \sum_{t=1}^T \lrnorm{\nabla H_t(\bar{\x}_t)}^2 }.
+\end{align} When $\eta \le \frac{1-\rho}{4(1-\beta)L}$, it is trivial to verify $\frac{8(1-\beta)^2L^2\eta^2}{(1-\rho)^2} \le \frac{1}{2}$. Thus, we have
+\begin{align}
+\nonumber
+& \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{i=1}^n\sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2 \\ \nonumber 
+\le & \frac{\eta^2}{(1-\rho)^2} \lrincir{ 4nTG\beta^2  +  8nT(1-\beta)^2 \sigma^2 + 16n(1-\beta)^2 \sum_{t=1}^T \lrnorm{\nabla H_t(\bar{\x}_t)}^2 }.
+\end{align}
+
 
 
 \end{proof}
