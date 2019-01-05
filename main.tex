@@ -128,7 +128,7 @@ $\{\x_t^\ast\}_{t=1}^T$ is the sequence of reference points, and
    \caption{DOG: Decentralized Online Gradient.}
    \label{algo_dog}
    \begin{algorithmic}[1]
-   \Require The learning rate $\eta$, number of iterations $T$, and the confusion matrix $\W$.
+   \Require The learning rate $\eta$, number of iterations $T$, and the confusion matrix $\W$. $\x_{i,1} = \0$ for any $i\in [n]$.
        \For {$t=1,2, ..., T$}
            \StateX For the $i$-th node with $i\in[n]$:
             \State \indent Predict $\x_{i,t}$.
@@ -468,9 +468,9 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, we have
 \nonumber
 & \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \partial f_{i,t}(\x_{i,t};\xi_{i,t})}^2 \\ \nonumber 
 = & \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \beta \partial g_{i,t}(\x_{i,t}) + (1-\beta)\nabla h_t(\x_{i,t};\xi_{i,t})}^2 \\ \nonumber 
-\le &  \beta \lrnorm{ \partial g_{i,t}(\x_{i,t}) }^2 + (1-\beta) \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrnorm{ \nabla h_t(\x_{i,t};\xi_{i,t}) }^2 \\ \nonumber 
+\le &  \beta \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{ \partial g_{i,t}(\x_{i,t}) }^2 + (1-\beta) \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrnorm{ \nabla h_t(\x_{i,t};\xi_{i,t}) }^2 \\ \nonumber 
 \le & G.
-\end{align} 
+\end{align} It completes the proof.
 \end{proof}
 
 
@@ -518,7 +518,7 @@ Besides, we have
 \end{align} and 
 \begin{align}
 \nonumber
-\lrnorm{\frac{1}{n}\sum_{i=1}^n \partial g_{i,t}(\x_{i,t})}^2 \le \frac{1}{n}\sum_{i=1}^n  \lrnorm{\partial g_{i,t}(\x_{i,t})}^2 \le G.
+\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\frac{1}{n}\sum_{i=1}^n \partial g_{i,t}(\x_{i,t})}^2 \le \frac{1}{n}\sum_{i=1}^n  \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrnorm{\partial g_{i,t}(\x_{i,t})}^2 \le G.
 \end{align}
 
 
@@ -535,8 +535,8 @@ Substituting \eqref{equa_lemma_gradient_norm_temp1} and \eqref{equa_lemma_gradie
 \nonumber
 & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T H_t(\bar{\x}_{t+1}) \\ \nonumber
 \le & \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } H_t(\bar{\x}_t) + \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\lrangle{\nabla H_t(\bar{\x}_t), -\frac{\eta}{n}\sum_{i=1}^n \partial f_{i,t}(\x_{i,t})} + \frac{L}{2} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{\frac{\eta}{n}\sum_{i=1}^n \partial f_{i,t}(\x_{i,t};\xi_{i,t})}^2 \\ \nonumber
-\le & \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } H_t(\bar{\x}_t) + \lrincir{ \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \frac{\eta}{2}\lrincir{ 8\beta^2 G + \frac{2(1-\beta)^2L^2}{n}\sum_{i=1}^n \lrnorm{ \bar{\x}_t - \x_{i,t} }^2 }  - \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } \frac{\eta}{2} \lrnorm{\nabla H_t(\bar{\x}_t)}^2 } + \frac{GL\eta^2}{2} \\ \nonumber
-= & \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } H_t(\bar{\x}_t) + \lrincir{  4\eta\beta^2 G + \frac{(1-\beta)^2L^2 \eta}{n}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\sum_{i=1}^n \lrnorm{ \bar{\x}_t - \x_{i,t} }^2   - \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } \frac{\eta}{2} \lrnorm{\nabla H_t(\bar{\x}_t)}^2 } + \frac{GL\eta^2}{2} \\ \nonumber
+\le & \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } H_t(\bar{\x}_t) + \lrincir{ \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } \frac{\eta}{2}\lrincir{ 8\beta^2 G + \frac{2(1-\beta)^2L^2}{n}\sum_{i=1}^n \lrnorm{ \bar{\x}_t - \x_{i,t} }^2 }  - \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } \frac{\eta}{2} \lrnorm{\nabla H_t(\bar{\x}_t)}^2 } + \frac{GL\eta^2}{2} \\ \nonumber
+= & \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } H_t(\bar{\x}_t) + \lrincir{  4\eta\beta^2 G + \frac{(1-\beta)^2L^2 \eta}{n}\EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} }\sum_{i=1}^n \lrnorm{ \bar{\x}_t - \x_{i,t} }^2   - \EE_{ \Xi_{n,t-1} \sim \Dcal_{n,t-1} } \frac{\eta}{2} \lrnorm{\nabla H_t(\bar{\x}_t)}^2 } + \frac{GL\eta^2}{2}.
 \end{align} Telescoping over $t\in[T]$, we have
 \begin{align}
 & \frac{\eta}{2} \EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} }\sum_{t=1}^T \lrnorm{\nabla H_t(\bar{\x}_t)}^2 \\ \nonumber
@@ -587,7 +587,7 @@ Recall that
 = & \X_{t}\W\frac{\1}{n} - \eta \G_t\frac{\1}{n} \\ \nonumber
 = & \X_{t}\frac{\1}{n} - \eta \G_t\frac{\1}{n} \\ \nonumber
 =& \bar{\x}_{t} - \eta \lrincir{\frac{1}{n} \sum_{i=1}^n \partial f_{i,t}(\x_{i,t}; \xi_{i,t})}. 
-\end{align}
+\end{align} It completes the proof.
 \end{proof}
 
 
