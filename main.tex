@@ -95,7 +95,7 @@ For any online algorithm $A \in \Acal$, define its dynamic regret as
 \begin{align}
 \nonumber
 f_{i,t}(\x;\xi_{i,t}) := \beta g_{i,t}(\x) + (1-\beta) h_t(\x; \xi_{i,t})
-\end{align} with $0<\beta<1$, and $\xi_{i,t}$ is a random variable drawn from an unknown distribution $D_{i,t}$. $g_{i,t}$ is an adversary loss function. $h_t(\cdot, \xi_{i,t})$ is a given loss function depending on the random variable $\xi_{i,t}$. Besides, we denote 
+\end{align} with $0<\beta<1$, and $\xi_{i,t}$ is a random variable drawn from an unknown distribution $D_{i,t}$.  $g_{i,t}$ is an adversary loss function. $h_t(\cdot, \xi_{i,t})$ is a given loss function depending on the random variable $\xi_{i,t}$. Besides, we denote 
 \begin{align}
 \nonumber
 H_t(\cdot) = \EE_{\xi_{i,t} \sim D_{i,t}} h_t(\cdot; \xi_{i,t}),
@@ -105,14 +105,14 @@ H_t(\cdot) = \EE_{\xi_{i,t} \sim D_{i,t}} h_t(\cdot; \xi_{i,t}),
 F_{i,t}(\cdot) = \EE_{\xi_{i,t} \sim D_{i,t}} f_{i,t}(\cdot; \xi_{i,t}).
 \end{align}
 
-
-
-
-
-The budget of the dynamics is defined as
+$\{\x_t^\ast\}_{t=1}^T$ is the sequence of reference points, and 
+\begin{align}
+\nonumber
+\{\x_t^\ast\}_{t=1}^T \in \left\{ \{\z_t\}_{t=1}^{T-1} : \sum_{t=1}^T \lrnorm{\z_t - \z_{t+1}} \le M \right\}.
+\end{align} Here, $M$ is the budget of the dynamics, that is,
 \begin{align}
 \label{equa_define_M}
-\sum_{t=1}^T \lrnorm{\x_{t+1}^\ast - \x_t^\ast} \le M.
+\sum_{t=1}^{T-1} \lrnorm{\x_{t+1}^\ast - \x_t^\ast} \le M.
 \end{align}
 
 
