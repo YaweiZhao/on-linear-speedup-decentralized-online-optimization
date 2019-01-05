@@ -51,7 +51,7 @@
 
 %\twocolumn[
 
-\title{Gossip Online Learning: Exchanging Local Models to Tracking Dynamics}
+\title{Gossip Online Learning: Exchanging Local Models to Track Dynamics}
 
 \begin{document}
 
@@ -65,13 +65,23 @@
 
 
 
-
-
-
 \end{abstract}
 
 
 
+\section{Application scenarios}
+
+\textbf{Online music recommendation.} Suppose we want to decide whether to recommend a music to Bob by using a public dataset consisting of historical browser records on Youtube. But, some features of those records are not reliable. For example, Alice's browser record is in the public dataset. But Alice does not want to let others know her real birthday and age. She submits random numbers for such information when signing up as an Youtube user. Generally, suppose a users' behavior record is denoted by $\a\in\RR^{d\times 1}$.  We denote the label by $\y\in \RR$. If a user listens to the music, then the label is $\y = 1$, otherwise $\y = -1$. Without loss of generality, the unreliable features are denoted by the beginning $s$ features.  
+
+At the $t$-th iteration, the instance is $\a_t$, and the label is $\y_t$. Denote $g_{t}(\x) = \log \lrincir{1 + \exp\lrincir{-\y_{t}\a\Tr_{t} \hat{\I} \x}}$, where $\hat{\I}$ is yielded by letting the first $s$ diagonal elements of identity matrix be $0$s. In the case, $\xi_{i,t} = \check{\I} \a_t$, and $h_{i,t}(\x; \xi_{i,t}) = \log \lrincir{1 + \exp\lrincir{-\y_{t}\xi_{i,t}\Tr \x}}$, where $\check{\I}$ is yielded by letting the last $d-s$ diagonal elements of identity matrix be $0$s. 
+
+
+
+
+
+
+
+\section{Notations}
 For any $i\in[n]$ and $t\in[T]$, the random variable $\xi_{i,t}$ is subject to a distribution $D_{i,t}$, that is,
 \begin{align}
 \nonumber
@@ -107,7 +117,7 @@ F_{i,t}(\cdot) = \EE_{\xi_{i,t} \sim D_{i,t}} f_{i,t}(\cdot; \xi_{i,t}).
 $\{\x_t^\ast\}_{t=1}^T$ is the sequence of reference points, and 
 \begin{align}
 \nonumber
-\{\x_t^\ast\}_{t=1}^T \in \left\{ \{\z_t\}_{t=1}^{T-1} : \sum_{t=1}^T \lrnorm{\z_t - \z_{t+1}} \le M \right\}.
+\{\x_t^\ast\}_{t=1}^T \in \left\{ \{\z_t\}_{t=1}^{T} : \sum_{t=1}^{T-1} \lrnorm{\z_t - \z_{t+1}} \le M \right\}.
 \end{align} Here, $M$ is the budget of the dynamics, that is,
 \begin{align}
 \label{equa_define_M}
