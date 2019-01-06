@@ -69,46 +69,34 @@
 
 
 
-\section{Application scenarios}
 
-{\color{red}
-
-
-\textbf{Communication efficient online learning.} Suppose we want to conduct online learning on multiple nodes. Those nodes are connected in a decentralized way. At every iteration, the local model has to be broadcast to its neighbours. During online learning, the communication efficiency also needs to be considered. In the case, $g_{i,t}(\x_{i,t})$ represents the loss incurred by the learning model, and $h_{t}(\x_{i,t};\xi_{i,t})$ represents the loss incurred by some a random method, e.g., random quantization method \citep{dd}, to guarantee the communication efficiency. 
- 
-\textbf{Online learning with privacy.} Suppose we want to conduct online learning on a decentralized network. But, there is a hacker who can sniff at the network, and obtains the transmitted data packages. To protect the privacy, we use a randomization method to handle the local model before transmitting it in the network. In the case, $g_{i,t}(\x_{i,t})$ represents the loss incurred by the learning model. $h_{t}(\x_{i,t};\xi_{i,t})$ represents the loss incurred by some a randomization encryption method, e.g., parameter perturbation \citep{dd}, to protect the privacy. 
-
-\textbf{Online music recommendation with unreliable features.} Suppose we want to decide whether to recommend a music to Bob by using a public dataset consisting of historical browser records on Youtube. But, some values of features in those records are not reliable. For example, Alice's browser record is in the public dataset. But Alice does not want to let others know her real birthday and age. She submits random numbers for such information when signing up as an Youtube user. Note that those unreliable values, e.g., Alice's age and birthday, usually do not change, which is modeled by an unknown distribution. But, other reliable values, e.g., Alice's perference to a music, may change over time, which is a classic setting for an online learning problem.  In the case, $g_{i,t}(\x_{i,t})$ represents the loss incurred by those reliable features in the learing model, e.g., perference to a music. $h_{t}(\x_{i,t};\xi_{i,t})$ represents the loss incurred by those unreliable features in the  learing model, e.g., age and birthday. 
-
-
-
-
-
-
-}
 
 
 
 \section{Notations}
-For any $i\in[n]$ and $t\in[T]$, the random variable $\xi_{i,t}$ is subject to a distribution $D_{i,t}$, that is,
-\begin{align}
-\nonumber
-\xi_{i,t} \sim D_{i,t}.
-\end{align} Besides, a set of random variables $\Xi_{n,T}$ and the corresponding set of distributions are defined by
+For any $i\in[n]$ and $t\in[T]$, the random variable $\xi_{i,t}$ is subject to a distribution $D_{i,t}$, that is, $\xi_{i,t} \sim D_{i,t}$. Besides, a set of random variables $\Xi_{n,T}$ and the corresponding set of distributions are defined by
 \begin{align}
 \nonumber
 \Xi_{n,T} = \{ \xi_{i,t} \}_{1\le i \le n, 1 \le t \le T}, \text{~and~} \Dcal_{n,T} = \{ D_{i,t} \}_{1\le i \le n, 1 \le t \le T},
-\end{align} respectively. For math brevity, we use the notation $\Xi_{n,T} \sim \Dcal_{n,T}$ to represent that $\xi_{i,t} \sim D_{i,t}$ holds for any $i\in[n]$ and $t\in[T]$.  
+\end{align} respectively. For math brevity, we use the notation $\Xi_{n,T} \sim \Dcal_{n,T}$ to represent that $\xi_{i,t} \sim D_{i,t}$ holds for any $i\in[n]$ and $t\in[T]$.  $\EE$ represents mathematical expectation. $\partial$ and $\nabla$ represent sub-gradient and gradient operators, respectively. $\lrnorm{\cdot}$ represents the $\ell_2$ norm in default. 
 
 
-\section{Problem setup}
+\section{Problem formulation}
 
-
+\subsection{Setup}
 For any online algorithm $A \in \Acal$, define its dynamic regret as
 \begin{align}
 \nonumber
 \Rcal_T^{A} = & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \lrincir{ \sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^\ast;\xi_{i,t}) },
-\end{align} where, for any $\x$,
+\end{align} where $\{\x_t^\ast\}_{t=1}^T$ is the sequence of reference points, and 
+\begin{align}
+\nonumber
+\{\x_t^\ast\}_{t=1}^T \in \left\{ \{\z_t\}_{t=1}^{T} : \sum_{t=1}^{T-1} \lrnorm{\z_t - \z_{t+1}} \le M \right\}.
+\end{align} Here, $M$ is the budget of the dynamics, that is,
+\begin{align}
+\label{equa_define_M}
+\sum_{t=1}^{T-1} \lrnorm{\x_{t+1}^\ast - \x_t^\ast} \le M.
+\end{align} Besides, for any $\x$,
 \begin{align}
 \nonumber
 f_{i,t}(\x;\xi_{i,t}) := \beta g_{i,t}(\x) + (1-\beta) h_t(\x; \xi_{i,t})
@@ -122,18 +110,26 @@ H_t(\cdot) = \EE_{\xi_{i,t} \sim D_{i,t}} h_t(\cdot; \xi_{i,t}),
 F_{i,t}(\cdot) = \EE_{\xi_{i,t} \sim D_{i,t}} f_{i,t}(\cdot; \xi_{i,t}).
 \end{align}
 
-$\{\x_t^\ast\}_{t=1}^T$ is the sequence of reference points, and 
-\begin{align}
-\nonumber
-\{\x_t^\ast\}_{t=1}^T \in \left\{ \{\z_t\}_{t=1}^{T} : \sum_{t=1}^{T-1} \lrnorm{\z_t - \z_{t+1}} \le M \right\}.
-\end{align} Here, $M$ is the budget of the dynamics, that is,
-\begin{align}
-\label{equa_define_M}
-\sum_{t=1}^{T-1} \lrnorm{\x_{t+1}^\ast - \x_t^\ast} \le M.
-\end{align}
 
 
 
+\subsection{Application scenarios}
+
+{\color{red}
+
+
+\textbf{Communication efficient online learning.} Suppose we want to conduct online learning on multiple nodes. Those nodes are connected in a decentralized way. At every iteration, the local model has to be broadcast to its neighbours. During online learning, the communication efficiency also needs to be considered. In the case, $g_{i,t}(\x_{i,t})$ represents the loss incurred by the learning model, and $h_{t}(\x_{i,t};\xi_{i,t})$ represents the loss incurred by some a random method, e.g., random quantization method \citep{dd}, to guarantee the communication efficiency. A small $\beta$ means a strong guarantee for the communication efficiency.
+ 
+\textbf{Online learning with privacy.} Suppose we want to conduct online learning on a decentralized network. But, there is a hacker who can sniff at the network, and obtains the transmitted data packages. To protect the privacy, we use a randomization method to handle the local model before transmitting it in the network. In the case, $g_{i,t}(\x_{i,t})$ represents the loss incurred by the learning model. $h_{t}(\x_{i,t};\xi_{i,t})$ represents the loss incurred by some a randomization encryption method, e.g., parameter perturbation \citep{dd}, to protect the privacy. A small $\beta$ means a strong guarantee for the data privacy.
+
+\textbf{Online music recommendation with unreliable features.} Suppose we want to decide whether to recommend a music to Bob by using a public dataset consisting of historical browser records on Youtube. But, some values of features in those records are not reliable. For example, Alice's browser record is in the public dataset. But Alice does not want to let others know her real birthday and age. She submits random numbers for such information when signing up as an Youtube user. Note that those unreliable values, e.g., Alice's age and birthday, usually do not change, which is modeled by an unknown distribution. But, other reliable values, e.g., Alice's perference to a music, may change over time, which is a classic setting for an online learning problem.  In the case, $g_{i,t}(\x_{i,t})$ represents the loss incurred by those reliable features in the learing model, e.g., perference to a music. $h_{t}(\x_{i,t};\xi_{i,t})$ represents the loss incurred by those unreliable features in the  learing model, e.g., age and birthday. A small $\beta$ means significant attention on those unreliable features.
+
+
+
+
+
+
+}
 
 
 
@@ -143,8 +139,8 @@ $\{\x_t^\ast\}_{t=1}^T$ is the sequence of reference points, and
 
 \newcommand\StateX{\Statex\hspace{\algorithmicindent}}
 \begin{algorithm}[!]
-   \caption{DOG: Decentralized Online Gradient.}
-   \label{algo_dog}
+   \caption{\textsc{GOL}: Gossip Online Learning.}
+   \label{algo_GOL}
    \begin{algorithmic}[1]
    \Require The learning rate $\eta$, number of iterations $T$, and the confusion matrix $\W$. $\x_{i,1} = \0$ for any $i\in [n]$.
        \For {$t=1,2, ..., T$}
@@ -160,7 +156,7 @@ $\{\x_t^\ast\}_{t=1}^T$ is the sequence of reference points, and
 \end{algorithm}
 
 
-The decentralized online gradient method, namely \textit{DOG}, is presented in Algorithm \ref{algo_dog}. Comparing with the sequential online gradient method, every node needs to collect the decision variables from its neighbours, and then update its decision variable. The update rule is 
+The decentralized online gradient method, namely \textsc{GOL}, is presented in Algorithm \ref{algo_GOL}. Comparing with the sequential online gradient method, every node needs to collect the decision variable, e.g., $\x_{i,t}$, from its neighbours, and then update its decision variable. The update rule is 
 \begin{align}
 \nonumber
 \x_{i,t+1} = \sum_{j=1}^n \W_{i,j}\x_{j,t} - \eta \partial f_{i,t}(\x_{i,t};\xi_{i,t}).
@@ -174,7 +170,6 @@ The decentralized online gradient method, namely \textit{DOG}, is presented in A
 \section{Theoretical analysis}
 
 
-\subsection{Assumptions}
 \begin{Assumption}
 \label{assumption_bounded_gradient_domain}
 We make the following assumptions.
@@ -220,7 +215,7 @@ Denote
 \nonumber
 C_0 := & \frac{1}{\sqrt{\beta^2 + \eta}} + 4; \\ \nonumber
 C_1 := & \frac{\beta}{2\eta } +L + \frac{\sqrt{\beta^2 + \eta}}{2\eta} + 2\eta L^2  + C_0 (1-\beta)^2L^2 \eta.
-\end{align} Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing $\eta>0$ in Algorithm \ref{algo_dog}, we have
+\end{align} Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing $\eta>0$ in Algorithm \ref{algo_GOL}, we have
 \begin{align}
 \nonumber
 & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T\sum_{i=1}^n f_{i,t}(\x_{i,t};\xi_{i,t}) - f_t(\x_t^\ast;\xi_{i,t}) \\ \nonumber
@@ -241,10 +236,10 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing
 \begin{align}
 \nonumber
 \eta = \sqrt{\frac{nM}{ T\lrincir{n\beta G + (1-\beta)\sigma^2} }}
-\end{align} in Algorithm \ref{algo_dog}, we have
+\end{align} in Algorithm \ref{algo_GOL}, we have
 \begin{align}
 \nonumber
-\Rcal_T^{DOG} \lesssim & \sqrt{nMT\lrincir{\beta nG + (1-\beta)\sigma^2}} + n(1-\beta)C_0  \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T  \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})}.
+\Rcal_T^{\textsc{GOL}} \lesssim & \sqrt{nMT\lrincir{\beta nG + (1-\beta)\sigma^2}} + n(1-\beta)C_0  \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T  \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})}.
 \end{align}
 
 
@@ -258,6 +253,22 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing
 
 
 
+\section{Empirical studies}
+
+
+
+
+
+
+%\section*{References}
+\bibliography{reference}
+
+\bibliographystyle{abbrvnat}
+
+
+
+
+\newpage
 
 
 
@@ -495,7 +506,7 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, we have
 
 \begin{Lemma}
 \label{lemma_gradient_norm_bound}
-Using Assumption \ref{assumption_bounded_gradient_domain}, and setting $\eta>0$ in Algorithm \ref{algo_dog}, we have 
+Using Assumption \ref{assumption_bounded_gradient_domain}, and setting $\eta>0$ in Algorithm \ref{algo_GOL}, we have 
 \begin{align}
 & \frac{\eta}{2} \EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} }\sum_{t=1}^T \lrnorm{\nabla H_t(\bar{\x}_t)}^2 \\ \nonumber
 \le & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T  \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})} + 4T\beta^2 \eta G + \frac{(1-\beta)^2L^2 \eta}{n}\EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} }\sum_{t=1}^T\sum_{i=1}^n \lrnorm{ \bar{\x}_t - \x_{i,t} }^2 + \frac{TGL\eta^2}{2}.
@@ -614,7 +625,7 @@ Recall that
 
 \begin{Lemma}
 \label{lemma_x_variance_norm_square}
-Using Assumption \ref{assumption_bounded_gradient_domain}, and setting $\eta>0$ in Algorithm \ref{algo_dog}, we have 
+Using Assumption \ref{assumption_bounded_gradient_domain}, and setting $\eta>0$ in Algorithm \ref{algo_GOL}, we have 
 \begin{align}
 \nonumber
 \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{i=1}^n\sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2 \le \frac{nT\eta^2 G }{(1-\rho)^2}.
@@ -715,12 +726,6 @@ a_t = \sum_{s=1}^t \rho^{t-s} b_s,
 
 
 
-
-
-%\section*{References}
-\bibliography{reference}
-
-\bibliographystyle{abbrvnat}
 
 
 
