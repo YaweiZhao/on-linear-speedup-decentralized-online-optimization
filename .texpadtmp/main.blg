@@ -3,9 +3,10 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: abbrvnat.bst
 Database file #1: ../reference.bib
+Warning--I didn't find a database entry for "dd"
 You've used 1 entry,
             2773 wiz_defined-function locations,
-            598 strings with 4708 characters,
+            599 strings with 4710 characters,
 and the built_in function-call counts, 548 in all, are:
 = -- 40
 > -- 48
@@ -44,3 +45,4 @@ warning$ -- 0
 while$ -- 3
 width$ -- 0
 write$ -- 19
+(There was 1 warning)
