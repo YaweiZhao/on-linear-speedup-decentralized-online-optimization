@@ -115,7 +115,7 @@ F_{i,t}(\cdot) = \EE_{\xi_{i,t} \sim D_{i,t}} f_{i,t}(\cdot; \xi_{i,t}).
 
 
 {\color{blue}
-For every iteration, classic online learning in a decentralized network only considers the loss function, i.e., $F_{i,t}$, incurred by the learning model on every local node. Comparing with it, our definition of the dynamic regret, i.e., \eqref{equa_definition_our_regret}, still considers the loss function, i.e., $H_t$, incurred by a global model. The global model is used to let the decision variables, e.g., $\x_{i,t}$, have some good property in practical scenarios.  We present some application scenarios to explain it in Section \ref{subsection_application_scenarions}.
+For every iteration, classic online learning in a decentralized network only considers the loss function, i.e., $F_{i,t}$, incurred by the local learning model on every node. Comparing with it, our definition of the dynamic regret, i.e., \eqref{equa_definition_our_regret}, still considers the loss function, i.e., $H_t$, incurred by a global model. The global model is used to let the decision variables, e.g., $\x_{i,t}$, have some good property in practical scenarios.  We present some application scenarios to explain it in Section \ref{subsection_application_scenarions}.
 }
 
 
@@ -192,7 +192,7 @@ Suppose we still use logistic regression to decide whether to recommend music to
 \end{algorithm}
 
 
-The decentralized online gradient method, namely \textsc{DOG}, is presented in Algorithm \ref{algo_DOG}. At every iteration, every node needs to collect the decision variable, e.g., $\x_{i,t}$, from its neighbours, and then update its decision variable.  Here, $\W \in\RR^{n \times n}$ is the confusion matrix. It is a doublely stochastic matrix, which implies that every element of $\W$ is non-negative, $\W \1 = \1$, and $\1\Tr\W  = \1\Tr$.   
+The decentralized online gradient method, namely \textsc{DOG}, is presented in Algorithm \ref{algo_DOG}. At every iteration, every node needs to collect the decision variable, e.g., $\x_{i,t}$, from its neighbours, and then update its decision variable.  Here, $\W \in\RR^{n \times n}$ is the confusion matrix. It is a doublely stochastic matrix, which implies that every element of $\W$ is non-negative, $\W \1 = \1$, and $\1\Tr\W  = \1\Tr$.  Denote $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$. We can verify that $\bar{\x}_{t+1} =  \bar{\x}_t -  \frac{\eta}{n}\sum_{i=1}^n \partial f_{i,t}(\x_{i,t};\xi_{i,t})$ (see Lemma \ref{lemma_average_update_rule}). 
 
 
 
@@ -227,7 +227,7 @@ We make the following assumptions.
 
 \begin{Theorem}
 \label{theorem_regret_upper_bound}
-Denote 
+Denote $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$, and constants $C_0$ and $C_1$ by
 \begin{align}
 \nonumber
 C_0 := & \frac{1}{\sqrt{\beta^2 + \eta}} + 4; \\ \nonumber
