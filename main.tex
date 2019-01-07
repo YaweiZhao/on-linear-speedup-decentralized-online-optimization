@@ -86,9 +86,13 @@ For any $i\in[n]$ and $t\in[T]$, the random variable $\xi_{i,t}$ is subject to a
 \subsection{Setup}
 For any online algorithm $A \in \Acal$, define its dynamic regret as
 \begin{align}
-\nonumber
+\label{equa_definition_our_regret}
 \Rcal_T^{A} = & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \lrincir{ \sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^\ast;\xi_{i,t}) },
-\end{align} where $\{\x_t^\ast\}_{t=1}^T$ is the sequence of reference points, and 
+\end{align} where $n$ is the number of nodes in the decentralized network. The local loss function $f_{i,t}(\x;\xi_{i,t})$ is defined by
+\begin{align}
+\nonumber
+f_{i,t}(\x;\xi_{i,t}) := \beta g_{i,t}(\x) + (1-\beta) h_t(\x; \xi_{i,t})
+\end{align} with $0<\beta<1$, and $\xi_{i,t}$ is a random variable drawn from an unknown distribution $D_{i,t}$.  $g_{i,t}$ is an adversary loss function. $h_t(\cdot, \xi_{i,t})$ is a given loss function depending on the random variable $\xi_{i,t}$. $\{\x_t^\ast\}_{t=1}^T$ is the sequence of reference points, and 
 \begin{align}
 \nonumber
 \{\x_t^\ast\}_{t=1}^T \in \left\{ \{\z_t\}_{t=1}^{T} : \sum_{t=1}^{T-1} \lrnorm{\z_t - \z_{t+1}} \le M \right\}.
@@ -96,11 +100,9 @@ For any online algorithm $A \in \Acal$, define its dynamic regret as
 \begin{align}
 \label{equa_define_M}
 \sum_{t=1}^{T-1} \lrnorm{\x_{t+1}^\ast - \x_t^\ast} \le M.
-\end{align} Besides, for any $\x$,
-\begin{align}
-\nonumber
-f_{i,t}(\x;\xi_{i,t}) := \beta g_{i,t}(\x) + (1-\beta) h_t(\x; \xi_{i,t})
-\end{align} with $0<\beta<1$, and $\xi_{i,t}$ is a random variable drawn from an unknown distribution $D_{i,t}$.  $g_{i,t}$ is an adversary loss function. $h_t(\cdot, \xi_{i,t})$ is a given loss function depending on the random variable $\xi_{i,t}$. Besides, we denote 
+\end{align} 
+
+Besides, we denote 
 \begin{align}
 \nonumber
 H_t(\cdot) = \EE_{\xi_{i,t} \sim D_{i,t}} h_t(\cdot; \xi_{i,t}),
@@ -112,16 +114,22 @@ F_{i,t}(\cdot) = \EE_{\xi_{i,t} \sim D_{i,t}} f_{i,t}(\cdot; \xi_{i,t}).
 
 
 
+{\color{blue}
+For every iteration, classic online learning in a decentralized network only considers the loss function, i.e., $F_{i,t}$, incurred by the learning model on every local node. Comparing with it, our definition of the dynamic regret, i.e., \eqref{equa_definition_our_regret}, still considers the loss function, i.e., $H_t$, incurred by a global model. The global model is used to let the decision variables, e.g., $\x_{i,t}$, have some good property in practical scenarios.  We present some application scenarios to explain it in Section \ref{subsection_application_scenarions}.
+}
+
+
+
 
 \subsection{Application scenarios}
-
+\label{subsection_application_scenarions}
 {\color{blue}
 
 
-\textbf{Communication efficient online learning.} Suppose we want to conduct online learning on multiple nodes. Those nodes are connected in a decentralized way. At every iteration, the local model has to be broadcast to its neighbours. During online learning, the communication efficiency also needs to be considered. In the case, $g_{i,t}(\x_{i,t})$ represents the loss incurred by the learning model, and $h_{t}(\x_{i,t};\xi_{i,t})$ represents the loss incurred by some a random method, e.g., random quantization method \citep{dd}, to guarantee the communication efficiency. A small $\beta$ means a strong guarantee for the communication efficiency.
+\textbf{Communication efficient online learning.} Suppose we want to conduct online learning in a decentralized network. At every iteration, a node has to broadcast the local model has to its neighbours, and the communication efficiency needs to be considered. In the case, $g_{i,t}(\x)$ represents the loss incurred by the learning model, and $h_t(\x;\xi_{i,t})$ represents the loss incurred by some a quantization method to guarantee the communication efficiency. A small $\beta$ means a strong guarantee for the communication efficiency.
 
 
-Suppose we want to conduct online classification by using logistic regression model. Given an instance $\a_{i,t} \in \RR^d$ and its label $\y_{i,t} \in \{1,-1\}$. In the case, $g_{i,t}(\x) = \log\lrincir{1 + \exp(-\y_{i,t}\a_{i,t}\Tr \x)}$. We let $h_t(\x;\xi_{i,t}) = h_t(\x) = \lambda \lrnorm{\Q\x}_1$\footnote{Note that $h_t(\x)$ does not contain a random variable $\xi_{i,t}$, which is a special case of $h_t(\x;\xi_{i,t})$. }.  Here, $\lambda$ with $\lambda>0$ is a given hyper-parameter. $\Q\in\RR^{(d-1)\times d}$ is a special matrix:
+Suppose we want to conduct online classification by using logistic regression model. Given an instance $\a_{i,t} \in \RR^d$ and its label $\y_{i,t} \in \{1,-1\}$. In the case, $g_{i,t}(\x) = \log\lrincir{1 + \exp(-\y_{i,t}\a_{i,t}\Tr \x)}$. We let $h_t(\x;\xi_{i,t}) = \lambda_t \lrnorm{\Q\x}_1$\footnote{In the case,  the  random variable $\xi_{i,t}$ is not necessary, which is a special case. }.  Here, $\lambda_t$ with $\lambda_t>0$ is a given hyper-parameter. $\Q\in\RR^{(d-1)\times d}$ is a special matrix:
 \begin{align}
 \nonumber
 \Q = \begin{bmatrix}
@@ -130,20 +138,20 @@ Suppose we want to conduct online classification by using logistic regression mo
  &  & \cdots & &\\ 
  &  &  &  1& -1
 \end{bmatrix}.
-\end{align} Here, $h_t(\x)$ plays the role of a regularizer, which induces the difference between elements of $\x$ to be sparse. Thus, it is able to transmit $\x$ by using few different elements, and improve the communication efficiency.   
+\end{align} Here, $h_t(\x;\xi_{i,t})$ induces the difference between elements of $\x$ to be sparse. Thus, it is able to transmit $\x$ by using few different elements, and improve the communication efficiency.  When $\lambda_t$ is a constant, and does not depend on $t$, $h_t(\x;\xi_{i,t})$ plays a role of a regularizer.
 
 
 
 
  
-\textbf{Online learning with privacy protection.} Suppose we want to conduct online learning on a decentralized network. But, there is a hacker who can sniff at the network, and obtains the transmitted data packages. To protect the privacy, we use a randomization method to handle the local model before transmitting it in the network. In the case, $g_{i,t}(\x_{i,t})$ represents the loss incurred by the learning model. $h_{t}(\x_{i,t};\xi_{i,t})$ represents the loss incurred by some a randomization encryption method, e.g., objective perturbation \citep{Chaudhuri:2011tr,NIPS2017_6865}, to protect the privacy. A small $\beta$ means a strong guarantee for the data privacy.  
+\textbf{Online learning with privacy protection.} Suppose we want to conduct online learning on a decentralized network. But, there is a hacker who can sniff at the network, and obtains the transmitted data packages. To protect the privacy, we use a randomization encryption method to protect the local model before transmitting it in the network. In the case, $g_{i,t}(\x_{i,t})$ represents the loss incurred by the learning model. $h_{t}(\x_{i,t};\xi_{i,t})$ represents the loss incurred by some a randomization encryption method, e.g., objective perturbation \citep{Chaudhuri:2011tr,NIPS2017_6865}, to protect the privacy. A small $\beta$ means a strong guarantee for the data privacy.  
 
 
-Similarly, suppose we want to conduct online classification by using logistic regression model. Given an instance $\a_{i,t} \in \RR^d$ and its label $\y_{i,t} \in \{1,-1\}$.  In the case, $g_{i,t}(\x) = \log\lrincir{1 + \exp(-\y_{i,t}\a_{i,t}\Tr \x)}$. We use the objective perturbation strategy \citep{Chaudhuri:2011tr,NIPS2017_6865} to protect the privacy. Specifically, we let $h_t(\x;\xi_{i,t}) = h_t(\x;\xi) = \x\Tr\xi$, where $\xi$ is random noise, whose density is 
+Similarly, suppose we want to conduct online classification by using logistic regression model. Given an instance $\a_{i,t} \in \RR^d$ and its label $\y_{i,t} \in \{1,-1\}$.  In the case, $g_{i,t}(\x) = \log\lrincir{1 + \exp(-\y_{i,t}\a_{i,t}\Tr \x)}$. We use the objective perturbation strategy \citep{Chaudhuri:2011tr,NIPS2017_6865} to protect the privacy. Specifically, we let $h_t(\x;\xi_{i,t}) = \x\Tr\xi_{i,t}$, where $\xi_{i,t}$ is random noise, whose density is 
 \begin{align}
 \nonumber
-v(\x) = \frac{1}{\lambda}\exp(-\delta \lrnorm{\x}).
-\end{align} Here, $\lambda$ is a given hyper-parameter, $\delta$ is a known function of the constant $\epsilon$ for $\epsilon$-differential privacy \citep{Dwork:2014gx}. 
+v(\x) = \frac{1}{\lambda}\exp(-\delta_{i,t} \lrnorm{\x}).
+\end{align} Here, $\lambda$ is a given hyper-parameter, $\delta_{i,t}$ is a known function of the constant $\epsilon_{i,t}$ for $\epsilon_{i,t}$-differential privacy \citep{Dwork:2014gx}. 
 
 
 
@@ -184,14 +192,7 @@ Suppose we still use logistic regression to decide whether to recommend music to
 \end{algorithm}
 
 
-The decentralized online gradient method, namely \textsc{DOG}, is presented in Algorithm \ref{algo_DOG}. Comparing with the sequential online gradient method, every node needs to collect the decision variable, e.g., $\x_{i,t}$, from its neighbours, and then update its decision variable. The update rule is 
-\begin{align}
-\nonumber
-\x_{i,t+1} = \sum_{j=1}^n \W_{i,j}\x_{j,t} - \eta \partial f_{i,t}(\x_{i,t};\xi_{i,t}).
-\end{align} Here, $\W \in\RR^{n \times n}$ is the confusion matrix. It is a doublely stochastic matrix, which implies that every element of $\W$ is non-negative, $\W \1 = \1$, and $\1\Tr\W  = \1\Tr$. 
-
-
-   
+The decentralized online gradient method, namely \textsc{DOG}, is presented in Algorithm \ref{algo_DOG}. At every iteration, every node needs to collect the decision variable, e.g., $\x_{i,t}$, from its neighbours, and then update its decision variable.  Here, $\W \in\RR^{n \times n}$ is the confusion matrix. It is a doublely stochastic matrix, which implies that every element of $\W$ is non-negative, $\W \1 = \1$, and $\1\Tr\W  = \1\Tr$.   
 
 
 
@@ -300,6 +301,23 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing
 
 
 \section{Empirical studies}
+
+
+\subsection{Communication efficient online logistic regression}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -693,7 +711,7 @@ Recall that
 \begin{align}
 \nonumber
 \X_t = &  [\x_{1,t}, \x_{2,t}, ..., \x_{n,t}] \in \RR^{d\times n}, \\ \nonumber
-\G_t = & [\nabla f_{1,t}(\x_{1,t};\xi_{1,t}), \nabla f_{2,t}(\x_{2,t};\xi_{2,t}), ..., \nabla f_{n,t}(\x_{n,t};\xi_{n,t})] \in \RR^{d\times n}.
+\G_t = & [\partial f_{1,t}(\x_{1,t};\xi_{1,t}), \partial f_{2,t}(\x_{2,t};\xi_{2,t}), ..., \partial f_{n,t}(\x_{n,t};\xi_{n,t})] \in \RR^{d\times n}.
 \end{align} By letting $\x_{i,1} = \0$ for any $i\in[n]$, the update rule is re-formulated as 
 \begin{align}
 \nonumber
