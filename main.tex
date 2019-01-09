@@ -136,7 +136,7 @@ Recall that the previous definition of the dynamic regret is \eqref{equa_definit
 {\color{blue}
 
 
-\textbf{Communication efficient online learning.} Suppose we want to conduct online learning in a decentralized network. At every iteration, a node has to broadcast the local model has to its neighbours, and the communication efficiency needs to be considered. In the case, $g_{i,t}(\x)$ represents the loss incurred by the learning model, and $h_t(\x;\xi_{i,t})$ represents the loss incurred by some a quantization method to guarantee the communication efficiency. A small $\beta$ means a strong guarantee for the communication efficiency.
+\textbf{Communication efficient online learning.} Suppose we want to conduct online learning in a decentralized network. At every iteration, a node has to broadcast the local model to its neighbours, and the communication efficiency needs to be considered. In the case, $g_{i,t}(\x)$ represents the loss incurred by the learning model, and $h_t(\x;\xi_{i,t})$ represents the loss incurred by some a quantization method to guarantee the communication efficiency. A small $\beta$ means a strong guarantee for the communication efficiency.
 
 
 Suppose we want to conduct online classification by using logistic regression model. Given an instance $\a_{i,t} \in \RR^d$ and its label $\y_{i,t} \in \{1,-1\}$. In the case, $g_{i,t}(\x) = \log\lrincir{1 + \exp(-\y_{i,t}\a_{i,t}\Tr \x)}$. We let $h_t(\x;\xi_{i,t}) = \lambda_t \lrnorm{\Q\x}_1$\footnote{In the case,  the  random variable $\xi_{i,t}$ is not necessary, which is a special case. }.  Here, $\lambda_t$ with $\lambda_t>0$ is a given hyper-parameter. By using different $\lambda_t$ over $t$, it is flexiable to adjust the communicaion efficiency timely. $\Q\in\RR^{(d-1)\times d}$ is a special matrix:
@@ -311,6 +311,14 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing
 
 
 \section{Empirical studies}
+
+
+\subsection{Experimental settings}
+We simulate the decentralized network consisting of $4$ nodes. Those nodes are connected as a ring topology. Besides, we conduct online logistic regression by using datasets: xx, yy, and zz in the decentralized network.  As we have shown in Section \ref{subsection_application_scenarions}, we test the dynamic regret in those three application scenarios.  
+
+
+
+
 
 
 \subsection{Communication efficient online logistic regression}
