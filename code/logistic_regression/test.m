@@ -60,8 +60,8 @@ tic;
 for t=1:T
     
     for i=1:n % # of nodes
-        y_it = y(t*(n-1)+i,:);
-        A_it = A(:,t*(n-1)+i);
+        y_it = y((t-1)*n+i,:);
+        A_it = A(:,(t-1)*n+i);
 
         grad_basic = (-y_it * A_it) / (1 + exp(y_it * A_it'* X_t_basic_lr(:,i))); %gradient - basic lr
         grad_our_temp = (-y_it * A_it) / (1 + exp(y_it * A_it'* X_t_our_lr(:,i)));
@@ -90,8 +90,8 @@ for t=1:T
         
         cvx_begin quiet
         variable x_ast(d,t)
-        cumu_obj_basic_lr = trace( log(1 + exp( (repmat(-y(i:n:t*(n-1)+i,:), 1, d)...
-            .* transpose(A(:,i:n:t*(n-1)+i)) )*x_ast)) );
+        cumu_obj_basic_lr = trace( log(1 + exp( (repmat(-y(i:n:(t-1)*n+i,:), 1, d)...
+            .* transpose(A(:,i:n:(t-1)*n+i)) )*x_ast)) );
         minimize( cumu_obj_basic_lr );
         subject to
         norms( R * x_ast', 2 , 2) <= M; %dynamics M
@@ -103,8 +103,8 @@ for t=1:T
         
         cvx_begin quiet
         variable x_ast(d,t)
-        cumu_obj_our_lr = trace( beta * log(1 + exp( repmat(-y(i:n:t*(n-1)+i,:), 1, d)...
-            .* transpose(A(:,i:n:t*(n-1)+i)) *x_ast)))...
+        cumu_obj_our_lr = trace( beta * log(1 + exp( repmat(-y(i:n:(t-1)*n+i,:), 1, d)...
+            .* transpose(A(:,i:n:(t-1)*n+i)) *x_ast)))...
             +(1-beta) * sum(lambda * norms(Q*x_ast,2,1) );
         minimize( cumu_obj_our_lr );
         subject to
