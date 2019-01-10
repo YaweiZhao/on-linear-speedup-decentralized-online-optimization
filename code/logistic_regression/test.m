@@ -2,7 +2,7 @@
 %load data
 fn = './occupancy.mat';
 data = load(fn);
-data = data.data;
+data = data.new_data;
 [nn,d] = size(data);
 A = transpose(data(:,2:d));
 y = data(:,1);
