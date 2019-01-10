@@ -1,0 +1,1 @@
+time=10.9 | regret-basic=3.34 | regret-our(beta1)=3.02 | regret-our(beta2)=2.7 | regret-our(beta3)=2.35
