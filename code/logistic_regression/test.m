@@ -1,6 +1,6 @@
 
 %load data
-fn = './online-retail.mat';
+fn = './pm25.mat';
 data = load(fn);
 data = data.new_data;
 [nn,d] = size(data);
@@ -9,7 +9,7 @@ y = data(:,1);
 d = d-1;
 
 %hyper-parameter
-T=500;
+T=800;
 eta = 1e-2;
 lambda = 1e-1;
 beta1 = 0.9;%varying beta1 0.9 0.8 0.7
