@@ -17,17 +17,24 @@ M = 10; %dynamics
 n = 5; % # of nodes
 
 %construct the confusion matrix W. Ring topology 
-W = 1/2 * eye(n);
+W =  eye(n);
 for i=1:n
     for j=1:n
         if i==n
-            
+             W(i,1) = 1;
         end
         if i+1 <= n && j == i+1
-            W(i,j) = 1/2;
+            W(i,j) = 1;
+        end
+        if i==1
+            W(i,n) = 1;
+        end
+        if i-1>=1 && j == i-1
+            W(i,j) = 1;
         end
     end
 end
+W = W/3;
 
 
 
@@ -53,8 +60,8 @@ tic;
 for t=1:T
     
     for i=1:n % # of nodes
-        y_it = y(t+i,:);
-        A_it = A(:,t+i);
+        y_it = y((t-1)*n+i,:);
+        A_it = A(:,(t-1)*n+i);
 
         grad_basic = (-y_it * A_it) / (1 + exp(y_it * A_it'* X_t_basic_lr(:,i))); %gradient - basic lr
         grad_our_temp = (-y_it * A_it) / (1 + exp(y_it * A_it'* X_t_our_lr(:,i)));
@@ -68,8 +75,8 @@ for t=1:T
     
     for i=1:n
         %evaluate dynamic regret
-        Loss_basic_lr(:,i) = Loss_basic_lr(:,i) + log(1 + exp(-y_t*A_t' * X_t_basic_lr(:,i)));
-        Loss_our_lr(:,i) = Loss_our_lr(:,i) + beta * log(1 + exp(-y_t*A_t'*X_t_our_lr(:,i))) + (1-beta)...
+        Loss_basic_lr(:,i) = Loss_basic_lr(:,i) + log(1 + exp(-y_it*A_it' * X_t_basic_lr(:,i)));
+        Loss_our_lr(:,i) = Loss_our_lr(:,i) + beta * log(1 + exp(-y_it*A_it'*X_t_our_lr(:,i))) + (1-beta)...
             * lambda * norm(Q*X_t_our_lr(:,i), 2);
         
         %auxiliary matrix R
@@ -83,7 +90,8 @@ for t=1:T
         
         cvx_begin quiet
         variable x_ast(d,t)
-        cumu_obj_basic_lr = trace( log(1 + exp( (repmat(-y(i:n:n*t+i,:), 1, d) .* transpose(A(:,i:n:n*t+i)) )*x_ast)) );
+        cumu_obj_basic_lr = trace( log(1 + exp( (repmat(-y(i:n:(t-1)*n+i,:), 1, d)...
+            .* transpose(A(:,i:n:(t-1)*n+i)) )*x_ast)) );
         minimize( cumu_obj_basic_lr );
         subject to
         norms( R * x_ast', 2 , 2) <= M; %dynamics M
@@ -95,7 +103,8 @@ for t=1:T
         
         cvx_begin quiet
         variable x_ast(d,t)
-        cumu_obj_our_lr = trace( beta * log(1 + exp( repmat(-y(i:n:n*t+i,:), 1, d) .* transpose(A(:,i:n:n*t+i)) *x_ast)))...
+        cumu_obj_our_lr = trace( beta * log(1 + exp( repmat(-y(i:n:(t-1)*n+i,:), 1, d)...
+            .* transpose(A(:,i:n:(t-1)*n+i)) *x_ast)))...
             +(1-beta) * sum(lambda * norms(Q*x_ast,2,1) );
         minimize( cumu_obj_our_lr );
         subject to
@@ -107,6 +116,11 @@ for t=1:T
         
     end
     
+    output = ['time=' mat2str(toc) ' | regret-basic=' mat2str(sum(Regret_basic_lr))...
+        ' | regret-our=' mat2str(sum(Regret_our_lr))];
+    save('output.txt', output, '-ascii');
+    %fprintf('time=%d | regret-basic=%.2f | regret-our=%.2f \n',...
+        %toc, sum(Regret_basic_lr), sum(Regret_our_lr));
     
     
     

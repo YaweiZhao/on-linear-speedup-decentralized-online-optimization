@@ -116,11 +116,14 @@ for t=1:T
         
     end
     
+    output = ['time=' mat2str(round(toc,1)) ' | regret-basic=' mat2str(round(sum(Regret_basic_lr),2))...
+        ' | regret-our=' mat2str(round(sum(Regret_our_lr),2))];
+    %fprintf('time=%d | regret-basic=%.2f | regret-our=%.2f \n',...
+        %toc, sum(Regret_basic_lr), sum(Regret_our_lr));
     
-    fprintf('time=%d | regret-basic=%.2f | regret-our=%.2f \n',...
-        toc, sum(Regret_basic_lr), sum(Regret_our_lr));
-    
-    
+    fid=fopen('./output.txt','a');
+    fprintf(fid,'%s\n',output);
+    fclose(fid);
     
     
     
