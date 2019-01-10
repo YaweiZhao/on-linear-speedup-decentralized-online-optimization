@@ -1,6 +1,6 @@
 
 %load data
-fn = './ijcnn1.mat';
+fn = './occupancy.mat';
 data = load(fn);
 data = data.data;
 [nn,d] = size(data);
