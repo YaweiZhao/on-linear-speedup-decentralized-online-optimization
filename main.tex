@@ -314,11 +314,12 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing
 
 
 \subsection{Experimental settings}
-We simulate a decentralized network consisting of $5$ nodes. Those nodes are connected by using a ring topology. Besides, we conduct online logistic regression by using time series data: \textit{room-occupancy}\footnote{\url{https://archive.ics.uci.edu/ml/datasets/Occupancy+Detection+}}, \textit{online-retail}\footnote{\url{https://archive.ics.uci.edu/ml/datasets/Online+Retail}} in the decentralized network. 
+We simulate a decentralized network consisting of $5$ nodes. Those nodes are connected by using a ring topology. Besides, we conduct online logistic regression by using three time series datasets: \textit{room-occupancy}\footnote{\url{https://archive.ics.uci.edu/ml/datasets/Occupancy+Detection+}}, \textit{online-retail}\footnote{\url{https://archive.ics.uci.edu/ml/datasets/Online+Retail}},  \textit{BeijingPM2.5}\footnote{\url{https://archive.ics.uci.edu/ml/datasets/Beijing+PM2.5+Data}}, and a spam email dataset with the concept drift \citep{Katakis:2010:TR}: \textit{spam}\footnote{\url{http://mlkd.csd.auth.gr/concept_drift.html}} in the decentralized network. 
 \begin{itemize}
 \item {\textit{room-occupancy}.}
-\item {\textit{online-retail}.} It is an online retail dataset, which contains all transactions occurring between 01/12/2010 and 09/12/2011 for a UK-based and registered non-store online retail. We use three features, that is, \textit{whether a transaction is cancelled}, \textit{quantity}, and \textit{unit price}. We need to training a binary clssification model to make a decision whether a customer is coming from United Kingdom. 
-
+\item {\textit{online-retail}.} It is an online retail dataset, which contains all transactions occurring between 01/12/2010 and 09/12/2011 for a UK-based and registered non-store online retail. We use three features, that is, \textit{whether a transaction is cancelled}, \textit{quantity}, and \textit{unit price}. We need to train a binary clssification model to make a decision whether a customer is coming from United Kingdom. 
+\item {\textit{PM2.5}.} It collects many weather features and the PM2.5 data of US Embassy in Beijing hourly between 01/01/2010 and 12/31/2014. When the PM 2.5 index is larger than $100$, the air quality is \textit{bad}, otherwise, \textit{good}. We want to train a binary clssification model to make a decision whether the air quality is good accoring to features such as temperature and pressure.  
+\item {\textit{spam}.} 
 \end{itemize}
 
 

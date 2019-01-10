@@ -1,6 +1,6 @@
 
 %load data
-fn = './pm25.mat';
+fn = './spam.mat';
 data = load(fn);
 data = data.new_data;
 [nn,d] = size(data);

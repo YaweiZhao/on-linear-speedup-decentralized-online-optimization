@@ -1,7 +1,7 @@
 %plot figures 
 
 
-dataset = 'online-tail';
+dataset = 'spam.mat';
 task = 'comm-effi';
 
 if strcmp(dataset, 'occupancy') && strcmp(task, 'comm-effi')
@@ -51,6 +51,54 @@ ylabel('Dynamic regret');
 legend('DOGD-PRE', 'DOGD-OUR(\beta=0.9)','DOGD-OUR(\beta=0.8)','DOGD-OUR(\beta=0.7)',...
     'Location','southeast'); 
 
+
+elseif strcmp(dataset, 'pm25') && strcmp(task, 'comm-effi')
+
+%communication efficient - online-tail
+time = [236 367 544 792 1098];
+regret_basic = [17.3 20.6 23.4 25.5 26.8];
+regret_our_beta1 = [14.8 17.7 20.25 22.3 24];
+regret_our_beta2 = [12.7 15.2 17.52 19.4 20.61];
+regret_our_beta3 = [10.7 12.9 14.8 16.4 17.4];
+plot(time, regret_basic, '-ob','MarkerSize',10);
+hold on;
+plot(time, regret_our_beta1, '-dr','MarkerSize',10);
+hold on;
+plot(time, regret_our_beta2, '-*c','MarkerSize',10);
+hold on;
+plot(time, regret_our_beta3, '-+g','MarkerSize',10);
+pax = gca;
+pax.FontSize = 15;
+axis([200 1100 10 30]);
+
+xlabel('Time(s)');
+ylabel('Dynamic regret');
+legend('DOGD-PRE', 'DOGD-OUR(\beta=0.9)','DOGD-OUR(\beta=0.8)','DOGD-OUR(\beta=0.7)',...
+    'Location','southeast'); 
+
+elseif strcmp(dataset, 'spam') && strcmp(task, 'comm-effi')
+
+%communication efficient - online-tail
+time = [236 367 544 792 1098];
+regret_basic = [17.3 20.6 23.4 25.5 26.8];
+regret_our_beta1 = [14.8 17.7 20.25 22.3 24];
+regret_our_beta2 = [12.7 15.2 17.52 19.4 20.61];
+regret_our_beta3 = [10.7 12.9 14.8 16.4 17.4];
+plot(time, regret_basic, '-ob','MarkerSize',10);
+hold on;
+plot(time, regret_our_beta1, '-dr','MarkerSize',10);
+hold on;
+plot(time, regret_our_beta2, '-*c','MarkerSize',10);
+hold on;
+plot(time, regret_our_beta3, '-+g','MarkerSize',10);
+pax = gca;
+pax.FontSize = 15;
+axis([200 1100 10 30]);
+
+xlabel('Time(s)');
+ylabel('Dynamic regret');
+legend('DOGD-PRE', 'DOGD-OUR(\beta=0.9)','DOGD-OUR(\beta=0.8)','DOGD-OUR(\beta=0.7)',...
+    'Location','southeast'); 
 
 
 end
