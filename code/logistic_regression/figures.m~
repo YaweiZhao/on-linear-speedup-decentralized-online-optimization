@@ -2,20 +2,21 @@
 
 
 %communication efficient
-time = [468 625 798 1006 1251  1527 1839];
-regret_basic = [34.2 37.6 41 44.3  47.7 51];
-regret_our = [27.8 31 34 36 40 43 46];
+time = [292 461 684 1012 1400  1943 2474];
+regret_basic = [17 20.3];
+regret_our_beta1 = [15.2  ];
+regret_our_beta2 = [13.6 ];
+regret_our_beta3 = [11.8 ];
 plot(time, regret_basic, '-ob','MarkerSize',10);
 hold on;
 plot(time, regret_our, '-dr','MarkerSize',10);
 pax = gca;
 pax.FontSize = 15;
-axis([25 52 450 2000]);
+axis([450 2000 25 52]);
 
 xlabel('Time(s)');
 ylabel('Dynamic regret');
-legend('DOGD-', 'SPARSE-MD', 'UNIQUANT-MD',...
-    'QSGD-MD','Location','northeast'); 
+legend('DOGD-PRE', 'DOGD-OUR(0.9)', 'Location','southeast'); 
 
 
 

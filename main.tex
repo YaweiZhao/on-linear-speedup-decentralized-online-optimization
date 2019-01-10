@@ -314,7 +314,19 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing
 
 
 \subsection{Experimental settings}
-We simulate a decentralized network consisting of $5$ nodes. Those nodes are connected by using a ring topology. Besides, we conduct online logistic regression by using datasets: \textit{room-occupancy}\footnote{\url{https://archive.ics.uci.edu/ml/datasets/Occupancy+Detection+}},  in the decentralized network. All values of a feature have been normalized to be zero mean and one variance.  As we have shown in Section \ref{subsection_application_scenarions}, we test the dynamic regret in those three application scenarios.  
+We simulate a decentralized network consisting of $5$ nodes. Those nodes are connected by using a ring topology. Besides, we conduct online logistic regression by using time series data: \textit{room-occupancy}\footnote{\url{https://archive.ics.uci.edu/ml/datasets/Occupancy+Detection+}}, \textit{online-retail}\footnote{\url{https://archive.ics.uci.edu/ml/datasets/Online+Retail}} in the decentralized network. 
+\begin{itemize}
+\item {\textit{room-occupancy}.}
+\item {\textit{online-retail}.} It is an online retail dataset, which contains all transactions occurring between 01/12/2010 and 09/12/2011 for a UK-based and registered non-store online retail. We use three features, that is, \textit{whether a transaction is cancelled}, \textit{quantity}, and \textit{unit price}. We need to training a binary clssification model to make a decision whether a customer is coming from United Kingdom. 
+
+\end{itemize}
+
+
+
+
+
+
+All values of a feature have been normalized to be zero mean and one variance.  As we have shown in Section \ref{subsection_application_scenarions}, we test the dynamic regret in those three application scenarios.  
 
 
 

@@ -1,6 +1,6 @@
 
 %load data
-fn = './occupancy.mat';
+fn = './online-retail.mat';
 data = load(fn);
 data = data.new_data;
 [nn,d] = size(data);
