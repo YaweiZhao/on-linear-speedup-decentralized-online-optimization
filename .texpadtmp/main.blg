@@ -4,45 +4,45 @@ The top-level auxiliary file: main.aux
 The style file: abbrvnat.bst
 Database file #1: ../reference.bib
 Warning--empty publisher in NIPS2017_6865
-You've used 5 entries,
+You've used 18 entries,
             2773 wiz_defined-function locations,
-            628 strings with 5518 characters,
-and the built_in function-call counts, 2599 in all, are:
-= -- 231
-> -- 159
-< -- 2
-+ -- 53
-- -- 48
-* -- 220
-:= -- 396
-add.period$ -- 16
-call.type$ -- 5
-change.case$ -- 31
-chr.to.int$ -- 5
-cite$ -- 11
-duplicate$ -- 117
-empty$ -- 201
-format.name$ -- 55
-if$ -- 542
+            718 strings with 8087 characters,
+and the built_in function-call counts, 9601 in all, are:
+= -- 854
+> -- 572
+< -- 8
++ -- 192
+- -- 174
+* -- 842
+:= -- 1437
+add.period$ -- 56
+call.type$ -- 18
+change.case$ -- 112
+chr.to.int$ -- 18
+cite$ -- 37
+duplicate$ -- 426
+empty$ -- 766
+format.name$ -- 196
+if$ -- 2034
 int.to.chr$ -- 1
 int.to.str$ -- 1
-missing$ -- 5
-newline$ -- 33
-num.names$ -- 20
-pop$ -- 62
+missing$ -- 18
+newline$ -- 98
+num.names$ -- 72
+pop$ -- 214
 preamble$ -- 1
-purify$ -- 26
+purify$ -- 94
 quote$ -- 0
-skip$ -- 92
+skip$ -- 327
 stack$ -- 0
-substring$ -- 100
-swap$ -- 17
-text.length$ -- 1
+substring$ -- 437
+swap$ -- 72
+text.length$ -- 4
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 55
+type$ -- 198
 warning$ -- 1
-while$ -- 22
+while$ -- 80
 width$ -- 0
-write$ -- 70
+write$ -- 241
 (There was 1 warning)

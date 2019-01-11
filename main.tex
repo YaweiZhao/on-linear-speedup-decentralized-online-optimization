@@ -81,6 +81,35 @@ For any online algorithm $A \in \Acal$, the previous dynamic regret $\widetilde{
 
 
 
+
+
+\section{Related work}
+\label{sect_related_work}
+Online learning has been studied for decades of years. The static regret of a sequential online convex optimization method can achieve $\Ocal{\sqrt{T}}$ and $\Ocal{\log T}$ bounds for convex and strongly convex loss functions, respectively \citep{Hazan2016Introduction,ShalevShwartz:2012dz}. Recently, both the decentralized online learing and the dynamic regret have drawn much attention due to their wide existence in the practical big data scenarios.
+\subsection{Decentralized online learning}
+Online learning in a decentralized network has been studied in \citep{8015179Shahram,Kamp:2014:CDO,Koppel-8352032,Zhang2018,Xu2015,tcns-7353155,cdc-7798923,acc-7172037,tcns-7479495,Benczur:2018ww,tkde-6311406}.  \citet{8015179Shahram} studies decentralized online mirror descent, and provides $\Ocal{n\sqrt{nTM}}$ dynamic regret. When the Bregman divergence in the decentralized online mirror descent is chosen appropriately, the decentralized online mirror descent becomes identical to the decentralized online gradient descent. Comparing with the previous result, our method obtains $\Ocal{\sqrt{nTM}}$ dynamic regret (defined in \eqref{equa_definition_previous_regret}) for a decentralized online gradient descent. \citet{Kamp:2014:CDO} studies decentralized online prediction, and presents $\Ocal{\sqrt{nT}}$ static regret.  It assumes that all data, used to yielded the loss, is generated from an unknown distribution. The strong assumption limits its novelity for a general online learning task.  
+Additionally, many decentralized online optimization and learning methods are proposed, for example, decentralized online multi-task learning \citep{Zhang2018}, decentralized online ADMM \citep{Xu2015}, decentralized online sub-gradient descent \citep{tcns-7353155}, decentralized continuous-time online saddle-point method \citep{cdc-7798923}, decentralized online  Nesterov's primal-dual method \citep{acc-7172037,tcns-7479495}. Those previous methods are proved to yield $\Ocal{\sqrt{T}}$ static regret, which do not have theoretical guarantee in the dynamic environment.  Besides, \cite{Benczur:2018ww} reviews online learning methods for big data streams. \citet{tkde-6311406} provides necessary and sufficient conditions to preserve privacy for decentralized online learning methods. 
+
+
+\subsection{Dynamic regret}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 \section{Notations}
 For any $i\in[n]$ and $t\in[T]$, the random variable $\xi_{i,t}$ is subject to a distribution $D_{i,t}$, that is, $\xi_{i,t} \sim D_{i,t}$. Besides, a set of random variables $\Xi_{n,T}$ and the corresponding set of distributions are defined by
 \begin{align}
@@ -161,7 +190,7 @@ Similarly, suppose we want to conduct online classification by using logistic re
 \begin{align}
 \nonumber
 v(\x) = \frac{1}{\lambda}\exp(-\delta_{i,t} \lrnorm{\x}).
-\end{align} Here, $\lambda$ is a given hyper-parameter, $\delta_{i,t}$ is a known function of the constant $\epsilon_{i,t}$ for $\epsilon_{i,t}$-differential privacy \citep{Dwork:2014gx}. In the case, $H_t(\x)$ makes the decision variable own privacy-preserving property.
+\end{align} Here, $\lambda$ is a normalizing constant, $\delta_{i,t}$ is a known function of the constant $\epsilon_{i,t}$ for $\epsilon_{i,t}$-differential privacy \citep{Dwork:2014gx}. For example, when $\delta_{i,t} = \epsilon_{i,t}$, $\lambda = $. In the case, $H_t(\x)$ makes the decision variable own privacy-preserving property.
 
 
 
@@ -232,7 +261,7 @@ We make the following assumptions.
 
 
 
-
+\subsection{Main results}
 
 
 \begin{Theorem}
@@ -274,6 +303,7 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing
 
 
 
+\subsection{Connections with the previous results}
 
 
 
@@ -314,20 +344,14 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing
 
 
 \subsection{Experimental settings}
-We simulate a decentralized network consisting of $5$ nodes. Those nodes are connected by using a ring topology. Besides, we conduct online logistic regression by using three time series datasets: \textit{room-occupancy}\footnote{\url{https://archive.ics.uci.edu/ml/datasets/Occupancy+Detection+}}, \textit{online-retail}\footnote{\url{https://archive.ics.uci.edu/ml/datasets/Online+Retail}},  \textit{BeijingPM2.5}\footnote{\url{https://archive.ics.uci.edu/ml/datasets/Beijing+PM2.5+Data}}, and a spam email dataset with the concept drift \citep{Katakis:2010:TR}: \textit{spam}\footnote{\url{http://mlkd.csd.auth.gr/concept_drift.html}} in the decentralized network. 
+We simulate a decentralized network consisting of $5$ nodes. Those nodes are connected by using a ring topology. Besides, we conduct online logistic regression by using three time series datasets: \textit{room-occupancy}\footnote{\url{https://archive.ics.uci.edu/ml/datasets/Occupancy+Detection+}}, \textit{online-retail}\footnote{\url{https://archive.ics.uci.edu/ml/datasets/Online+Retail}},  \textit{BeijingPM2.5}\footnote{\url{https://archive.ics.uci.edu/ml/datasets/Beijing+PM2.5+Data}}, and a spam email dataset with the concept drift \citep{Katakis:2010:TR}: \textit{spam}\footnote{\url{http://mlkd.csd.auth.gr/concept_drift.html}} in the decentralized network. The data distribution of those datasets may change over time in those practial scenarios, leading to the change of the optimal learning model during online learing. In those dynamic environment, the dynamic regret is practial and necessary. 
 \begin{itemize}
-\item {\textit{room-occupancy}.}
+\item {\textit{room-occupancy}.} It collects features of a room including temperature, humidity, light, and CO2 for every minute between 02/02/2015 and 02/10/2015. Label of an instance is whether the room is occupied. Our goal is to learn a classification model to make a decision whether the room is occupied by using those features.
 \item {\textit{online-retail}.} It is an online retail dataset, which contains all transactions occurring between 01/12/2010 and 09/12/2011 for a UK-based and registered non-store online retail. We use three features, that is, \textit{whether a transaction is cancelled}, \textit{quantity}, and \textit{unit price}. We need to train a binary clssification model to make a decision whether a customer is coming from United Kingdom. 
-\item {\textit{PM2.5}.} It collects many weather features and the PM2.5 data of US Embassy in Beijing hourly between 01/01/2010 and 12/31/2014. When the PM 2.5 index is larger than $100$, the air quality is \textit{bad}, otherwise, \textit{good}. We want to train a binary clssification model to make a decision whether the air quality is good accoring to features such as temperature and pressure.  
-\item {\textit{spam}.} 
+\item {\textit{BeijingPM2.5}.} It collects some weather features, e.g., teperature and pressure, and the PM2.5 data of US Embassy in Beijing hourly between 01/01/2010 and 12/31/2014. When the PM 2.5 index is larger than $100$, the air quality is \textit{bad}, otherwise, \textit{good}. We want to train a binary clssification model to make a decision whether the air quality is good accoring to features such as temperature and pressure.  
+\item {\textit{spam}.} Every instance in the dataset is an email, where the frequence of every word in the dictionary is collected. But, the distribution of words changes over time, which is denoted by \textit{concept drift}\citep{Katakis:2010:TR}. We want to learn a classification model to make a decision whether an email is a spam. 
 \end{itemize}
-
-
-
-
-
-
-All values of a feature have been normalized to be zero mean and one variance.  As we have shown in Section \ref{subsection_application_scenarions}, we test the dynamic regret in those three application scenarios.  
+All values of a feature have been normalized to be zero mean and one variance. The budget of dynamics, namely $M$ is set to be $10$. For the $t$-th iteration, the learning rate, namely $\eta$ in Algorithm \ref{algo_DOG} is set to be $\sqrt{\frac{5M}{100t}}$.  As we have shown in Section \ref{subsection_application_scenarions}, we test the dynamic regret in those three application scenarios.  
 
 
 
@@ -335,10 +359,20 @@ All values of a feature have been normalized to be zero mean and one variance.  
 
 
 \subsection{Communication efficient online logistic regression}
+The hyper-parameter to control the communication efficiency, namely $\lambda_t$ is set to be a constant $0.1$.
 
 
-
-
+\begin{figure*}[!t]
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{0pt}
+\centering 
+\subfigure[\textit{room-occupancy}]{\includegraphics[width=0.45\columnwidth]{figure_regret_occupancy}\label{figure_regret_occupancy}}
+\subfigure[\textit{online-retail}]{\includegraphics[width=0.45\columnwidth]{figure_regret_online-tail}\label{figure_regret_online-tail}}
+\subfigure[\textit{BeijingPM2.5}]{\includegraphics[width=0.45\columnwidth]{figure_regret_pm25}\label{figure_regret_pm25}}
+\subfigure[\textit{spam}]{\includegraphics[width=0.45\columnwidth]{figure_regret_spam}\label{figure_regret_spam}}
+\caption{Comparsion of the dynamic regret by using communication efficient logistic regression in the decentralized network.}
+\label{figure_regret_communication_efficiency}
+\end{figure*}
 
 
 
