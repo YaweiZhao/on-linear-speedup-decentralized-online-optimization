@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  11 JAN 2019 21:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  11 JAN 2019 22:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -449,22 +449,22 @@ Overfull \hbox (0.50275pt too wide) in paragraph at lines 353--354
 []\OT1/cmr/m/it/10 online-retail\OT1/cmr/m/n/10 . It is an on-line re-tail dataset, which con-tains all trans-ac-tions oc-cur-ring be-tween 01/12/2010
  []
 
-<figure_regret_occupancy.pdf, id=289, 496.81912pt x 398.46666pt>
+<figure_regret_occupancy.pdf, id=290, 496.81912pt x 398.46666pt>
 File: figure_regret_occupancy.pdf Graphic file (type pdf)
  <use figure_regret_occupancy.pdf>
 Package pdftex.def Info: figure_regret_occupancy.pdf used on input line 372.
 (pdftex.def)             Requested size: 211.38832pt x 169.53761pt.
- <figure_regret_online-tail.pdf, id=290, 481.55344pt x 398.49117pt>
+ <figure_regret_online-tail.pdf, id=291, 481.55344pt x 398.49117pt>
 File: figure_regret_online-tail.pdf Graphic file (type pdf)
  <use figure_regret_online-tail.pdf>
 Package pdftex.def Info: figure_regret_online-tail.pdf used on input line 373.
 (pdftex.def)             Requested size: 211.38832pt x 174.92317pt.
- <figure_regret_pm25.pdf, id=291, 496.67592pt x 398.49007pt>
+ <figure_regret_pm25.pdf, id=292, 496.67592pt x 398.49007pt>
 File: figure_regret_pm25.pdf Graphic file (type pdf)
  <use figure_regret_pm25.pdf>
 Package pdftex.def Info: figure_regret_pm25.pdf used on input line 374.
 (pdftex.def)             Requested size: 211.38832pt x 169.5962pt.
- <figure_regret_spam.pdf, id=292, 480.69792pt x 397.9401pt>
+ <figure_regret_spam.pdf, id=293, 480.69792pt x 397.9401pt>
 File: figure_regret_spam.pdf Graphic file (type pdf)
  <use figure_regret_spam.pdf>
 Package pdftex.def Info: figure_regret_spam.pdf used on input line 375.
@@ -759,12 +759,12 @@ Here is how much of TeX's memory you used:
  12057 multiletter control sequences out of 15000+600000
  20178 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,19n,38p,1476b,486s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,19n,38p,1723b,486s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on /Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/.texpadtmp/main.pdf (20 pages, 424770 bytes).
+Output written on /Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/.texpadtmp/main.pdf (20 pages, 424977 bytes).
 PDF statistics:
- 563 PDF objects out of 1000 (max. 8388607)
- 495 compressed objects within 5 object streams
+ 564 PDF objects out of 1000 (max. 8388607)
+ 496 compressed objects within 5 object streams
  103 named destinations out of 1000 (max. 500000)
  157 words of extra memory for PDF output out of 10000 (max. 10000000)
 
