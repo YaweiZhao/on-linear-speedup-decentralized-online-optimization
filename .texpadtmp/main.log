@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  12 JAN 2019 00:08
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  12 JAN 2019 00:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -566,25 +566,10 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 480.
 LaTeX Warning: Command \textcircled invalid in math mode on input line 480.
 
 
-Overfull \hbox (8.66185pt too wide) in paragraph at lines 488--488
-[] 
- []
-
-
 LaTeX Warning: Command \textcircled invalid in math mode on input line 488.
 
 
 LaTeX Warning: Command \textcircled invalid in math mode on input line 488.
-
-
-Overfull \hbox (14.75174pt too wide) in paragraph at lines 500--500
-[] 
- []
-
-
-Overfull \hbox (3.48349pt too wide) in paragraph at lines 511--511
-[] 
- []
 
 [12] [13]
 
@@ -638,7 +623,7 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 689.
 LaTeX Warning: Command \textcircled invalid in math mode on input line 689.
 
 
-Overfull \hbox (43.36906pt too wide) in paragraph at lines 689--689
+Overfull \hbox (29.9777pt too wide) in paragraph at lines 689--689
 [] 
  []
 
@@ -650,7 +635,7 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 689.
 LaTeX Warning: Command \textcircled invalid in math mode on input line 689.
 
 
-Overfull \hbox (65.1551pt too wide) in paragraph at lines 718--718
+Overfull \hbox (45.06807pt too wide) in paragraph at lines 718--718
 [] 
  []
 
@@ -765,7 +750,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  36i,19n,38p,1737b,484s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on /Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/.texpadtmp/main.pdf (20 pages, 427818 bytes).
+Output written on /Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/.texpadtmp/main.pdf (20 pages, 427746 bytes).
 PDF statistics:
  595 PDF objects out of 1000 (max. 8388607)
  526 compressed objects within 6 object streams
