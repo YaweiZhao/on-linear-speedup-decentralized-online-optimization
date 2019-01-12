@@ -1,7 +1,7 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.2}{Related work}{}% 2
 \BOOKMARK [2][-]{subsection.2.1}{Decentralized online learning}{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Dynamic regret}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.2}{Regret in dynamic environment}{section.2}% 4
 \BOOKMARK [1][-]{section.3}{Notations}{}% 5
 \BOOKMARK [1][-]{section.4}{Problem formulation}{}% 6
 \BOOKMARK [2][-]{subsection.4.1}{Setup}{section.4}% 7
