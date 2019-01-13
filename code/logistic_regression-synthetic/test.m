@@ -26,11 +26,11 @@ Xi = zeros(d,nn);
 for i=1:nn/n
     for j=1:n
         if y((i-1)*n+j,:) == 1
-            A(:,(i-1)*n+j) = sin(i)/100 + randn(d,1);
+            A(:,(i-1)*n+j) = sin(i)/10 + randn(d,1);
         else
-            A(:,(i-1)*n+j) = -sin(i)/100 + randn(d,1);
+            A(:,(i-1)*n+j) = -sin(i)/10 + randn(d,1);
         end
-        Xi(:,(i-1)*n+j) = normrnd(0, (cos(i)+1)/100,d,1);
+        Xi(:,(i-1)*n+j) = normrnd(0, (cos(i)+1)/10,d,1);
     end
     
     
@@ -138,19 +138,19 @@ for t=1:T
     end
     X_t_basic_lr_opt_temp = X_t_basic_lr_opt;
     X_t_basic_lr_opt = X_t_basic_lr_opt_temp * W - eta_opt_basic/sqrt(t) * Grad_basic; %update rule - basic lr
-    M_basic = M_basic + sum(norms(X_t_basic_lr_opt_temp - X_t_basic_lr_opt,2,1));
+    M_basic = M_basic + sum(norms(X_t_basic_lr_opt_temp - X_t_basic_lr_opt,2,1))/n;
     
     X_t_our_lr1_opt_temp = X_t_our_lr1_opt;
     X_t_our_lr1_opt = X_t_our_lr1_opt* W - eta_opt_1/sqrt(t) * Grad_our1;
-    M_lr1 = M_lr1 + sum(norms(X_t_our_lr1_opt_temp - X_t_our_lr1_opt,2,1));
+    M_lr1 = M_lr1 + sum(norms(X_t_our_lr1_opt_temp - X_t_our_lr1_opt,2,1))/n;
     
     X_t_our_lr2_opt_temp = X_t_our_lr2_opt;
     X_t_our_lr2_opt = X_t_our_lr2_opt* W - eta_opt_2/sqrt(t) * Grad_our2;
-    M_lr2 = M_lr2 + sum(norms(X_t_our_lr2_opt_temp - X_t_our_lr2_opt,2,1));
+    M_lr2 = M_lr2 + sum(norms(X_t_our_lr2_opt_temp - X_t_our_lr2_opt,2,1))/n;
     
     X_t_our_lr3_opt_temp = X_t_our_lr3_opt;
     X_t_our_lr3_opt = X_t_our_lr3_opt* W - eta_opt_3/sqrt(t) * Grad_our3;
-    M_lr3 = M_lr3 + sum(norms(X_t_our_lr3_opt_temp - X_t_our_lr3_opt,2,1));
+    M_lr3 = M_lr3 + sum(norms(X_t_our_lr3_opt_temp - X_t_our_lr3_opt,2,1))/n;
 end
 
 fprintf('dynamis | basic:%.0f | beta1:%.0f | beta2:%.0f | beta3:%.0f \n', M_basic, M_lr1,M_lr2,M_lr3);

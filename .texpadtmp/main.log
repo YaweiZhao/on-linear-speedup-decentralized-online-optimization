@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  13 JAN 2019 13:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  13 JAN 2019 16:51
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -448,39 +448,39 @@ LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
  [4] [5] <figure_synthetic_regret_times.pdf, id=303, 486.68571pt x 414.30786pt>
 File: figure_synthetic_regret_times.pdf Graphic file (type pdf)
  <use figure_synthetic_regret_times.pdf>
-Package pdftex.def Info: figure_synthetic_regret_times.pdf used on input line 369.
+Package pdftex.def Info: figure_synthetic_regret_times.pdf used on input line 373.
 (pdftex.def)             Requested size: 211.38832pt x 179.95062pt.
  <figure_synthetic_regret_nodes.pdf, id=304, 474.35008pt x 411.70291pt>
 File: figure_synthetic_regret_nodes.pdf Graphic file (type pdf)
  <use figure_synthetic_regret_nodes.pdf>
-Package pdftex.def Info: figure_synthetic_regret_nodes.pdf used on input line 370.
+Package pdftex.def Info: figure_synthetic_regret_nodes.pdf used on input line 374.
 (pdftex.def)             Requested size: 211.38832pt x 183.46791pt.
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 401.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 405.
 
-Overfull \hbox (0.50275pt too wide) in paragraph at lines 401--403
+Overfull \hbox (0.50275pt too wide) in paragraph at lines 405--407
 []\OT1/cmr/m/it/10 online-retail\OT1/cmr/m/n/10 . It is an on-line re-tail dataset, which con-tains all trans-ac-tions oc-cur-ring be-tween 01/12/2010
  []
 
 [6] <figure_regret_occupancy.pdf, id=329, 496.81912pt x 398.46666pt>
 File: figure_regret_occupancy.pdf Graphic file (type pdf)
  <use figure_regret_occupancy.pdf>
-Package pdftex.def Info: figure_regret_occupancy.pdf used on input line 416.
+Package pdftex.def Info: figure_regret_occupancy.pdf used on input line 420.
 (pdftex.def)             Requested size: 211.38832pt x 169.53761pt.
  <figure_regret_online-tail.pdf, id=330, 481.55344pt x 398.49117pt>
 File: figure_regret_online-tail.pdf Graphic file (type pdf)
  <use figure_regret_online-tail.pdf>
-Package pdftex.def Info: figure_regret_online-tail.pdf used on input line 417.
+Package pdftex.def Info: figure_regret_online-tail.pdf used on input line 421.
 (pdftex.def)             Requested size: 211.38832pt x 174.92317pt.
  <figure_regret_pm25.pdf, id=331, 496.67592pt x 398.49007pt>
 File: figure_regret_pm25.pdf Graphic file (type pdf)
  <use figure_regret_pm25.pdf>
-Package pdftex.def Info: figure_regret_pm25.pdf used on input line 418.
+Package pdftex.def Info: figure_regret_pm25.pdf used on input line 422.
 (pdftex.def)             Requested size: 211.38832pt x 169.5962pt.
  <figure_regret_spam.pdf, id=332, 480.69792pt x 397.9401pt>
 File: figure_regret_spam.pdf Graphic file (type pdf)
  <use figure_regret_spam.pdf>
-Package pdftex.def Info: figure_regret_spam.pdf used on input line 419.
+Package pdftex.def Info: figure_regret_spam.pdf used on input line 423.
 (pdftex.def)             Requested size: 211.38832pt x 174.99702pt.
  (/Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/.texpadtmp/main.bbl [7 <./figure_synthetic_regret_times.pdf> <./figure_synthetic_regret_nodes.pdf>] [8 <./figure_regret_occupancy.pdf> <./figure_regret_online-tail.pdf> <./figure_regret_pm25.pdf> <./figure_regret_spam.pdf>]
 Missing character: There is no Ä in font cmr10!
@@ -489,266 +489,266 @@ Missing character: There is no Ä in font cmr10!
 Missing character: There is no ‡ in font cmr10!
  [9]) [10]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 467.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 471.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 467.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 471.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 467.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 471.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 467.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 471.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 467.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 471.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 467.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 471.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 483.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 487.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 483.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 487.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 483.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 487.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 483.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 487.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 483.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 487.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 483.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 487.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 483.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 487.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 483.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 487.
 
 [11]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 483.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 487.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 483.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 487.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 483.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 487.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 483.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 487.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 501.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 505.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 501.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 505.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 501.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 505.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 501.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 505.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 501.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 505.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 501.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 505.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 501.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 505.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 501.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 505.
 
 [12]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 501.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 505.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 501.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 505.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 509.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 513.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 509.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 513.
 
 [13] [14]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 619.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 623.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 619.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 623.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 619.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 623.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 619.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 623.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 619.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 623.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 619.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 623.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 619.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 623.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 619.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 623.
 
 [15]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 620.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 624.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 620.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 624.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 626.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 630.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 626.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 630.
 
 [16]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 710.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 714.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 710.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 714.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 710.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 714.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 710.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 714.
 
 
-Overfull \hbox (29.9777pt too wide) in paragraph at lines 710--710
+Overfull \hbox (29.9777pt too wide) in paragraph at lines 714--714
 [] 
  []
 
 [17]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 710.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 714.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 710.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 714.
 
 
-Overfull \hbox (45.06807pt too wide) in paragraph at lines 739--739
+Overfull \hbox (45.06807pt too wide) in paragraph at lines 743--743
 [] 
  []
 
 [18] [19]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 839.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 843.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 839.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 843.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 839.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 843.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 839.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 843.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 839.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 843.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 839.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 843.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 839.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 843.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 839.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 843.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 839.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 843.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 839.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 843.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 839.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 843.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 839.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 843.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 839.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 843.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 839.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 843.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 839.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 843.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 839.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 843.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 839.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 843.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 839.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 843.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 850.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 854.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 850.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 854.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 850.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 854.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 850.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 854.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 850.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 854.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 850.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 854.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 850.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 854.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 850.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 854.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 850.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 854.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 850.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 854.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 850.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 854.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 850.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 854.
 
 [20]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 903.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 907.
  [21]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 903.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 907.
  (/Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/.texpadtmp/main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 903.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 903.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 907.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 907.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: 9AF1F85021343C54F0943708405852D5;793.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 903.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 907.
  ) 
 Here is how much of TeX's memory you used:
  8884 strings out of 493089
@@ -759,7 +759,7 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  36i,19n,38p,1737b,492s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on /Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/.texpadtmp/main.pdf (21 pages, 475657 bytes).
+Output written on /Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/.texpadtmp/main.pdf (21 pages, 475716 bytes).
 PDF statistics:
  634 PDF objects out of 1000 (max. 8388607)
  556 compressed objects within 6 object streams
