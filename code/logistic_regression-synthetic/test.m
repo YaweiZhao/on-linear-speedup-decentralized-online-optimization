@@ -2,7 +2,7 @@ rng('default');
 
 nn = 500000;
 d = 100;
-n = 10; % # of nodes
+n = 5; % # of nodes
 
 
 %hyper-parameter
