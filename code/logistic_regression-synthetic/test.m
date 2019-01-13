@@ -1,19 +1,20 @@
 
 %load data
 fn = './spam.mat';
-nn = 1000;
+nn = 10000;
 d = 20;
+n = 5; % # of nodes
 
 
 %hyper-parameter
-T=nn;
+T=nn/n;
 eta = 1e-2;
 lambda = 1e-1;
 beta1 = 0.9;%varying beta1 0.9 0.8 0.7
 beta2 = 0.8;
 beta3 = 0.7;
 %M = 10; %dynamics
-n = 5; % # of nodes
+
 
 
 A = zeros(d,nn);
@@ -125,7 +126,7 @@ loss_our_lr3 = 0;
 
 fprintf('Begin to itertion...\n');
 tic;
-for t=1:T/n
+for t=1:T
     
     for i=1:n % # of nodes
         
