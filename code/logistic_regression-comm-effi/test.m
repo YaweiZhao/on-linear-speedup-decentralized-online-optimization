@@ -85,6 +85,7 @@ loss_our_lr1 = 0;
 loss_our_lr2 = 0;
 loss_our_lr3 = 0;
 tic;
+fprintf('Begin iterations ...\n');
 for t=1:T
     
     for i=1:n % # of nodes
