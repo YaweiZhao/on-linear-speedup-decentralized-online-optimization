@@ -1,21 +1,5 @@
 rng('default');
 
-poolobj = gcp('nocreate'); % If no pool, do not create new one.
-if isempty(poolobj)
-    poolsize = 0;
-else
-    poolsize = poolobj.NumWorkers;
-end
-corenum = 4;
-if poolsize <= 0
-    parpool('local', corenum);
-    fprintf('Begin parallel computing, %d cores...\n', corenum);
-else
-    fprintf('Alread begin parallel computing, %d cores...\n', corenum);
-end
-
-
-
 nn = 400;
 d = 100;
 n = 20; % # of nodes
@@ -216,9 +200,6 @@ for t=1:T
     
     
 end
-
-
-parpool close;
 
 
 
