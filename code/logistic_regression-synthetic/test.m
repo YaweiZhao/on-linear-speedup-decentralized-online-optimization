@@ -1,6 +1,5 @@
+rng('default');
 
-%load data
-fn = './spam.mat';
 nn = 10000;
 d = 20;
 n = 5; % # of nodes
@@ -177,10 +176,10 @@ for t=1:T
     
     if mod(t,2000) == 0
         
-        output = ['time=' mat2str(round(toc,1)) ' | regret-basic=' mat2str(sum(Loss_basic_lr - Loss_basic_lr_opt))...
-            ' | regret-our(beta1)=' mat2str(sum(Loss_our_lr1 - Loss_our_lr1_opt))...
-            ' | regret-our(beta2)=' mat2str(sum(Loss_our_lr2 - Loss_our_lr2_opt))...
-            ' | regret-our(beta3)=' mat2str(sum(Loss_our_lr3 - Loss_our_lr3_opt))];
+        output = ['time=' mat2str(round(toc,1)) ' | regret-basic=' mat2str(sum(max(0,Loss_basic_lr - Loss_basic_lr_opt)))...
+            ' | regret-our(beta1)=' mat2str(sum(max(0,Loss_our_lr1 - Loss_our_lr1_opt)))...
+            ' | regret-our(beta2)=' mat2str(sum(max(0,Loss_our_lr2 - Loss_our_lr2_opt)))...
+            ' | regret-our(beta3)=' mat2str(sum(max(0,Loss_our_lr3 - Loss_our_lr3_opt)))];
         fprintf([output '\n']);
 
         fid=fopen('./output.txt','a');
