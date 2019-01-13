@@ -1,6 +1,6 @@
 rng('default');
 
-nn = 100000;
+nn = 20000;
 d = 20;
 n = 5; % # of nodes
 
@@ -175,7 +175,7 @@ for t=1:T
     end
     
     
-    if mod(t,10000) == 0
+    if mod(t,1000) == 0
         
         output = ['time=' mat2str(round(toc,1)) ' | regret-basic=' mat2str(sum(max(0,Loss_basic_lr - Loss_basic_lr_opt)))...
             ' | regret-our(beta1)=' mat2str(sum(max(0,Loss_our_lr1 - Loss_our_lr1_opt)))...
