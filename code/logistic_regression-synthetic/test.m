@@ -74,10 +74,10 @@ elseif strcmp(topology, 'random')
 end
 
 
-X_t_basic_lr = ones(d,n);
-X_t_our_lr1 = ones(d,n);
-X_t_our_lr2 = ones(d,n);
-X_t_our_lr3 = ones(d,n);
+X_t_basic_lr = zeros(d,n);
+X_t_our_lr1 = zeros(d,n);
+X_t_our_lr2 = zeros(d,n);
+X_t_our_lr3 = zeros(d,n);
 Grad_basic = zeros(d,n);
 Grad_our1 = zeros(d,n);
 Grad_our2 = zeros(d,n);
