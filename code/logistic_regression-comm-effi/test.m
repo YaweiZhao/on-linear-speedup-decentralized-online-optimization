@@ -1,8 +1,14 @@
 rng('default');
 
+poolobj = gcp('nocreate'); % If no pool, do not create new one.
+if isempty(poolobj)
+    poolsize = 0;
+else
+    poolsize = poolobj.NumWorkers;
+end
 corenum = 4;
-if parpool('size') <= 0
-    parpool('open', 'local', corenum);
+if poolsize <= 0
+    parpool('local', corenum);
     fprintf('Begin parallel computing, %d cores...\n', corenum);
 else
     fprintf('Alread begin parallel computing, %d cores...\n', corenum);
