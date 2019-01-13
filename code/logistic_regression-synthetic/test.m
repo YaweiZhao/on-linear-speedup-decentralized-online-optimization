@@ -42,8 +42,8 @@ x_opt_basic = x_ast;
 %for beta1
 cvx_begin quiet
 variable x_ast(d,1)
-cumu_obj_basic_lr = (1-beta1) * sum( log(1 + exp( (repmat(-y(1:nn_test,:), 1, d)...
-    .* transpose(A(:,1:nn_test)) )*x_ast)) ) + beta1 * sum(Xi'* x_ast);
+cumu_obj_basic_lr = beta1 * sum( log(1 + exp( (repmat(-y(1:nn_test,:), 1, d)...
+    .* transpose(A(:,1:nn_test)) )*x_ast)) ) + (1-beta1) * sum(Xi'* x_ast);
 minimize( cumu_obj_basic_lr );
 cvx_end        
 x_opt_beta1 = x_ast;
@@ -51,8 +51,8 @@ x_opt_beta1 = x_ast;
 %for beta2
 cvx_begin quiet
 variable x_ast(d,1)
-cumu_obj_basic_lr = (1-beta2) * sum( log(1 + exp( (repmat(-y(1:nn_test,:), 1, d)...
-    .* transpose(A(:,1:nn_test)) )*x_ast)) ) + beta2 * sum(Xi'* x_ast);
+cumu_obj_basic_lr = beta2 * sum( log(1 + exp( (repmat(-y(1:nn_test,:), 1, d)...
+    .* transpose(A(:,1:nn_test)) )*x_ast)) ) + (1-beta2) * sum(Xi'* x_ast);
 minimize( cumu_obj_basic_lr );
 cvx_end        
 x_opt_beta2 = x_ast;
@@ -60,8 +60,8 @@ x_opt_beta2 = x_ast;
 %for beta3
 cvx_begin quiet
 variable x_ast(d,1)
-cumu_obj_basic_lr = (1-beta3) * sum( log(1 + exp( (repmat(-y(1:nn_test,:), 1, d)...
-    .* transpose(A(:,1:nn_test)) )*x_ast)) ) + beta3 * sum(Xi'* x_ast);
+cumu_obj_basic_lr = beta3 * sum( log(1 + exp( (repmat(-y(1:nn_test,:), 1, d)...
+    .* transpose(A(:,1:nn_test)) )*x_ast)) ) + (1-beta3) * sum(Xi'* x_ast);
 minimize( cumu_obj_basic_lr );
 cvx_end        
 x_opt_beta3 = x_ast;
@@ -145,7 +145,7 @@ for t=1:T
         grad_h_t3 = xi_it;
         grad_our1 = beta1 * grad_our_temp1 + (1-beta1) * grad_h_t1; %gradient - our lr
         grad_our2 = beta2 * grad_our_temp2 + (1-beta2) * grad_h_t2; %gradient - our lr
-        grad_our3 = beta1 * grad_our_temp3 + (1-beta3) * grad_h_t3; %gradient - our lr
+        grad_our3 = beta3 * grad_our_temp3 + (1-beta3) * grad_h_t3; %gradient - our lr
         Grad_basic(:,i) =  grad_basic;
         Grad_our1(:,i) = grad_our1;
         Grad_our2(:,i) = grad_our2;
