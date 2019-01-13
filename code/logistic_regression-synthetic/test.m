@@ -8,10 +8,10 @@ n = 20; % # of nodes
 %hyper-parameter
 T=nn/n;
 eta = 1e-3;
-eta_opt_basic = eta*5;
-eta_opt_1 = eta*5;
-eta_opt_2 = eta*5;
-eta_opt_3 = eta*5;
+eta_opt_basic = 1;
+eta_opt_1 = 1;
+eta_opt_2 = 1;
+eta_opt_3 = 1;
 
 beta1 = 0.9;%varying beta1 0.9 0.8 0.7
 beta2 = 0.80;
@@ -102,7 +102,60 @@ loss_our_lr1 = 0;
 loss_our_lr2 = 0;
 loss_our_lr3 = 0;
 
-fprintf('Begin to itertion...\n');
+fprintf('Begin to compute the reference points...\n');
+X_t_basic_lr_opt = X_t_basic_lr;
+X_t_our_lr1_opt = X_t_our_lr1;
+X_t_our_lr2_opt = X_t_our_lr2;
+X_t_our_lr3_opt = X_t_our_lr3;
+M_basic = 0;
+M_lr1 = 0;
+M_lr2 = 0;
+M_lr3 = 0;
+
+for t=1:T
+    
+    for i=1:n % # of nodes
+        
+        y_it = y((t-1)*n+i,:);
+        %y_it = sign(rand(1)-0.5);
+        A_it = A(:,(t-1)*n+i);
+        %A_it = randn(d,1);
+        xi_it = Xi(:,(t-1)*n+i);
+        grad_basic = (-y_it * A_it) / (1 + exp(y_it * A_it'* X_t_basic_lr(:,i))); %gradient - basic lr
+        grad_our_temp1 = (-y_it * A_it) / (1 + exp(y_it * A_it'* X_t_our_lr1(:,i))) ;
+        grad_our_temp2 = (-y_it * A_it) / (1 + exp(y_it * A_it'* X_t_our_lr2(:,i)));
+        grad_our_temp3 = (-y_it * A_it) / (1 + exp(y_it * A_it'* X_t_our_lr3(:,i)));
+        grad_h_t1 = xi_it;
+        grad_h_t2 = xi_it;
+        grad_h_t3 = xi_it;
+        grad_our1 = beta1 * grad_our_temp1 + (1-beta1) * grad_h_t1; %gradient - our lr
+        grad_our2 = beta2 * grad_our_temp2 + (1-beta2) * grad_h_t2; %gradient - our lr
+        grad_our3 = beta3 * grad_our_temp3 + (1-beta3) * grad_h_t3; %gradient - our lr
+        Grad_basic(:,i) =  grad_basic;
+        Grad_our1(:,i) = grad_our1;
+        Grad_our2(:,i) = grad_our2;
+        Grad_our3(:,i) = grad_our3;
+    end
+    X_t_basic_lr_opt_temp = X_t_basic_lr_opt;
+    X_t_basic_lr_opt = X_t_basic_lr_opt_temp * W - eta_opt_basic/sqrt(t) * Grad_basic; %update rule - basic lr
+    M_basic = M_basic + sum(norms(X_t_basic_lr_opt_temp - X_t_basic_lr_opt,2,1));
+    
+    X_t_our_lr1_opt_temp = X_t_our_lr1_opt;
+    X_t_our_lr1_opt = X_t_our_lr1_opt* W - eta_opt_1/sqrt(t) * Grad_our1;
+    M_lr1 = M_lr1 + sum(norms(X_t_our_lr1_opt_temp - X_t_our_lr1_opt,2,1));
+    
+    X_t_our_lr2_opt_temp = X_t_our_lr2_opt;
+    X_t_our_lr2_opt = X_t_our_lr2_opt* W - eta_opt_2/sqrt(t) * Grad_our2;
+    M_lr2 = M_lr2 + sum(norms(X_t_our_lr2_opt_temp - X_t_our_lr2_opt,2,1));
+    
+    X_t_our_lr3_opt_temp = X_t_our_lr3_opt;
+    X_t_our_lr3_opt = X_t_our_lr3_opt* W - eta_opt_3/sqrt(t) * Grad_our3;
+    M_lr3 = M_lr3 + sum(norms(X_t_our_lr3_opt_temp - X_t_our_lr3_opt,2,1));
+end
+
+fprintf('dynamis | basic:%.0f | beta1:%.0f | beta2:%.0f | beta3:%.0f \n', M_basic, M_lr1,M_lr2,M_lr3);
+
+
 tic;
 for t=1:T
     
@@ -135,20 +188,20 @@ for t=1:T
     X_t_our_lr3_opt = X_t_our_lr3;
     
     
-    X_t_basic_lr = X_t_basic_lr * W - eta/sqrt(t) * Grad_basic; %update rule - basic lr
-    X_t_our_lr1 = X_t_our_lr1 * W - eta/sqrt(t) * Grad_our1; %update rule - our lr
-    X_t_our_lr2 = X_t_our_lr2 * W - eta/sqrt(t) * Grad_our2; %update rule - our lr
-    X_t_our_lr3 = X_t_our_lr3 * W - eta/sqrt(t) * Grad_our3; %update rule - our lr
+    X_t_basic_lr = X_t_basic_lr * W - sqrt(M_basic)*eta/sqrt(t) * Grad_basic; %update rule - basic lr
+    X_t_our_lr1 = X_t_our_lr1 * W - sqrt(M_lr1)*eta/sqrt(t) * Grad_our1; %update rule - our lr
+    X_t_our_lr2 = X_t_our_lr2 * W - sqrt(M_lr2)*eta/sqrt(t) * Grad_our2; %update rule - our lr
+    X_t_our_lr3 = X_t_our_lr3 * W - sqrt(M_lr3)*eta/sqrt(t) * Grad_our3; %update rule - our lr
     
     
     
-    X_t_basic_lr_opt = X_t_basic_lr_opt * W - eta_opt_basic/sqrt(t) * Grad_basic; %update rule - basic lr
-    X_t_our_lr1_opt = X_t_our_lr1_opt* W - eta_opt_1/sqrt(t) * Grad_our1;
-    X_t_our_lr2_opt = X_t_our_lr2_opt* W - eta_opt_2/sqrt(t) * Grad_our2;
-    X_t_our_lr3_opt = X_t_our_lr3_opt* W - eta_opt_3/sqrt(t) * Grad_our3;
+    X_t_basic_lr_opt = X_t_basic_lr_opt * W - 5*sqrt(M_basic)*eta/sqrt(t) * Grad_basic; %update rule - basic lr
+    X_t_our_lr1_opt = X_t_our_lr1_opt* W - 5*sqrt(M_lr1)*eta/sqrt(t) * Grad_our1;
+    X_t_our_lr2_opt = X_t_our_lr2_opt* W - 5*sqrt(M_lr2)*eta/sqrt(t) * Grad_our2;
+    X_t_our_lr3_opt = X_t_our_lr3_opt* W - 5*sqrt(M_lr3)*eta/sqrt(t) * Grad_our3;
 
     
-    
+   %regret 
     for i=1:n
         xi_it = Xi(:,(t-1)*n+i);
         %evaluate dynamic regret
