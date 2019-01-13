@@ -134,12 +134,11 @@ for t=1:T
         %y_it = sign(rand(1)-0.5);
         A_it = A(:,(t-1)*n+i);
         %A_it = randn(d,1);
-
+        xi_it = Xi(:,(t-1)*n+i);
         grad_basic = (-y_it * A_it) / (1 + exp(y_it * A_it'* X_t_basic_lr(:,i))); %gradient - basic lr
         grad_our_temp1 = (-y_it * A_it) / (1 + exp(y_it * A_it'* X_t_our_lr1(:,i)));
         grad_our_temp2 = (-y_it * A_it) / (1 + exp(y_it * A_it'* X_t_our_lr2(:,i)));
         grad_our_temp3 = (-y_it * A_it) / (1 + exp(y_it * A_it'* X_t_our_lr3(:,i)));
-        xi_it = normrnd(0,0.1*abs(cos(t)),d,1);
         grad_h_t1 = xi_it;
         grad_h_t2 = xi_it;
         grad_h_t3 = xi_it;
