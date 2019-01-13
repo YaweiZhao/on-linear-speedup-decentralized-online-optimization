@@ -1,8 +1,8 @@
 rng('default');
 
-nn = 100000;
-d = 20;
-n = 5; % # of nodes
+nn = 500000;
+d = 100;
+n = 15; % # of nodes
 
 
 %hyper-parameter
@@ -30,7 +30,7 @@ for i=1:nn/n
         else
             A(:,(i-1)*n+j) = -sin(i)/10 + randn(d,1);
         end
-        Xi(:,(i-1)*n+j) = normrnd(0, (cos(t)+1)/10,d,1);
+        Xi(:,(i-1)*n+j) = normrnd(0, (cos(i)+1)/10,d,1);
     end
     
     
@@ -38,25 +38,53 @@ end
 
 
 
-%construct the confusion matrix W. Ring topology 
+%construct the confusion matrix W. Ring/random topology 
+topology = 'random';
 W =  eye(n);
-for i=1:n
-    for j=1:n
-        if i==n
-             W(i,1) = 1;
-        end
-        if i+1 <= n && j == i+1
-            W(i,j) = 1;
-        end
-        if i==1
-            W(i,n) = 1;
-        end
-        if i-1>=1 && j == i-1
-            W(i,j) = 1;
+if strcmp(topology, 'ring')
+    for i=1:n
+        for j=1:n
+            if i==n
+                 W(i,1) = 1;
+            end
+            if i+1 <= n && j == i+1
+                W(i,j) = 1;
+            end
+            if i==1
+                W(i,n) = 1;
+            end
+            if i-1>=1 && j == i-1
+                W(i,j) = 1;
+            end
         end
     end
+    W = W/3;
+elseif strcmp(topology, 'random')
+    graph = WattsStrogatz(n,3,1);
+    edges_list = graph.Edges.EndNodes;
+    for i=1:n
+        for j=1:n
+        end
+    end
+    
+    for i=1:n
+        for j=1:n
+            if i==n
+                 W(i,1) = 1;
+            end
+            if i+1 <= n && j == i+1
+                W(i,j) = 1;
+            end
+            if i==1
+                W(i,n) = 1;
+            end
+            if i-1>=1 && j == i-1
+                W(i,j) = 1;
+            end
+        end
+    end
+    W = W/3;
 end
-W = W/3;
 
 
 X_t_basic_lr = ones(d,n);

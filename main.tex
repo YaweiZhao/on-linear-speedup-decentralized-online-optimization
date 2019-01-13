@@ -362,6 +362,15 @@ We let $g_{i,t}(\x) = \log\lrincir{1+\exp(-\y_{i,t}\A_{i,t}\Tr \x)}$ and $h_t(\x
 \end{enumerate}    Then, we conduct decentralized online logistic regression by using the synthetic data.  The learning rate is $\eta_t = \frac{1}{10^3\sqrt{t}}$. At every iteration $t$, the reference point $\x_t^\ast$ is approximately computed by performing  gradient descent $5$ steps. The maximal number of iterations, i.e., $T$, is set to be $5\times 10^5$.  
 
 
+\begin{figure*}[!t]
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{0pt}
+\centering 
+\subfigure[\textit{Regret v.s. time}]{\includegraphics[width=0.45\columnwidth]{figure_synthetic_regret_times}\label{figure_synthetic_regret_times}}
+\subfigure[\textit{Regret v.s. network size}]{\includegraphics[width=0.45\columnwidth]{figure_synthetic_regret_nodes}\label{figure_synthetic_regret_nodes}}
+\caption{Comparsion of the dynamic regret by using  online logistic regression in the decentralized network.}
+\label{figure_synthetic_regret}
+\end{figure*}
 
 
 
