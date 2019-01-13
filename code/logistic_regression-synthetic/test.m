@@ -1,6 +1,6 @@
 rng('default');
 
-nn = 10000;
+nn = 100000;
 d = 20;
 n = 5; % # of nodes
 
@@ -30,10 +30,11 @@ end
 
 %compute the optimal reference point
 %for basic
+nn_test = nn/1000;
 cvx_begin quiet
 variable x_ast(d,1)
-cumu_obj_basic_lr = sum( log(1 + exp( (repmat(-y(1:nn/100,:), 1, d)...
-    .* transpose(A(:,1:nn/100)) )*x_ast)) );
+cumu_obj_basic_lr = sum( log(1 + exp( (repmat(-y(1:nn_test,:), 1, d)...
+    .* transpose(A(:,1:nn_test)) )*x_ast)) );
 minimize( cumu_obj_basic_lr );
 cvx_end
 x_opt_basic = x_ast;
@@ -41,8 +42,8 @@ x_opt_basic = x_ast;
 %for beta1
 cvx_begin quiet
 variable x_ast(d,1)
-cumu_obj_basic_lr = (1-beta1) * sum( log(1 + exp( (repmat(-y(1:nn/100,:), 1, d)...
-    .* transpose(A(:,1:nn/100)) )*x_ast)) ) + beta1 * sum(Xi'* x_ast);
+cumu_obj_basic_lr = (1-beta1) * sum( log(1 + exp( (repmat(-y(1:nn_test,:), 1, d)...
+    .* transpose(A(:,1:nn_test)) )*x_ast)) ) + beta1 * sum(Xi'* x_ast);
 minimize( cumu_obj_basic_lr );
 cvx_end        
 x_opt_beta1 = x_ast;
@@ -50,8 +51,8 @@ x_opt_beta1 = x_ast;
 %for beta2
 cvx_begin quiet
 variable x_ast(d,1)
-cumu_obj_basic_lr = (1-beta2) * sum( log(1 + exp( (repmat(-y(1:nn/100,:), 1, d)...
-    .* transpose(A(:,1:nn/100)) )*x_ast)) ) + beta2 * sum(Xi'* x_ast);
+cumu_obj_basic_lr = (1-beta2) * sum( log(1 + exp( (repmat(-y(1:nn_test,:), 1, d)...
+    .* transpose(A(:,1:nn_test)) )*x_ast)) ) + beta2 * sum(Xi'* x_ast);
 minimize( cumu_obj_basic_lr );
 cvx_end        
 x_opt_beta2 = x_ast;
@@ -59,8 +60,8 @@ x_opt_beta2 = x_ast;
 %for beta3
 cvx_begin quiet
 variable x_ast(d,1)
-cumu_obj_basic_lr = (1-beta3) * sum( log(1 + exp( (repmat(-y(1:nn/100,:), 1, d)...
-    .* transpose(A(:,1:nn/100)) )*x_ast)) ) + beta3 * sum(Xi'* x_ast);
+cumu_obj_basic_lr = (1-beta3) * sum( log(1 + exp( (repmat(-y(1:nn_test,:), 1, d)...
+    .* transpose(A(:,1:nn_test)) )*x_ast)) ) + beta3 * sum(Xi'* x_ast);
 minimize( cumu_obj_basic_lr );
 cvx_end        
 x_opt_beta3 = x_ast;
@@ -158,7 +159,7 @@ for t=1:T
     for i=1:n
         %evaluate dynamic regret
         Loss_basic_lr(:,i) = Loss_basic_lr(:,i) + log(1 + exp(-y_it*A_it' * X_t_basic_lr(:,i)));
-        Loss_basic_lr_opt(:,i) = Loss_basic_lr(:,i) + log(1 + exp(-y_it*A_it' * x_opt_basic));
+        Loss_basic_lr_opt(:,i) = Loss_basic_lr_opt(:,i) + log(1 + exp(-y_it*A_it' * x_opt_basic));
         Loss_our_lr1(:,i) = Loss_our_lr1(:,i) + beta1 * log(1 + exp(-y_it*A_it'*X_t_our_lr1(:,i))) + (1-beta1)...
             * (xi_it'*X_t_our_lr1(:,i));
         Loss_our_lr1_opt(:,i) = Loss_our_lr1_opt(:,i) + beta1 * log(1 + exp(-y_it*A_it'*x_opt_beta1)) + (1-beta1)...
@@ -174,7 +175,7 @@ for t=1:T
     end
     
     
-    if mod(t,2000) == 0
+    if mod(t,10000) == 0
         
         output = ['time=' mat2str(round(toc,1)) ' | regret-basic=' mat2str(sum(max(0,Loss_basic_lr - Loss_basic_lr_opt)))...
             ' | regret-our(beta1)=' mat2str(sum(max(0,Loss_our_lr1 - Loss_our_lr1_opt)))...
