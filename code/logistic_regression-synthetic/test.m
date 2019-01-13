@@ -1,7 +1,7 @@
 
 %load data
 fn = './spam.mat';
-nn = 2000;
+nn = 10000;
 d = 20;
 
 
@@ -32,8 +32,8 @@ end
 %for basic
 cvx_begin quiet
 variable x_ast(d,1)
-cumu_obj_basic_lr = sum( log(1 + exp( (repmat(-y(1:nn,:), 1, d)...
-    .* transpose(A(:,1:nn)) )*x_ast)) );
+cumu_obj_basic_lr = sum( log(1 + exp( (repmat(-y(1:nn/100,:), 1, d)...
+    .* transpose(A(:,1:nn/100)) )*x_ast)) );
 minimize( cumu_obj_basic_lr );
 cvx_end
 x_opt_basic = x_ast;
@@ -41,8 +41,8 @@ x_opt_basic = x_ast;
 %for beta1
 cvx_begin quiet
 variable x_ast(d,1)
-cumu_obj_basic_lr = (1-beta1) * sum( log(1 + exp( (repmat(-y(1:nn,:), 1, d)...
-    .* transpose(A(:,1:nn)) )*x_ast)) ) + beta1 * sum(Xi'* x_ast);
+cumu_obj_basic_lr = (1-beta1) * sum( log(1 + exp( (repmat(-y(1:nn/100,:), 1, d)...
+    .* transpose(A(:,1:nn/100)) )*x_ast)) ) + beta1 * sum(Xi'* x_ast);
 minimize( cumu_obj_basic_lr );
 cvx_end        
 x_opt_beta1 = x_ast;
@@ -50,8 +50,8 @@ x_opt_beta1 = x_ast;
 %for beta2
 cvx_begin quiet
 variable x_ast(d,1)
-cumu_obj_basic_lr = (1-beta2) * sum( log(1 + exp( (repmat(-y(1:nn,:), 1, d)...
-    .* transpose(A(:,1:nn)) )*x_ast)) ) + beta2 * sum(Xi'* x_ast);
+cumu_obj_basic_lr = (1-beta2) * sum( log(1 + exp( (repmat(-y(1:nn/100,:), 1, d)...
+    .* transpose(A(:,1:nn/100)) )*x_ast)) ) + beta2 * sum(Xi'* x_ast);
 minimize( cumu_obj_basic_lr );
 cvx_end        
 x_opt_beta2 = x_ast;
@@ -59,8 +59,8 @@ x_opt_beta2 = x_ast;
 %for beta3
 cvx_begin quiet
 variable x_ast(d,1)
-cumu_obj_basic_lr = (1-beta3) * sum( log(1 + exp( (repmat(-y(1:nn,:), 1, d)...
-    .* transpose(A(:,1:nn)) )*x_ast)) ) + beta3 * sum(Xi'* x_ast);
+cumu_obj_basic_lr = (1-beta3) * sum( log(1 + exp( (repmat(-y(1:nn/100,:), 1, d)...
+    .* transpose(A(:,1:nn/100)) )*x_ast)) ) + beta3 * sum(Xi'* x_ast);
 minimize( cumu_obj_basic_lr );
 cvx_end        
 x_opt_beta3 = x_ast;
@@ -174,7 +174,7 @@ for t=1:T
     end
     
     
-    if mod(t,500) == 0
+    if mod(t,2000) == 0
         
         output = ['time=' mat2str(round(toc,1)) ' | regret-basic=' mat2str(sum(Loss_basic_lr - Loss_basic_lr_opt))...
             ' | regret-our(beta1)=' mat2str(sum(Loss_our_lr1 - Loss_our_lr1_opt))...
