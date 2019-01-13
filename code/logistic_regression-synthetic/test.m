@@ -30,7 +30,7 @@ for i=1:nn/n
         else
             A(:,(i-1)*n+j) = -sin(i)/10 + randn(d,1);
         end
-        Xi(:,(i-1)*n+j) = normrnd(0, (cos(t)+1)/10,d,1);
+        Xi(:,(i-1)*n+j) = normrnd(0, (cos(i)+1)/10,d,1);
     end
     
     
