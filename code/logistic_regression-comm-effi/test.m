@@ -1,5 +1,15 @@
 rng('default');
 
+corenum = 4;
+if parpool('size') <= 0
+    parpool('open', 'local', corenum);
+    fprintf('Begin parallel computing, %d cores...\n', corenum);
+else
+    fprintf('Alread begin parallel computing, %d cores...\n', corenum);
+end
+
+
+
 nn = 400;
 d = 100;
 n = 20; % # of nodes
@@ -202,7 +212,7 @@ for t=1:T
 end
 
 
-
+parpool close;
 
 
 
