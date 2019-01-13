@@ -7,7 +7,7 @@ n = 20; % # of nodes
 
 %hyper-parameter
 T=nn/n;
-eta = 1e-2;
+eta = 1e-1;
 eta_opt_basic = eta*5;
 eta_opt_1 = eta*5;
 eta_opt_2 = eta*5;
