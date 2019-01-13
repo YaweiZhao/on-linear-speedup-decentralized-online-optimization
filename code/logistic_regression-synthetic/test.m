@@ -1,7 +1,7 @@
 
 %load data
 fn = './spam.mat';
-nn = 10000;
+nn = 1000;
 d = 20;
 
 
@@ -125,7 +125,7 @@ loss_our_lr3 = 0;
 
 fprintf('Begin to itertion...\n');
 tic;
-for t=1:T
+for t=1:T/n
     
     for i=1:n % # of nodes
         
