@@ -30,7 +30,7 @@ end
 
 %compute the optimal reference point
 %for basic
-nn_test = nn/1000;
+nn_test = 100;
 cvx_begin quiet
 variable x_ast(d,1)
 cumu_obj_basic_lr = sum( log(1 + exp( (repmat(-y(1:nn_test,:), 1, d)...
@@ -43,7 +43,7 @@ x_opt_basic = x_ast;
 cvx_begin quiet
 variable x_ast(d,1)
 cumu_obj_basic_lr = beta1 * sum( log(1 + exp( (repmat(-y(1:nn_test,:), 1, d)...
-    .* transpose(A(:,1:nn_test)) )*x_ast)) ) + (1-beta1) * sum(Xi'* x_ast);
+    .* transpose(A(:,1:nn_test)) )*x_ast)) ) + (1-beta1) * sum(transpose(Xi(:,1:nn_test))* x_ast);
 minimize( cumu_obj_basic_lr );
 cvx_end        
 x_opt_beta1 = x_ast;
@@ -52,7 +52,7 @@ x_opt_beta1 = x_ast;
 cvx_begin quiet
 variable x_ast(d,1)
 cumu_obj_basic_lr = beta2 * sum( log(1 + exp( (repmat(-y(1:nn_test,:), 1, d)...
-    .* transpose(A(:,1:nn_test)) )*x_ast)) ) + (1-beta2) * sum(Xi'* x_ast);
+    .* transpose(A(:,1:nn_test)) )*x_ast)) ) + (1-beta2) * sum(transpose(Xi(:,1:nn_test))* x_ast);
 minimize( cumu_obj_basic_lr );
 cvx_end        
 x_opt_beta2 = x_ast;
@@ -61,7 +61,7 @@ x_opt_beta2 = x_ast;
 cvx_begin quiet
 variable x_ast(d,1)
 cumu_obj_basic_lr = beta3 * sum( log(1 + exp( (repmat(-y(1:nn_test,:), 1, d)...
-    .* transpose(A(:,1:nn_test)) )*x_ast)) ) + (1-beta3) * sum(Xi'* x_ast);
+    .* transpose(A(:,1:nn_test)) )*x_ast)) ) + (1-beta3) * sum(transpose(Xi(:,1:nn_test))* x_ast);
 minimize( cumu_obj_basic_lr );
 cvx_end        
 x_opt_beta3 = x_ast;
@@ -138,7 +138,7 @@ for t=1:T
         grad_basic = (-y_it * A_it) / (1 + exp(y_it * A_it'* X_t_basic_lr(:,i))); %gradient - basic lr
         grad_our_temp1 = (-y_it * A_it) / (1 + exp(y_it * A_it'* X_t_our_lr1(:,i)));
         grad_our_temp2 = (-y_it * A_it) / (1 + exp(y_it * A_it'* X_t_our_lr2(:,i)));
-        grad_our_temp3 = (-y_it * A_it) / (1 + exp(y_it * A_it'* X_t_our_lr2(:,i)));
+        grad_our_temp3 = (-y_it * A_it) / (1 + exp(y_it * A_it'* X_t_our_lr3(:,i)));
         xi_it = normrnd(0,0.1*abs(cos(t)),d,1);
         grad_h_t1 = xi_it;
         grad_h_t2 = xi_it;
