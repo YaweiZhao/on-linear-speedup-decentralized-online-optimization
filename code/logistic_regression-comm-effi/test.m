@@ -10,7 +10,7 @@ beta1 = 0.9;%varying beta1 0.9 0.8 0.7
 beta2 = 0.8;
 beta3 = 0.7;
 M = 0; %dynamics
-gamma= 1e-4;
+gamma= 1e-3;
 %hyper-parameter
 T=nn/n;
 
@@ -89,6 +89,7 @@ tic;
 for t=1:T
 
     for i=1:n % # of nodes
+        
         y_it = y((t-1)*n+i,:);
         A_it = A(:,(t-1)*n+i);
         xi_it = Xi(:,(t-1)*n+i);
@@ -116,13 +117,17 @@ for t=1:T
     X_t_our_lr2 = X_t_our_lr2 * W - eta/sqrt(t)  * Grad_our2; %update rule - our lr
     X_t_our_lr3 = X_t_our_lr3 * W - eta/sqrt(t)  * Grad_our3; %update rule - our lr
     
-    Loss_basic_lr(:,1) = Loss_basic_lr(:,1) + log(1 + exp(-y_it*A_it' * X_t_basic_lr(:,1)));
-    Loss_our_lr1(:,1) = Loss_our_lr1(:,1) + beta1 * log(1 + exp(-y_it*A_it'*X_t_our_lr1(:,1))) + (1-beta1)...
-        * (xi_it'*X_t_our_lr1(:,1));
-    Loss_our_lr2(:,1) = Loss_our_lr2(:,1) + beta2 * log(1 + exp(-y_it*A_it'*X_t_our_lr2(:,1))) + (1-beta2)...
-        * (xi_it'*X_t_our_lr2(:,1));
-    Loss_our_lr3(:,1) = Loss_our_lr3(:,1) + beta3 * log(1 + exp(-y_it*A_it'*X_t_our_lr3(:,1))) + (1-beta3)...
-        * (xi_it'*X_t_our_lr3(:,1));
+    Loss_basic_lr(:,1) = Loss_basic_lr(:,1) + log(1 + exp(-y((t-1)*n+1,:)*transpose(A(:,(t-1)*n+1))...
+        * X_t_basic_lr(:,1)));
+    Loss_our_lr1(:,1) = Loss_our_lr1(:,1) + beta1 * log(1 + exp(-y((t-1)*n+1,:)*transpose(A(:,(t-1)*n+1))...
+        *X_t_our_lr1(:,1))) + (1-beta1)...
+        * (transpose(Xi(:,(t-1)*n+1))*X_t_our_lr1(:,1));
+    Loss_our_lr2(:,1) = Loss_our_lr2(:,1) + beta2 * log(1 + exp(-y((t-1)*n+1,:)*transpose(A(:,(t-1)*n+1))...
+        *X_t_our_lr2(:,1))) + (1-beta2)...
+        * (transpose(Xi(:,(t-1)*n+1))*X_t_our_lr2(:,1));
+    Loss_our_lr3(:,1) = Loss_our_lr3(:,1) + beta3 * log(1 + exp(-y((t-1)*n+1,:)*transpose(A(:,(t-1)*n+1))...
+        *X_t_our_lr3(:,1))) + (1-beta3)...
+        * (transpose(Xi(:,(t-1)*n+1))*X_t_our_lr3(:,1));
 
     %evaluate dynamic regret on the first node
     if t==T
