@@ -2,8 +2,8 @@ rng('default');
 
 
 d = 10;
-n = 40; % # of nodes
-nn = 4000/20*n;
+n = 20; % # of nodes
+nn = 200*n;
 
 %hyper-parameter
 eta = 1e-4;
@@ -26,7 +26,7 @@ for i=1:nn/n
             A(:,(i-1)*n+j) = 1+sin(i) + randn(d,1);
         end
         %Xi(:,(i-1)*n+j) = normrnd(0, 1+cos(i)/10,d,1);
-        Xi(:,(i-1)*n+j) = (cos(i) +rand(d,1))/1000;
+        Xi(:,(i-1)*n+j) = cos(i) +rand(d,1);
     end
     
     
@@ -102,9 +102,12 @@ for t=1:T
             + gamma*X_t_our_lr2(:,i);
         grad_our_temp3 = (-y_it * A_it) / (1 + exp(y_it * A_it'* X_t_our_lr3(:,i)))...
             + gamma*X_t_our_lr3(:,i);
-        grad_h_t1 = xi_it;
-        grad_h_t2 = xi_it;
-        grad_h_t3 = xi_it;
+        grad_h_t1 = (-y_it * xi_it) / (1 + exp(y_it * xi_it'* X_t_our_lr1(:,i)))...
+            + gamma*X_t_our_lr1(:,i);
+        grad_h_t2 = (-y_it * xi_it) / (1 + exp(y_it * xi_it'* X_t_our_lr2(:,i)))...
+            + gamma*X_t_our_lr2(:,i);
+        grad_h_t3 = (-y_it * xi_it) / (1 + exp(y_it * xi_it'* X_t_our_lr3(:,i)))...
+            + gamma*X_t_our_lr3(:,i);
         grad_our1 = beta1 * grad_our_temp1 + (1-beta1) * grad_h_t1; %gradient - our lr
         grad_our2 = beta2 * grad_our_temp2 + (1-beta2) * grad_h_t2; %gradient - our lr
         grad_our3 = beta3 * grad_our_temp3 + (1-beta3) * grad_h_t3; %gradient - our lr
@@ -123,17 +126,20 @@ for t=1:T
     
     temp1 = log(1 + exp(-y((t-1)*n+1,:)*transpose(A(:,(t-1)*n+1))...
         *X_t_our_lr1(:,1))) + gamma/2*(transpose(X_t_our_lr1(:,1))*X_t_our_lr1(:,1));
-    temp2 = transpose(Xi(:,(t-1)*n+1))*X_t_our_lr1(:,1);
+    temp2 = log(1 + exp(-y((t-1)*n+1,:)*transpose(Xi(:,(t-1)*n+1))...
+        *X_t_our_lr1(:,1))) + gamma/2*(transpose(X_t_our_lr1(:,1))*X_t_our_lr1(:,1));
     Loss_our_lr1(:,1) = Loss_our_lr1(:,1) + beta1 * temp1 + (1-beta1)*temp2;
     
     temp1 = log(1 + exp(-y((t-1)*n+1,:)*transpose(A(:,(t-1)*n+1))...
         *X_t_our_lr2(:,1)))+ gamma/2*(transpose(X_t_our_lr2(:,1))*X_t_our_lr2(:,1));
-    temp2 = transpose(Xi(:,(t-1)*n+1))*X_t_our_lr2(:,1);
+    temp2 = log(1 + exp(-y((t-1)*n+1,:)*transpose(Xi(:,(t-1)*n+1))...
+        *X_t_our_lr2(:,1)))+ gamma/2*(transpose(X_t_our_lr2(:,1))*X_t_our_lr2(:,1));
     Loss_our_lr2(:,1) = Loss_our_lr2(:,1) + beta2 * temp1 + (1-beta2)*temp2;
     
     temp1 = log(1 + exp(-y((t-1)*n+1,:)*transpose(A(:,(t-1)*n+1))...
         *X_t_our_lr3(:,1)))+ gamma/2*(transpose(X_t_our_lr3(:,1))*X_t_our_lr3(:,1));
-    temp2 = transpose(Xi(:,(t-1)*n+1))*X_t_our_lr3(:,1);
+    temp2 = log(1 + exp(-y((t-1)*n+1,:)*transpose(Xi(:,(t-1)*n+1))...
+        *X_t_our_lr3(:,1)))+ gamma/2*(transpose(X_t_our_lr3(:,1))*X_t_our_lr3(:,1));
     Loss_our_lr3(:,1) = Loss_our_lr3(:,1) + beta3 * temp1 + (1-beta3)*temp2;
 
     %evaluate dynamic regret on the first node
@@ -169,8 +175,10 @@ for t=1:T
         temp1 = log(1 + exp(ones(1,d) *( transpose(-y(1:n:(t-1)*n+1,:)*ones(1,d))...
             .* A(:,1:n:(t-1)*n+1) .* x_ast1)))*ones(t,1);
         temp2 = gamma/2*(ones(1,d)*(x_ast1 .* x_ast1)*ones(t,1));
-        temp3 = ones(1,d)*(Xi(:,1:n:(t-1)*n+1) .* x_ast1)* ones(t,1);
-        cumu_obj_our_lr1 =  beta1 * (temp1 + temp2) +(1-beta1) * temp3;
+        temp3 = log(1 + exp(ones(1,d) *( transpose(-y(1:n:(t-1)*n+1,:)*ones(1,d))...
+            .* Xi(:,1:n:(t-1)*n+1) .* x_ast1)))*ones(t,1);
+        temp4 = gamma/2*(ones(1,d)*(x_ast1 .* x_ast1)*ones(t,1));
+        cumu_obj_our_lr1 =  beta1 * (temp1 + temp2) +(1-beta1) * (temp3+temp4);
         minimize( cumu_obj_our_lr1 );
         subject to
         ones(1,t-1)*norms( R * x_ast1', 2 , 2) <= M; %dynamics M
@@ -184,8 +192,10 @@ for t=1:T
         temp1 = log(1 + exp(ones(1,d) *( transpose(-y(1:n:(t-1)*n+1,:)*ones(1,d))...
             .* A(:,1:n:(t-1)*n+1) .* x_ast2)))*ones(t,1);
         temp2 = gamma/2*(ones(1,d)*(x_ast2 .* x_ast2)*ones(t,1));
-        temp3 = ones(1,d)*(Xi(:,1:n:(t-1)*n+1) .* x_ast2)* ones(t,1);
-        cumu_obj_our_lr2 =  beta2 * (temp1 + temp2) +(1-beta2) * temp3;
+        temp3 = log(1 + exp(ones(1,d) *( transpose(-y(1:n:(t-1)*n+1,:)*ones(1,d))...
+            .* Xi(:,1:n:(t-1)*n+1) .* x_ast2)))*ones(t,1);
+        temp4 = gamma/2*(ones(1,d)*(x_ast2 .* x_ast2)*ones(t,1));
+        cumu_obj_our_lr2 =  beta2 * (temp1 + temp2) +(1-beta2) * (temp3+temp4);
         minimize( cumu_obj_our_lr2 );
         subject to
         ones(1,t-1)*norms( R * x_ast2', 2 , 2) <= M; %dynamics M
@@ -199,8 +209,10 @@ for t=1:T
         temp1 = log(1 + exp(ones(1,d) *( transpose(-y(1:n:(t-1)*n+1,:)*ones(1,d))...
             .* A(:,1:n:(t-1)*n+1) .* x_ast3)))*ones(t,1);
         temp2 = gamma/2*(ones(1,d)*(x_ast3 .* x_ast3)*ones(t,1));
-        temp3 = ones(1,d)*(Xi(:,1:n:(t-1)*n+1) .* x_ast3)* ones(t,1);
-        cumu_obj_our_lr3 = beta3 * (temp1 + temp2) +(1-beta3) * temp3;
+        temp3 = log(1 + exp(ones(1,d) *( transpose(-y(1:n:(t-1)*n+1,:)*ones(1,d))...
+            .* Xi(:,1:n:(t-1)*n+1) .* x_ast3)))*ones(t,1);
+        temp4 = gamma/2*(ones(1,d)*(x_ast3 .* x_ast3)*ones(t,1));
+        cumu_obj_our_lr3 = beta3 * (temp1 + temp2) +(1-beta3) * (temp3+temp4);
         minimize( cumu_obj_our_lr3 );
         subject to
         ones(1,t-1)*norms( R * x_ast3', 2 , 2) <= M; %dynamics M
