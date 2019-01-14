@@ -107,10 +107,10 @@ for t=1:T
         Grad_our2(:,i) = grad_our2;
         Grad_our3(:,i) = grad_our3;
     end
-    X_t_basic_lr = X_t_basic_lr * W - eta * Grad_basic; %update rule - basic lr
-    X_t_our_lr1 = X_t_our_lr1 * W - eta * Grad_our1; %update rule - our lr
-    X_t_our_lr2 = X_t_our_lr2 * W - eta * Grad_our2; %update rule - our lr
-    X_t_our_lr3 = X_t_our_lr3 * W - eta * Grad_our3; %update rule - our lr
+    X_t_basic_lr = X_t_basic_lr * W - eta/sqrt(t) * Grad_basic; %update rule - basic lr
+    X_t_our_lr1 = X_t_our_lr1 * W - eta/sqrt(t)  * Grad_our1; %update rule - our lr
+    X_t_our_lr2 = X_t_our_lr2 * W - eta/sqrt(t)  * Grad_our2; %update rule - our lr
+    X_t_our_lr3 = X_t_our_lr3 * W - eta/sqrt(t)  * Grad_our3; %update rule - our lr
     
     
     %evaluate dynamic regret on the first node
@@ -139,43 +139,55 @@ for t=1:T
     subject to
     norms( R * x_ast', 2 , 2) <= M; %dynamics M
     cvx_end
-    Regret_basic_lr(:,1) = Loss_basic_lr(:,1) - cumu_obj_basic_lr;
+    cumu_obj_basic_lr_opt = ones(1,d)*log(1 + exp( transpose(-y(1:n:(t-1)*n+1,:)*ones(1,d))...
+        .* A(:,1:n:(t-1)*n+1) .* x_ast))*ones(t,1);
+    Regret_basic_lr(:,1) = Loss_basic_lr(:,1) - cumu_obj_basic_lr_opt;
     
     
     
     
     cvx_begin quiet
     variable x_ast(d,t)
-    cumu_obj_our_lr =  beta1 * ones(1,d)*log(1 + exp( transpose(-y(1:n:(t-1)*n+1,:)*ones(1,d))...
+    cumu_obj_our_lr1 =  beta1 * ones(1,d)*log(1 + exp( transpose(-y(1:n:(t-1)*n+1,:)*ones(1,d))...
         .* A(:,1:n:(t-1)*n+1) .* x_ast))*ones(t,1)...
         +(1-beta1) * ones(1,d)*(Xi(:,1:n:(t-1)*n+1) .* x_ast)* ones(t,1);
-    minimize( cumu_obj_our_lr );
+    minimize( cumu_obj_our_lr1 );
     subject to
     norms( R * x_ast', 2 , 2) <= M; %dynamics M
     cvx_end
-    Regret_our_lr1(:,1) = Loss_our_lr1(:,1) - cumu_obj_our_lr;
+    cumu_obj_our_lr1_opt = beta1 * ones(1,d)*log(1 + exp( transpose(-y(1:n:(t-1)*n+1,:)*ones(1,d))...
+        .* A(:,1:n:(t-1)*n+1) .* x_ast))*ones(t,1)...
+        +(1-beta1) * ones(1,d)*(Xi(:,1:n:(t-1)*n+1) .* x_ast)* ones(t,1);
+    Regret_our_lr1(:,1) = Loss_our_lr1(:,1) - cumu_obj_our_lr1_opt;
     
     cvx_begin quiet
     variable x_ast(d,t)
-    cumu_obj_our_lr =  beta2 * ones(1,d)*log(1 + exp( transpose(-y(1:n:(t-1)*n+1,:)*ones(1,d))...
+    cumu_obj_our_lr2 =  beta2 * ones(1,d)*log(1 + exp( transpose(-y(1:n:(t-1)*n+1,:)*ones(1,d))...
         .* A(:,1:n:(t-1)*n+1) .* x_ast))*ones(t,1)...
         +(1-beta2) * ones(1,d)*(Xi(:,1:n:(t-1)*n+1) .* x_ast)* ones(t,1);
-    minimize( cumu_obj_our_lr );
+    minimize( cumu_obj_our_lr2 );
     subject to
     norms( R * x_ast', 2 , 2) <= M; %dynamics M
     cvx_end
-    Regret_our_lr2(:,1) = Loss_our_lr2(:,1) - cumu_obj_our_lr;
+    cumu_obj_our_lr2_opt = beta2 * ones(1,d)*log(1 + exp( transpose(-y(1:n:(t-1)*n+1,:)*ones(1,d))...
+        .* A(:,1:n:(t-1)*n+1) .* x_ast))*ones(t,1)...
+        +(1-beta2) * ones(1,d)*(Xi(:,1:n:(t-1)*n+1) .* x_ast)* ones(t,1);
+    Regret_our_lr2(:,1) = Loss_our_lr2(:,1) - cumu_obj_our_lr2_opt;
     
     cvx_begin quiet
     variable x_ast(d,t)
-    cumu_obj_our_lr =  beta3 * ones(1,d)*log(1 + exp( transpose(-y(1:n:(t-1)*n+1,:)*ones(1,d))...
+    cumu_obj_our_lr3 =  beta3 * ones(1,d)*log(1 + exp( transpose(-y(1:n:(t-1)*n+1,:)*ones(1,d))...
         .* A(:,1:n:(t-1)*n+1) .* x_ast))*ones(t,1)...
         +(1-beta3) * ones(1,d)*(Xi(:,1:n:(t-1)*n+1) .* x_ast)* ones(t,1);
-    minimize( cumu_obj_our_lr );
+    minimize( cumu_obj_our_lr3 );
     subject to
     norms( R * x_ast', 2 , 2) <= M; %dynamics M
     cvx_end
-    Regret_our_lr3(:,1) = Loss_our_lr3(:,1) - cumu_obj_our_lr;
+    cumu_obj_our_lr3_opt = beta3 * ones(1,d)*log(1 + exp( transpose(-y(1:n:(t-1)*n+1,:)*ones(1,d))...
+        .* A(:,1:n:(t-1)*n+1) .* x_ast))*ones(t,1)...
+        +(1-beta3) * ones(1,d)*(Xi(:,1:n:(t-1)*n+1) .* x_ast)* ones(t,1);
+    minimize( cumu_obj_our_lr3 );
+    Regret_our_lr3(:,1) = Loss_our_lr3(:,1) - cumu_obj_our_lr3_opt;
 
     
     output = ['#rounds=' mat2str(t) ' | regret-basic=' mat2str(round(sum(Regret_basic_lr),2))...
