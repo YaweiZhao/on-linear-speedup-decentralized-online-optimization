@@ -25,7 +25,7 @@ for i=1:nn/n
             A(:,(i-1)*n+j) = 1+sin(i) + randn(d,1);
         end
         %Xi(:,(i-1)*n+j) = normrnd(0, 1+cos(i)/10,d,1);
-        Xi(:,(i-1)*n+j) = rand(d,1);
+        Xi(:,(i-1)*n+j) = cos(i)/10 +1+rand(d,1);
     end
     
     
