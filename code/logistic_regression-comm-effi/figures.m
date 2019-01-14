@@ -2,28 +2,23 @@
 
 
 dataset = 'synthetic';
-task = 'm=10';
+task = 'm';
 
-if strcmp(dataset, 'synthetic') && strcmp(task, 'm=10')%m=10
+if strcmp(dataset, 'synthetic') && strcmp(task, 'm')
 %communication efficient - occupancy
-t = 20*[50 100 150 200];
-regret_basic = [33 68 102 136]*20;
-regret_our_beta1 = [29 58 87 118]*20;
-regret_our_beta2 = [26 52 79 106]*20;
-regret_our_beta3 = [21 42 61 80]*20;
-plot(t, regret_basic, '-ob','MarkerSize',10);
-hold on;
-plot(t, regret_our_beta1, '-dr','MarkerSize',10);
-hold on;
-plot(t, regret_our_beta2, '-*c','MarkerSize',10);
-hold on;
-plot(t, regret_our_beta3, '-+g','MarkerSize',10);
-pax = gca;
-pax.FontSize = 15;
-axis([1000 4000 400 2750]);
+m = [0 0 1 10 50 100];
+regret_basic = [99 104 124 136 137]*20;
+regret_our_beta1 = [90 94 112 122 123]*20;
+regret_our_beta2 = [80 84 100 109 110]*20;
+regret_our_beta3 = [70 73 87 95 96]*20;
 
-xlabel('Number of iterations');
-ylabel('Dynamic regret');
+data = [regret_basic; regret_our_beta1;regret_our_beta2;regret_our_beta3];
+bar(1:5, data');
+xlabel('M','FontSize', 15);
+ylabel('Regret','FontSize', 15);
+set(gca,'FontSize',15);
+set(gca, 'xticklabel', {'M=0','M=1',...
+        'M=10', 'M=50', 'M=100'});
 legend('PDR', 'ODR(\beta=0.9)','ODR(\beta=0.8)','ODR(\beta=0.7)',...
     'Location','southeast'); 
 

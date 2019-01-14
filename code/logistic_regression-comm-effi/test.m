@@ -9,7 +9,7 @@ eta = 1e-4;
 beta1 = 0.9;%varying beta1 0.9 0.8 0.7
 beta2 = 0.8;
 beta3 = 0.7;
-M = 100; %dynamics
+M = 10; %dynamics
 gamma= 1e-3;
 %hyper-parameter
 T=nn/n;
@@ -136,7 +136,7 @@ for t=1:T
     Loss_our_lr3(:,1) = Loss_our_lr3(:,1) + beta3 * temp1 + (1-beta3)*temp2;
 
     %evaluate dynamic regret on the first node
-    if t==T
+    if mod(t,fix(T/6)) == 0
 
         %auxiliary matrix R
         R = zeros(t-1,t);
