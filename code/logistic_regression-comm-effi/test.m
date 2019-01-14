@@ -6,7 +6,6 @@ n = 20; % # of nodes
 
 %hyper-parameter
 eta = 1e-3;
-lambda = 1e-1;
 beta1 = 0.9;%varying beta1 0.9 0.8 0.7
 beta2 = 0.8;
 beta3 = 0.7;
@@ -21,9 +20,9 @@ Xi = zeros(d,nn);
 for i=1:nn/n
     for j=1:n
         if y((i-1)*n+j,:) == 1
-            A(:,(i-1)*n+j) = sin(i)/10 + randn(d,1);
+            A(:,(i-1)*n+j) = 1+sin(i)/10 + randn(d,1);
         else
-            A(:,(i-1)*n+j) = -sin(i)/10 + randn(d,1);
+            A(:,(i-1)*n+j) = 1-sin(i)/10 + randn(d,1);
         end
         Xi(:,(i-1)*n+j) = normrnd(0, (cos(i)+1)/10,d,1);
     end
@@ -87,7 +86,7 @@ loss_our_lr3 = 0;
 tic;
 
 for t=1:T
-    fprintf('Begin [%d] iterations ...\n', t);
+
     for i=1:n % # of nodes
         y_it = y((t-1)*n+i,:);
         A_it = A(:,(t-1)*n+i);
@@ -195,6 +194,7 @@ for t=1:T
             ' | regret-our(beta1)=' mat2str(round(sum(Regret_our_lr1),2))...
             ' | regret-our(beta2)=' mat2str(round(sum(Regret_our_lr2),2))...
             ' | regret-our(beta3)=' mat2str(round(sum(Regret_our_lr3),2))];
+        fprintf('Begin [%d] iterations ...\n', t);
         fprintf([output '\n']);
 
         fid=fopen('./output.txt','a');
