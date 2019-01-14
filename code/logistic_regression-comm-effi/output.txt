@@ -24,3 +24,4 @@ time=9.4 | regret-basic=3.35 | regret-our(beta1)=3.03 | regret-our(beta2)=2.7 | 
 #rounds=2 | regret-basic=0.72 | regret-our(beta1)=0.62 | regret-our(beta2)=0.55 | regret-our(beta3)=0.49
 #rounds=3 | regret-basic=1.38 | regret-our(beta1)=1.21 | regret-our(beta2)=1.07 | regret-our(beta3)=0.95
 #rounds=4 | regret-basic=2 | regret-our(beta1)=1.77 | regret-our(beta2)=1.55 | regret-our(beta3)=1.36
+#rounds=1 | regret-basic=0.69 | regret-our(beta1)=159.56 | regret-our(beta2)=495.2 | regret-our(beta3)=830.84
