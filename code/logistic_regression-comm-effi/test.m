@@ -20,9 +20,9 @@ Xi = zeros(d,nn);
 for i=1:nn/n
     for j=1:n
         if y((i-1)*n+j,:) == 1
-            A(:,(i-1)*n+j) = 1+sin(i)/10 + randn(d,1);
+            A(:,(i-1)*n+j) = sin(i)/10 + randn(d,1);
         else
-            A(:,(i-1)*n+j) = 1-sin(i)/10 + randn(d,1);
+            A(:,(i-1)*n+j) = sin(i)/10 + randn(d,1);
         end
         Xi(:,(i-1)*n+j) = normrnd(0, (cos(i)+1)/10,d,1);
     end
@@ -111,16 +111,16 @@ for t=1:T
     X_t_our_lr2 = X_t_our_lr2 * W - eta/sqrt(t)  * Grad_our2; %update rule - our lr
     X_t_our_lr3 = X_t_our_lr3 * W - eta/sqrt(t)  * Grad_our3; %update rule - our lr
     
-    
+    Loss_basic_lr(:,1) = Loss_basic_lr(:,1) + log(1 + exp(-y_it*A_it' * X_t_basic_lr(:,1)));
+    Loss_our_lr1(:,1) = Loss_our_lr1(:,1) + beta1 * log(1 + exp(-y_it*A_it'*X_t_our_lr1(:,1))) + (1-beta1)...
+        * (xi_it'*X_t_our_lr1(:,1));
+    Loss_our_lr2(:,1) = Loss_our_lr2(:,1) + beta2 * log(1 + exp(-y_it*A_it'*X_t_our_lr2(:,1))) + (1-beta2)...
+        * (xi_it'*X_t_our_lr2(:,1));
+    Loss_our_lr3(:,1) = Loss_our_lr3(:,1) + beta3 * log(1 + exp(-y_it*A_it'*X_t_our_lr3(:,1))) + (1-beta3)...
+        * (xi_it'*X_t_our_lr3(:,1));
+
     %evaluate dynamic regret on the first node
     if mod(t,20) == 0
-        Loss_basic_lr(:,1) = Loss_basic_lr(:,1) + log(1 + exp(-y_it*A_it' * X_t_basic_lr(:,1)));
-        Loss_our_lr1(:,1) = Loss_our_lr1(:,1) + beta1 * log(1 + exp(-y_it*A_it'*X_t_our_lr1(:,1))) + (1-beta1)...
-            * (xi_it'*X_t_our_lr1(:,1));
-        Loss_our_lr2(:,1) = Loss_our_lr2(:,1) + beta2 * log(1 + exp(-y_it*A_it'*X_t_our_lr2(:,1))) + (1-beta2)...
-            * (xi_it'*X_t_our_lr2(:,1));
-        Loss_our_lr3(:,1) = Loss_our_lr3(:,1) + beta3 * log(1 + exp(-y_it*A_it'*X_t_our_lr3(:,1))) + (1-beta3)...
-            * (xi_it'*X_t_our_lr3(:,1));
 
         %auxiliary matrix R
         R = zeros(t-1,t);
