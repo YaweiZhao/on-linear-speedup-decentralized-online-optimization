@@ -183,10 +183,10 @@ for t=1:T
     subject to
     norms( R * x_ast', 2 , 2) <= M; %dynamics M
     cvx_end
+    
     cumu_obj_our_lr3_opt = beta3 * ones(1,d)*log(1 + exp( transpose(-y(1:n:(t-1)*n+1,:)*ones(1,d))...
         .* A(:,1:n:(t-1)*n+1) .* x_ast))*ones(t,1)...
         +(1-beta3) * ones(1,d)*(Xi(:,1:n:(t-1)*n+1) .* x_ast)* ones(t,1);
-    minimize( cumu_obj_our_lr3 );
     Regret_our_lr3(:,1) = Loss_our_lr3(:,1) - cumu_obj_our_lr3_opt;
 
     
