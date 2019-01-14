@@ -112,7 +112,8 @@ for t=1:T
     X_t_our_lr2 = X_t_our_lr2 * W - eta * Grad_our2; %update rule - our lr
     X_t_our_lr3 = X_t_our_lr3 * W - eta * Grad_our3; %update rule - our lr
     
-    for i=1:n
+    %evaluate dynamic regret only for the first node
+    for i=1:1
         %evaluate dynamic regret
         Loss_basic_lr(:,i) = Loss_basic_lr(:,i) + log(1 + exp(-y_it*A_it' * X_t_basic_lr(:,i)));
         Loss_our_lr1(:,i) = Loss_our_lr1(:,i) + beta1 * log(1 + exp(-y_it*A_it'*X_t_our_lr1(:,i))) + (1-beta1)...
