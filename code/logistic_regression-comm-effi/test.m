@@ -85,9 +85,9 @@ loss_our_lr1 = 0;
 loss_our_lr2 = 0;
 loss_our_lr3 = 0;
 tic;
-fprintf('Begin iterations ...\n');
+
 for t=1:T
-    
+    fprintf('Begin [%d] iterations ...\n', t);
     for i=1:n % # of nodes
         y_it = y((t-1)*n+i,:);
         A_it = A(:,(t-1)*n+i);
