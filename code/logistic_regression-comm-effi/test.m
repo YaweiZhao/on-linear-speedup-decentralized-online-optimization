@@ -1,6 +1,6 @@
 rng('default');
 
-nn = 400;
+nn = 4000;
 d = 10;
 n = 20; % # of nodes
 
