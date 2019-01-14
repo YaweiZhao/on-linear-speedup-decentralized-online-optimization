@@ -9,7 +9,7 @@ eta = 1e-4;
 beta1 = 0.9;%varying beta1 0.9 0.8 0.7
 beta2 = 0.8;
 beta3 = 0.7;
-M = 10; %dynamics
+M = 0; %dynamics
 gamma= 1e-1;
 %hyper-parameter
 T=nn/n;
