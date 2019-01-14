@@ -1,8 +1,9 @@
 rng('default');
 
-nn = 4000;
+
 d = 10;
-n = 10; % # of nodes
+n = 40; % # of nodes
+nn = 4000/20*n;
 
 %hyper-parameter
 eta = 1e-4;
@@ -209,10 +210,10 @@ for t=1:T
         Regret_our_lr3(:,1) = Loss_our_lr3(:,1) - cumu_obj_our_lr3;
 
 
-        output = ['#rounds=' mat2str(t) ' | regret-basic=' mat2str(round(sum(Regret_basic_lr)))...
-            ' | regret-our(beta1)=' mat2str(round(sum(Regret_our_lr1)))...
-            ' | regret-our(beta2)=' mat2str(round(sum(Regret_our_lr2)))...
-            ' | regret-our(beta3)=' mat2str(round(sum(Regret_our_lr3)))];
+        output = ['#rounds=' mat2str(t) ' | regret-basic=' mat2str(round(sum(Regret_basic_lr),3))...
+            ' | regret-our(beta1)=' mat2str(round(sum(Regret_our_lr1),3))...
+            ' | regret-our(beta2)=' mat2str(round(sum(Regret_our_lr2),3))...
+            ' | regret-our(beta3)=' mat2str(round(sum(Regret_our_lr3),3))];
         fprintf('Begin [%d] iterations ...\n', t);
         fprintf([output '\n']);
 
