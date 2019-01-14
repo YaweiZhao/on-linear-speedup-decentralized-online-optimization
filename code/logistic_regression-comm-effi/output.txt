@@ -19,3 +19,8 @@ time=9.4 | regret-basic=3.35 | regret-our(beta1)=3.03 | regret-our(beta2)=2.7 | 
 #rounds=2 | regret-basic=-8.77 | regret-our(beta1)=274.22 | regret-our(beta2)=543.64 | regret-our(beta3)=813.2
 #rounds=3 | regret-basic=-15.19 | regret-our(beta1)=277.16 | regret-our(beta2)=549.01 | regret-our(beta3)=821.01
 #rounds=1 | regret-basic=0 | regret-our(beta1)=1.06 | regret-our(beta2)=1.18 | regret-our(beta3)=1.15
+#rounds=1 | regret-basic=0.61 | regret-our(beta1)=1.01 | regret-our(beta2)=1 | regret-our(beta3)=1
+#rounds=1 | regret-basic=0.42 | regret-our(beta1)=0.34 | regret-our(beta2)=0.27 | regret-our(beta3)=0.21
+#rounds=2 | regret-basic=0.72 | regret-our(beta1)=0.62 | regret-our(beta2)=0.55 | regret-our(beta3)=0.49
+#rounds=3 | regret-basic=1.38 | regret-our(beta1)=1.21 | regret-our(beta2)=1.07 | regret-our(beta3)=0.95
+#rounds=4 | regret-basic=2 | regret-our(beta1)=1.77 | regret-our(beta2)=1.55 | regret-our(beta3)=1.36

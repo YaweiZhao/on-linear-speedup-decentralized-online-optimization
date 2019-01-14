@@ -1,15 +1,15 @@
 rng('default');
 
 nn = 4000;
-d = 1;
+d = 10;
 n = 20; % # of nodes
 
 %hyper-parameter
-eta = 1e-3;
+eta = 1e-4;
 beta1 = 0.9;%varying beta1 0.9 0.8 0.7
 beta2 = 0.8;
 beta3 = 0.7;
-M = 1e3; %dynamics
+M = 1e1; %dynamics
 gamma= 1e-1;
 %hyper-parameter
 T=nn/n;
@@ -124,7 +124,7 @@ for t=1:T
         * (xi_it'*X_t_our_lr3(:,1));
 
     %evaluate dynamic regret on the first node
-    if mod(t,20) == 0
+    if mod(t,5) == 0
 
         %auxiliary matrix R
         R = zeros(t-1,t);
