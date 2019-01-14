@@ -135,7 +135,7 @@ for t=1:T
         cvx_begin quiet
         variable x_ast_basic(d,t)
         cumu_obj_basic_lr = log(1 + exp(ones(1,d) * (transpose(-y(1:n:(t-1)*n+1,:)*ones(1,d))...
-            .* A(:,1:n:(t-1)*n+1) .* x_ast)))*ones(t,1);
+            .* A(:,1:n:(t-1)*n+1) .* x_ast_basic)))*ones(t,1);
         minimize( cumu_obj_basic_lr );
         subject to
         norms( R * x_ast_basic', 2 , 2) <= M; %dynamics M
