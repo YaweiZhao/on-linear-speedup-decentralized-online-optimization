@@ -10,7 +10,7 @@ lambda = 1e-1;
 beta1 = 0.9;%varying beta1 0.9 0.8 0.7
 beta2 = 0.8;
 beta3 = 0.7;
-M = 1e4; %dynamics
+M = 10; %dynamics
 
 %hyper-parameter
 T=nn/n;
