@@ -1,30 +1,30 @@
 %plot figures 
 
 
-dataset = 'spam';
-task = 'comm-effi';
+dataset = 'synthetic';
+task = 'm=10';
 
-if strcmp(dataset, 'occupancy') && strcmp(task, 'comm-effi')
+if strcmp(dataset, 'synthetic') && strcmp(task, 'm=10')%m=10
 %communication efficient - occupancy
-time = [292 461 684 1012 1400  1943 2474];
-regret_basic = [17 20.3 23.7 27 30 33 37];
-regret_our_beta1 = [15.2 18.3 21.4 24.4 27 30 33];
-regret_our_beta2 = [13.6 16 19 21.7 24 27 29];
-regret_our_beta3 = [11.8 14.3 16.6 19 21 23.6 25.8];
-plot(time, regret_basic, '-ob','MarkerSize',10);
+t = 20*[50 100 150 200];
+regret_basic = [33 68 102 136]*20;
+regret_our_beta1 = [29 58 87 118]*20;
+regret_our_beta2 = [26 52 79 106]*20;
+regret_our_beta3 = [21 42 61 80]*20;
+plot(t, regret_basic, '-ob','MarkerSize',10);
 hold on;
-plot(time, regret_our_beta1, '-dr','MarkerSize',10);
+plot(t, regret_our_beta1, '-dr','MarkerSize',10);
 hold on;
-plot(time, regret_our_beta2, '-*c','MarkerSize',10);
+plot(t, regret_our_beta2, '-*c','MarkerSize',10);
 hold on;
-plot(time, regret_our_beta3, '-+g','MarkerSize',10);
+plot(t, regret_our_beta3, '-+g','MarkerSize',10);
 pax = gca;
 pax.FontSize = 15;
-axis([280 2500 10 40]);
+axis([1000 4000 400 2750]);
 
-xlabel('Time(s)');
+xlabel('Number of iterations');
 ylabel('Dynamic regret');
-legend('DOGD-PRE', 'DOGD-OUR(\beta=0.9)','DOGD-OUR(\beta=0.8)','DOGD-OUR(\beta=0.7)',...
+legend('PDR', 'ODR(\beta=0.9)','ODR(\beta=0.8)','ODR(\beta=0.7)',...
     'Location','southeast'); 
 
 elseif strcmp(dataset, 'online-tail') && strcmp(task, 'comm-effi')
