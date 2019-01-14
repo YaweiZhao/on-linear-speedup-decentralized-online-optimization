@@ -2,26 +2,26 @@
 
 
 dataset = 'synthetic';
-task = 'n_instance';
+task = 'n_iter';
 
-if strcmp(dataset, 'synthetic') && strcmp(task, 'n_instance')
-n_instance = [33 66 99 132 165 200]*20;
+if strcmp(dataset, 'synthetic') && strcmp(task, 'n_iter')
+n_iter = [33 66 99 132 165 200];
 regret_basic = [23 45 66 88 106 124];
 regret_our_beta1 = [20 40 60 79 95 112];
 regret_our_beta2 = [18 36 53 70 85 100];
 regret_our_beta3 = [16 32 47 62 74 87];
-plot(n_instance, regret_basic, '-ob','MarkerSize',10);
+plot(n_iter, regret_basic, '-ob','MarkerSize',10);
 hold on;
-plot(n_instance, regret_our_beta1, '-dr','MarkerSize',10);
+plot(n_iter, regret_our_beta1, '-dr','MarkerSize',10);
 hold on;
-plot(n_instance, regret_our_beta2, '-*c','MarkerSize',10);
+plot(n_iter, regret_our_beta2, '-*c','MarkerSize',10);
 hold on;
-plot(n_instance, regret_our_beta3, '-+g','MarkerSize',10);
+plot(n_iter, regret_our_beta3, '-+g','MarkerSize',10);
 pax = gca;
 pax.FontSize = 15;
-axis([650 4000 15 130]);
+axis([30 200 15 130]);
 
-xlabel('Number of instances');
+xlabel('T');
 ylabel('Regret');
 legend('PDR', 'ODR(\beta=0.9)','ODR(\beta=0.8)','ODR(\beta=0.7)',...
     'Location','southeast'); 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  14 JAN 2019 15:21
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  14 JAN 2019 16:09
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -450,11 +450,11 @@ File: figure_regret_m.pdf Graphic file (type pdf)
  <use figure_regret_m.pdf>
 Package pdftex.def Info: figure_regret_m.pdf used on input line 375.
 (pdftex.def)             Requested size: 211.38832pt x 168.07866pt.
- <figure_regret_num_instances.pdf, id=307, 504.58694pt x 395.8838pt>
-File: figure_regret_num_instances.pdf Graphic file (type pdf)
- <use figure_regret_num_instances.pdf>
-Package pdftex.def Info: figure_regret_num_instances.pdf used on input line 376.
-(pdftex.def)             Requested size: 211.38832pt x 165.84721pt.
+ <figure_regret_num_iter.pdf, id=307, 501.73875pt x 395.28479pt>
+File: figure_regret_num_iter.pdf Graphic file (type pdf)
+ <use figure_regret_num_iter.pdf>
+Package pdftex.def Info: figure_regret_num_iter.pdf used on input line 376.
+(pdftex.def)             Requested size: 211.38832pt x 166.53719pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -486,7 +486,7 @@ File: figure_regret_spam.pdf Graphic file (type pdf)
  <use figure_regret_spam.pdf>
 Package pdftex.def Info: figure_regret_spam.pdf used on input line 428.
 (pdftex.def)             Requested size: 211.38832pt x 174.99702pt.
- (/Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/.texpadtmp/main.bbl [7 <./figure_regret_m.pdf> <./figure_regret_num_instances.pdf>] [8 <./figure_regret_occupancy.pdf> <./figure_regret_online-tail.pdf> <./figure_regret_pm25.pdf> <./figure_regret_spam.pdf>]
+ (/Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/.texpadtmp/main.bbl [7 <./figure_regret_m.pdf> <./figure_regret_num_iter.pdf>] [8 <./figure_regret_occupancy.pdf> <./figure_regret_online-tail.pdf> <./figure_regret_pm25.pdf> <./figure_regret_spam.pdf>]
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ‡ in font cmr10!
 Missing character: There is no Ä in font cmr10!
@@ -756,14 +756,14 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 912.
  ) 
 Here is how much of TeX's memory you used:
  8885 strings out of 493089
- 132388 string characters out of 6134842
+ 132353 string characters out of 6134842
  229132 words of memory out of 5000000
  12093 multiletter control sequences out of 15000+600000
  20178 words of font info for 73 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,19n,38p,1737b,488s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on /Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/.texpadtmp/main.pdf (21 pages, 472936 bytes).
+Output written on /Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/.texpadtmp/main.pdf (21 pages, 469973 bytes).
 PDF statistics:
  637 PDF objects out of 1000 (max. 8388607)
  559 compressed objects within 6 object streams
