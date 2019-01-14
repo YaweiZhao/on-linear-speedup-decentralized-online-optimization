@@ -2,7 +2,7 @@ rng('default');
 
 nn = 4000;
 d = 10;
-n = 20; % # of nodes
+n = 40; % # of nodes
 
 %hyper-parameter
 eta = 1e-4;
@@ -136,7 +136,7 @@ for t=1:T
     Loss_our_lr3(:,1) = Loss_our_lr3(:,1) + beta3 * temp1 + (1-beta3)*temp2;
 
     %evaluate dynamic regret on the first node
-    if mod(t,fix(T/6)) == 0
+    if mod(t,T) == 0
 
         %auxiliary matrix R
         R = zeros(t-1,t);

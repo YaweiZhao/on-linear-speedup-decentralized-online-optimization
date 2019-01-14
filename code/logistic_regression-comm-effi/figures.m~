@@ -2,7 +2,7 @@
 
 
 dataset = 'synthetic';
-task = 'm';
+task = '';
 
 if strcmp(dataset, 'synthetic') && strcmp(task, 'm')
 %communication efficient - occupancy
