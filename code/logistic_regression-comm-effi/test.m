@@ -22,7 +22,7 @@ for i=1:nn/n
         if y((i-1)*n+j,:) == 1
             A(:,(i-1)*n+j) = 1+sin(i)/10 + randn(d,1);
         else
-            A(:,(i-1)*n+j) = -1+sin(i)/10 + randn(d,1);
+            A(:,(i-1)*n+j) = -1-sin(i)/10 + randn(d,1);
         end
         Xi(:,(i-1)*n+j) = normrnd(0, (cos(i)+1)/10,d,1);
     end
