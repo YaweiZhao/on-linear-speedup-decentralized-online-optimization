@@ -90,7 +90,7 @@ for t=1:T
     for i=1:n
         temp1 = log(1 + exp(-y((t-1)*n+i,:)*transpose(A(:,(t-1)*n+i))* X_t_basic_lr(:,i)));
         temp2 = gamma/2*(transpose(X_t_basic_lr(:,i))*X_t_basic_lr(:,i));
-        Loss_basic_lr(:,i) = Loss_basic_lr(:,i) +  temp1 + temp2;
+        Loss_basic_lr(:,i) =  temp1 + temp2;
     end
     %evaluate dynamic regret on the first node
     if mod(t,fix(T/5)) == 0
