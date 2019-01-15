@@ -1,9 +1,9 @@
 rng('default');
 
 
-d = 10;
-n = 20; % # of nodes
-nn = 200*n;
+d = 2;
+n = 3; % # of nodes
+nn = 15*n;
 
 %hyper-parameter
 eta = 1e-4;
@@ -22,11 +22,13 @@ for i=1:nn/n
     for j=1:n
         if y((i-1)*n+j,:) == 1
             A(:,(i-1)*n+j) = -1+sin(i) + randn(d,1);
+            Xi(:,(i-1)*n+j) = -2 + normrnd(0, 1+cos(i)/3,d,1);
         else
             A(:,(i-1)*n+j) = 1+sin(i) + randn(d,1);
+            Xi(:,(i-1)*n+j) =  normrnd(0, 1+cos(i)/3,d,1);
         end
         %Xi(:,(i-1)*n+j) = normrnd(0, 1+cos(i)/10,d,1);
-        Xi(:,(i-1)*n+j) = cos(i) +rand(d,1);
+        
     end
     
     
