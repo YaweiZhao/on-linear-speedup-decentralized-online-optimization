@@ -25,7 +25,6 @@ for i=1:nn/n
             A(:,(i-1)*n+j) = beta1*(rand(d,1)-0.5)...
                 + (1-beta1)*(-1+sin(i) + randn(d,1));
         end
-        %Xi(:,(i-1)*n+j) = normrnd(0, 1+cos(i)/10,d,1);
         
     end
     
@@ -90,7 +89,6 @@ for t=1:T
         
         y_it = y((t-1)*n+i,:);
         A_it = A(:,(t-1)*n+i);
-        xi_it = Xi(:,(t-1)*n+i);
         grad_basic = (-y_it * A_it) / (1 + exp(y_it * A_it'* X_t_basic_lr(:,i)))...
             + gamma*X_t_basic_lr(:,i); %gradient - basic lr
         
