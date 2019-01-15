@@ -7,7 +7,7 @@ nn = 200*n;
 
 %hyper-parameter
 eta = 1e-4;
-beta1 = 0.9;%varying beta1 0.9 0.8 0.7
+beta1 = 0.5;
 
 M = 10; %dynamics
 gamma= 1e-3;
@@ -33,6 +33,10 @@ end
 
 
 %construct the confusion matrix W. Ring topology 
+tag = 'centralized';
+if strcmp(tag, 'centralized')
+    W =  ones(n,n)/n;
+elseif strcmp(tag, 'decentralized') && strcmp(topology, 'ring')
 W =  eye(n);
 for i=1:n
     for j=1:n
@@ -51,6 +55,7 @@ for i=1:n
     end
 end
 W = W/3;
+end
 
 %online learning
 Q = zeros(d-1,d);
