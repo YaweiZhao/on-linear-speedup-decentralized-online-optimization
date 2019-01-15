@@ -93,9 +93,7 @@ for t=1:T
             + gamma*X_t_basic_lr(:,i); %gradient - basic lr
         
         Grad_basic(:,i) =  grad_basic;
-        Grad_our1(:,i) = grad_our1;
-        Grad_our2(:,i) = grad_our2;
-        Grad_our3(:,i) = grad_our3;
+
     end
     X_t_basic_lr = X_t_basic_lr * W - eta/sqrt(t) * Grad_basic; %update rule - basic lr
    
