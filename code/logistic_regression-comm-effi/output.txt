@@ -54,3 +54,34 @@ time=9.4 | regret-basic=3.35 | regret-our(beta1)=3.03 | regret-our(beta2)=2.7 | 
 #rounds=9 | regret=3loss=6\n
 #rounds=12 | regret=5loss=8\n
 #rounds=15 | regret=5loss=10\n
+#rounds=1 | regret=1loss=1\n
+#rounds=1 | regret=1loss=1\n
+#rounds=1 | regret=0loss=0\n
+#rounds=10 | regret=4loss=4\n
+#rounds=10 | regret=4loss=4\n
+#rounds=10 | regret=4loss=4\n
+#rounds=10 | regret=4loss=4\n
+#rounds=10 | regret=3loss=3\n
+#rounds=10 | regret=3loss=3\n
+#rounds=10 | regret=2.88loss=3.18\n
+#rounds=10 | regret=2.94loss=3.25\n
+#rounds=8loss=2.81\n
+#rounds=16loss=6.36\n
+#rounds=24loss=10.67\n
+#rounds=32loss=13.36\n
+#rounds=40loss=15.22\n
+#rounds=8loss=2.75\n
+#rounds=16loss=6.28\n
+#rounds=24loss=10.62\n
+#rounds=32loss=13.32\n
+#rounds=40loss=15.17\n
+#rounds=8loss=65.38\n
+#rounds=16loss=118.21\n
+#rounds=24loss=168.53\n
+#rounds=32loss=224.08\n
+#rounds=40loss=279.24\n
+#rounds=8loss=65.05\n
+#rounds=16loss=117.8\n
+#rounds=24loss=168.06\n
+#rounds=32loss=223.53\n
+#rounds=40loss=278.72\n
