@@ -2,11 +2,11 @@ rng('default');
 
 
 d = 10;
-n = 20; % # of nodes
-nn = 4000*n;
+n = 100; % # of nodes
+nn = 8000*n;
 
 %hyper-parameter
-beta1 = 0.5;
+beta1 = 0.1;
 
 M = 10; %dynamics
 eta = sqrt(M);
@@ -18,12 +18,13 @@ A = zeros(d,nn);
 y = sign(rand(nn,1)-0.5);
 for i=1:T
     for j=1:n
+        temp1 = rand(d,1)-0.5;
+        temp2 = 2+sin(i) + randn(d,1);
+        temp3 = -2+sin(i) + randn(d,1);
         if y((i-1)*n+j,:) == 1
-            A(:,(i-1)*n+j) = beta1*sin(i)*(rand(d,1)-0.5)...
-                + (1-beta1)*(1+sin(i) + randn(d,1));
+            A(:,(i-1)*n+j) = beta1*temp1 + (1-beta1)*temp2;
         else
-            A(:,(i-1)*n+j) = beta1*sin(i)*(rand(d,1)-0.5)...
-                + (1-beta1)*(-1+sin(i) + randn(d,1));
+            A(:,(i-1)*n+j) = beta1*temp1 + (1-beta1)*temp3;
         end
         
     end
@@ -33,7 +34,7 @@ end
 
 
 %construct the confusion matrix W. Ring topology 
-tag = 'centralized';
+tag = 'decentralized';
 topology = 'ring';
 if strcmp(tag, 'centralized')
     W =  ones(n,n)/n;
@@ -93,7 +94,7 @@ for t=1:T
         Loss_basic_lr(:,i) =  temp1 + temp2;
     end
     %evaluate dynamic regret on the first node
-    if mod(t,fix(T/5)) == 0
+    if mod(t,fix(T/8)) == 0
 
         %auxiliary matrix R
         R = zeros(t-1,t);
@@ -117,9 +118,9 @@ for t=1:T
 %         fprintf('#rounds=%d | regret=%.2f | loss=%.2f\n',t,sum(Regret_basic_lr),sum(Loss_basic_lr));
 %         output = ['#rounds=' mat2str(t) ' | regret=' mat2str(round(sum(Regret_basic_lr),2))...
 %             'loss=' mat2str(round(sum(Loss_basic_lr),2)) '\n'];
-         fprintf('#rounds=%d |  loss=%.2f\n',t,sum(Loss_basic_lr));
+         fprintf('#rounds=%d |  loss=%.3f\n',t,sum(Loss_basic_lr));
          output = ['#rounds=' mat2str(t) ...
-             'loss=' mat2str(round(sum(Loss_basic_lr),2)) '\n'];
+             'loss=' mat2str(round(sum(Loss_basic_lr),3)) '\n'];
         fid=fopen('./output.txt','a');
         fprintf(fid,'%s\n',output);
         fclose(fid);
