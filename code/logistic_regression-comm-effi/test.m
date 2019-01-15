@@ -1,9 +1,9 @@
 rng('default');
 
 
-d = 2;
-n = 3; % # of nodes
-nn = 15*n;
+d = 10;
+n = 20; % # of nodes
+nn = 200*n;
 
 %hyper-parameter
 eta = 1e-4;
