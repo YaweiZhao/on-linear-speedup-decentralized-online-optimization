@@ -5,7 +5,7 @@ dataset = 'synthetic';
 task = 'n_iter';
 loss_type = 'loss';
 n=100;
-net_type = 'on';
+net_type = 'off';
 if strcmp(net_type, 'off') && n==20 && strcmp(loss_type, 'ave_cumu_loss') && strcmp(dataset, 'synthetic') && strcmp(task, 'n_iter')
     n_iter = (1:20)*200;
     cumu_loss_basic_decen_m10_n1 = [38 94 160 231 307 385 467 549 634 722 813 902 996 1090 1185 1280 1375 1474 1572 1673];

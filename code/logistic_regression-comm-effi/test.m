@@ -8,8 +8,8 @@ nn = 4000*n;
 %hyper-parameter
 beta1 = 0.1;
 
-M = 10; %dynamics
-eta = sqrt(M);
+M = 100; %dynamics
+eta = 1e-2*sqrt(M);
 gamma= 1e-3;
 %hyper-parameter
 T=nn/n;
@@ -34,12 +34,12 @@ end
 
 
 %construct the confusion matrix W. Ring topology 
-tag = 'decentralized';
-topology = 'wattsStrog';
+tag = 'centralized';
+topology = 'ring';
 if strcmp(tag, 'centralized')
     W =  ones(n,n)/n;
 elseif strcmp(tag, 'decentralized') && strcmp(topology, 'wattsStrog')
-    graph = WattsStrogatz(n,3,1);
+    graph = WattsStrogatz(n,3,0.5);
     edges_list = graph.Edges.EndNodes;
     [n_edges,~] = size(edges_list);
     W = eye(n);
@@ -85,7 +85,7 @@ Regret_basic_lr = zeros(1,n);
 Loss_basic_lr = zeros(1,n);
 Cumu_Loss_basic_lr = zeros(1,n);
 
-loss_basic_lr = 0;
+ave_loss_basic_lr_seq = zeros(T,1);
 
 tic;
 cumu_loss_draw = [];
@@ -110,6 +110,10 @@ for t=1:T
         Loss_basic_lr(:,i) =  temp1 + temp2;
     end
     Cumu_Loss_basic_lr = Cumu_Loss_basic_lr + Loss_basic_lr;
+    ave_loss_basic_lr_seq(t,:) = sum(Cumu_Loss_basic_lr)/(n*t);
+    
+    
+    
     %evaluate dynamic regret on the first node
     if mod(t,fix(T/20)) == 0
 
@@ -146,6 +150,11 @@ for t=1:T
     end   
     
 end
+
+
+save('ave_loss_basic_lr_seq_n100_m100_cen.mat','ave_loss_basic_lr_seq');
+
+
 
 fprintf(['loss>> ' mat2str(round(loss_draw,1)) ' \n'...
     'cumu loss>> ' mat2str(round(cumu_loss_draw))]);

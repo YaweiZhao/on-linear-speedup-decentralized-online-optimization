@@ -368,33 +368,22 @@ We generate a data matrix $\A$ with $\A=0.1\tilde{\A}+0.9\hat{\A}$, where $\tild
 
 
 
-First, we simulate a decentralized network consisting of $100$ nodes. Those nodes are connected by using a ring topology. We test the averaged loss and the averaged cumulative loss for every node to compare the performance of DOG and COG.  As shown in Figure \ref{figure_synthetic_loss}, both DOG and COG is effective to optimize the decision variable to follow the dynamics of the environment. COG has slightly better performance than DOG, and the superiority is unsignificant, especially for a small $M$. 
+First, we simulate a decentralized network consisting of $100$ nodes. Those nodes are connected by using a ring topology. We test the averaged loss and the averaged cumulative loss for every node to compare the performance of DOG and COG.  As shown in Figure \ref{figure_synthetic_loss}, both DOG and COG is effective to optimize the decision variable, and they have very similar performance. 
 
 \begin{figure*}[!h]
 \setlength{\abovecaptionskip}{0pt}
 \setlength{\belowcaptionskip}{0pt}
 \centering 
-\subfigure[\textit{Comparison of the averaged loss}]{\includegraphics[width=0.45\columnwidth]{figure_decen_cen_ave_loss_iterations}\label{figure_decen_cen_ave_loss_iterations}}
-\subfigure[\textit{Comparison of the averaged cumulative loss}]{\includegraphics[width=0.45\columnwidth]{figure_decen_cen_ave_cumu_loss_iterations}\label{figure_decen_cen_ave_cumu_loss_iterations}}
+\subfigure[\textit{Number of iterations}]{\includegraphics[width=0.32\columnwidth]{figure_decen_cen_ave_loss_iterations}\label{figure_decen_cen_ave_loss_iterations}}
+\subfigure[\textit{Network size}]{\includegraphics[width=0.32\columnwidth]{figure_decen_cen_ave_loss_nodes}\label{figure_decen_cen_ave_loss_nodes}}
+\subfigure[\textit{Network topology}]{\includegraphics[width=0.32\columnwidth]{figure_decen_cen_ave_loss_iterations_net_types}\label{figure_decen_cen_ave_loss_iterations_net_types}}
 \caption{The performance of DOG is comparable to that of COG.}
 \label{figure_synthetic_loss}
 \end{figure*}
 
 
-Second, we evaluate the performance of DOG by varying the network size. As shown in Figure \ref{figure_decen_cen_ave_cumu_loss_nodes}, the averaged cumulative loss decreases effectively for a large network. But, when the size of the network is large than a threshold, the performance does not have significant improve.  The reason is due to the adversary data, which impedes to improve the decison variable for a large decentralized network. It matches with our theoretical result.  After that, we change the topology of the network, and still evaluate the performance of DOG. The topology  \textit{Fully connected} means all nodes are connected, where DOG de-generates to be COG. The topology  \textit{No connected} means any node does not connect with others. 
-The topology  \textit{WattsStrogatz} represents a Watts-Strogatz small-world graph. There is a parameter can be tuned, e.g., $0.5$ or $1$ in legend of Figures \ref{figure_decen_cen_ave_loss_iterations_net_types} and \ref{figure_decen_cen_cumu_loss_iterations_net_type}, to control the number of random edges in the Watts-Strogatz small-world graph.  As illustrated in Figures \ref{figure_decen_cen_ave_loss_iterations_net_types} and \ref{figure_decen_cen_cumu_loss_iterations_net_type}, when the topology \textit{No connected} leads to a worse performance than others, and the topology  \textit{Fully connected} has the best performance. But, there is no significant difference between all topologies except  \textit{No connected}.
+Second, we evaluate the performance of DOG by varying the network size. As shown in Figure \ref{figure_decen_cen_ave_cumu_loss_nodes}, the averaged cumulative loss decreases effectively for a large network. After that, we change the topology of the network, and still evaluate the performance of DOG. The topology  \textit{Fully connected} means all nodes are connected, where DOG de-generates to be COG. The topology. The topology  \textit{WattsStrogatz} represents a Watts-Strogatz small-world graph. There is a parameter can be tuned, e.g., $0.5$ or $1$ in legend of Figures \ref{figure_decen_cen_ave_loss_iterations_net_types} and \ref{figure_decen_cen_cumu_loss_iterations_net_type}, to control the number of random edges in the Watts-Strogatz small-world graph.  As illustrated in Figures \ref{figure_decen_cen_ave_loss_iterations_net_types} and \ref{figure_decen_cen_cumu_loss_iterations_net_type}, the topology  \textit{Fully connected} has the best performance. But, there is no significant difference between all topologies.
 
-
-\begin{figure*}[!h]
-\setlength{\abovecaptionskip}{0pt}
-\setlength{\belowcaptionskip}{0pt}
-\centering 
-\subfigure[\textit{Averaged cumulative loss v.s. Network size}]{\includegraphics[width=0.33\columnwidth]{figure_decen_cen_ave_cumu_loss_nodes}\label{figure_decen_cen_ave_cumu_loss_nodes}}
-\subfigure[\textit{Averaged loss v.s. Network types}]{\includegraphics[width=0.32\columnwidth]{figure_decen_cen_ave_loss_iterations_net_types}\label{figure_decen_cen_ave_loss_iterations_net_types}}
-\subfigure[\textit{Averaged cumulative loss v.s. Network types}]{\includegraphics[width=0.33\columnwidth]{figure_decen_cen_cumu_loss_iterations_net_type}\label{figure_decen_cen_cumu_loss_iterations_net_type}}
-\caption{Comparison of the performance of DOG by varying the network size, and the topology of the network.}
-\label{figure_synthetic_loss_net_types}
-\end{figure*}
 
 
 
