@@ -351,10 +351,25 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing
 
 \section{Empirical studies}
 
+\subsection{Data sets}
+\paragraph{Synthetic data}
 
+\paragraph{Real data: xxx}
+
+\paragraph{Real data: yyy}
+
+\paragraph{Real data: zzz}
+
+
+\subsection{DOG is as effective as COG in terms of regret}
+
+\subsection{DOG is robust to the network topology}
+
+\subsection{DOG is robust to the network size} 
  
-
-
+ 
+ 
+ 
 \subsection{Synthetic data}
 
 
@@ -412,7 +427,6 @@ Besides, we conduct online logistic regression by using two time series datasets
 \item {\textit{spam}.} Every instance in the dataset is an email, where the frequence of every word in the dictionary is collected. But, the distribution of words changes over time, which is denoted by \textit{concept drift} \citep{Katakis:2010:TR}. We want to learn a classification model to make a decision whether an email is a spam. 
 \end{itemize}
 All values of a feature have been normalized to be zero mean and one variance. The budget of dynamics, namely $M$ is set to be $10$. The learning rate, namely $\eta$ in Algorithm \ref{algo_DOG} is set to be $\sqrt{\frac{5M}{100T}}$.  
-
 
 
 
