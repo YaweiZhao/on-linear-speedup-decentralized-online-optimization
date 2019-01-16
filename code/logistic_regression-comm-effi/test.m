@@ -1,36 +1,25 @@
 clc;
 clear all;
 rng('default');
-d = 10;
-n = 100; % # of nodes
-nn = 4000*n;
+data = load('usenet2.mat');
+data = data.new_data;
+[~,d] = size(data);
+A = transpose(data(:,2:d));
+[d,nn] = size(A);
+y=data(:,1);
+
+n = 5; % # of nodes
 
 %hyper-parameter
 beta1 = 0.1;
 
-M = 100; %dynamics
-eta = 1e-2*sqrt(M);
+M = 10; %dynamics
+eta = 20*sqrt(M);
 gamma= 1e-3;
 %hyper-parameter
-T=nn/n;
+T=fix(nn/n);
 
-A = zeros(d,nn);
-y = sign(rand(nn,1)-0.5);
-for i=1:T
-    for j=1:n
-        temp1 = rand(d,1)-0.5;
-        temp2 = 1+sin(i)/2 + randn(d,1);
-        temp3 = -1+sin(i)/2 + randn(d,1);
-        if y((i-1)*n+j,:) == 1
-            A(:,(i-1)*n+j) = beta1*temp1 + (1-beta1)*temp2;
-        else
-            A(:,(i-1)*n+j) = beta1*temp1 + (1-beta1)*temp3;
-        end
-        
-    end
-    
-    
-end
+
 
 
 %construct the confusion matrix W. Ring topology 
@@ -152,11 +141,11 @@ for t=1:T
 end
 
 
-save('ave_loss_basic_lr_seq_n100_m100_cen.mat','ave_loss_basic_lr_seq');
+save('ave_loss_basic_lr_seq_n5_m10_cen_usenet2.mat','ave_loss_basic_lr_seq');
 
 
 
-fprintf(['loss>> ' mat2str(round(loss_draw,1)) ' \n'...
+fprintf(['loss>> ' mat2str(round(loss_draw,3)) ' \n'...
     'cumu loss>> ' mat2str(round(cumu_loss_draw))]);
 
 
