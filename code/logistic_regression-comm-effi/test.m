@@ -1,10 +1,10 @@
 clc;
 clear all;
 rng('default');
-data = load('occupancy.mat');
+data = load('online-retail.mat');
 data = data.new_data;
 [~,d] = size(data);
-A = transpose(data(:,2:d));
+A = transpose(data(1:30000,2:d));
 [d,nn] = size(A);
 y=data(:,1);
 
@@ -14,7 +14,7 @@ n = 5; % # of nodes
 beta1 = 0.1;
 
 M = 10; %dynamics
-eta = 1e-2*sqrt(M);
+eta = 1e-3*sqrt(M);
 gamma= 1e-3;
 %hyper-parameter
 T=fix(nn/n);
@@ -141,7 +141,7 @@ for t=1:T
 end
 
 
-save('ave_loss_basic_lr_seq_n5_m10_decen_occupancy.mat','ave_loss_basic_lr_seq');
+save('ave_loss_basic_lr_seq_n5_m10_decen_online_retail.mat','ave_loss_basic_lr_seq');
 
 
 

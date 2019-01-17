@@ -9,7 +9,7 @@ nn = 4000*n;
 beta1 = 0.1;
 
 M = 10; %dynamics
-eta = 1e-2*sqrt(M);
+eta = 20*sqrt(M);
 gamma= 1e-3;
 %hyper-parameter
 T=nn/n;
@@ -38,8 +38,8 @@ tag = 'decentralized';
 topology = 'ring';
 if strcmp(tag, 'centralized')
     W =  ones(n,n)/n;
-elseif strcmp(tag, 'decentralized') && strcmp(topology, 'wattsStrog')
-    graph = WattsStrogatz(n,3,0.5);
+elseif strcmp(tag, 'decentralized') && strcmp(topology, 'watts')
+    graph = WattsStrogatz(n,3,1);
     edges_list = graph.Edges.EndNodes;
     [n_edges,~] = size(edges_list);
     W = eye(n);

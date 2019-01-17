@@ -1,5 +1,5 @@
 function [ output_args ] = plot_ave_loss_size( input_args )
-    dataset = 'occupancy';
+    dataset = 'spam';
     if strcmp(dataset, 'occupancy')
         n10_decen = load('ave_loss_basic_lr_seq_n10_m10_decen_occupancy.mat');
         n5_decen = load('ave_loss_basic_lr_seq_n5_m10_decen_occupancy.mat');
@@ -55,7 +55,7 @@ function [ output_args ] = plot_ave_loss_size( input_args )
         n15_decen = load('ave_loss_basic_lr_seq_n15_m10_decen_spam.mat');
         %m10_cen = load('ave_loss_basic_lr_seq_n100_m10_cen.mat');
         T = length(n5_decen.ave_loss_basic_lr_seq)/4;
-        luckys = 1:10:T;
+        luckys = 100:10:T;
 
         plot(luckys, n5_decen.ave_loss_basic_lr_seq(luckys,:), '-dr','MarkerSize',10);
         hold on;

@@ -1,5 +1,5 @@
 function [ output_args ] = plot_ave_loss_topology( input_args )
-dataset = 'occupancy';
+dataset = 'spam';
 if strcmp(dataset, 'occupancy')
     %guli_decen = load('ave_loss_basic_lr_seq_n100_m10_guli_decen.mat');
     watts05_decen = load('ave_loss_basic_lr_seq_n20_m10_watts05_decen_occupancy.mat');
@@ -32,7 +32,7 @@ elseif strcmp(dataset, 'online-retail')
     ring_decen = load('ave_loss_basic_lr_seq_n20_m10_ring_decen_online_retail.mat');
     fully_connect_decen = load('ave_loss_basic_lr_seq_n20_m10_fully_connect_decen_online_retail.mat');
     T = length(watts05_decen.ave_loss_basic_lr_seq);
-    luckys = 1:100:T;
+    luckys = 300:20:T;
     %plot(luckys, guli_decen.ave_loss_basic_lr_seq(luckys,:)/100, '-ob','MarkerSize',10);
     %hold on;
     plot(luckys, watts05_decen.ave_loss_basic_lr_seq(luckys,:), '-or','MarkerSize',10);
@@ -47,7 +47,7 @@ elseif strcmp(dataset, 'online-retail')
     xlabel('T');
     ylabel('Average loss');
     legend('WattsStrogatz(0.5)', 'WattsStrogatz(1)',...
-        'Ring', 'Fully connected', 'Location','northeast'); 
+        'Ring', 'Fully connected', 'Location','southwest'); 
     pax = gca;
     pax.FontSize = 25;
 elseif strcmp(dataset, 'spam')
@@ -57,7 +57,7 @@ elseif strcmp(dataset, 'spam')
     ring_decen = load('ave_loss_basic_lr_seq_n5_m10_ring_decen_spam.mat');
     fully_connect_decen = load('ave_loss_basic_lr_seq_n5_m10_fully_connect_decen_spam.mat');
     T = length(watts05_decen.ave_loss_basic_lr_seq);
-    luckys = 1:200:T;
+    luckys = 1000:50:T;
     %plot(luckys, guli_decen.ave_loss_basic_lr_seq(luckys,:)/100, '-ob','MarkerSize',10);
     %hold on;
     plot(luckys, watts05_decen.ave_loss_basic_lr_seq(luckys,:), '-or','MarkerSize',10);

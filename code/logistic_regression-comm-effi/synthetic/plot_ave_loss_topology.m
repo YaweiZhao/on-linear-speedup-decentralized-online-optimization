@@ -6,7 +6,7 @@ function [ output_args ] = plot_ave_loss_topology( input_args )
     ring_decen = load('ave_loss_basic_lr_seq_n100_m10_ring_decen.mat');
     fully_connect_decen = load('ave_loss_basic_lr_seq_n100_m10_fully_connect_decen.mat');
     T = 4000;
-    luckys = 1:200:T;
+    luckys = 2000:100:T;
     %plot(luckys, guli_decen.ave_loss_basic_lr_seq(luckys,:)/100, '-ob','MarkerSize',10);
     %hold on;
     plot(luckys, watts05_decen.ave_loss_basic_lr_seq(luckys,:), '-or','MarkerSize',10);

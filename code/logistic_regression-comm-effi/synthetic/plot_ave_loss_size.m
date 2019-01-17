@@ -5,7 +5,7 @@ function [ output_args ] = plot_ave_loss_size( input_args )
     n15_decen = load('ave_loss_basic_lr_seq_n15_m10_decen.mat');
     %m10_cen = load('ave_loss_basic_lr_seq_n100_m10_cen.mat');
     T = 4000;
-    luckys = 1:200:T;
+    luckys = 200:100:T;
 
     plot(luckys, n5_decen.ave_loss_basic_lr_seq(luckys,:), '-dr','MarkerSize',10);
     hold on;
