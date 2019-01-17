@@ -1,7 +1,7 @@
 clc;
 clear all;
 rng('default');
-data = load('usenet2.mat');
+data = load('occupancy.mat');
 data = data.new_data;
 [~,d] = size(data);
 A = transpose(data(:,2:d));
@@ -14,7 +14,7 @@ n = 5; % # of nodes
 beta1 = 0.1;
 
 M = 10; %dynamics
-eta = 20*sqrt(M);
+eta = 1e-2*sqrt(M);
 gamma= 1e-3;
 %hyper-parameter
 T=fix(nn/n);
@@ -23,12 +23,12 @@ T=fix(nn/n);
 
 
 %construct the confusion matrix W. Ring topology 
-tag = 'centralized';
+tag = 'decentralized';
 topology = 'ring';
 if strcmp(tag, 'centralized')
     W =  ones(n,n)/n;
-elseif strcmp(tag, 'decentralized') && strcmp(topology, 'wattsStrog')
-    graph = WattsStrogatz(n,3,0.5);
+elseif strcmp(tag, 'decentralized') && strcmp(topology, 'watts')
+    graph = WattsStrogatz(n,2,1);
     edges_list = graph.Edges.EndNodes;
     [n_edges,~] = size(edges_list);
     W = eye(n);
@@ -104,7 +104,7 @@ for t=1:T
     
     
     %evaluate dynamic regret on the first node
-    if mod(t,fix(T/20)) == 0
+    if mod(t,fix(T/200)) == 0
 
         %auxiliary matrix R
         R = zeros(t-1,t);
@@ -141,7 +141,7 @@ for t=1:T
 end
 
 
-save('ave_loss_basic_lr_seq_n5_m10_cen_usenet2.mat','ave_loss_basic_lr_seq');
+save('ave_loss_basic_lr_seq_n5_m10_decen_occupancy.mat','ave_loss_basic_lr_seq');
 
 
 

@@ -6,13 +6,13 @@ function [  ] = plot_ave_loss( )
     m10_cen = load('ave_loss_basic_lr_seq_n100_m10_cen.mat');
     T = 4000;
     luckys = 1:200:T;
-    plot(luckys, m10_decen.ave_loss_basic_lr_seq(luckys,:)/100, '-ob','MarkerSize',10);
+    plot(luckys, m10_decen.ave_loss_basic_lr_seq(luckys,:), '-ob','MarkerSize',10);
     hold on;
-    plot(luckys, m10_cen.ave_loss_basic_lr_seq(luckys,:)/100, '-+r','MarkerSize',10);
+    plot(luckys, m10_cen.ave_loss_basic_lr_seq(luckys,:), '-+r','MarkerSize',10);
     hold on;
-    plot(luckys, m100_decen.ave_loss_basic_lr_seq(luckys,:)/100, '-.sg','MarkerSize',10);
+    plot(luckys, m100_decen.ave_loss_basic_lr_seq(luckys,:), '-.sg','MarkerSize',10);
     hold on;
-    plot(luckys, m100_cen.ave_loss_basic_lr_seq(luckys,:)/100, '-.*k','MarkerSize',10);
+    plot(luckys, m100_cen.ave_loss_basic_lr_seq(luckys,:), '-.*k','MarkerSize',10);
     
 
     xlabel('T');

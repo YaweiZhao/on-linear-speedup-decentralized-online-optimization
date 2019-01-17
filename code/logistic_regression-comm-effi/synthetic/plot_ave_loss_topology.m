@@ -9,19 +9,20 @@ function [ output_args ] = plot_ave_loss_topology( input_args )
     luckys = 1:200:T;
     %plot(luckys, guli_decen.ave_loss_basic_lr_seq(luckys,:)/100, '-ob','MarkerSize',10);
     %hold on;
-    plot(luckys, watts05_decen.ave_loss_basic_lr_seq(luckys,:)/100, '-or','MarkerSize',10);
+    plot(luckys, watts05_decen.ave_loss_basic_lr_seq(luckys,:), '-or','MarkerSize',10);
     hold on;
-    plot(luckys, watts1_decen.ave_loss_basic_lr_seq(luckys,:)/100, '-sm','MarkerSize',10);
+    plot(luckys, watts1_decen.ave_loss_basic_lr_seq(luckys,:), '-sm','MarkerSize',10);
     hold on;
-    plot(luckys, ring_decen.ave_loss_basic_lr_seq(luckys,:)/100, '-+c','MarkerSize',10);
+    plot(luckys, ring_decen.ave_loss_basic_lr_seq(luckys,:), '-+c','MarkerSize',10);
     hold on;
-    plot(luckys, fully_connect_decen.ave_loss_basic_lr_seq(luckys,:)/100, '-<b','MarkerSize',10);
-    pax = gca;
-    pax.FontSize = 15;
+    plot(luckys, fully_connect_decen.ave_loss_basic_lr_seq(luckys,:), '-<b','MarkerSize',10);
+    
 
     xlabel('T');
     ylabel('Average loss');
     legend('WattsStrogatz(0.5)', 'WattsStrogatz(1)',...
         'Ring', 'Fully connected', 'Location','northeast'); 
+    pax = gca;
+    pax.FontSize = 25;
 end
 

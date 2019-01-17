@@ -7,20 +7,21 @@ function [ output_args ] = plot_ave_loss_size( input_args )
     T = 4000;
     luckys = 1:200:T;
 
-    plot(luckys, n5_decen.ave_loss_basic_lr_seq(luckys,:)/5, '-dr','MarkerSize',10);
+    plot(luckys, n5_decen.ave_loss_basic_lr_seq(luckys,:), '-dr','MarkerSize',10);
     hold on;
-    plot(luckys, n10_decen.ave_loss_basic_lr_seq(luckys,:)/10, '-sc','MarkerSize',10);
+    plot(luckys, n10_decen.ave_loss_basic_lr_seq(luckys,:), '-sc','MarkerSize',10);
     hold on;
-    plot(luckys, n15_decen.ave_loss_basic_lr_seq(luckys,:)/15, '-+m','MarkerSize',10);
+    plot(luckys, n15_decen.ave_loss_basic_lr_seq(luckys,:), '-+m','MarkerSize',10);
     hold on;
-    plot(luckys, n20_decen.ave_loss_basic_lr_seq(luckys,:)/20, '-<g','MarkerSize',10);
-    pax = gca;
-    pax.FontSize = 15;
+    plot(luckys, n20_decen.ave_loss_basic_lr_seq(luckys,:), '-<g','MarkerSize',10);
+    
     
     xlabel('T');
     ylabel('Average loss');
     legend('n=5', 'n=10',...
         'n=15','n=20', 'Location','northeast'); 
+    pax = gca;
+    pax.FontSize = 25;
 
 end
 

@@ -1,5 +1,5 @@
 function [  ] = plot_ave_loss()
-dataset = 'online-retail';
+dataset = 'spam';
 if strcmp(dataset, 'occupancy') 
     m20_decen = load('ave_loss_basic_lr_seq_n5_m20_decen_occupancy.mat');
     m10_decen = load('ave_loss_basic_lr_seq_n5_m10_decen_occupancy.mat');
