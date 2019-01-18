@@ -1,4 +1,4 @@
-\begin{thebibliography}{39}
+\begin{thebibliography}{36}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -36,18 +36,6 @@ A.~A. Bencz{\'u}r, L.~Kocsis, and R.~P{\'a}lovics.
 N.~Cesa-Bianchi, P.~Gaillard, G.~Lugosi, and G.~Stoltz.
 \newblock {Mirror Descent Meets Fixed Share (and feels no regret)}.
 \newblock In \emph{{NIPS 2012}}, page Paper 471, 2012.
-
-\bibitem[Chaudhuri et~al.(2011)Chaudhuri, Monteleoni, and
-  Sarwate]{Chaudhuri:2011tr}
-K.~Chaudhuri, C.~Monteleoni, and A.~D. Sarwate.
-\newblock {Differentially Private Empirical Risk Minimization.}
-\newblock \emph{Journal of Machine Learning Research}, 2011.
-
-\bibitem[Dwork and Roth(2014)]{Dwork:2014gx}
-C.~Dwork and A.~Roth.
-\newblock {The Algorithmic Foundations of Differential Privacy.}
-\newblock \emph{Foundations and Trends in Theoretical Computer Science},
-  9\penalty0 (3-4):\penalty0 211--407, 2014.
 
 \bibitem[Gy\"{o}rgy and Szepesv\'{a}ri(2016)]{Gyorgy:2016}
 A.~Gy\"{o}rgy and C.~Szepesv\'{a}ri.
@@ -186,13 +174,6 @@ S.~Shalev-Shwartz.
 H.~Tang, S.~Gan, C.~Zhang, T.~Zhang, and J.~Liu.
 \newblock {Communication Compression for Decentralized Training}.
 \newblock \emph{arXiv.org}, Mar. 2018.
-
-\bibitem[Wang et~al.(2017)Wang, Ye, and Xu]{NIPS2017_6865}
-D.~Wang, M.~Ye, and J.~Xu.
-\newblock Differentially private empirical risk minimization revisited: Faster
-  and more general.
-\newblock In \emph{Advances in Neural Information Processing Systems 30}, pages
-  2722--2731. 2017.
 
 \bibitem[Wei et~al.(2016)Wei, Hong, and Lu]{NIPS2016_6536}
 C.-Y. Wei, Y.-T. Hong, and C.-J. Lu.

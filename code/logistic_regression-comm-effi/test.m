@@ -1,10 +1,10 @@
 clc;
 clear all;
 rng('default');
-data = load('online-retail.mat');
+data = load('usenet2.mat');
 data = data.new_data;
 [~,d] = size(data);
-A = transpose(data(1:30000,2:d));
+A = transpose(data(:,2:d));
 [d,nn] = size(A);
 y=data(:,1);
 
@@ -14,7 +14,7 @@ n = 5; % # of nodes
 beta1 = 0.1;
 
 M = 10; %dynamics
-eta = 1e-3*sqrt(M);
+eta = 10*sqrt(M);%occupancy: 10*sqrt(M);%spam: 20*sqrt(M); %usenet1, usenet2: 10*sqrt(M);
 gamma= 1e-3;
 %hyper-parameter
 T=fix(nn/n);
@@ -23,7 +23,7 @@ T=fix(nn/n);
 
 
 %construct the confusion matrix W. Ring topology 
-tag = 'decentralized';
+tag = 'centralized';
 topology = 'ring';
 if strcmp(tag, 'centralized')
     W =  ones(n,n)/n;
@@ -141,8 +141,7 @@ for t=1:T
 end
 
 
-save('ave_loss_basic_lr_seq_n5_m10_decen_online_retail.mat','ave_loss_basic_lr_seq');
-
+save('ave_loss_basic_lr_seq_n5_m10_cen_usenet2.mat','ave_loss_basic_lr_seq');
 
 
 fprintf(['loss>> ' mat2str(round(loss_draw,3)) ' \n'...

@@ -228,61 +228,48 @@ Recall that the previous definition of the dynamic regret is \eqref{equa_definit
 
 
 
-\subsection{Application scenarios}
-\label{subsection_application_scenarions}
-{\color{blue}
-To protect privacy, users prefer to placing their data in the local node, instead of providing it to a centralized server. Decentralized computing provides an alternative method to solve the problem. There is a user named Bob, who subscribes the online music recommendation service.
-
-\textbf{Online music recommendation with profiling features.}
-In the task, we want to decide whether to recommend some a music to Bob's mobile phone by using two kinds of features. 
-\begin{enumerate}
-\item The first kind of features is about Bob's preference to music on the Youtube, which is obtained by using Bob's historical browsing data. For example, these features includes \textit{the latest music ever listened and its player}, \textit{the player whose music is listened most frequently}, and \textit{types of music listened for the past month} etc.  Note that Bob's perference to music changes over time, which is usually impacted by the time-varying trends of hot topics in the Internet. The dynamic nature of perference implies that the optimal learning model should change over time. Thus, it is necessary to use dynamic regret to measure the  quality of the learning model.  In the case, $g_{i,t}(\x_{i,t})$ represents the loss incurred by this kind of features.
-\item The second kind of features is about users, who give comments about the music on the Youtube. For example, these features are ``gender" and "age", and an instance is \textit{male, $20$ years old}, or \textit{female, $18$ years old}. Note that user's gender and age do not usually change. All values corresponding to these features can be modeled by an unknown distribution $D_t$ at time $t$. Since there may be more and more users giving their comments to the music, $D_t$ may change over time. In the case, $h_t(\cdot; \xi_{i,t})$ represents the loss incurred by this kind of features, and $H_t(\cdot) = \EE_{\xi_{i,t}\sim D_t}h_t(\cdot; \xi_{i,t})$.
-\end{enumerate} In a nutshell, an instance consists of those two kinds of features, and the label of an instance is \textit{whether Bob listened the music}. A small $\beta$ means significant attention on the second kind of features.
-
-Suppose we use logistic regression to decide whether to recommend some a music to Bob. Without loss of generality, features corresponding to the preference to music are denoted by the beginning $s$ features.  Given a user's browsing record $\a_{i,t}$ and its label $\y_{i,t} \in \{1,-1\}$. In the case, $g_{i,t}(\x) = \log \lrincir{1 + \exp\lrincir{-\y_{i,t}\a_{i,t}\Tr \hat{\I} \x} }$, where $\hat{\I}$ is yielded by letting the first $s$ diagonal elements of an identity matrix be $0$s. $\xi_{i,t} = \check{\I} \a_{i,t} \y_{i,t}\Tr$, and $\tilde{h}(\x;\xi_{i,t}) = \log \lrincir{1 + \exp\lrincir{- \xi_{i,t}\Tr \x}}$, where $\check{\I}$ is yielded by letting the last $(d-s)$ diagonal elements of an identity matrix be $0$s. Here, $\xi_{i,t}$ is drawn form an unknown distribution, that is, $\xi_{i,t} \sim D_t$. In the case, $H_t(\x)$ allows the decision variable $\x$ to represent different models to treat those two kinds of features.
-
-
-
-%\textbf{Communication efficient online learning.} Suppose we want to conduct online learning in a decentralized network. At every iteration, a node has to broadcast the local model to its neighbours, and the communication efficiency needs to be considered. In the case, $g_{i,t}(\x)$ represents the loss incurred by the learning model, and $h_t(\x;\xi_{i,t})$ represents the loss incurred by some a quantization method to guarantee the communication efficiency. A small $\beta$ means a strong guarantee for the communication efficiency.
+%\subsection{Application scenarios}
+%\label{subsection_application_scenarions}
+%{\color{blue}
+%To protect privacy, users prefer to placing their data in the local node, instead of providing it to a centralized server. Decentralized computing provides an alternative method to solve the problem. There is a user named Bob, who subscribes the online music recommendation service.
+%
+%\textbf{Online music recommendation with profiling features.}
+%In the task, we want to decide whether to recommend some a music to Bob's mobile phone by using two kinds of features. 
+%\begin{enumerate}
+%\item The first kind of features is about Bob's preference to music on the Youtube, which is obtained by using Bob's historical browsing data. For example, these features includes \textit{the latest music ever listened and its player}, \textit{the player whose music is listened most frequently}, and \textit{types of music listened for the past month} etc.  Note that Bob's perference to music changes over time, which is usually impacted by the time-varying trends of hot topics in the Internet. The dynamic nature of perference implies that the optimal learning model should change over time. Thus, it is necessary to use dynamic regret to measure the  quality of the learning model.  In the case, $g_{i,t}(\x_{i,t})$ represents the loss incurred by this kind of features.
+%\item The second kind of features is about users, who give comments about the music on the Youtube. For example, these features are ``gender" and "age", and an instance is \textit{male, $20$ years old}, or \textit{female, $18$ years old}. Note that user's gender and age do not usually change. All values corresponding to these features can be modeled by an unknown distribution $D_t$ at time $t$. Since there may be more and more users giving their comments to the music, $D_t$ may change over time. In the case, $h_t(\cdot; \xi_{i,t})$ represents the loss incurred by this kind of features, and $H_t(\cdot) = \EE_{\xi_{i,t}\sim D_t}h_t(\cdot; \xi_{i,t})$.
+%\end{enumerate} In a nutshell, an instance consists of those two kinds of features, and the label of an instance is \textit{whether Bob listened the music}. A small $\beta$ means significant attention on the second kind of features.
+%
+%Suppose we use logistic regression to decide whether to recommend some a music to Bob. Without loss of generality, features corresponding to the preference to music are denoted by the beginning $s$ features.  Given a user's browsing record $\a_{i,t}$ and its label $\y_{i,t} \in \{1,-1\}$. In the case, $g_{i,t}(\x) = \log \lrincir{1 + \exp\lrincir{-\y_{i,t}\a_{i,t}\Tr \hat{\I} \x} }$, where $\hat{\I}$ is yielded by letting the first $s$ diagonal elements of an identity matrix be $0$s. $\xi_{i,t} = \check{\I} \a_{i,t} \y_{i,t}\Tr$, and $\tilde{h}(\x;\xi_{i,t}) = \log \lrincir{1 + \exp\lrincir{- \xi_{i,t}\Tr \x}}$, where $\check{\I}$ is yielded by letting the last $(d-s)$ diagonal elements of an identity matrix be $0$s. Here, $\xi_{i,t}$ is drawn form an unknown distribution, that is, $\xi_{i,t} \sim D_t$. In the case, $H_t(\x)$ allows the decision variable $\x$ to represent different models to treat those two kinds of features.
 %
 %
-%Suppose we want to conduct online classification by using logistic regression model. Given an instance $\a_{i,t} \in \RR^d$ and its label $\y_{i,t} \in \{1,-1\}$. In the case, $g_{i,t}(\x) = \log\lrincir{1 + \exp(-\y_{i,t}\a_{i,t}\Tr \x)}$. We let $h_t(\x;\xi_{i,t}) = \lambda_t \lrnorm{\Q\x}_1$\footnote{In the case,  the  random variable $\xi_{i,t}$ is not necessary, which is a special case. }.  Here, $\lambda_t$ with $\lambda_t>0$ is a given hyper-parameter. By using different $\lambda_t$ over $t$, it is flexiable to adjust the communicaion efficiency timely. $\Q\in\RR^{(d-1)\times d}$ is a special matrix:
+%
+%%\textbf{Communication efficient online learning.} Suppose we want to conduct online learning in a decentralized network. At every iteration, a node has to broadcast the local model to its neighbours, and the communication efficiency needs to be considered. In the case, $g_{i,t}(\x)$ represents the loss incurred by the learning model, and $h_t(\x;\xi_{i,t})$ represents the loss incurred by some a quantization method to guarantee the communication efficiency. A small $\beta$ means a strong guarantee for the communication efficiency.
+%%
+%%
+%%Suppose we want to conduct online classification by using logistic regression model. Given an instance $\a_{i,t} \in \RR^d$ and its label $\y_{i,t} \in \{1,-1\}$. In the case, $g_{i,t}(\x) = \log\lrincir{1 + \exp(-\y_{i,t}\a_{i,t}\Tr \x)}$. We let $h_t(\x;\xi_{i,t}) = \lambda_t \lrnorm{\Q\x}_1$\footnote{In the case,  the  random variable $\xi_{i,t}$ is not necessary, which is a special case. }.  Here, $\lambda_t$ with $\lambda_t>0$ is a given hyper-parameter. By using different $\lambda_t$ over $t$, it is flexiable to adjust the communicaion efficiency timely. $\Q\in\RR^{(d-1)\times d}$ is a special matrix:
+%%\begin{align}
+%%\nonumber
+%%\Q = \begin{bmatrix}
+%% 1&  -1 & & &\\ 
+%% & 1 & -1 & &\\ 
+%% &  & \cdots & &\\ 
+%% &  &  &  1& -1
+%%\end{bmatrix}.
+%%\end{align} Here, $h_t(\x;\xi_{i,t})$ induces the difference between elements of $\x$ to be sparse. Thus, it is able to transmit $\x$ by using few different elements, and improve the communication efficiency.  When $\lambda_t$ is a constant, and does not change over $t$, $H_t(\x)$ with $H_t(\x) = \lambda_t \lrnorm{\Q\x}_1$ plays a role of a regularizer.
+%
+%
+%
+%\textbf{Online music recommendation with user-specified privacy protection.} 
+%In the task, we want to conduct online music recommendation with the user-specified privacy protection for Bob, because he wants to protect his data in the way he likes. We provide several choices for users to make a tradeoff between the accuracy of recommendation and the privacy protection. For example, when we use $\epsilon$-differential privacy, these choices may include \textit{strong privacy, weak accuracy} ($\epsilon = 0.01$), \textit{medium privacy, medium accuracy} ($\epsilon = 0.05$), and \textit{weak privacy, strong accuracy} ($\epsilon = 0.1$).  
+%Note that Bob's choice may change over time. For example, he may tolerate weak privacy protection to receive the newest song produced by his favorite player timely, but may want strong privacy protection when seeing a privacy-leaking news from a newspaper. In the case, $g_{i,t}(\x_{i,t})$ represents the loss incurred by the learning model. $h_t(\x_{i,t};\xi_{i,t})$ represents the loss incurred by some a randomization encryption method, e.g., objective perturbation \citep{Chaudhuri:2011tr,NIPS2017_6865}, to protect the privacy.  Since Bob's preference to music may change over time, the optimal recommendation model should change over time. Thus, the dynamic regret is necessary to measure the quality of the model. 
+%
+%Similarly, suppose we want to learn a logistic regression model with the user-specified privacy protection. Given an instance $\a_{i,t} \in \RR^d$ and its label $\y_{i,t} \in \{1,-1\}$.  In the case, $g_{i,t}(\x) = \log\lrincir{1 + \exp(-\y_{i,t}\a_{i,t}\Tr \x)}$. We use the objective perturbation strategy \citep{Chaudhuri:2011tr,NIPS2017_6865} to protect the privacy. Specifically, we let $h_t(\x;\xi_{i,t}) = \x\Tr\xi_{i,t}$, where $\xi_{i,t}$ is random variable， which is drawn from $D_t$. The density of $\xi_{i,t}$ is 
 %\begin{align}
 %\nonumber
-%\Q = \begin{bmatrix}
-% 1&  -1 & & &\\ 
-% & 1 & -1 & &\\ 
-% &  & \cdots & &\\ 
-% &  &  &  1& -1
-%\end{bmatrix}.
-%\end{align} Here, $h_t(\x;\xi_{i,t})$ induces the difference between elements of $\x$ to be sparse. Thus, it is able to transmit $\x$ by using few different elements, and improve the communication efficiency.  When $\lambda_t$ is a constant, and does not change over $t$, $H_t(\x)$ with $H_t(\x) = \lambda_t \lrnorm{\Q\x}_1$ plays a role of a regularizer.
-
-
-
-\textbf{Online music recommendation with user-specified privacy protection.} 
-In the task, we want to conduct online music recommendation with the user-specified privacy protection for Bob, because he wants to protect his data in the way he likes. We provide several choices for users to make a tradeoff between the accuracy of recommendation and the privacy protection. For example, when we use $\epsilon$-differential privacy, these choices may include \textit{strong privacy, weak accuracy} ($\epsilon = 0.01$), \textit{medium privacy, medium accuracy} ($\epsilon = 0.05$), and \textit{weak privacy, strong accuracy} ($\epsilon = 0.1$).  
-Note that Bob's choice may change over time. For example, he may tolerate weak privacy protection to receive the newest song produced by his favorite player timely, but may want strong privacy protection when seeing a privacy-leaking news from a newspaper. In the case, $g_{i,t}(\x_{i,t})$ represents the loss incurred by the learning model. $h_t(\x_{i,t};\xi_{i,t})$ represents the loss incurred by some a randomization encryption method, e.g., objective perturbation \citep{Chaudhuri:2011tr,NIPS2017_6865}, to protect the privacy.  Since Bob's preference to music may change over time, the optimal recommendation model should change over time. Thus, the dynamic regret is necessary to measure the quality of the model. 
-
-Similarly, suppose we want to learn a logistic regression model with the user-specified privacy protection. Given an instance $\a_{i,t} \in \RR^d$ and its label $\y_{i,t} \in \{1,-1\}$.  In the case, $g_{i,t}(\x) = \log\lrincir{1 + \exp(-\y_{i,t}\a_{i,t}\Tr \x)}$. We use the objective perturbation strategy \citep{Chaudhuri:2011tr,NIPS2017_6865} to protect the privacy. Specifically, we let $h_t(\x;\xi_{i,t}) = \x\Tr\xi_{i,t}$, where $\xi_{i,t}$ is random variable， which is drawn from $D_t$. The density of $\xi_{i,t}$ is 
-\begin{align}
-\nonumber
-v(\x) = \frac{1}{\lambda}\exp(-\delta_{i,t} \lrnorm{\x}).
-\end{align} Here, $\lambda$ is a normalizing constant, $\delta_{i,t}$ is a known function of $\epsilon_{i,t}$ for $\epsilon_{i,t}$-differential privacy \citep{Dwork:2014gx}. For example, when $\delta_{i,t} = \epsilon_{i,t}$, $\lambda = ?$. 
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
+%v(\x) = \frac{1}{\lambda}\exp(-\delta_{i,t} \lrnorm{\x}).
+%\end{align} Here, $\lambda$ is a normalizing constant, $\delta_{i,t}$ is a known function of $\epsilon_{i,t}$ for $\epsilon_{i,t}$-differential privacy \citep{Dwork:2014gx}. For example, when $\delta_{i,t} = \epsilon_{i,t}$, $\lambda = ?$. 
+%}
 
 
 
@@ -290,16 +277,15 @@ v(\x) = \frac{1}{\lambda}\exp(-\delta_{i,t} \lrnorm{\x}).
 \section{Algorithm}
 
 
-%\newcommand\STATEX{\STATEX\hspace{\algorithmicindent}}
 \begin{algorithm}[!]
    \caption{\textsc{DOG}: Decentralized Online Gradient method.}
    \label{algo_DOG}
    \begin{algorithmic}[1]
    \REQUIRE The learning rate $\eta$, number of iterations $T$, and the confusion matrix $\W$. $\x_{i,1} = \0$ for any $i\in [n]$.
        \FOR {$t=1,2, ..., T$}
-            \STATE For the $i$-th node with $i\in[n]$:
+           \STATE For the $i$-th node with $i\in[n]$:
             \STATE \indent Predict $\x_{i,t}$.
-            \STATE \indent Observe the loss function $f_{i,t}$, and suffer loss $f_{i,t}(\x_{i,t};\xi_{i,t})$.
+            \STATE \indent Observe the loss function $f_{i,t}$,  and suffer loss $f_{i,t}(\x_{i,t};\xi_{i,t})$.
             \STATE Update:
             \STATE \indent Query a sub-gradient $\partial f_{i,t}(\x_{i,t};\xi_{i,t})$.  
             \STATE \indent $\x_{i,t+1} = \sum_{j=1}^n \W_{i,j}\x_{j,t} - \eta \partial f_{i,t}(\x_{i,t};\xi_{i,t})$. 
@@ -340,20 +326,57 @@ We make the following assumptions.
 
 \subsection{Main results}
 
+%{\color{red} 
+%
+%
+%\textbf{Old version:}
+%
+%\begin{Theorem}
+%\label{theorem_regret_upper_bound}
+%Denote constants $C_0$, and $C_1$ by
+%\begin{align}
+%\nonumber
+%C_0 := & 1 + \frac{1}{2(1-\rho)^2}+16\beta; \\ \nonumber
+%C_1 := & \frac{L + 2\eta L^2  + 4(1-\beta)^2L^2 \eta}{(1-\rho)^2} +2L.
+%\end{align} Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing $\eta>0$ in Algorithm \ref{algo_DOG}, we have
+%\begin{align}
+%\nonumber
+%& \EE_{ \Xi_{n,T} \sim \Dcal_{T} } \sum_{t=1}^T\sum_{i=1}^n f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^\ast;\xi_{i,t}) \\ \nonumber
+%\le & C_0\eta T n\beta  G + (1-\beta)\eta T\sigma^2 + 4n(1-\beta) \lrincir{ \EE_{ \Xi_{n,T} \sim \Dcal_{T} } \sum_{t=1}^T  \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})}  } \\ \nonumber
+%& + C_1  nT\eta^2 G    + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  }.
+%\end{align}
+%
+%\end{Theorem}
+%
+%
+%\begin{Corollary}
+%\label{corollary_regret_upper_bound}
+%Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing 
+%\begin{align}
+%\nonumber
+%\eta = \sqrt{\frac{nM}{ T\lrincir{n\beta G + (1-\beta)\sigma^2} }}
+%\end{align} in Algorithm \ref{algo_DOG}, we have
+%\begin{align}
+%\nonumber
+%\Rcal_T^{\textsc{DOG}} \lesssim & \sqrt{nMT\lrincir{\beta nG + (1-\beta)\sigma^2}} + n(1-\beta)  \EE_{ \Xi_{n,T} \sim \Dcal_{T} } \sum_{t=1}^T  \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})}.
+%\end{align}
+%
+%\end{Corollary}
+%}
 
+{\color{red} 
 \begin{Theorem}
 \label{theorem_regret_upper_bound}
-Denote $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$, and constants $C_0$ and $C_1$ by
+Denote constants $C_0$, and $C_1$ by
 \begin{align}
 \nonumber
-C_0 := & \frac{1}{\sqrt{\beta^2 + \eta}} + 4; \\ \nonumber
-C_1 := & \frac{\beta}{2\eta } +L + \frac{\sqrt{\beta^2 + \eta}}{2\eta} + 2\eta L^2  + C_0 (1-\beta)^2L^2 \eta.
+C_0 := & 1 + \frac{1}{2(1-\rho)^2}+16\beta; \\ \nonumber
+C_1 := & \frac{L + 2\eta L^2  + 4(1-\beta)^2L^2 \eta}{(1-\rho)^2} +2L.
 \end{align} Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing $\eta>0$ in Algorithm \ref{algo_DOG}, we have
 \begin{align}
 \nonumber
 & \EE_{ \Xi_{n,T} \sim \Dcal_{T} } \sum_{t=1}^T\sum_{i=1}^n f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^\ast;\xi_{i,t}) \\ \nonumber
-\le & \eta T \lrincir{ n\beta G + (1-\beta)\sigma^2} + n(1-\beta)C_0 \lrincir{ \EE_{ \Xi_{n,T} \sim \Dcal_{T} } \sum_{t=1}^T  \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})}  } \\ \nonumber
-& + (1-\beta)  \frac{nT\eta^2 G C_1}{(1-\rho)^2}  + n(1-\beta)C_0 \lrincir{ 4T\beta^2 \eta G + \frac{TGL\eta^2}{2} }  + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  }.
+\le & C_0\eta T n\beta  G + (1-\beta)\eta T\sigma^2 + 4n(1-\beta)T\eta G  + C_1  nT\eta^2 G    + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  }.
 \end{align}
 
 \end{Theorem}
@@ -361,23 +384,18 @@ C_1 := & \frac{\beta}{2\eta } +L + \frac{\sqrt{\beta^2 + \eta}}{2\eta} + 2\eta L
 
 \begin{Corollary}
 \label{corollary_regret_upper_bound}
-Recall that 
-\begin{align}
-\nonumber
-C_0 = & \frac{1}{\sqrt{\beta^2 + \eta}} + 4.
-\end{align}
 Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing 
 \begin{align}
 \nonumber
-\eta = \sqrt{\frac{nM}{ T\lrincir{n\beta G + (1-\beta)\sigma^2} }}
+\eta = \sqrt{\frac{nM}{ T\lrincir{nG + (1-\beta)\sigma^2} }}
 \end{align} in Algorithm \ref{algo_DOG}, we have
 \begin{align}
 \nonumber
-\Rcal_T^{\textsc{DOG}} \lesssim & \sqrt{nMT\lrincir{\beta nG + (1-\beta)\sigma^2}} + n(1-\beta)C_0  \EE_{ \Xi_{n,T} \sim \Dcal_{T} } \sum_{t=1}^T  \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})}.
+\Rcal_T^{\textsc{DOG}} \lesssim & \sqrt{nMT\lrincir{ nG + (1-\beta)\sigma^2}}.
 \end{align}
 
 \end{Corollary}
-
+}
 
 
 
@@ -421,7 +439,7 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing
 \section{Empirical studies}
 
 
-We conduct online logistic regression in the empirical studies. We let $f_{i,t}(\x;\xi_{i,t}) = \log\lrincir{1+\exp(-\y_{i,t}\A_{i,t}\Tr \x)} + \frac{\gamma}{2}\lrnorm{\x}^2$, where $\gamma = 10^{-3}$ is the given hyper-parameter. The learning rate $\eta$ is set to be $\sqrt{\frac{M}{100T}}$.  
+We conduct online logistic regression in the empirical studies. We let $f_{i,t}(\x;\xi_{i,t}) = \log\lrincir{1+\exp(-\y_{i,t}\A_{i,t}\Tr \x)} + \frac{\gamma}{2}\lrnorm{\x}^2$, where $\gamma = 10^{-3}$ is the given hyper-parameter. The compared methods include our Decentralized Online Gradient method (DOG) and the Centralized Online Gradient method (COG). The learning rate $\eta$ is set to be $C\sqrt{\frac{M}{T}}$ with  $10^{-2} \le C \le 20$, and we tune $C$ for different datasets. In experiment, we use the average loss $\frac{1}{nT}\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t};\xi_{i,t})$, instead of the dynamic regret $\EE_{\Xi_{n,T}\sim \Dcal_{n,T}}\sum_{i=1}^n\sum_{t=1}^T \lrincir{ f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^{\ast}) }$ as a metric to measure the quality of a learning model. The reason is that the   learning models yielded by both DOG and COG have the same reference point $\{\x_t^\ast\}^T_{t=1}$.  
 
 \subsection{Datasets}
 
@@ -429,80 +447,88 @@ We conduct online logistic regression in the empirical studies. We let $f_{i,t}(
 \setlength{\abovecaptionskip}{0pt}
 \setlength{\belowcaptionskip}{0pt}
 \centering 
-\subfigure{\includegraphics[width=0.85\columnwidth]{figure_dynamics}\label{figure_dynamics}}
+\subfigure{\includegraphics[width=0.7\columnwidth]{figure_dynamics}\label{figure_dynamics}}
 \caption{The illustration of the dynmaics caused by the time-varying distributions of data. Data distribution $1$ and $2$ are  Normal distrbutions with $1$ variance and $1+\sin(t)$ mean, and $1$ variance and $-1+\sin(t)$ mean, respectively. Data distribution $3$ is the sum of them, which changes over time. }
 \label{figure_illus_dynamics}
 \end{figure}
 
-\begin{figure*}[!t]
+
+\begin{figure*}[!h]
 \setlength{\abovecaptionskip}{0pt}
 \setlength{\belowcaptionskip}{0pt}
 \centering 
 \subfigure[\textit{synthetic data}, $100$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_iterations}\label{figure_decen_cen_ave_loss_iterations}}
 \subfigure[\textit{room-occupancy}, $5$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_iterations_occupancy}\label{figure_decen_cen_ave_loss_iterations_occupancy}}
-\subfigure[\textit{online-retail}, $5$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_iterations_online_retail}\label{figure_decen_cen_ave_loss_iterations_online_retail}}
+\subfigure[\textit{usenet2}, $5$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_iterations_usenet2}\label{figure_decen_cen_ave_loss_iterations_usenet2}}
 \subfigure[\textit{spam}, $5$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_iterations_spam}\label{figure_decen_cen_ave_loss_iterations_spam}}
 %\subfigure[\textit{usenet2}]{\includegraphics[width=0.32\columnwidth]{figure_decen_cen_ave_loss_iterations_usenet2}\label{figure_decen_cen_ave_loss_iterations_usenet2}}
-\caption{The performance of DOG is comparable to that of COG.}
+\caption{The average loss yielded by DOG is comparable to that yielded by COG.}
 \label{figure_compare_loss}
 \end{figure*}
 
 
-\textbf{Synthetic data} We generate a data matrix $\A=\A_1 + \A_2+ \cdots + \A_n$, where $\A_i$ is placed on the $i$-th node, and $\A_i=0.1\tilde{\A}_i+0.9\hat{\A}_i$, where $\tilde{\A}_i$ represents the adversary part of data, and $\hat{\A}_i$ represents the stochastic part of data. $\y_{i}\in\{1,-1\}$ is the label of an instance $\hat{\A}_{i,t}$. The dimension of every instance is $d = 10$. Specifically,  elements of $\tilde{\A}_i$ is sampled from the interval $[-0.5+\sin(i),0.5+\sin(i)]$ randomly. Note that $\tilde{\A}_i$ and $\tilde{\A}_j$ with $i\neq j$ are different distributions. Besides, $\y_{i,t}\in\{1,-1\}$ is generated randomly. When $\y_{i,t}=1$, $\hat{\A}_{i,t}$ is generated by sampling from a multi-variate Normal distribution $\hat{\A}_{i,t} \sim N((1+0.5\sin(t))\cdot\1, \I)$. When $\y_{i,t} = -1$, $\hat{\A}_{i,t}$ is generated by sampling from another multi-variate Normal distribution $\hat{\A}_{i,t} \sim N((-1+0.5\sin(t))\cdot\1, \I)$. As illustrated in Figure \ref{figure_illus_dynamics}, the data distribution changes over time, and the optimal learning model thus change over time, where the dynamic regret is practical and necessary to measure the goodness of a learning model. 
 
-\textbf{Real data} We use three real time-series datasets: \textit{room-occupancy}\footnote{\url{https://archive.ics.uci.edu/ml/datasets/Occupancy+Detection+}},  \textit{online-retail}\footnote{\url{https://archive.ics.uci.edu/ml/datasets/Online+Retail}}, and \textit{spam}\footnote{\url{http://mlkd.csd.auth.gr/concept_drift.html}}.  The data distribution of those datasets changes over time in those practial scenarios, leading to the change of the optimal learning model during online learing. In those dynamic environment, the dynamic regret is practial and necessary. 
+
+
+
+
+\textbf{Synthetic data} We generate a data matrix $\A=\A_1 + \A_2+ \cdots + \A_n$, where $\A_i$ is placed on the $i$-th node, and $\A_i=0.1\tilde{\A}_i+0.9\hat{\A}_i$, where $\tilde{\A}_i$ represents the adversary part of data, and $\hat{\A}_i$ represents the stochastic part of data. $\y_{i}\in\{1,-1\}$ is the label of an instance $\hat{\A}_{i,t}$. The dimension of every instance is $d = 10$. Specifically,  elements of $\tilde{\A}_i$ is sampled from the interval $[-0.5+\sin(i),0.5+\sin(i)]$ randomly. Note that $\tilde{\A}_i$ and $\tilde{\A}_j$ with $i\neq j$ are drawn from different distributions. Besides, $\y_{i,t}\in\{1,-1\}$ is generated randomly. When $\y_{i,t}=1$, $\hat{\A}_{i,t}$ is generated by sampling from a time-varying Normal distribution $\hat{\A}_{i,t} \sim N((1+0.5\sin(t))\cdot\1, \I)$. When $\y_{i,t} = -1$, $\hat{\A}_{i,t}$ is generated by sampling from another time-varying Normal distribution $\hat{\A}_{i,t} \sim N((-1+0.5\sin(t))\cdot\1, \I)$. As illustrated in Figure \ref{figure_illus_dynamics}, we use those time-varying distributions of data to simulate the dynamics in the environment, which leads to the change of the optimal learning model over time.  In the setting, dynamic regret is practical and necessary to measure goodness of a learning model. 
+
+\textbf{Real data} We use three real datasets: \textit{room-occupancy}\footnote{\url{https://archive.ics.uci.edu/ml/datasets/Occupancy+Detection+}},  \textit{usenet2}\footnote{\url{http://mlkd.csd.auth.gr/concept_drift.html}}, and a \textit{spam}\footnote{\url{http://mlkd.csd.auth.gr/concept_drift.html}}. \textit{room-occupancy} ia time-series dataset, where the dynamics exists naturally in those practical scenarios. Bothe \textit{usenet2} and \textit{spam} contain ``concept drift" \citep{Katakis:2010:TR}, which is the source of the dynamics.  Thus, the dynamic regret is practial and necessary to measure an online learning method to handle those datasets. 
 
 %Besides, we fetch values of the first feature of every dataset, and then permutate them by the decreasing order. After that, we re-fill the new values to the data matrix to simulate the adversary values. Finally, all values of a feature have been normalized to be zero mean and one variance.
 %\begin{itemize}
 %\item {\textit{room-occupancy}.} It collects features of a room including temperature, humidity, light, and CO2 for every minute between 02/02/2015 and 02/10/2015. Label of an instance is whether the room is occupied. Our goal is to learn a classification model to make a decision whether the room is occupied by using those features.   
-%\item {\textit{online-retail}.} It is an online retail dataset, which contains all transactions occurring between 01/12/2010 and 09/12/2011 for a UK-based and registered non-store online retail. We use three features, that is, \textit{whether a transaction is cancelled}, \textit{quantity}, and \textit{unit price}. We need to train a binary clssification model to make a decision whether a customer is coming from United Kingdom. 
+%\item {\textit{usenet2}.} It is an online retail dataset, which contains all transactions occurring between 01/12/2010 and 09/12/2011 for a UK-based and registered non-store online retail. We use three features, that is, \textit{whether a transaction is cancelled}, \textit{quantity}, and \textit{unit price}. We need to train a binary clssification model to make a decision whether a customer is coming from United Kingdom. 
 %\item {\textit{BeijingPM2.5}.} It collects some weather features, e.g., teperature and pressure, and the PM2.5 data of US Embassy in Beijing hourly between 01/01/2010 and 12/31/2014. When the PM 2.5 index is larger than $100$, the air quality is \textit{bad}, otherwise, \textit{good}. We want to train a binary clssification model to make a decision whether the air quality is good accoring to features such as temperature and pressure.   \textit{BeijingPM2.5}\footnote{\url{https://archive.ics.uci.edu/ml/datasets/Beijing+PM2.5+Data}},
 %\item {\textit{spam}.} Every instance in the dataset is an email, where the frequence of every word in the dictionary is collected. But, the distribution of words changes over time, which is denoted by \textit{concept drift} \citep{Katakis:2010:TR}. We want to learn a classification model to make a decision whether an email is a spam. 
 %\end{itemize}
- 
-
-
-\begin{figure}[!h]
-\setlength{\abovecaptionskip}{0pt}
-\setlength{\belowcaptionskip}{0pt}
-\centering 
-\subfigure[\textit{Network size}]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_nodes}\label{figure_decen_cen_ave_loss_nodes}}
-\subfigure[\textit{Network topology}]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_iterations_net_types}\label{figure_decen_cen_ave_loss_iterations_net_types}}
-\caption{The performance of DOG is comparable to that of COG.}
-\label{figure_synthetic_loss}
-\end{figure}
-
-
-\subsection{Evaluation tasks}
-The average loss $\frac{1}{nT}\sum_{i=1}^n\sum_{t=1}^T f_{i,t;\xi_{i,t}}(\x_{i,t})$ is used as a metric.  We use it to varify: 
-\begin{enumerate}
-\item whether Decentralized Online Gradient method (DOG), i.e., Algorithm \ref{algo_DOG}, has comparable performance with the Centralized Online Gradient method (COG).
-\item whether DOG has a good performance with the increase of the network size.
-\item whether DOG has a good performance with the change of the network topology.
-\end{enumerate}
-   
-
-
 
 
 \subsection{Results}
 
-First, we simulate a decentralized network consisting of $100$ nodes to handle the synthetic data, and a network consisting $5$ nodes to handle the real data. Those nodes are connected by using a ring topology.  As shown in Figure \ref{figure_synthetic_loss}, both DOG and COG are effective to optimize the decision variable, and they have very similar performance. Comparing with COG, DOG is good enough to conduct online learning. 
+First, we want to test whether DOG has a comparable performance with COG. We simulate a decentralized network consisting of $100$ nodes to handle the synthetic data, and a network consisting of $5$ nodes to handle the real data. Those nodes are connected by using a ring topology.  As shown in Figure \ref{figure_compare_loss}, both DOG and COG are effective to optimize the decision variable, and they have very similar performance. 
 
 
 
-Second, we evaluate the performance of DOG by varying the network size. As shown in Figure \ref{figure_decen_cen_ave_loss_nodes}, the average loss decreases effectively for a large network. After that, we change the topology of the network, and still evaluate the performance of DOG. The topology  \textit{Fully connected} means all nodes are connected, where DOG de-generates to be COG. The topology  \textit{WattsStrogatz} represents a Watts-Strogatz small-world graph. There is a parameter can be tuned, e.g., $0.5$ or $1$ in the legend of Figure \ref{figure_decen_cen_ave_loss_iterations_net_types}, to control the number of random edges in the Watts-Strogatz small-world graph.  As illustrated in Figures \ref{figure_decen_cen_ave_loss_iterations_net_types}, the topology  \textit{Fully connected} has the best performance. But, there is no significant difference between all topologies.
-
-
-
-
+Second, we want to varify whether DOG has a good performance with the increase of the network size. As shown in Figure \ref{figure_compare_network_size}, the performance of DOG is not sensitive to the network size, which confirms our theoretical result, that is, the average regret $\frac{1}{nT}\EE_{\Xi_{n,T}\sim \Dcal_{n,T}}\sum_{i=1}^n\sum_{t=1}^T \lrincir{ f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^{\ast}) }$ does not increase over the number of nodes. 
 
 
 
 
+\begin{figure*}[!h]
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{0pt}
+\centering 
+\subfigure[\textit{synthetic data}, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_nodes}\label{figure_decen_cen_ave_loss_nodes}}
+\subfigure[\textit{room-occupancy}, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_nodes_occupancy}\label{figure_decen_cen_ave_loss_nodes_occupancy}}
+\subfigure[\textit{usenet2}, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_nodes_usenet2}\label{figure_decen_cen_ave_loss_nodes_usenet2}}
+\subfigure[\textit{spam}, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_nodes_spam}\label{figure_decen_cen_ave_loss_nodes_spam}}
+\caption{The average loss yielded by DOG is insensitive to the network size.}
+\label{figure_compare_network_size}
+\end{figure*}
+
+
+Third, we want to test whether the performance of DOG is sensitive to the topology of the network. We generate four different topologies. Besides the ring topology, the \textit{Fully connected} means all nodes are connected, where DOG de-generates to be COG. The topology  \textit{WattsStrogatz} represents a Watts-Strogatz small-world graph. There is a parameter can be tuned, e.g., $0.5$ or $1$ in the legend of Figure \ref{figure_compare_topology}, to control the number of random edges.  As illustrated in Figure \ref{figure_compare_topology}, \textit{Fully connected} has the best performance because that $\rho = 0$ in the topology, and $\rho>0$ in other topologies.  
 
 
 
+\begin{figure*}[!h]
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{0pt}
+\centering 
+\subfigure[\textit{synthetic data}, $100$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_iterations_net_types}\label{figure_decen_cen_ave_loss_iterations_net_types}}
+\subfigure[\textit{room-occupancy}, $20$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_iterations_net_types_occupancy}\label{figure_decen_cen_ave_loss_iterations_net_types_occupancy}}
+\subfigure[\textit{usenet2}, $20$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_iterations_net_types_usenet2}\label{figure_decen_cen_ave_loss_iterations_net_types_occupancy}}
+\subfigure[\textit{spam}, $20$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_iterations_net_types_spam}\label{figure_decen_cen_ave_loss_iterations_net_types_spam}}
+\caption{The average loss yielded by DOG is insensitive to the topology of the network.}
+\label{figure_compare_topology}
+\end{figure*}
+
+
+
+
+\section{Conclusion}
 
 
 
