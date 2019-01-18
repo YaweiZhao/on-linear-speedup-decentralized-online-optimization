@@ -67,6 +67,10 @@
 % Therefore, a short form for the running title is supplied here:
 \icmltitlerunning{Decentralized Online Learning: Exchanging Local Models to Track Dynamics}
 
+
+
+
+\hypersetup{draft}% need to be commit before submitting paper
 \begin{document}
 
 \twocolumn[
@@ -130,7 +134,7 @@
 
 
 \begin{abstract}
-In this paper, we consider online learning in the decentralized setting up, which is motivated by the scenario where users want to take benefits from the data from other users, but do not want to share their private data to a third party or other users. Instead, they can only share their private prediction model, e.g., recommendation model. We study the decentralized online gradient method in which each user maintains a private model and share its private model with its neighbors (or users he/she trusts) periodically. In addition, to consider more practical scenario we allow users' interest changing over time, unlike most online work which assumes that the optimal prediction model is constant. We prove that decentralized online gradient can efficiently and effectively propagate the values in all private data without leaking them to track the dynamics, by admitting a tight dynamic regret $\Ocal{n\sqrt{TM} + \sqrt{nTM}\sigma}$ where $n$ is the number of users, $T$ is the number of time steps, $M$ measures the dynamics (this is, how many the users' interest change over time), and $\sigma$ measures the randomness of the private data. Empirical studies are also conducted to validate our analysis.
+In this paper, we consider online learning in the decentralized setting up, which is motivated by the scenario where users want to take benefits from the data from other users, but do not want to share their private data to a third party or other users. Instead, they can only share their private prediction model, e.g., recommendation model. We study the decentralized online gradient method in which each user maintains a private model and share its private model with its neighbors (or users he/she trusts) periodically. In addition, to consider more practical scenario we allow users' interest changing over time, unlike most online work which assumes that the optimal prediction model is constant. We prove that decentralized online gradient can efficiently and effectively propagate the values in all private data without leaking them to track the dynamics, by admitting a tight dynamic regret $\Ocal{n\sqrt{TM} + \sqrt{nTM}\sigma}$ where $n$ is the number of users, $T$ is the number of time steps, $M$ measures the dynamics (this is, how much the users' interest changes over time), and $\sigma$ measures the randomness of the private data. Empirical studies are also conducted to validate our analysis.
 
 
 
