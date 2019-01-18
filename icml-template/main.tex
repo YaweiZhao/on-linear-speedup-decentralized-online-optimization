@@ -203,7 +203,7 @@ For any online algorithm $A \in \Acal$, we define its dynamic regret $\Rcal_T^{A
 \begin{align}
 \nonumber
 f_{i,t}(\x;\zeta_{i,t},\xi_{i,t}) := \beta g_{i,t}(\x;\zeta_{i,t}) + (1-\beta) h_t(\x; \xi_{i,t})
-\end{align} with $0<\beta<1$. $\zeta_{i,t}$ represents the adversary data. $\xi_{i,t}$ represents the stochastic data, which is drawn from the distribution $D_t$.  Note that $g_{i,t}$ is an adversary loss function, which is caused by the adversary data. $h_t(\cdot; \xi_{i,t})$ is a stochastic loss function, which depends on the stochastic data $\xi_{i,t}$. The expectation is taken with respect to $\{\xi_{i,t}\}_{1\le i\le n,1\le t\le T}$, which does not depend on the $i$-th node. 
+\end{align} with $0<\beta<1$. $\zeta_{i,t}$ represents the adversary part of data. $\xi_{i,t}$ represents the stochastic part of data, which is drawn from the distribution $D_t$.  Note that $g_{i,t}$ is an adversary loss function, which is caused by the adversary data. $h_t(\cdot; \xi_{i,t})$ is a stochastic loss function, which depends on the stochastic data $\xi_{i,t}$. The expectation is taken with respect to $\{\xi_{i,t}\}_{1\le i\le n,1\le t\le T}$, which does not depend on the $i$-th node. 
 
 The sequence of reference points $\{\x_t^\ast\}_{t=1}^T$ satisfies 
 \begin{align}
@@ -404,12 +404,14 @@ By choosing an approximate learning rate $\eta$, we obtain sublinear regret as f
 Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing 
 \begin{align}
 \nonumber
-\eta = \sqrt{\frac{M\sqrt{R} + R}{ TG }}
+\eta = \sqrt{\frac{nM\sqrt{R} + nR}{ nTG + (1-\beta)T\sigma^2 }}
 \end{align} in Algorithm \ref{algo_DOG}, we have
 \begin{align}
 \nonumber
-\Rcal_T^{\textsc{DOG}} \lesssim & \frac{n \sqrt{T\lrincir{M+\sqrt{R}}} G}{(1-\rho)^2} + (1-\beta)\sqrt{T\lrincir{M+\sqrt{R}}}\sigma^2 \\ \label{equa_result_corollary}
-& + \frac{nM}{(1-\rho)^2} + n\sqrt{TM} + n\sqrt{T}.
+& \Rcal_T^{\textsc{DOG}} \\ \nonumber
+\lesssim & \frac{n \sqrt{T\lrincir{M+\sqrt{R}}G} }{(1-\rho)^2} + \sqrt{n(1-\beta)T\lrincir{M+\sqrt{R}}\sigma^2} \\ \nonumber
+& + \frac{n\lrincir{M+\sqrt{R}}}{(1-\rho)^2} + \sqrt{TM\lrincir{n^2G + n(1-\beta)\sigma^2}} \\ \label{equa_result_corollary}
+& + \sqrt{T\lrincir{n^2G + (1-\beta)n\sigma^2}}.
 \end{align}
 
 \end{Corollary}
