@@ -65,12 +65,12 @@
 
 % The \icmltitle you define below is probably too long as a header.
 % Therefore, a short form for the running title is supplied here:
-\icmltitlerunning{Proximal Online Gradient is Optimum for Dynamic Regret}
+\icmltitlerunning{Gossip Online Learning: Exchanging Local Models to Track Dynamics}
 
 \begin{document}
 
 \twocolumn[
-\icmltitle{Proximal Online Gradient is Optimum for Dynamic Regret}
+\icmltitle{Gossip Online Learning: Exchanging Local Models to Track Dynamics}
 
 % It is OKAY to include author information, even for blind
 % submissions: the style file will automatically remove it for you
@@ -172,18 +172,34 @@ In some literatures, the regret in a dynamic environment is measured by the numb
 }
 
 
-
-
-
-
-
-
-\section{Notations}
+\section{Notations and assumptions}
 For any $i\in[n]$ and $t\in[T]$, the random variable $\xi_{i,t}$ is subject to a distribution $D_t$, that is, $\xi_{i,t} \sim D_t$. Besides, a set of random variables $\Xi_{n,T}$ and the corresponding set of distributions are defined by
 \begin{align}
 \nonumber
 \Xi_{n,T} = \{ \xi_{i,t} \}_{1\le i \le n, 1 \le t \le T}, \text{~and~} \Dcal_{T} = \{ D_t \}_{1 \le t \le T},
 \end{align} respectively. For math brevity, we use the notation $\Xi_{n,T} \sim \Dcal_{T}$ to represent that $\xi_{i,t} \sim D_t$ holds for any $i\in[n]$ and $t\in[T]$.  $\EE$ represents mathematical expectation. $\partial$ and $\nabla$ represent sub-gradient and gradient operators, respectively. $\lrnorm{\cdot}$ represents the $\ell_2$ norm in default. 
+
+For a decentralized network, we use $\W \in\RR^{n\times n}$ to represent its confusion matrix. It is a symmetric doublely stochastic matrix, which implies that every element of $\W$ is non-negative, $\W \1 = \1$, and $\1\Tr\W  = \1\Tr$. We use $\{\lambda_i\}_{i=1}^n$ with $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$ to represent its eigenvalues. 
+
+We make the following assumptions to analyze the dynamic regret theoretically.
+\begin{Assumption}
+\label{assumption_bounded_gradient_domain}
+We make the following assumptions.
+\begin{itemize}
+\item For any $i\in[n]$, $t\in[T]$, and $\x$, there exists a constant $G$ such that
+\begin{align}
+\nonumber
+\max\left\{ \EE_{ \xi_{i,t} \sim D_t }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2,  \lrnorm{\partial g_{i,t}(\x)}^2 \right\} \le G,
+\end{align} and 
+\begin{align}
+\nonumber
+\EE_{ \xi_{i,t} \sim D_t } \lrnorm{\nabla h_t(\x; \xi_{i,t}) - \nabla H_t(\x)}^2 \le \sigma^2.
+\end{align}
+\item For given vectors $\x$ and $\y$, we assume $\lrnorm{\x-\y}^2 \le R$.
+\item  For any $i\in[n]$ and $t\in[T]$, we assume the function $f_{i,t}$ is convex, but may be non-smooth. 
+\item Given a symmetric doublely stochastic matrix $\W$, and a constant $\rho$ with $\rho := \max\{ |\lambda_2(\W)|, |\lambda_n(\W)| \}$, we assume $\rho <1$.
+\end{itemize}
+\end{Assumption}
 
 
 \section{Problem formulation}
@@ -197,7 +213,7 @@ For any online algorithm $A \in \Acal$, define its dynamic regret as
 \begin{align}
 \nonumber
 f_{i,t}(\x;\xi_{i,t}) := \beta g_{i,t}(\x) + (1-\beta) h_t(\x; \xi_{i,t})
-\end{align} with $0<\beta<1$, and $\xi_{i,t}$ is a random variable drawn from an unknown distribution $D_t$. Note that $g_{i,t}$ is an adversary loss function, which is yielded by the learning model. $h_t(\cdot; \xi_{i,t})$ is a known loss function, which   depends on the random variable $\xi_{i,t}$. The expectation of $h_t(\cdot; \xi_{i,t})$ is a global model, and does not depend on the $i$-th node. 
+\end{align} with $0<\beta<1$, and $\xi_{i,t}$ is a random variable drawn from an unknown distribution $D_t$. Note that $g_{i,t}$ is an adversary loss function, which is yielded by the learning model. $h_t(\cdot; \xi_{i,t})$ is a stochastic loss function, which depends on the random variable $\xi_{i,t}$. The expectation of $h_t(\cdot; \xi_{i,t})$ is a global model, and does not depend on the $i$-th node. 
 
 $\{\x_t^\ast\}_{t=1}^T$ is the sequence of reference points, and 
 \begin{align}
@@ -219,11 +235,8 @@ F_{i,t}(\cdot) = \EE_{\xi_{i,t} \sim D_t} f_{i,t}(\cdot; \xi_{i,t}).
 
 
 
+Recall that the previous definition of the dynamic regret is \eqref{equa_definition_previous_regret}. Using \eqref{equa_definition_previous_regret}, the classic online learning in a decentralized network only considers the loss function, i.e., $g_{i,t}$, incurred by the learning model on every node. Comparing with it, our definition of the dynamic regret, i.e., \eqref{equa_definition_our_regret}, still considers the loss function, i.e., $H_t$. It is incurred by the stochastic data.
 
-{\color{blue}
-
-Recall that the previous definition of the dynamic regret is \eqref{equa_definition_previous_regret}. Using \eqref{equa_definition_previous_regret}, the classic online learning in a decentralized network only considers the loss function, i.e., $g_{i,t}$, incurred by the learning model on every node. Comparing with it, our definition of the dynamic regret, i.e., \eqref{equa_definition_our_regret}, still considers the loss function, i.e., $H_t$. It is incurred by a global model, which is used to let the decision variables, e.g., $\x_{i,t}$, have some good property in practical scenarios.  We present some application scenarios to explain it in Section \ref{subsection_application_scenarions}. 
-}
 
 
 
@@ -274,8 +287,9 @@ Recall that the previous definition of the dynamic regret is \eqref{equa_definit
 
 
 
-\section{Algorithm}
+\section{Decentralized online gradient method}
 
+\subsection{Algorithm}
 
 \begin{algorithm}[!]
    \caption{\textsc{DOG}: Decentralized Online Gradient method.}
@@ -294,37 +308,17 @@ Recall that the previous definition of the dynamic regret is \eqref{equa_definit
 \end{algorithm}
 
 
-The decentralized online gradient method, namely \textsc{DOG}, is presented in Algorithm \ref{algo_DOG}. At every iteration, every node needs to collect the decision variable, e.g., $\x_{i,t}$, from its neighbours, and then update its decision variable.  Here, $\W \in\RR^{n \times n}$ is the confusion matrix. It is a doublely stochastic matrix, which implies that every element of $\W$ is non-negative, $\W \1 = \1$, and $\1\Tr\W  = \1\Tr$.  Denote $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$. We can verify that $\bar{\x}_{t+1} =  \bar{\x}_t -  \frac{\eta}{n}\sum_{i=1}^n \partial f_{i,t}(\x_{i,t};\xi_{i,t})$ (see Lemma \ref{lemma_average_update_rule}). 
+The decentralized online gradient method, namely \textsc{DOG}, is presented in Algorithm \ref{algo_DOG}. At every iteration, every node needs to collect the decision variable, e.g., $\x_{i,t}$, from its neighbours, and then update its decision variable.    Denote $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$. We can verify that $\bar{\x}_{t+1} =  \bar{\x}_t -  \frac{\eta}{n}\sum_{i=1}^n \partial f_{i,t}(\x_{i,t};\xi_{i,t})$ (see Lemma \ref{lemma_average_update_rule}). 
 
 
 
 
 
-\section{Theoretical analysis}
-
-
-\begin{Assumption}
-\label{assumption_bounded_gradient_domain}
-We make the following assumptions.
-\begin{itemize}
-\item For any $i\in[n]$, $t\in[T]$, and $\x$, there exists a constant $G$ such that
-\begin{align}
-\nonumber
-\max\left\{ \EE_{ \xi_{i,t} \sim D_t }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2,  \lrnorm{\partial g_{i,t}(\x)}^2 \right\} \le G,
-\end{align} and 
-\begin{align}
-\nonumber
-\EE_{ \xi_{i,t} \sim D_t } \lrnorm{\nabla h_t(\x; \xi_{i,t}) - \nabla H_t(\x)}^2 \le \sigma^2.
-\end{align}
-\item For any $\x$ and $\y$, we assume $\lrnorm{\x-\y}^2 \le R$.
-\item {\color{blue} For any $i\in[n]$ and $t\in[T]$, we assume the function $f_{i,t}$ is convex, but may be non-smooth. Furthermore, we assume the function $H_t$ has  $L$-Lipschitz gradients. In brief, $g_{i,t}$ may be non-convex, non-smooth. $H_t$ is smooth, but may be non-convex. $f_{i,t}$ is convex, but may be non-smooth.}
-\end{itemize}
-\end{Assumption}
+\subsection{Theoretical analysis}
 
 
 
 
-\subsection{Main results}
 
 %{\color{red} 
 %
@@ -382,46 +376,38 @@ C_1 := & \frac{L + 2\eta L^2  + 4(1-\beta)^2L^2 \eta}{(1-\rho)^2} +2L.
 
 \end{Theorem}
 
-
+By choosing an approximate learning rate $\eta$, we obtain sublinear regret as follows.
 \begin{Corollary}
 \label{corollary_regret_upper_bound}
 Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing 
 \begin{align}
 \nonumber
-\eta = \sqrt{\frac{nM}{ T\lrincir{nG + (1-\beta)\sigma^2} }}
+\eta = \sqrt{\frac{M\sqrt{R} + R}{ TG }}
 \end{align} in Algorithm \ref{algo_DOG}, we have
 \begin{align}
 \nonumber
-\Rcal_T^{\textsc{DOG}} \lesssim & \sqrt{nMT\lrincir{ nG + (1-\beta)\sigma^2}}.
+\Rcal_T^{\textsc{DOG}} \lesssim & \frac{n \sqrt{T\lrincir{M+\sqrt{R}}} G}{(1-\rho)^2} + (1-\beta)\sqrt{T\lrincir{M+\sqrt{R}}}\sigma^2 \\ \label{equa_result_corollary}
+& + \frac{nM}{(1-\rho)^2} + n\sqrt{TM} + n\sqrt{T}.
 \end{align}
 
 \end{Corollary}
 }
 
 
+Corollary \ref{corollary_regret_upper_bound} shows that DOG achieves sublinear regret.  The regret becomes large with increase of the budget of dynamics $M$. When $n=1$ and $\rho =0$, Corollary \ref{corollary_regret_upper_bound} shows that the dynamic regret is $\Ocal{\sqrt{TM}+\sqrt{T}}$, which is tight in the case of $n=1$ \citep{Zhao:2018wx}. When $\beta<1$, the second item of \eqref{equa_result_corollary} depends on the variance $\sigma^2$, instead of $n\sigma^2$. It benefits from the communication among nodes in the decentralized setting. Since every node shares its decision variable with its neighbours, the variance of the average of stochastic gradients $\frac{1}{n}\sum_{i=1}^n\nabla h_t(\x_{i,t};\xi_{i,t})$ is decreased to be $\frac{\sigma^2}{n}$, thus eventually reducing the regret caused by the stochastic data.   Additionally, Corollary \ref{corollary_regret_upper_bound} shows that the regret is impacted by the topology of the network, which is measured by $\rho$ with $0\le \rho < 1$. For a fully connected network\footnote{When a network is fully connected, a decentralized method de-generates to a centralized method.}, $\rho = 0$, and regret in the topologies is better than that in other topologies. 
 
-\subsection{Connections with the previous results}
+\subsection{Connections with previous work}
+Using the classic dynamic regret defined in \eqref{equa_definition_previous_regret}, \citet{8015179Shahram} has provided a $\Ocal{n\sqrt{nTM}}$ regret for DOG.  When $\beta = 1$, our new regret de-generates to the classic regret. Comparing with the result in \citet{8015179Shahram}, Corollary \ref{corollary_regret_upper_bound} achieves the state-of-the-art dependence on $T$ and $M$, and meanwhile improves the dependence on $n$. The improvement is caused by a better bound on the difference between $\x_{i,t}$ and $\bar{\x}_t$\footnote{\citet{8015179Shahram} denotes $\lrnorm{\x_{i,t} - \bar{\x}_t}$ by ``network error".}.
+\begin{Lemma}
+\label{lemma_x_variance_norm_square}
+Using Assumption \ref{assumption_bounded_gradient_domain}, and setting $\eta>0$ in Algorithm \ref{algo_DOG}, we have 
+\begin{align}
+\nonumber
+\EE_{ \Xi_{n,T} \sim \Dcal_{T} } \sum_{i=1}^n\sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2 \le \frac{nT\eta^2 G }{(1-\rho)^2}.
+\end{align}
+\end{Lemma}
 
 
-
-
-
-
-
-
-
-
-%\begin{Assumption}
-%\label{assumption_difference_bound_distributions}
-%For any sequence $\{\u_t\}_{t=2}^{T}$, there exists a constant $V$ such that
-%\begin{align}
-%\nonumber
-%\sum_{t=1}^{T-1} \lrincir{ H_{t+1}(\u_{t+1}) - H_t(\u_{t+1}) } \le V.
-%\end{align}
-%\end{Assumption}
-%
-%Recall that  $ H_t(\cdot) = \EE_{\xi_{i,t} \sim D_t} h_t(\cdot; \xi_{i,t})$.
-%Assumption \ref{assumption_difference_bound_distributions} implies that the cumulative difference between two successive distributions, e.g., $D_t$ and $D_{i,t+1}$, cannot be arbitrary.  
 
 
 
@@ -530,7 +516,7 @@ Third, we want to test whether the performance of DOG is sensitive to the topolo
 
 
 \section{Conclusion}
-
+We investigate a new online learning problem in a decentralized network, where the loss incurs by both adversary and stochastic data.  We provide a new analysis framework, which achieves sublinear regret. Extensive empirical studies varify the theoretical result. 
 
 
 %\section*{References}
