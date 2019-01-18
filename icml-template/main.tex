@@ -203,7 +203,7 @@ We make the following assumptions.
 
 
 \section{Problem formulation}
-
+xxxxx...
 \subsection{Setup}
 For any online algorithm $A \in \Acal$, define its dynamic regret as
 \begin{align}
@@ -358,7 +358,7 @@ The decentralized online gradient method, namely \textsc{DOG}, is presented in A
 %\end{Corollary}
 %}
 
-{\color{red} 
+ 
 \begin{Theorem}
 \label{theorem_regret_upper_bound}
 Denote constants $C_0$, and $C_1$ by
@@ -391,7 +391,7 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing
 \end{align}
 
 \end{Corollary}
-}
+
 
 
 Corollary \ref{corollary_regret_upper_bound} shows that DOG achieves sublinear regret.  The regret becomes large with increase of the budget of dynamics $M$. When $n=1$ and $\rho =0$, Corollary \ref{corollary_regret_upper_bound} shows that the dynamic regret is $\Ocal{\sqrt{TM}+\sqrt{T}}$, which is tight in the case of $n=1$ \citep{Zhao:2018wx}. When $\beta<1$, the second item of \eqref{equa_result_corollary} depends on the variance $\sigma^2$, instead of $n\sigma^2$. It benefits from the communication among nodes in the decentralized setting. Since every node shares its decision variable with its neighbours, the variance of the average of stochastic gradients $\frac{1}{n}\sum_{i=1}^n\nabla h_t(\x_{i,t};\xi_{i,t})$ is decreased to be $\frac{\sigma^2}{n}$, thus eventually reducing the regret caused by the stochastic data.   Additionally, Corollary \ref{corollary_regret_upper_bound} shows that the regret is impacted by the topology of the network, which is measured by $\rho$ with $0\le \rho < 1$. For a fully connected network\footnote{When a network is fully connected, a decentralized method de-generates to a centralized method.}, $\rho = 0$, and regret in the topologies is better than that in other topologies. 
