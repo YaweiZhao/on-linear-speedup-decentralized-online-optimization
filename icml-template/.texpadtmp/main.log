@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  18 JAN 2019 14:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  18 JAN 2019 15:35
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -552,9 +552,6 @@ Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ‡ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ‡ in font ptmr7t!
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
  [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
@@ -587,27 +584,30 @@ Overfull \hbox (10.81706pt too wide) in paragraph at lines 413--413
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `!tbp') on input line 454.
 
-<figure_dynamics.pdf, id=240, 532.74876pt x 230.26427pt>
+<figure_dynamics.pdf, id=241, 532.74876pt x 230.26427pt>
 File: figure_dynamics.pdf Graphic file (type pdf)
  <use figure_dynamics.pdf>
 Package pdftex.def Info: figure_dynamics.pdf used on input line 458.
 (pdftex.def)             Requested size: 164.41353pt x 71.06145pt.
- <figure_decen_cen_ave_loss_iterations.pdf, id=241, 531.80229pt x 396.87093pt>
+
+Underfull \vbox (badness 1552) has occurred while \output is active []
+
+ <figure_decen_cen_ave_loss_iterations.pdf, id=242, 531.80229pt x 396.87093pt>
 File: figure_decen_cen_ave_loss_iterations.pdf Graphic file (type pdf)
  <use figure_decen_cen_ave_loss_iterations.pdf>
 Package pdftex.def Info: figure_decen_cen_ave_loss_iterations.pdf used on input line 468.
 (pdftex.def)             Requested size: 112.74019pt x 84.1326pt.
- <figure_decen_cen_ave_loss_iterations_occupancy.pdf, id=242, 532.79692pt x 390.36913pt>
+ <figure_decen_cen_ave_loss_iterations_occupancy.pdf, id=243, 532.79692pt x 390.36913pt>
 File: figure_decen_cen_ave_loss_iterations_occupancy.pdf Graphic file (type pdf)
  <use figure_decen_cen_ave_loss_iterations_occupancy.pdf>
 Package pdftex.def Info: figure_decen_cen_ave_loss_iterations_occupancy.pdf used on input line 469.
 (pdftex.def)             Requested size: 112.74019pt x 82.59941pt.
- <figure_decen_cen_ave_loss_iterations_usenet2.pdf, id=243, 524.25316pt x 396.80978pt>
+ <figure_decen_cen_ave_loss_iterations_usenet2.pdf, id=244, 524.25316pt x 396.80978pt>
 File: figure_decen_cen_ave_loss_iterations_usenet2.pdf Graphic file (type pdf)
  <use figure_decen_cen_ave_loss_iterations_usenet2.pdf>
 Package pdftex.def Info: figure_decen_cen_ave_loss_iterations_usenet2.pdf used on input line 470.
 (pdftex.def)             Requested size: 112.74019pt x 85.3306pt.
- <figure_decen_cen_ave_loss_iterations_spam.pdf, id=244, 529.26443pt x 395.96121pt>
+ <figure_decen_cen_ave_loss_iterations_spam.pdf, id=245, 529.26443pt x 395.96121pt>
 File: figure_decen_cen_ave_loss_iterations_spam.pdf Graphic file (type pdf)
  <use figure_decen_cen_ave_loss_iterations_spam.pdf>
 Package pdftex.def Info: figure_decen_cen_ave_loss_iterations_spam.pdf used on input line 471.
@@ -639,7 +639,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 485--485
 [][][][][]$\OT1/pcr/m/n/9 http : / / mlkd . csd . auth . gr / concept _ drift .
  []
 
-
+[4 <./figure_dynamics.pdf>]
 Underfull \hbox (badness 2538) in paragraph at lines 502--503
 \OT1/ptm/m/n/10 (+20) per-for-mance with the in-crease of the net-work size.
  []
@@ -664,22 +664,22 @@ Underfull \hbox (badness 10000) in paragraph at lines 502--503
 [] [][] [][] [][] []$
  []
 
-<figure_decen_cen_ave_loss_nodes.pdf, id=256, 532.71991pt x 396.05757pt>
+<figure_decen_cen_ave_loss_nodes.pdf, id=298, 532.71991pt x 396.05757pt>
 File: figure_decen_cen_ave_loss_nodes.pdf Graphic file (type pdf)
  <use figure_decen_cen_ave_loss_nodes.pdf>
 Package pdftex.def Info: figure_decen_cen_ave_loss_nodes.pdf used on input line 511.
 (pdftex.def)             Requested size: 112.74019pt x 83.81512pt.
- <figure_decen_cen_ave_loss_nodes_occupancy.pdf, id=257, 525.35683pt x 396.18042pt>
+ <figure_decen_cen_ave_loss_nodes_occupancy.pdf, id=299, 525.35683pt x 396.18042pt>
 File: figure_decen_cen_ave_loss_nodes_occupancy.pdf Graphic file (type pdf)
  <use figure_decen_cen_ave_loss_nodes_occupancy.pdf>
 Package pdftex.def Info: figure_decen_cen_ave_loss_nodes_occupancy.pdf used on input line 512.
 (pdftex.def)             Requested size: 112.74019pt x 85.0139pt.
- <figure_decen_cen_ave_loss_nodes_usenet2.pdf, id=258, 516.58916pt x 396.28252pt>
+ <figure_decen_cen_ave_loss_nodes_usenet2.pdf, id=300, 516.58916pt x 396.28252pt>
 File: figure_decen_cen_ave_loss_nodes_usenet2.pdf Graphic file (type pdf)
  <use figure_decen_cen_ave_loss_nodes_usenet2.pdf>
 Package pdftex.def Info: figure_decen_cen_ave_loss_nodes_usenet2.pdf used on input line 513.
 (pdftex.def)             Requested size: 112.74019pt x 86.48099pt.
- <figure_decen_cen_ave_loss_nodes_spam.pdf, id=259, 524.86336pt x 397.08841pt>
+ <figure_decen_cen_ave_loss_nodes_spam.pdf, id=301, 524.86336pt x 397.08841pt>
 File: figure_decen_cen_ave_loss_nodes_spam.pdf Graphic file (type pdf)
  <use figure_decen_cen_ave_loss_nodes_spam.pdf>
 Package pdftex.def Info: figure_decen_cen_ave_loss_nodes_spam.pdf used on input line 514.
@@ -688,10 +688,7 @@ Package pdftex.def Info: figure_decen_cen_ave_loss_nodes_spam.pdf used on input 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [4 <./figure_dynamics.pdf>] <figure_decen_cen_ave_loss_iterations_net_types.pdf, id=304, 532.0484pt x 389.54594pt>
+<figure_decen_cen_ave_loss_iterations_net_types.pdf, id=304, 532.0484pt x 389.54594pt>
 File: figure_decen_cen_ave_loss_iterations_net_types.pdf Graphic file (type pdf)
  <use figure_decen_cen_ave_loss_iterations_net_types.pdf>
 Package pdftex.def Info: figure_decen_cen_ave_loss_iterations_net_types.pdf used on input line 528.
@@ -715,12 +712,12 @@ Package pdftex.def Info: figure_decen_cen_ave_loss_iterations_net_types_spam.pdf
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-(/Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/icml-template/.texpadtmp/main.bbl [5 <./figure_decen_cen_ave_loss_iterations.pdf> <./figure_decen_cen_ave_loss_iterations_occupancy.pdf> <./figure_decen_cen_ave_loss_iterations_usenet2.pdf> <./figure_decen_cen_ave_loss_iterations_spam.pdf> <./figure_decen_cen_ave_loss_nodes.pdf> <./figure_decen_cen_ave_loss_nodes_occupancy.pdf> <./figure_decen_cen_ave_loss_nodes_usenet2.pdf> <./figure_decen_cen_ave_loss_nodes_spam.pdf>]
+(/Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/icml-template/.texpadtmp/main.bbl [5 <./figure_decen_cen_ave_loss_iterations.pdf> <./figure_decen_cen_ave_loss_iterations_occupancy.pdf> <./figure_decen_cen_ave_loss_iterations_usenet2.pdf> <./figure_decen_cen_ave_loss_iterations_spam.pdf>]
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ‡ in font ptmr7t!
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ‡ in font ptmr7t!
- [6 <./figure_decen_cen_ave_loss_iterations_net_types.pdf> <./figure_decen_cen_ave_loss_iterations_net_types_occupancy.pdf> <./figure_decen_cen_ave_loss_iterations_net_types_usenet2.pdf> <./figure_decen_cen_ave_loss_iterations_net_types_spam.pdf>])
+ [6 <./figure_decen_cen_ave_loss_nodes.pdf> <./figure_decen_cen_ave_loss_nodes_occupancy.pdf> <./figure_decen_cen_ave_loss_nodes_usenet2.pdf> <./figure_decen_cen_ave_loss_nodes_spam.pdf> <./figure_decen_cen_ave_loss_iterations_net_types.pdf> <./figure_decen_cen_ave_loss_iterations_net_types_occupancy.pdf> <./figure_decen_cen_ave_loss_iterations_net_types_usenet2.pdf> <./figure_decen_cen_ave_loss_iterations_net_types_spam.pdf>])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 554.
  [7
 
@@ -743,16 +740,16 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 554.
 Here is how much of TeX's memory you used:
  10824 strings out of 493089
  165910 string characters out of 6134842
- 296635 words of memory out of 5000000
+ 298503 words of memory out of 5000000
  13759 multiletter control sequences out of 15000+600000
  49629 words of font info for 238 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,12n,45p,1988b,541s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 36i,11n,45p,1988b,541s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/icml-template/.texpadtmp/main.pdf (7 pages, 643140 bytes).
+Output written on /Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/icml-template/.texpadtmp/main.pdf (7 pages, 644903 bytes).
 PDF statistics:
- 586 PDF objects out of 1000 (max. 8388607)
- 497 compressed objects within 5 object streams
+ 589 PDF objects out of 1000 (max. 8388607)
+ 500 compressed objects within 5 object streams
  89 named destinations out of 1000 (max. 500000)
  38466 words of extra memory for PDF output out of 42996 (max. 10000000)
 

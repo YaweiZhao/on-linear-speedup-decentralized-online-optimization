@@ -130,7 +130,7 @@
 
 
 \begin{abstract}
-
+In this paper, we consider online learning in the decentralized setting up, which is motivated by the scenario where users want to take benefits from the data from other users, but do not want to share their private data to a third party or other users. Instead, they can only share their private prediction model, e.g., recommendation model. We study the decentralized online gradient method in which each user maintains a private model and share its private model with its neighbors (or users he/she trusts) periodically. In addition, to consider more practical scenario we allow users' interest changing over time, unlike most online work which assumes that the optimal prediction model is constant. We prove that decentralized online gradient can efficiently and effectively propagate the values in all private data without leaking them to track the dynamics, by admitting a tight dynamic regret $\Ocal{n\sqrt{TM}}$. Empirical studies are also conducted to validate our analysis.
 
 
 
@@ -186,7 +186,7 @@ Additionally, many decentralized online optimization methods are proposed, for e
 
 Dynamic regret has been widely studied for decades of years \citep{Zinkevich:2003,Hall:2015ct,Hall:2013vr,Jadbabaie:2015wg,Yang:2016ud,Bedi:2018te,Zhang:2016wl,Mokhtari:2016jz,Zhang:2018tu,Gyorgy:2016,NIPS2016_6536,Zhao:2018wx}.   \citet{Zinkevich:2003} first defines the dynamic regret by \eqref{equa_definition_previous_regret}, and then proposes an online gradient descent method. The method yields $\Ocal{\sqrt{TM}}$ by choosing an appropriate learning rate. The following researches achieve the sublinear dynamic regret, but extend the analysis of regret by using different reference points. For example, \citet{Hall:2015ct,Hall:2013vr} choose the reference points $\{\x_t^{\ast}\}_{t=1}^T$ satisfying $\sum_{t=1}^{T-1} \lrnorm{\x_{t+1}^\ast - \Phi(\x_t^\ast)} \le M$, where $\Phi(\x_t^\ast)$ is the predictive optimal decision variable. When the function $\Phi$ predicts accurately, a small $M$ is enough to bound the dynamics. The dynamic regret is thus effectively decreased. \citet{Jadbabaie:2015wg,Yang:2016ud,Bedi:2018te,Zhang:2016wl,Mokhtari:2016jz,Zhang:2018tu} chooses the reference points $\{\y_t^{\ast}\}_{t=1}^T$ with $\y_t^{\ast} = \argmin_{\z\in\Xcal} f_t(\z)$, where $f_t$ is the loss function at the $t$-th iteration. \citet{Gyorgy:2016} provides a new analysis framework, which achieves $\Ocal{\sqrt{TM}}$ dynamic regret\footnote{\citet{Gyorgy:2016} uses the notation of ``shifting regret" instead of ``dynamic regret". In the paper, we keep using ``dynamic regret" as used in most previous literatures. } for any given reference points. Besides, \citet{Zhao:2018wx} presents that the lower bound of the dynamic regret defined by \ref{equa_definition_previous_regret} is $\Omega\lrincir{\sqrt{TM}}$. The previous definition of the regret, i.e., \eqref{equa_definition_previous_regret}, is a special case of our new definition. When setting $\beta = 1$, we achieve the state-of-the-art regret, that is, $\Ocal{\sqrt{TM}}$. 
 
-In some literatures, the regret in a dynamic environment is measured by the number of changes of a reference point over time. It is usually denoted by shifting regret or tracking regret. \citep{Herbster1998,Gyorgy:2005wo,Gyorgy:2012wa,Gyorgy:2016,Mourtada:2017vn,JMLR:v17:13-533,NIPS2016_6536,cesabianchi:hal,pmlr-v84-mohri18a,pmlr-v54-jun17a}. Both the shifting regret and the tracking regret can be considered as a variation of the dynamic regret, and is usually studied in the setting of ``learning with expert advice". But, the dynamic regret is usually studied in a general setting of online learning.
+In some literatures, the regret in a dynamic environment is measured by the number of changes of a reference point over time. It is usually denoted by shifting regret or tracking regret \citep{Herbster1998,Gyorgy:2005wo,Gyorgy:2012wa,Gyorgy:2016,Mourtada:2017vn,JMLR:v17:13-533,NIPS2016_6536,cesabianchi:hal,pmlr-v84-mohri18a,pmlr-v54-jun17a}. Both the shifting regret and the tracking regret can be considered as a variation of the dynamic regret, and is usually studied in the setting of ``learning with expert advice". But, the dynamic regret is usually studied in a general setting of online learning.
 
 
 
@@ -203,7 +203,7 @@ For any online algorithm $A \in \Acal$, we define its dynamic regret $\Rcal_T^{A
 \begin{align}
 \nonumber
 f_{i,t}(\x;\zeta_{i,t},\xi_{i,t}) := \beta g_{i,t}(\x;\zeta_{i,t}) + (1-\beta) h_t(\x; \xi_{i,t})
-\end{align} with $0<\beta<1$. $\zeta_{i,t}$ represents the adversary data. $\xi_{i,t}$ represents the stochastic data, which is drawn from the distribution $D_t$. The expectation is taken with respect to $\{\xi_{i,t}\}_{1\le i\le n,1\le t\le T}$. Note that $g_{i,t}$ is an adversary loss function, which is caused by the adversary data. $h_t(\cdot; \xi_{i,t})$ is a stochastic loss function, which depends on the stochastic data $\xi_{i,t}$. The expectation of $h_t(\cdot; \xi_{i,t})$ is a global model, and does not depend on the $i$-th node. 
+\end{align} with $0<\beta<1$. $\zeta_{i,t}$ represents the adversary data. $\xi_{i,t}$ represents the stochastic data, which is drawn from the distribution $D_t$.  Note that $g_{i,t}$ is an adversary loss function, which is caused by the adversary data. $h_t(\cdot; \xi_{i,t})$ is a stochastic loss function, which depends on the stochastic data $\xi_{i,t}$. The expectation is taken with respect to $\{\xi_{i,t}\}_{1\le i\le n,1\le t\le T}$, which does not depend on the $i$-th node. 
 
 The sequence of reference points $\{\x_t^\ast\}_{t=1}^T$ satisfies 
 \begin{align}
@@ -213,7 +213,7 @@ The sequence of reference points $\{\x_t^\ast\}_{t=1}^T$ satisfies
 \begin{align}
 \label{equa_define_M}
 \sum_{t=1}^{T-1} \lrnorm{\x_{t+1}^\ast - \x_t^\ast} \le M.
-\end{align} When $M=0$, all $\x_t^\ast$s are same, and it degenerates to the static online learning problem. When the dynamic environment changes significantly, $M$ becomes large to model the dynamics. 
+\end{align} When $M=0$, all $\x_t^\ast$s are same, and it degenerates to the static online learning problem. When the dynamic environment changes significantly, $M$ becomes large to model the dynamics. Let us take an example to explain the dynamics. Suppose we want to conduct online music recommendation task by using users' browsing records in Youtube. Every user has his/her own favorite songs, and thus the historical listened songs in the dataset are modeled by the adversary data. 
 
 
 
