@@ -143,15 +143,13 @@ In this paper, we consider online learning in the decentralized setting up, whic
 
 \section{Introduction}
 \label{sect_introduction}
+\label{sect_introduction}
 
-For any online algorithm $A \in \Acal$, the previous dynamic regret $\widetilde{\Rcal}_T^{A}$ is defined by
-\begin{align}
-\label{equa_definition_previous_regret}
-\widetilde{\Rcal}_T^{A} = &  \sum_{i=1}^n\sum_{t=1}^T \lrincir{ g_{i,t}(\x_{i,t}) - g_{i,t}(\x_t^\ast) },
-\end{align} 
+Online learning has been studied for decades of years in machine learning literatures~\citep{Hazan2016Introduction,ShalevShwartz:2012dz,Duchi:2011}. The goal of online learning generally is to incrementally learn predictions models to minimize the sum of all the online loss functions (cumulative loss), which is usually determined by a squence of examples that arrives sequentially. To quantify the efficacy of an online learning algorithm, the community introduced a performance measure called \textit{static regret}, which is the difference between the cumulative losses suffered by the online algorithm and that suffered by the best model which can observe all the loss functions. The best static regret of a sequential online convex optimization method is  $\Ocal{\sqrt{T}}$ and $\Ocal{\log T}$  for convex and strongly convex loss functions, respectively \citep{Hazan2016Introduction,ShalevShwartz:2012dz}.
 
+Different with traditional online learning, online learning in decentralized networks (or Decentralized Online Learning) assumes that a network of computational nodes can communicate between neighors to solve an online learning problem, in which each computational node will receive a stream of online losses. Suppose we have $n$ workers, among which the $i$-th one will receive the $t$-th loss $f_{i,t}$ at the $t-$th iteration. Then, the goal of Decentralized Online Learning usually is to minimize its static regret, which is defined as the difference between the cumulative loss over all the nodes and steps and that of the best model which knows all the loss function beforehand. Decentralized Online Learning enjoys many advantages for real-world large-scale applications. Firstly, it avoid collecting all the loss functions to one node, which will result in heavy communication cost for the network and extremely high computational cost for one node. Secondly, it can help many data providers collaborate to better minimize their cumulative loss, while at the same time protect the data privacy as much as possible. 
 
-
+The static regret assumes that the best model keeps unchanged during the entire learning process, however this does not hold in some real applications. For example, one's favorite style of musics may change over time as his/her situation. To solve this issue, the dynamic regret is introduced, which generally measure the difference between the cumulative loss suffered by the decentralized online learning algorithm and that suffered by a dynamic sequence of models. This dynamic sequence of models can not only observe all the loss functions beforehand, but also changes over time with the amount of changes less than a budget. In this paper, we mainly prove that decentralized online gradient can achieve a dynamic regret  of $\Ocal{n\sqrt{TM} + \sqrt{nTM}\sigma}$ where $n$ is the number of users, $T$ is the number of time steps, $M$ measures the dynamics budget, and $\sigma$ measures the randomness of the private data. 
 
 
 \paragraph{Notations and definitions}
@@ -188,7 +186,7 @@ Additionally, many decentralized online optimization methods are proposed, for e
 
 \subsection{Regret in dynamic environment}
 
-Dynamic regret has been widely studied for decades of years \citep{Zinkevich:2003,Hall:2015ct,Hall:2013vr,Jadbabaie:2015wg,Yang:2016ud,Bedi:2018te,Zhang:2016wl,Mokhtari:2016jz,Zhang:2018tu,Gyorgy:2016,NIPS2016_6536,Zhao:2018wx}.   \citet{Zinkevich:2003} first defines the dynamic regret by \eqref{equa_definition_previous_regret}, and then proposes an online gradient descent method. The method yields $\Ocal{\sqrt{TM}}$ by choosing an appropriate learning rate. The following researches achieve the sublinear dynamic regret, but extend the analysis of regret by using different reference points. For example, \citet{Hall:2015ct,Hall:2013vr} choose the reference points $\{\x_t^{\ast}\}_{t=1}^T$ satisfying $\sum_{t=1}^{T-1} \lrnorm{\x_{t+1}^\ast - \Phi(\x_t^\ast)} \le M$, where $\Phi(\x_t^\ast)$ is the predictive optimal decision variable. When the function $\Phi$ predicts accurately, a small $M$ is enough to bound the dynamics. The dynamic regret is thus effectively decreased. \citet{Jadbabaie:2015wg,Yang:2016ud,Bedi:2018te,Zhang:2016wl,Mokhtari:2016jz,Zhang:2018tu} chooses the reference points $\{\y_t^{\ast}\}_{t=1}^T$ with $\y_t^{\ast} = \argmin_{\z\in\Xcal} f_t(\z)$, where $f_t$ is the loss function at the $t$-th iteration. \citet{Gyorgy:2016} provides a new analysis framework, which achieves $\Ocal{\sqrt{TM}}$ dynamic regret\footnote{\citet{Gyorgy:2016} uses the notation of ``shifting regret" instead of ``dynamic regret". In the paper, we keep using ``dynamic regret" as used in most previous literatures. } for any given reference points. Besides, \citet{Zhao:2018wx} presents that the lower bound of the dynamic regret defined by \ref{equa_definition_previous_regret} is $\Omega\lrincir{\sqrt{TM}}$. The previous definition of the regret, i.e., \eqref{equa_definition_previous_regret}, is a special case of our new definition. When setting $\beta = 1$, we achieve the state-of-the-art regret, that is, $\Ocal{\sqrt{TM}}$. 
+Dynamic regret has been widely studied for decades of years \citep{Zinkevich:2003,Hall:2015ct,Hall:2013vr,Jadbabaie:2015wg,Yang:2016ud,Bedi:2018te,Zhang:2016wl,Mokhtari:2016jz,Zhang:2018tu,Gyorgy:2016,NIPS2016_6536,Zhao:2018wx}.   \citet{Zinkevich:2003} first defines the dynamic regret by \eqref{equa_definition_previous_regret}, and then proposes an online gradient descent method. The method yields $\Ocal{\sqrt{TM}}$ by choosing an appropriate learning rate. The following researches achieve the sublinear dynamic regret, but extend the analysis of regret by using different reference points. For example, \citet{Hall:2015ct,Hall:2013vr} choose the reference points $\{\x_t^{\ast}\}_{t=1}^T$ satisfying $\sum_{t=1}^{T-1} \lrnorm{\x_{t+1}^\ast - \Phi(\x_t^\ast)} \le M$, where $\Phi(\x_t^\ast)$ is the predictive optimal modelmodel. When the function $\Phi$ predicts accurately, a small $M$ is enough to bound the dynamics. The dynamic regret is thus effectively decreased. \citet{Jadbabaie:2015wg,Yang:2016ud,Bedi:2018te,Zhang:2016wl,Mokhtari:2016jz,Zhang:2018tu} chooses the reference points $\{\y_t^{\ast}\}_{t=1}^T$ with $\y_t^{\ast} = \argmin_{\z\in\Xcal} f_t(\z)$, where $f_t$ is the loss function at the $t$-th iteration. \citet{Gyorgy:2016} provides a new analysis framework, which achieves $\Ocal{\sqrt{TM}}$ dynamic regret\footnote{\citet{Gyorgy:2016} uses the notation of ``shifting regret" instead of ``dynamic regret". In the paper, we keep using ``dynamic regret" as used in most previous literatures. } for any given reference points. Besides, \citet{Zhao:2018wx} presents that the lower bound of the dynamic regret defined by \ref{equa_definition_previous_regret} is $\Omega\lrincir{\sqrt{TM}}$. The previous definition of the regret, i.e., \eqref{equa_definition_previous_regret}, is a special case of our new definition. When setting $\beta = 1$, we achieve the state-of-the-art regret, that is, $\Ocal{\sqrt{TM}}$. 
 
 In some literatures, the regret in a dynamic environment is measured by the number of changes of a reference point over time. It is usually denoted by shifting regret or tracking regret \citep{Herbster1998,Gyorgy:2005wo,Gyorgy:2012wa,Gyorgy:2016,Mourtada:2017vn,JMLR:v17:13-533,NIPS2016_6536,cesabianchi:hal,pmlr-v84-mohri18a,pmlr-v54-jun17a}. Both the shifting regret and the tracking regret can be considered as a variation of the dynamic regret, and is usually studied in the setting of ``learning with expert advice". But, the dynamic regret is usually studied in a general setting of online learning.
 
@@ -198,12 +196,12 @@ In some literatures, the regret in a dynamic environment is measured by the numb
 
 \section{Problem formulation}
 
-For any online algorithm $A \in \Acal$, we define its dynamic regret $\Rcal_T^{A}$ by
+For any a decentralized online algorithm $A \in \Acal$, we define its dynamic regret $\Rcal_T^{A}$ by
 \begin{align}
 \nonumber
 \Rcal_T^{A} := & \EE_{ \Xi_{n,T} \sim \Dcal_{T} } \lrincir{ \sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t};\zeta_{i,t},\xi_{i,t}) } \\ \label{equa_definition_our_regret} 
 &- \EE_{ \Xi_{n,T} \sim \Dcal_{T} } \lrincir{ \sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_t^\ast;\zeta_{i,t},\xi_{i,t}) },
-\end{align} where $n$ is the number of nodes in the decentralized network. $\{\x_t^\ast\}_{t=1}^T$ is the sequence of reference points. $\x_{i,t}$ is the decision variable played by an online algorithm $A$ at the $t$-th round. The local loss function $f_{i,t}(\x;\zeta_{i,t},\xi_{i,t})$ is defined by
+\end{align} where $n$ is the number of nodes in the decentralized network. $\{\x_t^\ast\}_{t=1}^T$ is the sequence of reference points. $\x_{i,t}$ is the model played by an online algorithm $A$ at the $t$-th round. The local loss function $f_{i,t}(\x;\zeta_{i,t},\xi_{i,t})$ is defined by
 \begin{align}
 \nonumber
 f_{i,t}(\x;\zeta_{i,t},\xi_{i,t}) := \beta g_{i,t}(\x;\zeta_{i,t}) + (1-\beta) h_t(\x; \xi_{i,t})
@@ -220,7 +218,11 @@ The sequence of reference points $\{\x_t^\ast\}_{t=1}^T$ satisfies
 \end{align} When $M=0$, all $\x_t^\ast$s are same, and it degenerates to the static online learning problem. When the dynamic environment changes significantly, $M$ becomes large to model the dynamics. Let us take an example to explain the dynamics. Suppose we want to conduct online music recommendation task by using users' browsing records in Youtube. Every user has his/her own favorite music, and users' preference  changes over time due to time-varying trends of hot topics in Internet. It leads to the dynamics of the optimal recommendation model.  
 
 
-Recall that the previous definition of the dynamic regret is \eqref{equa_definition_previous_regret}. Using \eqref{equa_definition_previous_regret}, the classic online learning in a decentralized network only considers the loss function, i.e., $g_{i,t}$, incurred by the adversary part of data on every node, ignoring the potential relation of data among different nodes. Comparing with it, our definition of the dynamic regret, i.e., \eqref{equa_definition_our_regret}, still considers the stochastic loss function, i.e., $h_t(\cdot;\xi_{i,t})$. It is incurred by the stochastic part of data. Since every node shares its private model to neighbours, the regret due to stochastic part of data would be decreased effectively, which is varified by the theoretical results in Section \ref{subsection_theoretical_analysis}.
+For any a decentralized online algorithm $A \in \Acal$, the previous dynamic regret  $\widetilde{\Rcal}_T^{A}$ is defined by
+\begin{align}
+\label{equa_definition_previous_regret}
+\widetilde{\Rcal}_T^{A} = &  \sum_{i=1}^n\sum_{t=1}^T \lrincir{ f_{i,t}(\x_{i,t}) - f_{i,t}(\x_t^\ast) },
+\end{align} subject to $\sum_{t=1}^{T-1} \lrnorm{\x_{t+1}^\ast - \x_t^\ast} \le M$.  In \eqref{equa_definition_previous_regret}, the classic online learning in a decentralized network treats all the data as the adversary data. It ignores the potential relation of data among different nodes. Comparing with it, our definition of the dynamic regret, i.e., \eqref{equa_definition_our_regret}, views the adversary part of data and the stochastic part of data, distinctively.  Since every node shares its private model to neighbours, the regret due to stochastic part of data would be decreased effectively, which is varified by the theoretical results in Section \ref{subsection_theoretical_analysis}.
 
 
 
@@ -244,7 +246,7 @@ Recall that the previous definition of the dynamic regret is \eqref{equa_definit
 %\item The second kind of features is about users, who give comments about the music on the Youtube. For example, these features are ``gender" and "age", and an instance is \textit{male, $20$ years old}, or \textit{female, $18$ years old}. Note that user's gender and age do not usually change. All values corresponding to these features can be modeled by an unknown distribution $D_t$ at time $t$. Since there may be more and more users giving their comments to the music, $D_t$ may change over time. In the case, $h_t(\cdot; \xi_{i,t})$ represents the loss incurred by this kind of features, and $H_t(\cdot) = \EE_{\xi_{i,t}\sim D_t}h_t(\cdot; \xi_{i,t})$.
 %\end{enumerate} In a nutshell, an instance consists of those two kinds of features, and the label of an instance is \textit{whether Bob listened the music}. A small $\beta$ means significant attention on the second kind of features.
 %
-%Suppose we use logistic regression to decide whether to recommend some a music to Bob. Without loss of generality, features corresponding to the preference to music are denoted by the beginning $s$ features.  Given a user's browsing record $\a_{i,t}$ and its label $\y_{i,t} \in \{1,-1\}$. In the case, $g_{i,t}(\x;\zeta_{i,t}) = \log \lrincir{1 + \exp\lrincir{-\y_{i,t}\a_{i,t}\Tr \hat{\I} \x} }$, where $\hat{\I}$ is yielded by letting the first $s$ diagonal elements of an identity matrix be $0$s. $\xi_{i,t} = \check{\I} \a_{i,t} \y_{i,t}\Tr$, and $\tilde{h}(\x;\xi_{i,t}) = \log \lrincir{1 + \exp\lrincir{- \xi_{i,t}\Tr \x}}$, where $\check{\I}$ is yielded by letting the last $(d-s)$ diagonal elements of an identity matrix be $0$s. Here, $\xi_{i,t}$ is drawn form an unknown distribution, that is, $\xi_{i,t} \sim D_t$. In the case, $H_t(\x)$ allows the decision variable $\x$ to represent different models to treat those two kinds of features.
+%Suppose we use logistic regression to decide whether to recommend some a music to Bob. Without loss of generality, features corresponding to the preference to music are denoted by the beginning $s$ features.  Given a user's browsing record $\a_{i,t}$ and its label $\y_{i,t} \in \{1,-1\}$. In the case, $g_{i,t}(\x;\zeta_{i,t}) = \log \lrincir{1 + \exp\lrincir{-\y_{i,t}\a_{i,t}\Tr \hat{\I} \x} }$, where $\hat{\I}$ is yielded by letting the first $s$ diagonal elements of an identity matrix be $0$s. $\xi_{i,t} = \check{\I} \a_{i,t} \y_{i,t}\Tr$, and $\tilde{h}(\x;\xi_{i,t}) = \log \lrincir{1 + \exp\lrincir{- \xi_{i,t}\Tr \x}}$, where $\check{\I}$ is yielded by letting the last $(d-s)$ diagonal elements of an identity matrix be $0$s. Here, $\xi_{i,t}$ is drawn form an unknown distribution, that is, $\xi_{i,t} \sim D_t$. In the case, $H_t(\x)$ allows the model $\x$ to represent different models to treat those two kinds of features.
 %
 %
 %
@@ -301,7 +303,7 @@ In the section, we first present the decentralized online gradient method, and t
 
 
 The Decentralized Online Gradient method, namely \textsc{DOG}, is presented in Algorithm \ref{algo_DOG}. This algorithm works iteration by iteration.
-At each iteration, every node needs to collect the decision variable, e.g., $\x_{i,t}$, from its neighbours, and compute a weighted sum as $ \sum_{j=1}^n \W_{i,j}\x_{j,t}$. Then, the weighte sum is updated by an online gradient descent step. In addition, we denote $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$ to facilitate the theoretical analysis. We can verify that $\bar{\x}_{t+1} =  \bar{\x}_t -  \frac{\eta}{n}\sum_{i=1}^n \partial f_{i,t}(\x_{i,t};\xi_{i,t})$ (see Lemma \ref{lemma_average_update_rule}). 
+At each iteration, every node needs to collect local models, e.g., $\x_{i,t}$, from its neighbours, and compute a weighted sum as $ \sum_{j=1}^n \W_{i,j}\x_{j,t}$. Then, the weighte sum is updated by an online gradient descent step. In addition, we denote $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$ to facilitate the theoretical analysis. We can verify that $\bar{\x}_{t+1} =  \bar{\x}_t -  \frac{\eta}{n}\sum_{i=1}^n \partial f_{i,t}(\x_{i,t};\zeta_{i,t},\xi_{i,t})$ (see Lemma \ref{lemma_average_update_rule}). 
 
 
 
@@ -350,7 +352,7 @@ C_1 := & \frac{L + 2\eta L^2  + 4(1-\beta)^2L^2 \eta}{(1-\rho)^2} +2L.
 \end{align} Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing $\eta>0$ in Algorithm \ref{algo_DOG}, we have
 \begin{align}
 \nonumber
-& \EE_{ \Xi_{n,T} \sim \Dcal_{T} } \sum_{t=1}^T\sum_{i=1}^n f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^\ast;\xi_{i,t}) \\ \nonumber
+& \EE_{ \Xi_{n,T} \sim \Dcal_{T} } \sum_{t=1}^T\sum_{i=1}^n f_{i,t}(\x_{i,t};\zeta_{i,t},\xi_{i,t}) - f_{i,t}(\x_t^\ast;\xi_{i,t}) \\ \nonumber
 \le & C_0\eta T n\beta  G + (1-\beta)\eta T\sigma^2 + 4n(1-\beta)T\eta G \\ \nonumber
 & + C_1  nT\eta^2 G    + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  }.
 \end{align}
@@ -363,47 +365,33 @@ By choosing an approximate learning rate $\eta$, we obtain sublinear regret as f
 Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing 
 \begin{align}
 \nonumber
-\eta = \sqrt{\frac{nM\sqrt{R} + nR}{ nTG + (1-\beta)T\sigma^2 }}
+\eta = \sqrt{\frac{(1-\rho)^2 \lrincir{nM\sqrt{R} + nR}}{ nTG + (1-\beta)(1-\rho)^2T\sigma^2 }}
 \end{align} in Algorithm \ref{algo_DOG}, we have
 \begin{align}
 \nonumber
 & \Rcal_T^{\textsc{DOG}} \\ \nonumber
-\lesssim & \frac{n \sqrt{T\lrincir{M+\sqrt{R}}G} }{(1-\rho)^2} + \sqrt{n(1-\beta)T\lrincir{M+\sqrt{R}}\sigma^2} \\ \nonumber
-& + \frac{n\lrincir{M+\sqrt{R}}}{(1-\rho)^2} + \sqrt{TM\lrincir{n^2G + n(1-\beta)\sigma^2}} \\ \label{equa_result_corollary}
-& + \sqrt{T\lrincir{n^2G + (1-\beta)n\sigma^2}}.
+\lesssim & \frac{n \sqrt{T\lrincir{M+\sqrt{R}}G} }{1-\rho} + \sqrt{n(1-\beta)T\lrincir{M+\sqrt{R}}\sigma^2} \\ \nonumber
+& + n\lrincir{M+\sqrt{R}} + \frac{\sqrt{TM\lrincir{n^2G + n(1-\beta)(1-\rho)^2\sigma^2}}}{1-\rho} \\ \label{equa_result_corollary}
+& + \frac{\sqrt{T\lrincir{n^2G + n(1-\beta)(1-\rho)^2\sigma^2}}}{1-\rho}.
 \end{align}
 
 \end{Corollary}
 
 
-First, corollary \ref{corollary_regret_upper_bound} shows that the dynamic regret of DOG is sublinear. Second, we would like make some comments on the effects of different parameters on the dynamic regret. The regret becomes large with the increase of the budget of dynamics $M$. When $n=1$ and $\rho =0$, the dynamic regret is $\Ocal{\sqrt{TM}+\sqrt{T}}$, which is tight in the case of $n=1$ \citep{Zhao:2018wx}. When $\beta<1$, the regret $\Rcal_T^{\textsc{DOG}}$ has $\sqrt{nTM\sigma^2}$ dependence on $\sigma^2$, instead of $\sqrt{n^2TM\sigma^2}$. It benefits from the communication among nodes in the decentralized setting. Since every node shares its decision variable with its neighbours, the variance of the average of stochastic gradients $\frac{1}{n}\sum_{i=1}^n\nabla h_t(\x_{i,t};\xi_{i,t})$ is decreased to be $\frac{\sigma^2}{n}$, thus eventually reducing the regret caused by the stochastic data.   Additionally, the regret is affected by the topology of the network, which is measured by $\rho$ with $0\le \rho < 1$. For a fully connected network\footnote{When a network is fully connected, a decentralized method de-generates to a centralized method.}, $\rho = 0$, then the regret is better than those for other topologies. 
+First, corollary \ref{corollary_regret_upper_bound} shows that the dynamic regret of DOG is sublinear. Second, we would like make some comments on the effects of different parameters on the dynamic regret. The regret becomes large with the increase of the budget of dynamics $M$. When $n=1$ and $\rho =0$, the dynamic regret is $\Ocal{\sqrt{TM}+\sqrt{T}}$, which is tight in the case of $n=1$ \citep{Zhao:2018wx}. When $\beta<1$, the regret $\Rcal_T^{\textsc{DOG}}$ has $\sqrt{nTM\sigma^2}$ dependence on $\sigma^2$, instead of $\sqrt{n^2TM\sigma^2}$. It benefits from the communication among nodes in the decentralized setting. Since every node shares its model with its neighbours, the variance of the average of stochastic gradients $\frac{1}{n}\sum_{i=1}^n\nabla h_t(\x_{i,t};\xi_{i,t})$ is decreased to be $\frac{\sigma^2}{n}$, thus eventually reducing the regret caused by the stochastic part of data.   Additionally, the regret is affected by the topology of the network, which is measured by $\rho$ with $0\le \rho < 1$. For a fully connected network\footnote{When a network is fully connected, a decentralized method de-generates to a centralized method.}, $\rho = 0$, then the regret is better than those for other topologies. 
 
 
 
 
 \subsection{Connections with previous work}
 
-
+\textbf{Improvement of dependence on $n$.}  \citet{8015179Shahram} investigates the dynamic regret $\widetilde{\Rcal}_T^{\textsc{DOG}}$ by using DOG, and provide the following sublinear regret.
 \begin{Theorem}[Implied by Theorem $3$ and Corollary $4$ in \citet{8015179Shahram}]
 \label{theorem_privious_dog_regret}
-Use Assumption \ref{assumption_bounded_gradient_domain}, and choose $\eta = \sqrt{\frac{(1-\rho) M}{T}}$ in Algorithm \ref{algo_DOG}. The dynamic regret $\widetilde{\Rcal}_T^{\textsc{DOG}}$ is bounded by
-\begin{align}
-\nonumber
-\widetilde{\Rcal}_T^{\textsc{DOG}} \lesssim 
-\end{align}
-
-
-
+Use Assumption \ref{assumption_bounded_gradient_domain}, and choose $\eta = \sqrt{\frac{(1-\rho) M}{T}}$ in Algorithm \ref{algo_DOG}. The dynamic regret $\widetilde{\Rcal}_T^{\textsc{DOG}}$ is bounded by $\Ocal{n^{\frac{3}{2}}\sqrt{\frac{MT}{1-\rho}} }$.
 \end{Theorem}
 
-
-
-
-
-
-
-
-Using the classic dynamic regret defined in \eqref{equa_definition_previous_regret}, \citet{8015179Shahram} has provided a $\Ocal{n\sqrt{nTM}}$ regret for DOG, which is a special case of our dynamic regret  when $\beta = 1$. In addition, compared with the result in \citet{8015179Shahram}, our regret enjoys the state-of-the-art dependence on $T$ and $M$, and meanwhile improves the dependence on $n$. This improvement is achieved by a better bound on the difference between $\x_{i,t}$ and $\bar{\x}_t$\footnote{\citet{8015179Shahram} denotes $\lrnorm{\x_{i,t} - \bar{\x}_t}$ by ``network error".}.
+As illustrated in theorem \ref{theorem_privious_dog_regret},   \citet{8015179Shahram} has provided a $\Ocal{n\sqrt{nTM}}$ regret for DOG by using the previous dynamic regret defined in \eqref{equa_definition_previous_regret}. Compared with the result in \citet{8015179Shahram}, our regret enjoys the state-of-the-art dependence on $T$ and $M$, and meanwhile improves the dependence on $n$. This improvement is achieved by a better bound on the difference between $\x_{i,t}$ and $\bar{\x}_t$\footnote{\citet{8015179Shahram} denotes $\lrnorm{\x_{i,t} - \bar{\x}_t}$ by ``network error".}.
 \begin{Lemma}
 \label{lemma_x_variance_norm_square}
 Using Assumption \ref{assumption_bounded_gradient_domain}, and setting $\eta>0$ in Algorithm \ref{algo_DOG}, we have 
@@ -412,13 +400,10 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, and setting $\eta>0$ 
 \EE_{ \Xi_{n,T} \sim \Dcal_{T} } \sum_{i=1}^n\sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2 \le \frac{nT\eta^2 G }{(1-\rho)^2}.
 \end{align}
 \end{Lemma}
+Actually, the previous dynamic regret \eqref{equa_definition_previous_regret} is a special case of our dynamic regret  by setting $\beta = 1$.
 
 
-
-
-
-
-Additionally, previous work usually assumes  $\partial f_{i,t}$ is bounded, e.g., $\lrnorm{\partial f_{i,t}(\x;\zeta_{i,t},\xi_{i,t})}^2 \le G$, which implies $\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2 \le G$, and $\EE_{ \xi_{i,t} \sim D_t }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2  \le  \sigma^2 + G$ according to Lemma \ref{lemma_assumption_discussion}.  
+\textbf{Improvement of dependence on $\sigma^2$.} Previous researches \citep{8015179Shahram,pmlr-v70-zhang17g,tcns-7353155} view all data as the adversary data, ignoring the potential relations among local models. They usually assume gradient of the loss function $\partial f_{i,t}$ is bounded, e.g., $\lrnorm{\partial f_{i,t}(\x;\zeta_{i,t},\xi_{i,t})}^2 \le G$, which implies $\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2 \le G$, and $\EE_{ \xi_{i,t} \sim D_t }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2  \le  \sigma^2 + G$ according to Lemma \ref{lemma_assumption_discussion}.  
 \begin{Lemma}
 \label{lemma_assumption_discussion}
 Assume $\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2 \le G$. It implies
@@ -426,7 +411,7 @@ Assume $\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2 \le G$. It implies
 \nonumber
 \EE_{ \xi_{i,t} \sim D_t }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2  \le  \sigma^2 + G.
 \end{align}
-\end{Lemma} 
+\end{Lemma} Using this assumption in previous analysis frameworks, the regret $\Rcal_T^{\textsc{DOG}}$ has the same dependence on both $G$ and $\sigma^2$ even in the static environment. However, our  new analysis shows that the regret $\Rcal_T^{\textsc{DOG}}$ has  $\sqrt{n\sigma^2}$ dependence on $\sigma^2$, and $\sqrt{n^2 G}$ dependence on $G$. The reason is that the variance of the average of stochastic gradients, i.e., $\nabla h_t(\cdot, \xi_{i,t})$ with $i\in[n]$, is decreased effectively when every node shares its local model to others. 
 
  
 
@@ -447,7 +432,7 @@ Assume $\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2 \le G$. It implies
 
 
 For simplicity, in the experiments we only consider online logistic regression with squared $\ell_2$ norm regularization, i.e., $f_{i,t}(\x;\xi_{i,t}) = \log\lrincir{1+\exp(-\y_{i,t}\A_{i,t}\Tr \x)} + \frac{\gamma}{2}\lrnorm{\x}^2$, where $\gamma = 10^{-3}$ is a given hyper-parameter. Under this setting, we compare the proposed Decentralized Online Gradient method (DOG) and the Centralized Online Gradient method (COG). 
-The learning rate $\eta$ is set to be $C\sqrt{\frac{M}{T}}$ with  $C\in[10^{-2}, 20]$. $M$ is fixed as 10 to determine the space of reference points, while $C$ is tuned for each data sperately. We evaluate the learning performance by measuring the average loss $\frac{1}{nT}\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t};\xi_{i,t})$, instead of the dynamic regret $\EE_{\Xi_{n,T}\sim \Dcal_{n,T}}\sum_{i=1}^n\sum_{t=1}^T \lrincir{ f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^{\ast}) }$, since the optimal reference point $\{\x_t^\ast\}^T_{t=1}$ is the same for DOG and COG .  
+The learning rate $\eta$ is set to be $C\sqrt{\frac{M}{T}}$ with  $C\in[10^{-2}, 20]$. $M$ is fixed as 10 to determine the space of reference points, while $C$ is tuned for each data sperately. We evaluate the learning performance by measuring the average loss $\frac{1}{nT}\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t};\zeta_{i,t},\xi_{i,t})$, instead of the dynamic regret $\EE_{\Xi_{n,T}\sim \Dcal_{n,T}}\sum_{i=1}^n\sum_{t=1}^T \lrincir{ f_{i,t}(\x_{i,t};\zeta_{i,t},\xi_{i,t}) - f_{i,t}(\x_t^{\ast}) }$, since the optimal reference point $\{\x_t^\ast\}^T_{t=1}$ is the same for DOG and COG .  
 
 \subsection{Datasets}
 
