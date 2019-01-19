@@ -208,7 +208,7 @@ For any online algorithm $A \in \Acal$, we define its dynamic regret $\Rcal_T^{A
 \begin{align}
 \nonumber
 f_{i,t}(\x;\zeta_{i,t},\xi_{i,t}) := \beta g_{i,t}(\x;\zeta_{i,t}) + (1-\beta) h_t(\x; \xi_{i,t})
-\end{align} with $0<\beta<1$. $\zeta_{i,t}$ represents the adversary part of data. $\xi_{i,t}$ represents the stochastic part of data, which is drawn from the distribution $D_t$.  Note that $g_{i,t}$ is an adversary loss function, which is caused by the adversary data. $h_t(\cdot; \xi_{i,t})$ is a stochastic loss function, which depends on the stochastic data $\xi_{i,t}$. The expectation is taken with respect to $\{\xi_{i,t}\}_{1\le i\le n,1\le t\le T}$, which does not depend on the $i$-th node. 
+\end{align} with $0<\beta<1$. $\zeta_{i,t}$ represents the adversary part of data. $\xi_{i,t}$ represents the stochastic part of data, which is drawn from the distribution $D_t$.  Note that $g_{i,t}$ is an adversary loss function, which is caused by the adversary data. $h_t(\cdot; \xi_{i,t})$ is a stochastic loss function, which depends on the stochastic data $\xi_{i,t}$. The expectation is taken with respect to $\{\xi_{i,t}\}_{1\le i\le n,1\le t\le T}$. 
 
 The sequence of reference points $\{\x_t^\ast\}_{t=1}^T$ satisfies 
 \begin{align}
@@ -218,28 +218,23 @@ The sequence of reference points $\{\x_t^\ast\}_{t=1}^T$ satisfies
 \begin{align}
 \label{equa_define_M}
 \sum_{t=1}^{T-1} \lrnorm{\x_{t+1}^\ast - \x_t^\ast} \le M.
-\end{align} When $M=0$, all $\x_t^\ast$s are same, and it degenerates to the static online learning problem. When the dynamic environment changes significantly, $M$ becomes large to model the dynamics. Let us take an example to explain the dynamics. Suppose we want to conduct online music recommendation task by using users' browsing records in Youtube. Every user has his/her own favorite music, and users' preference  changes over time due to time-varying trends of hot topics in Internet. It leads to the dynamics of the optimal model.  
+\end{align} When $M=0$, all $\x_t^\ast$s are same, and it degenerates to the static online learning problem. When the dynamic environment changes significantly, $M$ becomes large to model the dynamics. Let us take an example to explain the dynamics. Suppose we want to conduct online music recommendation task by using users' browsing records in Youtube. Every user has his/her own favorite music, and users' preference  changes over time due to time-varying trends of hot topics in Internet. It leads to the dynamics of the optimal recommendation model.  
 
 
+Recall that the previous definition of the dynamic regret is \eqref{equa_definition_previous_regret}. Using \eqref{equa_definition_previous_regret}, the classic online learning in a decentralized network only considers the loss function, i.e., $g_{i,t}$, incurred by the adversary part of data on every node, ignoring the potential relation of data among different nodes. Comparing with it, our definition of the dynamic regret, i.e., \eqref{equa_definition_our_regret}, still considers the stochastic loss function, i.e., $h_t(\cdot;\xi_{i,t})$. It is incurred by the stochastic part of data. Since every nodes would share 
 
 
+At time $t$, when the stochastic data is drawn from a distribution, decentralized 
+%For example, when we conduct online music recommendation, user's  preference 
 
-
-
-Recall that the previous definition of the dynamic regret is \eqref{equa_definition_previous_regret}. Using \eqref{equa_definition_previous_regret}, the classic online learning in a decentralized network only considers the loss function, i.e., $g_{i,t}$, incurred by the adversary data on every node. Comparing with it, our definition of the dynamic regret, i.e., \eqref{equa_definition_our_regret}, still considers the loss function, i.e., $h_t(\cdot;\xi_{i,t})$. It is incurred by the stochastic data. In many practical scenarios, data usually consists of both adversary and stochastic parts. For example, when we conduct online music recommendation, user's  preference 
-
-
-
-
-
- Besides, we denote 
+Besides, we denote 
 \begin{align}
 \nonumber
 H_t(\cdot) = \EE_{\xi_{i,t} \sim D_t} h_t(\cdot; \xi_{i,t}) {~~~~~~} \text{for } \forall i\in[n],
 \end{align} and 
 \begin{align}
 \nonumber
-F_{i,t}(\cdot) = \EE_{\xi_{i,t} \sim D_t} f_{i,t}(\cdot; \xi_{i,t}).
+F_{i,t}(\cdot) = \EE_{\xi_{i,t} \sim D_t} f_{i,t}(\cdot; \zeta_{i,t},\xi_{i,t}).
 \end{align}
 
 
@@ -317,9 +312,8 @@ F_{i,t}(\cdot) = \EE_{\xi_{i,t} \sim D_t} f_{i,t}(\cdot; \xi_{i,t}).
 \end{algorithm}
 
 
-The decentralized online gradient method, namely \textsc{DOG}, is presented in Algorithm \ref{algo_DOG}. At every iteration, every node needs to collect the decision variable, e.g., $\x_{i,t}$, from its neighbours, and then update its decision variable.    Denote $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$. We can verify that $\bar{\x}_{t+1} =  \bar{\x}_t -  \frac{\eta}{n}\sum_{i=1}^n \partial f_{i,t}(\x_{i,t};\xi_{i,t})$ (see Lemma \ref{lemma_average_update_rule}). 
-
-
+The Decentralized Online Gradient method, namely \textsc{DOG}, is presented in Algorithm \ref{algo_DOG}. This algorithm works iteration by iteration.
+At each iteration, every node needs to collect the decision variable, e.g., $\x_{i,t}$, from its neighbours, and compute a weighted sum as $ \sum_{j=1}^n \W_{i,j}\x_{j,t}$. Then, the weighte sum is updated by an online gradient descent step. In addition, we denote $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$ to facilitate the theoretical analysis. We can verify that $\bar{\x}_{t+1} =  \bar{\x}_t -  \frac{\eta}{n}\sum_{i=1}^n \partial f_{i,t}(\x_{i,t};\xi_{i,t})$ (see Lemma \ref{lemma_average_update_rule}). 
 
 
 
@@ -454,7 +448,8 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, and setting $\eta>0$ 
 \section{Empirical studies}
 
 
-We conduct online logistic regression in the empirical studies. We let $f_{i,t}(\x;\xi_{i,t}) = \log\lrincir{1+\exp(-\y_{i,t}\A_{i,t}\Tr \x)} + \frac{\gamma}{2}\lrnorm{\x}^2$, where $\gamma = 10^{-3}$ is the given hyper-parameter. The compared methods include our Decentralized Online Gradient method (DOG) and the Centralized Online Gradient method (COG). The learning rate $\eta$ is set to be $C\sqrt{\frac{M}{T}}$ with  $10^{-2} \le C \le 20$, and we tune $C$ for different datasets. In experiment, we use the average loss $\frac{1}{nT}\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t};\xi_{i,t})$, instead of the dynamic regret $\EE_{\Xi_{n,T}\sim \Dcal_{n,T}}\sum_{i=1}^n\sum_{t=1}^T \lrincir{ f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^{\ast}) }$ as a metric to measure the quality of a learning model. The reason is that the   learning models yielded by both DOG and COG have the same reference point $\{\x_t^\ast\}^T_{t=1}$.  
+For simplicity, in the experiments we only consider online logistic regression with squared $\ell_2$ norm regularization, i.e., $f_{i,t}(\x;\xi_{i,t}) = \log\lrincir{1+\exp(-\y_{i,t}\A_{i,t}\Tr \x)} + \frac{\gamma}{2}\lrnorm{\x}^2$, where $\gamma = 10^{-3}$ is a given hyper-parameter. Under this setting, we compare the proposed Decentralized Online Gradient method (DOG) and the Centralized Online Gradient method (COG). 
+The learning rate $\eta$ is set to be $C\sqrt{\frac{M}{T}}$ with  $C\in[10^{-2}, 20]$. $M$ is fixed as 10 to determine the space of reference points, while $C$ is tuned for each data sperately. We evaluate the learning performance by measuring the average loss $\frac{1}{nT}\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t};\xi_{i,t})$, instead of the dynamic regret $\EE_{\Xi_{n,T}\sim \Dcal_{n,T}}\sum_{i=1}^n\sum_{t=1}^T \lrincir{ f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^{\ast}) }$, since the optimal reference point $\{\x_t^\ast\}^T_{t=1}$ is the same for DOG and COG .  
 
 \subsection{Datasets}
 
@@ -463,7 +458,7 @@ We conduct online logistic regression in the empirical studies. We let $f_{i,t}(
 \setlength{\belowcaptionskip}{0pt}
 \centering 
 \subfigure{\includegraphics[width=0.7\columnwidth]{figure_dynamics}\label{figure_dynamics}}
-\caption{The illustration of the dynmaics caused by the time-varying distributions of data. Data distribution $1$ and $2$ are  Normal distrbutions with $1$ variance and $1+\sin(t)$ mean, and $1$ variance and $-1+\sin(t)$ mean, respectively. Data distribution $3$ is the sum of them, which changes over time. }
+\caption{An illustration of the dynmaics caused by the time-varying distributions of data. Data distributions $1$ and $2$ satisify $N(1+\sin(t), 1)$ and $N(-1+\sin(t), 1)$, respectively. Data distribution $3$ is the sum of them, which changes over time. }
 \label{figure_illus_dynamics}
 \end{figure}
 
@@ -484,12 +479,14 @@ We conduct online logistic regression in the empirical studies. We let $f_{i,t}(
 
 
 
+To test the proposed algorithm, we utilized a toy dataset and three real-world datasets, whose details are as follows.
 
+\textbf{Synthetic Data} 
+For the $i$-th node, a data matrix  $\A_i\in R^{10\times T}$ is generated, s.t. $\A_i=0.1\tilde{\A}_i+0.9\hat{\A}_i$, where $\tilde{\A}_i$ represents the adversary part of data, and $\hat{\A}_i$ represents the stochastic part of data. Specifically,  elements of $\tilde{\A}_i$ is uniformly sampled from the interval $[-0.5+\sin(i),0.5+\sin(i)]$. Note that $\tilde{\A}_i$ and $\tilde{\A}_j$ with $i\neq j$ are drawn from different distributions. $\hat{\A}_{i,t}$ is generated according to $\y_{i,t}\in\{1,-1\}$ which is generated uniformly. When $\y_{i,t}=1$, $\hat{\A}_{i,t}$ is generated by sampling from a time-varying distribution $N((1+0.5\sin(t))\cdot\1, \I)$. When $\y_{i,t} = -1$, $\hat{\A}_{i,t}$ is generated by sampling from another time-varying distribution $N((-1+0.5\sin(t))\cdot\1, \I)$. Due to this correlation, $y_{i,t}$ can be considered as the label of the instance $\hat{\A}_{i,t}$.
+The above dynamics of time-varying distributions are illustrated in Figure~\ref{figure_illus_dynamics}, which shows the change of the optimal learning model over time and the importance of studying adynamic regret. 
 
-
-\textbf{Synthetic data} We generate a data matrix $\A=\A_1 + \A_2+ \cdots + \A_n$, where $\A_i$ is placed on the $i$-th node, and $\A_i=0.1\tilde{\A}_i+0.9\hat{\A}_i$, where $\tilde{\A}_i$ represents the adversary part of data, and $\hat{\A}_i$ represents the stochastic part of data. $\y_{i}\in\{1,-1\}$ is the label of an instance $\hat{\A}_{i,t}$. The dimension of every instance is $d = 10$. Specifically,  elements of $\tilde{\A}_i$ is sampled from the interval $[-0.5+\sin(i),0.5+\sin(i)]$ randomly. Note that $\tilde{\A}_i$ and $\tilde{\A}_j$ with $i\neq j$ are drawn from different distributions. Besides, $\y_{i,t}\in\{1,-1\}$ is generated randomly. When $\y_{i,t}=1$, $\hat{\A}_{i,t}$ is generated by sampling from a time-varying Normal distribution $\hat{\A}_{i,t} \sim N((1+0.5\sin(t))\cdot\1, \I)$. When $\y_{i,t} = -1$, $\hat{\A}_{i,t}$ is generated by sampling from another time-varying Normal distribution $\hat{\A}_{i,t} \sim N((-1+0.5\sin(t))\cdot\1, \I)$. As illustrated in Figure \ref{figure_illus_dynamics}, we use those time-varying distributions of data to simulate the dynamics in the environment, which leads to the change of the optimal learning model over time.  In the setting, dynamic regret is practical and necessary to measure goodness of a learning model. 
-
-\textbf{Real data} We use three real datasets: \textit{room-occupancy}\footnote{\url{https://archive.ics.uci.edu/ml/datasets/Occupancy+Detection+}},  \textit{usenet2}\footnote{\url{http://mlkd.csd.auth.gr/concept_drift.html}}, and a \textit{spam}\footnote{\url{http://mlkd.csd.auth.gr/concept_drift.html}}. \textit{room-occupancy} ia time-series dataset, where the dynamics exists naturally in those practical scenarios. Bothe \textit{usenet2} and \textit{spam} contain ``concept drift" \citep{Katakis:2010:TR}, which is the source of the dynamics.  Thus, the dynamic regret is practial and necessary to measure an online learning method to handle those datasets. 
+\textbf{Real Data}
+Three real public datasets are \textit{room-occupancy}\footnote{\url{https://archive.ics.uci.edu/ml/datasets/Occupancy+Detection+}},  \textit{usenet2}\footnote{\url{http://mlkd.csd.auth.gr/concept_drift.html}}, and \textit{spam}\footnote{\url{http://mlkd.csd.auth.gr/concept_drift.html}}. \textit{room-occupancy} is a time-series dataset, which is from a natural dynamic enviroment. Both \textit{usenet2} and \textit{spam} are  ``concept drift" \citep{Katakis:2010:TR} datasets, for which the optimal modeles change over time.
 
 %Besides, we fetch values of the first feature of every dataset, and then permutate them by the decreasing order. After that, we re-fill the new values to the data matrix to simulate the adversary values. Finally, all values of a feature have been normalized to be zero mean and one variance.
 %\begin{itemize}
@@ -502,13 +499,15 @@ We conduct online logistic regression in the empirical studies. We let $f_{i,t}(
 
 \subsection{Results}
 
-First, we want to test whether DOG has a comparable performance with COG. We simulate a decentralized network consisting of $100$ nodes to handle the synthetic data, and a network consisting of $5$ nodes to handle the real data. Those nodes are connected by using a ring topology.  As shown in Figure \ref{figure_compare_loss}, both DOG and COG are effective to optimize the decision variable, and they have very similar performance. 
+First, figure~\ref{figure_compare_loss} summarizes the performance of DOG compared with COG on all the datasets. 
+For the synthetic dataset, we simulated a decentralized network consisting of $100$ nodes; 
+For the three real datasets, we simulated a network consisting of $5$ nodes. 
+In these networks, the nodes are connected by a ring topology. 
+Under these settings, we can observe that both DOG and COG are effective for the online learning tasks on all the datasets, while DOG achieves slightly worse performance. 
 
 
 
-Second, we want to varify whether DOG has a good performance with the increase of the network size. As shown in Figure \ref{figure_compare_network_size}, the performance of DOG is not sensitive to the network size, which confirms our theoretical result, that is, the average regret $\frac{1}{nT}\EE_{\Xi_{n,T}\sim \Dcal_{n,T}}\sum_{i=1}^n\sum_{t=1}^T \lrincir{ f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^{\ast}) }$ does not increase over the number of nodes. 
-
-
+Second, figure~\ref{figure_compare_network_size} summarizes the effect of the network size on the performance of DOG. It shows that the performance of DOG is not sensitive to the network size, which confirms our theoretical result, that is, the average regret does not increase with the number of nodes. 
 
 
 \begin{figure*}[!h]
@@ -524,7 +523,7 @@ Second, we want to varify whether DOG has a good performance with the increase o
 \end{figure*}
 
 
-Third, we want to test whether the performance of DOG is sensitive to the topology of the network. We generate four different topologies. Besides the ring topology, the \textit{Fully connected} means all nodes are connected, where DOG de-generates to be COG. The topology  \textit{WattsStrogatz} represents a Watts-Strogatz small-world graph. There is a parameter can be tuned, e.g., $0.5$ or $1$ in the legend of Figure \ref{figure_compare_topology}, to control the number of random edges.  As illustrated in Figure \ref{figure_compare_topology}, \textit{Fully connected} has the best performance because that $\rho = 0$ in the topology, and $\rho>0$ in other topologies.  
+Third, figure~\ref{figure_compare_topology} shows the effect of the topology of the network on the performance of DOG, for which four different topologies are used. Besides the ring topology, the \textit{Fully connected} means all nodes are connected, where DOG de-generates to be COG. The topology  \textit{WattsStrogatz} represents a Watts-Strogatz small-world graph, for which we can use a parameter to control the number of random edges (set as $0.5$ and $1$ in this paper). The result shows \textit{Fully connected} enjoyes the best performance, because that $\rho = 0$ for it while $\rho>0$ for other topologies.  
 
 
 
