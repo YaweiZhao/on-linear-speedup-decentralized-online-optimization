@@ -19,9 +19,8 @@
 \usepackage{subfigure}
 \usepackage{booktabs}
 \usepackage{bbm}
+%\usepackage{algcompatible}
 
-\def\rc{\color{red}}
-\def\bc{\color{blue}}
 
 \usepackage[colorlinks,linkcolor=red,citecolor=blue]{hyperref}       % hyperlinks
 \usepackage{natbib}
@@ -221,21 +220,9 @@ The sequence of reference points $\{\x_t^\ast\}_{t=1}^T$ satisfies
 \end{align} When $M=0$, all $\x_t^\ast$s are same, and it degenerates to the static online learning problem. When the dynamic environment changes significantly, $M$ becomes large to model the dynamics. Let us take an example to explain the dynamics. Suppose we want to conduct online music recommendation task by using users' browsing records in Youtube. Every user has his/her own favorite music, and users' preference  changes over time due to time-varying trends of hot topics in Internet. It leads to the dynamics of the optimal recommendation model.  
 
 
-Recall that the previous definition of the dynamic regret is \eqref{equa_definition_previous_regret}. Using \eqref{equa_definition_previous_regret}, the classic online learning in a decentralized network only considers the loss function, i.e., $g_{i,t}$, incurred by the adversary part of data on every node, ignoring the potential relation of data among different nodes. Comparing with it, our definition of the dynamic regret, i.e., \eqref{equa_definition_our_regret}, still considers the stochastic loss function, i.e., $h_t(\cdot;\xi_{i,t})$. It is incurred by the stochastic part of data. Since every nodes would share 
+Recall that the previous definition of the dynamic regret is \eqref{equa_definition_previous_regret}. Using \eqref{equa_definition_previous_regret}, the classic online learning in a decentralized network only considers the loss function, i.e., $g_{i,t}$, incurred by the adversary part of data on every node, ignoring the potential relation of data among different nodes. Comparing with it, our definition of the dynamic regret, i.e., \eqref{equa_definition_our_regret}, still considers the stochastic loss function, i.e., $h_t(\cdot;\xi_{i,t})$. It is incurred by the stochastic part of data. Since every node shares its private model to neighbours, the regret due to stochastic part of data would be decreased effectively, which is varified by the theoretical results in Section \ref{subsection_theoretical_analysis}.
 
 
-At time $t$, when the stochastic data is drawn from a distribution, decentralized 
-%For example, when we conduct online music recommendation, user's  preference 
-
-Besides, we denote 
-\begin{align}
-\nonumber
-H_t(\cdot) = \EE_{\xi_{i,t} \sim D_t} h_t(\cdot; \xi_{i,t}) {~~~~~~} \text{for } \forall i\in[n],
-\end{align} and 
-\begin{align}
-\nonumber
-F_{i,t}(\cdot) = \EE_{\xi_{i,t} \sim D_t} f_{i,t}(\cdot; \zeta_{i,t},\xi_{i,t}).
-\end{align}
 
 
 
@@ -292,8 +279,9 @@ F_{i,t}(\cdot) = \EE_{\xi_{i,t} \sim D_t} f_{i,t}(\cdot; \zeta_{i,t},\xi_{i,t}).
 
 
 \section{Decentralized online gradient method}
-
+In the section, we first present the decentralized online gradient method, and then prove that it leads to $\Ocal{n\sqrt{TM} + \sqrt{nTM}\sigma}$ dynamic regret. 
 \subsection{Algorithm}
+
 
 \begin{algorithm}[!]
    \caption{\textsc{DOG}: Decentralized Online Gradient method.}
@@ -301,12 +289,12 @@ F_{i,t}(\cdot) = \EE_{\xi_{i,t} \sim D_t} f_{i,t}(\cdot; \zeta_{i,t},\xi_{i,t}).
    \begin{algorithmic}[1]
    \REQUIRE The learning rate $\eta$, number of iterations $T$, and the confusion matrix $\W$. $\x_{i,1} = \0$ for any $i\in [n]$.
        \FOR {$t=1,2, ..., T$}
-           \STATE For the $i$-th node with $i\in[n]$:
+            \STATE \textbf{For the $i$-th node with $i\in[n]$:}
             \STATE \indent Predict $\x_{i,t}$.
-            \STATE \indent Observe the loss function $f_{i,t}$,  and suffer loss $f_{i,t}(\x_{i,t};\xi_{i,t})$.
-            \STATE Update:
-            \STATE \indent Query a sub-gradient $\partial f_{i,t}(\x_{i,t};\xi_{i,t})$.  
-            \STATE \indent $\x_{i,t+1} = \sum_{j=1}^n \W_{i,j}\x_{j,t} - \eta \partial f_{i,t}(\x_{i,t};\xi_{i,t})$. 
+            \STATE \indent Observe the loss function $f_{i,t}$,  and suffer loss $f_{i,t}(\x_{i,t};\zeta_{i,t},\xi_{i,t})$.
+            \STATE \textbf{Update:}
+            \STATE \indent Query a sub-gradient $\partial f_{i,t}(\x_{i,t};\zeta_{i,t},\xi_{i,t})$.  
+            \STATE \indent $\x_{i,t+1} = \sum_{j=1}^n \W_{i,j}\x_{j,t} - \eta \partial f_{i,t}(\x_{i,t};\zeta_{i,t},\xi_{i,t})$. 
        \ENDFOR
    \end{algorithmic}
 \end{algorithm}
@@ -318,12 +306,20 @@ At each iteration, every node needs to collect the decision variable, e.g., $\x_
 
 
 \subsection{Theoretical analysis}
+\label{subsection_theoretical_analysis}
+Denote 
+\begin{align}
+\nonumber
+H_t(\cdot) := \EE_{\xi_{i,t} \sim D_t} h_t(\cdot; \xi_{i,t}) {~~~~~~} \text{for } \forall i\in[n],
+\end{align} and 
+\begin{align}
+\nonumber
+F_{i,t}(\cdot) := \EE_{\xi_{i,t} \sim D_t} f_{i,t}(\cdot; \zeta_{i,t},\xi_{i,t}).
+\end{align}
 
-
-We make following commonly used assumptions to analyze the dynamic regret theoretically.
 \begin{Assumption}
 \label{assumption_bounded_gradient_domain}
-We make the following assumptions.
+We make following assumptions to analyze the dynamic regret theoretically.
 \begin{itemize}
 \item For any $i\in[n]$, $t\in[T]$, and $\x$, there exists a constant $G$ such that
 \begin{align}
@@ -341,45 +337,9 @@ We make the following assumptions.
 \end{Assumption}
 
 
-%{\color{red} 
-%
-%
-%\textbf{Old version:}
-%
-%\begin{Theorem}
-%\label{theorem_regret_upper_bound}
-%Denote constants $C_0$, and $C_1$ by
-%\begin{align}
-%\nonumber
-%C_0 := & 1 + \frac{1}{2(1-\rho)^2}+16\beta; \\ \nonumber
-%C_1 := & \frac{L + 2\eta L^2  + 4(1-\beta)^2L^2 \eta}{(1-\rho)^2} +2L.
-%\end{align} Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing $\eta>0$ in Algorithm \ref{algo_DOG}, we have
-%\begin{align}
-%\nonumber
-%& \EE_{ \Xi_{n,T} \sim \Dcal_{T} } \sum_{t=1}^T\sum_{i=1}^n f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^\ast;\xi_{i,t}) \\ \nonumber
-%\le & C_0\eta T n\beta  G + (1-\beta)\eta T\sigma^2 + 4n(1-\beta) \lrincir{ \EE_{ \Xi_{n,T} \sim \Dcal_{T} } \sum_{t=1}^T  \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})}  } \\ \nonumber
-%& + C_1  nT\eta^2 G    + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  }.
-%\end{align}
-%
-%\end{Theorem}
-%
-%
-%\begin{Corollary}
-%\label{corollary_regret_upper_bound}
-%Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing 
-%\begin{align}
-%\nonumber
-%\eta = \sqrt{\frac{nM}{ T\lrincir{n\beta G + (1-\beta)\sigma^2} }}
-%\end{align} in Algorithm \ref{algo_DOG}, we have
-%\begin{align}
-%\nonumber
-%\Rcal_T^{\textsc{DOG}} \lesssim & \sqrt{nMT\lrincir{\beta nG + (1-\beta)\sigma^2}} + n(1-\beta)  \EE_{ \Xi_{n,T} \sim \Dcal_{T} } \sum_{t=1}^T  \lrincir{H_t(\bar{\x}_t) - H_t(\bar{\x}_{t+1})}.
-%\end{align}
-%
-%\end{Corollary}
-%}
 
- 
+
+The bound of dynamic regret yielded by Algorithm \ref{algo_DOG} is presented in the following theorem. 
 \begin{Theorem}
 \label{theorem_regret_upper_bound}
 Denote constants $C_0$, and $C_1$ by
@@ -416,9 +376,33 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing
 \end{Corollary}
 
 
-First, corollary \ref{corollary_regret_upper_bound} shows that the dynamic regret of DOG is sublinear. Second, we would like make some comments on the effects of different parameters on the dynamic regret. The regret becomes large with the increase of the budget of dynamics $M$. When $n=1$ and $\rho =0$, the dynamic regret is $\Ocal{\sqrt{TM}+\sqrt{T}}$, which is tight in the case of $n=1$ \citep{Zhao:2018wx}. When $\beta<1$, the second item of \eqref{equa_result_corollary} depends on the variance $\sigma^2$, instead of $n\sigma^2$. It benefits from the communication among nodes in the decentralized setting. Since every node shares its decision variable with its neighbours, the variance of the average of stochastic gradients $\frac{1}{n}\sum_{i=1}^n\nabla h_t(\x_{i,t};\xi_{i,t})$ is decreased to be $\frac{\sigma^2}{n}$, thus eventually reducing the regret caused by the stochastic data.   Additionally, the regret is affected by the topology of the network, which is measured by $\rho$ with $0\le \rho < 1$. For a fully connected network\footnote{When a network is fully connected, a decentralized method de-generates to a centralized method.}, $\rho = 0$, then the regret is better than those for other topologies. 
+First, corollary \ref{corollary_regret_upper_bound} shows that the dynamic regret of DOG is sublinear. Second, we would like make some comments on the effects of different parameters on the dynamic regret. The regret becomes large with the increase of the budget of dynamics $M$. When $n=1$ and $\rho =0$, the dynamic regret is $\Ocal{\sqrt{TM}+\sqrt{T}}$, which is tight in the case of $n=1$ \citep{Zhao:2018wx}. When $\beta<1$, the regret $\Rcal_T^{\textsc{DOG}}$ has $\sqrt{nTM\sigma^2}$ dependence on $\sigma^2$, instead of $\sqrt{n^2TM\sigma^2}$. It benefits from the communication among nodes in the decentralized setting. Since every node shares its decision variable with its neighbours, the variance of the average of stochastic gradients $\frac{1}{n}\sum_{i=1}^n\nabla h_t(\x_{i,t};\xi_{i,t})$ is decreased to be $\frac{\sigma^2}{n}$, thus eventually reducing the regret caused by the stochastic data.   Additionally, the regret is affected by the topology of the network, which is measured by $\rho$ with $0\le \rho < 1$. For a fully connected network\footnote{When a network is fully connected, a decentralized method de-generates to a centralized method.}, $\rho = 0$, then the regret is better than those for other topologies. 
+
+
+
 
 \subsection{Connections with previous work}
+
+
+\begin{Theorem}[Implied by Theorem $3$ and Corollary $4$ in \citet{8015179Shahram}]
+\label{theorem_privious_dog_regret}
+Use Assumption \ref{assumption_bounded_gradient_domain}, and choose $\eta = \sqrt{\frac{(1-\rho) M}{T}}$ in Algorithm \ref{algo_DOG}. The dynamic regret $\widetilde{\Rcal}_T^{\textsc{DOG}}$ is bounded by
+\begin{align}
+\nonumber
+\widetilde{\Rcal}_T^{\textsc{DOG}} \lesssim 
+\end{align}
+
+
+
+\end{Theorem}
+
+
+
+
+
+
+
+
 Using the classic dynamic regret defined in \eqref{equa_definition_previous_regret}, \citet{8015179Shahram} has provided a $\Ocal{n\sqrt{nTM}}$ regret for DOG, which is a special case of our dynamic regret  when $\beta = 1$. In addition, compared with the result in \citet{8015179Shahram}, our regret enjoys the state-of-the-art dependence on $T$ and $M$, and meanwhile improves the dependence on $n$. This improvement is achieved by a better bound on the difference between $\x_{i,t}$ and $\bar{\x}_t$\footnote{\citet{8015179Shahram} denotes $\lrnorm{\x_{i,t} - \bar{\x}_t}$ by ``network error".}.
 \begin{Lemma}
 \label{lemma_x_variance_norm_square}
@@ -431,6 +415,20 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, and setting $\eta>0$ 
 
 
 
+
+
+
+Additionally, previous work usually assumes  $\partial f_{i,t}$ is bounded, e.g., $\lrnorm{\partial f_{i,t}(\x;\zeta_{i,t},\xi_{i,t})}^2 \le G$, which implies $\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2 \le G$, and $\EE_{ \xi_{i,t} \sim D_t }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2  \le  \sigma^2 + G$ according to Lemma \ref{lemma_assumption_discussion}.  
+\begin{Lemma}
+\label{lemma_assumption_discussion}
+Assume $\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2 \le G$. It implies
+\begin{align}
+\nonumber
+\EE_{ \xi_{i,t} \sim D_t }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2  \le  \sigma^2 + G.
+\end{align}
+\end{Lemma} 
+
+ 
 
 
 
@@ -483,10 +481,10 @@ To test the proposed algorithm, we utilized a toy dataset and three real-world d
 
 \textbf{Synthetic Data} 
 For the $i$-th node, a data matrix  $\A_i\in R^{10\times T}$ is generated, s.t. $\A_i=0.1\tilde{\A}_i+0.9\hat{\A}_i$, where $\tilde{\A}_i$ represents the adversary part of data, and $\hat{\A}_i$ represents the stochastic part of data. Specifically,  elements of $\tilde{\A}_i$ is uniformly sampled from the interval $[-0.5+\sin(i),0.5+\sin(i)]$. Note that $\tilde{\A}_i$ and $\tilde{\A}_j$ with $i\neq j$ are drawn from different distributions. $\hat{\A}_{i,t}$ is generated according to $\y_{i,t}\in\{1,-1\}$ which is generated uniformly. When $\y_{i,t}=1$, $\hat{\A}_{i,t}$ is generated by sampling from a time-varying distribution $N((1+0.5\sin(t))\cdot\1, \I)$. When $\y_{i,t} = -1$, $\hat{\A}_{i,t}$ is generated by sampling from another time-varying distribution $N((-1+0.5\sin(t))\cdot\1, \I)$. Due to this correlation, $y_{i,t}$ can be considered as the label of the instance $\hat{\A}_{i,t}$.
-The above dynamics of time-varying distributions are illustrated in Figure~\ref{figure_illus_dynamics}, which shows the change of the optimal learning model over time and the importance of studying adynamic regret. 
+The above dynamics of time-varying distributions are illustrated in Figure~\ref{figure_illus_dynamics}, which shows the change of the optimal learning model over time and the importance of studying the dynamic regret. 
 
 \textbf{Real Data}
-Three real public datasets are \textit{room-occupancy}\footnote{\url{https://archive.ics.uci.edu/ml/datasets/Occupancy+Detection+}},  \textit{usenet2}\footnote{\url{http://mlkd.csd.auth.gr/concept_drift.html}}, and \textit{spam}\footnote{\url{http://mlkd.csd.auth.gr/concept_drift.html}}. \textit{room-occupancy} is a time-series dataset, which is from a natural dynamic enviroment. Both \textit{usenet2} and \textit{spam} are  ``concept drift" \citep{Katakis:2010:TR} datasets, for which the optimal modeles change over time.
+Three real public datasets are \textit{room-occupancy}\footnote{\url{https://archive.ics.uci.edu/ml/datasets/Occupancy+Detection+}},  \textit{usenet2}\footnote{\url{http://mlkd.csd.auth.gr/concept_drift.html}}, and \textit{spam}\footnote{\url{http://mlkd.csd.auth.gr/concept_drift.html}}. \textit{room-occupancy} is a time-series dataset, which is from a natural dynamic enviroment. Both \textit{usenet2} and \textit{spam} are  ``concept drift" \citep{Katakis:2010:TR} datasets, for which the optimal model changes over time.
 
 %Besides, we fetch values of the first feature of every dataset, and then permutate them by the decreasing order. After that, we re-fill the new values to the data matrix to simulate the adversary values. Finally, all values of a feature have been normalized to be zero mean and one variance.
 %\begin{itemize}
