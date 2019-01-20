@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  18 JAN 2019 15:18
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  18 JAN 2019 20:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -472,7 +472,9 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 108.
 \cv@tot=\count142
 \cv@tmpc@=\count143
 \cv@tmpc=\count144
-) (./main.aux
+)
+Package hyperref Info: Option `draft' set `true' on input line 73.
+ (./main.aux
 
 LaTeX Warning: Label `figure_decen_cen_ave_loss_iterations_net_types_occupancy'
  multiply defined.
@@ -484,21 +486,21 @@ ncy' multiply defined.
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 70.
-LaTeX Font Info:    ... okay on input line 70.
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 70.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 74.
+LaTeX Font Info:    ... okay on input line 74.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 74.
  (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
@@ -538,7 +540,7 @@ G,.JBIG2,.JB2,.eps]
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-LaTeX Info: Redefining \microtypecontext on input line 70.
+LaTeX Info: Redefining \microtypecontext on input line 74.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
 Package microtype Info: Using default protrusion set `alltext'.
@@ -553,8 +555,11 @@ Package microtype Info: No adjustment of character kerning.
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
 \AtBeginShipoutBox=\box37
-Package hyperref Info: Link coloring ON on input line 70.
 
+
+Package hyperref Warning: Draft mode on.
+
+Package hyperref Info: Link coloring ON on input line 74.
 (/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -563,27 +568,22 @@ Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
 \c@section@level=\count151
 )
-LaTeX Info: Redefining \ref on input line 70.
-LaTeX Info: Redefining \pageref on input line 70.
-LaTeX Info: Redefining \nameref on input line 70.
-
-(./main.out) (./main.out)
-\@outlinefile=\write3
-\openout3 = `main.out'.
-
+LaTeX Info: Redefining \ref on input line 74.
+LaTeX Info: Redefining \pageref on input line 74.
+LaTeX Info: Redefining \nameref on input line 74.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 118.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 122.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 118.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 122.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 118.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 122.
 \c@@affil@anon=\count152
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msa on input line 118.
+LaTeX Font Info:    Try loading font information for U+msa on input line 122.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
@@ -591,7 +591,7 @@ File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 118.
+LaTeX Font Info:    Try loading font information for U+msb on input line 122.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
@@ -599,18 +599,19 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 (/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
+LaTeX Font Info:    Try loading font information for OML+ptm on input line 133.
 
-Package hyperref Warning: Ignoring empty anchor on input line 129.
-
-LaTeX Font Info:    Try loading font information for OML+ptm on input line 129.
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omlptm.fd
 File: omlptm.fd 
 )
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <9> not available
-(Font)              Font shape `OML/cmm/m/it' tried instead on input line 129.
+(Font)              Font shape `OML/cmm/m/it' tried instead on input line 133.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 132.
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 136.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 LaTeX Font Info:    Try loading font information for OMS+ptm on input line 157.
 
 
@@ -648,53 +649,50 @@ Overfull \hbox (8.90613pt too wide) detected at line 334
 []
  []
 
-
-Overfull \hbox (10.81706pt too wide) detected at line 414
-[]
- []
-
 [3]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 455.
+               Default added (so using `!tbp') on input line 457.
 
-<figure_dynamics.pdf, id=238, 532.74876pt x 230.26427pt>
+<figure_dynamics.pdf, id=28, 532.74876pt x 230.26427pt>
 File: figure_dynamics.pdf Graphic file (type pdf)
 <use figure_dynamics.pdf>
-Package pdftex.def Info: figure_dynamics.pdf  used on input line 459.
+Package pdftex.def Info: figure_dynamics.pdf  used on input line 461.
 (pdftex.def)             Requested size: 164.41353pt x 71.06145pt.
-<figure_decen_cen_ave_loss_iterations.pdf, id=239, 531.80229pt x 396.87093pt>
+<figure_decen_cen_ave_loss_iterations.pdf, id=29, 531.80229pt x 396.87093pt>
 File: figure_decen_cen_ave_loss_iterations.pdf Graphic file (type pdf)
 <use figure_decen_cen_ave_loss_iterations.pdf>
 Package pdftex.def Info: figure_decen_cen_ave_loss_iterations.pdf  used on inpu
-t line 469.
+t line 471.
 (pdftex.def)             Requested size: 112.74019pt x 84.1326pt.
-<figure_decen_cen_ave_loss_iterations_occupancy.pdf, id=240, 532.79692pt x 390.
-36913pt>
+<figure_decen_cen_ave_loss_iterations_occupancy.pdf, id=30, 532.79692pt x 390.3
+6913pt>
 File: figure_decen_cen_ave_loss_iterations_occupancy.pdf Graphic file (type pdf
 )
 <use figure_decen_cen_ave_loss_iterations_occupancy.pdf>
 Package pdftex.def Info: figure_decen_cen_ave_loss_iterations_occupancy.pdf  us
-ed on input line 470.
+ed on input line 472.
 (pdftex.def)             Requested size: 112.74019pt x 82.59941pt.
-<figure_decen_cen_ave_loss_iterations_usenet2.pdf, id=241, 524.25316pt x 396.80
-978pt>
+<figure_decen_cen_ave_loss_iterations_usenet2.pdf, id=31, 524.25316pt x 396.809
+78pt>
 File: figure_decen_cen_ave_loss_iterations_usenet2.pdf Graphic file (type pdf)
 <use figure_decen_cen_ave_loss_iterations_usenet2.pdf>
 Package pdftex.def Info: figure_decen_cen_ave_loss_iterations_usenet2.pdf  used
- on input line 471.
+ on input line 473.
 (pdftex.def)             Requested size: 112.74019pt x 85.3306pt.
-<figure_decen_cen_ave_loss_iterations_spam.pdf, id=242, 529.26443pt x 395.96121
-pt>
+<figure_decen_cen_ave_loss_iterations_spam.pdf, id=32, 529.26443pt x 395.96121p
+t>
 File: figure_decen_cen_ave_loss_iterations_spam.pdf Graphic file (type pdf)
 <use figure_decen_cen_ave_loss_iterations_spam.pdf>
 Package pdftex.def Info: figure_decen_cen_ave_loss_iterations_spam.pdf  used on
- input line 472.
+ input line 474.
 (pdftex.def)             Requested size: 112.74019pt x 84.34454pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 486.
+[4 <./figure_dynamics.pdf>]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 488.
+
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -704,111 +702,111 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 10000) in paragraph at lines 486--486
-[][][][][]$\OT1/pcr/m/n/9 https : / / archive . ics . uci . edu / ml / datasets
- /
+Underfull \hbox (badness 10000) in paragraph at lines 488--488
+[][][]$\OT1/pcr/m/n/9 https : / / archive . ics . uci . edu / ml / datasets /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 486--486
-[][][][][]$\OT1/pcr/m/n/9 http : / / mlkd . csd . auth . gr / concept _ drift .
-
+Underfull \hbox (badness 10000) in paragraph at lines 488--488
+[][][]$\OT1/pcr/m/n/9 http : / / mlkd . csd . auth . gr / concept _ drift .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 486--486
-[][][][][]$\OT1/pcr/m/n/9 http : / / mlkd . csd . auth . gr / concept _ drift .
-
+Underfull \hbox (badness 10000) in paragraph at lines 488--488
+[][][]$\OT1/pcr/m/n/9 http : / / mlkd . csd . auth . gr / concept _ drift .
  []
 
-[4 <./figure_dynamics.pdf>]
-Underfull \hbox (badness 2538) in paragraph at lines 503--504
+
+Underfull \hbox (badness 2538) in paragraph at lines 505--506
 \OT1/ptm/m/n/10 (+20) per-for-mance with the in-crease of the net-work size.
  []
 
 
-Underfull \hbox (badness 1158) in paragraph at lines 503--504
-\OT1/ptm/m/n/10 (+20) As shown in Fig-ure [][]3[][], the per-for-mance of DOG i
-s
+Underfull \hbox (badness 1158) in paragraph at lines 505--506
+\OT1/ptm/m/n/10 (+20) As shown in Fig-ure 3, the per-for-mance of DOG is
  []
 
 
-Underfull \hbox (badness 3701) in paragraph at lines 503--504
+Underfull \hbox (badness 3701) in paragraph at lines 505--506
 \OT1/ptm/m/n/10 (+20) not sen-si-tive to the net-work size, which con-firms
  []
 
 
-Underfull \hbox (badness 5726) in paragraph at lines 503--504
+Underfull \hbox (badness 5726) in paragraph at lines 505--506
 \OT1/ptm/m/n/10 (+20) our the-o-ret-i-cal re-sult, that is, the av-er-age re-gr
 et
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 503--504
+Underfull \hbox (badness 10000) in paragraph at lines 505--506
 [] [][] [][] [][] []$
  []
 
-<figure_decen_cen_ave_loss_nodes.pdf, id=295, 532.71991pt x 396.05757pt>
+<figure_decen_cen_ave_loss_nodes.pdf, id=55, 532.71991pt x 396.05757pt>
 File: figure_decen_cen_ave_loss_nodes.pdf Graphic file (type pdf)
 <use figure_decen_cen_ave_loss_nodes.pdf>
 Package pdftex.def Info: figure_decen_cen_ave_loss_nodes.pdf  used on input lin
-e 512.
+e 514.
 (pdftex.def)             Requested size: 112.74019pt x 83.81512pt.
-<figure_decen_cen_ave_loss_nodes_occupancy.pdf, id=296, 525.35683pt x 396.18042
-pt>
+<figure_decen_cen_ave_loss_nodes_occupancy.pdf, id=56, 525.35683pt x 396.18042p
+t>
 File: figure_decen_cen_ave_loss_nodes_occupancy.pdf Graphic file (type pdf)
 <use figure_decen_cen_ave_loss_nodes_occupancy.pdf>
 Package pdftex.def Info: figure_decen_cen_ave_loss_nodes_occupancy.pdf  used on
- input line 513.
+ input line 515.
 (pdftex.def)             Requested size: 112.74019pt x 85.0139pt.
-<figure_decen_cen_ave_loss_nodes_usenet2.pdf, id=297, 516.58916pt x 396.28252pt
->
+<figure_decen_cen_ave_loss_nodes_usenet2.pdf, id=57, 516.58916pt x 396.28252pt>
+
 File: figure_decen_cen_ave_loss_nodes_usenet2.pdf Graphic file (type pdf)
 <use figure_decen_cen_ave_loss_nodes_usenet2.pdf>
 Package pdftex.def Info: figure_decen_cen_ave_loss_nodes_usenet2.pdf  used on i
-nput line 514.
+nput line 516.
 (pdftex.def)             Requested size: 112.74019pt x 86.48099pt.
-<figure_decen_cen_ave_loss_nodes_spam.pdf, id=298, 524.86336pt x 397.08841pt>
+<figure_decen_cen_ave_loss_nodes_spam.pdf, id=58, 524.86336pt x 397.08841pt>
 File: figure_decen_cen_ave_loss_nodes_spam.pdf Graphic file (type pdf)
 <use figure_decen_cen_ave_loss_nodes_spam.pdf>
 Package pdftex.def Info: figure_decen_cen_ave_loss_nodes_spam.pdf  used on inpu
-t line 515.
+t line 517.
 (pdftex.def)             Requested size: 112.74019pt x 85.29356pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<figure_decen_cen_ave_loss_iterations_net_types.pdf, id=301, 532.0484pt x 389.5
-4594pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+<figure_decen_cen_ave_loss_iterations_net_types.pdf, id=59, 532.0484pt x 389.54
+594pt>
 File: figure_decen_cen_ave_loss_iterations_net_types.pdf Graphic file (type pdf
 )
 <use figure_decen_cen_ave_loss_iterations_net_types.pdf>
 Package pdftex.def Info: figure_decen_cen_ave_loss_iterations_net_types.pdf  us
-ed on input line 529.
+ed on input line 531.
 (pdftex.def)             Requested size: 112.74019pt x 82.54411pt.
-<figure_decen_cen_ave_loss_iterations_net_types_occupancy.pdf, id=302, 525.4415
-pt x 389.03242pt>
+<figure_decen_cen_ave_loss_iterations_net_types_occupancy.pdf, id=60, 525.4415p
+t x 389.03242pt>
 File: figure_decen_cen_ave_loss_iterations_net_types_occupancy.pdf Graphic file
  (type pdf)
 <use figure_decen_cen_ave_loss_iterations_net_types_occupancy.pdf>
 Package pdftex.def Info: figure_decen_cen_ave_loss_iterations_net_types_occupan
-cy.pdf  used on input line 530.
+cy.pdf  used on input line 532.
 (pdftex.def)             Requested size: 112.74019pt x 83.46819pt.
-<figure_decen_cen_ave_loss_iterations_net_types_usenet2.pdf, id=303, 515.8609pt
- x 395.60147pt>
+<figure_decen_cen_ave_loss_iterations_net_types_usenet2.pdf, id=61, 515.8609pt 
+x 395.60147pt>
 File: figure_decen_cen_ave_loss_iterations_net_types_usenet2.pdf Graphic file (
 type pdf)
 <use figure_decen_cen_ave_loss_iterations_net_types_usenet2.pdf>
 Package pdftex.def Info: figure_decen_cen_ave_loss_iterations_net_types_usenet2
-.pdf  used on input line 531.
+.pdf  used on input line 533.
 (pdftex.def)             Requested size: 112.74019pt x 86.4531pt.
-<figure_decen_cen_ave_loss_iterations_net_types_spam.pdf, id=304, 523.19164pt x
- 395.50311pt>
+<figure_decen_cen_ave_loss_iterations_net_types_spam.pdf, id=62, 523.19164pt x 
+395.50311pt>
 File: figure_decen_cen_ave_loss_iterations_net_types_spam.pdf Graphic file (typ
 e pdf)
 <use figure_decen_cen_ave_loss_iterations_net_types_spam.pdf>
 Package pdftex.def Info: figure_decen_cen_ave_loss_iterations_net_types_spam.pd
-f  used on input line 532.
+f  used on input line 534.
 (pdftex.def)             Requested size: 112.74019pt x 85.22462pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -821,16 +819,12 @@ spam.pdf> <./figure_decen_cen_ave_loss_iterations_net_types.pdf> <./figure_dece
 n_cen_ave_loss_iterations_net_types_occupancy.pdf> <./figure_decen_cen_ave_loss
 _iterations_net_types_usenet2.pdf> <./figure_decen_cen_ave_loss_iterations_net_
 types_spam.pdf>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 555.
- [7
-
-]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 555.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 557.
+ [7]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 557.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 555.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 555.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 557.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 557.
 
 
 LaTeX Warning: There were undefined references.
@@ -838,13 +832,13 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 555.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 557.
  ) 
 Here is how much of TeX's memory you used:
- 10907 strings out of 492649
- 166364 string characters out of 6129622
- 307026 words of memory out of 5000000
- 14247 multiletter control sequences out of 15000+600000
+ 10812 strings out of 492649
+ 165067 string characters out of 6129622
+ 298413 words of memory out of 5000000
+ 14246 multiletter control sequences out of 15000+600000
  49629 words of font info for 238 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,12n,45p,1988b,540s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -871,10 +865,10 @@ fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/ty
 pe1/urw/times/utmb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/ti
 mes/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8a
 .pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (7 pages, 645428 bytes).
+Output written on main.pdf (7 pages, 636889 bytes).
 PDF statistics:
- 586 PDF objects out of 1000 (max. 8388607)
- 497 compressed objects within 5 object streams
- 89 named destinations out of 1000 (max. 500000)
+ 305 PDF objects out of 1000 (max. 8388607)
+ 218 compressed objects within 3 object streams
+ 0 named destinations out of 1000 (max. 500000)
  38466 words of extra memory for PDF output out of 42996 (max. 10000000)
 
