@@ -2,7 +2,7 @@ clc;
 clear all;
 rng('default');
 d = 10;
-n = 1e4; % # of nodes
+n = 2e4; % # of nodes
 nn = 2000*n;
 
 %hyper-parameter
@@ -113,7 +113,7 @@ for t=1:T
 end
 
 
-save('ave_loss_basic_lr_seq_n1e4_m10_cen.mat','ave_loss_basic_lr_seq');
+save('ave_loss_basic_lr_seq_n2e4_m10_cen.mat','ave_loss_basic_lr_seq');
 
 
 
