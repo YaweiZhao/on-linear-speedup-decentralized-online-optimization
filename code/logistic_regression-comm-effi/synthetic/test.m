@@ -81,7 +81,7 @@ for t=1:T
         temp1 = rand(d,1)-0.5;
         temp2 = 1+sin(i)/2 + randn(d,1);
         temp3 = -1+sin(i)/2 + randn(d,1);
-        if y_it((i-1)*n+j,:) == 1
+        if y_it == 1
             A_it = beta1*temp1 + (1-beta1)*temp2;
         else
             A_it = beta1*temp1 + (1-beta1)*temp3;
