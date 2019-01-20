@@ -1,11 +1,11 @@
-This is BibTeX, Version 0.99d (TeX Live 2015)
-Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+This is BibTeX, Version 0.99d (TeX Live 2018)
+Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main.aux
 The style file: abbrvnat.bst
-Database file #1: ../reference.bib
+Database file #1: reference.bib
 You've used 36 entries,
             2773 wiz_defined-function locations,
-            839 strings with 11980 characters,
+            839 strings with 11977 characters,
 and the built_in function-call counts, 20015 in all, are:
 = -- 1789
 > -- 1169
