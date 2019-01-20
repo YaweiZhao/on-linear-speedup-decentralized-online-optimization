@@ -17,8 +17,8 @@ T=nn/n;
 
 
 %construct the confusion matrix W. Ring topology 
-tag = 'decentralized';
-topology = 'guli';
+tag = 'centralized';
+topology = 'watts';
 if strcmp(tag, 'centralized')
     W = load('centralized_W_1e4nodes.mat');
     W = W.W;
@@ -113,7 +113,7 @@ for t=1:T
 end
 
 
-save('ave_loss_basic_lr_seq_n1e4_m10_decen.mat','ave_loss_basic_lr_seq');
+save('ave_loss_basic_lr_seq_n1e4_m10_cen.mat','ave_loss_basic_lr_seq');
 
 
 

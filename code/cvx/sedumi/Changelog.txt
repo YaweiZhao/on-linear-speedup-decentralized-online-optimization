@@ -39,13 +39,13 @@ paper that is available at http://plato.asu.edu/dimacs/node3.html. These are in 
 
 20050621 Fix: A bug about complex variables has been reported by Michael C. Grant, the correct version is now available.
 
-20050622 Fix: A bug about free variable handling has been reported by Johan Lï¿½fberg, the fixed version is now posted.
+20050622 Fix: A bug about free variable handling has been reported by Johan Löfberg, the fixed version is now posted.
 
 20060712 Fix: A bug was discovered by Paul Tseng when using free variables together with rotated Lorentz cones.
 
 20061010 Fix: The solutions were incorrect if the error measures were turned on.
 
-20061010 Fix: Matlab R2006B does not support fprintf with fid=0, (i.e., no output). a Workaround is provided. (Thanks to Johan Lï¿½fberg)
+20061010 Fix: Matlab R2006B does not support fprintf with fid=0, (i.e., no output). a Workaround is provided. (Thanks to Johan Löfberg)
 
 20061010 Fix: The semidefinite preprocessing assumed that there are no free variables.
 
