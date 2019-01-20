@@ -134,11 +134,7 @@
 
 
 \begin{abstract}
-In this paper, we consider online learning in the decentralized setting up, which is motivated by the scenario where users want to take benefits from the data from other users, but do not want to share their private data to a third party or other users. Instead, they can only share their private prediction model, e.g., recommendation model. We study the decentralized online gradient method in which each user maintains a private model and share its private model with its neighbors (or users he/she trusts) periodically. In addition, to consider more practical scenario we allow users' interest changing over time, unlike most online work which assumes that the optimal prediction model is constant. We prove that decentralized online gradient can efficiently and effectively propagate the values in all private data without leaking them to track the dynamics, by admitting a tight dynamic regret $\Ocal{n\sqrt{TM} + \sqrt{nTM}\sigma}$ where $n$ is the number of users, $T$ is the number of time steps, $M$ measures the dynamics (this is, how much the users' interest changes over time), and $\sigma$ measures the randomness of the private data. Empirical studies are also conducted to validate our analysis.
-
-
-
-
+In this paper, we consider online learning in the decentralized setting, which is motivated by the application scenario where users want to take benefits from the data from other users, but do not want to share their private data to a third party or other users. Instead, they can only share their private prediction model, e.g., recommendation model. We study the decentralized online gradient method in which each user maintains a private model and share its private model with its neighbors (or users he/she trusts) periodically. In addition, to consider more practical scenario we allow users' interest changing over time (it means that the optimal model changes over time), unlike most online works which assume that the optimal prediction model is constant. We show that decentralized online gradient (DOG) can efficiently and effectively propagate the values in all private data without sharing them to track the dynamics of users' interest, by proving a tight dynamic regret $\Ocal{n\sqrt{TM} + \sqrt{nTM}\sigma}$ for DOG where $n$ is the number of users, $T$ is the number of time steps, $M$ measures the dynamics (this is, how much the users' interest changes over time), and $\sigma$ measures the randomness of the private data. Empirical studies are also conducted to validate our analysis. This study indicates the possibility of a new framework of data service: all users can take benefit from their private data without sharing them.
 \end{abstract}
 
 
@@ -492,9 +488,9 @@ In these networks, the nodes are connected by a ring topology.
 Under these settings, we can observe that both DOG and COG are effective for the online learning tasks on all the datasets, while DOG achieves slightly worse performance. 
 
 
-
-Second, figure~\ref{figure_compare_network_size} summarizes the effect of the network size on the performance of DOG. It shows that the performance of DOG is not sensitive to the network size, which confirms our theoretical result, that is, the average regret does not increase with the number of nodes. 
-
+{\color{red}
+Second, Figure~\ref{figure_compare_network_size} summarizes the effect of the network size on the performance of DOG. We change the number of nodes from $XXX$ to $YYY$ and test on four datasets using the ring topology. Figures~\ref{figure_compare_network_size} draws the curves of average loss over time steps. We observe that the average loss curves are mostly overlapped with different nodes. It shows that DOG is robust to the network size (or number of users), which validates our theory, that is, the average regret does not increase with the number of nodes. 
+}
 
 \begin{figure*}[!h]
 \setlength{\abovecaptionskip}{0pt}
