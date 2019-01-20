@@ -2,7 +2,7 @@ clc;
 clear all;
 rng('default');
 d = 10;
-n = 2e4; % # of nodes
+n = 10e3; % # of nodes
 nn = 2000*n;
 
 %hyper-parameter
@@ -17,17 +17,17 @@ T=nn/n;
 
 
 %construct the confusion matrix W. Ring topology 
-tag = 'centralized';
+tag = 'decentralized';
 topology = 'watts';
 if strcmp(tag, 'centralized')
-    W = load('centralized_W_1e4nodes.mat');
+    W = load('centralized_W_10e3nodes.mat');
     W = W.W;
-%     W =  ones(n,n)/n;
-%     save('centralized_W_1e4nodes.mat', 'W');
+    %W =  ones(n,n)/n;
+    %save('centralized_W_10e3nodes.mat', 'W');
 elseif strcmp(tag, 'decentralized') && strcmp(topology, 'watts')
-    W = load('watts1_W_1e4nodes.mat');
+    W = load('watts1_W_10e3nodes.mat');
     W = W.W;
-%     graph = WattsStrogatz(n,3,0.5);
+%     graph = WattsStrogatz(n,50,0.5);
 %     edges_list = graph.Edges.EndNodes;
 %     [n_edges,~] = size(edges_list);
 %     W = eye(n);
@@ -38,14 +38,14 @@ elseif strcmp(tag, 'decentralized') && strcmp(topology, 'watts')
 %     for i=1:n
 %         W(i,:) = W(i,:)/sum(W(i,:));
 %     end
-%     save('watts05_W_1e4nodes.mat', 'W');
+%     save('watts05_W_10e3nodes.mat', 'W');
 elseif strcmp(tag, 'decentralized') && strcmp(topology, 'guli')
-    W = load('guli_W_1e4nodes.mat');
+    W = load('guli_W_10e3nodes.mat');
     W = W.W;
-%     W = eye(n);
-%     save('guli_W_1e4nodes.mat', 'W');
+    %W = eye(n);
+    %save('guli_W_10e3nodes.mat', 'W');
 elseif strcmp(tag, 'decentralized') && strcmp(topology, 'ring')
-    W = load('ring_W_1e4nodes.mat');
+    W = load('ring_W_10e3nodes.mat');
     W = W.W;
 %     W =  eye(n);
 %     for i=1:n
@@ -65,7 +65,7 @@ elseif strcmp(tag, 'decentralized') && strcmp(topology, 'ring')
 %         end
 %     end
 %     W = W/3;
-%     save('ring_W_1e4nodes.mat', 'W');
+%     save('ring_W_10e3nodes.mat', 'W');
 end
 
 
@@ -113,7 +113,7 @@ for t=1:T
 end
 
 
-save('ave_loss_basic_lr_seq_n2e4_m10_cen.mat','ave_loss_basic_lr_seq');
+save('ave_loss_basic_lr_seq_n10e3_m10_decen.mat','ave_loss_basic_lr_seq');
 
 
 
