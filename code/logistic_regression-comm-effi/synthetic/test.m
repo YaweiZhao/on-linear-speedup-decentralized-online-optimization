@@ -2,8 +2,8 @@ clc;
 clear all;
 rng('default');
 d = 10;
-n = 20; % # of nodes
-nn = 4000*n;
+n = 1e4; % # of nodes
+nn = 2000*n;
 
 %hyper-parameter
 beta1 = 0.1;
@@ -14,28 +14,11 @@ gamma= 1e-3;
 %hyper-parameter
 T=nn/n;
 
-A = zeros(d,nn);
-y = sign(rand(nn,1)-0.5);
-for i=1:T
-    for j=1:n
-        temp1 = rand(d,1)-0.5;
-        temp2 = 1+sin(i)/2 + randn(d,1);
-        temp3 = -1+sin(i)/2 + randn(d,1);
-        if y((i-1)*n+j,:) == 1
-            A(:,(i-1)*n+j) = beta1*temp1 + (1-beta1)*temp2;
-        else
-            A(:,(i-1)*n+j) = beta1*temp1 + (1-beta1)*temp3;
-        end
-        
-    end
-    
-    
-end
 
 
 %construct the confusion matrix W. Ring topology 
 tag = 'decentralized';
-topology = 'ring';
+topology = 'watts';
 if strcmp(tag, 'centralized')
     W =  ones(n,n)/n;
 elseif strcmp(tag, 'decentralized') && strcmp(topology, 'watts')
@@ -93,9 +76,16 @@ loss_draw = [];
 for t=1:T
 
     for i=1:n % # of nodes
-        
-        y_it = y((t-1)*n+i,:);
-        A_it = A(:,(t-1)*n+i);
+        %generate data
+        y_it = sign(rand(1)-0.5);
+        temp1 = rand(d,1)-0.5;
+        temp2 = 1+sin(i)/2 + randn(d,1);
+        temp3 = -1+sin(i)/2 + randn(d,1);
+        if y_it((i-1)*n+j,:) == 1
+            A_it = beta1*temp1 + (1-beta1)*temp2;
+        else
+            A_it = beta1*temp1 + (1-beta1)*temp3;
+        end
         grad_basic = (-y_it * A_it) / (1 + exp(y_it * A_it'* X_t_basic_lr(:,i)))...
             + gamma*X_t_basic_lr(:,i); %gradient - basic lr
         
@@ -115,7 +105,7 @@ for t=1:T
     
     
     %evaluate dynamic regret on the first node
-    if mod(t,fix(T/20)) == 0
+    if mod(t,fix(T/200)) == 0
 
         %auxiliary matrix R
         R = zeros(t-1,t);
@@ -152,7 +142,7 @@ for t=1:T
 end
 
 
-save('ave_loss_basic_lr_seq_n20_m10_decen.mat','ave_loss_basic_lr_seq');
+save('ave_loss_basic_lr_seq_n1e4_m10_decen.mat','ave_loss_basic_lr_seq');
 
 
 
