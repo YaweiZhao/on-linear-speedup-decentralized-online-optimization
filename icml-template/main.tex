@@ -160,6 +160,7 @@ In the paper, we make the following notations.
 \item For a decentralized network, we use $\W \in\RR^{n\times n}$ to represent its confusion matrix. It is a symmetric doublely stochastic matrix, which implies that every element of $\W$ is non-negative, $\W \1 = \1$, and $\1\Tr\W  = \1\Tr$. We use $\{\lambda_i\}_{i=1}^n$ with $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$ to represent its eigenvalues. 
 \item $\nabla$ represents gradient operator. $\lrnorm{\cdot}$ represents the $\ell_2$ norm in default.
 \item $\lesssim$ represents ``less than equal up to a constant factor".
+\item $\Acal$ represents the set of all online algorithms.
 \end{itemize} 
     
 
@@ -193,12 +194,15 @@ In some literatures, the regret in a dynamic environment is measured by the numb
 
 \section{Problem formulation}
 
-Suppose we have $n$ workers, among which the $i$-th one will receive the $t$-th loss $f_{i,t}(\x_{i,t},\xi_{i,t})$ at the $t-$th iteration, where $\x_{i,t}$ is the model on the node $i$ at the $t$-th iteration, and $\xi_{i,t}$ represents the randomness of the private data, which is drawn from some distribution $D_{i,t}$. If we do not consider the dynamic setup, all nodes want to make their models converge to the best model $\x^\ast$, which is defined by
+
+
+
+Suppose we have $n$ workers, among which the $i$-th one will receive the $t$-th loss $f_{i,t}(\x_{i,t},\xi_{i,t})$ at the $t-$th iteration, where $\x_{i,t}$ is the model on the node $i$ at the $t$-th iteration, and $\xi_{i,t}$ represents the randomness of the private data, which is drawn from some distribution $D_{i,t}$ for the $i$-th node at the time $t$. If we do not consider the dynamic setup, all nodes want to make their models converge to the best model $\x^\ast$, which is defined by
 \begin{align}
 \nonumber
 \x^\ast := \argmin_{\x} \sum\limits_{i=1}^n\sum\limits_{t=1}^T \EE_{\xi_{i,t} \sim \Dcal_{i,t}} f_{i,t}(\x, \xi_{i,t}).
 \end{align}
-However, the static optimal model $\x^\ast$ does not exist in the dynamic environment. For example, when we want to conduct music recommendation to a user, his/her preference to music may change over time as his/her situation.  Thus, the optimal model should be time-varying over time. It leads to the dynamics of the optimal recommendation model.  Therefore, we allow the optimal model can change as the times goes, and denote them by $\{x_t^*\}_{t=1}^T$. Formally, given the budget of dynamics $M$, the feasible reference points $\{\x_t^\ast\}_{t=1}^T$ satisfy
+However, the static optimal model $\x^\ast$ does not exist in the dynamic environment. For example, when we want to conduct music recommendation to a user, his/her preference to music may change over time as his/her situation.  Thus, the optimal model should be time-varying over time. It leads to the dynamics of the optimal recommendation model.  Therefore, we allow the optimal model can change as the times goes, and denote them by $\{\x_t^*\}_{t=1}^T$. Formally, given the budget of dynamics $M$, the feasible reference points $\{\x_t^\ast\}_{t=1}^T$ satisfy
 \begin{align*}
 \sum\limits_{t=1}^{T-1}\|\x_{t+1}^*-\x_t^*\|\le M,
 \end{align*}
@@ -207,22 +211,26 @@ where $M$ is used to control how quickly the optimal model can change. When $M=0
 
 
 
-Denote $\Lcal_{M}^T = \left\{\{\z_t\}_{t=1}^T : \sum\limits_{t=1}^{T-1}\|\z_{t+1}-\z_t\|\le M \right\}$.  As a result, $\{\x_t^\ast\}_{t=1}^T$ is defined by
-\begin{align*}
-	\{\x_t^*\}_{t=1}^T:=\argmin_{\{\z_t\}_{t=1}^T \in \Lcal_{M}^T} \sum\limits_{i=1}^n\sum\limits_{t=1}^T \EE_{\xi_{i,t} \sim \Dcal_{i,t}} f_{i,t}(\z_t; \xi_{i,t}).
-\end{align*} Correspondingly, for any a decentralized online algorithm $A \in \Acal$, we define its dynamic regret $\Rcal_T^{A}$ by
+Denote $\Lcal_{M}^T = \left\{\{\z_t\}_{t=1}^T : \sum\limits_{t=1}^{T-1}\|\z_{t+1}-\z_t\|\le M \right\}$.  We define a new dynamic regret as follows.
+\begin{Definition}
+\label{define_our_new_dynamic_regret}
+For any a decentralized online algorithm $A \in \Acal$, we define its dynamic regret $\Rcal_T^{A}$ by
 \begin{align}
 \label{equa_definition_our_regret}
 \Rcal_T^{A} := & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \sum_{i=1}^n\sum_{t=1}^T \lrincir{f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^\ast;\xi_{i,t}) },
-\end{align} where $n$ is the number of nodes in the decentralized network. $\{\x_t^\ast\}_{t=1}^T$ is the sequence of reference points. $\x_{i,t}$ is the model played by an online algorithm $A$ at the $t$-th round. $\xi_{i,t}$ represents the stochastic part of data, which is drawn from the distribution $D_{i,t}$. Classic online learning assumes all data are adversary, which may ignore the potential relations of data. 
-
-
-
-For any a decentralized online algorithm $A \in \Acal$, the previous dynamic regret  $\widetilde{\Rcal}_T^{A}$ is defined by
+\end{align}  where
+$\{\x_t^\ast\}_{t=1}^T$ is defined by
+\begin{align*}
+	\{\x_t^*\}_{t=1}^T:=\argmin_{\{\z_t\}_{t=1}^T \in \Lcal_{M}^T} \sum\limits_{i=1}^n\sum\limits_{t=1}^T \EE_{\xi_{i,t} \sim \Dcal_{i,t}} f_{i,t}(\z_t; \xi_{i,t}).
+\end{align*}
+\end{Definition} 
+Here, $\x_{i,t}$ is the model played by an online algorithm $A$ at the $t$-th iteration. $\xi_{i,t}$ represents the stochastic factor in the local model, which is drawn from the distribution $D_{i,t}$ for the $i$-th node at the time $t$.  It is the major difference between our new regret and the previous regret. When we do not exploit the relation among local models, e.g. $\x_{i,t}$, our new dynamic regret \eqref{equa_definition_our_regret} de-generates to the classic definition \eqref{equa_definition_previous_regret}. Specifically, for any a decentralized online algorithm $A \in \Acal$, the previous dynamic regret  $\widetilde{\Rcal}_T^{A}$ is usually defined by
 \begin{align}
 \label{equa_definition_previous_regret}
-\widetilde{\Rcal}_T^{A} = &  \sum_{i=1}^n\sum_{t=1}^T \lrincir{ f_{i,t}(\x_{i,t}) - f_{i,t}(\x_t^\ast) },
-\end{align} subject to $\sum_{t=1}^{T-1} \lrnorm{\x_{t+1}^\ast - \x_t^\ast} \le M$.  In \eqref{equa_definition_previous_regret}, the classic online learning in a decentralized network treats all the data as the adversary data. It ignores the potential relation of data among different nodes. Comparing with it, our definition of the dynamic regret, i.e., \eqref{equa_definition_our_regret}, views the adversary part of data and the stochastic part of data, distinctively.  Since every node shares its private model to neighbours, the regret due to stochastic part of data would be decreased effectively, which is varified by the theoretical results in Section \ref{subsection_theoretical_analysis}.
+\widetilde{\Rcal}_T^{A} := &  \sum_{i=1}^n\sum_{t=1}^T \lrincir{ f_{i,t}(\x_{i,t}) - f_{i,t}(\x_t^\ast) },
+\end{align} subject to $\sum_{t=1}^{T-1} \lrnorm{\x_{t+1}^\ast - \x_t^\ast} \le M$.  In \eqref{equa_definition_previous_regret}, the classic online learning in a decentralized network treats all the data as the adversary data in default, which ignores the potentional relation among local models $\{\x_{i,t}\}_{i=1}^n$ at time $t$. But, those local models are not independent in many practical scenarios. For example, users' perference to music may be impacted by a popular trend in the Internet at the same time. In the decentralized online learning, every node shares its private model to neighbours, and the regret caused by the stochastic part of data would be decreased effectively. Exploiting the potential relation among local models is helpful to reduce the regret, and learn a better model, which is varified by the theoretical results in Section \ref{subsection_theoretical_analysis}.
+
+
 
 
 
@@ -329,7 +337,7 @@ We make following assumptions to analyze the dynamic regret theoretically.
 \EE_{ \xi_{i,t} \sim D_{i,t} } \lrnorm{\nabla f_{i,t}(\x; \xi_{i,t}) - \nabla F_{i,t}(\x)}^2 \le \sigma^2.
 \end{align}
 \item For given vectors $\x$ and $\y$, we assume $\lrnorm{\x-\y}^2 \le R$.
-\item  For any $i\in[n]$ and $t\in[T]$, we assume the function $f_{i,t}$ is convex, and has $L$-Lipschitz gradient. It implies that both $f_{i,t}$ and $h_t$ are still convex, and has $L$-Lipschitz gradient.
+\item  For any $i\in[n]$ and $t\in[T]$, we assume the function $f_{i,t}$ is convex, and has $L$-Lipschitz gradient. 
 \item Given a symmetric doublely stochastic matrix $\W$, and a constant $\rho$ with $\rho := \max\{ |\lambda_2(\W)|, |\lambda_n(\W)| \}$, we assume $\rho <1$.
 \end{itemize}
 \end{Assumption}
@@ -379,13 +387,13 @@ First, Corollary \ref{Corollary_regret_upper_bound} shows that the dynamic regre
 
 \subsection{Discussions with previous work}
 
-\textbf{Improvement of dependence on $n$.}  \citet{8015179Shahram} investigates the dynamic regret $\widetilde{\Rcal}_T^{\textsc{DOG}}$ by using DOG, and provide the following sublinear regret.
+\textbf{Dependence on $n$.}  \citet{8015179Shahram} investigates the dynamic regret $\widetilde{\Rcal}_T^{\textsc{DOG}}$ by using DOG, and provide the following sublinear regret.
 \begin{Theorem}[Implied by Theorem $3$ and Corollary $4$ in \citet{8015179Shahram}]
 \label{theorem_privious_dog_regret}
 Use Assumption \ref{assumption_bounded_gradient_domain}, and choose $\eta = \sqrt{\frac{(1-\rho) M}{T}}$ in Algorithm \ref{algo_DOG}. The dynamic regret $\widetilde{\Rcal}_T^{\textsc{DOG}}$ is bounded by $\Ocal{n^{\frac{3}{2}}\sqrt{\frac{MT}{1-\rho}} }$.
 \end{Theorem}
 
-As illustrated in theorem \ref{theorem_privious_dog_regret},   \citet{8015179Shahram} has provided a $\Ocal{n\sqrt{nTM}}$ regret for DOG by using the previous dynamic regret defined in \eqref{equa_definition_previous_regret}. Compared with the result in \citet{8015179Shahram}, our regret enjoys the state-of-the-art dependence on $T$ and $M$, and meanwhile improves the dependence on $n$. This improvement is achieved by a better bound on the difference between $\x_{i,t}$ and $\bar{\x}_t$\footnote{\citet{8015179Shahram} denotes $\lrnorm{\x_{i,t} - \bar{\x}_t}$ by ``network error".}.
+As illustrated in theorem \ref{theorem_privious_dog_regret},   \citet{8015179Shahram} has provided a $\Ocal{n\sqrt{nTM}}$ regret for DOG by using the previous dynamic regret defined in \eqref{equa_definition_previous_regret}.  Compared with the result in \citet{8015179Shahram}, our regret enjoys the state-of-the-art dependence on $T$ and $M$, and meanwhile improves the dependence on $n$. This improvement is achieved by a better bound on the difference between $\x_{i,t}$ and $\bar{\x}_t$\footnote{\citet{8015179Shahram} denotes $\lrnorm{\x_{i,t} - \bar{\x}_t}$ by ``network error".}.
 \begin{Lemma}
 \label{Lemma_x_variance_norm_square}
 Using Assumption \ref{assumption_bounded_gradient_domain}, and setting $\eta>0$ in Algorithm \ref{algo_DOG}, we have 
@@ -394,10 +402,9 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, and setting $\eta>0$ 
 \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{i=1}^n\sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2 \le \frac{nT\eta^2 G }{(1-\rho)^2}.
 \end{align}
 \end{Lemma}
-Actually, the previous dynamic regret \eqref{equa_definition_previous_regret} is a special case of our dynamic regret  by setting $  = 1$.
 
 
-\textbf{Improvement of dependence on $\sigma^2$.} Previous researches \citep{8015179Shahram,pmlr-v70-zhang17g,tcns-7353155} view all data as the adversary data, ignoring the potential relations among local models. They usually assume gradient of the loss function $\nabla f_{i,t}$ is bounded, e.g., $\lrnorm{\nabla f_{i,t}(\x;\zeta_{i,t},\xi_{i,t})}^2 \le G$, which implies $\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2 \le G$, and $\EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2  \le  \sigma^2 + G$ according to Lemma \ref{Lemma_assumption_discussion}.  
+\textbf{Dependence on $\sigma^2$.} Previous researches \citep{8015179Shahram,pmlr-v70-zhang17g,tcns-7353155} view all data as the adversary data, ignoring the potential relations among local models. They usually assume gradient of the loss function $\nabla f_{i,t}$ is bounded, e.g., $\lrnorm{\nabla f_{i,t}(\x;\zeta_{i,t},\xi_{i,t})}^2 \le G$, which implies $\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2 \le G$, and $\EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2  \le  \sigma^2 + G$ according to Lemma \ref{Lemma_assumption_discussion}.  
 \begin{Lemma}
 \label{Lemma_assumption_discussion}
 Assume $\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2 \le G$. It implies
