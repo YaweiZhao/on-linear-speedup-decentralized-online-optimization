@@ -27,6 +27,8 @@
 \usepackage{natbib}
 \allowdisplaybreaks
 
+\def\rc{\color {red}}
+
 \DeclareMathOperator*{\Argmax}{Argmax}
 \DeclareMathOperator*{\Argmin}{Argmin}
 
@@ -190,8 +192,29 @@ In some literatures, the regret in a dynamic environment is measured by the numb
 
 
 \section{Problem formulation}
+{\rc
+Suppose we have $n$ workers, among which the $i$-th one will receive the $t$-th loss $f_{i,t}(x_{i,t},\xi_{i,t})$ at the $t-$th iteration, where $x_{i,t}$ is the model on the node $i$ at the $t$-th iteration, and $\xi_{i,t}$ represents some random factors, such as the randomness of the private data to protect the user's privacy, which is drawn from some distribution $D_{i,t}$.
+
+Different node can communicate with other nodes. They exchange information to update to their optimal model. If we do not consider the dynamic setup, then this is the standard distributed online leaning, that all nodes want to make their models converge to the best model $x^*$, which is defined as:
+\begin{align*}
+	x^*:= \argmin_x \sum\limits_{i=1}^n\sum\limits_{t=1}^T \EE_{\xi_{i,t} \sim \Dcal_{i,t}} f_{i,t}(x, \xi_{i,t}).
+\end{align*}
+However, this does not hold in some real applications. For example, one's favorite style of musics may changes over time as his/her situation. Therefore, we allow the optimal model can change as the times goes. We call these optimal models (changed by time) by \textit{reference points}, and denote them by $\{x_t^*\}_{t=1}^T$. We assume that optimal model can not change too quickly, so we assume that 
+\begin{align*}
+	\sum\limits_{t=1}^{T-1}\|x_{t+1}^*-x_t^*\|\le M,
+\end{align*}
+where $M$ is called the budget of the dynamics, which controls how quickly the optimal model can change. As a result, the dynamic optimal model can be defined as follow:
+\begin{align*}
+	\{x_t^*\}_{t=1}^T:=\argmin_{\sum\limits_{t=1}^{T-1}\|x_{t+1}^*-x_t^*\|\le M} \sum\limits_{i=1}^n\sum\limits_{t=1}^T \EE_{\xi_{i,t} \sim \Dcal_{i,t}} f_{i,t}(x_t, \xi_{i,t}).
+\end{align*}
+Correspondingly, the cumulative regret $R_t$ are defined as:
+\begin{align*}
+	R_t:=& \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \sum_{i=1}^n\sum_{t=1}^T \lrincir{f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^\ast;\xi_{i,t}) }.
+\end{align*}
 
 
+
+}
 For any a decentralized online algorithm $A \in \Acal$, we define its dynamic regret $\Rcal_T^{A}$ by
 \begin{align}
 \label{equa_definition_our_regret}
@@ -283,7 +306,7 @@ For any a decentralized online algorithm $A \in \Acal$, the previous dynamic reg
 
 
 
-\section{Decentralized online gradient method}
+\section{Decentralized online gradient method} \label{sec:algorithm}
 In the section, we first present the decentralized online gradient method, and then prove that it leads to $\Ocal{n\sqrt{TM} + \sqrt{nTM}\sigma}$ dynamic regret. 
 \subsection{Algorithm}
 

@@ -9,7 +9,11 @@ nn = 2000*n;
 beta1 = 0.1;
 
 M = 10; %dynamics
+<<<<<<< HEAD
 
+=======
+eta = 20*sqrt(M);
+>>>>>>> b89e06ec9e596841fa82a14ac14a204da4e7b5f1
 gamma= 1e-3;
 %hyper-parameter
 T=nn/n;
@@ -25,6 +29,7 @@ if strcmp(tag, 'centralized')
     %W =  ones(n,n)/n;
     %save('centralized_W_10e3nodes.mat', 'W');
 elseif strcmp(tag, 'decentralized') && strcmp(topology, 'watts')
+<<<<<<< HEAD
 %     W = load('watts1_W_10e3nodes.mat');
 %     W = W.W;
     graph = WattsStrogatz(n,50,1);
@@ -39,6 +44,22 @@ elseif strcmp(tag, 'decentralized') && strcmp(topology, 'watts')
         W(i,:) = W(i,:)/sum(W(i,:));
     end
     save('watts1_W_15e3nodes.mat', 'W');
+=======
+    W = load('watts1_W_15e3nodes.mat');
+    W = W.W;
+%     graph = WattsStrogatz(n,10,1);
+%     edges_list = graph.Edges.EndNodes;
+%     [n_edges,~] = size(edges_list);
+%     W = eye(n);
+%     for i=1:n_edges
+%         W(edges_list(i,1), edges_list(i,2)) = 1;
+%         W(edges_list(i,2), edges_list(i,1)) = 1;
+%     end
+%     for i=1:n
+%         W(i,:) = W(i,:)/sum(W(i,:));
+%     end
+%     save('watts1_W_5e3nodes.mat', 'W');
+>>>>>>> b89e06ec9e596841fa82a14ac14a204da4e7b5f1
 elseif strcmp(tag, 'decentralized') && strcmp(topology, 'guli')
     W = load('guli_W_10e3nodes.mat');
     W = W.W;
@@ -80,6 +101,7 @@ ave_loss_basic_lr_seq = zeros(T,1);
 tic;
 cumu_loss_draw = [];
 loss_draw = [];
+<<<<<<< HEAD
 
 %compute variance
 
@@ -95,6 +117,15 @@ for t=1:T
     %grad_basic = (-y_it * A_it) / (1 + exp(y_it * A_it'* X_t_basic_lr(:,i)))...
     %        + gamma*X_t_basic_lr(:,i); %gradient - basic lr 
     
+=======
+for t=1:T
+    
+    y = sign(rand(1,n)-0.5);
+    A = beta1*(rand(d,n)-0.5*ones(d,n)) + (1-beta1)*(ones(d,1)*sin(1:n)/2 + randn(d,n)+ones(d,1)*y);
+    %grad_basic = (-y_it * A_it) / (1 + exp(y_it * A_it'* X_t_basic_lr(:,i)))...
+    %        + gamma*X_t_basic_lr(:,i); %gradient - basic lr
+      
+>>>>>>> b89e06ec9e596841fa82a14ac14a204da4e7b5f1
     Grad_basic =  (-(ones(d,1)*y) .* A) / (1 + exp( ones(1,d)*(A .* X_t_basic_lr)*y'))...
             + gamma*X_t_basic_lr;
     X_t_basic_lr = X_t_basic_lr * W - eta/sqrt(t) * Grad_basic; %update rule - basic lr
@@ -121,7 +152,11 @@ for t=1:T
 end
 
 
+<<<<<<< HEAD
 save('ave_loss_basic_lr_seq_n10e3_m10_decen.mat','ave_loss_basic_lr_seq');
+=======
+save('ave_loss_basic_lr_seq_n15e3_m10_decen_watts1.mat','ave_loss_basic_lr_seq');
+>>>>>>> b89e06ec9e596841fa82a14ac14a204da4e7b5f1
 
 
 
