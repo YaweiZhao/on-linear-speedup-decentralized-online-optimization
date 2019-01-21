@@ -197,7 +197,7 @@ In some literatures, the regret in a dynamic environment is measured by the numb
 
 
 
-Suppose we have $n$ workers, among which the $i$-th one will receive the $t$-th loss $f_{i,t}(\x_{i,t},\xi_{i,t})$ at the $t-$th iteration, where $\x_{i,t}$ is the model on the node $i$ at the $t$-th iteration, and $\xi_{i,t}$ represents the randomness of the private data, which is drawn from some distribution $D_{i,t}$ for the $i$-th node at the time $t$. If we do not consider the dynamic setup, all nodes want to make their models converge to the best model $\x^\ast$, which is defined by
+Suppose we have $n$ workers, among which the $i$-th one will receive the $t$-th loss $f_{i,t}(\x_{i,t};\xi_{i,t})$ at the $t-$th iteration, where $\x_{i,t}$ is the model on the node $i$ at the $t$-th iteration, and $\xi_{i,t}$ represents the randomness of the private data, which is drawn from some distribution $D_{i,t}$ for the $i$-th node at the time $t$. If we do not consider the dynamic setup, all nodes want to make their models converge to the best model $\x^\ast$, which is defined by
 \begin{align}
 \nonumber
 \x^\ast := \argmin_{\x} \sum\limits_{i=1}^n\sum\limits_{t=1}^T \EE_{\xi_{i,t} \sim \Dcal_{i,t}} f_{i,t}(\x; \xi_{i,t}).
