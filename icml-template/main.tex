@@ -27,6 +27,8 @@
 \usepackage{natbib}
 \allowdisplaybreaks
 
+\def\rc{\color {red}}
+
 \DeclareMathOperator*{\Argmax}{Argmax}
 \DeclareMathOperator*{\Argmin}{Argmin}
 
@@ -140,13 +142,11 @@ In this paper, we consider online learning in the decentralized setting, which i
 
 \section{Introduction}
 \label{sect_introduction}
-\label{sect_introduction}
+Online learning has been studied for decades of years in machine learning literatures~\citep{xxx}. The goal of online learning generally is to incrementally learn predictions models to minimize the sum of all the online loss functions (cumulative loss), which is usually determined by a squence of examples that arrives sequentially. To quantify the efficacy of an online learning algorithm, the community introduced a performance measure called static regret, which is the difference between the cumulative losses suffered by the online algorithm and that suffered by the best model which can observe all the loss functions. The best static regret of a sequential online convex optimization method is  $\Ocal{\sqrt{T}}$ and $\Ocal{\log T}$  for convex and strongly convex loss functions, respectively \citep{Hazan2016Introduction,ShalevShwartz:2012dz}.
 
-Online learning has been studied for decades of years in machine learning literatures~\citep{Hazan2016Introduction,ShalevShwartz:2012dz,Duchi:2011}. The goal of online learning generally is to incrementally learn predictions models to minimize the sum of all the online loss functions (cumulative loss), which is usually determined by a squence of examples that arrives sequentially. To quantify the efficacy of an online learning algorithm, the community introduced a performance measure called \textit{static regret}, which is the difference between the cumulative losses suffered by the online algorithm and that suffered by the best model which can observe all the loss functions. The best static regret of a sequential online convex optimization method is  $\Ocal{\sqrt{T}}$ and $\Ocal{\log T}$  for convex and strongly convex loss functions, respectively \citep{Hazan2016Introduction,ShalevShwartz:2012dz}.
+Different with traditional online learning, online learning in decentralized networks (or Decentralized Online Learning) assumes that a network of computational nodes can communicate between neighors to solve an online learning problem, in which each computational node will receive a stream of online losses. Suppose we have $n$ workers, among which the $i$-th one will receive the $t$-th loss $f_{i,t}$ at the $t-$th iteration. Then, the goal of Decentralized Online Learning usually is to minimize its static regret, which is defined as the difference between the cumulative loss over all the nodes and steps and that of the best model which knows all the loss function beforehand; Decentralized Online Learning enjoys many advantages for real-world large-scale applications. Firstly, it avoid collecting all the loss functions to one node, which will result in heavy communication cost for the network and extremely high computational cost for one node. Secondly, it can help many data providers collaborate to better minimize their cumulative loss, while at the same time protect the data privacy as much as possible. 
 
-Different with traditional online learning, online learning in decentralized networks (or Decentralized Online Learning) assumes that a network of computational nodes can communicate between neighors to solve an online learning problem, in which each computational node will receive a stream of online losses. Suppose we have $n$ workers, among which the $i$-th one will receive the $t$-th loss $f_{i,t}$ at the $t-$th iteration. Then, the goal of Decentralized Online Learning usually is to minimize its static regret, which is defined as the difference between the cumulative loss over all the nodes and steps and that of the best model which knows all the loss function beforehand. Decentralized Online Learning enjoys many advantages for real-world large-scale applications. Firstly, it avoid collecting all the loss functions to one node, which will result in heavy communication cost for the network and extremely high computational cost for one node. Secondly, it can help many data providers collaborate to better minimize their cumulative loss, while at the same time protect the data privacy as much as possible. 
-
-The static regret assumes that the best model keeps unchanged during the entire learning process, however this does not hold in some real applications. For example, one's favorite style of musics may change over time as his/her situation. To solve this issue, the dynamic regret is introduced, which generally measure the difference between the cumulative loss suffered by the decentralized online learning algorithm and that suffered by a dynamic sequence of models. This dynamic sequence of models can not only observe all the loss functions beforehand, but also changes over time with the amount of changes less than a budget. In this paper, we mainly prove that decentralized online gradient can achieve a dynamic regret  of $\Ocal{n\sqrt{TM} + \sqrt{nTM}\sigma}$ where $n$ is the number of users, $T$ is the number of time steps, $M$ measures the dynamics budget, and $\sigma$ measures the randomness of the private data. 
+The static regret assumes that the best model keeps unchaged during the entire learning process, however this does not hold in some real applications. For example, one's favorite style of musics may changes over time as his/her situation. To solve this issue, the dynamic regret is introduced, which generally measure the different between the cumulative loss suffered by the decentralized online learning algorithm and that suffered by a dynamic sequence of models. This dynamic sequence of models can not only observe all the loss functions beforehand, but also changes over time with the amount of changes less than a budget. In this paper, we mainly prove that decentralized online gradient can achieve a dynamic regret  of $\Ocal{n\sqrt{TM} + \sqrt{nTM}\sigma}$ where $n$ is the number of users, $T$ is the number of time steps, $M$ measures the dynamics budget, and $\sigma$ measures the randomness of the private data. 
 
 
 \paragraph{Notations and definitions}
@@ -192,8 +192,29 @@ In some literatures, the regret in a dynamic environment is measured by the numb
 
 
 \section{Problem formulation}
+{\rc
+Suppose we have $n$ workers, among which the $i$-th one will receive the $t$-th loss $f_{i,t}(x_{i,t},\xi_{i,t})$ at the $t-$th iteration, where $x_{i,t}$ is the model on the node $i$ at the $t$-th iteration, and $\xi_{i,t}$ represents some random factors, such as the randomness of the private data to protect the user's privacy, which is drawn from some distribution $D_{i,t}$.
+
+Different node can communicate with other nodes. They exchange information to update to their optimal model. If we do not consider the dynamic setup, then this is the standard distributed online leaning, that all nodes want to make their models converge to the best model $x^*$, which is defined as:
+\begin{align*}
+	x^*:= \argmin_x \sum\limits_{i=1}^n\sum\limits_{t=1}^T \EE_{\xi_{i,t} \sim \Dcal_{i,t}} f_{i,t}(x, \xi_{i,t}).
+\end{align*}
+However, this does not hold in some real applications. For example, one's favorite style of musics may changes over time as his/her situation. Therefore, we allow the optimal model can change as the times goes. We call these optimal models (changed by time) by \textit{reference points}, and denote them by $\{x_t^*\}_{t=1}^T$. We assume that optimal model can not change too quickly, so we assume that 
+\begin{align*}
+	\sum\limits_{t=1}^{T-1}\|x_{t+1}^*-x_t^*\|\le M,
+\end{align*}
+where $M$ is called the budget of the dynamics, which controls how quickly the optimal model can change. As a result, the dynamic optimal model can be defined as follow:
+\begin{align*}
+	\{x_t^*\}_{t=1}^T:=\argmin_{\sum\limits_{t=1}^{T-1}\|x_{t+1}^*-x_t^*\|\le M} \sum\limits_{i=1}^n\sum\limits_{t=1}^T \EE_{\xi_{i,t} \sim \Dcal_{i,t}} f_{i,t}(x_t, \xi_{i,t}).
+\end{align*}
+Correspondingly, the cumulative regret $R_t$ are defined as:
+\begin{align*}
+	R_t:=& \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \sum_{i=1}^n\sum_{t=1}^T \lrincir{f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^\ast;\xi_{i,t}) }.
+\end{align*}
 
 
+
+}
 For any a decentralized online algorithm $A \in \Acal$, we define its dynamic regret $\Rcal_T^{A}$ by
 \begin{align}
 \label{equa_definition_our_regret}
@@ -285,7 +306,7 @@ For any a decentralized online algorithm $A \in \Acal$, the previous dynamic reg
 
 
 
-\section{Decentralized online gradient method}
+\section{Decentralized online gradient method} \label{sec:algorithm}
 In the section, we first present the decentralized online gradient method, and then prove that it leads to $\Ocal{n\sqrt{TM} + \sqrt{nTM}\sigma}$ dynamic regret. 
 \subsection{Algorithm}
 
@@ -538,12 +559,13 @@ We investigate a new online learning problem in a decentralized network, where t
 
 \textbf{Proof to Theorem \ref{theorem_regret_upper_bound}:}
 \begin{proof}
+From the regret definition, we have
 \begin{align}
 \nonumber
 & \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \frac{1}{n}\sum_{i=1}^n f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^\ast;\xi_{i,t}) \\ \nonumber
 \le & \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \frac{1}{n}\sum_{i=1}^n \lrangle{ \nabla f_{i,t}(\x_{i,t};\xi_{i,t}),  \x_{i,t} - \x_t^\ast } \\ \nonumber
 = & \underbrace{ \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \frac{1}{n}\sum_{i=1}^n   \lrincir{\lrangle{\nabla  f_{i,t}(\x_{i,t};\xi_{i,t}), \x_{i,t} - \bar{\x}_t } + \lrangle{\nabla  f_{i,t}(\x_{i,t};\xi_{i,t}), \bar{\x}_t - \bar{\x}_{t+1} } } }_{I_1(t)} \\ \nonumber 
-&+ \underbrace{ \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrangle{\frac{1}{n}\sum_{i=1}^n\nabla f_{i,t}(\x_{i,t};\xi_{i,t}), \bar{\x}_{t+1} - \x_t^\ast } }_{I_2(t)}\\ \nonumber
+&+ \underbrace{ \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrangle{\frac{1}{n}\sum_{i=1}^n\nabla f_{i,t}(\x_{i,t};\xi_{i,t}), \bar{\x}_{t+1} - \x_t^\ast } }_{I_2(t)}. \nonumber
 \end{align}
 
 Now, we begin to bound $I_1(t)$.
@@ -557,7 +579,7 @@ I_1(t) = &    \lrincir{\underbrace{ \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\frac{1}{n
 = & \frac{1}{n}\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\sum_{i=1}^n\lrangle{\nabla f_{i,t}(\x_{i,t}; \xi_{i,t}), \x_{i,t} - \bar{\x}_t } \\ \nonumber
 = & \frac{1}{n}\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \sum_{i=1}^n\lrangle{\nabla f_{i,t}(\x_{i,t}; \xi_{i,t}) - \nabla F_{i,t}(\bar{\x}_t), \x_{i,t} - \bar{\x}_t } + \frac{1}{n}\EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\sum_{i=1}^n\lrangle{\nabla F_{i,t}(\bar{\x}_t), \x_{i,t} - \bar{\x}_t } \\ \nonumber
 = & \frac{1}{n}\EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\sum_{i=1}^n\lrangle{\nabla F_{i,t}(\x_{i,t}) - \nabla F_{i,t}(\bar{\x}_t), \x_{i,t} - \bar{\x}_t } + \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\lrangle{\nabla F_{i,t}(\bar{\x}_t), \frac{1}{n}\sum_{i=1}^n\x_{i,t} - \bar{\x}_t } \\ \nonumber
-\refabovecir{\le}{\textcircled{1}} & \frac{L}{n}\EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t}^2。. 
+\refabovecir{\le}{\textcircled{1}} & \frac{L}{n}\EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t}^2. 
 \end{align} $\textcircled{1}$ holds due to $F_{i,t}$ has $L$-Lipschitz gradients, and $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$.
 
 For $J_2(t)$, we have
@@ -722,8 +744,9 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, and setting $\eta>0$ 
 \le & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T  \lrincir{F_{i,t}(\bar{\x}_t) - F_{i,t}(\bar{\x}_{t+1})} + 4T  \eta G + \frac{ L^2 \eta}{n}\EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} }\sum_{t=1}^T\sum_{i=1}^n \lrnorm{ \bar{\x}_t - \x_{i,t} }^2 + \frac{TGL\eta^2}{2}.
 \end{align}
 \end{Lemma}
-\begin{proof}
 
+\begin{proof}
+We have
 \begin{align}
 \nonumber
 & \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } F_{i,t}(\bar{\x}_{t+1}) \\ \nonumber
@@ -791,7 +814,7 @@ Denote $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$. We have
 \end{align}
 \end{Lemma}
 \begin{proof}
-Denote 
+Denote by
 \begin{align}
 \nonumber
 \X_t = &  [\x_{1,t}, \x_{2,t}, ..., \x_{n,t}] \in \RR^{d\times n}, \\ \nonumber
@@ -821,7 +844,7 @@ Recall that
 \end{align} It completes the proof.
 \end{proof}
 
-\begin{Lemma}[Appeared in Lemma $5$ in \citep{Tang:2018un}]
+\begin{Lemma}[Lemma $5$ in \citep{Tang:2018un}]
 \label{lemma_hanlin_1}
 For any matrix $\X_t\in\RR^{d\times n}$, decompose the confusion matrix $\W$ as $\W = \sum_{i=1}^n \lambda_i \v_i \v_i\Tr = \P \bLambda \P\Tr$, where $\P = [\v_1, \v_2, ..., \v_n]\in\RR^{n\times n}$, $\v_i$ is the normalized eigenvector of $\lambda_i$. $\bLambda$ is a diagonal matrix, and $\lambda_i$ be its $i$-th element. We have
 \begin{align}
@@ -832,7 +855,7 @@ For any matrix $\X_t\in\RR^{d\times n}$, decompose the confusion matrix $\W$ as 
 \end{Lemma}
 
 
-\begin{Lemma}[Appeared in Lemma $6$ in \citep{Tang:2018un}]
+\begin{Lemma}[Lemma $6$ in \citep{Tang:2018un}]
 \label{lemma_hanlin_2}
 Given two non-negative sequences $\{a_t\}_{t=1}^{\infty}$ and $\{b_t\}_{t=1}^{\infty}$ that satisfying
 \begin{align}
@@ -870,7 +893,7 @@ Recall that
 \begin{align}
 \nonumber
 \bar{\x}_{t+1} = \bar{\x}_t - \eta \lrincir{\frac{1}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}.
-\end{align} Denote 
+\end{align} Denote by
 \begin{align}
 \nonumber
 \X_t = &  [\x_{1,t}, \x_{2,t}, ..., \x_{n,t}] \in \RR^{d\times n}, \\ \nonumber
@@ -880,12 +903,11 @@ Recall that
 \nonumber
 \X_{t+1} = \X_t \W - \eta \G_t = - \sum_{s=1}^t \eta \G_s \W^{t-s}. 
 \end{align} Similarly, denote $\bar{\G}_t = \frac{1}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})$, and we have
-\begin{align}
+\begin{align*}
 \bar{\x}_{t+1} = \bar{\x}_t - \eta \lrincir{\frac{1}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})} = - \sum_{s=1}^t \eta \bar{\G}_s. 
-\end{align}
+\end{align*}
 
-
-Therefore, 
+Therefore, we obtain
 \begin{align}
 \nonumber
 & \sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t}^2 \\ \nonumber
@@ -911,6 +933,7 @@ Thus, we  have
 
 \textbf{ Proof to Lemma \ref{lemma_assumption_discussion}:}
 \begin{proof}
+We have
 \begin{align}
 \nonumber
 &\EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2 \\ \nonumber 
@@ -921,10 +944,6 @@ Thus, we  have
 \le & \EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t}) - \EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t})}^2 + \EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2  \\ \nonumber
 \le & \sigma^2 + G.
 \end{align} It thus completes the proof.
-
-
-
-
 \end{proof}
 
 
