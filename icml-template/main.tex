@@ -177,7 +177,7 @@ In the paper, we make the following notations.
 \label{sect_related_work}
 Online learning has been studied for decades of years. The static regret of a sequential online convex optimization method can achieve $\Ocal{\sqrt{T}}$ and $\Ocal{\log T}$ bounds for convex and strongly convex loss functions, respectively \citep{Hazan2016Introduction,ShalevShwartz:2012dz,introduction-online-optimization}. Recently, both the decentralized online learing and the dynamic regret have drawn much attention due to their wide existence in the practical big data scenarios.
 \subsection{Decentralized online learning}
-Online learning in a decentralized network has been studied in \citep{8015179Shahram,Kamp:2014:CDO,Koppel-8352032,Zhang2018,pmlr-v70-zhang17g,Xu2015,tcns-7353155,cdc-7798923,acc-7172037,tcns-7479495,Benczur:2018ww,tkde-6311406}.  \citet{8015179Shahram} studies decentralized online mirror descent, and provides $\Ocal{n\sqrt{nTM}}$ dynamic regret. Here, $n$, $T$, and $M$ represent the number of nodes in the newtork, the number of iterations, and the budget of dynamics (defined in \eqref{equa_define_M}), respectively.  When the Bregman divergence in the decentralized online mirror descent is chosen appropriately, the decentralized online mirror descent becomes identical to the decentralized online gradient descent. Using the same definition of dynamic regret (defined in \eqref{equa_definition_previous_regret}), our method obtains $\Ocal{n\sqrt{TM}}$ dynamic regret for a decentralized online gradient descent, which is better than $\Ocal{n\sqrt{nTM}}$ in \citet{8015179Shahram}. The improvement of our bound benefits from a better bound of network error (see Lemma \ref{lemma_x_variance_norm_square}). \citet{Kamp:2014:CDO} studies decentralized online prediction, and presents $\Ocal{\sqrt{nT}}$ static regret.  It assumes that all data, used to yielded the loss, is generated from an unknown distribution. The strong assumption is not practical in the dynamic environment, and thus limits its novelity for a general online learning task. 
+Online learning in a decentralized network has been studied in \citep{8015179Shahram,Kamp:2014:CDO,Koppel-8352032,Zhang2018,pmlr-v70-zhang17g,Xu2015,tcns-7353155,cdc-7798923,acc-7172037,tcns-7479495,Benczur:2018ww,tkde-6311406}.  \citet{8015179Shahram} studies decentralized online mirror descent, and provides $\Ocal{n\sqrt{nTM}}$ dynamic regret. Here, $n$, $T$, and $M$ represent the number of nodes in the newtork, the number of iterations, and the budget of dynamics (defined in \eqref{equa_define_M}), respectively.  When the Bregman divergence in the decentralized online mirror descent is chosen appropriately, the decentralized online mirror descent becomes identical to the decentralized online gradient descent. Using the same definition of dynamic regret (defined in \eqref{equa_definition_previous_regret}), our method obtains $\Ocal{n\sqrt{TM}}$ dynamic regret for a decentralized online gradient descent, which is better than $\Ocal{n\sqrt{nTM}}$ in \citet{8015179Shahram}. The improvement of our bound benefits from a better bound of network error (see Lemma \ref{Lemma_x_variance_norm_square}). \citet{Kamp:2014:CDO} studies decentralized online prediction, and presents $\Ocal{\sqrt{nT}}$ static regret.  It assumes that all data, used to yielded the loss, is generated from an unknown distribution. The strong assumption is not practical in the dynamic environment, and thus limits its novelity for a general online learning task. 
 Additionally, many decentralized online optimization methods are proposed, for example, decentralized online multi-task learning \citep{Zhang2018}, decentralized online ADMM \citep{Xu2015}, decentralized online gradient descent \citep{tcns-7353155}, decentralized continuous-time online saddle-point method \citep{cdc-7798923}, decentralized online  Nesterov's primal-dual method \citep{acc-7172037,tcns-7479495}, and online distributed dual averaging\citep{6760092}. Those previous methods are proved to yield $\Ocal{\sqrt{T}}$ static regret, which do not have theoretical guarantee of regret in the dynamic environment.   Besides,  \citet{tkde-6311406} provides necessary and sufficient conditions to preserve privacy for decentralized online learning methods, which  is interesting to extend our method to be privacy-preserving in the future work.
 
 
@@ -192,57 +192,30 @@ In some literatures, the regret in a dynamic environment is measured by the numb
 
 
 \section{Problem formulation}
-{\rc
-Suppose we have $n$ workers, among which the $i$-th one will receive the $t$-th loss $f_{i,t}(\x_{i,t},\xi_{i,t})$ at the $t-$th iteration, where $\x_{i,t}$ is the model on the node $i$ at the $t$-th iteration, and $\xi_{i,t}$ represents some random factors, such as the randomness of the private data to protect the user's privacy, which is drawn from some distribution $D_{i,t}$.
 
-In classic decentralized online learning, nodes exchange their local model to update to their optimal model. If we do not consider the dynamic setup, then this is the standard distributed online leaning, that all nodes want to make their models converge to the best model $x^*$, which is defined as:
+Suppose we have $n$ workers, among which the $i$-th one will receive the $t$-th loss $f_{i,t}(\x_{i,t},\xi_{i,t})$ at the $t-$th iteration, where $\x_{i,t}$ is the model on the node $i$ at the $t$-th iteration, and $\xi_{i,t}$ represents the randomness of the private data, which is drawn from some distribution $D_{i,t}$. If we do not consider the dynamic setup, all nodes want to make their models converge to the best model $\x^\ast$, which is defined by
 \begin{align}
 \nonumber
-\x^\ast := \argmin_x \sum\limits_{i=1}^n\sum\limits_{t=1}^T \EE_{\xi_{i,t} \sim \Dcal_{i,t}} f_{i,t}(\x, \xi_{i,t}).
+\x^\ast := \argmin_{\x} \sum\limits_{i=1}^n\sum\limits_{t=1}^T \EE_{\xi_{i,t} \sim \Dcal_{i,t}} f_{i,t}(\x, \xi_{i,t}).
 \end{align}
-However, this does not hold in some real applications. For example, one's favorite style of musics may changes over time as his/her situation. Therefore, we allow the optimal model can change as the times goes. We call these optimal models (changed by time) by \textit{reference points}, and denote them by $\{x_t^*\}_{t=1}^T$. We assume that optimal model can not change too quickly, so we assume that 
+However, the static optimal model $\x^\ast$ does not exist in the dynamic environment. For example, when we want to conduct music recommendation to a user, his/her preference to music may change over time as his/her situation.  Thus, the optimal model should be time-varying over time. It leads to the dynamics of the optimal recommendation model.  Therefore, we allow the optimal model can change as the times goes, and denote them by $\{x_t^*\}_{t=1}^T$. Formally, given the budget of dynamics $M$, the feasible reference points $\{\x_t^\ast\}_{t=1}^T$ satisfy
 \begin{align*}
-	\sum\limits_{t=1}^{T-1}\|x_{t+1}^*-x_t^*\|\le M,
+\sum\limits_{t=1}^{T-1}\|\x_{t+1}^*-\x_t^*\|\le M,
 \end{align*}
-where $M$ is called the budget of the dynamics, which controls how quickly the optimal model can change. As a result, the dynamic optimal model can be defined as follow:
-\begin{align*}
-	\{x_t^*\}_{t=1}^T:=\argmin_{\sum\limits_{t=1}^{T-1}\|x_{t+1}^*-x_t^*\|\le M} \sum\limits_{i=1}^n\sum\limits_{t=1}^T \EE_{\xi_{i,t} \sim \Dcal_{i,t}} f_{i,t}(\x_t, \xi_{i,t}).
-\end{align*}
-Correspondingly, the cumulative regret $R_t$ are defined as:
-\begin{align*}
-	R_t:=& \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \sum_{i=1}^n\sum_{t=1}^T \lrincir{f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^\ast;\xi_{i,t}) }.
-\end{align*}
+where $M$ is used to control how quickly the optimal model can change. When $M=0$, all $\x_t^\ast$s are same, and it degenerates to the static online learning problem. When the dynamic environment changes significantly, $M$ becomes large to model the dynamics. Let us take an example to explain the dynamics.   
 
 
 
-}
-For any a decentralized online algorithm $A \in \Acal$, we define its dynamic regret $\Rcal_T^{A}$ by
+
+Denote $\Lcal_{M}^T = \left\{\{\z_t\}_{t=1}^T : \sum\limits_{t=1}^{T-1}\|\z_{t+1}-\z_t\|\le M \right\}$.  As a result, $\{\x_t^\ast\}_{t=1}^T$ is defined by
+\begin{align*}
+	\{\x_t^*\}_{t=1}^T:=\argmin_{\{\z_t\}_{t=1}^T \in \Lcal_{M}^T} \sum\limits_{i=1}^n\sum\limits_{t=1}^T \EE_{\xi_{i,t} \sim \Dcal_{i,t}} f_{i,t}(\z_t; \xi_{i,t}).
+\end{align*} Correspondingly, for any a decentralized online algorithm $A \in \Acal$, we define its dynamic regret $\Rcal_T^{A}$ by
 \begin{align}
 \label{equa_definition_our_regret}
 \Rcal_T^{A} := & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \sum_{i=1}^n\sum_{t=1}^T \lrincir{f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^\ast;\xi_{i,t}) },
-\end{align} where $n$ is the number of nodes in the decentralized network. $\{\x_t^\ast\}_{t=1}^T$ is the sequence of reference points. $\x_{i,t}$ is the model played by an online algorithm $A$ at the $t$-th round. $\zeta_{i,t}$ represents the adversary part of data. $\xi_{i,t}$ represents the stochastic part of data, which is drawn from the distribution $D_{i,t}$. Classic online learning assumes all data are adversary, which may ignore the potential relations of data. We generate the classic definition of regret by treating the adversary and stochastic data, distinctively.
+\end{align} where $n$ is the number of nodes in the decentralized network. $\{\x_t^\ast\}_{t=1}^T$ is the sequence of reference points. $\x_{i,t}$ is the model played by an online algorithm $A$ at the $t$-th round. $\xi_{i,t}$ represents the stochastic part of data, which is drawn from the distribution $D_{i,t}$. Classic online learning assumes all data are adversary, which may ignore the potential relations of data. 
 
-
-Denote new functions $f_{i,t}$ and $h_{i,t}$ by 
-\begin{align}
-\nonumber
-f_{i,t}(\x;\zeta_{i,t}) = & f_{i,t}(\x;\zeta_{i,t},\0); \\ \nonumber
-h_{i,t}(\x;\xi_{i,t}) = & f_{i,t}(\x;\0,\xi_{i,t}).
-\end{align} The local loss function $f_{i,t}(\x;\zeta_{i,t},\xi_{i,t})$ is thus denoted by
-\begin{align}
-\nonumber
-f_{i,t}(\x;\zeta_{i,t},\xi_{i,t}) :=   f_{i,t}(\x;\zeta_{i,t}) +   h_t(\x; \xi_{i,t}), 
-\end{align} with $0< <1$.   Note that $f_{i,t}$ is an adversary loss function, which is caused by the adversary data. $h_t(\cdot; \xi_{i,t})$ is a stochastic loss function, which depends on the stochastic data $\xi_{i,t}$. The expectation is taken with respect to $\{\xi_{i,t}\}_{1\le i\le n,1\le t\le T}$. 
-
-The sequence of reference points $\{\x_t^\ast\}_{t=1}^T$ satisfies 
-\begin{align}
-\nonumber
-\{\x_t^\ast\}_{t=1}^T \in \left\{ \{\z_t\}_{t=1}^{T} : \sum_{t=1}^{T-1} \lrnorm{\z_t - \z_{t+1}} \le M \right\}.
-\end{align} Here, $M$ is the budget of the dynamics, that is,
-\begin{align}
-\label{equa_define_M}
-\sum_{t=1}^{T-1} \lrnorm{\x_{t+1}^\ast - \x_t^\ast} \le M.
-\end{align} When $M=0$, all $\x_t^\ast$s are same, and it degenerates to the static online learning problem. When the dynamic environment changes significantly, $M$ becomes large to model the dynamics. Let us take an example to explain the dynamics. Suppose we want to conduct online music recommendation task by using users' browsing records in Youtube. Every user has his/her own favorite music, and users' preference  changes over time due to time-varying trends of hot topics in Internet. It leads to the dynamics of the optimal recommendation model.  
 
 
 For any a decentralized online algorithm $A \in \Acal$, the previous dynamic regret  $\widetilde{\Rcal}_T^{A}$ is defined by
@@ -330,7 +303,7 @@ In the section, we first present the decentralized online gradient method, and t
 
 
 The Decentralized Online Gradient method, namely \textsc{DOG}, is presented in Algorithm \ref{algo_DOG}. This algorithm works iteration by iteration.
-At each iteration, every node needs to collect local models, e.g., $\x_{i,t}$, from its neighbours, and compute a weighted sum as $ \sum_{j=1}^n \W_{i,j}\x_{j,t}$. Then, the weighte sum is updated by an online gradient descent step. In addition, we denote $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$ to facilitate the theoretical analysis. We can verify that $\bar{\x}_{t+1} =  \bar{\x}_t -  \frac{\eta}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})$ (see Lemma \ref{lemma_average_update_rule}). 
+At each iteration, every node needs to collect local models, e.g., $\x_{i,t}$, from its neighbours, and compute a weighted sum as $ \sum_{j=1}^n \W_{i,j}\x_{j,t}$. Then, the weighte sum is updated by an online gradient descent step. In addition, we denote $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$ to facilitate the theoretical analysis. We can verify that $\bar{\x}_{t+1} =  \bar{\x}_t -  \frac{\eta}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})$ (see Lemma \ref{Lemma_average_update_rule}). 
 
 
 
@@ -382,7 +355,7 @@ C_0 := & \frac{L + 2\eta L^2  + 4L^2 \eta}{(1-\rho)^2} +2L.
 
 By choosing an approximate learning rate $\eta$, we obtain sublinear regret as follows.
 \begin{Corollary}
-\label{corollary_regret_upper_bound}
+\label{Corollary_regret_upper_bound}
 Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing 
 \begin{align}
 \nonumber
@@ -392,14 +365,14 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing
 \nonumber
 & \Rcal_T^{\textsc{DOG}} \\ \nonumber
 \lesssim & n \sqrt{T\lrincir{M+\sqrt{R}}G}  + \sqrt{n T\lrincir{M+\sqrt{R}}\sigma^2} \\ \nonumber
-& + \frac{n\lrincir{M+\sqrt{R}}}{1-\rho} + \sqrt{\frac{TM\lrincir{n^2G + n \sigma^2}}{1-\rho}} \\ \label{equa_result_corollary}
+& + \frac{n\lrincir{M+\sqrt{R}}}{1-\rho} + \sqrt{\frac{TM\lrincir{n^2G + n \sigma^2}}{1-\rho}} \\ \label{equa_result_Corollary}
 & + \sqrt{\frac{T\lrincir{n^2G + n \sigma^2}}{1-\rho}}.
 \end{align}
 
 \end{Corollary}
 
 
-First, corollary \ref{corollary_regret_upper_bound} shows that the dynamic regret of DOG is sublinear. Second, we would like make some comments on the effects of different parameters on the dynamic regret. The regret becomes large with the increase of the budget of dynamics $M$. When $n=1$ and $\rho =0$, the dynamic regret is $\Ocal{\sqrt{TM}+\sqrt{T}}$, which is tight in the case of $n=1$ \citep{Zhao:2018wx}. When $ <1$, the regret $\Rcal_T^{\textsc{DOG}}$ has $\sqrt{nTM\sigma^2}$ dependence on $\sigma^2$, instead of $\sqrt{n^2TM\sigma^2}$. It benefits from the communication among nodes in the decentralized setting. Since every node shares its model with its neighbours, the variance of the average of stochastic gradients $\frac{1}{n}\sum_{i=1}^n\nabla f_{i,t}(\x_{i,t};\xi_{i,t})$ is decreased to be $\frac{\sigma^2}{n}$, thus eventually reducing the regret caused by the stochastic part of data.   Additionally, the regret is affected by the topology of the network, which is measured by $\rho$ with $0\le \rho < 1$. For a fully connected network\footnote{When a network is fully connected, a decentralized method de-generates to a centralized method.}, $\rho = 0$, then the regret is better than those for other topologies. 
+First, Corollary \ref{Corollary_regret_upper_bound} shows that the dynamic regret of DOG is sublinear. Second, we would like make some comments on the effects of different parameters on the dynamic regret. The regret becomes large with the increase of the budget of dynamics $M$. When $n=1$ and $\rho =0$, the dynamic regret is $\Ocal{\sqrt{TM}+\sqrt{T}}$, which is tight in the case of $n=1$ \citep{Zhao:2018wx}. When $ <1$, the regret $\Rcal_T^{\textsc{DOG}}$ has $\sqrt{nTM\sigma^2}$ dependence on $\sigma^2$, instead of $\sqrt{n^2TM\sigma^2}$. It benefits from the communication among nodes in the decentralized setting. Since every node shares its model with its neighbours, the variance of the average of stochastic gradients $\frac{1}{n}\sum_{i=1}^n\nabla f_{i,t}(\x_{i,t};\xi_{i,t})$ is decreased to be $\frac{\sigma^2}{n}$, thus eventually reducing the regret caused by the stochastic part of data.   Additionally, the regret is affected by the topology of the network, which is measured by $\rho$ with $0\le \rho < 1$. For a fully connected network\footnote{When a network is fully connected, a decentralized method de-generates to a centralized method.}, $\rho = 0$, then the regret is better than those for other topologies. 
 
 
 
@@ -414,7 +387,7 @@ Use Assumption \ref{assumption_bounded_gradient_domain}, and choose $\eta = \sqr
 
 As illustrated in theorem \ref{theorem_privious_dog_regret},   \citet{8015179Shahram} has provided a $\Ocal{n\sqrt{nTM}}$ regret for DOG by using the previous dynamic regret defined in \eqref{equa_definition_previous_regret}. Compared with the result in \citet{8015179Shahram}, our regret enjoys the state-of-the-art dependence on $T$ and $M$, and meanwhile improves the dependence on $n$. This improvement is achieved by a better bound on the difference between $\x_{i,t}$ and $\bar{\x}_t$\footnote{\citet{8015179Shahram} denotes $\lrnorm{\x_{i,t} - \bar{\x}_t}$ by ``network error".}.
 \begin{Lemma}
-\label{lemma_x_variance_norm_square}
+\label{Lemma_x_variance_norm_square}
 Using Assumption \ref{assumption_bounded_gradient_domain}, and setting $\eta>0$ in Algorithm \ref{algo_DOG}, we have 
 \begin{align}
 \nonumber
@@ -424,9 +397,9 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, and setting $\eta>0$ 
 Actually, the previous dynamic regret \eqref{equa_definition_previous_regret} is a special case of our dynamic regret  by setting $  = 1$.
 
 
-\textbf{Improvement of dependence on $\sigma^2$.} Previous researches \citep{8015179Shahram,pmlr-v70-zhang17g,tcns-7353155} view all data as the adversary data, ignoring the potential relations among local models. They usually assume gradient of the loss function $\nabla f_{i,t}$ is bounded, e.g., $\lrnorm{\nabla f_{i,t}(\x;\zeta_{i,t},\xi_{i,t})}^2 \le G$, which implies $\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2 \le G$, and $\EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2  \le  \sigma^2 + G$ according to Lemma \ref{lemma_assumption_discussion}.  
+\textbf{Improvement of dependence on $\sigma^2$.} Previous researches \citep{8015179Shahram,pmlr-v70-zhang17g,tcns-7353155} view all data as the adversary data, ignoring the potential relations among local models. They usually assume gradient of the loss function $\nabla f_{i,t}$ is bounded, e.g., $\lrnorm{\nabla f_{i,t}(\x;\zeta_{i,t},\xi_{i,t})}^2 \le G$, which implies $\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2 \le G$, and $\EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2  \le  \sigma^2 + G$ according to Lemma \ref{Lemma_assumption_discussion}.  
 \begin{Lemma}
-\label{lemma_assumption_discussion}
+\label{Lemma_assumption_discussion}
 Assume $\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2 \le G$. It implies
 \begin{align}
 \nonumber
@@ -648,7 +621,7 @@ Now, we begin to bound $I_2(t)$. Recall that the update rule is
 \begin{align}
 \nonumber
 \x_{i,t+1} = \sum_{j=1}^n \W_{ij}\x_{j,t} - \eta \nabla f_{i,t}(\x_{i,t};\xi_{i,t}).
-\end{align}  According to Lemma \ref{lemma_average_update_rule}, we have 
+\end{align}  According to Lemma \ref{Lemma_average_update_rule}, we have 
 \begin{align}
 \label{equa_thoerem_update_rule_equivalent}
 \bar{\x}_{t+1} = \bar{\x}_t - \eta \lrincir{\frac{1}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}.
@@ -716,12 +689,12 @@ Combining those bounds of $I_1(t)$, and $I_2(t)$ together, we finally obtain
 & + 4n \lrincir{ 4T  \eta G + \frac{TGL\eta^2}{2} }  + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  } \\ \nonumber
 \refabovecir{\le}{\textcircled{3}} & \eta T \sigma^2 + 4n  T\eta G  + \lrincir{ L + 2\eta L^2  + 4L^2 \eta}  \frac{nT\eta^2 G }{(1-\rho)^2}  + 4n\lrincir{ 4T  \eta G + \frac{TGL\eta^2}{2} }  + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  }.
 \end{align}  
-$\textcircled{1}$ holds due to Lemma \ref{lemma_gradient_norm_bound}. That is, we have
+$\textcircled{1}$ holds due to Lemma \ref{Lemma_gradient_norm_bound}. That is, we have
 \begin{align}
 \nonumber
 & \frac{\eta}{2} \EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} }\sum_{t=1}^T \lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2 \\ \nonumber
 \le & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T  \lrincir{F_{i,t}(\bar{\x}_t) - F_{i,t}(\bar{\x}_{t+1})} + 4T  \eta G + \frac{ L^2 \eta}{n}\EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} }\sum_{t=1}^T\sum_{i=1}^n \lrnorm{ \bar{\x}_t - \x_{i,t} }^2 + \frac{TGL\eta^2}{2}.
-\end{align} $\textcircled{2}$ holds due to Lemma \ref{lemma_x_variance_norm_square}
+\end{align} $\textcircled{2}$ holds due to Lemma \ref{Lemma_x_variance_norm_square}
 \begin{align}
 \nonumber
 \EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} } \sum_{i=1}^n\sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2 \le \frac{nT\eta^2 G }{(1-\rho)^2}.
@@ -753,7 +726,7 @@ It completes the proof.
 
 
 \begin{Lemma}
-\label{lemma_gradient_norm_bound}
+\label{Lemma_gradient_norm_bound}
 Using Assumption \ref{assumption_bounded_gradient_domain}, and setting $\eta>0$ in Algorithm \ref{algo_DOG}, we have 
 \begin{align}
 & \frac{\eta}{2} \EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} }\sum_{t=1}^T \lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2 \\ \nonumber
@@ -767,7 +740,7 @@ We have
 \nonumber
 & \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } F_{i,t}(\bar{\x}_{t+1}) \\ \nonumber
 \le & \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} } F_{i,t}(\bar{\x}_t) + \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrangle{\nabla F_{i,t}(\bar{\x}_t), \bar{\x}_{t+1} - \bar{\x}_t} + \frac{L}{2}\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{\bar{\x}_{t+1} - \bar{\x}_t}^2 \\ \nonumber
-= & \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} } F_{i,t}(\bar{\x}_t) + \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrangle{\nabla F_{i,t}(\bar{\x}_t), -\frac{\eta}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})} + \frac{L}{2} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{\frac{\eta}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 \\ \label{equa_lemma_gradient_norm_temp0}
+= & \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} } F_{i,t}(\bar{\x}_t) + \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrangle{\nabla F_{i,t}(\bar{\x}_t), -\frac{\eta}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})} + \frac{L}{2} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{\frac{\eta}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 \\ \label{equa_Lemma_gradient_norm_temp0}
 = & \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} } F_{i,t}(\bar{\x}_t) + \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\lrangle{\nabla F_{i,t}(\bar{\x}_t), -\frac{\eta}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})} + \frac{L}{2} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{\frac{\eta}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2.
 \end{align}
 
@@ -783,7 +756,7 @@ Besides, we have
 \le & \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} } \frac{\eta}{2}\lrincir{ 2 \lrnorm{\nabla F_{i,t}(\bar{\x}_t) -\frac{1}{n}\sum_{i=1}^n \nabla  f_{i,t}(\x_{i,t};\xi_{i,t})}^2 + \frac{2}{n}\sum_{i=1}^n \lrnorm{ \nabla F_{i,t}(\bar{\x}_t) - \nabla F_{i,t}(\x_{i,t}) }^2 } \\ \nonumber 
 & - \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} } \frac{\eta}{2} \lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2  \\ \nonumber
 \le & \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} } \frac{\eta}{2}\lrincir{ 2 \lrnorm{\nabla F_{i,t}(\bar{\x}_t) -\frac{1}{n}\sum_{i=1}^n \nabla  f_{i,t}(\x_{i,t};\xi_{i,t})}^2 + \frac{2L^2}{n}\sum_{i=1}^n \lrnorm{ \bar{\x}_t - \x_{i,t} }^2 }  - \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} } \frac{\eta}{2} \lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2  \\ \nonumber
-\le & \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} } \frac{\eta}{2}\lrincir{ 4 \lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2  + 4 \lrnorm{\frac{1}{n}\sum_{i=1}^n \nabla  f_{i,t}(\x_{i,t};\xi_{i,t})}^2 + \frac{2L^2}{n}\sum_{i=1}^n \lrnorm{ \bar{\x}_t - \x_{i,t} }^2 }  - \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} } \frac{\eta}{2} \lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2 \\ \label{equa_lemma_gradient_norm_temp1}
+\le & \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} } \frac{\eta}{2}\lrincir{ 4 \lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2  + 4 \lrnorm{\frac{1}{n}\sum_{i=1}^n \nabla  f_{i,t}(\x_{i,t};\xi_{i,t})}^2 + \frac{2L^2}{n}\sum_{i=1}^n \lrnorm{ \bar{\x}_t - \x_{i,t} }^2 }  - \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} } \frac{\eta}{2} \lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2 \\ \label{equa_Lemma_gradient_norm_temp1}
 \refabovecir{\le}{\textcircled{1}} & \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} } \frac{\eta}{2}\lrincir{ 8 G + \frac{2L^2}{n}\sum_{i=1}^n \lrnorm{ \bar{\x}_t - \x_{i,t} }^2 }  - \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \frac{\eta}{2} \lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2.
 \end{align} $\textcircled{1}$ holds due to  
 \begin{align}
@@ -796,11 +769,11 @@ Besides, we have
 
 Recall that
 \begin{align}
-\label{equa_lemma_gradient_norm_temp2}
+\label{equa_Lemma_gradient_norm_temp2}
 \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 \le G.
 \end{align}
 
-Substituting \eqref{equa_lemma_gradient_norm_temp1} and \eqref{equa_lemma_gradient_norm_temp2} into \eqref{equa_lemma_gradient_norm_temp0}, and telescoping $t\in[T]$, we obtain
+Substituting \eqref{equa_Lemma_gradient_norm_temp1} and \eqref{equa_Lemma_gradient_norm_temp2} into \eqref{equa_Lemma_gradient_norm_temp0}, and telescoping $t\in[T]$, we obtain
 \begin{align}
 \nonumber
 & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T F_{i,t}(\bar{\x}_{t+1}) \\ \nonumber
@@ -822,7 +795,7 @@ It completes the proof.
 
 
 \begin{Lemma}
-\label{lemma_average_update_rule}
+\label{Lemma_average_update_rule}
 Denote $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$. We have
 \begin{align}
 \nonumber
@@ -861,7 +834,7 @@ Recall that
 \end{proof}
 
 \begin{Lemma}[Lemma $5$ in \citep{Tang:2018un}]
-\label{lemma_hanlin_1}
+\label{Lemma_hanlin_1}
 For any matrix $\X_t\in\RR^{d\times n}$, decompose the confusion matrix $\W$ as $\W = \sum_{i=1}^n \lambda_i \v_i \v_i\Tr = \P \bLambda \P\Tr$, where $\P = [\v_1, \v_2, ..., \v_n]\in\RR^{n\times n}$, $\v_i$ is the normalized eigenvector of $\lambda_i$. $\bLambda$ is a diagonal matrix, and $\lambda_i$ be its $i$-th element. We have
 \begin{align}
 \nonumber
@@ -872,7 +845,7 @@ For any matrix $\X_t\in\RR^{d\times n}$, decompose the confusion matrix $\W$ as 
 
 
 \begin{Lemma}[Lemma $6$ in \citep{Tang:2018un}]
-\label{lemma_hanlin_2}
+\label{Lemma_hanlin_2}
 Given two non-negative sequences $\{a_t\}_{t=1}^{\infty}$ and $\{b_t\}_{t=1}^{\infty}$ that satisfying
 \begin{align}
 \nonumber
@@ -888,9 +861,9 @@ a_t = \sum_{s=1}^t \rho^{t-s} b_s,
 
 
 
-\textbf{ Proof to Lemma \ref{lemma_x_variance_norm_square}:}
+\textbf{ Proof to Lemma \ref{Lemma_x_variance_norm_square}:}
 %\begin{Lemma}
-%\label{lemma_x_variance_norm_square}
+%\label{Lemma_x_variance_norm_square}
 %Using Assumption \ref{assumption_bounded_gradient_domain}, and setting $\eta>0$ in Algorithm \ref{algo_DOG}, we have 
 %\begin{align}
 %\nonumber
@@ -905,7 +878,7 @@ Recall that
 \begin{align}
 \nonumber
 \x_{i,t+1} = \sum_{j=1}^n \W_{ij}\x_{j,t} - \eta \nabla f_{i,t}(\x_{i,t};\xi_{i,t}), 
-\end{align} and according to Lemma \ref{lemma_average_update_rule}, we have 
+\end{align} and according to Lemma \ref{Lemma_average_update_rule}, we have 
 \begin{align}
 \nonumber
 \bar{\x}_{t+1} = \bar{\x}_t - \eta \lrincir{\frac{1}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}.
@@ -931,7 +904,7 @@ Therefore, we obtain
 \refabovecir{=}{\textcircled{2}} & \lrnorm{ \sum_{s=1}^{t-1} \eta \G_s\v_1 \v_1\Tr - \eta \G_s \W^{t-s-1} }^2_F   \\ \nonumber
 \refabovecir{\le}{\textcircled{3}} & \lrincir{ \eta \rho^{t-s-1} \lrnorm{\sum_{s=1}^{t-1}\G_s}_F}^2 \\ \nonumber
 \le & \lrincir{ \sum_{s=1}^{t-1} \eta \rho^{t-s-1} \lrnorm{\G_s}_F}^2.
-\end{align} $\textcircled{1}$ holds due to $\e_i$ is a unit basis vector, whose $i$-th element is $1$ and other elements are $0$s. $\textcircled{2}$ holds due to $\v_1 = \frac{\1_n}{\sqrt{n}}$. $\textcircled{3}$ holds due to Lemma \ref{lemma_hanlin_1}. 
+\end{align} $\textcircled{1}$ holds due to $\e_i$ is a unit basis vector, whose $i$-th element is $1$ and other elements are $0$s. $\textcircled{2}$ holds due to $\v_1 = \frac{\1_n}{\sqrt{n}}$. $\textcircled{3}$ holds due to Lemma \ref{Lemma_hanlin_1}. 
 
 
 Thus, we  have
@@ -942,12 +915,12 @@ Thus, we  have
 \refabovecir{\le}{\textcircled{1}} & \frac{\eta^2}{(1-\rho)^2} \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \lrincir{  \sum_{t=1}^T \lrnorm{\G_t}_F^2 } \\ \nonumber
 = & \frac{\eta^2}{(1-\rho)^2} \lrincir{ \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T \sum_{i=1}^n  \lrnorm{\nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 } \\ \nonumber
 \refabovecir{=}{\textcircled{2}} & \frac{nT\eta^2 G }{(1-\rho)^2}.
-\end{align} $\textcircled{1}$ holds due to Lemma \ref{lemma_hanlin_2}. 
+\end{align} $\textcircled{1}$ holds due to Lemma \ref{Lemma_hanlin_2}. 
 \end{proof}
 
 
 
-\textbf{ Proof to Lemma \ref{lemma_assumption_discussion}:}
+\textbf{ Proof to Lemma \ref{Lemma_assumption_discussion}:}
 \begin{proof}
 We have
 \begin{align}
