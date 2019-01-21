@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  21 JAN 2019 12:54
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  21 JAN 2019 14:37
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -660,39 +660,6 @@ LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <9> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 138.
 
-
-Package natbib Warning: Citation `introduction-online-optimization' on page 1 u
-ndefined on input line 145.
-
-
-Package natbib Warning: Citation `Paternain:2016tl' on page 1 undefined on inpu
-t line 145.
-
-
-Package natbib Warning: Citation `Bach:2016wt' on page 1 undefined on input lin
-e 145.
-
-
-Package natbib Warning: Citation `HoNguyen:2017ki' on page 1 undefined on input
- line 145.
-
-
-Package natbib Warning: Citation `Neely:2017ul' on page 1 undefined on input li
-ne 145.
-
-
-Package natbib Warning: Citation `Chen:2018vl' on page 1 undefined on input lin
-e 145.
-
-
-Package natbib Warning: Citation `Orabona:2012vr' on page 1 undefined on input 
-line 145.
-
-
-Package natbib Warning: Citation `introduction-online-optimization' on page 1 u
-ndefined on input line 145.
-
-
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
@@ -714,21 +681,16 @@ Overfull \hbox (8.41927pt too wide) detected at line 159
  []
 
 
-Package natbib Warning: Citation `introduction-online-optimization' on page 2 u
-ndefined on input line 179.
-
-
 LaTeX Warning: Reference `equa_define_M' on page 2 undefined on input line 181.
 
-
-
-Package natbib Warning: Citation `6760092' on page 2 undefined on input line 18
-2.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
+Underfull \vbox (badness 3088) has occurred while \output is active []
+
+ [3]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `!htbp') on input line 296.
@@ -739,10 +701,9 @@ Underfull \hbox (badness 1057) in paragraph at lines 304--305
 1/ptm/m/n/10 (+20) , and suf-fer loss
  []
 
-[3]
 LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 330.
- [4]
+[4]
 Underfull \hbox (badness 1728) in paragraph at lines 407--408
 []\OT1/ptm/b/n/10 Dependence on $\OML/cmm/m/it/10 ^^[[]$\OT1/ptm/b/n/10 . \OT1/
 ptm/m/n/10 (+20) Pre-vi-ous re-searches ([][]Shahram-
@@ -776,12 +737,12 @@ ad of the dy-namic
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `!tbp') on input line 441.
 
-<figure_dynamics.pdf, id=265, 507.69733pt x 234.42342pt>
+<figure_dynamics.pdf, id=297, 507.69733pt x 234.42342pt>
 File: figure_dynamics.pdf Graphic file (type pdf)
 <use figure_dynamics.pdf>
 Package pdftex.def Info: figure_dynamics.pdf  used on input line 445.
 (pdftex.def)             Requested size: 164.41353pt x 75.91484pt.
-<figure_ave_loss_iteration_synthetic.pdf, id=266, 406.14023pt x 298.21452pt>
+<figure_ave_loss_iteration_synthetic.pdf, id=298, 406.14023pt x 298.21452pt>
 File: figure_ave_loss_iteration_synthetic.pdf Graphic file (type pdf)
 <use figure_ave_loss_iteration_synthetic.pdf>
 Package pdftex.def Info: figure_ave_loss_iteration_synthetic.pdf  used on input
@@ -793,19 +754,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 455--455
 (+20) , $\OT1/cmr/m/n/9 10000$
  []
 
-<figure_ave_loss_iteration_occupancy.pdf, id=267, 396.42758pt x 292.41255pt>
+<figure_ave_loss_iteration_occupancy.pdf, id=299, 396.42758pt x 292.41255pt>
 File: figure_ave_loss_iteration_occupancy.pdf Graphic file (type pdf)
 <use figure_ave_loss_iteration_occupancy.pdf>
 Package pdftex.def Info: figure_ave_loss_iteration_occupancy.pdf  used on input
  line 456.
 (pdftex.def)             Requested size: 112.74019pt x 83.15996pt.
-<figure_ave_loss_iteration_usenet2.pdf, id=268, 388.44322pt x 297.29309pt>
+<figure_ave_loss_iteration_usenet2.pdf, id=300, 388.44322pt x 297.29309pt>
 File: figure_ave_loss_iteration_usenet2.pdf Graphic file (type pdf)
 <use figure_ave_loss_iteration_usenet2.pdf>
 Package pdftex.def Info: figure_ave_loss_iteration_usenet2.pdf  used on input l
 ine 457.
 (pdftex.def)             Requested size: 112.74019pt x 86.28535pt.
-<figure_ave_loss_iteration_spam.pdf, id=269, 507.98027pt x 391.39867pt>
+<figure_ave_loss_iteration_spam.pdf, id=301, 507.98027pt x 391.39867pt>
 File: figure_ave_loss_iteration_spam.pdf Graphic file (type pdf)
 <use figure_ave_loss_iteration_spam.pdf>
 Package pdftex.def Info: figure_ave_loss_iteration_spam.pdf  used on input line
@@ -814,7 +775,12 @@ Package pdftex.def Info: figure_ave_loss_iteration_spam.pdf  used on input line
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5 <./figure_dynamics.pdf>]
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 474.
+
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -844,8 +810,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 474--474
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5 <./figure_dynamics.pdf>]
-<figure_ave_loss_network_size_synthetic.pdf, id=315, 517.47185pt x 383.73775pt>
+<figure_ave_loss_network_size_synthetic.pdf, id=347, 517.47185pt x 383.73775pt>
 
 File: figure_ave_loss_network_size_synthetic.pdf Graphic file (type pdf)
 <use figure_ave_loss_network_size_synthetic.pdf>
@@ -858,20 +823,20 @@ Underfull \hbox (badness 7468) in paragraph at lines 502--502
 (+20) , ran-dom
  []
 
-<figure_ave_loss_network_size_occupancy.pdf, id=316, 396.28432pt x 291.18256pt>
+<figure_ave_loss_network_size_occupancy.pdf, id=348, 396.28432pt x 291.18256pt>
 
 File: figure_ave_loss_network_size_occupancy.pdf Graphic file (type pdf)
 <use figure_ave_loss_network_size_occupancy.pdf>
 Package pdftex.def Info: figure_ave_loss_network_size_occupancy.pdf  used on in
 put line 503.
 (pdftex.def)             Requested size: 112.74019pt x 82.83682pt.
-<figure_ave_loss_network_size_usenet2.pdf, id=317, 394.44363pt x 291.3324pt>
+<figure_ave_loss_network_size_usenet2.pdf, id=349, 394.44363pt x 291.3324pt>
 File: figure_ave_loss_network_size_usenet2.pdf Graphic file (type pdf)
 <use figure_ave_loss_network_size_usenet2.pdf>
 Package pdftex.def Info: figure_ave_loss_network_size_usenet2.pdf  used on inpu
 t line 504.
 (pdftex.def)             Requested size: 112.74019pt x 83.26619pt.
-<figure_ave_loss_network_size_spam.pdf, id=318, 394.87123pt x 292.96141pt>
+<figure_ave_loss_network_size_spam.pdf, id=350, 394.87123pt x 292.96141pt>
 File: figure_ave_loss_network_size_spam.pdf Graphic file (type pdf)
 <use figure_ave_loss_network_size_spam.pdf>
 Package pdftex.def Info: figure_ave_loss_network_size_spam.pdf  used on input l
@@ -881,47 +846,46 @@ ine 505.
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `!tbp') on input line 514.
 
-<figure_ave_loss_topology_synthetic.pdf, id=321, 395.58774pt x 290.54326pt>
+<figure_ave_loss_topology_synthetic.pdf, id=353, 395.58774pt x 290.54326pt>
 File: figure_ave_loss_topology_synthetic.pdf Graphic file (type pdf)
 <use figure_ave_loss_topology_synthetic.pdf>
 Package pdftex.def Info: figure_ave_loss_topology_synthetic.pdf  used on input 
 line 533.
 (pdftex.def)             Requested size: 112.74019pt x 82.80124pt.
-<figure_ave_loss_topology_occupancy.pdf, id=322, 390.81732pt x 295.3445pt>
+<figure_ave_loss_topology_occupancy.pdf, id=354, 503.13318pt x 385.47986pt>
 File: figure_ave_loss_topology_occupancy.pdf Graphic file (type pdf)
 <use figure_ave_loss_topology_occupancy.pdf>
 Package pdftex.def Info: figure_ave_loss_topology_occupancy.pdf  used on input 
 line 534.
-(pdftex.def)             Requested size: 112.74019pt x 85.19704pt.
-<figure_ave_loss_topology_usenet2.pdf, id=323, 389.48593pt x 298.33798pt>
+(pdftex.def)             Requested size: 112.74019pt x 86.3763pt.
+<figure_ave_loss_topology_usenet2.pdf, id=355, 506.55193pt x 390.24757pt>
 File: figure_ave_loss_topology_usenet2.pdf Graphic file (type pdf)
 <use figure_ave_loss_topology_usenet2.pdf>
 Package pdftex.def Info: figure_ave_loss_topology_usenet2.pdf  used on input li
 ne 535.
-(pdftex.def)             Requested size: 112.74019pt x 86.35646pt.
-<figure_ave_loss_topology_spam.pdf, id=324, 395.75745pt x 292.73434pt>
+(pdftex.def)             Requested size: 112.74019pt x 86.85512pt.
+<figure_ave_loss_topology_spam.pdf, id=356, 507.85048pt x 390.37573pt>
 File: figure_ave_loss_topology_spam.pdf Graphic file (type pdf)
 <use figure_ave_loss_topology_spam.pdf>
 Package pdftex.def Info: figure_ave_loss_topology_spam.pdf  used on input line 
 536.
-(pdftex.def)             Requested size: 112.74019pt x 83.38995pt.
+(pdftex.def)             Requested size: 112.74019pt x 86.65729pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-(./main.bbl [6 <./figure_ave_loss_iteration_synthetic.pdf> <./figure_ave_loss_i
-teration_occupancy.pdf> <./figure_ave_loss_iteration_usenet2.pdf> <./figure_ave
-_loss_iteration_spam.pdf>] [7 <./figure_ave_loss_network_size_synthetic.pdf> <.
-/figure_ave_loss_network_size_occupancy.pdf> <./figure_ave_loss_network_size_us
-enet2.pdf> <./figure_ave_loss_network_size_spam.pdf> <./figure_ave_loss_topolog
-y_synthetic.pdf> <./figure_ave_loss_topology_occupancy.pdf> <./figure_ave_loss_
-topology_usenet2.pdf> <./figure_ave_loss_topology_spam.pdf>] [8]) [9
+(./main.bbl
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [6 <./figure_ave_loss_iteration_synthetic.pdf> <./figure_ave_loss_iteration_oc
+cupancy.pdf> <./figure_ave_loss_iteration_usenet2.pdf> <./figure_ave_loss_itera
+tion_spam.pdf>] [7 <./figure_ave_loss_network_size_synthetic.pdf> <./figure_ave
+_loss_network_size_occupancy.pdf> <./figure_ave_loss_network_size_usenet2.pdf> 
+<./figure_ave_loss_network_size_spam.pdf> <./figure_ave_loss_topology_synthetic
+.pdf> <./figure_ave_loss_topology_occupancy.pdf> <./figure_ave_loss_topology_us
+enet2.pdf> <./figure_ave_loss_topology_spam.pdf>] [8]) [9
 
 ]
 
@@ -1155,18 +1119,10 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 925.
 
 LaTeX Warning: Command \textcircled invalid in math mode on input line 925.
 
-
-Package natbib Warning: There were undefined citations.
-
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 956.
 [18]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 956.
- (./main.aux
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-)
+ (./main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 956.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 956.
 Package rerunfilecheck Info: File `main.out' has not changed.
@@ -1181,11 +1137,11 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 956.
  ) 
 Here is how much of TeX's memory you used:
- 11141 strings out of 492649
- 169083 string characters out of 6129622
- 317011 words of memory out of 5000000
+ 11138 strings out of 492649
+ 169056 string characters out of 6129622
+ 317867 words of memory out of 5000000
  14399 multiletter control sequences out of 15000+600000
- 52041 words of font info for 267 fonts, out of 8000000 for 9000
+ 51922 words of font info for 265 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,19n,45p,1977b,542s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -1213,10 +1169,10 @@ nts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2018/texmf-dist
 ype1/urw/times/utmb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/t
 imes/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8
 a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (18 pages, 650490 bytes).
+Output written on main.pdf (18 pages, 651085 bytes).
 PDF statistics:
- 713 PDF objects out of 1000 (max. 8388607)
- 609 compressed objects within 7 object streams
+ 737 PDF objects out of 1000 (max. 8388607)
+ 633 compressed objects within 7 object streams
  124 named destinations out of 1000 (max. 500000)
  38466 words of extra memory for PDF output out of 42996 (max. 10000000)
 
