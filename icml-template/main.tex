@@ -557,7 +557,7 @@ I_1(t) = &    \lrincir{\underbrace{ \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\frac{1}{n
 = & \frac{1}{n}\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\sum_{i=1}^n\lrangle{\nabla f_{i,t}(\x_{i,t}; \xi_{i,t}), \x_{i,t} - \bar{\x}_t } \\ \nonumber
 = & \frac{1}{n}\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \sum_{i=1}^n\lrangle{\nabla f_{i,t}(\x_{i,t}; \xi_{i,t}) - \nabla F_{i,t}(\bar{\x}_t), \x_{i,t} - \bar{\x}_t } + \frac{1}{n}\EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\sum_{i=1}^n\lrangle{\nabla F_{i,t}(\bar{\x}_t), \x_{i,t} - \bar{\x}_t } \\ \nonumber
 = & \frac{1}{n}\EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\sum_{i=1}^n\lrangle{\nabla F_{i,t}(\x_{i,t}) - \nabla F_{i,t}(\bar{\x}_t), \x_{i,t} - \bar{\x}_t } + \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\lrangle{\nabla F_{i,t}(\bar{\x}_t), \frac{1}{n}\sum_{i=1}^n\x_{i,t} - \bar{\x}_t } \\ \nonumber
-\refabovecir{\le}{\textcircled{1}} & \frac{L}{n}\EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t}^2。. 
+\refabovecir{\le}{\textcircled{1}} & \frac{L}{n}\EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t}^2. 
 \end{align} $\textcircled{1}$ holds due to $F_{i,t}$ has $L$-Lipschitz gradients, and $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$.
 
 For $J_2(t)$, we have
