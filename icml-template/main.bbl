@@ -1,4 +1,4 @@
-\begin{thebibliography}{37}
+\begin{thebibliography}{36}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -36,13 +36,6 @@ A.~A. Bencz{\'u}r, L.~Kocsis, and R.~P{\'a}lovics.
 N.~Cesa-Bianchi, P.~Gaillard, G.~Lugosi, and G.~Stoltz.
 \newblock {Mirror Descent Meets Fixed Share (and feels no regret)}.
 \newblock In \emph{{NIPS 2012}}, page Paper 471, 2012.
-
-\bibitem[Duchi et~al.(2011)Duchi, Hazan, and Singer]{Duchi:2011}
-J.~Duchi, E.~Hazan, and Y.~Singer.
-\newblock Adaptive subgradient methods for online learning and stochastic
-  optimization.
-\newblock \emph{Journal of Machine Learning Research (JMLR)}, 12:\penalty0
-  2121--2159, 2011.
 
 \bibitem[Gy\"{o}rgy and Szepesv\'{a}ri(2016)]{Gyorgy:2016}
 A.~Gy\"{o}rgy and C.~Szepesv\'{a}ri.
