@@ -3,46 +3,48 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: abbrvnat.bst
 Database file #1: ../reference.bib
-Warning--I didn't find a database entry for "xxx"
-You've used 36 entries,
+Warning--entry type for "introduction-online-optimization" isn't style-file defined
+--line 29 of file ../reference.bib
+Warning--there's a number but no volume in HoNguyen:2017ki
+You've used 44 entries,
             2773 wiz_defined-function locations,
-            837 strings with 11932 characters,
-and the built_in function-call counts, 20011 in all, are:
-= -- 1781
-> -- 1187
-< -- 25
-+ -- 397
-- -- 359
-* -- 1670
-:= -- 2928
-add.period$ -- 111
-call.type$ -- 36
-change.case$ -- 224
-chr.to.int$ -- 34
-cite$ -- 72
-duplicate$ -- 932
-empty$ -- 1608
-format.name$ -- 409
-if$ -- 4314
+            871 strings with 13006 characters,
+and the built_in function-call counts, 23322 in all, are:
+= -- 2071
+> -- 1371
+< -- 31
++ -- 459
+- -- 413
+* -- 1918
+:= -- 3430
+add.period$ -- 134
+call.type$ -- 44
+change.case$ -- 266
+chr.to.int$ -- 42
+cite$ -- 89
+duplicate$ -- 1099
+empty$ -- 1888
+format.name$ -- 479
+if$ -- 5016
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 36
-newline$ -- 188
-num.names$ -- 152
-pop$ -- 462
+missing$ -- 43
+newline$ -- 227
+num.names$ -- 184
+pop$ -- 553
 preamble$ -- 1
-purify$ -- 188
+purify$ -- 222
 quote$ -- 0
-skip$ -- 748
+skip$ -- 878
 stack$ -- 0
-substring$ -- 872
-swap$ -- 217
-text.length$ -- 15
+substring$ -- 946
+swap$ -- 244
+text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 396
-warning$ -- 0
-while$ -- 168
+type$ -- 484
+warning$ -- 1
+while$ -- 196
 width$ -- 0
-write$ -- 477
-(There was 1 warning)
+write$ -- 573
+(There were 2 warnings)

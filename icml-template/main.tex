@@ -27,6 +27,8 @@
 \usepackage{natbib}
 \allowdisplaybreaks
 
+\def\rc{\color {red}}
+
 \DeclareMathOperator*{\Argmax}{Argmax}
 \DeclareMathOperator*{\Argmin}{Argmin}
 
@@ -70,7 +72,7 @@
 
 
 
-\hypersetup{draft}% need to be commit before submitting paper
+%\hypersetup{draft}% need to be commit before submitting paper
 \begin{document}
 
 \twocolumn[
@@ -140,11 +142,11 @@ In this paper, we consider online learning in the decentralized setting, which i
 
 \section{Introduction}
 \label{sect_introduction}
-Online learning has been studied for decades of years in machine learning literatures~\citep{xxx}. The goal of online learning generally is to incrementally learn predictions models to minimize the sum of all the online loss functions (cumulative loss), which is usually determined by a squence of examples that arrives sequentially. To quantify the efficacy of an online learning algorithm, the community introduced a performance measure called static regret, which is the difference between the cumulative losses suffered by the online algorithm and that suffered by the best model which can observe all the loss functions. The best static regret of a sequential online convex optimization method is  $\Ocal{\sqrt{T}}$ and $\Ocal{\log T}$  for convex and strongly convex loss functions, respectively \citep{Hazan2016Introduction,ShalevShwartz:2012dz}.
+Online learning has been studied for decades of years in machine learning literatures~\citep{Hazan2016Introduction,ShalevShwartz:2012dz,introduction-online-optimization,Paternain:2016tl,Bach:2016wt,HoNguyen:2017ki,Neely:2017ul,Chen:2018vl,Orabona:2012vr}. The goal of online learning generally is to incrementally learn predictions models to minimize the sum of all the online loss functions (cumulative loss), which is usually determined by a squence of examples that arrives sequentially. To quantify the efficacy of an online learning algorithm, the community introduced a performance measure called static regret, which is the difference between the cumulative losses suffered by the online algorithm and that suffered by the best model which can observe all the loss functions. The best static regret of a sequential online convex optimization method is  $\Ocal{\sqrt{T}}$ and $\Ocal{\log T}$  for convex and strongly convex loss functions, respectively \citep{Hazan2016Introduction,ShalevShwartz:2012dz,introduction-online-optimization}.
 
-Different with traditional online learning, online learning in decentralized networks (or Decentralized Online Learning) assumes that a network of computational nodes can communicate between neighors to solve an online learning problem, in which each computational node will receive a stream of online losses. Suppose we have $n$ workers, among which the $i$-th one will receive the $t$-th loss $f_{i,t}$ at the $t-$th iteration. Then, the goal of Decentralized Online Learning usually is to minimize its static regret, which is defined as the difference between the cumulative loss over all the nodes and steps and that of the best model which knows all the loss function beforehand; Decentralized Online Learning enjoys many advantages for real-world large-scale applications. Firstly, it avoid collecting all the loss functions to one node, which will result in heavy communication cost for the network and extremely high computational cost for one node. Secondly, it can help many data providers collaborate to better minimize their cumulative loss, while at the same time protect the data privacy as much as possible. 
+Different from traditional online learning, online learning in decentralized networks (or Decentralized Online Learning) assumes that a network of computational nodes can communicate between neighors to solve an online learning problem, in which each computational node will receive a stream of online losses. Suppose we have $n$ workers, among which the $i$-th one will receive the $t$-th loss $f_{i,t}$ at the $t-$th iteration. Then, the goal of Decentralized Online Learning usually is to minimize its static regret, which is defined as the difference between the cumulative loss over all the nodes and steps and that of the best model which knows all the loss function beforehand; Decentralized Online Learning enjoys many advantages for real-world large-scale applications. Firstly, it avoid collecting all the loss functions to one node, which will result in heavy communication cost for the network and extremely high computational cost for one node. Secondly, it can help many data providers collaborate to better minimize their cumulative loss, while at the same time protect the data privacy as much as possible. 
 
-The static regret assumes that the best model keeps unchaged during the entire learning process, however this does not hold in some real applications. For example, one's favorite style of musics may changes over time as his/her situation. To solve this issue, the dynamic regret is introduced, which generally measure the different between the cumulative loss suffered by the decentralized online learning algorithm and that suffered by a dynamic sequence of models. This dynamic sequence of models can not only observe all the loss functions beforehand, but also changes over time with the amount of changes less than a budget. In this paper, we mainly prove that decentralized online gradient can achieve a dynamic regret  of $\Ocal{n\sqrt{TM} + \sqrt{nTM}\sigma}$ where $n$ is the number of users, $T$ is the number of time steps, $M$ measures the dynamics budget, and $\sigma$ measures the randomness of the private data. 
+The static regret assumes that the best model keeps unchaged during the entire learning process, however this does not hold in some real applications. For example, one's favorite style of musics may change over time as his/her situation. To solve this issue, the dynamic regret is introduced, which generally measure the different between the cumulative loss suffered by the decentralized online learning algorithm and that suffered by a dynamic sequence of models. This dynamic sequence of models can not only observe all the loss functions beforehand, but also changes over time with the amount of changes less than a budget. In this paper, we mainly prove that decentralized online gradient can achieve a dynamic regret  of $\Ocal{n\sqrt{TM} + \sqrt{nTM}\sigma}$ where $n$ is the number of users, $T$ is the number of time steps, $M$ measures the dynamics budget, and $\sigma$ measures the randomness of the private data. 
 
 
 \paragraph{Notations and definitions}
@@ -158,6 +160,7 @@ In the paper, we make the following notations.
 \item For a decentralized network, we use $\W \in\RR^{n\times n}$ to represent its confusion matrix. It is a symmetric doublely stochastic matrix, which implies that every element of $\W$ is non-negative, $\W \1 = \1$, and $\1\Tr\W  = \1\Tr$. We use $\{\lambda_i\}_{i=1}^n$ with $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$ to represent its eigenvalues. 
 \item $\nabla$ represents gradient operator. $\lrnorm{\cdot}$ represents the $\ell_2$ norm in default.
 \item $\lesssim$ represents ``less than equal up to a constant factor".
+\item $\Acal$ represents the set of all online algorithms.
 \end{itemize} 
     
 
@@ -173,10 +176,10 @@ In the paper, we make the following notations.
 
 \section{Related work}
 \label{sect_related_work}
-Online learning has been studied for decades of years. The static regret of a sequential online convex optimization method can achieve $\Ocal{\sqrt{T}}$ and $\Ocal{\log T}$ bounds for convex and strongly convex loss functions, respectively \citep{Hazan2016Introduction,ShalevShwartz:2012dz}. Recently, both the decentralized online learing and the dynamic regret have drawn much attention due to their wide existence in the practical big data scenarios.
+Online learning has been studied for decades of years. The static regret of a sequential online convex optimization method can achieve $\Ocal{\sqrt{T}}$ and $\Ocal{\log T}$ bounds for convex and strongly convex loss functions, respectively \citep{Hazan2016Introduction,ShalevShwartz:2012dz,introduction-online-optimization}. Recently, both the decentralized online learing and the dynamic regret have drawn much attention due to their wide existence in the practical big data scenarios.
 \subsection{Decentralized online learning}
-Online learning in a decentralized network has been studied in \citep{8015179Shahram,Kamp:2014:CDO,Koppel-8352032,Zhang2018,pmlr-v70-zhang17g,Xu2015,tcns-7353155,cdc-7798923,acc-7172037,tcns-7479495,Benczur:2018ww,tkde-6311406}.  \citet{8015179Shahram} studies decentralized online mirror descent, and provides $\Ocal{n\sqrt{nTM}}$ dynamic regret. Here, $n$, $T$, and $M$ represent the number of nodes in the newtork, the number of iterations, and the budget of dynamics (defined in \eqref{equa_define_M}), respectively.  When the Bregman divergence in the decentralized online mirror descent is chosen appropriately, the decentralized online mirror descent becomes identical to the decentralized online gradient descent. Using the same definition of dynamic regret (defined in \eqref{equa_definition_previous_regret}), our method obtains $\Ocal{n\sqrt{TM}}$ dynamic regret for a decentralized online gradient descent, which is better than $\Ocal{n\sqrt{nTM}}$ in \citet{8015179Shahram}. The improvement of our bound benefits from a better bound of network error (see Lemma \ref{lemma_x_variance_norm_square}). \citet{Kamp:2014:CDO} studies decentralized online prediction, and presents $\Ocal{\sqrt{nT}}$ static regret.  It assumes that all data, used to yielded the loss, is generated from an unknown distribution. The strong assumption is not practical in the dynamic environment, and thus limits its novelity for a general online learning task. 
-Additionally, many decentralized online optimization methods are proposed, for example, decentralized online multi-task learning \citep{Zhang2018}, decentralized online ADMM \citep{Xu2015}, decentralized online gradient descent \citep{tcns-7353155}, decentralized continuous-time online saddle-point method \citep{cdc-7798923}, decentralized online  Nesterov's primal-dual method \citep{acc-7172037,tcns-7479495}. Those previous methods are proved to yield $\Ocal{\sqrt{T}}$ static regret, which do not have theoretical guarantee of regret in the dynamic environment.   Besides,  \citet{tkde-6311406} provides necessary and sufficient conditions to preserve privacy for decentralized online learning methods, which  is interesting to extend our method to be privacy-preserving in the future work.
+Online learning in a decentralized network has been studied in \citep{8015179Shahram,Kamp:2014:CDO,Koppel-8352032,Zhang2018,pmlr-v70-zhang17g,Xu2015,tcns-7353155,cdc-7798923,acc-7172037,tcns-7479495,Benczur:2018ww,tkde-6311406}.  \citet{8015179Shahram} studies decentralized online mirror descent, and provides $\Ocal{n\sqrt{nTM}}$ dynamic regret. Here, $n$, $T$, and $M$ represent the number of nodes in the newtork, the number of iterations, and the budget of dynamics (defined in \eqref{equa_define_M}), respectively.  When the Bregman divergence in the decentralized online mirror descent is chosen appropriately, the decentralized online mirror descent becomes identical to the decentralized online gradient descent. Using the same definition of dynamic regret (defined in \eqref{equa_definition_previous_regret}), our method obtains $\Ocal{n\sqrt{TM}}$ dynamic regret for a decentralized online gradient descent, which is better than $\Ocal{n\sqrt{nTM}}$ in \citet{8015179Shahram}. The improvement of our bound benefits from a better bound of network error (see Lemma \ref{Lemma_x_variance_norm_square}). \citet{Kamp:2014:CDO} studies decentralized online prediction, and presents $\Ocal{\sqrt{nT}}$ static regret.  It assumes that all data, used to yielded the loss, is generated from an unknown distribution. The strong assumption is not practical in the dynamic environment, and thus limits its novelity for a general online learning task. 
+Additionally, many decentralized online optimization methods are proposed, for example, decentralized online multi-task learning \citep{Zhang2018}, decentralized online ADMM \citep{Xu2015}, decentralized online gradient descent \citep{tcns-7353155}, decentralized continuous-time online saddle-point method \citep{cdc-7798923}, decentralized online  Nesterov's primal-dual method \citep{acc-7172037,tcns-7479495}, and online distributed dual averaging\citep{6760092}. Those previous methods are proved to yield $\Ocal{\sqrt{T}}$ static regret, which do not have theoretical guarantee of regret in the dynamic environment.   Besides,  \citet{tkde-6311406} provides necessary and sufficient conditions to preserve privacy for decentralized online learning methods, which  is interesting to extend our method to be privacy-preserving in the future work.
 
 
 \subsection{Dynamic regret}
@@ -192,40 +195,42 @@ In some literatures, the regret in a dynamic environment is measured by the numb
 \section{Problem formulation}
 
 
+
+
+Suppose we have $n$ workers, among which the $i$-th one will receive the $t$-th loss $f_{i,t}(\x_{i,t},\xi_{i,t})$ at the $t-$th iteration, where $\x_{i,t}$ is the model on the node $i$ at the $t$-th iteration, and $\xi_{i,t}$ represents the randomness of the private data, which is drawn from some distribution $D_{i,t}$ for the $i$-th node at the time $t$. If we do not consider the dynamic setup, all nodes want to make their models converge to the best model $\x^\ast$, which is defined by
+\begin{align}
+\nonumber
+\x^\ast := \argmin_{\x} \sum\limits_{i=1}^n\sum\limits_{t=1}^T \EE_{\xi_{i,t} \sim \Dcal_{i,t}} f_{i,t}(\x, \xi_{i,t}).
+\end{align}
+However, the static optimal model $\x^\ast$ does not exist in the dynamic environment. For example, when we want to conduct music recommendation to a user, his/her preference to music may change over time as his/her situation.  Thus, the optimal model should be time-varying over time. It leads to the dynamics of the optimal recommendation model.  Therefore, we allow the optimal model can change as the times goes, and denote them by $\{\x_t^*\}_{t=1}^T$. Formally, given the budget of dynamics $M$, the feasible reference points $\{\x_t^\ast\}_{t=1}^T$ satisfy
+\begin{align*}
+\sum\limits_{t=1}^{T-1}\|\x_{t+1}^*-\x_t^*\|\le M,
+\end{align*}
+where $M$ is used to control how quickly the optimal model can change. When $M=0$, all $\x_t^\ast$s are same, and it degenerates to the static online learning problem. When the dynamic environment changes significantly, $M$ becomes large to model the dynamics. Let us take an example to explain the dynamics.   
+
+
+
+
+Denote $\Lcal_{M}^T = \left\{\{\z_t\}_{t=1}^T : \sum\limits_{t=1}^{T-1}\|\z_{t+1}-\z_t\|\le M \right\}$.  We define a new dynamic regret as follows.
+\begin{Definition}
+\label{define_our_new_dynamic_regret}
 For any a decentralized online algorithm $A \in \Acal$, we define its dynamic regret $\Rcal_T^{A}$ by
 \begin{align}
 \label{equa_definition_our_regret}
 \Rcal_T^{A} := & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \sum_{i=1}^n\sum_{t=1}^T \lrincir{f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^\ast;\xi_{i,t}) },
-\end{align} where $n$ is the number of nodes in the decentralized network. $\{\x_t^\ast\}_{t=1}^T$ is the sequence of reference points. $\x_{i,t}$ is the model played by an online algorithm $A$ at the $t$-th round. $\zeta_{i,t}$ represents the adversary part of data. $\xi_{i,t}$ represents the stochastic part of data, which is drawn from the distribution $D_{i,t}$. Classic online learning assumes all data are adversary, which may ignore the potential relations of data. We generate the classic definition of regret by treating the adversary and stochastic data, distinctively.
-
-
-Denote new functions $f_{i,t}$ and $h_{i,t}$ by 
-\begin{align}
-\nonumber
-f_{i,t}(\x;\zeta_{i,t}) = & f_{i,t}(\x;\zeta_{i,t},\0); \\ \nonumber
-h_{i,t}(\x;\xi_{i,t}) = & f_{i,t}(\x;\0,\xi_{i,t}).
-\end{align} The local loss function $f_{i,t}(\x;\zeta_{i,t},\xi_{i,t})$ is thus denoted by
-\begin{align}
-\nonumber
-f_{i,t}(\x;\zeta_{i,t},\xi_{i,t}) :=   f_{i,t}(\x;\zeta_{i,t}) +   h_t(\x; \xi_{i,t}), 
-\end{align} with $0< <1$.   Note that $f_{i,t}$ is an adversary loss function, which is caused by the adversary data. $h_t(\cdot; \xi_{i,t})$ is a stochastic loss function, which depends on the stochastic data $\xi_{i,t}$. The expectation is taken with respect to $\{\xi_{i,t}\}_{1\le i\le n,1\le t\le T}$. 
-
-The sequence of reference points $\{\x_t^\ast\}_{t=1}^T$ satisfies 
-\begin{align}
-\nonumber
-\{\x_t^\ast\}_{t=1}^T \in \left\{ \{\z_t\}_{t=1}^{T} : \sum_{t=1}^{T-1} \lrnorm{\z_t - \z_{t+1}} \le M \right\}.
-\end{align} Here, $M$ is the budget of the dynamics, that is,
-\begin{align}
-\label{equa_define_M}
-\sum_{t=1}^{T-1} \lrnorm{\x_{t+1}^\ast - \x_t^\ast} \le M.
-\end{align} When $M=0$, all $\x_t^\ast$s are same, and it degenerates to the static online learning problem. When the dynamic environment changes significantly, $M$ becomes large to model the dynamics. Let us take an example to explain the dynamics. Suppose we want to conduct online music recommendation task by using users' browsing records in Youtube. Every user has his/her own favorite music, and users' preference  changes over time due to time-varying trends of hot topics in Internet. It leads to the dynamics of the optimal recommendation model.  
-
-
-For any a decentralized online algorithm $A \in \Acal$, the previous dynamic regret  $\widetilde{\Rcal}_T^{A}$ is defined by
+\end{align}  where
+$\{\x_t^\ast\}_{t=1}^T$ is defined by
+\begin{align*}
+	\{\x_t^*\}_{t=1}^T:=\argmin_{\{\z_t\}_{t=1}^T \in \Lcal_{M}^T} \sum\limits_{i=1}^n\sum\limits_{t=1}^T \EE_{\xi_{i,t} \sim \Dcal_{i,t}} f_{i,t}(\z_t; \xi_{i,t}).
+\end{align*}
+\end{Definition} 
+Here, $\x_{i,t}$ is the model played by an online algorithm $A$ at the $t$-th iteration. $\xi_{i,t}$ represents the stochastic factor in the local model, which is drawn from the distribution $D_{i,t}$ for the $i$-th node at the time $t$.  It is the major difference between our new regret and the previous regret. When we do not exploit the relation among local models, e.g. $\x_{i,t}$, our new dynamic regret \eqref{equa_definition_our_regret} de-generates to the classic definition \eqref{equa_definition_previous_regret}. Specifically, for any a decentralized online algorithm $A \in \Acal$, the previous dynamic regret  $\widetilde{\Rcal}_T^{A}$ is usually defined by
 \begin{align}
 \label{equa_definition_previous_regret}
-\widetilde{\Rcal}_T^{A} = &  \sum_{i=1}^n\sum_{t=1}^T \lrincir{ f_{i,t}(\x_{i,t}) - f_{i,t}(\x_t^\ast) },
-\end{align} subject to $\sum_{t=1}^{T-1} \lrnorm{\x_{t+1}^\ast - \x_t^\ast} \le M$.  In \eqref{equa_definition_previous_regret}, the classic online learning in a decentralized network treats all the data as the adversary data. It ignores the potential relation of data among different nodes. Comparing with it, our definition of the dynamic regret, i.e., \eqref{equa_definition_our_regret}, views the adversary part of data and the stochastic part of data, distinctively.  Since every node shares its private model to neighbours, the regret due to stochastic part of data would be decreased effectively, which is varified by the theoretical results in Section \ref{subsection_theoretical_analysis}.
+\widetilde{\Rcal}_T^{A} := &  \sum_{i=1}^n\sum_{t=1}^T \lrincir{ f_{i,t}(\x_{i,t}) - f_{i,t}(\x_t^\ast) },
+\end{align} subject to $\sum_{t=1}^{T-1} \lrnorm{\x_{t+1}^\ast - \x_t^\ast} \le M$.  In \eqref{equa_definition_previous_regret}, the classic online learning in a decentralized network treats all the data as the adversary data in default, which ignores the potentional relation among local models $\{\x_{i,t}\}_{i=1}^n$ at time $t$. But, those local models are not independent in many practical scenarios. For example, users' perference to music may be impacted by a popular trend in the Internet at the same time. In the decentralized online learning, every node shares its private model to neighbours, and the regret caused by the stochastic part of data would be decreased effectively. Exploiting the potential relation among local models is helpful to reduce the regret, and learn a better model, which is varified by the theoretical results in Section \ref{subsection_theoretical_analysis}.
+
+
 
 
 
@@ -283,7 +288,7 @@ For any a decentralized online algorithm $A \in \Acal$, the previous dynamic reg
 
 
 
-\section{Decentralized online gradient method}
+\section{Decentralized online gradient method} \label{sec:algorithm}
 In the section, we first present the decentralized online gradient method, and then prove that it leads to $\Ocal{n\sqrt{TM} + \sqrt{nTM}\sigma}$ dynamic regret. 
 \subsection{Algorithm}
 
@@ -306,7 +311,7 @@ In the section, we first present the decentralized online gradient method, and t
 
 
 The Decentralized Online Gradient method, namely \textsc{DOG}, is presented in Algorithm \ref{algo_DOG}. This algorithm works iteration by iteration.
-At each iteration, every node needs to collect local models, e.g., $\x_{i,t}$, from its neighbours, and compute a weighted sum as $ \sum_{j=1}^n \W_{i,j}\x_{j,t}$. Then, the weighte sum is updated by an online gradient descent step. In addition, we denote $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$ to facilitate the theoretical analysis. We can verify that $\bar{\x}_{t+1} =  \bar{\x}_t -  \frac{\eta}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})$ (see Lemma \ref{lemma_average_update_rule}). 
+At each iteration, every node needs to collect local models, e.g., $\x_{i,t}$, from its neighbours, and compute a weighted sum as $ \sum_{j=1}^n \W_{i,j}\x_{j,t}$. Then, the weighte sum is updated by an online gradient descent step. In addition, we denote $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$ to facilitate the theoretical analysis. We can verify that $\bar{\x}_{t+1} =  \bar{\x}_t -  \frac{\eta}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})$ (see Lemma \ref{Lemma_average_update_rule}). 
 
 
 
@@ -332,7 +337,7 @@ We make following assumptions to analyze the dynamic regret theoretically.
 \EE_{ \xi_{i,t} \sim D_{i,t} } \lrnorm{\nabla f_{i,t}(\x; \xi_{i,t}) - \nabla F_{i,t}(\x)}^2 \le \sigma^2.
 \end{align}
 \item For given vectors $\x$ and $\y$, we assume $\lrnorm{\x-\y}^2 \le R$.
-\item  For any $i\in[n]$ and $t\in[T]$, we assume the function $f_{i,t}$ is convex, and has $L$-Lipschitz gradient. It implies that both $f_{i,t}$ and $h_t$ are still convex, and has $L$-Lipschitz gradient.
+\item  For any $i\in[n]$ and $t\in[T]$, we assume the function $f_{i,t}$ is convex, and has $L$-Lipschitz gradient. 
 \item Given a symmetric doublely stochastic matrix $\W$, and a constant $\rho$ with $\rho := \max\{ |\lambda_2(\W)|, |\lambda_n(\W)| \}$, we assume $\rho <1$.
 \end{itemize}
 \end{Assumption}
@@ -358,7 +363,7 @@ C_0 := & \frac{L + 2\eta L^2  + 4L^2 \eta}{(1-\rho)^2} +2L.
 
 By choosing an approximate learning rate $\eta$, we obtain sublinear regret as follows.
 \begin{Corollary}
-\label{corollary_regret_upper_bound}
+\label{Corollary_regret_upper_bound}
 Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing 
 \begin{align}
 \nonumber
@@ -368,41 +373,40 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing
 \nonumber
 & \Rcal_T^{\textsc{DOG}} \\ \nonumber
 \lesssim & n \sqrt{T\lrincir{M+\sqrt{R}}G}  + \sqrt{n T\lrincir{M+\sqrt{R}}\sigma^2} \\ \nonumber
-& + \frac{n\lrincir{M+\sqrt{R}}}{1-\rho} + \sqrt{\frac{TM\lrincir{n^2G + n \sigma^2}}{1-\rho}} \\ \label{equa_result_corollary}
+& + \frac{n\lrincir{M+\sqrt{R}}}{1-\rho} + \sqrt{\frac{TM\lrincir{n^2G + n \sigma^2}}{1-\rho}} \\ \label{equa_result_Corollary}
 & + \sqrt{\frac{T\lrincir{n^2G + n \sigma^2}}{1-\rho}}.
 \end{align}
 
 \end{Corollary}
 
 
-First, corollary \ref{corollary_regret_upper_bound} shows that the dynamic regret of DOG is sublinear. Second, we would like make some comments on the effects of different parameters on the dynamic regret. The regret becomes large with the increase of the budget of dynamics $M$. When $n=1$ and $\rho =0$, the dynamic regret is $\Ocal{\sqrt{TM}+\sqrt{T}}$, which is tight in the case of $n=1$ \citep{Zhao:2018wx}. When $ <1$, the regret $\Rcal_T^{\textsc{DOG}}$ has $\sqrt{nTM\sigma^2}$ dependence on $\sigma^2$, instead of $\sqrt{n^2TM\sigma^2}$. It benefits from the communication among nodes in the decentralized setting. Since every node shares its model with its neighbours, the variance of the average of stochastic gradients $\frac{1}{n}\sum_{i=1}^n\nabla f_{i,t}(\x_{i,t};\xi_{i,t})$ is decreased to be $\frac{\sigma^2}{n}$, thus eventually reducing the regret caused by the stochastic part of data.   Additionally, the regret is affected by the topology of the network, which is measured by $\rho$ with $0\le \rho < 1$. For a fully connected network\footnote{When a network is fully connected, a decentralized method de-generates to a centralized method.}, $\rho = 0$, then the regret is better than those for other topologies. 
+First, Corollary \ref{Corollary_regret_upper_bound} shows that the dynamic regret of DOG is sublinear. Second, we would like make some comments on the effects of different parameters on the dynamic regret. The regret becomes large with the increase of the budget of dynamics $M$. When $n=1$ and $\rho =0$, the dynamic regret is $\Ocal{\sqrt{TM}+\sqrt{T}}$, which is tight in the case of $n=1$ \citep{Zhao:2018wx}. When $ <1$, the regret $\Rcal_T^{\textsc{DOG}}$ has $\sqrt{nTM\sigma^2}$ dependence on $\sigma^2$, instead of $\sqrt{n^2TM\sigma^2}$. It benefits from the communication among nodes in the decentralized setting. Since every node shares its model with its neighbours, the variance of the average of stochastic gradients $\frac{1}{n}\sum_{i=1}^n\nabla f_{i,t}(\x_{i,t};\xi_{i,t})$ is decreased to be $\frac{\sigma^2}{n}$, thus eventually reducing the regret caused by the stochastic part of data.   Additionally, the regret is affected by the topology of the network, which is measured by $\rho$ with $0\le \rho < 1$. For a fully connected network\footnote{When a network is fully connected, a decentralized method de-generates to a centralized method.}, $\rho = 0$, then the regret is better than those for other topologies. 
 
 
 
 
 \subsection{Discussions with previous work}
 
-\textbf{Improvement of dependence on $n$.}  \citet{8015179Shahram} investigates the dynamic regret $\widetilde{\Rcal}_T^{\textsc{DOG}}$ by using DOG, and provide the following sublinear regret.
+\textbf{Dependence on $n$.}  \citet{8015179Shahram} investigates the dynamic regret $\widetilde{\Rcal}_T^{\textsc{DOG}}$ by using DOG, and provide the following sublinear regret.
 \begin{Theorem}[Implied by Theorem $3$ and Corollary $4$ in \citet{8015179Shahram}]
 \label{theorem_privious_dog_regret}
 Use Assumption \ref{assumption_bounded_gradient_domain}, and choose $\eta = \sqrt{\frac{(1-\rho) M}{T}}$ in Algorithm \ref{algo_DOG}. The dynamic regret $\widetilde{\Rcal}_T^{\textsc{DOG}}$ is bounded by $\Ocal{n^{\frac{3}{2}}\sqrt{\frac{MT}{1-\rho}} }$.
 \end{Theorem}
 
-As illustrated in theorem \ref{theorem_privious_dog_regret},   \citet{8015179Shahram} has provided a $\Ocal{n\sqrt{nTM}}$ regret for DOG by using the previous dynamic regret defined in \eqref{equa_definition_previous_regret}. Compared with the result in \citet{8015179Shahram}, our regret enjoys the state-of-the-art dependence on $T$ and $M$, and meanwhile improves the dependence on $n$. This improvement is achieved by a better bound on the difference between $\x_{i,t}$ and $\bar{\x}_t$\footnote{\citet{8015179Shahram} denotes $\lrnorm{\x_{i,t} - \bar{\x}_t}$ by ``network error".}.
+As illustrated in theorem \ref{theorem_privious_dog_regret},   \citet{8015179Shahram} has provided a $\Ocal{n\sqrt{nTM}}$ regret for DOG by using the previous dynamic regret defined in \eqref{equa_definition_previous_regret}.  Compared with the result in \citet{8015179Shahram}, our regret enjoys the state-of-the-art dependence on $T$ and $M$, and meanwhile improves the dependence on $n$. This improvement is achieved by a better bound on the difference between $\x_{i,t}$ and $\bar{\x}_t$\footnote{\citet{8015179Shahram} denotes $\lrnorm{\x_{i,t} - \bar{\x}_t}$ by ``network error".}.
 \begin{Lemma}
-\label{lemma_x_variance_norm_square}
+\label{Lemma_x_variance_norm_square}
 Using Assumption \ref{assumption_bounded_gradient_domain}, and setting $\eta>0$ in Algorithm \ref{algo_DOG}, we have 
 \begin{align}
 \nonumber
 \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{i=1}^n\sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2 \le \frac{nT\eta^2 G }{(1-\rho)^2}.
 \end{align}
 \end{Lemma}
-Actually, the previous dynamic regret \eqref{equa_definition_previous_regret} is a special case of our dynamic regret  by setting $  = 1$.
 
 
-\textbf{Improvement of dependence on $\sigma^2$.} Previous researches \citep{8015179Shahram,pmlr-v70-zhang17g,tcns-7353155} view all data as the adversary data, ignoring the potential relations among local models. They usually assume gradient of the loss function $\nabla f_{i,t}$ is bounded, e.g., $\lrnorm{\nabla f_{i,t}(\x;\zeta_{i,t},\xi_{i,t})}^2 \le G$, which implies $\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2 \le G$, and $\EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2  \le  \sigma^2 + G$ according to Lemma \ref{lemma_assumption_discussion}.  
+\textbf{Dependence on $\sigma^2$.} Previous researches \citep{8015179Shahram,pmlr-v70-zhang17g,tcns-7353155} view all data as the adversary data, ignoring the potential relations among local models. They usually assume gradient of the loss function $\nabla f_{i,t}$ is bounded, e.g., $\lrnorm{\nabla f_{i,t}(\x;\zeta_{i,t},\xi_{i,t})}^2 \le G$, which implies $\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2 \le G$, and $\EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2  \le  \sigma^2 + G$ according to Lemma \ref{Lemma_assumption_discussion}.  
 \begin{Lemma}
-\label{lemma_assumption_discussion}
+\label{Lemma_assumption_discussion}
 Assume $\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2 \le G$. It implies
 \begin{align}
 \nonumber
@@ -429,7 +433,8 @@ Assume $\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2 \le G$. It implies
 
 
 For simplicity, in the experiments we only consider online logistic regression with squared $\ell_2$ norm regularization, i.e., $f_{i,t}(\x;\xi_{i,t}) = \log\lrincir{1+\exp(-\y_{i,t}\A_{i,t}\Tr \x)} + \frac{\gamma}{2}\lrnorm{\x}^2$, where $\gamma = 10^{-3}$ is a given hyper-parameter. Under this setting, we compare the proposed Decentralized Online Gradient method (DOG) and the Centralized Online Gradient method (COG). 
-The learning rate $\eta$ is set to be $C\sqrt{\frac{M}{T}}$ with  $C\in[10^{-2}, 20]$. $M$ is fixed as 10 to determine the space of reference points, while $C$ is tuned for each data sperately. We evaluate the learning performance by measuring the average loss $\frac{1}{nT}\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t};\xi_{i,t})$, instead of the dynamic regret $\EE_{\Xi_{n,T}\sim \Dcal_{n,T}}\sum_{i=1}^n\sum_{t=1}^T \lrincir{ f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^{\ast}) }$, since the optimal reference point $\{\x_t^\ast\}^T_{t=1}$ is the same for DOG and COG .  
+
+$M$ is fixed as 10 to determine the space of reference points. The learning rate $\eta$ is tuned to be optimal for each dataset sperately. We evaluate the learning performance by measuring the average loss $\frac{1}{nT}\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t};\xi_{i,t})$, instead of the dynamic regret $\EE_{\Xi_{n,T}\sim \Dcal_{n,T}}\sum_{i=1}^n\sum_{t=1}^T \lrincir{ f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^{\ast}) }$, since the optimal reference point $\{\x_t^\ast\}^T_{t=1}$ is the same for both DOG and COG .  
 
 \subsection{Datasets}
 
@@ -438,7 +443,7 @@ The learning rate $\eta$ is set to be $C\sqrt{\frac{M}{T}}$ with  $C\in[10^{-2},
 \setlength{\belowcaptionskip}{0pt}
 \centering 
 \subfigure{\includegraphics[width=0.7\columnwidth]{figure_dynamics}\label{figure_dynamics}}
-\caption{An illustration of the dynmaics caused by the time-varying distributions of data. Data distributions $1$ and $2$ satisify $N(1+\sin(t), 1)$ and $N(-1+\sin(t), 1)$, respectively. Data distribution $3$ is the sum of them, which changes over time. }
+\caption{An illustration of the dynmaics caused by the time-varying distributions of data. Data distributions $1$ and $2$ satisify $N(1+\sin(t), 1)$ and $N(-1+\sin(t), 1)$, respectively.  Suppose we want to conduct classification between data drawn from distributions $1$ and $2$, respectively. The optimal classification model should change over time.}
 \label{figure_illus_dynamics}
 \end{figure}
 
@@ -447,11 +452,11 @@ The learning rate $\eta$ is set to be $C\sqrt{\frac{M}{T}}$ with  $C\in[10^{-2},
 \setlength{\abovecaptionskip}{0pt}
 \setlength{\belowcaptionskip}{0pt}
 \centering 
-\subfigure[\textit{synthetic data}, $100$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_iterations}\label{figure_decen_cen_ave_loss_iterations}}
-\subfigure[\textit{room-occupancy}, $5$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_iterations_occupancy}\label{figure_decen_cen_ave_loss_iterations_occupancy}}
-\subfigure[\textit{usenet2}, $5$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_iterations_usenet2}\label{figure_decen_cen_ave_loss_iterations_usenet2}}
-\subfigure[\textit{spam}, $5$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_iterations_spam}\label{figure_decen_cen_ave_loss_iterations_spam}}
-%\subfigure[\textit{usenet2}]{\includegraphics[width=0.32\columnwidth]{figure_decen_cen_ave_loss_iterations_usenet2}\label{figure_decen_cen_ave_loss_iterations_usenet2}}
+\subfigure[\textit{synthetic data}, $10000$ nodes,random topology]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_iteration_synthetic}\label{figure_ave_loss_iteration}}
+\subfigure[\textit{room-occupancy}, $5$ nodes, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_iteration_occupancy}\label{figure_ave_loss_iteration_occupancy}}
+\subfigure[\textit{usenet2}, $5$ nodes, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_iteration_usenet2}\label{figure_ave_loss_iteration_usenet2}}
+\subfigure[\textit{spam}, $5$ nodes, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_iteration_spam}\label{figure_ave_loss_iteration_spam}}
+%\subfigure[\textit{usenet2}]{\includegraphics[width=0.32\columnwidth]{figure_ave_loss_iteration_usenet2}\label{figure_ave_loss_iteration_usenet2}}
 \caption{The average loss yielded by DOG is comparable to that yielded by COG.}
 \label{figure_compare_loss}
 \end{figure*}
@@ -459,7 +464,7 @@ The learning rate $\eta$ is set to be $C\sqrt{\frac{M}{T}}$ with  $C\in[10^{-2},
 
 
 
-To test the proposed algorithm, we utilized a toy dataset and three real-world datasets, whose details are as follows.
+To test the proposed algorithm, we utilized a toy dataset and three real-world datasets, whose details are presented as follows.
 
 \textbf{Synthetic Data} 
 For the $i$-th node, a data matrix  $\A_i\in R^{10\times T}$ is generated, s.t. $\A_i=0.1\tilde{\A}_i+0.9\hat{\A}_i$, where $\tilde{\A}_i$ represents the adversary part of data, and $\hat{\A}_i$ represents the stochastic part of data. Specifically,  elements of $\tilde{\A}_i$ is uniformly sampled from the interval $[-0.5+\sin(i),0.5+\sin(i)]$. Note that $\tilde{\A}_i$ and $\tilde{\A}_j$ with $i\neq j$ are drawn from different distributions. $\hat{\A}_{i,t}$ is generated according to $\y_{i,t}\in\{1,-1\}$ which is generated uniformly. When $\y_{i,t}=1$, $\hat{\A}_{i,t}$ is generated by sampling from a time-varying distribution $N((1+0.5\sin(t))\cdot\1, \I)$. When $\y_{i,t} = -1$, $\hat{\A}_{i,t}$ is generated by sampling from another time-varying distribution $N((-1+0.5\sin(t))\cdot\1, \I)$. Due to this correlation, $y_{i,t}$ can be considered as the label of the instance $\hat{\A}_{i,t}$.
@@ -479,31 +484,45 @@ Three real public datasets are \textit{room-occupancy}\footnote{\url{https://arc
 
 \subsection{Results}
 
-First, figure~\ref{figure_compare_loss} summarizes the performance of DOG compared with COG on all the datasets. 
-For the synthetic dataset, we simulated a decentralized network consisting of $100$ nodes; 
+First, Figure~\ref{figure_compare_loss} summarizes the performance of DOG compared with COG on all the datasets. 
+For the synthetic dataset, we simulated a decentralized network consisting of $10000$ nodes, where every node is randomly connected with other $15$ nodes.
 For the three real datasets, we simulated a network consisting of $5$ nodes. 
 In these networks, the nodes are connected by a ring topology. 
 Under these settings, we can observe that both DOG and COG are effective for the online learning tasks on all the datasets, while DOG achieves slightly worse performance. 
 
 
-{\color{red}
-Second, Figure~\ref{figure_compare_network_size} summarizes the effect of the network size on the performance of DOG. We change the number of nodes from $XXX$ to $YYY$ and test on four datasets using the ring topology. Figures~\ref{figure_compare_network_size} draws the curves of average loss over time steps. We observe that the average loss curves are mostly overlapped with different nodes. It shows that DOG is robust to the network size (or number of users), which validates our theory, that is, the average regret does not increase with the number of nodes. 
-}
+
+Second, Figure~\ref{figure_compare_network_size} summarizes the effect of the network size on the performance of DOG. We change the number of nodes from $5000$ to $10000$ on the synthetic dataset, and from $5$ to $20$ on the real datasets. The synthetic dataset is tested by using the random topology, and those real datasets are tested by using the ring topology. Figure~\ref{figure_compare_network_size} draws the curves of average loss over time steps. We observe that the average loss curves are mostly overlapped with different nodes. It shows that DOG is robust to the network size (or number of users), which validates our theory, that is, the average regret does not increase with the number of nodes. Furthermore, we observe that the average loss becomes large with the increase of the variance of stochastic data, which validates our theoretical result nicely.  
+
 
 \begin{figure*}[!h]
 \setlength{\abovecaptionskip}{0pt}
 \setlength{\belowcaptionskip}{0pt}
 \centering 
-\subfigure[\textit{synthetic data}, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_nodes}\label{figure_decen_cen_ave_loss_nodes}}
-\subfigure[\textit{room-occupancy}, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_nodes_occupancy}\label{figure_decen_cen_ave_loss_nodes_occupancy}}
-\subfigure[\textit{usenet2}, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_nodes_usenet2}\label{figure_decen_cen_ave_loss_nodes_usenet2}}
-\subfigure[\textit{spam}, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_nodes_spam}\label{figure_decen_cen_ave_loss_nodes_spam}}
+\subfigure[\textit{synthetic data}, random topology]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_network_size_synthetic}\label{figure_ave_loss_network_size_synthetic}}
+\subfigure[\textit{room-occupancy}, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_network_size_occupancy}\label{figure_ave_loss_network_size_occupancy}}
+\subfigure[\textit{usenet2}, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_network_size_usenet2}\label{figure_ave_loss_network_size_usenet2}}
+\subfigure[\textit{spam}, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_network_size_spam}\label{figure_ave_loss_network_size_spam}}
 \caption{The average loss yielded by DOG is insensitive to the network size.}
 \label{figure_compare_network_size}
 \end{figure*}
 
 
-Third, figure~\ref{figure_compare_topology} shows the effect of the topology of the network on the performance of DOG, for which four different topologies are used. Besides the ring topology, the \textit{Fully connected} means all nodes are connected, where DOG de-generates to be COG. The topology  \textit{WattsStrogatz} represents a Watts-Strogatz small-world graph, for which we can use a parameter to control the number of random edges (set as $0.5$ and $1$ in this paper). The result shows \textit{Fully connected} enjoyes the best performance, because that $\rho = 0$ for it while $\rho>0$ for other topologies.  
+Third, Figure~\ref{figure_compare_topology} shows the effect of the topology of the network on the performance of DOG, where five different topologies are used. Besides the ring topology, the \textit{No connected} topology means there are no edges in the network, and every node does not share its local model to others. The \textit{Fully connected} topology means all nodes are connected, where DOG de-generates to be COG. The topology  \textit{WattsStrogatz} represents a Watts-Strogatz small-world graph, for which we can use a parameter to control the number of random edges (set as $0.5$ and $1$ in this paper). The result shows \textit{Fully connected} enjoys the best performance, because that $\rho = 0$ for it while $\rho>0$ for other topologies. Specifically, $\rho$ in those topologies is presented in Table \ref{table_rho}. A small $\rho$ leads to a good performance of DOG, which validates our theoretical result nicely. 
+
+
+\begin{table}[!]
+\begin{tabular}{c|c|c|c|c|c}
+\hline
+$\rho$    & NC & FC & Ring & WS($1$) &  Ws($0.5$) \\ \hline  \hline
+synthetic data & 1            & 0               &   0.99   &       0.37            &  0.58 \\ \hline
+real data     & 1            & 0               &    0.96   &          0.83         &  0.76 \\ \hline
+\end{tabular}
+\caption{$\rho$ in different topologies used in our experiment. ``NC" represents the \textit{No connected} topology, ``FC" represents the \textit{Fully connected} topology, and ``WS" represents the \textit{WattsStrogatz} topology.}
+\label{table_rho}
+\end{table}
+
+ 
 
 
 
@@ -511,10 +530,10 @@ Third, figure~\ref{figure_compare_topology} shows the effect of the topology of 
 \setlength{\abovecaptionskip}{0pt}
 \setlength{\belowcaptionskip}{0pt}
 \centering 
-\subfigure[\textit{synthetic data}, $100$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_iterations_net_types}\label{figure_decen_cen_ave_loss_iterations_net_types}}
-\subfigure[\textit{room-occupancy}, $20$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_iterations_net_types_occupancy}\label{figure_decen_cen_ave_loss_iterations_net_types_occupancy}}
-\subfigure[\textit{usenet2}, $20$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_iterations_net_types_usenet2}\label{figure_decen_cen_ave_loss_iterations_net_types_occupancy}}
-\subfigure[\textit{spam}, $20$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_iterations_net_types_spam}\label{figure_decen_cen_ave_loss_iterations_net_types_spam}}
+\subfigure[\textit{synthetic data}, $10000$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_topology_synthetic}\label{figure_ave_loss_topology_synthetic}}
+\subfigure[\textit{room-occupancy}, $20$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_topology_occupancy}\label{figure_ave_loss_topology_occupancy}}
+\subfigure[\textit{usenet2}, $20$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_topology_usenet2}\label{figure_ave_loss_topology_occupancy}}
+\subfigure[\textit{spam}, $20$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_topology_spam}\label{figure_ave_loss_topology_spam}}
 \caption{The average loss yielded by DOG is insensitive to the topology of the network.}
 \label{figure_compare_topology}
 \end{figure*}
@@ -609,7 +628,7 @@ Now, we begin to bound $I_2(t)$. Recall that the update rule is
 \begin{align}
 \nonumber
 \x_{i,t+1} = \sum_{j=1}^n \W_{ij}\x_{j,t} - \eta \nabla f_{i,t}(\x_{i,t};\xi_{i,t}).
-\end{align}  According to Lemma \ref{lemma_average_update_rule}, we have 
+\end{align}  According to Lemma \ref{Lemma_average_update_rule}, we have 
 \begin{align}
 \label{equa_thoerem_update_rule_equivalent}
 \bar{\x}_{t+1} = \bar{\x}_t - \eta \lrincir{\frac{1}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}.
@@ -677,12 +696,12 @@ Combining those bounds of $I_1(t)$, and $I_2(t)$ together, we finally obtain
 & + 4n \lrincir{ 4T  \eta G + \frac{TGL\eta^2}{2} }  + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  } \\ \nonumber
 \refabovecir{\le}{\textcircled{3}} & \eta T \sigma^2 + 4n  T\eta G  + \lrincir{ L + 2\eta L^2  + 4L^2 \eta}  \frac{nT\eta^2 G }{(1-\rho)^2}  + 4n\lrincir{ 4T  \eta G + \frac{TGL\eta^2}{2} }  + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  }.
 \end{align}  
-$\textcircled{1}$ holds due to Lemma \ref{lemma_gradient_norm_bound}. That is, we have
+$\textcircled{1}$ holds due to Lemma \ref{Lemma_gradient_norm_bound}. That is, we have
 \begin{align}
 \nonumber
 & \frac{\eta}{2} \EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} }\sum_{t=1}^T \lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2 \\ \nonumber
 \le & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T  \lrincir{F_{i,t}(\bar{\x}_t) - F_{i,t}(\bar{\x}_{t+1})} + 4T  \eta G + \frac{ L^2 \eta}{n}\EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} }\sum_{t=1}^T\sum_{i=1}^n \lrnorm{ \bar{\x}_t - \x_{i,t} }^2 + \frac{TGL\eta^2}{2}.
-\end{align} $\textcircled{2}$ holds due to Lemma \ref{lemma_x_variance_norm_square}
+\end{align} $\textcircled{2}$ holds due to Lemma \ref{Lemma_x_variance_norm_square}
 \begin{align}
 \nonumber
 \EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} } \sum_{i=1}^n\sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2 \le \frac{nT\eta^2 G }{(1-\rho)^2}.
@@ -714,7 +733,7 @@ It completes the proof.
 
 
 \begin{Lemma}
-\label{lemma_gradient_norm_bound}
+\label{Lemma_gradient_norm_bound}
 Using Assumption \ref{assumption_bounded_gradient_domain}, and setting $\eta>0$ in Algorithm \ref{algo_DOG}, we have 
 \begin{align}
 & \frac{\eta}{2} \EE_{ \Xi_{n,T-1} \sim \Dcal_{n,T-1} }\sum_{t=1}^T \lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2 \\ \nonumber
@@ -728,7 +747,7 @@ We have
 \nonumber
 & \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } F_{i,t}(\bar{\x}_{t+1}) \\ \nonumber
 \le & \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} } F_{i,t}(\bar{\x}_t) + \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrangle{\nabla F_{i,t}(\bar{\x}_t), \bar{\x}_{t+1} - \bar{\x}_t} + \frac{L}{2}\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{\bar{\x}_{t+1} - \bar{\x}_t}^2 \\ \nonumber
-= & \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} } F_{i,t}(\bar{\x}_t) + \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrangle{\nabla F_{i,t}(\bar{\x}_t), -\frac{\eta}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})} + \frac{L}{2} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{\frac{\eta}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 \\ \label{equa_lemma_gradient_norm_temp0}
+= & \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} } F_{i,t}(\bar{\x}_t) + \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrangle{\nabla F_{i,t}(\bar{\x}_t), -\frac{\eta}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})} + \frac{L}{2} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{\frac{\eta}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 \\ \label{equa_Lemma_gradient_norm_temp0}
 = & \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} } F_{i,t}(\bar{\x}_t) + \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\lrangle{\nabla F_{i,t}(\bar{\x}_t), -\frac{\eta}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})} + \frac{L}{2} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{\frac{\eta}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2.
 \end{align}
 
@@ -744,7 +763,7 @@ Besides, we have
 \le & \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} } \frac{\eta}{2}\lrincir{ 2 \lrnorm{\nabla F_{i,t}(\bar{\x}_t) -\frac{1}{n}\sum_{i=1}^n \nabla  f_{i,t}(\x_{i,t};\xi_{i,t})}^2 + \frac{2}{n}\sum_{i=1}^n \lrnorm{ \nabla F_{i,t}(\bar{\x}_t) - \nabla F_{i,t}(\x_{i,t}) }^2 } \\ \nonumber 
 & - \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} } \frac{\eta}{2} \lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2  \\ \nonumber
 \le & \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} } \frac{\eta}{2}\lrincir{ 2 \lrnorm{\nabla F_{i,t}(\bar{\x}_t) -\frac{1}{n}\sum_{i=1}^n \nabla  f_{i,t}(\x_{i,t};\xi_{i,t})}^2 + \frac{2L^2}{n}\sum_{i=1}^n \lrnorm{ \bar{\x}_t - \x_{i,t} }^2 }  - \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} } \frac{\eta}{2} \lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2  \\ \nonumber
-\le & \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} } \frac{\eta}{2}\lrincir{ 4 \lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2  + 4 \lrnorm{\frac{1}{n}\sum_{i=1}^n \nabla  f_{i,t}(\x_{i,t};\xi_{i,t})}^2 + \frac{2L^2}{n}\sum_{i=1}^n \lrnorm{ \bar{\x}_t - \x_{i,t} }^2 }  - \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} } \frac{\eta}{2} \lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2 \\ \label{equa_lemma_gradient_norm_temp1}
+\le & \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} } \frac{\eta}{2}\lrincir{ 4 \lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2  + 4 \lrnorm{\frac{1}{n}\sum_{i=1}^n \nabla  f_{i,t}(\x_{i,t};\xi_{i,t})}^2 + \frac{2L^2}{n}\sum_{i=1}^n \lrnorm{ \bar{\x}_t - \x_{i,t} }^2 }  - \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} } \frac{\eta}{2} \lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2 \\ \label{equa_Lemma_gradient_norm_temp1}
 \refabovecir{\le}{\textcircled{1}} & \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} } \frac{\eta}{2}\lrincir{ 8 G + \frac{2L^2}{n}\sum_{i=1}^n \lrnorm{ \bar{\x}_t - \x_{i,t} }^2 }  - \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \frac{\eta}{2} \lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2.
 \end{align} $\textcircled{1}$ holds due to  
 \begin{align}
@@ -757,11 +776,11 @@ Besides, we have
 
 Recall that
 \begin{align}
-\label{equa_lemma_gradient_norm_temp2}
+\label{equa_Lemma_gradient_norm_temp2}
 \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 \le G.
 \end{align}
 
-Substituting \eqref{equa_lemma_gradient_norm_temp1} and \eqref{equa_lemma_gradient_norm_temp2} into \eqref{equa_lemma_gradient_norm_temp0}, and telescoping $t\in[T]$, we obtain
+Substituting \eqref{equa_Lemma_gradient_norm_temp1} and \eqref{equa_Lemma_gradient_norm_temp2} into \eqref{equa_Lemma_gradient_norm_temp0}, and telescoping $t\in[T]$, we obtain
 \begin{align}
 \nonumber
 & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T F_{i,t}(\bar{\x}_{t+1}) \\ \nonumber
@@ -783,7 +802,7 @@ It completes the proof.
 
 
 \begin{Lemma}
-\label{lemma_average_update_rule}
+\label{Lemma_average_update_rule}
 Denote $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$. We have
 \begin{align}
 \nonumber
@@ -822,7 +841,7 @@ Recall that
 \end{proof}
 
 \begin{Lemma}[Lemma $5$ in \citep{Tang:2018un}]
-\label{lemma_hanlin_1}
+\label{Lemma_hanlin_1}
 For any matrix $\X_t\in\RR^{d\times n}$, decompose the confusion matrix $\W$ as $\W = \sum_{i=1}^n \lambda_i \v_i \v_i\Tr = \P \bLambda \P\Tr$, where $\P = [\v_1, \v_2, ..., \v_n]\in\RR^{n\times n}$, $\v_i$ is the normalized eigenvector of $\lambda_i$. $\bLambda$ is a diagonal matrix, and $\lambda_i$ be its $i$-th element. We have
 \begin{align}
 \nonumber
@@ -833,7 +852,7 @@ For any matrix $\X_t\in\RR^{d\times n}$, decompose the confusion matrix $\W$ as 
 
 
 \begin{Lemma}[Lemma $6$ in \citep{Tang:2018un}]
-\label{lemma_hanlin_2}
+\label{Lemma_hanlin_2}
 Given two non-negative sequences $\{a_t\}_{t=1}^{\infty}$ and $\{b_t\}_{t=1}^{\infty}$ that satisfying
 \begin{align}
 \nonumber
@@ -849,9 +868,9 @@ a_t = \sum_{s=1}^t \rho^{t-s} b_s,
 
 
 
-\textbf{ Proof to Lemma \ref{lemma_x_variance_norm_square}:}
+\textbf{ Proof to Lemma \ref{Lemma_x_variance_norm_square}:}
 %\begin{Lemma}
-%\label{lemma_x_variance_norm_square}
+%\label{Lemma_x_variance_norm_square}
 %Using Assumption \ref{assumption_bounded_gradient_domain}, and setting $\eta>0$ in Algorithm \ref{algo_DOG}, we have 
 %\begin{align}
 %\nonumber
@@ -866,7 +885,7 @@ Recall that
 \begin{align}
 \nonumber
 \x_{i,t+1} = \sum_{j=1}^n \W_{ij}\x_{j,t} - \eta \nabla f_{i,t}(\x_{i,t};\xi_{i,t}), 
-\end{align} and according to Lemma \ref{lemma_average_update_rule}, we have 
+\end{align} and according to Lemma \ref{Lemma_average_update_rule}, we have 
 \begin{align}
 \nonumber
 \bar{\x}_{t+1} = \bar{\x}_t - \eta \lrincir{\frac{1}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}.
@@ -892,7 +911,7 @@ Therefore, we obtain
 \refabovecir{=}{\textcircled{2}} & \lrnorm{ \sum_{s=1}^{t-1} \eta \G_s\v_1 \v_1\Tr - \eta \G_s \W^{t-s-1} }^2_F   \\ \nonumber
 \refabovecir{\le}{\textcircled{3}} & \lrincir{ \eta \rho^{t-s-1} \lrnorm{\sum_{s=1}^{t-1}\G_s}_F}^2 \\ \nonumber
 \le & \lrincir{ \sum_{s=1}^{t-1} \eta \rho^{t-s-1} \lrnorm{\G_s}_F}^2.
-\end{align} $\textcircled{1}$ holds due to $\e_i$ is a unit basis vector, whose $i$-th element is $1$ and other elements are $0$s. $\textcircled{2}$ holds due to $\v_1 = \frac{\1_n}{\sqrt{n}}$. $\textcircled{3}$ holds due to Lemma \ref{lemma_hanlin_1}. 
+\end{align} $\textcircled{1}$ holds due to $\e_i$ is a unit basis vector, whose $i$-th element is $1$ and other elements are $0$s. $\textcircled{2}$ holds due to $\v_1 = \frac{\1_n}{\sqrt{n}}$. $\textcircled{3}$ holds due to Lemma \ref{Lemma_hanlin_1}. 
 
 
 Thus, we  have
@@ -903,12 +922,12 @@ Thus, we  have
 \refabovecir{\le}{\textcircled{1}} & \frac{\eta^2}{(1-\rho)^2} \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \lrincir{  \sum_{t=1}^T \lrnorm{\G_t}_F^2 } \\ \nonumber
 = & \frac{\eta^2}{(1-\rho)^2} \lrincir{ \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T \sum_{i=1}^n  \lrnorm{\nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 } \\ \nonumber
 \refabovecir{=}{\textcircled{2}} & \frac{nT\eta^2 G }{(1-\rho)^2}.
-\end{align} $\textcircled{1}$ holds due to Lemma \ref{lemma_hanlin_2}. 
+\end{align} $\textcircled{1}$ holds due to Lemma \ref{Lemma_hanlin_2}. 
 \end{proof}
 
 
 
-\textbf{ Proof to Lemma \ref{lemma_assumption_discussion}:}
+\textbf{ Proof to Lemma \ref{Lemma_assumption_discussion}:}
 \begin{proof}
 We have
 \begin{align}
