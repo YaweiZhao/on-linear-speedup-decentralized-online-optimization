@@ -72,7 +72,7 @@
 
 
 
-\hypersetup{draft}% need to be commit before submitting paper
+%\hypersetup{draft}% need to be commit before submitting paper
 \begin{document}
 
 \twocolumn[
@@ -142,11 +142,11 @@ In this paper, we consider online learning in the decentralized setting, which i
 
 \section{Introduction}
 \label{sect_introduction}
-Online learning has been studied for decades of years in machine learning literatures~\citep{xxx}. The goal of online learning generally is to incrementally learn predictions models to minimize the sum of all the online loss functions (cumulative loss), which is usually determined by a squence of examples that arrives sequentially. To quantify the efficacy of an online learning algorithm, the community introduced a performance measure called static regret, which is the difference between the cumulative losses suffered by the online algorithm and that suffered by the best model which can observe all the loss functions. The best static regret of a sequential online convex optimization method is  $\Ocal{\sqrt{T}}$ and $\Ocal{\log T}$  for convex and strongly convex loss functions, respectively \citep{Hazan2016Introduction,ShalevShwartz:2012dz}.
+Online learning has been studied for decades of years in machine learning literatures~\citep{Hazan2016Introduction,ShalevShwartz:2012dz,introduction-online-optimization,Paternain:2016tl,Bach:2016wt,HoNguyen:2017ki,Neely:2017ul,Chen:2018vl,Orabona:2012vr}. The goal of online learning generally is to incrementally learn predictions models to minimize the sum of all the online loss functions (cumulative loss), which is usually determined by a squence of examples that arrives sequentially. To quantify the efficacy of an online learning algorithm, the community introduced a performance measure called static regret, which is the difference between the cumulative losses suffered by the online algorithm and that suffered by the best model which can observe all the loss functions. The best static regret of a sequential online convex optimization method is  $\Ocal{\sqrt{T}}$ and $\Ocal{\log T}$  for convex and strongly convex loss functions, respectively \citep{Hazan2016Introduction,ShalevShwartz:2012dz,introduction-online-optimization}.
 
-Different with traditional online learning, online learning in decentralized networks (or Decentralized Online Learning) assumes that a network of computational nodes can communicate between neighors to solve an online learning problem, in which each computational node will receive a stream of online losses. Suppose we have $n$ workers, among which the $i$-th one will receive the $t$-th loss $f_{i,t}$ at the $t-$th iteration. Then, the goal of Decentralized Online Learning usually is to minimize its static regret, which is defined as the difference between the cumulative loss over all the nodes and steps and that of the best model which knows all the loss function beforehand; Decentralized Online Learning enjoys many advantages for real-world large-scale applications. Firstly, it avoid collecting all the loss functions to one node, which will result in heavy communication cost for the network and extremely high computational cost for one node. Secondly, it can help many data providers collaborate to better minimize their cumulative loss, while at the same time protect the data privacy as much as possible. 
+Different from traditional online learning, online learning in decentralized networks (or Decentralized Online Learning) assumes that a network of computational nodes can communicate between neighors to solve an online learning problem, in which each computational node will receive a stream of online losses. Suppose we have $n$ workers, among which the $i$-th one will receive the $t$-th loss $f_{i,t}$ at the $t-$th iteration. Then, the goal of Decentralized Online Learning usually is to minimize its static regret, which is defined as the difference between the cumulative loss over all the nodes and steps and that of the best model which knows all the loss function beforehand; Decentralized Online Learning enjoys many advantages for real-world large-scale applications. Firstly, it avoid collecting all the loss functions to one node, which will result in heavy communication cost for the network and extremely high computational cost for one node. Secondly, it can help many data providers collaborate to better minimize their cumulative loss, while at the same time protect the data privacy as much as possible. 
 
-The static regret assumes that the best model keeps unchaged during the entire learning process, however this does not hold in some real applications. For example, one's favorite style of musics may changes over time as his/her situation. To solve this issue, the dynamic regret is introduced, which generally measure the different between the cumulative loss suffered by the decentralized online learning algorithm and that suffered by a dynamic sequence of models. This dynamic sequence of models can not only observe all the loss functions beforehand, but also changes over time with the amount of changes less than a budget. In this paper, we mainly prove that decentralized online gradient can achieve a dynamic regret  of $\Ocal{n\sqrt{TM} + \sqrt{nTM}\sigma}$ where $n$ is the number of users, $T$ is the number of time steps, $M$ measures the dynamics budget, and $\sigma$ measures the randomness of the private data. 
+The static regret assumes that the best model keeps unchaged during the entire learning process, however this does not hold in some real applications. For example, one's favorite style of musics may change over time as his/her situation. To solve this issue, the dynamic regret is introduced, which generally measure the different between the cumulative loss suffered by the decentralized online learning algorithm and that suffered by a dynamic sequence of models. This dynamic sequence of models can not only observe all the loss functions beforehand, but also changes over time with the amount of changes less than a budget. In this paper, we mainly prove that decentralized online gradient can achieve a dynamic regret  of $\Ocal{n\sqrt{TM} + \sqrt{nTM}\sigma}$ where $n$ is the number of users, $T$ is the number of time steps, $M$ measures the dynamics budget, and $\sigma$ measures the randomness of the private data. 
 
 
 \paragraph{Notations and definitions}
@@ -175,10 +175,10 @@ In the paper, we make the following notations.
 
 \section{Related work}
 \label{sect_related_work}
-Online learning has been studied for decades of years. The static regret of a sequential online convex optimization method can achieve $\Ocal{\sqrt{T}}$ and $\Ocal{\log T}$ bounds for convex and strongly convex loss functions, respectively \citep{Hazan2016Introduction,ShalevShwartz:2012dz}. Recently, both the decentralized online learing and the dynamic regret have drawn much attention due to their wide existence in the practical big data scenarios.
+Online learning has been studied for decades of years. The static regret of a sequential online convex optimization method can achieve $\Ocal{\sqrt{T}}$ and $\Ocal{\log T}$ bounds for convex and strongly convex loss functions, respectively \citep{Hazan2016Introduction,ShalevShwartz:2012dz,introduction-online-optimization}. Recently, both the decentralized online learing and the dynamic regret have drawn much attention due to their wide existence in the practical big data scenarios.
 \subsection{Decentralized online learning}
 Online learning in a decentralized network has been studied in \citep{8015179Shahram,Kamp:2014:CDO,Koppel-8352032,Zhang2018,pmlr-v70-zhang17g,Xu2015,tcns-7353155,cdc-7798923,acc-7172037,tcns-7479495,Benczur:2018ww,tkde-6311406}.  \citet{8015179Shahram} studies decentralized online mirror descent, and provides $\Ocal{n\sqrt{nTM}}$ dynamic regret. Here, $n$, $T$, and $M$ represent the number of nodes in the newtork, the number of iterations, and the budget of dynamics (defined in \eqref{equa_define_M}), respectively.  When the Bregman divergence in the decentralized online mirror descent is chosen appropriately, the decentralized online mirror descent becomes identical to the decentralized online gradient descent. Using the same definition of dynamic regret (defined in \eqref{equa_definition_previous_regret}), our method obtains $\Ocal{n\sqrt{TM}}$ dynamic regret for a decentralized online gradient descent, which is better than $\Ocal{n\sqrt{nTM}}$ in \citet{8015179Shahram}. The improvement of our bound benefits from a better bound of network error (see Lemma \ref{lemma_x_variance_norm_square}). \citet{Kamp:2014:CDO} studies decentralized online prediction, and presents $\Ocal{\sqrt{nT}}$ static regret.  It assumes that all data, used to yielded the loss, is generated from an unknown distribution. The strong assumption is not practical in the dynamic environment, and thus limits its novelity for a general online learning task. 
-Additionally, many decentralized online optimization methods are proposed, for example, decentralized online multi-task learning \citep{Zhang2018}, decentralized online ADMM \citep{Xu2015}, decentralized online gradient descent \citep{tcns-7353155}, decentralized continuous-time online saddle-point method \citep{cdc-7798923}, decentralized online  Nesterov's primal-dual method \citep{acc-7172037,tcns-7479495}. Those previous methods are proved to yield $\Ocal{\sqrt{T}}$ static regret, which do not have theoretical guarantee of regret in the dynamic environment.   Besides,  \citet{tkde-6311406} provides necessary and sufficient conditions to preserve privacy for decentralized online learning methods, which  is interesting to extend our method to be privacy-preserving in the future work.
+Additionally, many decentralized online optimization methods are proposed, for example, decentralized online multi-task learning \citep{Zhang2018}, decentralized online ADMM \citep{Xu2015}, decentralized online gradient descent \citep{tcns-7353155}, decentralized continuous-time online saddle-point method \citep{cdc-7798923}, decentralized online  Nesterov's primal-dual method \citep{acc-7172037,tcns-7479495}, and online distributed dual averaging\citep{6760092}. Those previous methods are proved to yield $\Ocal{\sqrt{T}}$ static regret, which do not have theoretical guarantee of regret in the dynamic environment.   Besides,  \citet{tkde-6311406} provides necessary and sufficient conditions to preserve privacy for decentralized online learning methods, which  is interesting to extend our method to be privacy-preserving in the future work.
 
 
 \subsection{Dynamic regret}
@@ -193,19 +193,20 @@ In some literatures, the regret in a dynamic environment is measured by the numb
 
 \section{Problem formulation}
 {\rc
-Suppose we have $n$ workers, among which the $i$-th one will receive the $t$-th loss $f_{i,t}(x_{i,t},\xi_{i,t})$ at the $t-$th iteration, where $x_{i,t}$ is the model on the node $i$ at the $t$-th iteration, and $\xi_{i,t}$ represents some random factors, such as the randomness of the private data to protect the user's privacy, which is drawn from some distribution $D_{i,t}$.
+Suppose we have $n$ workers, among which the $i$-th one will receive the $t$-th loss $f_{i,t}(\x_{i,t},\xi_{i,t})$ at the $t-$th iteration, where $\x_{i,t}$ is the model on the node $i$ at the $t$-th iteration, and $\xi_{i,t}$ represents some random factors, such as the randomness of the private data to protect the user's privacy, which is drawn from some distribution $D_{i,t}$.
 
-Different node can communicate with other nodes. They exchange information to update to their optimal model. If we do not consider the dynamic setup, then this is the standard distributed online leaning, that all nodes want to make their models converge to the best model $x^*$, which is defined as:
-\begin{align*}
-	x^*:= \argmin_x \sum\limits_{i=1}^n\sum\limits_{t=1}^T \EE_{\xi_{i,t} \sim \Dcal_{i,t}} f_{i,t}(x, \xi_{i,t}).
-\end{align*}
+In classic decentralized online learning, nodes exchange their local model to update to their optimal model. If we do not consider the dynamic setup, then this is the standard distributed online leaning, that all nodes want to make their models converge to the best model $x^*$, which is defined as:
+\begin{align}
+\nonumber
+\x^\ast := \argmin_x \sum\limits_{i=1}^n\sum\limits_{t=1}^T \EE_{\xi_{i,t} \sim \Dcal_{i,t}} f_{i,t}(\x, \xi_{i,t}).
+\end{align}
 However, this does not hold in some real applications. For example, one's favorite style of musics may changes over time as his/her situation. Therefore, we allow the optimal model can change as the times goes. We call these optimal models (changed by time) by \textit{reference points}, and denote them by $\{x_t^*\}_{t=1}^T$. We assume that optimal model can not change too quickly, so we assume that 
 \begin{align*}
 	\sum\limits_{t=1}^{T-1}\|x_{t+1}^*-x_t^*\|\le M,
 \end{align*}
 where $M$ is called the budget of the dynamics, which controls how quickly the optimal model can change. As a result, the dynamic optimal model can be defined as follow:
 \begin{align*}
-	\{x_t^*\}_{t=1}^T:=\argmin_{\sum\limits_{t=1}^{T-1}\|x_{t+1}^*-x_t^*\|\le M} \sum\limits_{i=1}^n\sum\limits_{t=1}^T \EE_{\xi_{i,t} \sim \Dcal_{i,t}} f_{i,t}(x_t, \xi_{i,t}).
+	\{x_t^*\}_{t=1}^T:=\argmin_{\sum\limits_{t=1}^{T-1}\|x_{t+1}^*-x_t^*\|\le M} \sum\limits_{i=1}^n\sum\limits_{t=1}^T \EE_{\xi_{i,t} \sim \Dcal_{i,t}} f_{i,t}(\x_t, \xi_{i,t}).
 \end{align*}
 Correspondingly, the cumulative regret $R_t$ are defined as:
 \begin{align*}
@@ -452,7 +453,8 @@ Assume $\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2 \le G$. It implies
 
 
 For simplicity, in the experiments we only consider online logistic regression with squared $\ell_2$ norm regularization, i.e., $f_{i,t}(\x;\xi_{i,t}) = \log\lrincir{1+\exp(-\y_{i,t}\A_{i,t}\Tr \x)} + \frac{\gamma}{2}\lrnorm{\x}^2$, where $\gamma = 10^{-3}$ is a given hyper-parameter. Under this setting, we compare the proposed Decentralized Online Gradient method (DOG) and the Centralized Online Gradient method (COG). 
-The learning rate $\eta$ is set to be $C\sqrt{\frac{M}{T}}$ with  $C\in[10^{-2}, 20]$. $M$ is fixed as 10 to determine the space of reference points, while $C$ is tuned for each data sperately. We evaluate the learning performance by measuring the average loss $\frac{1}{nT}\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t};\xi_{i,t})$, instead of the dynamic regret $\EE_{\Xi_{n,T}\sim \Dcal_{n,T}}\sum_{i=1}^n\sum_{t=1}^T \lrincir{ f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^{\ast}) }$, since the optimal reference point $\{\x_t^\ast\}^T_{t=1}$ is the same for DOG and COG .  
+
+$M$ is fixed as 10 to determine the space of reference points. The learning rate $\eta$ is tuned to be optimal for each dataset sperately. We evaluate the learning performance by measuring the average loss $\frac{1}{nT}\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t};\xi_{i,t})$, instead of the dynamic regret $\EE_{\Xi_{n,T}\sim \Dcal_{n,T}}\sum_{i=1}^n\sum_{t=1}^T \lrincir{ f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^{\ast}) }$, since the optimal reference point $\{\x_t^\ast\}^T_{t=1}$ is the same for both DOG and COG .  
 
 \subsection{Datasets}
 
@@ -461,7 +463,7 @@ The learning rate $\eta$ is set to be $C\sqrt{\frac{M}{T}}$ with  $C\in[10^{-2},
 \setlength{\belowcaptionskip}{0pt}
 \centering 
 \subfigure{\includegraphics[width=0.7\columnwidth]{figure_dynamics}\label{figure_dynamics}}
-\caption{An illustration of the dynmaics caused by the time-varying distributions of data. Data distributions $1$ and $2$ satisify $N(1+\sin(t), 1)$ and $N(-1+\sin(t), 1)$, respectively. Data distribution $3$ is the sum of them, which changes over time. }
+\caption{An illustration of the dynmaics caused by the time-varying distributions of data. Data distributions $1$ and $2$ satisify $N(1+\sin(t), 1)$ and $N(-1+\sin(t), 1)$, respectively.  Suppose we want to conduct classification between data drawn from distributions $1$ and $2$, respectively. The optimal classification model should change over time.}
 \label{figure_illus_dynamics}
 \end{figure}
 
@@ -470,10 +472,10 @@ The learning rate $\eta$ is set to be $C\sqrt{\frac{M}{T}}$ with  $C\in[10^{-2},
 \setlength{\abovecaptionskip}{0pt}
 \setlength{\belowcaptionskip}{0pt}
 \centering 
-\subfigure[\textit{synthetic data}, $1000$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_iteration_synthetic}\label{figure_ave_loss_iteration}}
-\subfigure[\textit{room-occupancy}, $5$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_iteration_occupancy}\label{figure_ave_loss_iteration_occupancy}}
-\subfigure[\textit{usenet2}, $5$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_iteration_usenet2}\label{figure_ave_loss_iteration_usenet2}}
-\subfigure[\textit{spam}, $5$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_iteration_spam}\label{figure_ave_loss_iteration_spam}}
+\subfigure[\textit{synthetic data}, $10000$ nodes,random topology]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_iteration_synthetic}\label{figure_ave_loss_iteration}}
+\subfigure[\textit{room-occupancy}, $5$ nodes, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_iteration_occupancy}\label{figure_ave_loss_iteration_occupancy}}
+\subfigure[\textit{usenet2}, $5$ nodes, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_iteration_usenet2}\label{figure_ave_loss_iteration_usenet2}}
+\subfigure[\textit{spam}, $5$ nodes, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_iteration_spam}\label{figure_ave_loss_iteration_spam}}
 %\subfigure[\textit{usenet2}]{\includegraphics[width=0.32\columnwidth]{figure_ave_loss_iteration_usenet2}\label{figure_ave_loss_iteration_usenet2}}
 \caption{The average loss yielded by DOG is comparable to that yielded by COG.}
 \label{figure_compare_loss}
@@ -482,7 +484,7 @@ The learning rate $\eta$ is set to be $C\sqrt{\frac{M}{T}}$ with  $C\in[10^{-2},
 
 
 
-To test the proposed algorithm, we utilized a toy dataset and three real-world datasets, whose details are as follows.
+To test the proposed algorithm, we utilized a toy dataset and three real-world datasets, whose details are presented as follows.
 
 \textbf{Synthetic Data} 
 For the $i$-th node, a data matrix  $\A_i\in R^{10\times T}$ is generated, s.t. $\A_i=0.1\tilde{\A}_i+0.9\hat{\A}_i$, where $\tilde{\A}_i$ represents the adversary part of data, and $\hat{\A}_i$ represents the stochastic part of data. Specifically,  elements of $\tilde{\A}_i$ is uniformly sampled from the interval $[-0.5+\sin(i),0.5+\sin(i)]$. Note that $\tilde{\A}_i$ and $\tilde{\A}_j$ with $i\neq j$ are drawn from different distributions. $\hat{\A}_{i,t}$ is generated according to $\y_{i,t}\in\{1,-1\}$ which is generated uniformly. When $\y_{i,t}=1$, $\hat{\A}_{i,t}$ is generated by sampling from a time-varying distribution $N((1+0.5\sin(t))\cdot\1, \I)$. When $\y_{i,t} = -1$, $\hat{\A}_{i,t}$ is generated by sampling from another time-varying distribution $N((-1+0.5\sin(t))\cdot\1, \I)$. Due to this correlation, $y_{i,t}$ can be considered as the label of the instance $\hat{\A}_{i,t}$.
@@ -502,22 +504,22 @@ Three real public datasets are \textit{room-occupancy}\footnote{\url{https://arc
 
 \subsection{Results}
 
-First, figure~\ref{figure_compare_loss} summarizes the performance of DOG compared with COG on all the datasets. 
-For the synthetic dataset, we simulated a decentralized network consisting of $100$ nodes; 
+First, Figure~\ref{figure_compare_loss} summarizes the performance of DOG compared with COG on all the datasets. 
+For the synthetic dataset, we simulated a decentralized network consisting of $10000$ nodes, where every node is randomly connected with other $15$ nodes.
 For the three real datasets, we simulated a network consisting of $5$ nodes. 
 In these networks, the nodes are connected by a ring topology. 
 Under these settings, we can observe that both DOG and COG are effective for the online learning tasks on all the datasets, while DOG achieves slightly worse performance. 
 
 
-{\color{red}
-Second, Figure~\ref{figure_compare_network_size} summarizes the effect of the network size on the performance of DOG. We change the number of nodes from $XXX$ to $YYY$ and test on four datasets using the ring topology. Figures~\ref{figure_compare_network_size} draws the curves of average loss over time steps. We observe that the average loss curves are mostly overlapped with different nodes. It shows that DOG is robust to the network size (or number of users), which validates our theory, that is, the average regret does not increase with the number of nodes. 
-}
+
+Second, Figure~\ref{figure_compare_network_size} summarizes the effect of the network size on the performance of DOG. We change the number of nodes from $5000$ to $10000$ on the synthetic dataset, and from $5$ to $20$ on the real datasets. The synthetic dataset is tested by using the random topology, and those real datasets are tested by using the ring topology. Figure~\ref{figure_compare_network_size} draws the curves of average loss over time steps. We observe that the average loss curves are mostly overlapped with different nodes. It shows that DOG is robust to the network size (or number of users), which validates our theory, that is, the average regret does not increase with the number of nodes. Furthermore, we observe that the average loss becomes large with the increase of the variance of stochastic data, which validates our theoretical result nicely.  
+
 
 \begin{figure*}[!h]
 \setlength{\abovecaptionskip}{0pt}
 \setlength{\belowcaptionskip}{0pt}
 \centering 
-\subfigure[\textit{synthetic data}, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_network_size_synthetic}\label{figure_ave_loss_network_size_synthetic}}
+\subfigure[\textit{synthetic data}, random topology]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_network_size_synthetic}\label{figure_ave_loss_network_size_synthetic}}
 \subfigure[\textit{room-occupancy}, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_network_size_occupancy}\label{figure_ave_loss_network_size_occupancy}}
 \subfigure[\textit{usenet2}, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_network_size_usenet2}\label{figure_ave_loss_network_size_usenet2}}
 \subfigure[\textit{spam}, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_network_size_spam}\label{figure_ave_loss_network_size_spam}}
@@ -526,7 +528,21 @@ Second, Figure~\ref{figure_compare_network_size} summarizes the effect of the ne
 \end{figure*}
 
 
-Third, figure~\ref{figure_compare_topology} shows the effect of the topology of the network on the performance of DOG, for which four different topologies are used. Besides the ring topology, the \textit{Fully connected} means all nodes are connected, where DOG de-generates to be COG. The topology  \textit{WattsStrogatz} represents a Watts-Strogatz small-world graph, for which we can use a parameter to control the number of random edges (set as $0.5$ and $1$ in this paper). The result shows \textit{Fully connected} enjoyes the best performance, because that $\rho = 0$ for it while $\rho>0$ for other topologies.  
+Third, Figure~\ref{figure_compare_topology} shows the effect of the topology of the network on the performance of DOG, where five different topologies are used. Besides the ring topology, the \textit{No connected} topology means there are no edges in the network, and every node does not share its local model to others. The \textit{Fully connected} topology means all nodes are connected, where DOG de-generates to be COG. The topology  \textit{WattsStrogatz} represents a Watts-Strogatz small-world graph, for which we can use a parameter to control the number of random edges (set as $0.5$ and $1$ in this paper). The result shows \textit{Fully connected} enjoys the best performance, because that $\rho = 0$ for it while $\rho>0$ for other topologies. Specifically, $\rho$ in those topologies is presented in Table \ref{table_rho}. A small $\rho$ leads to a good performance of DOG, which validates our theoretical result nicely. 
+
+
+\begin{table}[!]
+\begin{tabular}{c|c|c|c|c|c}
+\hline
+$\rho$    & NC & FC & Ring & WS($1$) &  Ws($0.5$) \\ \hline  \hline
+synthetic data & 1            & 0               &   0.99   &       0.37            &  0.58 \\ \hline
+real data     & 1            & 0               &    0.96   &          0.83         &  0.76 \\ \hline
+\end{tabular}
+\caption{$\rho$ in different topologies used in our experiment. ``NC" represents the \textit{No connected} topology, ``FC" represents the \textit{Fully connected} topology, and ``WS" represents the \textit{WattsStrogatz} topology.}
+\label{table_rho}
+\end{table}
+
+ 
 
 
 
