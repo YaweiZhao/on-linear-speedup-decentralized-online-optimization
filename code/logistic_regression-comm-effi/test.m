@@ -1,20 +1,20 @@
 clc;
 clear all;
 rng('default');
-data = load('usenet2.mat');
+data = load('spam.mat');
 data = data.new_data;
 [~,d] = size(data);
 A = transpose(data(:,2:d));
 [d,nn] = size(A);
 y=data(:,1);
 
-n = 5; % # of nodes
+n = 20; % # of nodes
 
 %hyper-parameter
 beta1 = 0.1;
 
 M = 10; %dynamics
-eta = 10*sqrt(M);%occupancy: 10*sqrt(M);%spam: 20*sqrt(M); %usenet1, usenet2: 10*sqrt(M);
+eta = 1e-1*sqrt(M);%occupancy: 10*sqrt(M);%spam: 20*sqrt(M); %usenet1, usenet2: 10*sqrt(M);
 gamma= 1e-3;
 %hyper-parameter
 T=fix(nn/n);
@@ -23,12 +23,12 @@ T=fix(nn/n);
 
 
 %construct the confusion matrix W. Ring topology 
-tag = 'centralized';
+tag = 'decentralized';
 topology = 'ring';
 if strcmp(tag, 'centralized')
     W =  ones(n,n)/n;
 elseif strcmp(tag, 'decentralized') && strcmp(topology, 'watts')
-    graph = WattsStrogatz(n,2,1);
+    graph = WattsStrogatz(n,2,0.5);
     edges_list = graph.Edges.EndNodes;
     [n_edges,~] = size(edges_list);
     W = eye(n);
@@ -141,7 +141,7 @@ for t=1:T
 end
 
 
-save('ave_loss_basic_lr_seq_n5_m10_cen_usenet2.mat','ave_loss_basic_lr_seq');
+save('ave_loss_basic_lr_seq_n20_m10_guli_decen_spam.mat','ave_loss_basic_lr_seq');
 
 
 fprintf(['loss>> ' mat2str(round(loss_draw,3)) ' \n'...

@@ -1,17 +1,13 @@
 function [  ] = plot_ave_loss( )
 
-    m10_decen = load('ave_loss_basic_lr_seq_n1e4_m10_decen.mat');
-    m10_cen = load('ave_loss_basic_lr_seq_n1e4_m10_cen.mat');
+    m10_decen = load('ave_loss_basic_lr_seq_n10e3_m10_10neighbours_decen.mat');
+    m10_cen = load('ave_loss_basic_lr_seq_n10e3_m10_cen.mat');
     T = length(m10_decen.ave_loss_basic_lr_seq);
-    luckys = 500:100:T;
-    %plot(luckys, m20_decen.ave_loss_basic_lr_seq(luckys,:), '-.sg','MarkerSize',10);
-    %hold on;
-    %plot(luckys, m20_cen.ave_loss_basic_lr_seq(luckys,:), '-.*k','MarkerSize',10);
-    %hold on;
-    plot(luckys, m10_decen.ave_loss_basic_lr_seq(luckys,:), '-ob','MarkerSize',10);
+    luckys = 200:100:T;
+    plot(luckys, m10_decen.ave_loss_basic_lr_seq(luckys,:)/10e3, '-ob','MarkerSize',10);
     hold on;
     axis tight;
-    plot(luckys, m10_cen.ave_loss_basic_lr_seq(luckys,:), '-+r','MarkerSize',10);
+    plot(luckys, m10_cen.ave_loss_basic_lr_seq(luckys,:)/10e3, '-+r','MarkerSize',10);
 
     
 
