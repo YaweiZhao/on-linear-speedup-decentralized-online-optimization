@@ -1,5 +1,5 @@
 function [ output_args ] = plot_ave_loss_size( input_args )
-    dataset = 'occupancy';
+    dataset = 'usenet2';
     if strcmp(dataset, 'occupancy')
         n10_decen = load('ave_loss_basic_lr_seq_n10_m10_decen_occupancy.mat');
         n5_decen = load('ave_loss_basic_lr_seq_n5_m10_decen_occupancy.mat');
@@ -38,14 +38,14 @@ function [ output_args ] = plot_ave_loss_size( input_args )
         %plot(luckys, n15_decen.ave_loss_basic_lr_seq(luckys,:), '-+m','MarkerSize',10);
         %hold on;
         plot(luckys, n20_decen.ave_loss_basic_lr_seq(luckys,:), '-<k','MarkerSize',10);
-
+        axis tight;
 
         xlabel('T');
         ylabel('Average loss');
         legend('n=5', 'n=10','n=20', 'Location','northeast'); 
         pax = gca;
         pax.FontSize = 25;
-        axis tight;
+        
     elseif strcmp(dataset, 'spam')
         n10_decen = load('ave_loss_basic_lr_seq_n10_m10_decen_spam.mat');
         n5_decen = load('ave_loss_basic_lr_seq_n5_m10_decen_spam.mat');

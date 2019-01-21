@@ -470,11 +470,11 @@ The learning rate $\eta$ is set to be $C\sqrt{\frac{M}{T}}$ with  $C\in[10^{-2},
 \setlength{\abovecaptionskip}{0pt}
 \setlength{\belowcaptionskip}{0pt}
 \centering 
-\subfigure[\textit{synthetic data}, $100$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_iterations}\label{figure_decen_cen_ave_loss_iterations}}
-\subfigure[\textit{room-occupancy}, $5$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_iterations_occupancy}\label{figure_decen_cen_ave_loss_iterations_occupancy}}
-\subfigure[\textit{usenet2}, $5$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_iterations_usenet2}\label{figure_decen_cen_ave_loss_iterations_usenet2}}
-\subfigure[\textit{spam}, $5$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_iterations_spam}\label{figure_decen_cen_ave_loss_iterations_spam}}
-%\subfigure[\textit{usenet2}]{\includegraphics[width=0.32\columnwidth]{figure_decen_cen_ave_loss_iterations_usenet2}\label{figure_decen_cen_ave_loss_iterations_usenet2}}
+\subfigure[\textit{synthetic data}, $100$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_iteration_synthetic}\label{figure_ave_loss_iteration}}
+\subfigure[\textit{room-occupancy}, $5$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_iteration_occupancy}\label{figure_ave_loss_iteration_occupancy}}
+\subfigure[\textit{usenet2}, $5$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_iteration_usenet2}\label{figure_ave_loss_iteration_usenet2}}
+\subfigure[\textit{spam}, $5$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_iteration_spam}\label{figure_ave_loss_iteration_spam}}
+%\subfigure[\textit{usenet2}]{\includegraphics[width=0.32\columnwidth]{figure_ave_loss_iteration_usenet2}\label{figure_ave_loss_iteration_usenet2}}
 \caption{The average loss yielded by DOG is comparable to that yielded by COG.}
 \label{figure_compare_loss}
 \end{figure*}
@@ -517,10 +517,10 @@ Second, Figure~\ref{figure_compare_network_size} summarizes the effect of the ne
 \setlength{\abovecaptionskip}{0pt}
 \setlength{\belowcaptionskip}{0pt}
 \centering 
-\subfigure[\textit{synthetic data}, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_nodes}\label{figure_decen_cen_ave_loss_nodes}}
-\subfigure[\textit{room-occupancy}, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_nodes_occupancy}\label{figure_decen_cen_ave_loss_nodes_occupancy}}
-\subfigure[\textit{usenet2}, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_nodes_usenet2}\label{figure_decen_cen_ave_loss_nodes_usenet2}}
-\subfigure[\textit{spam}, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_nodes_spam}\label{figure_decen_cen_ave_loss_nodes_spam}}
+\subfigure[\textit{synthetic data}, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_network_size_synthetic}\label{figure_ave_loss_network_size_synthetic}}
+\subfigure[\textit{room-occupancy}, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_network_size_occupancy}\label{figure_ave_loss_network_size_occupancy}}
+\subfigure[\textit{usenet2}, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_network_size_usenet2}\label{figure_ave_loss_network_size_usenet2}}
+\subfigure[\textit{spam}, ring topology]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_network_size_spam}\label{figure_ave_loss_network_size_spam}}
 \caption{The average loss yielded by DOG is insensitive to the network size.}
 \label{figure_compare_network_size}
 \end{figure*}
@@ -534,10 +534,10 @@ Third, figure~\ref{figure_compare_topology} shows the effect of the topology of 
 \setlength{\abovecaptionskip}{0pt}
 \setlength{\belowcaptionskip}{0pt}
 \centering 
-\subfigure[\textit{synthetic data}, $100$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_iterations_net_types}\label{figure_decen_cen_ave_loss_iterations_net_types}}
-\subfigure[\textit{room-occupancy}, $20$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_iterations_net_types_occupancy}\label{figure_decen_cen_ave_loss_iterations_net_types_occupancy}}
-\subfigure[\textit{usenet2}, $20$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_iterations_net_types_usenet2}\label{figure_decen_cen_ave_loss_iterations_net_types_occupancy}}
-\subfigure[\textit{spam}, $20$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_decen_cen_ave_loss_iterations_net_types_spam}\label{figure_decen_cen_ave_loss_iterations_net_types_spam}}
+\subfigure[\textit{synthetic data}, $100$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_topology_synthetic}\label{figure_ave_loss_topology_synthetic}}
+\subfigure[\textit{room-occupancy}, $20$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_topology_occupancy}\label{figure_ave_loss_topology_occupancy}}
+\subfigure[\textit{usenet2}, $20$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_topology_usenet2}\label{figure_ave_loss_topology_occupancy}}
+\subfigure[\textit{spam}, $20$ nodes]{\includegraphics[width=0.48\columnwidth]{figure_ave_loss_topology_spam}\label{figure_ave_loss_topology_spam}}
 \caption{The average loss yielded by DOG is insensitive to the topology of the network.}
 \label{figure_compare_topology}
 \end{figure*}

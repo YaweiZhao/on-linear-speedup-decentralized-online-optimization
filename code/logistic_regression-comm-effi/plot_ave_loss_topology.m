@@ -1,5 +1,5 @@
 function [ output_args ] = plot_ave_loss_topology( input_args )
-dataset = 'occupancy';
+dataset = 'usenet2';
 if strcmp(dataset, 'occupancy')   
     ring_decen = load('ave_loss_basic_lr_seq_n20_m10_ring_decen_occupancy.mat');
     guli_decen = ring_decen;

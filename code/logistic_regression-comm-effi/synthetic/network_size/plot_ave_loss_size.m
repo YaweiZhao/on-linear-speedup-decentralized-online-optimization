@@ -20,7 +20,7 @@ function [ output_args ] = plot_ave_loss_size( input_args )
 
     xlabel('T');
     ylabel('Average loss');
-    legend('n=5\times10^3,\sigma=1','n=1\times10^4,\sigma=1','n=\times10^3,\sigma=2','n=1\times10^4,\sigma=2', 'Location','northeast'); 
+    legend('n=5x10^3,\sigma=1','n=1x10^4,\sigma=1','n=5x10^3,\sigma=2','n=1x10^4,\sigma=2', 'Location','northeast'); 
     pax = gca;
     pax.FontSize = 25;
 
