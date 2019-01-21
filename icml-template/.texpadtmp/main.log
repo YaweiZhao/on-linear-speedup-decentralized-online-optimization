@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  21 JAN 2019 04:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  21 JAN 2019 04:46
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -695,11 +695,11 @@ Underfull \hbox (badness 10000) in paragraph at lines 492--492
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- <figure_ave_loss_network_size_synthetic.pdf, id=46, 397.98615pt x 290.78136pt>
+ <figure_ave_loss_network_size_synthetic.pdf, id=46, 396.39235pt x 291.06343pt>
 File: figure_ave_loss_network_size_synthetic.pdf Graphic file (type pdf)
  <use figure_ave_loss_network_size_synthetic.pdf>
 Package pdftex.def Info: figure_ave_loss_network_size_synthetic.pdf used on input line 520.
-(pdftex.def)             Requested size: 112.74019pt x 82.36772pt.
+(pdftex.def)             Requested size: 112.74019pt x 82.78072pt.
  <figure_ave_loss_network_size_occupancy.pdf, id=47, 396.28432pt x 291.18256pt>
 File: figure_ave_loss_network_size_occupancy.pdf Graphic file (type pdf)
  <use figure_ave_loss_network_size_occupancy.pdf>
@@ -729,11 +729,11 @@ File: figure_ave_loss_topology_occupancy.pdf Graphic file (type pdf)
  <use figure_ave_loss_topology_occupancy.pdf>
 Package pdftex.def Info: figure_ave_loss_topology_occupancy.pdf used on input line 538.
 (pdftex.def)             Requested size: 112.74019pt x 85.19704pt.
- <figure_ave_loss_topology_usenet2.pdf, id=52, 518.61559pt x 388.43167pt>
+ <figure_ave_loss_topology_usenet2.pdf, id=52, 389.48593pt x 298.33798pt>
 File: figure_ave_loss_topology_usenet2.pdf Graphic file (type pdf)
  <use figure_ave_loss_topology_usenet2.pdf>
 Package pdftex.def Info: figure_ave_loss_topology_usenet2.pdf used on input line 539.
-(pdftex.def)             Requested size: 112.74019pt x 84.43579pt.
+(pdftex.def)             Requested size: 112.74019pt x 86.35646pt.
  <figure_ave_loss_topology_spam.pdf, id=53, 395.75745pt x 292.73434pt>
 File: figure_ave_loss_topology_spam.pdf Graphic file (type pdf)
  <use figure_ave_loss_topology_spam.pdf>
@@ -992,16 +992,16 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 960.
  ) 
 Here is how much of TeX's memory you used:
- 10868 strings out of 493089
- 165579 string characters out of 6134842
- 301174 words of memory out of 5000000
+ 10874 strings out of 493089
+ 165636 string characters out of 6134842
+ 301178 words of memory out of 5000000
  13883 multiletter control sequences out of 15000+600000
- 50322 words of font info for 245 fonts, out of 8000000 for 9000
+ 50642 words of font info for 249 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,19n,45p,1977b,543s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8
 a.pfb>
-Output written on /Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/icml-template/.texpadtmp/main.pdf (17 pages, 697010 bytes).
+Output written on /Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/icml-template/.texpadtmp/main.pdf (17 pages, 695143 bytes).
 PDF statistics:
  348 PDF objects out of 1000 (max. 8388607)
  248 compressed objects within 3 object streams
