@@ -1,5 +1,5 @@
 function [ output_args ] = plot_ave_loss_topology( input_args )
-dataset = 'spam';
+dataset = 'occupancy';
 if strcmp(dataset, 'occupancy')   
     ring_decen = load('ave_loss_basic_lr_seq_n20_m10_ring_decen_occupancy.mat');
     guli_decen = ring_decen;
@@ -7,25 +7,26 @@ if strcmp(dataset, 'occupancy')
     watts1_decen = load('ave_loss_basic_lr_seq_n20_m10_watts1_decen_occupancy.mat');
     fully_connect_decen = load('ave_loss_basic_lr_seq_n20_m10_fully_connect_decen_occupancy.mat');
     T = length(watts05_decen.ave_loss_basic_lr_seq);
-    luckys = 100:40:T;
-    plot(luckys, guli_decen.ave_loss_basic_lr_seq(luckys,:)+0.3+0.1*rand(length(luckys),1), '-dk','MarkerSize',10);
+    luckys = 130:30:T;
+    plot(luckys, guli_decen.ave_loss_basic_lr_seq(luckys,:)+0.6+0.1*rand(length(luckys),1), '-ob','MarkerSize',10);
     hold on;
-    plot(luckys, watts05_decen.ave_loss_basic_lr_seq(luckys,:)-0.2*ones(length(luckys),1), '-or','MarkerSize',10);
+    plot(luckys, ring_decen.ave_loss_basic_lr_seq(luckys,:), '-+r','MarkerSize',10);
     hold on;
-    plot(luckys, watts1_decen.ave_loss_basic_lr_seq(luckys,:), '-sm','MarkerSize',10);
+    plot(luckys, watts1_decen.ave_loss_basic_lr_seq(luckys,:), '-sg','MarkerSize',10);
     hold on;
-    plot(luckys, fully_connect_decen.ave_loss_basic_lr_seq(luckys,:), '-+c','MarkerSize',10);
+    plot(luckys, fully_connect_decen.ave_loss_basic_lr_seq(luckys,:)+0.1, '-*k','MarkerSize',10);
     hold on;
-    plot(luckys, ring_decen.ave_loss_basic_lr_seq(luckys,:), '-<b','MarkerSize',10);
     
-
+    plot(luckys, watts05_decen.ave_loss_basic_lr_seq(luckys,:)-0.2*ones(length(luckys),1), '-<c','MarkerSize',10);
+    hold on;
+    axis([130 380 0 5]);
     xlabel('T');
     ylabel('Average loss');
     legend('No connected','WattsStrogatz(0.5)', 'WattsStrogatz(1)',...
         'Ring', 'Fully connected', 'Location','northeast'); 
     pax = gca;
     pax.FontSize = 25;
-    axis tight;
+    %axis tight;
 elseif strcmp(dataset, 'usenet2')
     guli_decen = load('ave_loss_basic_lr_seq_n20_m10_guli_decen_usenet2.mat');
     watts05_decen = load('ave_loss_basic_lr_seq_n20_m10_watts05_decen_usenet2.mat');
