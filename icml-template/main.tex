@@ -823,7 +823,7 @@ Recall that
 \end{align} It completes the proof.
 \end{proof}
 
-\begin{Lemma}[Appeared in Lemma $5$ in \citep{Tang:2018un}]
+\begin{Lemma}[Lemma $5$ in \citep{Tang:2018un}]
 \label{lemma_hanlin_1}
 For any matrix $\X_t\in\RR^{d\times n}$, decompose the confusion matrix $\W$ as $\W = \sum_{i=1}^n \lambda_i \v_i \v_i\Tr = \P \bLambda \P\Tr$, where $\P = [\v_1, \v_2, ..., \v_n]\in\RR^{n\times n}$, $\v_i$ is the normalized eigenvector of $\lambda_i$. $\bLambda$ is a diagonal matrix, and $\lambda_i$ be its $i$-th element. We have
 \begin{align}
@@ -834,7 +834,7 @@ For any matrix $\X_t\in\RR^{d\times n}$, decompose the confusion matrix $\W$ as 
 \end{Lemma}
 
 
-\begin{Lemma}[Appeared in Lemma $6$ in \citep{Tang:2018un}]
+\begin{Lemma}[Lemma $6$ in \citep{Tang:2018un}]
 \label{lemma_hanlin_2}
 Given two non-negative sequences $\{a_t\}_{t=1}^{\infty}$ and $\{b_t\}_{t=1}^{\infty}$ that satisfying
 \begin{align}
@@ -872,7 +872,7 @@ Recall that
 \begin{align}
 \nonumber
 \bar{\x}_{t+1} = \bar{\x}_t - \eta \lrincir{\frac{1}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}.
-\end{align} Denote 
+\end{align} Denote by
 \begin{align}
 \nonumber
 \X_t = &  [\x_{1,t}, \x_{2,t}, ..., \x_{n,t}] \in \RR^{d\times n}, \\ \nonumber
@@ -882,12 +882,11 @@ Recall that
 \nonumber
 \X_{t+1} = \X_t \W - \eta \G_t = - \sum_{s=1}^t \eta \G_s \W^{t-s}. 
 \end{align} Similarly, denote $\bar{\G}_t = \frac{1}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})$, and we have
-\begin{align}
+\begin{align*}
 \bar{\x}_{t+1} = \bar{\x}_t - \eta \lrincir{\frac{1}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})} = - \sum_{s=1}^t \eta \bar{\G}_s. 
-\end{align}
+\end{align*}
 
-
-Therefore, 
+Therefore, we obtain
 \begin{align}
 \nonumber
 & \sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t}^2 \\ \nonumber
@@ -913,6 +912,7 @@ Thus, we  have
 
 \textbf{ Proof to Lemma \ref{lemma_assumption_discussion}:}
 \begin{proof}
+We have
 \begin{align}
 \nonumber
 &\EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2 \\ \nonumber 
@@ -923,10 +923,6 @@ Thus, we  have
 \le & \EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t}) - \EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t})}^2 + \EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2  \\ \nonumber
 \le & \sigma^2 + G.
 \end{align} It thus completes the proof.
-
-
-
-
 \end{proof}
 
 
