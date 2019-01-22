@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  21 JAN 2019 19:29
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  21 JAN 2019 19:33
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -525,9 +525,6 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 108.
 Package hyperref Info: Option `draft' set `true' on input line 75.
  (./main.aux
 
-LaTeX Warning: Label `equa_definition_our_regret' multiply defined.
-
-
 LaTeX Warning: Label `figure_ave_loss_topology_occupancy' multiply defined.
 
 
@@ -771,7 +768,11 @@ Package pdftex.def Info: figure_ave_loss_iteration_spam.pdf  used on input line
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
+
+Underfull \vbox (badness 4886) has occurred while \output is active []
+
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 511.
+
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -795,13 +796,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 511--511
 [][][]$\OT1/pcr/m/n/9 http : / / mlkd . csd . auth . gr / concept _ drift .
  []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5 <./figure_dynamics.pdf>]
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-<figure_ave_loss_network_size_synthetic.pdf, id=58, 517.47185pt x 383.73775pt>
+[5 <./figure_dynamics.pdf>]
+<figure_ave_loss_network_size_synthetic.pdf, id=59, 517.47185pt x 383.73775pt>
 File: figure_ave_loss_network_size_synthetic.pdf Graphic file (type pdf)
 <use figure_ave_loss_network_size_synthetic.pdf>
 Package pdftex.def Info: figure_ave_loss_network_size_synthetic.pdf  used on in
@@ -813,19 +809,19 @@ Underfull \hbox (badness 7468) in paragraph at lines 539--539
 (+20) , ran-dom
  []
 
-<figure_ave_loss_network_size_occupancy.pdf, id=59, 396.28432pt x 291.18256pt>
+<figure_ave_loss_network_size_occupancy.pdf, id=60, 396.28432pt x 291.18256pt>
 File: figure_ave_loss_network_size_occupancy.pdf Graphic file (type pdf)
 <use figure_ave_loss_network_size_occupancy.pdf>
 Package pdftex.def Info: figure_ave_loss_network_size_occupancy.pdf  used on in
 put line 540.
 (pdftex.def)             Requested size: 112.74019pt x 82.83682pt.
-<figure_ave_loss_network_size_usenet2.pdf, id=60, 394.44363pt x 291.3324pt>
+<figure_ave_loss_network_size_usenet2.pdf, id=61, 394.44363pt x 291.3324pt>
 File: figure_ave_loss_network_size_usenet2.pdf Graphic file (type pdf)
 <use figure_ave_loss_network_size_usenet2.pdf>
 Package pdftex.def Info: figure_ave_loss_network_size_usenet2.pdf  used on inpu
 t line 541.
 (pdftex.def)             Requested size: 112.74019pt x 83.26619pt.
-<figure_ave_loss_network_size_spam.pdf, id=61, 394.87123pt x 292.96141pt>
+<figure_ave_loss_network_size_spam.pdf, id=62, 394.87123pt x 292.96141pt>
 File: figure_ave_loss_network_size_spam.pdf Graphic file (type pdf)
 <use figure_ave_loss_network_size_spam.pdf>
 Package pdftex.def Info: figure_ave_loss_network_size_spam.pdf  used on input l
@@ -838,30 +834,34 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `!tbp') on input line 551.
 
-<figure_ave_loss_topology_synthetic.pdf, id=62, 395.58774pt x 290.54326pt>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+<figure_ave_loss_topology_synthetic.pdf, id=63, 395.58774pt x 290.54326pt>
 File: figure_ave_loss_topology_synthetic.pdf Graphic file (type pdf)
 <use figure_ave_loss_topology_synthetic.pdf>
 Package pdftex.def Info: figure_ave_loss_topology_synthetic.pdf  used on input 
 line 570.
 (pdftex.def)             Requested size: 112.74019pt x 82.80124pt.
-<figure_ave_loss_topology_occupancy.pdf, id=63, 503.13318pt x 385.47986pt>
+<figure_ave_loss_topology_occupancy.pdf, id=64, 503.13318pt x 385.47986pt>
 File: figure_ave_loss_topology_occupancy.pdf Graphic file (type pdf)
 <use figure_ave_loss_topology_occupancy.pdf>
 Package pdftex.def Info: figure_ave_loss_topology_occupancy.pdf  used on input 
 line 571.
 (pdftex.def)             Requested size: 112.74019pt x 86.3763pt.
-<figure_ave_loss_topology_usenet2.pdf, id=64, 506.55193pt x 390.24757pt>
+<figure_ave_loss_topology_usenet2.pdf, id=65, 506.55193pt x 390.24757pt>
 File: figure_ave_loss_topology_usenet2.pdf Graphic file (type pdf)
 <use figure_ave_loss_topology_usenet2.pdf>
 Package pdftex.def Info: figure_ave_loss_topology_usenet2.pdf  used on input li
 ne 572.
 (pdftex.def)             Requested size: 112.74019pt x 86.85512pt.
-<figure_ave_loss_topology_spam.pdf, id=65, 507.85048pt x 390.37573pt>
+<figure_ave_loss_topology_spam.pdf, id=66, 507.85048pt x 390.37573pt>
 File: figure_ave_loss_topology_spam.pdf Graphic file (type pdf)
 <use figure_ave_loss_topology_spam.pdf>
 Package pdftex.def Info: figure_ave_loss_topology_spam.pdf  used on input line 
 573.
 (pdftex.def)             Requested size: 112.74019pt x 86.65729pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -1123,7 +1123,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 993.
 Here is how much of TeX's memory you used:
  11007 strings out of 492649
  167325 string characters out of 6129622
- 309185 words of memory out of 5000000
+ 309183 words of memory out of 5000000
  14397 multiletter control sequences out of 15000+600000
  51922 words of font info for 265 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1153,7 +1153,7 @@ nts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2018/texmf-dist
 ype1/urw/times/utmb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/t
 imes/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8
 a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (18 pages, 638613 bytes).
+Output written on main.pdf (18 pages, 638311 bytes).
 PDF statistics:
  347 PDF objects out of 1000 (max. 8388607)
  247 compressed objects within 3 object streams
