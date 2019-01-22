@@ -202,7 +202,7 @@ Suppose that there are $n$ users. Each user maintains a local predictive model, 
 \[
 xxx.
 \]
-It essentially assumes that the optimal model would not change over time. However, in many practical online learning application scenarios, the optimal model may evolve over time. For example, {\rc Please give an example here.} Therefore, we choose to use the \emph{dynamic} regret as the metric:
+It essentially assumes that the optimal model would not change over time. However, in many practical online learning application scenarios, the optimal model may evolve over time. For example, {\rc Please give an example here.} Therefore, we choose to use the \emph{dynamic} regret as the metric for an algorithm $A$:
 \begin{align}
 \label{equa_definition_our_regret}
 \Rcal_T^{A} := & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \left[\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t};\xi_{i,t}) \right]
@@ -307,17 +307,19 @@ $\mathcal{L}_M^T$ restricts how much the optimal model may change over time. Whe
 
 
 
-\section{Decentralized online gradient method} \label{sec:algorithm}
-In the section, we first present the decentralized online gradient method, and then prove that it leads to $\Ocal{n\sqrt{TM} + \sqrt{nTM}\sigma}$ dynamic regret. 
-\subsection{Algorithm}
+\section{Decentralized online gradient (DOG) algorithm} \label{sec:algorithm}
+In the section, we introduce the DOG algorithm, followed by the analysis for the dynamic regret.
+%then prove that it leads to $\Ocal{n\sqrt{TM} + \sqrt{nTM}\sigma}$ dynamic regret. 
+\subsection{Algorithm description}
 
 
 \begin{algorithm}[!]
    \caption{\textsc{DOG}: Decentralized Online Gradient method.}
    \label{algo_DOG}
    \begin{algorithmic}[1]
-   \REQUIRE The learning rate $\eta$, number of iterations $T$, and the confusion matrix $\W$. $\x_{i,1} = \0$ for any $i\in [n]$.
-       \FOR {$t=1,2, ..., T$}
+   \REQUIRE Learning rate $\eta$, number of iterations $T$, and the confusion matrix $\W$.    
+  \STATE $\x_{i,1} = \0$ for all $i\in [n]$.    
+   \FOR {$t=1,2, ..., T$}
             \STATE \textbf{For the $i$-th node with $i\in[n]$:}
             \STATE \indent Predict $\x_{i,t}$.
             \STATE \indent Observe the loss function $f_{i,t}$,  and suffer loss $f_{i,t}(\x_{i,t};\xi_{i,t})$.
@@ -328,9 +330,7 @@ In the section, we first present the decentralized online gradient method, and t
    \end{algorithmic}
 \end{algorithm}
 
-
-The Decentralized Online Gradient method, namely \textsc{DOG}, is presented in Algorithm \ref{algo_DOG}. This algorithm works iteration by iteration.
-At each iteration, every node needs to collect local models, e.g., $\x_{i,t}$, from its neighbours, and compute a weighted sum as $ \sum_{j=1}^n \W_{i,j}\x_{j,t}$. Then, the weighte sum is updated by an online gradient descent step. In addition, we denote $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$ to facilitate the theoretical analysis. We can verify that $\bar{\x}_{t+1} =  \bar{\x}_t -  \frac{\eta}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})$ (see Lemma \ref{Lemma_average_update_rule}). 
+The proposed \textsc{DOG} algorithm is presented in Algorithm \ref{algo_DOG}. This algorithm works iteration by iteration. At each iteration, every node needs to collect local models, e.g., $\x_{i,t}$, from its neighbors, and compute a weighted sum as $ \sum_{j=1}^n \W_{i,j}\x_{j,t}$. Then, the weighted sum is updated by an online gradient descent step. In addition, we denote $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$ to facilitate the theoretical analysis. We can verify that $\bar{\x}_{t+1} =  \bar{\x}_t -  \frac{\eta}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})$ (see Lemma \ref{Lemma_average_update_rule}). 
 
 
 
