@@ -198,39 +198,56 @@ Suppose that there are $n$ users. Each user maintains a local predictive model, 
 
 \paragraph{Communication network.} Users do not want to share the information to others and can only share their private models to their neighbors (or friends). The graph is denoted by $\mathcal{G}=(\text{nodes:} [n], \text{edges:} E)$. {\rc Chen: please use this notation to define the confusion matrix in next section.}
 
-
-Suppose we have $n$ workers, among which the $i$-th one will receive the $t$-th loss $f_{i,t}(\x_{i,t};\xi_{i,t})$ at the $t-$th iteration, where $\x_{i,t}$ is the model on the node $i$ at the $t$-th iteration, and $\xi_{i,t}$ represents the randomness of the private data, which is drawn from some distribution $D_{i,t}$ for the $i$-th node at the time $t$. If we do not consider the dynamic setup, all nodes want to make their models converge to the best model $\x^\ast$, which is defined by
-\begin{align}
-\nonumber
-\x^\ast := \argmin_{\x} \sum\limits_{i=1}^n\sum\limits_{t=1}^T \EE_{\xi_{i,t} \sim \Dcal_{i,t}} f_{i,t}(\x; \xi_{i,t}).
-\end{align}
-However, the static optimal model $\x^\ast$ does not exist in the dynamic environment. For example, when we want to conduct music recommendation to a user, his/her preference to music may change over time as his/her situation.  Thus, the optimal model should be time-varying over time. It leads to the dynamics of the optimal recommendation model.  Therefore, we allow the optimal model can change as the times goes, and denote them by $\{\x_t^*\}_{t=1}^T$. Formally, given the budget of dynamics $M$, the feasible reference points $\{\x_t^\ast\}_{t=1}^T$ satisfy
-\begin{align*}
-\sum\limits_{t=1}^{T-1}\|\x_{t+1}^*-\x_t^*\|\le M,
-\end{align*}
-where $M$ is used to control how quickly the optimal model can change. When $M=0$, all $\x_t^\ast$s are same, and it degenerates to the static online learning problem. When the dynamic environment changes significantly, $M$ becomes large to model the dynamics. Let us take an example to explain the dynamics.   
-
-
-
-
-Denote $\Lcal_{M}^T = \left\{\{\z_t\}_{t=1}^T : \sum\limits_{t=1}^{T-1}\|\z_{t+1}-\z_t\|\le M \right\}$.  We define a new dynamic regret as follows.
-\begin{Definition}
-\label{define_our_new_dynamic_regret}
-For any a decentralized online algorithm $A \in \Acal$, we define its dynamic regret $\Rcal_T^{A}$ by
+\paragraph{Dynamic regret.} The commonly used regret used in online learning is \emph{static}:
+\[
+xxx.
+\]
+It essentially assumes that the optimal model would not change over time. However, in many practical online learning application scenarios, the optimal model may evolve over time. For example, {\rc Please give an example here.} Therefore, we choose to use the \emph{dynamic} regret as the metric:
 \begin{align}
 \label{equa_definition_our_regret}
-\Rcal_T^{A} := & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \sum_{i=1}^n\sum_{t=1}^T \lrincir{f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^\ast;\xi_{i,t}) },
-\end{align}  where
-$\{\x_t^\ast\}_{t=1}^T$ is defined by
-\begin{align*}
-	\{\x_t^*\}_{t=1}^T:=\argmin_{\{\z_t\}_{t=1}^T \in \Lcal_{M}^T} \sum\limits_{i=1}^n\sum\limits_{t=1}^T \EE_{\xi_{i,t} \sim \Dcal_{i,t}} f_{i,t}(\z_t; \xi_{i,t}).
-\end{align*}
-\end{Definition} 
-Here, $\x_{i,t}$ is the model played by an online algorithm $A$ at the $t$-th iteration. $\xi_{i,t}$ represents the stochastic factor in the local model, which is drawn from the distribution $D_{i,t}$ for the $i$-th node at the time $t$.  It is the major difference between our new regret and the previous regret. When we do not exploit the relation among local models, e.g. $\x_{i,t}$, our new dynamic regret \eqref{equa_definition_our_regret} de-generates to the classic definition \eqref{equa_definition_previous_regret}. Specifically, for any a decentralized online algorithm $A \in \Acal$, the previous dynamic regret  $\widetilde{\Rcal}_T^{A}$ is usually defined by
-\begin{align}
-\label{equa_definition_previous_regret}
-\widetilde{\Rcal}_T^{A} := &  \sum_{i=1}^n\sum_{t=1}^T \lrincir{ f_{i,t}(\x_{i,t}) - f_{i,t}(\x_t^\ast) },
-\end{align} subject to $\sum_{t=1}^{T-1} \lrnorm{\x_{t+1}^\ast - \x_t^\ast} \le M$.  In \eqref{equa_definition_previous_regret}, the classic online learning in a decentralized network treats all the data as the adversary data in default, which ignores the potentional relation among local models $\{\x_{i,t}\}_{i=1}^n$ at time $t$. But, those local models are not independent in many practical scenarios. For example, users' perference to music may be impacted by a popular trend in the Internet at the same time. In the decentralized online learning, every node shares its private model to neighbours, and the regret caused by the stochastic part of data would be decreased effectively. Exploiting the potential relation among local models is helpful to reduce the regret, and learn a better model, which is varified by the theoretical results in Section \ref{subsection_theoretical_analysis}.
+\Rcal_T^{A} := & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \left[\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t};\xi_{i,t}) \right]
+\\
+& - \min_{\{\x_t^\star\}_{t=1}^T \in \mathcal{L}_{M}^T}\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \left[\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_t^\ast;\xi_{i,t}) \right],
+\end{align}
+where $\mathcal{L}_M^T$ is defined by
+\[
+zzz.
+\]
+$\mathcal{L}_M^T$ restricts how much the optimal model may change over time. When $M=0$, the dynamic regret degenerates to the static regret.
+
+%
+%Suppose we have $n$ workers, among which the $i$-th one will receive the $t$-th loss $f_{i,t}(\x_{i,t};\xi_{i,t})$ at the $t-$th iteration, where $\x_{i,t}$ is the model on the node $i$ at the $t$-th iteration, and $\xi_{i,t}$ represents the randomness of the private data, which is drawn from some distribution $D_{i,t}$ for the $i$-th node at the time $t$. If we do not consider the dynamic setup, all nodes want to make their models converge to the best model $\x^\ast$, which is defined by
+%\begin{align}
+%\nonumber
+%\x^\ast := \argmin_{\x} \sum\limits_{i=1}^n\sum\limits_{t=1}^T \EE_{\xi_{i,t} \sim \Dcal_{i,t}} f_{i,t}(\x; \xi_{i,t}).
+%\end{align}
+%However, the static optimal model $\x^\ast$ does not exist in the dynamic environment. For example, when we want to conduct music recommendation to a user, his/her preference to music may change over time as his/her situation.  Thus, the optimal model should be time-varying over time. It leads to the dynamics of the optimal recommendation model.  Therefore, we allow the optimal model can change as the times goes, and denote them by $\{\x_t^*\}_{t=1}^T$. Formally, given the budget of dynamics $M$, the feasible reference points $\{\x_t^\ast\}_{t=1}^T$ satisfy
+%\begin{align*}
+%\sum\limits_{t=1}^{T-1}\|\x_{t+1}^*-\x_t^*\|\le M,
+%\end{align*}
+%where $M$ is used to control how quickly the optimal model can change. When $M=0$, all $\x_t^\ast$s are same, and it degenerates to the static online learning problem. When the dynamic environment changes significantly, $M$ becomes large to model the dynamics. Let us take an example to explain the dynamics.   
+%
+%
+%
+%
+%Denote $\Lcal_{M}^T = \left\{\{\z_t\}_{t=1}^T : \sum\limits_{t=1}^{T-1}\|\z_{t+1}-\z_t\|\le M \right\}$.  We define a new dynamic regret as follows.
+%\begin{Definition}
+%\label{define_our_new_dynamic_regret}
+%For any a decentralized online algorithm $A \in \Acal$, we define its dynamic regret $\Rcal_T^{A}$ by
+%\begin{align}
+%\label{equa_definition_our_regret}
+%\Rcal_T^{A} := & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \sum_{i=1}^n\sum_{t=1}^T \lrincir{f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^\ast;\xi_{i,t}) },
+%\end{align}  where
+%$\{\x_t^\ast\}_{t=1}^T$ is defined by
+%\begin{align*}
+%	\{\x_t^*\}_{t=1}^T:=\argmin_{\{\z_t\}_{t=1}^T \in \Lcal_{M}^T} \sum\limits_{i=1}^n\sum\limits_{t=1}^T \EE_{\xi_{i,t} \sim \Dcal_{i,t}} f_{i,t}(\z_t; \xi_{i,t}).
+%\end{align*}
+%\end{Definition} 
+%Here, $\x_{i,t}$ is the model played by an online algorithm $A$ at the $t$-th iteration. $\xi_{i,t}$ represents the stochastic factor in the local model, which is drawn from the distribution $D_{i,t}$ for the $i$-th node at the time $t$.  It is the major difference between our new regret and the previous regret. When we do not exploit the relation among local models, e.g. $\x_{i,t}$, our new dynamic regret \eqref{equa_definition_our_regret} de-generates to the classic definition \eqref{equa_definition_previous_regret}. Specifically, for any a decentralized online algorithm $A \in \Acal$, the previous dynamic regret  $\widetilde{\Rcal}_T^{A}$ is usually defined by
+%\begin{align}
+%\label{equa_definition_previous_regret}
+%\widetilde{\Rcal}_T^{A} := &  \sum_{i=1}^n\sum_{t=1}^T \lrincir{ f_{i,t}(\x_{i,t}) - f_{i,t}(\x_t^\ast) },
+%\end{align} subject to $\sum_{t=1}^{T-1} \lrnorm{\x_{t+1}^\ast - \x_t^\ast} \le M$.  In \eqref{equa_definition_previous_regret}, the classic online learning in a decentralized network treats all the data as the adversary data in default, which ignores the potential relation among local models $\{\x_{i,t}\}_{i=1}^n$ at time $t$. But, those local models are not independent in many practical scenarios. For example, users' perference to music may be impacted by a popular trend in the Internet at the same time. In the decentralized online learning, every node shares its private model to neighbours, and the regret caused by the stochastic part of data would be decreased effectively. Exploiting the potential relation among local models is helpful to reduce the regret, and learn a better model, which is varified by the theoretical results in Section \ref{subsection_theoretical_analysis}.
 
 
 
