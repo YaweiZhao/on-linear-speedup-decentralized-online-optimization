@@ -361,6 +361,12 @@ In the DOG algorithm, users exchange their local models periodically. In each it
 The detailed description of the DOG algorithm can be found in Algorithm~\ref{algo_DOG}. $\W$ is the confusion matrix. 
 {\rc To Chen and Yawei, explain $\W$ appropriately.}
 
+From the global view of point, the updating rule of DOG can be cast into the following form
+\[
+XXX
+\]
+We can verify that $\bar{\x}_{t+1} =  \bar{\x}_t -  \frac{\eta}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})$ (see Lemma \ref{Lemma_average_update_rule}). 
+
 % The proposed \textsc{DOG} algorithm is presented in Algorithm \ref{algo_DOG}. This algorithm works iteration by iteration. At each iteration, every node needs to collect local models, e.g., $\x_{i,t}$, from its neighbors, and compute a weighted sum as $ \sum_{j=1}^n \W_{i,j}\x_{j,t}$. Then, the weighted sum is updated by an online gradient descent step. In addition, we denote $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$ to facilitate the theoretical analysis. We can verify that $\bar{\x}_{t+1} =  \bar{\x}_t -  \frac{\eta}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})$ (see Lemma \ref{Lemma_average_update_rule}). 
 
 
