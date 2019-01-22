@@ -425,7 +425,8 @@ The discussion for the dynamic regret is conducted in the following
 \item ($G=0$ and $M=0$.) It degenerates to the decentralized optimization scenario \citet{Duchi:2012hp,Tang:2018un}. The static regret $O(\sqrt{nT}\sigma)$ implies the convergence rate $\sigma / \sqrt{nT}$, which is consistent with the result in \citet{Duchi:2012hp,Tang:2018un}. 
 \end{itemize}
 \item ({\bf Insight.}) Consider the baseline that all users do not communicate but only run local online gradient. It is not hard to verify that the static regret for this baseline approach is $O(n\sqrt{T}G + n\sqrt{T}\sigma)$. Comparing to the static regret ($O(n\sqrt{T}G + \sqrt{nT}\sigma)$) with iterative communication, the improvement is only on the stochastic component. Recall that $G$ measures the magnitude of the adversarial component and $\sigma$ measures the stochastic component. This result reveals an important observation that \emph{the communication does not really help improve the adversarial component, only the stochastic component can benefit from the communication.} This observation makes quite sense, since if the users' private data are totally arbitrary, there is no reason they can benefit to each other by exchanging anything.
-\item ({\bf Improve existing dynamic regret in decentralized setting.}) \citet{8015179Shahram} only considers the adversary loss, and provides $\Ocal{n^{\frac{3}{2}}\sqrt{\frac{MT}{1-\rho}} }$ regret for DOG. Compared with the result in \citet{8015179Shahram}, our regret enjoys the state-of-the-art dependence on $T$ and $M$, and meanwhile improves the dependence on $n$. This improvement is achieved by a better bound on the difference between $\x_{i,t}$ and $\bar{\x}_t$\footnote{\citet{8015179Shahram} denotes $\lrnorm{\x_{i,t} - \bar{\x}_t}$ by ``network error".} (see Lemma \ref{Lemma_x_variance_norm_square}).
+\item ({\bf Improve existing dynamic regret in decentralized setting.}) \citet{8015179Shahram} only considers the adversary loss, and provides $\Ocal{n^{\frac{3}{2}}\sqrt{\frac{MT}{1-\rho}} }$ regret for DOG. Compared with the result in \citet{8015179Shahram}, our regret enjoys the state-of-the-art dependence on $T$ and $M$, and meanwhile improves the dependence on $n$. %This improvement is achieved by a better bound on the difference between $\x_{i,t}$ and $\bar{\x}_t$\footnote{\citet{8015179Shahram} denotes $\lrnorm{\x_{i,t} - \bar{\x}_t}$ by ``network error".} (see Lemma \ref{Lemma_x_variance_norm_square}).
+\item ({\bf Improve existing static regret in the decentralized setting \citep{Wenpeng's paper}})
 \end{itemize} 
 
 Next we discuss how close all local models $\x_{i,t}$'s close to their average at each time. The following result suggests that $\x_{i,t}$'s are getting closer and closer over iterations.
@@ -439,9 +440,9 @@ Use Assumption \ref{assumption_bounded_gradient_domain}, and choose
 \end{align} in Algorithm \ref{algo_DOG}. We have 
 \begin{align}
 \nonumber
-\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{i=1}^n\sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2 \lesssim \frac{n\lrincir{M + \sqrt{R}}}{1-\rho}.
+{1\over nT}\left[\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{i=1}^n\sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2\right] \lesssim \frac{\lrincir{M + \sqrt{R}}}{(1-\rho)T}.
 \end{align}
-
+The result suggests that $\x_{i,t}$ approaches to $\bar{\x}_t$ roughly in the rate $O(1/\sqrt{T})$, which is faster than the convergence of the averaged regret, which is roughly in the rate $O(1/\sqrt{T})$ from Corollary~\ref{XXXX}.
 
 
 \end{Theorem}

@@ -1,52 +1,53 @@
 This is BibTeX, Version 0.99d (TeX Live 2018)
 Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: main.aux
+White space in argument---line 57 of file main.aux
+ : \citation{Wenpeng's
+ :                     paper}
+I'm skipping whatever remains of this command
 The style file: abbrvnat.bst
 Database file #1: reference.bib
 Warning--entry type for "introduction-online-optimization" isn't style-file defined
 --line 29 of file reference.bib
-Warning--I didn't find a database entry for "xxx"
-Warning--I didn't find a database entry for ""
-Warning--there's a number but no volume in HoNguyen:2017ki
-You've used 44 entries,
+You've used 39 entries,
             2773 wiz_defined-function locations,
-            872 strings with 13006 characters,
-and the built_in function-call counts, 23322 in all, are:
-= -- 2071
-> -- 1371
-< -- 31
-+ -- 459
-- -- 413
-* -- 1918
-:= -- 3430
-add.period$ -- 134
-call.type$ -- 44
-change.case$ -- 266
-chr.to.int$ -- 42
-cite$ -- 89
-duplicate$ -- 1099
-empty$ -- 1888
-format.name$ -- 479
-if$ -- 5016
+            853 strings with 12387 characters,
+and the built_in function-call counts, 21454 in all, are:
+= -- 1910
+> -- 1257
+< -- 27
++ -- 421
+- -- 380
+* -- 1782
+:= -- 3132
+add.period$ -- 119
+call.type$ -- 39
+change.case$ -- 240
+chr.to.int$ -- 37
+cite$ -- 78
+duplicate$ -- 1003
+empty$ -- 1738
+format.name$ -- 433
+if$ -- 4630
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 43
-newline$ -- 227
-num.names$ -- 184
-pop$ -- 553
+missing$ -- 38
+newline$ -- 202
+num.names$ -- 164
+pop$ -- 500
 preamble$ -- 1
-purify$ -- 222
+purify$ -- 201
 quote$ -- 0
-skip$ -- 878
+skip$ -- 806
 stack$ -- 0
-substring$ -- 946
-swap$ -- 244
+substring$ -- 939
+swap$ -- 234
 text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 484
-warning$ -- 1
-while$ -- 196
+type$ -- 429
+warning$ -- 0
+while$ -- 181
 width$ -- 0
-write$ -- 573
-(There were 4 warnings)
+write$ -- 513
+(There was 1 error message)
