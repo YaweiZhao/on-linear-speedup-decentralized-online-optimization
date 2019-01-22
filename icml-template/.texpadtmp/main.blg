@@ -5,47 +5,45 @@ The style file: abbrvnat.bst
 Database file #1: ../reference.bib
 Warning--entry type for "introduction-online-optimization" isn't style-file defined
 --line 29 of file ../reference.bib
-Warning--I didn't find a database entry for ""
-Warning--there's a number but no volume in HoNguyen:2017ki
-You've used 45 entries,
+You've used 39 entries,
             2773 wiz_defined-function locations,
-            878 strings with 13219 characters,
-and the built_in function-call counts, 23828 in all, are:
-= -- 2117
-> -- 1401
-< -- 31
-+ -- 469
-- -- 422
-* -- 1966
-:= -- 3507
-add.period$ -- 137
-call.type$ -- 45
-change.case$ -- 272
-chr.to.int$ -- 43
-cite$ -- 91
-duplicate$ -- 1120
-empty$ -- 1929
-format.name$ -- 489
-if$ -- 5120
+            853 strings with 12390 characters,
+and the built_in function-call counts, 21454 in all, are:
+= -- 1910
+> -- 1257
+< -- 27
++ -- 421
+- -- 380
+* -- 1782
+:= -- 3132
+add.period$ -- 119
+call.type$ -- 39
+change.case$ -- 240
+chr.to.int$ -- 37
+cite$ -- 78
+duplicate$ -- 1003
+empty$ -- 1738
+format.name$ -- 433
+if$ -- 4630
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 44
-newline$ -- 232
-num.names$ -- 188
-pop$ -- 563
+missing$ -- 38
+newline$ -- 202
+num.names$ -- 164
+pop$ -- 500
 preamble$ -- 1
-purify$ -- 227
+purify$ -- 201
 quote$ -- 0
-skip$ -- 893
+skip$ -- 806
 stack$ -- 0
-substring$ -- 973
-swap$ -- 245
+substring$ -- 939
+swap$ -- 234
 text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 495
-warning$ -- 1
-while$ -- 201
+type$ -- 429
+warning$ -- 0
+while$ -- 181
 width$ -- 0
-write$ -- 586
-(There were 3 warnings)
+write$ -- 513
+(There was 1 warning)
