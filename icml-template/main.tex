@@ -194,7 +194,9 @@ In some literatures, the regret in a dynamic environment is measured by the numb
 
 \section{Problem formulation}
 
+Suppose that there are $n$ users. Each user maintains a local predictive model, and only talk to his/her neighbors. Let $\x_{i, t}$ denote the local model for user $i$ at iteration $t$. In iteration $t$ user $i$ applies the local model $\x_{i,t}$ to a function $f_{i,t}(\cdot; \xi_{i,t})$ and receives the loss $f_{i,t}(\cdot; \xi_{i,t})$. $\xi_{i,t}$ is an i.i.d. random variable in terms of $i$ and $t$, charactering the \emph{random} component in the function $f_{i,t}(\cdot; \xi_{i,t})$, while the subscripts $i$ and $t$ of $f$ (as well $\xi$) indicate the \emph{adversarial} component, for example, the user's profile, location, local time, and etc. The random component in the function is usually {\rc To Peilin: please provide some examples here.}
 
+\paragraph{Communication network.} Users do not want to share the information to others and can only share their private models to their neighbors (or friends). The graph is denoted by $\mathcal{G}=(\text{nodes:} [n], \text{edges:} E)$. {\rc Chen: please use this notation to define the confusion matrix in next section.}
 
 
 Suppose we have $n$ workers, among which the $i$-th one will receive the $t$-th loss $f_{i,t}(\x_{i,t};\xi_{i,t})$ at the $t-$th iteration, where $\x_{i,t}$ is the model on the node $i$ at the $t$-th iteration, and $\xi_{i,t}$ represents the randomness of the private data, which is drawn from some distribution $D_{i,t}$ for the $i$-th node at the time $t$. If we do not consider the dynamic setup, all nodes want to make their models converge to the best model $\x^\ast$, which is defined by
