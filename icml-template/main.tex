@@ -550,14 +550,14 @@ Three real public datasets are \textit{room-occupancy}\footnote{\url{https://arc
 
 \subsection{Results}
 
+\paragraph{\rc Can say one phase or sentence to highlight our claim in this experiment?}
 First, Figure~\ref{figure_compare_loss} summarizes the performance of DOG compared with COG on all the datasets. 
 For the synthetic dataset, we simulated a decentralized network consisting of $10000$ nodes, where every node is randomly connected with other $15$ nodes.
 For the three real datasets, we simulated a network consisting of $5$ nodes. 
 In these networks, the nodes are connected by a ring topology. 
 Under these settings, we can observe that both DOG and COG are effective for the online learning tasks on all the datasets, while DOG achieves slightly worse performance. 
 
-
-
+\paragraph{\rc Can say one phase or sentence to highlight our claim in this experiment?}
 Second, Figure~\ref{figure_compare_network_size} summarizes the effect of the network size on the performance of DOG. We change the number of nodes from $5000$ to $10000$ on the synthetic dataset, and from $5$ to $20$ on the real datasets. The synthetic dataset is tested by using the random topology, and those real datasets are tested by using the ring topology. Figure~\ref{figure_compare_network_size} draws the curves of average loss over time steps. We observe that the average loss curves are mostly overlapped with different nodes. It shows that DOG is robust to the network size (or number of users), which validates our theory, that is, the average regret does not increase with the number of nodes. Furthermore, we observe that the average loss becomes large with the increase of the variance of stochastic data, which validates our theoretical result nicely.  
 
 
@@ -573,6 +573,7 @@ Second, Figure~\ref{figure_compare_network_size} summarizes the effect of the ne
 \label{figure_compare_network_size}
 \end{figure*}
 
+\paragraph{\rc Can say one phase or sentence to highlight our claim in this experiment?}
 
 Third, Figure~\ref{figure_compare_topology} shows the effect of the topology of the network on the performance of DOG, where five different topologies are used. Besides the ring topology, the \textit{No connected} topology means there are no edges in the network, and every node does not share its local model to others. The \textit{Fully connected} topology means all nodes are connected, where DOG de-generates to be COG. The topology  \textit{WattsStrogatz} represents a Watts-Strogatz small-world graph, for which we can use a parameter to control the number of random edges (set as $0.5$ and $1$ in this paper). The result shows \textit{Fully connected} enjoys the best performance, because that $\rho = 0$ for it while $\rho>0$ for other topologies. Specifically, $\rho$ in those topologies is presented in Table \ref{table_rho}. A small $\rho$ leads to a good performance of DOG, which validates our theoretical result nicely. 
 
