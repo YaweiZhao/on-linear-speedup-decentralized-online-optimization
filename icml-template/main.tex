@@ -358,8 +358,9 @@ In the DOG algorithm, users exchange their local models periodically. In each it
 \item ({\bf Gradient}) Apply the local model to $f_{i,t}(\cdot; \xi_{i,t})$ and obtain the gradient;
 \item ({\bf Update}) Update the local model by taking average with neighbors' models followed by a gradient step.
 \end{itemize}
-The detailed description of the DOG algorithm can be found in Algorithm~\ref{algo_DOG}. $\W$ is the confusion matrix. 
-{\rc To Chen and Yawei, explain $\W$ appropriately.}
+The detailed description of the DOG algorithm can be found in Algorithm~\ref{algo_DOG}. $\W\in\RR^{n\times n}$ is the confusion matrix. 
+
+
 
 % The proposed \textsc{DOG} algorithm is presented in Algorithm \ref{algo_DOG}. This algorithm works iteration by iteration. At each iteration, every node needs to collect local models, e.g., $\x_{i,t}$, from its neighbors, and compute a weighted sum as $ \sum_{j=1}^n \W_{i,j}\x_{j,t}$. Then, the weighted sum is updated by an online gradient descent step. In addition, we denote $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$ to facilitate the theoretical analysis. We can verify that $\bar{\x}_{t+1} =  \bar{\x}_t -  \frac{\eta}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})$ (see Lemma \ref{Lemma_average_update_rule}). 
 
@@ -399,11 +400,7 @@ The last assumption about $\W$ is an essential assumption for the decentralized 
 Now we are ready present the dynamic regret for DOG.
 \begin{Theorem}
 \label{theorem_regret_upper_bound}
-<<<<<<< HEAD
-Denote a constant $C_0$ by
-=======
 Let the constant $C$ be
->>>>>>> 0fdadb2e9c0c399c3c8e4e08f9b8882644496247
 \begin{align}
 \nonumber
 C := & \frac{L + 2\eta L^2  + 4L^2 \eta}{(1-\rho)^2} +2L.
