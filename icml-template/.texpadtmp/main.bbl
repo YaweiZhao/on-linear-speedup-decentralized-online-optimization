@@ -1,4 +1,4 @@
-\begin{thebibliography}{44}
+\begin{thebibliography}{45}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -51,6 +51,14 @@ N.~Chen, G.~Goel, and A.~Wierman.
 \newblock {Smoothed Online Convex Optimization in High Dimensions via Online
   Balanced Descent}.
 \newblock \emph{arXiv.org}, Mar. 2018.
+
+\bibitem[{Duchi, John C} et~al.(2012){Duchi, John C}, {Agarwal, Alekh}, and
+  {Wainwright, Martin J}]{Duchi:2012hp}
+{Duchi, John C}, {Agarwal, Alekh}, and {Wainwright, Martin J}.
+\newblock {Dual Averaging for Distributed Optimization - Convergence Analysis
+  and Network Scaling.}
+\newblock \emph{IEEE Trans. Automat. Contr.}, 57\penalty0 (3):\penalty0
+  592--606, 2012.
 
 \bibitem[Gy\"{o}rgy and Szepesv\'{a}ri(2016)]{Gyorgy:2016}
 A.~Gy\"{o}rgy and C.~Szepesv\'{a}ri.
