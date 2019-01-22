@@ -206,8 +206,7 @@ Suppose that there are $n$ users. Each user maintains a local predictive model, 
 \paragraph{Dynamic regret.} The commonly used regret used in online learning is \emph{static}:
 \begin{align}
 \label{equa_definition_our_regret}
-\widetilde{\Rcal}_T^{A} := & \sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t}) 
-- \sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x^\ast),
+\widetilde{\Rcal}_T^{A} := & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \left[\sum_{i=1}^n\sum_{t=1}^T \lrincir{f_{i,t}(\x_{i,t}) - f_{i,t}(\x^\ast)} \right],
 \end{align} where the optimal model $\x^\ast$ is defined by
 % \begin{align}
 %It essentially assumes that the optimal model would not change over time. However, in many practical online learning application scenarios, the optimal model may evolve over time. For example, {\rc Please give an example here.} Therefore, we choose to use the \emph{dynamic} regret as the metric for an algorithm $A$:
