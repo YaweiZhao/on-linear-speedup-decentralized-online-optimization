@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  21 JAN 2019 21:46
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  21 JAN 2019 21:47
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -471,7 +471,9 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 108.
 \cv@tot=\count150
 \cv@tmpc@=\count151
 \cv@tmpc=\count152
-) (/Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/icml-template/.texpadtmp/main.aux
+)
+Package hyperref Info: Option `draft' set `true' on input line 75.
+ (/Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/icml-template/.texpadtmp/main.aux
 
 LaTeX Warning: Label `equa_definition_our_regret' multiply defined.
 
@@ -545,8 +547,12 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \AtBeginShipoutBox=\box61
+
+
+Package hyperref Warning: Draft mode on.
+
 Package hyperref Info: Link coloring ON on input line 76.
- (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
  (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
@@ -556,10 +562,6 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 LaTeX Info: Redefining \ref on input line 76.
 LaTeX Info: Redefining \pageref on input line 76.
 LaTeX Info: Redefining \nameref on input line 76.
- (/Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/icml-template/.texpadtmp/main.out) (/Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/icml-template/.texpadtmp/main.out)
-\@outlinefile=\write3
-\openout3 = `main.out'.
-
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 124.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
@@ -582,54 +584,14 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
-
-Package hyperref Warning: Ignoring empty anchor on input line 135.
-
 LaTeX Font Info:    Try loading font information for OML+ptm on input line 135.
-(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omlptm.fd
+ (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omlptm.fd
 File: omlptm.fd 
 )
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <9> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 135.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 138.
-
-
-Package natbib Warning: Citation `Hazan2016Introduction' on page 1 undefined on input line 145.
-
-
-Package natbib Warning: Citation `ShalevShwartz:2012dz' on page 1 undefined on input line 145.
-
-
-Package natbib Warning: Citation `introduction-online-optimization' on page 1 undefined on input line 145.
-
-
-Package natbib Warning: Citation `Paternain:2016tl' on page 1 undefined on input line 145.
-
-
-Package natbib Warning: Citation `Bach:2016wt' on page 1 undefined on input line 145.
-
-
-Package natbib Warning: Citation `HoNguyen:2017ki' on page 1 undefined on input line 145.
-
-
-Package natbib Warning: Citation `Neely:2017ul' on page 1 undefined on input line 145.
-
-
-Package natbib Warning: Citation `Chen:2018vl' on page 1 undefined on input line 145.
-
-
-Package natbib Warning: Citation `Orabona:2012vr' on page 1 undefined on input line 145.
-
-
-Package natbib Warning: Citation `Hazan2016Introduction' on page 1 undefined on input line 145.
-
-
-Package natbib Warning: Citation `ShalevShwartz:2012dz' on page 1 undefined on input line 145.
-
-
-Package natbib Warning: Citation `introduction-online-optimization' on page 1 undefined on input line 145.
-
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
@@ -644,191 +606,15 @@ File: omsptm.fd
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 155.
-
-
-Package natbib Warning: Citation `Hazan2016Introduction' on page 2 undefined on input line 179.
-
-
-Package natbib Warning: Citation `ShalevShwartz:2012dz' on page 2 undefined on input line 179.
-
-
-Package natbib Warning: Citation `introduction-online-optimization' on page 2 undefined on input line 179.
-
-
-Package natbib Warning: Citation `8015179Shahram' on page 2 undefined on input line 181.
-
-
-Package natbib Warning: Citation `Kamp:2014:CDO' on page 2 undefined on input line 181.
-
-
-Package natbib Warning: Citation `Koppel-8352032' on page 2 undefined on input line 181.
-
-
-Package natbib Warning: Citation `Zhang2018' on page 2 undefined on input line 181.
-
-
-Package natbib Warning: Citation `pmlr-v70-zhang17g' on page 2 undefined on input line 181.
-
-
-Package natbib Warning: Citation `Xu2015' on page 2 undefined on input line 181.
-
-
-Package natbib Warning: Citation `tcns-7353155' on page 2 undefined on input line 181.
-
-
-Package natbib Warning: Citation `cdc-7798923' on page 2 undefined on input line 181.
-
-
-Package natbib Warning: Citation `acc-7172037' on page 2 undefined on input line 181.
-
-
-Package natbib Warning: Citation `tcns-7479495' on page 2 undefined on input line 181.
-
-
-Package natbib Warning: Citation `Benczur:2018ww' on page 2 undefined on input line 181.
-
-
-Package natbib Warning: Citation `tkde-6311406' on page 2 undefined on input line 181.
-
-
-Package natbib Warning: Citation `8015179Shahram' on page 2 undefined on input line 181.
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ‡ in font ptmr7t!
 
 
 LaTeX Warning: Reference `equa_define_M' on page 2 undefined on input line 181.
 
-
-Package natbib Warning: Citation `8015179Shahram' on page 2 undefined on input line 181.
-
-
-Package natbib Warning: Citation `Kamp:2014:CDO' on page 2 undefined on input line 181.
-
-
-Package natbib Warning: Citation `Zhang2018' on page 2 undefined on input line 182.
-
-
-Package natbib Warning: Citation `Xu2015' on page 2 undefined on input line 182.
-
-
-Package natbib Warning: Citation `tcns-7353155' on page 2 undefined on input line 182.
-
-
-Package natbib Warning: Citation `cdc-7798923' on page 2 undefined on input line 182.
-
-
-Package natbib Warning: Citation `acc-7172037' on page 2 undefined on input line 182.
-
-
-Package natbib Warning: Citation `tcns-7479495' on page 2 undefined on input line 182.
-
-
-Package natbib Warning: Citation `6760092' on page 2 undefined on input line 182.
-
-
-Package natbib Warning: Citation `tkde-6311406' on page 2 undefined on input line 182.
-
-
-Package natbib Warning: Citation `Zinkevich:2003' on page 2 undefined on input line 187.
-
-
-Package natbib Warning: Citation `Hall:2015ct' on page 2 undefined on input line 187.
-
-
-Package natbib Warning: Citation `Hall:2013vr' on page 2 undefined on input line 187.
-
-
-Package natbib Warning: Citation `Jadbabaie:2015wg' on page 2 undefined on input line 187.
-
-
-Package natbib Warning: Citation `Yang:2016ud' on page 2 undefined on input line 187.
-
-
-Package natbib Warning: Citation `Bedi:2018te' on page 2 undefined on input line 187.
-
-
-Package natbib Warning: Citation `Zhang:2016wl' on page 2 undefined on input line 187.
-
-
-Package natbib Warning: Citation `Mokhtari:2016jz' on page 2 undefined on input line 187.
-
-
-Package natbib Warning: Citation `Zhang:2018tu' on page 2 undefined on input line 187.
-
-
-Package natbib Warning: Citation `Gyorgy:2016' on page 2 undefined on input line 187.
-
-
-Package natbib Warning: Citation `NIPS2016_6536' on page 2 undefined on input line 187.
-
-
-Package natbib Warning: Citation `Zhao:2018wx' on page 2 undefined on input line 187.
-
-
-Package natbib Warning: Citation `Zinkevich:2003' on page 2 undefined on input line 187.
-
-
-Package natbib Warning: Citation `Hall:2015ct' on page 2 undefined on input line 191.
-
-
-Package natbib Warning: Citation `Hall:2013vr' on page 2 undefined on input line 191.
-
-
-Package natbib Warning: Citation `Jadbabaie:2015wg' on page 2 undefined on input line 191.
-
-
-Package natbib Warning: Citation `Yang:2016ud' on page 2 undefined on input line 191.
-
-
-Package natbib Warning: Citation `Bedi:2018te' on page 2 undefined on input line 191.
-
-
-Package natbib Warning: Citation `Zhang:2016wl' on page 2 undefined on input line 191.
-
-
-Package natbib Warning: Citation `Mokhtari:2016jz' on page 2 undefined on input line 191.
-
-
-Package natbib Warning: Citation `Zhang:2018tu' on page 2 undefined on input line 191.
-
-
-Package natbib Warning: Citation `Gyorgy:2016' on page 2 undefined on input line 191.
-
-
-Package natbib Warning: Citation `Gyorgy:2016' on page 2 undefined on input line 191.
-
-
-Package natbib Warning: Citation `Zhao:2018wx' on page 2 undefined on input line 191.
-
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ‡ in font ptmr7t!
 [2]
-
-Package natbib Warning: Citation `Herbster1998' on page 3 undefined on input line 193.
-
-
-Package natbib Warning: Citation `Gyorgy:2005wo' on page 3 undefined on input line 193.
-
-
-Package natbib Warning: Citation `Gyorgy:2012wa' on page 3 undefined on input line 193.
-
-
-Package natbib Warning: Citation `Gyorgy:2016' on page 3 undefined on input line 193.
-
-
-Package natbib Warning: Citation `Mourtada:2017vn' on page 3 undefined on input line 193.
-
-
-Package natbib Warning: Citation `JMLR:v17:13-533' on page 3 undefined on input line 193.
-
-
-Package natbib Warning: Citation `NIPS2016_6536' on page 3 undefined on input line 193.
-
-
-Package natbib Warning: Citation `cesabianchi:hal' on page 3 undefined on input line 193.
-
-
-Package natbib Warning: Citation `pmlr-v84-mohri18a' on page 3 undefined on input line 193.
-
-
-Package natbib Warning: Citation `pmlr-v54-jun17a' on page 3 undefined on input line 193.
-
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `!htbp') on input line 325.
@@ -841,58 +627,12 @@ Underfull \hbox (badness 1057) in paragraph at lines 333--334
 [3]
 LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 359.
-
-
-Package natbib Warning: Citation `Zhao:2018wx' on page 4 undefined on input line 412.
-
-
-Package natbib Warning: Citation `8015179Shahram' on page 4 undefined on input line 419.
-
-
-Package natbib Warning: Citation `8015179Shahram' on page 4 undefined on input line 420.
-
-
-Package natbib Warning: Citation `8015179Shahram' on page 4 undefined on input line 425.
-
-
-Package natbib Warning: Citation `8015179Shahram' on page 4 undefined on input line 425.
-
-
-Package natbib Warning: Citation `8015179Shahram' on page 4 undefined on input line 425.
-
-
-Underfull \hbox (badness 3612) in paragraph at lines 425--426
-[]\OT1/ptm/m/n/10 (+20) As il-lus-trated in The-o-rem [][]2[][], \OT1/ptm/b/n/10 ? \OT1/ptm/m/n/10 (+20) has pro-vided a
- []
-
-
-Package natbib Warning: Citation `8015179Shahram' on page 4 undefined on input line 436.
-
-
-Package natbib Warning: Citation `pmlr-v70-zhang17g' on page 4 undefined on input line 436.
-
-
-Package natbib Warning: Citation `tcns-7353155' on page 4 undefined on input line 436.
-
-
-Underfull \hbox (badness 6094) in paragraph at lines 436--437
-\OT1/ptm/m/n/10 (+20) all data as the ad-ver-sary data, ig-nor-ing the po-
- []
-
-
-Underfull \hbox (badness 4378) in paragraph at lines 436--437
-\OT1/ptm/m/n/10 (+20) ten-tial re-la-tions among lo-cal mod-els. They usu-
- []
-
-
-Underfull \hbox (badness 2818) in paragraph at lines 436--437
-\OT1/ptm/m/n/10 (+20) ally as-sume gra-di-ent of the loss func-tion $\OMS/cmsy/m/n/10 r\OML/cmm/m/it/10 f[]$ \OT1/ptm/m/n/10 (+20) is
- []
-
-
-Underfull \vbox (badness 1454) has occurred while \output is active []
-
  [4]
+Underfull \hbox (badness 1728) in paragraph at lines 436--437
+[]\OT1/ptm/b/n/10 Dependence on $\OML/cmm/m/it/10 ^^[[]$\OT1/ptm/b/n/10 . \OT1/ptm/m/n/10 (+20) Pre-vi-ous re-searches (Shahram-
+ []
+
+
 Underfull \hbox (badness 1924) in paragraph at lines 466--467
 []$\OML/cmm/m/it/10 M$ \OT1/ptm/m/n/10 (+20) is fixed as 10 to de-ter-mine the space of ref-er-
  []
@@ -916,12 +656,12 @@ Underfull \hbox (badness 1975) in paragraph at lines 466--467
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `!tbp') on input line 470.
 
-<figure_dynamics.pdf, id=87, 507.69733pt x 234.42342pt>
+<figure_dynamics.pdf, id=32, 507.69733pt x 234.42342pt>
 File: figure_dynamics.pdf Graphic file (type pdf)
  <use figure_dynamics.pdf>
 Package pdftex.def Info: figure_dynamics.pdf used on input line 474.
 (pdftex.def)             Requested size: 164.41353pt x 75.91484pt.
- <figure_ave_loss_iteration_synthetic.pdf, id=88, 406.14023pt x 298.21452pt>
+ <figure_ave_loss_iteration_synthetic.pdf, id=33, 406.14023pt x 298.21452pt>
 File: figure_ave_loss_iteration_synthetic.pdf Graphic file (type pdf)
  <use figure_ave_loss_iteration_synthetic.pdf>
 Package pdftex.def Info: figure_ave_loss_iteration_synthetic.pdf used on input line 484.
@@ -931,17 +671,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 484--484
 []\OT1/ptm/m/n/9 (+20) (a) \OT1/ptm/m/it/9 (+20) syn-thetic data\OT1/ptm/m/n/9 (+20) , $\OT1/cmr/m/n/9 10000$
  []
 
-<figure_ave_loss_iteration_occupancy.pdf, id=89, 396.42758pt x 292.41255pt>
+<figure_ave_loss_iteration_occupancy.pdf, id=34, 396.42758pt x 292.41255pt>
 File: figure_ave_loss_iteration_occupancy.pdf Graphic file (type pdf)
  <use figure_ave_loss_iteration_occupancy.pdf>
 Package pdftex.def Info: figure_ave_loss_iteration_occupancy.pdf used on input line 485.
 (pdftex.def)             Requested size: 112.74019pt x 83.15996pt.
- <figure_ave_loss_iteration_usenet2.pdf, id=90, 388.44322pt x 297.29309pt>
+ <figure_ave_loss_iteration_usenet2.pdf, id=35, 388.44322pt x 297.29309pt>
 File: figure_ave_loss_iteration_usenet2.pdf Graphic file (type pdf)
  <use figure_ave_loss_iteration_usenet2.pdf>
 Package pdftex.def Info: figure_ave_loss_iteration_usenet2.pdf used on input line 486.
 (pdftex.def)             Requested size: 112.74019pt x 86.28535pt.
- <figure_ave_loss_iteration_spam.pdf, id=91, 507.98027pt x 391.39867pt>
+ <figure_ave_loss_iteration_spam.pdf, id=36, 507.98027pt x 391.39867pt>
 File: figure_ave_loss_iteration_spam.pdf Graphic file (type pdf)
  <use figure_ave_loss_iteration_spam.pdf>
 Package pdftex.def Info: figure_ave_loss_iteration_spam.pdf used on input line 487.
@@ -960,26 +700,23 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             See the microtype manual for details.
 
 Underfull \hbox (badness 10000) in paragraph at lines 503--503
-[][][][][]$\OT1/pcr/m/n/9 https : / / archive . ics . uci . edu / ml / datasets /
+[][][]$\OT1/pcr/m/n/9 https : / / archive . ics . uci . edu / ml / datasets /
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 503--503
-[][][][][]$\OT1/pcr/m/n/9 http : / / mlkd . csd . auth . gr / concept _ drift .
+[][][]$\OT1/pcr/m/n/9 http : / / mlkd . csd . auth . gr / concept _ drift .
  []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 503--503
-[][][][][]$\OT1/pcr/m/n/9 http : / / mlkd . csd . auth . gr / concept _ drift .
+[][][]$\OT1/pcr/m/n/9 http : / / mlkd . csd . auth . gr / concept _ drift .
  []
 
 
-Package natbib Warning: Citation `Katakis:2010:TR' on page 5 undefined on input line 503.
+Underfull \vbox (badness 1881) has occurred while \output is active []
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5 <./figure_dynamics.pdf>] <figure_ave_loss_network_size_synthetic.pdf, id=134, 517.47185pt x 383.73775pt>
+ [5 <./figure_dynamics.pdf>] <figure_ave_loss_network_size_synthetic.pdf, id=59, 517.47185pt x 383.73775pt>
 File: figure_ave_loss_network_size_synthetic.pdf Graphic file (type pdf)
  <use figure_ave_loss_network_size_synthetic.pdf>
 Package pdftex.def Info: figure_ave_loss_network_size_synthetic.pdf used on input line 531.
@@ -989,17 +726,17 @@ Underfull \hbox (badness 7468) in paragraph at lines 531--531
 []\OT1/ptm/m/n/9 (+20) (a) \OT1/ptm/m/it/9 (+20) syn-thetic data\OT1/ptm/m/n/9 (+20) , ran-dom
  []
 
-<figure_ave_loss_network_size_occupancy.pdf, id=135, 396.28432pt x 291.18256pt>
+<figure_ave_loss_network_size_occupancy.pdf, id=60, 396.28432pt x 291.18256pt>
 File: figure_ave_loss_network_size_occupancy.pdf Graphic file (type pdf)
  <use figure_ave_loss_network_size_occupancy.pdf>
 Package pdftex.def Info: figure_ave_loss_network_size_occupancy.pdf used on input line 532.
 (pdftex.def)             Requested size: 112.74019pt x 82.83682pt.
- <figure_ave_loss_network_size_usenet2.pdf, id=136, 394.44363pt x 291.3324pt>
+ <figure_ave_loss_network_size_usenet2.pdf, id=61, 394.44363pt x 291.3324pt>
 File: figure_ave_loss_network_size_usenet2.pdf Graphic file (type pdf)
  <use figure_ave_loss_network_size_usenet2.pdf>
 Package pdftex.def Info: figure_ave_loss_network_size_usenet2.pdf used on input line 533.
 (pdftex.def)             Requested size: 112.74019pt x 83.26619pt.
- <figure_ave_loss_network_size_spam.pdf, id=137, 394.87123pt x 292.96141pt>
+ <figure_ave_loss_network_size_spam.pdf, id=62, 394.87123pt x 292.96141pt>
 File: figure_ave_loss_network_size_spam.pdf Graphic file (type pdf)
  <use figure_ave_loss_network_size_spam.pdf>
 Package pdftex.def Info: figure_ave_loss_network_size_spam.pdf used on input line 534.
@@ -1009,25 +746,29 @@ Package pdftex.def Info: figure_ave_loss_network_size_spam.pdf used on input lin
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `!tbp') on input line 543.
 
-<figure_ave_loss_topology_synthetic.pdf, id=140, 395.58774pt x 290.54326pt>
+<figure_ave_loss_topology_synthetic.pdf, id=63, 395.58774pt x 290.54326pt>
 File: figure_ave_loss_topology_synthetic.pdf Graphic file (type pdf)
  <use figure_ave_loss_topology_synthetic.pdf>
 Package pdftex.def Info: figure_ave_loss_topology_synthetic.pdf used on input line 562.
 (pdftex.def)             Requested size: 112.74019pt x 82.80124pt.
- <figure_ave_loss_topology_occupancy.pdf, id=141, 503.13318pt x 385.47986pt>
+ <figure_ave_loss_topology_occupancy.pdf, id=64, 503.13318pt x 385.47986pt>
 File: figure_ave_loss_topology_occupancy.pdf Graphic file (type pdf)
  <use figure_ave_loss_topology_occupancy.pdf>
 Package pdftex.def Info: figure_ave_loss_topology_occupancy.pdf used on input line 563.
 (pdftex.def)             Requested size: 112.74019pt x 86.3763pt.
- <figure_ave_loss_topology_usenet2.pdf, id=142, 506.55193pt x 390.24757pt>
+ <figure_ave_loss_topology_usenet2.pdf, id=65, 506.55193pt x 390.24757pt>
 File: figure_ave_loss_topology_usenet2.pdf Graphic file (type pdf)
  <use figure_ave_loss_topology_usenet2.pdf>
 Package pdftex.def Info: figure_ave_loss_topology_usenet2.pdf used on input line 564.
 (pdftex.def)             Requested size: 112.74019pt x 86.85512pt.
- <figure_ave_loss_topology_spam.pdf, id=143, 507.85048pt x 390.37573pt>
+ <figure_ave_loss_topology_spam.pdf, id=66, 507.85048pt x 390.37573pt>
 File: figure_ave_loss_topology_spam.pdf Graphic file (type pdf)
  <use figure_ave_loss_topology_spam.pdf>
 Package pdftex.def Info: figure_ave_loss_topology_spam.pdf used on input line 565.
@@ -1036,18 +777,14 @@ Package pdftex.def Info: figure_ave_loss_topology_spam.pdf used on input line 56
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-(/Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/icml-template/.texpadtmp/main.bbl) [6
+(/Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/icml-template/.texpadtmp/main.bbl [6 <./figure_ave_loss_iteration_synthetic.pdf> <./figure_ave_loss_iteration_occupancy.pdf> <./figure_ave_loss_iteration_usenet2.pdf> <./figure_ave_loss_iteration_spam.pdf>] [7 <./figure_ave_loss_network_size_synthetic.pdf> <./figure_ave_loss_network_size_occupancy.pdf> <./figure_ave_loss_network_size_usenet2.pdf> <./figure_ave_loss_network_size_spam.pdf> <./figure_ave_loss_topology_synthetic.pdf> <./figure_ave_loss_topology_occupancy.pdf> <./figure_ave_loss_topology_usenet2.pdf> <./figure_ave_loss_topology_spam.pdf>]
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ‡ in font ptmr7t!
+Missing character: There is no Ä in font ptmr7t!
+Missing character: There is no ‡ in font ptmr7t!
+ [8]) [9
 
- <./figure_ave_loss_iteration_synthetic.pdf> <./figure_ave_loss_iteration_occupancy.pdf> <./figure_ave_loss_iteration_usenet2.pdf> <./figure_ave_loss_iteration_spam.pdf>] [7 <./figure_ave_loss_network_size_synthetic.pdf> <./figure_ave_loss_network_size_occupancy.pdf> <./figure_ave_loss_network_size_usenet2.pdf> <./figure_ave_loss_network_size_spam.pdf> <./figure_ave_loss_topology_synthetic.pdf> <./figure_ave_loss_topology_occupancy.pdf> <./figure_ave_loss_topology_usenet2.pdf> <./figure_ave_loss_topology_spam.pdf>]
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 608.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 608.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 608.
-
+]
 
 LaTeX Warning: Command \textcircled invalid in math mode on input line 608.
 
@@ -1058,7 +795,13 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 608.
 LaTeX Warning: Command \textcircled invalid in math mode on input line 608.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 625.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 608.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 608.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 608.
 
 
 LaTeX Warning: Command \textcircled invalid in math mode on input line 625.
@@ -1081,8 +824,10 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 625.
 
 LaTeX Warning: Command \textcircled invalid in math mode on input line 625.
 
-[8
 
+LaTeX Warning: Command \textcircled invalid in math mode on input line 625.
+
+[10
 
 ]
 
@@ -1097,13 +842,13 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 633.
 
 LaTeX Warning: Command \textcircled invalid in math mode on input line 633.
 
-[9] [10]
+[11] [12]
 Overfull \hbox (2.26186pt too wide) in paragraph at lines 713--713
 [] 
  []
 
 
-LaTeX Warning: Reference `equa_define_M' on page 11 undefined on input line 713.
+LaTeX Warning: Reference `equa_define_M' on page 13 undefined on input line 713.
 
 
 LaTeX Warning: Command \textcircled invalid in math mode on input line 727.
@@ -1141,7 +886,7 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 727.
 
 LaTeX Warning: Command \textcircled invalid in math mode on input line 727.
 
-[11]
+[13]
 
 LaTeX Warning: Command \textcircled invalid in math mode on input line 728.
 
@@ -1160,7 +905,7 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 737.
 
 LaTeX Warning: Command \textcircled invalid in math mode on input line 737.
 
-[12]
+[14]
 
 LaTeX Warning: Command \textcircled invalid in math mode on input line 797.
 
@@ -1184,14 +929,7 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 797.
 
 LaTeX Warning: Command \textcircled invalid in math mode on input line 797.
 
-[13]
-
-Package natbib Warning: Citation `Tang:2018un' on page 14 undefined on input line 872.
-
-[14]
-
-Package natbib Warning: Citation `Tang:2018un' on page 15 undefined on input line 883.
-
+[15] [16]
 
 LaTeX Warning: Command \textcircled invalid in math mode on input line 943.
 
@@ -1228,7 +966,7 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 943.
 
 LaTeX Warning: Command \textcircled invalid in math mode on input line 943.
 
-[15]
+[17]
 
 LaTeX Warning: Command \textcircled invalid in math mode on input line 943.
 
@@ -1276,18 +1014,13 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 954.
 
 
 LaTeX Warning: Command \textcircled invalid in math mode on input line 954.
-
-
-Package natbib Warning: There were undefined citations.
 
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 985.
-[16]
+[18]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 985.
  (/Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/icml-template/.texpadtmp/main.aux)
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 985.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 985.
-Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 985.
 
 
 LaTeX Warning: There were undefined references.
@@ -1298,18 +1031,18 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 985.
  ) 
 Here is how much of TeX's memory you used:
- 10874 strings out of 493089
- 165175 string characters out of 6134842
- 300675 words of memory out of 5000000
- 13816 multiletter control sequences out of 15000+600000
- 49555 words of font info for 239 fonts, out of 8000000 for 9000
+ 10923 strings out of 493089
+ 166427 string characters out of 6134842
+ 301225 words of memory out of 5000000
+ 13908 multiletter control sequences out of 15000+600000
+ 51922 words of font info for 265 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,19n,45p,1709b,541s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/icml-template/.texpadtmp/main.pdf (16 pages, 628858 bytes).
+Output written on /Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/icml-template/.texpadtmp/main.pdf (18 pages, 637990 bytes).
 PDF statistics:
- 489 PDF objects out of 1000 (max. 8388607)
- 390 compressed objects within 4 object streams
- 77 named destinations out of 1000 (max. 500000)
+ 347 PDF objects out of 1000 (max. 8388607)
+ 247 compressed objects within 3 object streams
+ 0 named destinations out of 1000 (max. 500000)
  38466 words of extra memory for PDF output out of 42996 (max. 10000000)
 
