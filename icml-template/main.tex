@@ -136,7 +136,7 @@
 
 
 \begin{abstract}
-In this paper, we consider online learning in the decentralized setting, which is motivated by the application scenario where users want to take benefits from the data from other users, but do not want to share their private data to a third party or other users. Instead, they can only share their private prediction model, e.g., recommendation model. We study the decentralized online gradient method in which each user maintains a private model and share its private model with its neighbors (or users he/she trusts) periodically. In addition, to consider more practical scenario we allow users' interest changing over time (it means that the optimal model changes over time), unlike most online works which assume that the optimal prediction model is constant. We show that decentralized online gradient (DOG) can efficiently and effectively propagate the values in all private data without sharing them to track the dynamics of users' interest, by proving a tight dynamic regret $\Ocal{n\sqrt{TM} + \sqrt{nTM}\sigma}$ for DOG where $n$ is the number of users, $T$ is the number of time steps, $M$ measures the dynamics (this is, how much the users' interest changes over time), and $\sigma$ measures the randomness of the private data. Empirical studies are also conducted to validate our analysis. This study indicates the possibility of a new framework of data service: all users can take benefit from their private data without sharing them.
+In this paper, we consider online learning in the decentralized setting, which is motivated by the application scenario where users want to take benefits from the data from other users, but do not want to share their private data to a third party or other users. Instead, they can only share their private prediction model, e.g., recommendation model. We study the decentralized online gradient method in which each user maintains a private model and share its private model with its neighbors (or users he/she trusts) periodically. In addition, to consider more practical scenario we allow users' interest changing over time (it means that the optimal model changes over time), unlike most online works which assume that the optimal prediction model is constant. We show that decentralized online gradient (DOG) can efficiently and effectively propagate the values in all private data without sharing them to track the dynamics of users' interest, by proving a tight dynamic regret $\Ocal{n\sqrt{TMG} + \sqrt{nTM}\sigma}$ for DOG where $n$ is the number of users, $T$ is the number of time steps, $M$ measures the dynamics (this is, how much the users' interest changes over time), $G$ measures the magnitude of the adversarial component in the private data, and $\sigma$ measures the randomness of the private data. Empirical studies are also conducted to validate our analysis. This study indicates the possibility of a new framework of data service: all users can take benefit from their private data without sharing them.
 \end{abstract}
 
 
@@ -381,7 +381,7 @@ We make following assumptions throughout this paper:
 \item For any $i\in[n]$, $t\in[T]$, and $\x$, there exist constants $G$ and $\sigma^2$ such that
 \begin{align}
 \nonumber
-\EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla f_{i,t}(\x;\xi_{i,t})}^2 \le &  G,
+\EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla f_{i,t}(\x;\xi_{i,t})}^2 \le &  G^2,
 \end{align} and 
 \begin{align}
 \nonumber
@@ -421,14 +421,19 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing
 \eta = \sqrt{\frac{(1-\rho) \lrincir{nM\sqrt{R} + nR}}{ nTG + T\sigma^2 }}
 \end{align} in Algorithm \ref{algo_DOG}, we have
 \begin{align}
-\nonumber
+\label{equa_result_Corollary}
 & \Rcal_T^{\textsc{DOG}} \\ \nonumber
 \lesssim & n \sqrt{T\lrincir{M+\sqrt{R}}G}  + \sqrt{n T\lrincir{M+\sqrt{R}}}\sigma \\ \nonumber
-& + \frac{n\lrincir{M+\sqrt{R}}}{1-\rho} + \sqrt{\frac{TM\lrincir{n^2G + n \sigma^2}}{1-\rho}} \\ \label{equa_result_Corollary}
-& + \sqrt{\frac{T\lrincir{n^2G + n \sigma^2}}{1-\rho}}.
+& + \frac{n\lrincir{M+\sqrt{R}}}{1-\rho} + \sqrt{\frac{T(M+\sqrt{R})\lrincir{n^2G + n \sigma^2}}{1-\rho}} 
 \end{align}
 \end{Corollary}
-Let us under this 
+For simpler discussion, let us treat $R$, $G$, and $1-\rho$ as constants. The dynamic regret can simplified into $O(n\sqrt{MT}G + \sqrt{nMT}\sigma)$. The discussion for the dynamic regret is conducted in the following
+\begin{itemize}
+\item ({\bf Insight}) Recall that $G$ measures the magnitude of the adversarial component and $\sigma$ measures the random component. 
+\item ({\bf Tightness})
+\item ({\bf Comparison to \citet{}})
+\item ({\bf Comparison to \citet{}})
+\end{itemize} 
 
 First, Corollary \ref{Corollary_regret_upper_bound} shows that the dynamic regret of DOG is sublinear. Second, we would like make some comments on the effects of different parameters on the dynamic regret. The regret becomes large with the increase of the budget of dynamics $M$. When $n=1$ and $\rho =0$, the dynamic regret is $\Ocal{\sqrt{TM}+\sqrt{T}}$, which is tight in the case of $n=1$ \citep{Zhao:2018wx}. When $ <1$, the regret $\Rcal_T^{\textsc{DOG}}$ has $\sqrt{nTM\sigma^2}$ dependence on $\sigma^2$, instead of $\sqrt{n^2TM\sigma^2}$. It benefits from the communication among nodes in the decentralized setting. Since every node shares its model with its neighbours, the variance of the average of stochastic gradients $\frac{1}{n}\sum_{i=1}^n\nabla f_{i,t}(\x_{i,t};\xi_{i,t})$ is decreased to be $\frac{\sigma^2}{n}$, thus eventually reducing the regret caused by the stochastic part of data.   Additionally, the regret is affected by the topology of the network, which is measured by $\rho$ with $0\le \rho < 1$. For a fully connected network\footnote{When a network is fully connected, a decentralized method de-generates to a centralized method.}, $\rho = 0$, then the regret is better than those for other topologies. 
 
