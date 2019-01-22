@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  22 JAN 2019 15:26
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  22 JAN 2019 15:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -715,7 +715,7 @@ Package amsmath Warning: Foreign command \over;
 (amsmath)                 on input line 444.
 
 
-LaTeX Warning: Reference `XXXX' on page 5 undefined on input line 445.
+LaTeX Warning: Reference `XXXX' on page 5 undefined on input line 446.
 
 
 Underfull \hbox (badness 1924) in paragraph at lines 459--460
@@ -749,7 +749,7 @@ LaTeX Warning: No positions in optional float specifier.
 File: figure_dynamics.pdf Graphic file (type pdf)
 <use figure_dynamics.pdf>
 Package pdftex.def Info: figure_dynamics.pdf  used on input line 467.
-(pdftex.def)             Requested size: 164.41353pt x 75.91484pt.
+(pdftex.def)             Requested size: 211.3883pt x 97.60582pt.
 <figure_ave_loss_iteration_synthetic.pdf, id=33, 406.14023pt x 298.21452pt>
 File: figure_ave_loss_iteration_synthetic.pdf Graphic file (type pdf)
 <use figure_ave_loss_iteration_synthetic.pdf>
@@ -808,6 +808,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 496--496
 [][][]$\OT1/pcr/m/n/9 http : / / mlkd . csd . auth . gr / concept _ drift .
  []
 
+
+Underfull \vbox (badness 2426) has occurred while \output is active []
+
 <figure_ave_loss_network_size_synthetic.pdf, id=40, 517.47185pt x 383.73775pt>
 File: figure_ave_loss_network_size_synthetic.pdf Graphic file (type pdf)
 <use figure_ave_loss_network_size_synthetic.pdf>
@@ -832,6 +835,7 @@ File: figure_ave_loss_network_size_spam.pdf Graphic file (type pdf)
 Package pdftex.def Info: figure_ave_loss_network_size_spam.pdf  used on input l
 ine 526.
 (pdftex.def)             Requested size: 112.74019pt x 83.64238pt.
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -866,18 +870,14 @@ Package pdftex.def Info: figure_ave_loss_topology_spam.pdf  used on input line
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6 <./figure_dynamics.pdf>] (./main.bbl [7 <./figure_ave_loss_iteration_synthe
-tic.pdf> <./figure_ave_loss_iteration_occupancy.pdf> <./figure_ave_loss_iterati
-on_usenet2.pdf> <./figure_ave_loss_iteration_spam.pdf> <./figure_ave_loss_netwo
-rk_size_synthetic.pdf> <./figure_ave_loss_network_size_occupancy.pdf> <./figure
-_ave_loss_network_size_usenet2.pdf> <./figure_ave_loss_network_size_spam.pdf> <
-./figure_ave_loss_topology_synthetic.pdf> <./figure_ave_loss_topology_occupancy
-.pdf> <./figure_ave_loss_topology_usenet2.pdf> <./figure_ave_loss_topology_spam
-.pdf>]
-[8]) [9
+[6 <./figure_dynamics.pdf>] (./main.bbl [7 <./figure_ave_loss_iteration_synthet
+ic.pdf> <./figure_ave_loss_iteration_occupancy.pdf> <./figure_ave_loss_iteratio
+n_usenet2.pdf> <./figure_ave_loss_iteration_spam.pdf> <./figure_ave_loss_networ
+k_size_synthetic.pdf> <./figure_ave_loss_network_size_occupancy.pdf> <./figure_
+ave_loss_network_size_usenet2.pdf> <./figure_ave_loss_network_size_spam.pdf> <.
+/figure_ave_loss_topology_synthetic.pdf> <./figure_ave_loss_topology_occupancy.
+pdf> <./figure_ave_loss_topology_usenet2.pdf> <./figure_ave_loss_topology_spam.
+pdf>] [8]) [9
 
 ]
 
@@ -1161,7 +1161,7 @@ ts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on main.pdf (18 pages, 625775 bytes).
+Output written on main.pdf (18 pages, 625800 bytes).
 PDF statistics:
  339 PDF objects out of 1000 (max. 8388607)
  241 compressed objects within 3 object streams
