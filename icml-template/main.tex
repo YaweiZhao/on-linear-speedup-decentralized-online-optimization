@@ -398,7 +398,7 @@ $G$ essentially gives the upper bound for the adversarial component in $f_{i,t}(
 The bound of dynamic regret yielded by Algorithm \ref{algo_DOG} is presented in the following theorem. 
 \begin{Theorem}
 \label{theorem_regret_upper_bound}
-Denote constants $C_0$, and $C_1$ by
+Denote a constant $C_0$ by
 \begin{align}
 \nonumber
 C_0 := & \frac{L + 2\eta L^2  + 4L^2 \eta}{(1-\rho)^2} +2L.
@@ -422,9 +422,8 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing
 \begin{align}
 \nonumber
 & \Rcal_T^{\textsc{DOG}} \\ \nonumber
-\lesssim & n \sqrt{T\lrincir{M+\sqrt{R}}G}  + \sqrt{n T\lrincir{M+\sqrt{R}}\sigma^2} \\ \nonumber
-& + \frac{n\lrincir{M+\sqrt{R}}}{1-\rho} + \sqrt{\frac{TM\lrincir{n^2G + n \sigma^2}}{1-\rho}} \\ \label{equa_result_Corollary}
-& + \sqrt{\frac{T\lrincir{n^2G + n \sigma^2}}{1-\rho}}.
+\lesssim & n \sqrt{T\lrincir{M+\sqrt{R}}G}  + \sqrt{n T\lrincir{M+\sqrt{R}}\sigma^2} \\ \label{equa_result_Corollary}
+& + \frac{n\lrincir{M+\sqrt{R}}}{1-\rho} + \sqrt{\frac{T\lrincir{M+\sqrt{R}}(n^2G + n\sigma^2)}{1-\rho}}.
 \end{align}
 
 \end{Corollary}
