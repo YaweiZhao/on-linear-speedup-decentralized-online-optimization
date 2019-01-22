@@ -202,16 +202,27 @@ Suppose that there are $n$ users. Each user maintains a local predictive model, 
 
 \paragraph{Communication network.} Users do not want to share the information to others and can only share their private models to their neighbors (or friends). The graph is denoted by $\mathcal{G}=(\text{nodes:} [n], \text{edges:} E)$. {\rc Chen: please use this notation to define the confusion matrix in next section.}
 
-\paragraph{Dynamic regret.} For any an online algorithm $A\in\Acal$, the commonly used regret used in online learning is \emph{static}:
+
+\paragraph{Dynamic regret.} The commonly used regret used in online learning is \emph{static}:
 \begin{align}
 \label{equa_definition_our_regret}
 \widetilde{\Rcal}_T^{A} := & \sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t}) 
 - \sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x^\ast),
 \end{align} where the optimal model $\x^\ast$ is defined by
-\begin{align}
-\nonumber
-\x^\ast := \argmin_{\x} \sum\limits_{i=1}^n\sum\limits_{t=1}^T  f_{i,t}(\x).
-\end{align}
+% \begin{align}
+%It essentially assumes that the optimal model would not change over time. However, in many practical online learning application scenarios, the optimal model may evolve over time. For example, {\rc Please give an example here.} Therefore, we choose to use the \emph{dynamic} regret as the metric for an algorithm $A$:
+%
+%%\paragraph{Dynamic regret.} For any an online algorithm $A\in\Acal$, the commonly used regret used in online learning is \emph{static}:
+%
+%\begin{align}
+%\label{equa_definition_our_regret}
+%\widetilde{\Rcal}_T^{A} := & \sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t}) 
+%- \sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x^\ast),
+%\end{align} where the optimal model $\x^\ast$ is defined by
+%\begin{align}
+%\nonumber
+%\x^\ast := \argmin_{\x} \sum\limits_{i=1}^n\sum\limits_{t=1}^T  f_{i,t}(\x).
+%\end{align}
 It essentially assumes that the optimal model would not change over time. However, in many practical online learning application scenarios, the optimal model may evolve over time. For example, when we want to conduct music recommendation to a user, user's preference to music may change over time as his/her situation.  Thus, the optimal model $\x^\ast$ should change over time. It leads to the dynamics of the optimal recommendation model. Therefore, for any an online algorithm $A\in\Acal$, we choose to use the \emph{dynamic} regret as the metric:
 \begin{align}
 \nonumber
@@ -317,17 +328,19 @@ where $\mathcal{L}_M^T$ is defined by
 
 
 
-\section{Decentralized online gradient method} \label{sec:algorithm}
-In the section, we first present the decentralized online gradient method, and then prove that it leads to $\Ocal{n\sqrt{TM} + \sqrt{nTM}\sigma}$ dynamic regret. 
-\subsection{Algorithm}
+\section{Decentralized online gradient (DOG) algorithm} \label{sec:algorithm}
+In the section, we introduce the DOG algorithm, followed by the analysis for the dynamic regret.
+%then prove that it leads to $\Ocal{n\sqrt{TM} + \sqrt{nTM}\sigma}$ dynamic regret. 
+\subsection{Algorithm description}
 
 
 \begin{algorithm}[!]
    \caption{\textsc{DOG}: Decentralized Online Gradient method.}
    \label{algo_DOG}
    \begin{algorithmic}[1]
-   \REQUIRE The learning rate $\eta$, number of iterations $T$, and the confusion matrix $\W$. $\x_{i,1} = \0$ for any $i\in [n]$.
-       \FOR {$t=1,2, ..., T$}
+   \REQUIRE Learning rate $\eta$, number of iterations $T$, and the confusion matrix $\W$.    
+  \STATE $\x_{i,1} = \0$ for all $i\in [n]$.    
+   \FOR {$t=1,2, ..., T$}
             \STATE \textbf{For the $i$-th node with $i\in[n]$:}
             \STATE \indent Predict $\x_{i,t}$.
             \STATE \indent Observe the loss function $f_{i,t}$,  and suffer loss $f_{i,t}(\x_{i,t};\xi_{i,t})$.
@@ -338,9 +351,7 @@ In the section, we first present the decentralized online gradient method, and t
    \end{algorithmic}
 \end{algorithm}
 
-
-The Decentralized Online Gradient method, namely \textsc{DOG}, is presented in Algorithm \ref{algo_DOG}. This algorithm works iteration by iteration.
-At each iteration, every node needs to collect local models, e.g., $\x_{i,t}$, from its neighbours, and compute a weighted sum as $ \sum_{j=1}^n \W_{i,j}\x_{j,t}$. Then, the weighte sum is updated by an online gradient descent step. In addition, we denote $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$ to facilitate the theoretical analysis. We can verify that $\bar{\x}_{t+1} =  \bar{\x}_t -  \frac{\eta}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})$ (see Lemma \ref{Lemma_average_update_rule}). 
+The proposed \textsc{DOG} algorithm is presented in Algorithm \ref{algo_DOG}. This algorithm works iteration by iteration. At each iteration, every node needs to collect local models, e.g., $\x_{i,t}$, from its neighbors, and compute a weighted sum as $ \sum_{j=1}^n \W_{i,j}\x_{j,t}$. Then, the weighted sum is updated by an online gradient descent step. In addition, we denote $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$ to facilitate the theoretical analysis. We can verify that $\bar{\x}_{t+1} =  \bar{\x}_t -  \frac{\eta}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})$ (see Lemma \ref{Lemma_average_update_rule}). 
 
 
 
