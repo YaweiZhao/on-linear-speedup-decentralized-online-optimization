@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  21 JAN 2019 21:49
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  21 JAN 2019 22:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -523,21 +523,7 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 108.
 \cv@tmpc=\count153
 )
 Package hyperref Info: Option `draft' set `true' on input line 75.
- (./main.aux
-
-LaTeX Warning: Label `equa_definition_our_regret' multiply defined.
-
-
-LaTeX Warning: Label `equa_result_Corollary' multiply defined.
-
-
-LaTeX Warning: Label `figure_ave_loss_topology_occupancy' multiply defined.
-
-
-LaTeX Warning: Label `sub@figure_ave_loss_topology_occupancy' multiply defined.
-
-
-)
+ (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 76.
@@ -664,6 +650,55 @@ LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <9> not available
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 138.
 
+
+Package natbib Warning: Citation `Hazan2016Introduction' on page 1 undefined on
+ input line 145.
+
+
+Package natbib Warning: Citation `ShalevShwartz:2012dz' on page 1 undefined on 
+input line 145.
+
+
+Package natbib Warning: Citation `introduction-online-optimization' on page 1 u
+ndefined on input line 145.
+
+
+Package natbib Warning: Citation `Paternain:2016tl' on page 1 undefined on inpu
+t line 145.
+
+
+Package natbib Warning: Citation `Bach:2016wt' on page 1 undefined on input lin
+e 145.
+
+
+Package natbib Warning: Citation `HoNguyen:2017ki' on page 1 undefined on input
+ line 145.
+
+
+Package natbib Warning: Citation `Neely:2017ul' on page 1 undefined on input li
+ne 145.
+
+
+Package natbib Warning: Citation `Chen:2018vl' on page 1 undefined on input lin
+e 145.
+
+
+Package natbib Warning: Citation `Orabona:2012vr' on page 1 undefined on input 
+line 145.
+
+
+Package natbib Warning: Citation `Hazan2016Introduction' on page 1 undefined on
+ input line 145.
+
+
+Package natbib Warning: Citation `ShalevShwartz:2012dz' on page 1 undefined on 
+input line 145.
+
+
+Package natbib Warning: Citation `introduction-online-optimization' on page 1 u
+ndefined on input line 145.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
@@ -684,7 +719,259 @@ Overfull \hbox (8.41927pt too wide) detected at line 159
 []
  []
 
+
+Package natbib Warning: Citation `Hazan2016Introduction' on page 2 undefined on
+ input line 179.
+
+
+Package natbib Warning: Citation `ShalevShwartz:2012dz' on page 2 undefined on 
+input line 179.
+
+
+Package natbib Warning: Citation `introduction-online-optimization' on page 2 u
+ndefined on input line 179.
+
+
+Package natbib Warning: Citation `8015179Shahram' on page 2 undefined on input 
+line 181.
+
+
+Package natbib Warning: Citation `Kamp:2014:CDO' on page 2 undefined on input l
+ine 181.
+
+
+Package natbib Warning: Citation `Koppel-8352032' on page 2 undefined on input 
+line 181.
+
+
+Package natbib Warning: Citation `Zhang2018' on page 2 undefined on input line 
+181.
+
+
+Package natbib Warning: Citation `pmlr-v70-zhang17g' on page 2 undefined on inp
+ut line 181.
+
+
+Package natbib Warning: Citation `Xu2015' on page 2 undefined on input line 181
+.
+
+
+Package natbib Warning: Citation `tcns-7353155' on page 2 undefined on input li
+ne 181.
+
+
+Package natbib Warning: Citation `cdc-7798923' on page 2 undefined on input lin
+e 181.
+
+
+Package natbib Warning: Citation `acc-7172037' on page 2 undefined on input lin
+e 181.
+
+
+Package natbib Warning: Citation `tcns-7479495' on page 2 undefined on input li
+ne 181.
+
+
+Package natbib Warning: Citation `Benczur:2018ww' on page 2 undefined on input 
+line 181.
+
+
+Package natbib Warning: Citation `tkde-6311406' on page 2 undefined on input li
+ne 181.
+
+
+Package natbib Warning: Citation `8015179Shahram' on page 2 undefined on input 
+line 181.
+
+
+LaTeX Warning: Reference `equa_definition_previous_regret' on page 2 undefined 
+on input line 181.
+
+
+Package natbib Warning: Citation `8015179Shahram' on page 2 undefined on input 
+line 181.
+
+
+LaTeX Warning: Reference `Lemma_x_variance_norm_square' on page 2 undefined on 
+input line 181.
+
+
+Package natbib Warning: Citation `Kamp:2014:CDO' on page 2 undefined on input l
+ine 181.
+
+
+Package natbib Warning: Citation `Zhang2018' on page 2 undefined on input line 
+182.
+
+
+Package natbib Warning: Citation `Xu2015' on page 2 undefined on input line 182
+.
+
+
+Package natbib Warning: Citation `tcns-7353155' on page 2 undefined on input li
+ne 182.
+
+
+Package natbib Warning: Citation `cdc-7798923' on page 2 undefined on input lin
+e 182.
+
+
+Package natbib Warning: Citation `acc-7172037' on page 2 undefined on input lin
+e 182.
+
+
+Package natbib Warning: Citation `tcns-7479495' on page 2 undefined on input li
+ne 182.
+
+
+Package natbib Warning: Citation `6760092' on page 2 undefined on input line 18
+2.
+
+
+Package natbib Warning: Citation `tkde-6311406' on page 2 undefined on input li
+ne 182.
+
+
+Package natbib Warning: Citation `Zinkevich:2003' on page 2 undefined on input 
+line 187.
+
+
+Package natbib Warning: Citation `Hall:2015ct' on page 2 undefined on input lin
+e 187.
+
+
+Package natbib Warning: Citation `Hall:2013vr' on page 2 undefined on input lin
+e 187.
+
+
+Package natbib Warning: Citation `Jadbabaie:2015wg' on page 2 undefined on inpu
+t line 187.
+
+
+Package natbib Warning: Citation `Yang:2016ud' on page 2 undefined on input lin
+e 187.
+
+
+Package natbib Warning: Citation `Bedi:2018te' on page 2 undefined on input lin
+e 187.
+
+
+Package natbib Warning: Citation `Zhang:2016wl' on page 2 undefined on input li
+ne 187.
+
+
+Package natbib Warning: Citation `Mokhtari:2016jz' on page 2 undefined on input
+ line 187.
+
+
+Package natbib Warning: Citation `Zhang:2018tu' on page 2 undefined on input li
+ne 187.
+
+
+Package natbib Warning: Citation `Gyorgy:2016' on page 2 undefined on input lin
+e 187.
+
+
+Package natbib Warning: Citation `NIPS2016_6536' on page 2 undefined on input l
+ine 187.
+
+
+Package natbib Warning: Citation `Zhao:2018wx' on page 2 undefined on input lin
+e 187.
+
+
+Package natbib Warning: Citation `Zinkevich:2003' on page 2 undefined on input 
+line 187.
+
+
+Package natbib Warning: Citation `Hall:2015ct' on page 2 undefined on input lin
+e 191.
+
+
+Package natbib Warning: Citation `Hall:2013vr' on page 2 undefined on input lin
+e 191.
+
+
+Package natbib Warning: Citation `Jadbabaie:2015wg' on page 2 undefined on inpu
+t line 191.
+
+
+Package natbib Warning: Citation `Yang:2016ud' on page 2 undefined on input lin
+e 191.
+
+
+Package natbib Warning: Citation `Bedi:2018te' on page 2 undefined on input lin
+e 191.
+
+
+Package natbib Warning: Citation `Zhang:2016wl' on page 2 undefined on input li
+ne 191.
+
+
+Package natbib Warning: Citation `Mokhtari:2016jz' on page 2 undefined on input
+ line 191.
+
+
+Package natbib Warning: Citation `Zhang:2018tu' on page 2 undefined on input li
+ne 191.
+
+
+Package natbib Warning: Citation `Gyorgy:2016' on page 2 undefined on input lin
+e 191.
+
+
+Package natbib Warning: Citation `Gyorgy:2016' on page 2 undefined on input lin
+e 191.
+
+
+Package natbib Warning: Citation `Zhao:2018wx' on page 2 undefined on input lin
+e 191.
+
+
+LaTeX Warning: Reference `equa_definition_previous_regret' on page 2 undefined 
+on input line 191.
+
 [2]
+
+Package natbib Warning: Citation `Herbster1998' on page 3 undefined on input li
+ne 193.
+
+
+Package natbib Warning: Citation `Gyorgy:2005wo' on page 3 undefined on input l
+ine 193.
+
+
+Package natbib Warning: Citation `Gyorgy:2012wa' on page 3 undefined on input l
+ine 193.
+
+
+Package natbib Warning: Citation `Gyorgy:2016' on page 3 undefined on input lin
+e 193.
+
+
+Package natbib Warning: Citation `Mourtada:2017vn' on page 3 undefined on input
+ line 193.
+
+
+Package natbib Warning: Citation `JMLR:v17:13-533' on page 3 undefined on input
+ line 193.
+
+
+Package natbib Warning: Citation `NIPS2016_6536' on page 3 undefined on input l
+ine 193.
+
+
+Package natbib Warning: Citation `cesabianchi:hal' on page 3 undefined on input
+ line 193.
+
+
+Package natbib Warning: Citation `pmlr-v84-mohri18a' on page 3 undefined on inp
+ut line 193.
+
+
+Package natbib Warning: Citation `pmlr-v54-jun17a' on page 3 undefined on input
+ line 193.
+
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `!htbp') on input line 336.
@@ -700,34 +987,144 @@ Underfull \hbox (badness 1057) in paragraph at lines 346--348
 1/ptm/m/n/10 (+20) , and suf-fer loss
  []
 
+
+LaTeX Warning: Reference `algo_DOG' on page 3 undefined on input line 361.
+
 [3]
 LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 380.
- [4]
-Underfull \hbox (badness 1728) in paragraph at lines 462--463
-[]\OT1/ptm/b/n/10 Dependence on $\OML/cmm/m/it/10 ^^[[]$\OT1/ptm/b/n/10 . \OT1/
-ptm/m/n/10 (+20) Pre-vi-ous re-searches (Shahram-
+
+
+LaTeX Warning: Reference `algo_DOG' on page 4 undefined on input line 406.
+
+
+LaTeX Warning: Reference `assumption_bounded_gradient_domain' on page 4 undefin
+ed on input line 406.
+
+
+LaTeX Warning: Reference `assumption_bounded_gradient_domain' on page 4 undefin
+ed on input line 417.
+
+
+LaTeX Warning: Reference `algo_DOG' on page 4 undefined on input line 421.
+
+
+Package natbib Warning: Citation `xxx' on page 4 undefined on input line 434.
+
+
+Package natbib Warning: Citation `xxx' on page 4 undefined on input line 435.
+
+
+Package natbib Warning: Citation `xxx' on page 4 undefined on input line 435.
+
+
+LaTeX Warning: Reference `Corollary_regret_upper_bound' on page 4 undefined on 
+input line 444.
+
+
+Package natbib Warning: Citation `Zhao:2018wx' on page 4 undefined on input lin
+e 444.
+
+[4]
+
+Package natbib Warning: Citation `8015179Shahram' on page 5 undefined on input 
+line 451.
+
+
+Package natbib Warning: Citation `8015179Shahram' on page 5 undefined on input 
+line 452.
+
+
+LaTeX Warning: Reference `assumption_bounded_gradient_domain' on page 5 undefin
+ed on input line 454.
+
+
+LaTeX Warning: Reference `algo_DOG' on page 5 undefined on input line 454.
+
+
+LaTeX Warning: Reference `theorem_privious_dog_regret' on page 5 undefined on i
+nput line 457.
+
+
+Package natbib Warning: Citation `8015179Shahram' on page 5 undefined on input 
+line 457.
+
+
+LaTeX Warning: Reference `equa_definition_previous_regret' on page 5 undefined 
+on input line 457.
+
+
+Package natbib Warning: Citation `8015179Shahram' on page 5 undefined on input 
+line 457.
+
+
+Package natbib Warning: Citation `8015179Shahram' on page 5 undefined on input 
+line 457.
+
+
+Underfull \hbox (badness 2662) in paragraph at lines 457--458
+[]\OT1/ptm/m/n/10 (+20) As il-lus-trated in The-o-rem [], \OT1/ptm/b/n/10 ? \OT
+1/ptm/m/n/10 (+20) has pro-vided a
  []
 
 
-Underfull \hbox (badness 1924) in paragraph at lines 492--493
+LaTeX Warning: Reference `assumption_bounded_gradient_domain' on page 5 undefin
+ed on input line 460.
+
+
+LaTeX Warning: Reference `algo_DOG' on page 5 undefined on input line 460.
+
+
+Package natbib Warning: Citation `8015179Shahram' on page 5 undefined on input 
+line 468.
+
+
+Package natbib Warning: Citation `pmlr-v70-zhang17g' on page 5 undefined on inp
+ut line 468.
+
+
+Package natbib Warning: Citation `tcns-7353155' on page 5 undefined on input li
+ne 468.
+
+
+LaTeX Warning: Reference `Lemma_assumption_discussion' on page 5 undefined on i
+nput line 468.
+
+
+Underfull \hbox (badness 6094) in paragraph at lines 468--469
+\OT1/ptm/m/n/10 (+20) all data as the ad-ver-sary data, ig-nor-ing the po-
+ []
+
+
+Underfull \hbox (badness 4378) in paragraph at lines 468--469
+\OT1/ptm/m/n/10 (+20) ten-tial re-la-tions among lo-cal mod-els. They usu-
+ []
+
+
+Underfull \hbox (badness 2818) in paragraph at lines 468--469
+\OT1/ptm/m/n/10 (+20) ally as-sume gra-di-ent of the loss func-tion $\OMS/cmsy/
+m/n/10 r\OML/cmm/m/it/10 f[]$ \OT1/ptm/m/n/10 (+20) is
+ []
+
+
+Underfull \hbox (badness 1924) in paragraph at lines 498--499
 []$\OML/cmm/m/it/10 M$ \OT1/ptm/m/n/10 (+20) is fixed as 10 to de-ter-mine the 
 space of ref-er-
  []
 
 
-Underfull \hbox (badness 2384) in paragraph at lines 492--493
+Underfull \hbox (badness 2384) in paragraph at lines 498--499
 \OT1/ptm/m/n/10 (+20) ti-mal for each dataset sper-ately. We eval-u-ate the
  []
 
 
-Underfull \hbox (badness 1565) in paragraph at lines 492--493
+Underfull \hbox (badness 1565) in paragraph at lines 498--499
 \OT1/ptm/m/n/10 (+20) learn-ing per-for-mance by mea-sur-ing the av-er-age loss
 
  []
 
 
-Underfull \hbox (badness 1975) in paragraph at lines 492--493
+Underfull \hbox (badness 1975) in paragraph at lines 498--499
 [] [][] [][] \OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 x[]\OT1/cmr/
 m/n/10 ; \OML/cmm/m/it/10 ^^X[]\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 (+20) , in-ste
 ad of the dy-namic
@@ -735,21 +1132,21 @@ ad of the dy-namic
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 496.
+               Default added (so using `!tbp') on input line 502.
 
 <figure_dynamics.pdf, id=32, 507.69733pt x 234.42342pt>
 File: figure_dynamics.pdf Graphic file (type pdf)
 <use figure_dynamics.pdf>
-Package pdftex.def Info: figure_dynamics.pdf  used on input line 500.
+Package pdftex.def Info: figure_dynamics.pdf  used on input line 506.
 (pdftex.def)             Requested size: 164.41353pt x 75.91484pt.
 <figure_ave_loss_iteration_synthetic.pdf, id=33, 406.14023pt x 298.21452pt>
 File: figure_ave_loss_iteration_synthetic.pdf Graphic file (type pdf)
 <use figure_ave_loss_iteration_synthetic.pdf>
 Package pdftex.def Info: figure_ave_loss_iteration_synthetic.pdf  used on input
- line 510.
+ line 516.
 (pdftex.def)             Requested size: 112.74019pt x 82.78053pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 510--510
+Underfull \hbox (badness 10000) in paragraph at lines 516--516
 []\OT1/ptm/m/n/9 (+20) (a) \OT1/ptm/m/it/9 (+20) syn-thetic data\OT1/ptm/m/n/9 
 (+20) , $\OT1/cmr/m/n/9 10000$
  []
@@ -758,25 +1155,32 @@ Underfull \hbox (badness 10000) in paragraph at lines 510--510
 File: figure_ave_loss_iteration_occupancy.pdf Graphic file (type pdf)
 <use figure_ave_loss_iteration_occupancy.pdf>
 Package pdftex.def Info: figure_ave_loss_iteration_occupancy.pdf  used on input
- line 511.
+ line 517.
 (pdftex.def)             Requested size: 112.74019pt x 83.15996pt.
 <figure_ave_loss_iteration_usenet2.pdf, id=35, 388.44322pt x 297.29309pt>
 File: figure_ave_loss_iteration_usenet2.pdf Graphic file (type pdf)
 <use figure_ave_loss_iteration_usenet2.pdf>
 Package pdftex.def Info: figure_ave_loss_iteration_usenet2.pdf  used on input l
-ine 512.
+ine 518.
 (pdftex.def)             Requested size: 112.74019pt x 86.28535pt.
 <figure_ave_loss_iteration_spam.pdf, id=36, 507.98027pt x 391.39867pt>
 File: figure_ave_loss_iteration_spam.pdf Graphic file (type pdf)
 <use figure_ave_loss_iteration_spam.pdf>
 Package pdftex.def Info: figure_ave_loss_iteration_spam.pdf  used on input line
- 513.
+ 519.
 (pdftex.def)             Requested size: 112.74019pt x 86.86644pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[5]
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 529.
+
+LaTeX Warning: Reference `figure_illus_dynamics' on page 5 undefined on input l
+ine 532.
+
+
+Underfull \vbox (badness 4739) has occurred while \output is active []
+
+ [5 <./figure_dynamics.pdf>]
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 535.
 
  (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -786,349 +1190,448 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 10000) in paragraph at lines 529--529
+Underfull \hbox (badness 10000) in paragraph at lines 535--535
 [][][]$\OT1/pcr/m/n/9 https : / / archive . ics . uci . edu / ml / datasets /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 529--529
+Underfull \hbox (badness 10000) in paragraph at lines 535--535
 [][][]$\OT1/pcr/m/n/9 http : / / mlkd . csd . auth . gr / concept _ drift .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 529--529
+Underfull \hbox (badness 10000) in paragraph at lines 535--535
 [][][]$\OT1/pcr/m/n/9 http : / / mlkd . csd . auth . gr / concept _ drift .
  []
+
+
+Package natbib Warning: Citation `Katakis:2010:TR' on page 6 undefined on input
+ line 535.
+
+
+LaTeX Warning: Reference `figure_compare_loss' on page 6 undefined on input lin
+e 548.
+
+
+LaTeX Warning: Reference `figure_compare_network_size' on page 6 undefined on i
+nput line 556.
+
+
+LaTeX Warning: Reference `figure_compare_network_size' on page 6 undefined on i
+nput line 556.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<figure_ave_loss_network_size_synthetic.pdf, id=44, 517.47185pt x 383.73775pt>
+<figure_ave_loss_network_size_synthetic.pdf, id=58, 517.47185pt x 383.73775pt>
 File: figure_ave_loss_network_size_synthetic.pdf Graphic file (type pdf)
 <use figure_ave_loss_network_size_synthetic.pdf>
 Package pdftex.def Info: figure_ave_loss_network_size_synthetic.pdf  used on in
-put line 557.
+put line 563.
 (pdftex.def)             Requested size: 112.74019pt x 83.60281pt.
 
-Underfull \hbox (badness 7468) in paragraph at lines 557--557
+Underfull \hbox (badness 7468) in paragraph at lines 563--563
 []\OT1/ptm/m/n/9 (+20) (a) \OT1/ptm/m/it/9 (+20) syn-thetic data\OT1/ptm/m/n/9 
 (+20) , ran-dom
  []
 
-<figure_ave_loss_network_size_occupancy.pdf, id=45, 396.28432pt x 291.18256pt>
+<figure_ave_loss_network_size_occupancy.pdf, id=59, 396.28432pt x 291.18256pt>
 File: figure_ave_loss_network_size_occupancy.pdf Graphic file (type pdf)
 <use figure_ave_loss_network_size_occupancy.pdf>
 Package pdftex.def Info: figure_ave_loss_network_size_occupancy.pdf  used on in
-put line 558.
+put line 564.
 (pdftex.def)             Requested size: 112.74019pt x 82.83682pt.
-<figure_ave_loss_network_size_usenet2.pdf, id=46, 394.44363pt x 291.3324pt>
+<figure_ave_loss_network_size_usenet2.pdf, id=60, 394.44363pt x 291.3324pt>
 File: figure_ave_loss_network_size_usenet2.pdf Graphic file (type pdf)
 <use figure_ave_loss_network_size_usenet2.pdf>
 Package pdftex.def Info: figure_ave_loss_network_size_usenet2.pdf  used on inpu
-t line 559.
+t line 565.
 (pdftex.def)             Requested size: 112.74019pt x 83.26619pt.
-<figure_ave_loss_network_size_spam.pdf, id=47, 394.87123pt x 292.96141pt>
+<figure_ave_loss_network_size_spam.pdf, id=61, 394.87123pt x 292.96141pt>
 File: figure_ave_loss_network_size_spam.pdf Graphic file (type pdf)
 <use figure_ave_loss_network_size_spam.pdf>
 Package pdftex.def Info: figure_ave_loss_network_size_spam.pdf  used on input l
-ine 560.
+ine 566.
 (pdftex.def)             Requested size: 112.74019pt x 83.64238pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 569.
+LaTeX Warning: Reference `figure_compare_topology' on page 6 undefined on input
+ line 572.
 
-<figure_ave_loss_topology_synthetic.pdf, id=48, 395.58774pt x 290.54326pt>
+
+LaTeX Warning: Reference `table_rho' on page 6 undefined on input line 572.
+
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 575.
+
+<figure_ave_loss_topology_synthetic.pdf, id=62, 395.58774pt x 290.54326pt>
 File: figure_ave_loss_topology_synthetic.pdf Graphic file (type pdf)
 <use figure_ave_loss_topology_synthetic.pdf>
 Package pdftex.def Info: figure_ave_loss_topology_synthetic.pdf  used on input 
-line 588.
+line 594.
 (pdftex.def)             Requested size: 112.74019pt x 82.80124pt.
-<figure_ave_loss_topology_occupancy.pdf, id=49, 503.13318pt x 385.47986pt>
+<figure_ave_loss_topology_occupancy.pdf, id=63, 503.13318pt x 385.47986pt>
 File: figure_ave_loss_topology_occupancy.pdf Graphic file (type pdf)
 <use figure_ave_loss_topology_occupancy.pdf>
 Package pdftex.def Info: figure_ave_loss_topology_occupancy.pdf  used on input 
-line 589.
+line 595.
 (pdftex.def)             Requested size: 112.74019pt x 86.3763pt.
-<figure_ave_loss_topology_usenet2.pdf, id=50, 506.55193pt x 390.24757pt>
+<figure_ave_loss_topology_usenet2.pdf, id=64, 506.55193pt x 390.24757pt>
 File: figure_ave_loss_topology_usenet2.pdf Graphic file (type pdf)
 <use figure_ave_loss_topology_usenet2.pdf>
 Package pdftex.def Info: figure_ave_loss_topology_usenet2.pdf  used on input li
-ne 590.
+ne 596.
 (pdftex.def)             Requested size: 112.74019pt x 86.85512pt.
-<figure_ave_loss_topology_spam.pdf, id=51, 507.85048pt x 390.37573pt>
+<figure_ave_loss_topology_spam.pdf, id=65, 507.85048pt x 390.37573pt>
 File: figure_ave_loss_topology_spam.pdf Graphic file (type pdf)
 <use figure_ave_loss_topology_spam.pdf>
 Package pdftex.def Info: figure_ave_loss_topology_spam.pdf  used on input line 
-591.
+597.
 (pdftex.def)             Requested size: 112.74019pt x 86.65729pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-(./main.bbl [6 <./figure_dynamics.pdf>] [7 <./figure_ave_loss_iteration_synthet
-ic.pdf> <./figure_ave_loss_iteration_occupancy.pdf> <./figure_ave_loss_iteratio
-n_usenet2.pdf> <./figure_ave_loss_iteration_spam.pdf> <./figure_ave_loss_networ
-k_size_synthetic.pdf> <./figure_ave_loss_network_size_occupancy.pdf> <./figure_
-ave_loss_network_size_usenet2.pdf> <./figure_ave_loss_network_size_spam.pdf> <.
-/figure_ave_loss_topology_synthetic.pdf> <./figure_ave_loss_topology_occupancy.
-pdf> <./figure_ave_loss_topology_usenet2.pdf> <./figure_ave_loss_topology_spam.
-pdf>] [8]) [9
+[6 <./figure_ave_loss_iteration_synthetic.pdf> <./figure_ave_loss_iteration_occ
+upancy.pdf> <./figure_ave_loss_iteration_usenet2.pdf> <./figure_ave_loss_iterat
+ion_spam.pdf>] (./main.bbl [7 <./figure_ave_loss_network_size_synthetic.pdf> <.
+/figure_ave_loss_network_size_occupancy.pdf> <./figure_ave_loss_network_size_us
+enet2.pdf> <./figure_ave_loss_network_size_spam.pdf> <./figure_ave_loss_topolog
+y_synthetic.pdf> <./figure_ave_loss_topology_occupancy.pdf> <./figure_ave_loss_
+topology_usenet2.pdf> <./figure_ave_loss_topology_spam.pdf>] [8]) [9
 
 ]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 634.
+LaTeX Warning: Reference `theorem_regret_upper_bound' on page 10 undefined on i
+nput line 617.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 634.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 640.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 634.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 640.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 634.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 640.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 634.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 640.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 634.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 640.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 651.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 640.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 651.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 657.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 651.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 657.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 651.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 657.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 651.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 657.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 651.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 657.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 651.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 657.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 651.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 657.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 657.
 
 [10
 
 ]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 651.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 657.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 651.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 657.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 659.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 665.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 659.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 665.
 
-[11] [12]
-Overfull \hbox (2.26186pt too wide) detected at line 739
+[11]
+
+LaTeX Warning: Reference `Lemma_average_update_rule' on page 12 undefined on in
+put line 692.
+
+
+LaTeX Warning: Reference `equa_thoerem_update_rule_equivalent' on page 12 undef
+ined on input line 703.
+
+[12]
+Overfull \hbox (2.26186pt too wide) detected at line 745
 []
  []
 
 
-LaTeX Warning: Reference `equa_define_M' on page 13 undefined on input line 739
+LaTeX Warning: Reference `equa_define_M' on page 13 undefined on input line 745
 .
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 753.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 759.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 753.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 759.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 753.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 759.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 753.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 759.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 753.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 759.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 753.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 759.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 753.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 759.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 753.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 759.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 753.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 759.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 753.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 759.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 753.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 759.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 753.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 759.
 
 [13]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 754.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 760.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 754.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 760.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 759.
+LaTeX Warning: Reference `Lemma_gradient_norm_bound' on page 14 undefined on in
+put line 760.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 759.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 765.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 763.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 765.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 763.
+LaTeX Warning: Reference `Lemma_x_variance_norm_square' on page 14 undefined on
+ input line 765.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 769.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 769.
+
+
+LaTeX Warning: Reference `assumption_bounded_gradient_domain' on page 14 undefi
+ned on input line 798.
+
+
+LaTeX Warning: Reference `algo_DOG' on page 14 undefined on input line 798.
 
 [14]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 823.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 829.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 823.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 829.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 823.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 829.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 823.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 829.
 
 
-Overfull \hbox (13.50697pt too wide) detected at line 823
+Overfull \hbox (13.50697pt too wide) detected at line 829
 []
  []
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 823.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 829.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 823.
-
-[15] [16]
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 969.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 829.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 969.
+LaTeX Warning: Reference `equa_Lemma_gradient_norm_temp1' on page 15 undefined 
+on input line 844.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 969.
+LaTeX Warning: Reference `equa_Lemma_gradient_norm_temp2' on page 15 undefined 
+on input line 844.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 969.
+LaTeX Warning: Reference `equa_Lemma_gradient_norm_temp0' on page 15 undefined 
+on input line 844.
+
+[15]
+
+Package natbib Warning: Citation `Tang:2018un' on page 16 undefined on input li
+ne 904.
+
+[16]
+
+Package natbib Warning: Citation `Tang:2018un' on page 17 undefined on input li
+ne 915.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 969.
+LaTeX Warning: Reference `Lemma_x_variance_norm_square' on page 17 undefined on
+ input line 932.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 969.
+LaTeX Warning: Reference `Lemma_average_update_rule' on page 17 undefined on in
+put line 949.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 969.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 975.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 969.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 975.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 969.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 975.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 969.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 975.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 969.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 975.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 969.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 975.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 975.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 975.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 975.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 975.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 975.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 975.
 
 [17]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 969.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 975.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 969.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 975.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 969.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 975.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 969.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 975.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 969.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 975.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 969.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 975.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 980.
+LaTeX Warning: Reference `Lemma_hanlin_1' on page 18 undefined on input line 97
+5.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 980.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 986.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 980.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 986.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 980.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 986.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 980.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 986.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 980.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 986.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 980.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 986.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 980.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 986.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 980.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 986.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 980.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 986.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1011.
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 986.
+
+
+LaTeX Warning: Reference `Lemma_hanlin_2' on page 18 undefined on input line 98
+6.
+
+
+LaTeX Warning: Reference `Lemma_assumption_discussion' on page 18 undefined on 
+input line 991.
+
+
+Package natbib Warning: There were undefined citations.
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1017.
 [18]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1011.
- (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1011.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1011.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1017.
+ (./main.aux
+
+Package natbib Warning: Citation(s) may have changed.
+(natbib)                Rerun to get citations correct.
+
+)
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1017.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1017.
 
 
 LaTeX Warning: There were undefined references.
 
 
-LaTeX Warning: There were multiply-defined labels.
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1011.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1017.
  ) 
 Here is how much of TeX's memory you used:
- 11006 strings out of 492649
- 167318 string characters out of 6129622
- 309354 words of memory out of 5000000
+ 11000 strings out of 492649
+ 167261 string characters out of 6129622
+ 303915 words of memory out of 5000000
  14397 multiletter control sequences out of 15000+600000
- 51819 words of font info for 264 fonts, out of 8000000 for 9000
+ 51499 words of font info for 260 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,19n,45p,1709b,543s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
@@ -1156,7 +1659,7 @@ nts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2018/texmf-dist
 ype1/urw/times/utmb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/t
 imes/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8
 a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (18 pages, 639697 bytes).
+Output written on main.pdf (18 pages, 639758 bytes).
 PDF statistics:
  347 PDF objects out of 1000 (max. 8388607)
  247 compressed objects within 3 object streams

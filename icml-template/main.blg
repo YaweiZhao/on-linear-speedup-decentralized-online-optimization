@@ -5,10 +5,12 @@ The style file: abbrvnat.bst
 Database file #1: reference.bib
 Warning--entry type for "introduction-online-optimization" isn't style-file defined
 --line 29 of file reference.bib
+Warning--I didn't find a database entry for "xxx"
+Warning--I didn't find a database entry for ""
 Warning--there's a number but no volume in HoNguyen:2017ki
 You've used 44 entries,
             2773 wiz_defined-function locations,
-            871 strings with 13003 characters,
+            872 strings with 13006 characters,
 and the built_in function-call counts, 23322 in all, are:
 = -- 2071
 > -- 1371
@@ -47,4 +49,4 @@ warning$ -- 1
 while$ -- 196
 width$ -- 0
 write$ -- 573
-(There were 2 warnings)
+(There were 4 warnings)
