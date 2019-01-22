@@ -389,14 +389,15 @@ We make following assumptions throughout this paper:
 \end{align}
 \item For given vectors $\x$ and $\y$, we assume $\lrnorm{\x-\y}^2 \le R$.
 \item  For any $i\in[n]$ and $t\in[T]$, we assume the function $f_{i,t}$ is convex, and has $L$-Lipschitz gradient. 
-\item Given a symmetric doublely stochastic matrix $\W$, and a constant $\rho$ with $\rho := \max\{ |\lambda_2(\W)|, |\lambda_n(\W)| \}$, we assume $\rho <1$.
+\item The confusion matrix $\W$ is symmetric and doubly stochastic. Let $\rho$ be $\rho := \max\{ |\lambda_2(\W)|, |\lambda_n(\W)| \}$ and assume $\rho <1$.
 \end{itemize}
 \end{Assumption}
-$G$ essentially gives the upper bound for the adversarial component in $f_{i,t}(\cdot; \xi_{i,t})$. The random component is bounded by $\sigma^2$. Note that if there is random component, $G$ is nothing but the upper bound of the gradient like many online learning setting. It is important for our analysis to split these two components  
+$G$ essentially gives the upper bound for the adversarial component in $f_{i,t}(\cdot; \xi_{i,t})$. The random component is bounded by $\sigma^2$. Note that if there is no random component, $G$ is nothing but the upper bound of the gradient like the setting in many online learning literature. It is important for our analysis to split these two components, which will be clear very soon. 
 
+The last assumption about $\W$ is an essential assumption for the decentralized setting. The largest eigenvalue for a doubly stochastic matrix is $1$. $1-\rho$ is the spectral gap, measuring how fast the information can propagate within the network (the larger the faster). 
 
-
-The bound of dynamic regret yielded by Algorithm \ref{algo_DOG} is presented in the following theorem. 
+%The bound of dynamic regret yielded by Algorithm \ref{algo_DOG} is presented in the following theorem. 
+Now we are ready present the dynamic regret for DOG.
 \begin{Theorem}
 \label{theorem_regret_upper_bound}
 Denote constants $C_0$, and $C_1$ by
