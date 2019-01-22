@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  21 JAN 2019 17:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  21 JAN 2019 17:54
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -523,9 +523,6 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 108.
 \cv@tmpc=\count153
 ) (./main.aux
 
-LaTeX Warning: Label `equa_definition_our_regret' multiply defined.
-
-
 LaTeX Warning: Label `figure_ave_loss_topology_occupancy' multiply defined.
 
 
@@ -688,6 +685,22 @@ LaTeX Warning: Reference `equa_define_M' on page 2 undefined on input line 181.
 
 
 
+LaTeX Warning: Reference `equa_definition_previous_regret' on page 2 undefined 
+on input line 181.
+
+
+LaTeX Warning: Reference `equa_definition_previous_regret' on page 2 undefined 
+on input line 187.
+
+
+LaTeX Warning: Reference `equa_definition_previous_regret' on page 2 undefined 
+on input line 187.
+
+
+LaTeX Warning: Reference `equa_definition_previous_regret' on page 2 undefined 
+on input line 187.
+
+
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
@@ -707,6 +720,11 @@ Underfull \vbox (badness 1270) has occurred while \output is active []
  [3]
 LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 349.
+
+
+LaTeX Warning: Reference `equa_definition_previous_regret' on page 4 undefined 
+on input line 415.
+
 
 Underfull \hbox (badness 1728) in paragraph at lines 426--427
 []\OT1/ptm/b/n/10 Dependence on $\OML/cmm/m/it/10 ^^[[]$\OT1/ptm/b/n/10 . \OT1/
@@ -741,12 +759,12 @@ ad of the dy-namic
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `!tbp') on input line 460.
 
-<figure_dynamics.pdf, id=301, 507.69733pt x 234.42342pt>
+<figure_dynamics.pdf, id=295, 507.69733pt x 234.42342pt>
 File: figure_dynamics.pdf Graphic file (type pdf)
 <use figure_dynamics.pdf>
 Package pdftex.def Info: figure_dynamics.pdf  used on input line 464.
 (pdftex.def)             Requested size: 164.41353pt x 75.91484pt.
-<figure_ave_loss_iteration_synthetic.pdf, id=302, 406.14023pt x 298.21452pt>
+<figure_ave_loss_iteration_synthetic.pdf, id=296, 406.14023pt x 298.21452pt>
 File: figure_ave_loss_iteration_synthetic.pdf Graphic file (type pdf)
 <use figure_ave_loss_iteration_synthetic.pdf>
 Package pdftex.def Info: figure_ave_loss_iteration_synthetic.pdf  used on input
@@ -758,19 +776,19 @@ Underfull \hbox (badness 10000) in paragraph at lines 474--474
 (+20) , $\OT1/cmr/m/n/9 10000$
  []
 
-<figure_ave_loss_iteration_occupancy.pdf, id=303, 396.42758pt x 292.41255pt>
+<figure_ave_loss_iteration_occupancy.pdf, id=297, 396.42758pt x 292.41255pt>
 File: figure_ave_loss_iteration_occupancy.pdf Graphic file (type pdf)
 <use figure_ave_loss_iteration_occupancy.pdf>
 Package pdftex.def Info: figure_ave_loss_iteration_occupancy.pdf  used on input
  line 475.
 (pdftex.def)             Requested size: 112.74019pt x 83.15996pt.
-<figure_ave_loss_iteration_usenet2.pdf, id=304, 388.44322pt x 297.29309pt>
+<figure_ave_loss_iteration_usenet2.pdf, id=298, 388.44322pt x 297.29309pt>
 File: figure_ave_loss_iteration_usenet2.pdf Graphic file (type pdf)
 <use figure_ave_loss_iteration_usenet2.pdf>
 Package pdftex.def Info: figure_ave_loss_iteration_usenet2.pdf  used on input l
 ine 476.
 (pdftex.def)             Requested size: 112.74019pt x 86.28535pt.
-<figure_ave_loss_iteration_spam.pdf, id=305, 507.98027pt x 391.39867pt>
+<figure_ave_loss_iteration_spam.pdf, id=299, 507.98027pt x 391.39867pt>
 File: figure_ave_loss_iteration_spam.pdf Graphic file (type pdf)
 <use figure_ave_loss_iteration_spam.pdf>
 Package pdftex.def Info: figure_ave_loss_iteration_spam.pdf  used on input line
@@ -810,7 +828,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 493--493
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [5 <./figure_dynamics.pdf>]
-<figure_ave_loss_network_size_synthetic.pdf, id=354, 517.47185pt x 383.73775pt>
+<figure_ave_loss_network_size_synthetic.pdf, id=348, 517.47185pt x 383.73775pt>
 
 File: figure_ave_loss_network_size_synthetic.pdf Graphic file (type pdf)
 <use figure_ave_loss_network_size_synthetic.pdf>
@@ -823,20 +841,20 @@ Underfull \hbox (badness 7468) in paragraph at lines 521--521
 (+20) , ran-dom
  []
 
-<figure_ave_loss_network_size_occupancy.pdf, id=355, 396.28432pt x 291.18256pt>
+<figure_ave_loss_network_size_occupancy.pdf, id=349, 396.28432pt x 291.18256pt>
 
 File: figure_ave_loss_network_size_occupancy.pdf Graphic file (type pdf)
 <use figure_ave_loss_network_size_occupancy.pdf>
 Package pdftex.def Info: figure_ave_loss_network_size_occupancy.pdf  used on in
 put line 522.
 (pdftex.def)             Requested size: 112.74019pt x 82.83682pt.
-<figure_ave_loss_network_size_usenet2.pdf, id=356, 394.44363pt x 291.3324pt>
+<figure_ave_loss_network_size_usenet2.pdf, id=350, 394.44363pt x 291.3324pt>
 File: figure_ave_loss_network_size_usenet2.pdf Graphic file (type pdf)
 <use figure_ave_loss_network_size_usenet2.pdf>
 Package pdftex.def Info: figure_ave_loss_network_size_usenet2.pdf  used on inpu
 t line 523.
 (pdftex.def)             Requested size: 112.74019pt x 83.26619pt.
-<figure_ave_loss_network_size_spam.pdf, id=357, 394.87123pt x 292.96141pt>
+<figure_ave_loss_network_size_spam.pdf, id=351, 394.87123pt x 292.96141pt>
 File: figure_ave_loss_network_size_spam.pdf Graphic file (type pdf)
 <use figure_ave_loss_network_size_spam.pdf>
 Package pdftex.def Info: figure_ave_loss_network_size_spam.pdf  used on input l
@@ -849,25 +867,25 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `!tbp') on input line 533.
 
-<figure_ave_loss_topology_synthetic.pdf, id=360, 395.58774pt x 290.54326pt>
+<figure_ave_loss_topology_synthetic.pdf, id=354, 395.58774pt x 290.54326pt>
 File: figure_ave_loss_topology_synthetic.pdf Graphic file (type pdf)
 <use figure_ave_loss_topology_synthetic.pdf>
 Package pdftex.def Info: figure_ave_loss_topology_synthetic.pdf  used on input 
 line 552.
 (pdftex.def)             Requested size: 112.74019pt x 82.80124pt.
-<figure_ave_loss_topology_occupancy.pdf, id=361, 503.13318pt x 385.47986pt>
+<figure_ave_loss_topology_occupancy.pdf, id=355, 503.13318pt x 385.47986pt>
 File: figure_ave_loss_topology_occupancy.pdf Graphic file (type pdf)
 <use figure_ave_loss_topology_occupancy.pdf>
 Package pdftex.def Info: figure_ave_loss_topology_occupancy.pdf  used on input 
 line 553.
 (pdftex.def)             Requested size: 112.74019pt x 86.3763pt.
-<figure_ave_loss_topology_usenet2.pdf, id=362, 506.55193pt x 390.24757pt>
+<figure_ave_loss_topology_usenet2.pdf, id=356, 506.55193pt x 390.24757pt>
 File: figure_ave_loss_topology_usenet2.pdf Graphic file (type pdf)
 <use figure_ave_loss_topology_usenet2.pdf>
 Package pdftex.def Info: figure_ave_loss_topology_usenet2.pdf  used on input li
 ne 554.
 (pdftex.def)             Requested size: 112.74019pt x 86.85512pt.
-<figure_ave_loss_topology_spam.pdf, id=363, 507.85048pt x 390.37573pt>
+<figure_ave_loss_topology_spam.pdf, id=357, 507.85048pt x 390.37573pt>
 File: figure_ave_loss_topology_spam.pdf Graphic file (type pdf)
 <use figure_ave_loss_topology_spam.pdf>
 Package pdftex.def Info: figure_ave_loss_topology_spam.pdf  used on input line 
@@ -1136,48 +1154,42 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 975.
  ) 
 Here is how much of TeX's memory you used:
- 11138 strings out of 492649
- 169062 string characters out of 6129622
- 317871 words of memory out of 5000000
- 14399 multiletter control sequences out of 15000+600000
+ 11135 strings out of 492649
+ 169006 string characters out of 6129622
+ 317675 words of memory out of 5000000
+ 14398 multiletter control sequences out of 15000+600000
  51922 words of font info for 265 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,19n,45p,1977b,540s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{equation.6.11} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{equation.3.4} has been referenced but does not exis
-t, replaced by a fixed one
-
-{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/tex
-live/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texl
-ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texliv
-e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/
-2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2
-018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/20
-18/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2018
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2018/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2018/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2018/texmf
--dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2018/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2018/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2018/texmf-dist/fonts
-/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2018/texmf-dist/fonts/ty
-pe1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-dist/fonts/type
-1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/
-public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2018/texmf-dist/fonts/ty
-pe1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/texmf-dist/font
-s/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2018/texmf-dist/f
-onts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/typ
-e1/urw/times/utmb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/tim
-es/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8a.
-pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (17 pages, 648978 bytes).
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
+xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texl
+ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texliv
+e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive
+/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/
+2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/20
+18/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2018
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2018/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2018/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/texmf
+-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2018/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2018/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2018/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2018/texmf-dist/fonts/
+type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-dist/fonts/ty
+pe1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2018/texmf-dist/fonts/type
+1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2018/texmf-dist/fonts/
+type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/texmf-dist/fo
+nts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2018/texmf-dist
+/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/t
+ype1/urw/times/utmb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/t
+imes/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8
+a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (17 pages, 648631 bytes).
 PDF statistics:
- 730 PDF objects out of 1000 (max. 8388607)
- 627 compressed objects within 7 object streams
- 124 named destinations out of 1000 (max. 500000)
+ 723 PDF objects out of 1000 (max. 8388607)
+ 620 compressed objects within 7 object streams
+ 122 named destinations out of 1000 (max. 500000)
  38466 words of extra memory for PDF output out of 42996 (max. 10000000)
 
