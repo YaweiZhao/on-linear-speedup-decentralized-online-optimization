@@ -202,7 +202,7 @@ Additionally, many decentralized online optimization methods are proposed, for e
 
 \subsection{Dynamic regret}
 
-Dynamic regret has been widely studied for decades of years \citep{Zinkevich:2003,Hall:2015ct,Hall:2013vr,Jadbabaie:2015wg,Yang:2016ud,Bedi:2018te,Zhang:2016wl,Mokhtari:2016jz,Zhang:2018tu,Gyorgy:2016,NIPS2016_6536,Zhao:2018wx}.   For any online algorithm $A\in\Acal$, \citet{Zinkevich:2003} first define the dynamic regret by $\sum_{t=1}^T \lrincir{ f_{t}(\x_{t}) - f_{t}(\x_t^\ast) }$ subject to $\sum_{t=1}^{T-1} \lrnorm{\x_{t+1}^\ast - \x_t^\ast} \le M$. They then propose an online gradient descent method, which yields $\Ocal{\sqrt{TM}+\sqrt{T}}$ regret by choosing an appropriate learning rate. The following researches achieve the sublinear dynamic regret, but extend the analysis of regret by using different reference points. For example, \citet{Hall:2015ct,Hall:2013vr} choose the reference points $\{\x_t^{\ast}\}_{t=1}^T$ satisfying $\sum_{t=1}^{T-1} \lrnorm{\x_{t+1}^\ast - \Phi(\x_t^\ast)} \le M$, where $\Phi(\x_t^\ast)$ is the predictive optimal modelmodel. When the function $\Phi$ predicts accurately, a small $M$ is enough to bound the dynamics. The dynamic regret is thus effectively decreased. \citet{Jadbabaie:2015wg,Yang:2016ud,Bedi:2018te,Zhang:2016wl,Mokhtari:2016jz,Zhang:2018tu} chooses the reference points $\{\y_t^{\ast}\}_{t=1}^T$ with $\y_t^{\ast} = \argmin_{\z\in\Xcal} f_t(\z)$, where $f_t$ is the loss function at the $t$-th iteration. \citet{Gyorgy:2016} provides a new analysis framework, which achieves $\Ocal{\sqrt{TM}}$ dynamic regret\footnote{\citet{Gyorgy:2016} uses the notation of ``shifting regret" instead of ``dynamic regret". In the paper, we keep using ``dynamic regret" as used in most previous literatures. } for any given reference points. Besides, \citet{Zhao:2018wx} presents that the lower bound of the dynamic regret is $\Omega\lrincir{\sqrt{TM}}$. The previous definition of the regret  is a special case of our new definition. Our analysis achieves the tight regret $\Ocal{\sqrt{TM}}$ for the case of $n=1$. 
+Dynamic regret has been widely studied for decades of years \citep{Zinkevich:2003,Hall:2015ct,Hall:2013vr,Jadbabaie:2015wg,Yang:2016ud,Bedi:2018te,Zhang:2016wl,Mokhtari:2016jz,Zhang:2018tu,Gyorgy:2016,NIPS2016_6536,Zhao:2018wx}.   For any online algorithm $A\in\Acal$, \citet{Zinkevich:2003} first define the dynamic regret by $\sum_{t=1}^T \lrincir{ f_{t}(\x_{t}) - f_{t}(\x_t^\ast) }$ subject to $\sum_{t=1}^{T-1} \lrnorm{\x_{t+1}^\ast - \x_t^\ast} \le M$. They then propose an online gradient descent method, which yields $\Ocal{\sqrt{TM}+\sqrt{T}}$ regret by choosing an appropriate learning rate. The following researches achieve the sublinear dynamic regret, but extend the analysis of regret by using different reference points. For example, \citet{Hall:2015ct,Hall:2013vr} choose the reference points $\{\x_t^{\ast}\}_{t=1}^T$ satisfying $\sum_{t=1}^{T-1} \lrnorm{\x_{t+1}^\ast - \Phi(\x_t^\ast)} \le M$, where $\Phi(\x_t^\ast)$ is the predictive optimal modelmodel. When the function $\Phi$ predicts accurately, a small $M$ is enough to bound the dynamics. The dynamic regret is thus effectively decreased. \citet{Jadbabaie:2015wg,Yang:2016ud,Bedi:2018te,Zhang:2016wl,Mokhtari:2016jz,Zhang:2018tu} chooses the reference points $\{\y_t^{\ast}\}_{t=1}^T$ with $\y_t^{\ast} = \argmin_{\z\in\Xcal} f_t(\z)$, where $f_t$ is the loss function at the $t$-th iteration. \citet{Gyorgy:2016} provides a new analysis framework, which achieves $\Ocal{\sqrt{TM}}$ dynamic regret\footnote{\citet{Gyorgy:2016} uses the notation of ``shifting regret" instead of ``dynamic regret". In the paper, we keep using ``dynamic regret" as used in most previous literatures. } for any given reference points. Besides, \citet{Zhao:2018wx} presents that the lower bound of the dynamic regret is $\Omega\lrincir{\sqrt{TM}}$. The previous definition of the regret  is a special case of our new definition. Our analysis achieves the tight regret $\Ocal{\sqrt{TM}}$ for the special case of $n=1$ and $\sigma = 0$. 
 
 In some literatures, the regret in a dynamic environment is measured by the number of changes of a reference point over time. It is usually denoted by shifting regret or tracking regret \citep{Herbster1998,Gyorgy:2005wo,Gyorgy:2012wa,Gyorgy:2016,Mourtada:2017vn,JMLR:v17:13-533,NIPS2016_6536,cesabianchi:hal,pmlr-v84-mohri18a,pmlr-v54-jun17a}. Both the shifting regret and the tracking regret can be considered as a variation of the dynamic regret, and is usually studied in the setting of ``learning with expert advice". But, the dynamic regret is usually studied in a general setting of online learning.
 
@@ -212,24 +212,21 @@ In some literatures, the regret in a dynamic environment is measured by the numb
 
 \section{Problem formulation}
 
-Suppose that there are $n$ users. Each user maintains a local predictive model, and only talk to his/her neighbors. Let $\x_{i, t}$ denote the local model for user $i$ at iteration $t$. In iteration $t$ user $i$ applies the local model $\x_{i,t}$ to a function $f_{i,t}(\cdot; \xi_{i,t})$ and receives the loss $f_{i,t}(\cdot; \xi_{i,t})$. $\xi_{i,t}$'s are independent to each other in terms of $i$ and $t$, charactering the \emph{stochastic} component in the function $f_{i,t}(\cdot; \xi_{i,t})$, while the subscripts $i$ and $t$ of $f$ (as well $\xi$) indicate the \emph{adversarial} component, for example, the user's profile, location, local time, and etc. The stochastic component in the function is usually caused by the potential realtion among local models. For example, users' perference to music may be impacted by a popular trend in the Internet at the same time.  
+Suppose that there are $n$ users. Each user maintains a local predictive model, and only talk to his/her neighbors. Let $\x_{i, t}$ denote the local model for user $i$ at iteration $t$. In iteration $t$ user $i$ applies the local model $\x_{i,t}$ to a function $f_{i,t}(\cdot; \xi_{i,t})$ and receives the loss $f_{i,t}(\cdot; \xi_{i,t})$. $\xi_{i,t}$'s are independent to each other in terms of $i$ and $t$, charactering the \emph{stochastic} component in the function $f_{i,t}(\cdot; \xi_{i,t})$, while the subscripts $i$ and $t$ of $f$ indicate the \emph{adversarial} component, for example, the user's profile, location, local time, and etc. {\rc The stochastic component in the function is usually caused by the potential realtion among local models. For example, users' perference to music may be impacted by a popular trend in the Internet at the same time. } 
 
 
 
 
 
 
-\paragraph{Communication network.} Users do not want to share the information to others and can only share their private models to their neighbors (or friends). The graph is denoted by $\Gcal=(\text{nodes:} [n], \text{edges:} E)$. Every node in $\Gcal$ represents a user. For any node $i$ with $i\in[n]$, its neighbour set contains all the directly adjacent nodes in $\Gcal$. 
+\paragraph{Communication network.} Users do not want to share the information to others, and can only share their private models to their neighbors (or friends). The communication network can be denoted by an undirected graph $\Gcal=(\text{nodes:} [n], \text{edges:} E)$. Every node in $\Gcal$ represents a user. For any node $i$ with $i\in[n]$, its neighbour set contains all the directly adjacent nodes in $\Gcal$. 
 
 \paragraph{Dynamic regret.} For any online algorithm $A\in\Acal$, the commonly used regret used in online learning is \emph{static}:
 \begin{align}
-\label{equa_definition_our_regret}
-\widetilde{\Rcal}_T^{A} := & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \left[\sum_{i=1}^n\sum_{t=1}^T \lrincir{f_{i,t}(\x_{i,t}) - f_{i,t}(\x^\ast)} \right],
-\end{align} where the optimal model $\x^\ast$ is defined by
-\begin{align}
-\nonumber
-\x^\ast := \argmin_{\x} \sum\limits_{i=1}^n\sum\limits_{t=1}^T  f_{i,t}(\x).
-\end{align}
+\label{equa_definition_static_regret}
+& \widetilde{\Rcal}_T^{A} \\ \nonumber 
+:= & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \left[\sum_{i=1}^n\sum_{t=1}^T \lrincir{f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x^\ast;\xi_{i,t}} \right],
+\end{align} where $\x^\ast$ is a picked reference model.
 
 % \begin{align}
 %It essentially assumes that the optimal model would not change over time. However, in many practical online learning application scenarios, the optimal model may evolve over time. For example, {\rc Please give an example here.} Therefore, we choose to use the \emph{dynamic} regret as the metric for an algorithm $A$:
@@ -519,15 +516,14 @@ Three real public datasets are \textit{room-occupancy}\footnote{\url{https://arc
 
 \subsection{Results}
 
-\paragraph{\rc Can say one phase or sentence to highlight our claim in this experiment?}
-First, Figure~\ref{figure_compare_loss} summarizes the performance of DOG compared with COG on all the datasets. 
+First, DOG yields comparable performance with COG. Figure~\ref{figure_compare_loss} summarizes the performance of DOG compared with COG on all the datasets. 
 For the synthetic dataset, we simulated a decentralized network consisting of $10000$ nodes, where every node is stochasticly connected with other $15$ nodes.
 For the three real datasets, we simulated a network consisting of $5$ nodes. 
 In these networks, the nodes are connected by a ring topology. 
 Under these settings, we can observe that both DOG and COG are effective for the online learning tasks on all the datasets, while DOG achieves slightly worse performance. 
 
-\paragraph{\rc Can say one phase or sentence to highlight our claim in this experiment?}
-Second, Figure~\ref{figure_compare_network_size} summarizes the effect of the network size on the performance of DOG. We change the number of nodes from $5000$ to $10000$ on the synthetic dataset, and from $5$ to $20$ on the real datasets. The synthetic dataset is tested by using the stochastic topology, and those real datasets are tested by using the ring topology. Figure~\ref{figure_compare_network_size} draws the curves of average loss over time steps. We observe that the average loss curves are mostly overlapped with different nodes. It shows that DOG is robust to the network size (or number of users), which validates our theory, that is, the average regret does not increase with the number of nodes. Furthermore, we observe that the average loss becomes large with the increase of the variance of stochastic data, which validates our theoretical result nicely.  
+
+Second, the performance of DOG is not sensitive to the network size, but sensitive to the variance of the stochastic data. Figure~\ref{figure_compare_network_size} summarizes the effect of the network size on the performance of DOG. We change the number of nodes from $5000$ to $10000$ on the synthetic dataset, and from $5$ to $20$ on the real datasets. The synthetic dataset is tested by using the stochastic topology, and those real datasets are tested by using the ring topology. Figure~\ref{figure_compare_network_size} draws the curves of average loss over time steps. We observe that the average loss curves are mostly overlapped with different nodes. It shows that DOG is robust to the network size (or number of users), which validates our theory, that is, the average regret does not increase with the number of nodes. Furthermore, we observe that the average loss becomes large with the increase of the variance of stochastic data, which validates our theoretical result nicely.  
 
 
 \begin{figure*}[!h]
@@ -542,9 +538,8 @@ Second, Figure~\ref{figure_compare_network_size} summarizes the effect of the ne
 \label{figure_compare_network_size}
 \end{figure*}
 
-\paragraph{\rc Can say one phase or sentence to highlight our claim in this experiment?}
 
-Third, Figure~\ref{figure_compare_topology} shows the effect of the topology of the network on the performance of DOG, where five different topologies are used. Besides the ring topology, the \textit{No connected} topology means there are no edges in the network, and every node does not share its local model to others. The \textit{Fully connected} topology means all nodes are connected, where DOG de-generates to be COG. The topology  \textit{WattsStrogatz} represents a Watts-Strogatz small-world graph, for which we can use a parameter to control the number of stochastic edges (set as $0.5$ and $1$ in this paper). The result shows \textit{Fully connected} enjoys the best performance, because that $\rho = 0$ for it while $\rho>0$ for other topologies. Specifically, $\rho$ in those topologies is presented in Table \ref{table_rho}. A small $\rho$ leads to a good performance of DOG, which validates our theoretical result nicely. 
+Third, the performance DOG is improved in a well-connected network. Figure~\ref{figure_compare_topology} shows the effect of the topology of the network on the performance of DOG, where five different topologies are used. Besides the ring topology, the \textit{No connected} topology means there are no edges in the network, and every node does not share its local model to others. The \textit{Fully connected} topology means all nodes are connected, where DOG de-generates to be COG. The topology  \textit{WattsStrogatz} represents a Watts-Strogatz small-world graph, for which we can use a parameter to control the number of stochastic edges (set as $0.5$ and $1$ in this paper). The result shows \textit{Fully connected} enjoys the best performance, because that $\rho = 0$ for it while $\rho>0$ for other topologies. Specifically, $\rho$ in those topologies is presented in Table \ref{table_rho}. A small $\rho$ leads to a good performance of DOG, which validates our theoretical result nicely. 
 
 
 \begin{table}[!]
@@ -554,7 +549,7 @@ $\rho$    & NC & FC & Ring & WS($1$) &  Ws($0.5$) \\ \hline  \hline
 synthetic data & 1            & 0               &   0.99   &       0.37            &  0.58 \\ \hline
 real data     & 1            & 0               &    0.96   &          0.83         &  0.76 \\ \hline
 \end{tabular}
-\caption{$\rho$ in different topologies used in our experiment. ``NC" represents the \textit{No connected} topology, ``FC" represents the \textit{Fully connected} topology, and ``WS" represents the \textit{WattsStrogatz} topology.}
+\caption{$\rho$ in different topologies used in our experiment. A large $1-\rho$ represents good connectivity of the communication network. ``NC" represents the \textit{No connected} topology, ``FC" represents the \textit{Fully connected} topology, and ``WS" represents the \textit{WattsStrogatz} topology.}
 \label{table_rho}
 \end{table}
 
@@ -577,7 +572,7 @@ real data     & 1            & 0               &    0.96   &          0.83      
 
 
 \section{Conclusion}
-We investigate a new online learning problem in a decentralized network, where the loss incurs by both adversary and stochastic data.  We provide a new analysis framework, which achieves sublinear regret. Extensive empirical studies varify the theoretical result. 
+We investigate the online learning problem in a decentralized network, where the loss is incurred by both adversary and stochastic components.  We define a new dynamic regret, and propose a decentralized online gradient method. By using the new analysis framework, the decentralized online gradient method  achieves $\Ocal{n\sqrt{TM} + \sqrt{nT}\sigma}$ regret. It shows that the communication is only effective to decrease the regret caused by the stochastic loss. Extensive empirical studies validates the theoretical results. 
 
 
 %\section*{References}
