@@ -351,7 +351,9 @@ In the section, we introduce the DOG algorithm, followed by the analysis for the
    \end{algorithmic}
 \end{algorithm}
 
-The proposed \textsc{DOG} algorithm is presented in Algorithm \ref{algo_DOG}. This algorithm works iteration by iteration. At each iteration, every node needs to collect local models, e.g., $\x_{i,t}$, from its neighbors, and compute a weighted sum as $ \sum_{j=1}^n \W_{i,j}\x_{j,t}$. Then, the weighted sum is updated by an online gradient descent step. In addition, we denote $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$ to facilitate the theoretical analysis. We can verify that $\bar{\x}_{t+1} =  \bar{\x}_t -  \frac{\eta}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})$ (see Lemma \ref{Lemma_average_update_rule}). 
+In our setting, users exchange their local models periodically. In each iteration, each user runs the following steps:
+
+% The proposed \textsc{DOG} algorithm is presented in Algorithm \ref{algo_DOG}. This algorithm works iteration by iteration. At each iteration, every node needs to collect local models, e.g., $\x_{i,t}$, from its neighbors, and compute a weighted sum as $ \sum_{j=1}^n \W_{i,j}\x_{j,t}$. Then, the weighted sum is updated by an online gradient descent step. In addition, we denote $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$ to facilitate the theoretical analysis. We can verify that $\bar{\x}_{t+1} =  \bar{\x}_t -  \frac{\eta}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})$ (see Lemma \ref{Lemma_average_update_rule}). 
 
 
 
