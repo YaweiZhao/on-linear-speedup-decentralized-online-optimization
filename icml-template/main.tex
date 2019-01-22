@@ -434,14 +434,15 @@ The discussion for the dynamic regret is conducted in the following
 Next we discuss how close all local models $\x_{i,t}$'s are. The following result suggests that $\x_{i,t}$'s are getting closer and closer over iterations.
 \begin{Theorem}
 \label{theorem_local_models_closer}
+Recall $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$.
 Use Assumption \ref{assumption_bounded_gradient_domain}, and choose 
 \begin{align}
 \nonumber
 \eta = \sqrt{\frac{(1-\rho) \lrincir{nM\sqrt{R} + nR}}{ nTG + T\sigma^2 }}
-\end{align} in Algorithm \ref{algo_DOG}. For any $j\in[n]$, we have 
+\end{align} in Algorithm \ref{algo_DOG}. We have 
 \begin{align}
 \nonumber
-\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{i=1}^n\sum_{j=1}^n\sum_{t=1}^T \lrnorm{\x_{i,t} - \x_{j,t}}^2 \lesssim \frac{n^2\lrincir{M + \sqrt{R}}}{1-\rho}.
+\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{i=1}^n\sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2 \lesssim \frac{n\lrincir{M + \sqrt{R}}}{1-\rho}.
 \end{align}
 
 
@@ -966,7 +967,10 @@ Thus, we  have
 \end{align} $\textcircled{1}$ holds due to Lemma \ref{Lemma_hanlin_2}. 
 \end{proof}
 
-
+\textbf{Proof to Theorem \ref{theorem_local_models_closer}:}
+\begin{proof}
+Setting $\eta = \sqrt{\frac{(1-\rho) \lrincir{nM\sqrt{R} + nR}}{ nTG + T\sigma^2 }}$ into Lemma \ref{Lemma_x_variance_norm_square}, we finally complete the proof.
+\end{proof}
 
 
 
