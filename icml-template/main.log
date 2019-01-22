@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  21 JAN 2019 19:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  21 JAN 2019 19:29
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -525,6 +525,9 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 108.
 Package hyperref Info: Option `draft' set `true' on input line 75.
  (./main.aux
 
+LaTeX Warning: Label `equa_definition_our_regret' multiply defined.
+
+
 LaTeX Warning: Label `figure_ave_loss_topology_occupancy' multiply defined.
 
 
@@ -682,15 +685,7 @@ Overfull \hbox (8.41927pt too wide) detected at line 159
 LaTeX Warning: Reference `equa_define_M' on page 2 undefined on input line 181.
 
 
-
-LaTeX Warning: Reference `equa_definition_previous_regret' on page 2 undefined 
-on input line 181.
-
-
-LaTeX Warning: Reference `equa_definition_previous_regret' on page 2 undefined 
-on input line 191.
-
-[2] [3]
+[2]
 
 LaTeX Warning: No positions in optional float specifier.
                Default added (so using `!htbp') on input line 334.
@@ -701,14 +696,10 @@ Underfull \hbox (badness 1057) in paragraph at lines 343--344
 1/ptm/m/n/10 (+20) , and suf-fer loss
  []
 
+[3]
 LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 367.
-[4]
-
-LaTeX Warning: Reference `equa_definition_previous_regret' on page 5 undefined 
-on input line 433.
-
-
+ [4]
 Underfull \hbox (badness 1728) in paragraph at lines 444--445
 []\OT1/ptm/b/n/10 Dependence on $\OML/cmm/m/it/10 ^^[[]$\OT1/ptm/b/n/10 . \OT1/
 ptm/m/n/10 (+20) Pre-vi-ous re-searches (Shahram-
@@ -780,12 +771,7 @@ Package pdftex.def Info: figure_ave_loss_iteration_spam.pdf  used on input line
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [5 <./figure_dynamics.pdf>]
 LaTeX Font Info:    Try loading font information for OT1+pcr on input line 511.
-
 
 (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
@@ -810,6 +796,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 511--511
  []
 
 
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [5 <./figure_dynamics.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 <figure_ave_loss_network_size_synthetic.pdf, id=58, 517.47185pt x 383.73775pt>
@@ -876,16 +865,13 @@ Package pdftex.def Info: figure_ave_loss_topology_spam.pdf  used on input line
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-(./main.bbl
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [6 <./figure_ave_loss_iteration_synthetic.pdf> <./figure_ave_loss_iteration_oc
-cupancy.pdf> <./figure_ave_loss_iteration_usenet2.pdf> <./figure_ave_loss_itera
-tion_spam.pdf>] [7 <./figure_ave_loss_network_size_synthetic.pdf> <./figure_ave
-_loss_network_size_occupancy.pdf> <./figure_ave_loss_network_size_usenet2.pdf> 
-<./figure_ave_loss_network_size_spam.pdf> <./figure_ave_loss_topology_synthetic
-.pdf> <./figure_ave_loss_topology_occupancy.pdf> <./figure_ave_loss_topology_us
-enet2.pdf> <./figure_ave_loss_topology_spam.pdf>] [8]) [9
+(./main.bbl [6 <./figure_ave_loss_iteration_synthetic.pdf> <./figure_ave_loss_i
+teration_occupancy.pdf> <./figure_ave_loss_iteration_usenet2.pdf> <./figure_ave
+_loss_iteration_spam.pdf>] [7 <./figure_ave_loss_network_size_synthetic.pdf> <.
+/figure_ave_loss_network_size_occupancy.pdf> <./figure_ave_loss_network_size_us
+enet2.pdf> <./figure_ave_loss_network_size_spam.pdf> <./figure_ave_loss_topolog
+y_synthetic.pdf> <./figure_ave_loss_topology_occupancy.pdf> <./figure_ave_loss_
+topology_usenet2.pdf> <./figure_ave_loss_topology_spam.pdf>] [8]) [9
 
 ]
 
@@ -1137,7 +1123,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 993.
 Here is how much of TeX's memory you used:
  11007 strings out of 492649
  167325 string characters out of 6129622
- 309157 words of memory out of 5000000
+ 309185 words of memory out of 5000000
  14397 multiletter control sequences out of 15000+600000
  51922 words of font info for 265 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -1167,7 +1153,7 @@ nts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2018/texmf-dist
 ype1/urw/times/utmb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/t
 imes/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmr8
 a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (18 pages, 639121 bytes).
+Output written on main.pdf (18 pages, 638613 bytes).
 PDF statistics:
  347 PDF objects out of 1000 (max. 8388607)
  247 compressed objects within 3 object streams
