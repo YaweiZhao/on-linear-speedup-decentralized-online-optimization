@@ -225,11 +225,17 @@ Suppose that there are $n$ users. Each user maintains a local predictive model, 
 \paragraph{Communication network.} Users do not want to share the information to others, and can only share their private models to their neighbors (or friends). The communication network can be denoted by an undirected graph $\Gcal=(\text{nodes:} [n], \text{edges:} E)$. Every node in $\Gcal$ represents a user. For any node $i$ with $i\in[n]$, its neighbour set contains all the directly adjacent nodes in $\Gcal$. 
 
 \paragraph{Dynamic regret.} For any online algorithm $A\in\Acal$, the commonly used regret used in online learning is \emph{static}:
+%\begin{align}
+%\label{equa_definition_static_regret}
+%& \widetilde{\Rcal}_T^{A} \\ \nonumber 
+%& \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \left[\sum_{i=1}^n\sum_{t=1}^T \lrincir{f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x^\ast;\xi_{i,t}} \right],
+%\end{align} where $\x^\ast$ is a picked reference model.
 \begin{align}
-\label{equa_definition_static_regret}
-& \widetilde{\Rcal}_T^{A} \\ \nonumber 
-:= & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \left[\sum_{i=1}^n\sum_{t=1}^T \lrincir{f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x^\ast;\xi_{i,t}} \right],
-\end{align} where $\x^\ast$ is a picked reference model.
+\nonumber
+ \widetilde{\Rcal}_T^{A} := & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \left[\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t};\xi_{i,t}) \right]
+\\ \label{equa_definition_our_regret}
+& - \min_{\x^\star} \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\left[\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x^\ast;\xi_{i,t}) \right],
+\end{align}
 
 % \begin{align}
 %It essentially assumes that the optimal model would not change over time. However, in many practical online learning application scenarios, the optimal model may evolve over time. For example, {\rc Please give an example here.} Therefore, we choose to use the \emph{dynamic} regret as the metric for an algorithm $A$:
@@ -250,7 +256,11 @@ It essentially assumes that the optimal model would not change over time. Howeve
 \nonumber
 \Rcal_T^{A} := & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \left[\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t};\xi_{i,t}) \right]
 \\ \label{equa_definition_our_regret}
+<<<<<<< HEAD
 & - \min_{\{\x_t^\star\}_{t=1}^T \in \mathcal{L}_{M}^T}  \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \left[\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_t^\ast;\xi_{i,t}) \right],
+=======
+& - \min_{\{\x_t^\star\}_{t=1}^T \in \mathcal{L}_{M}^T}\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \left[\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_t^\ast;\xi_{i,t}) \right],
+>>>>>>> acc115fe0ec9c9e9ee5ecdf76d7cfe0bb13b52f6
 \end{align}
 where $\mathcal{L}_M^T$ is defined by
 \begin{align}
