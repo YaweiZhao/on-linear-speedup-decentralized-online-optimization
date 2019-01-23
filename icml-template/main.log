@@ -1,38 +1,38 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.15 (TeX Live 2014) (preloaded format=pdflatex 2016.10.10)  22 JAN 2019 21:50
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  23 JAN 2019 01:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
 **main.tex
 (./main.tex
-LaTeX2e <2014/05/01>
-Babel <3.9k> and hyphenation patterns for 78 languages loaded.
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/article.cls
-Document Class: article 2007/10/19 v1.4h Standard LaTeX document class
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/size10.clo
-File: size10.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+LaTeX2e <2018-04-01> patch level 2
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
 )
-\c@part=\count79
-\c@section=\count80
-\c@subsection=\count81
-\c@subsubsection=\count82
-\c@paragraph=\count83
-\c@subparagraph=\count84
-\c@figure=\count85
-\c@table=\count86
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
 \abovecaptionskip=\skip41
 \belowcaptionskip=\skip42
 \bibindent=\dimen102
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/caption/caption.sty
-Package: caption 2013/05/02 v3.3-89 Customizing captions (AR)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2016/02/21 v3.3-144 Customizing captions (AR)
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/caption/caption3.sty
-Package: caption3 2013/05/02 v1.6-88 caption3 kernel (AR)
-Package caption3 Info: TeX engine: e-TeX on input line 57.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2016/05/22 v1.7-166 caption3 kernel (AR)
+Package caption3 Info: TeX engine: e-TeX on input line 67.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/keyval.sty
-Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
 \KV@toks@=\toks14
 )
 \captionmargin=\dimen103
@@ -43,10 +43,10 @@ Package: keyval 2014/05/08 v1.15 key=value parser (DPC)
 \caption@parindent=\dimen108
 \caption@hangindent=\dimen109
 )
-\c@ContinuedFloat=\count87
+\c@ContinuedFloat=\count88
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amscls/amsthm.sty
-Package: amsthm 2004/08/06 v2.20
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amscls/amsthm.sty
+Package: amsthm 2017/10/31 v2.20.4
 \thm@style=\toks15
 \thm@bodyfont=\toks16
 \thm@headfont=\toks17
@@ -57,82 +57,84 @@ Package: amsthm 2004/08/06 v2.20
 \thm@headsep=\skip45
 \dth@everypar=\toks20
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/tools/tabularx.sty
-Package: tabularx 2014/05/13 v2.10 `tabularx' package (DPC)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/tabularx.sty
+Package: tabularx 2016/02/03 v2.11b `tabularx' package (DPC)
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/tools/array.sty
-Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/array.sty
+Package: array 2018/04/07 v2.4g Tabular extension package (FMi)
 \col@sep=\dimen110
+\ar@mcellbox=\box26
 \extrarowheight=\dimen111
 \NC@list=\toks21
 \extratabsurround=\skip46
 \backup@length=\skip47
+\ar@cellbox=\box27
 )
 \TX@col@width=\dimen112
 \TX@old@table=\dimen113
 \TX@old@col=\dimen114
 \TX@target=\dimen115
 \TX@delta=\dimen116
-\TX@cols=\count88
+\TX@cols=\count89
 \TX@ftn=\toks22
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/tools/bm.sty
-Package: bm 2004/02/26 v1.1c Bold Symbol Support (DPC/FMi)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/bm.sty
+Package: bm 2017/01/16 v1.2c Bold Symbol Support (DPC/FMi)
 \symboldoperators=\mathgroup4
 \symboldletters=\mathgroup5
 \symboldsymbols=\mathgroup6
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 137.
-LaTeX Info: Redefining \bm on input line 203.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 141.
+LaTeX Info: Redefining \bm on input line 207.
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/preprint/balance.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/preprint/balance.sty
 Package: balance 1999/02/23 4.3 (PWD)
 \oldvsize=\dimen117
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsmath.sty
-Package: amsmath 2013/01/14 v2.14 AMS math features
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2017/09/02 v2.17a AMS math features
 \@mathmargin=\skip48
 
 For additional information on amsmath, use the `?' option.
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amstext.sty
-Package: amstext 2000/06/29 v2.01
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01 AMS text
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsgen.sty
-File: amsgen.sty 1999/11/30 v2.0
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks23
 \ex@=\dimen118
 ))
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsbsy.sty
-Package: amsbsy 1999/11/29 v1.2d
-LaTeX Info: Redefining \boldsymbol on input line 39.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d Bold Symbols
+LaTeX Info: Redefining \boldsymbol on input line 28.
 \pmbraise@=\dimen119
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsmath/amsopn.sty
-Package: amsopn 1999/12/14 v2.01 operator names
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 2016/03/08 v2.02 operator names
 )
-\inf@bad=\count89
-LaTeX Info: Redefining \frac on input line 210.
-\uproot@=\count90
-\leftroot@=\count91
-LaTeX Info: Redefining \overline on input line 306.
-\classnum@=\count92
-\DOTSCASE@=\count93
-LaTeX Info: Redefining \ldots on input line 378.
-LaTeX Info: Redefining \dots on input line 381.
-LaTeX Info: Redefining \cdots on input line 466.
-\Mathstrutbox@=\box26
-\strutbox@=\box27
+\inf@bad=\count90
+LaTeX Info: Redefining \frac on input line 213.
+\uproot@=\count91
+\leftroot@=\count92
+LaTeX Info: Redefining \overline on input line 375.
+\classnum@=\count93
+\DOTSCASE@=\count94
+LaTeX Info: Redefining \ldots on input line 472.
+LaTeX Info: Redefining \dots on input line 475.
+LaTeX Info: Redefining \cdots on input line 596.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
 \big@size=\dimen120
-LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
-LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
-\macc@depth=\count94
-\c@MaxMatrixCols=\count95
+LaTeX Font Info:    Redeclaring font encoding OML on input line 712.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
+\macc@depth=\count95
+\c@MaxMatrixCols=\count96
 \dotsspace@=\muskip10
-\c@parentequation=\count96
-\dspbrk@lvl=\count97
+\c@parentequation=\count97
+\dspbrk@lvl=\count98
 \tag@help=\toks24
-\row@=\count98
-\column@=\count99
-\maxfields@=\count100
+\row@=\count99
+\column@=\count100
+\maxfields@=\count101
 \andhelp@=\toks25
 \eqnshift@=\dimen121
 \alignsep@=\dimen122
@@ -144,101 +146,97 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
 \multlinegap=\skip49
 \multlinetaggap=\skip50
 \mathdisplay@stack=\toks27
-LaTeX Info: Redefining \[ on input line 2665.
-LaTeX Info: Redefining \] on input line 2666.
+LaTeX Info: Redefining \[ on input line 2817.
+LaTeX Info: Redefining \] on input line 2818.
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/amssymb.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/amsfonts.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSa=\mathgroup7
 \symAMSb=\mathgroup8
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
 ))
-(/usr/local/texlive/2014/texmf-dist/tex/latex/multirow/multirow.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/multirow/multirow.sty
+Package: multirow 2016/11/25 v2.2 Span multiple rows of a table
+\multirow@colwidth=\skip51
+\multirow@cntb=\count102
+\multirow@dima=\skip52
 \bigstrutjot=\dimen127
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/color.sty
-Package: color 2014/04/23 v1.1a Standard LaTeX Color (DPC)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2016/07/10 v1.1e Standard LaTeX Color (DPC)
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/color.cfg
-File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package color Info: Driver file: pdftex.def on input line 137.
+Package color Info: Driver file: pdftex.def on input line 147.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/pdftex-def/pdftex.def
-File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
-
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/infwarerr.sty
-Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
-)
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
-Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
-)
-\Gread@gobject=\count101
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
 ))
-(/usr/local/texlive/2014/texmf-dist/tex/latex/microtype/microtype.sty
-Package: microtype 2013/05/23 v2.5a Micro-typographical refinements (RS)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/microtype.sty
+Package: microtype 2018/01/14 v2.7a Micro-typographical refinements (RS)
 \MT@toks=\toks28
-\MT@count=\count102
-LaTeX Info: Redefining \textls on input line 766.
+\MT@count=\count103
+LaTeX Info: Redefining \textls on input line 793.
 \MT@outer@kern=\dimen128
-LaTeX Info: Redefining \textmicrotypecontext on input line 1285.
-\MT@listname@count=\count103
+LaTeX Info: Redefining \textmicrotypecontext on input line 1339.
+\MT@listname@count=\count104
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/microtype/microtype-pdftex.def
-File: microtype-pdftex.def 2013/05/23 v2.5a Definitions specific to pdftex (RS)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/microtype-pdftex.def
+File: microtype-pdftex.def 2018/01/14 v2.7a Definitions specific to pdftex (RS)
 
-LaTeX Info: Redefining \lsstyle on input line 915.
-LaTeX Info: Redefining \lslig on input line 915.
-\MT@outer@space=\skip51
+LaTeX Info: Redefining \lsstyle on input line 913.
+LaTeX Info: Redefining \lslig on input line 913.
+\MT@outer@space=\skip53
 )
 Package microtype Info: Loading configuration file microtype.cfg.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/microtype/microtype.cfg
-File: microtype.cfg 2013/05/23 v2.5a microtype main configuration file (RS)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/microtype.cfg
+File: microtype.cfg 2018/01/14 v2.7a microtype main configuration file (RS)
 ))
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphicx.sty
-Package: graphicx 2014/04/25 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/graphics.sty
-Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2017/06/25 v1.2c Standard LaTeX Graphics (DPC,SPQR)
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/graphics/trig.sty
-Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/graphics.cfg
-File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+(/usr/local/texlive/2018/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
-Package graphics Info: Driver file: pdftex.def on input line 91.
+Package graphics Info: Driver file: pdftex.def on input line 99.
 )
 \Gin@req@height=\dimen129
 \Gin@req@width=\dimen130
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/subfigure/subfigure.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/subfigure/subfigure.sty
 Package: subfigure 2002/03/15 v2.1.5 subfigure package
-\subfigtopskip=\skip52
-\subfigcapskip=\skip53
+\subfigtopskip=\skip54
+\subfigcapskip=\skip55
 \subfigcaptopadj=\dimen131
-\subfigbottomskip=\skip54
+\subfigbottomskip=\skip56
 \subfigcapmargin=\dimen132
-\subfiglabelskip=\skip55
-\c@subfigure=\count104
-\c@lofdepth=\count105
-\c@subtable=\count106
-\c@lotdepth=\count107
+\subfiglabelskip=\skip57
+\c@subfigure=\count105
+\c@lofdepth=\count106
+\c@subtable=\count107
+\c@lotdepth=\count108
 
 ****************************************
 * Local config file subfigure.cfg used *
 ****************************************
-(/usr/local/texlive/2014/texmf-dist/tex/latex/subfigure/subfigure.cfg)
-\subfig@top=\skip56
-\subfig@bottom=\skip57
+(/usr/local/texlive/2018/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip58
+\subfig@bottom=\skip59
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/booktabs/booktabs.sty
-Package: booktabs 2005/04/14 v1.61803 publication quality tables
+(/usr/local/texlive/2018/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2016/04/27 v1.618033 publication quality tables
 \heavyrulewidth=\dimen133
 \lightrulewidth=\dimen134
 \cmidrulewidth=\dimen135
@@ -249,46 +247,44 @@ Package: booktabs 2005/04/14 v1.61803 publication quality tables
 \cmidrulesep=\dimen140
 \cmidrulekern=\dimen141
 \defaultaddspace=\dimen142
-\@cmidla=\count108
-\@cmidlb=\count109
+\@cmidla=\count109
+\@cmidlb=\count110
 \@aboverulesep=\dimen143
 \@belowrulesep=\dimen144
-\@thisruleclass=\count110
-\@lastruleclass=\count111
+\@thisruleclass=\count111
+\@lastruleclass=\count112
 \@thisrulewidth=\dimen145
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/bbm-macros/bbm.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/bbm-macros/bbm.sty
 Package: bbm 1999/03/15 V 1.2 provides fonts for set symbols - TH
 LaTeX Font Info:    Overwriting math alphabet `\mathbbm' in version `bold'
 (Font)                  U/bbm/m/n --> U/bbm/bx/n on input line 33.
 LaTeX Font Info:    Overwriting math alphabet `\mathbbmss' in version `bold'
 (Font)                  U/bbmss/m/n --> U/bbmss/bx/n on input line 35.
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/tools/multicol.sty
-Package: multicol 2014/04/23 v1.8e multicolumn formatting (FMi)
-\c@tracingmulticols=\count112
-\mult@box=\box28
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/multicol.sty
+Package: multicol 2018/04/01 v1.8r multicolumn formatting (FMi)
+\c@tracingmulticols=\count113
+\mult@box=\box30
 \multicol@leftmargin=\dimen146
-\c@unbalance=\count113
-\c@collectmore=\count114
-\doublecol@number=\count115
-\multicoltolerance=\count116
-\multicolpretolerance=\count117
+\c@unbalance=\count114
+\c@collectmore=\count115
+\doublecol@number=\count116
+\multicoltolerance=\count117
+\multicolpretolerance=\count118
 \full@width=\dimen147
 \page@free=\dimen148
 \premulticols=\dimen149
 \postmulticols=\dimen150
-\multicolsep=\skip58
-\multicolbaselineskip=\skip59
-\partial@page=\box29
-\last@line=\box30
+\multicolsep=\skip60
+\multicolbaselineskip=\skip61
+\partial@page=\box31
+\last@line=\box32
 \maxbalancingoverflow=\dimen151
-\mult@rightbox=\box31
-\mult@grightbox=\box32
-\mult@gfirstbox=\box33
-\mult@firstbox=\box34
-\@tempa=\box35
-\@tempa=\box36
+\mult@rightbox=\box33
+\mult@grightbox=\box34
+\mult@gfirstbox=\box35
+\mult@firstbox=\box36
 \@tempa=\box37
 \@tempa=\box38
 \@tempa=\box39
@@ -304,231 +300,230 @@ Package: multicol 2014/04/23 v1.8e multicolumn formatting (FMi)
 \@tempa=\box49
 \@tempa=\box50
 \@tempa=\box51
-\c@columnbadness=\count118
-\c@finalcolumnbadness=\count119
+\@tempa=\box52
+\@tempa=\box53
+\c@columnbadness=\count119
+\c@finalcolumnbadness=\count120
 \last@try=\dimen152
 \multicolovershoot=\dimen153
 \multicolundershoot=\dimen154
-\mult@nat@firstbox=\box52
-\colbreak@box=\box53
-\mc@col@check@num=\count120
+\mult@nat@firstbox=\box54
+\colbreak@box=\box55
+\mc@col@check@num=\count121
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/hyperref.sty
-Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2018/02/06 v6.86b Hypertext links for LaTeX
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
-Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2016/05/16 v1.14 Bundle oberdiek, subset hyperref (HO)
 
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
-Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
-Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
-Package hobsub Info: Skipping package `infwarerr' (already loaded).
-Package hobsub Info: Skipping package `ltxcmds' (already loaded).
-Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2016/05/16 v1.14 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2016/05/16 v1.14 Construct package bundles (HO)
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
 Package ifluatex Info: LuaTeX not detected.
-Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package: ifvtex 2016/05/16 v1.6 Detect VTeX and its facilities (HO)
 Package ifvtex Info: VTeX not detected.
-Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
-Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
-Package ifpdf Info: pdfTeX in PDF mode is detected.
-Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package: intcalc 2016/05/16 v1.2 Expandable calculations with integers (HO)
+Package: ifpdf 2017/03/15 v3.2 Provides the ifpdf switch
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
 Package etexcmds Info: Could not find \expanded.
 (etexcmds)             That can mean that you are not using pdfTeX 1.50 or
 (etexcmds)             that some package has redefined \expanded.
 (etexcmds)             In the latter case, load this package earlier.
-Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
-Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
-Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+Package: pdftexcmds 2018/01/30 v0.27 Utility functions of pdfTeX for LuaTeX (HO
 )
 Package pdftexcmds Info: LuaTeX not detected.
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
-Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+Package: pdfescape 2016/05/16 v1.14 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2016/05/16 v1.4 Expandable calculations on big integers (HO
 )
-Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
-Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+Package: bitset 2016/05/16 v1.2 Handle bit-vector datatype (HO)
+Package: uniquecounter 2016/05/16 v1.3 Provide unlimited unique counter (HO)
 )
 Package hobsub Info: Skipping package `hobsub' (already loaded).
-Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
-Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
-Package: xcolor-patch 2011/01/30 xcolor patch
-Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package: letltxmacro 2016/05/16 v1.5 Let assignment for LaTeX macros (HO)
+Package: hopatch 2016/05/16 v1.3 Wrapper for package hooks (HO)
+Package: xcolor-patch 2016/05/16 xcolor patch
+Package: atveryend 2016/05/16 v1.9 Hooks at the very end of document (HO)
 Package atveryend Info: \enddocument detected (standard20110627).
-Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
-Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
-Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+Package: atbegshi 2016/06/09 v1.18 At begin shipout hook (HO)
+Package: refcount 2016/05/16 v3.5 Data extraction from label references (HO)
+Package: hycolor 2016/05/16 v1.8 Color options for hyperref/bookmark (HO)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+(/usr/local/texlive/2018/texmf-dist/tex/generic/ifxetex/ifxetex.sty
 Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/auxhook.sty
-Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/auxhook.sty
+Package: auxhook 2016/05/16 v1.4 Hooks for auxiliary files (HO)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/kvoptions.sty
-Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
 )
 \@linkdim=\dimen155
-\Hy@linkcounter=\count121
-\Hy@pagecounter=\count122
+\Hy@linkcounter=\count122
+\Hy@pagecounter=\count123
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/pd1enc.def
-File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2018/02/06 v6.86b Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
 )
-\Hy@SavedSpaceFactor=\count123
+\Hy@SavedSpaceFactor=\count124
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+(/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/hyperref.cfg
 File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
 )
-Package hyperref Info: Option `colorlinks' set `true' on input line 4319.
-Package hyperref Info: Hyper figures OFF on input line 4443.
-Package hyperref Info: Link nesting OFF on input line 4448.
-Package hyperref Info: Hyper index ON on input line 4451.
-Package hyperref Info: Plain pages OFF on input line 4458.
-Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Option `colorlinks' set `true' on input line 4383.
+Package hyperref Info: Hyper figures OFF on input line 4509.
+Package hyperref Info: Link nesting OFF on input line 4514.
+Package hyperref Info: Hyper index ON on input line 4517.
+Package hyperref Info: Plain pages OFF on input line 4524.
+Package hyperref Info: Backreferencing OFF on input line 4529.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4688.
-\c@Hy@tempcnt=\count124
+Package hyperref Info: Bookmarks ON on input line 4762.
+\c@Hy@tempcnt=\count125
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/url/url.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/url/url.sty
 \Urlmuskip=\muskip11
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 5041.
+LaTeX Info: Redefining \url on input line 5115.
 \XeTeXLinkMargin=\dimen156
-\Fld@menulength=\count125
+\Fld@menulength=\count126
 \Field@Width=\dimen157
 \Fld@charsize=\dimen158
-Package hyperref Info: Hyper figures OFF on input line 6295.
-Package hyperref Info: Link nesting OFF on input line 6300.
-Package hyperref Info: Hyper index ON on input line 6303.
-Package hyperref Info: backreferencing OFF on input line 6310.
-Package hyperref Info: Link coloring ON on input line 6313.
-Package hyperref Info: Link coloring with OCG OFF on input line 6320.
-Package hyperref Info: PDF/A mode OFF on input line 6325.
-LaTeX Info: Redefining \ref on input line 6365.
-LaTeX Info: Redefining \pageref on input line 6369.
-\Hy@abspage=\count126
-\c@Item=\count127
-\c@Hfootnote=\count128
+Package hyperref Info: Hyper figures OFF on input line 6369.
+Package hyperref Info: Link nesting OFF on input line 6374.
+Package hyperref Info: Hyper index ON on input line 6377.
+Package hyperref Info: backreferencing OFF on input line 6384.
+Package hyperref Info: Link coloring ON on input line 6387.
+Package hyperref Info: Link coloring with OCG OFF on input line 6394.
+Package hyperref Info: PDF/A mode OFF on input line 6399.
+LaTeX Info: Redefining \ref on input line 6439.
+LaTeX Info: Redefining \pageref on input line 6443.
+\Hy@abspage=\count127
+\c@Item=\count128
+\c@Hfootnote=\count129
 )
+Package hyperref Info: Driver (autodetected): hpdftex.
 
-Package hyperref Message: Driver (autodetected): hpdftex.
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2018/02/06 v6.86b Hyperref driver for pdfTeX
+\Fld@listcount=\count130
+\c@bookmark@seq@number=\count131
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/hpdftex.def
-File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
-\Fld@listcount=\count129
-\c@bookmark@seq@number=\count130
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
-Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2016/05/16 v1.8 Rerun checks for auxiliary files (HO)
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 82.
 )
-\Hy@SectionHShift=\skip60
+\Hy@SectionHShift=\skip62
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/natbib/natbib.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/natbib/natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
-\bibhang=\skip61
-\bibsep=\skip62
+\bibhang=\skip63
+\bibsep=\skip64
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count131
+\c@NAT@ctr=\count132
 )
 (./yaweinewcomm.tex)
-\c@Definition=\count132
-\c@Theorem=\count133
-\c@Lemma=\count134
-\c@Corollary=\count135
-\c@Assumption=\count136
-\c@Proposition=\count137
-\c@Remark=\count138
+\c@Definition=\count133
+\c@Theorem=\count134
+\c@Lemma=\count135
+\c@Corollary=\count136
+\c@Assumption=\count137
+\c@Proposition=\count138
+\c@Remark=\count139
  (./icml2019.sty
 
 LaTeX Warning: You have requested package `icml2019',
                but the package provides `icml2018'.
 
 Package: icml2018 2018/01/01 v2.0 ICML Conference Style File
-(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/times.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/times.sty
 Package: times 2005/04/12 PSNFSS-v9.2a (SPQR) 
 ) (./fancyhdr.sty
-\fancy@headwidth=\skip63
-\f@ncyO@elh=\skip64
-\f@ncyO@erh=\skip65
-\f@ncyO@olh=\skip66
-\f@ncyO@orh=\skip67
-\f@ncyO@elf=\skip68
-\f@ncyO@erf=\skip69
-\f@ncyO@olf=\skip70
-\f@ncyO@orf=\skip71
+\fancy@headwidth=\skip65
+\f@ncyO@elh=\skip66
+\f@ncyO@erh=\skip67
+\f@ncyO@olh=\skip68
+\f@ncyO@orh=\skip69
+\f@ncyO@elf=\skip70
+\f@ncyO@erf=\skip71
+\f@ncyO@olf=\skip72
+\f@ncyO@orf=\skip73
 ) (./algorithm.sty
 Package: algorithm 
 
 Document Style `algorithm' - floating environment
-(/usr/local/texlive/2014/texmf-dist/tex/latex/float/float.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
-\c@float@type=\count139
+\c@float@type=\count140
 \float@exts=\toks29
-\float@box=\box54
+\float@box=\box56
 \@float@everytoks=\toks30
-\@floatcapt=\box55
+\@floatcapt=\box57
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/base/ifthen.sty
-Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2014/09/29 v1.1c Standard LaTeX ifthen package (DPC)
 )
 \@float@every@algorithm=\toks31
-\c@algorithm=\count140
+\c@algorithm=\count141
 )
 (./algorithmic.sty
 Package: algorithmic 
 
 Document Style `algorithmic' - environment
-(/usr/local/texlive/2014/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2007/08/22 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count141
-\calc@Bcount=\count142
+(/usr/local/texlive/2018/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2017/05/25 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count142
+\calc@Bcount=\count143
 \calc@Adimen=\dimen159
 \calc@Bdimen=\dimen160
-\calc@Askip=\skip72
-\calc@Bskip=\skip73
-LaTeX Info: Redefining \setlength on input line 75.
-LaTeX Info: Redefining \addtolength on input line 76.
-\calc@Ccount=\count143
-\calc@Cskip=\skip74
+\calc@Askip=\skip74
+\calc@Bskip=\skip75
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count144
+\calc@Cskip=\skip76
 )
-\c@ALC@line=\count144
-\c@ALC@rem=\count145
-\ALC@tlm=\skip75
+\c@ALC@line=\count145
+\c@ALC@rem=\count146
+\ALC@tlm=\skip77
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/eso-pic/eso-pic.sty
-Package: eso-pic 2013/10/06 v2.0d eso-pic (RN)
+(/usr/local/texlive/2018/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2015/07/21 v2.0g eso-pic (RN)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/forloop/forloop.sty
+(/usr/local/texlive/2018/texmf-dist/tex/latex/forloop/forloop.sty
 Package: forloop 2006/09/18 v3.0 For Loops for LaTeX
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 108.
-\titrun=\box56
-\c@@affiliationcounter=\count146
-\c@@affilnum=\count147
-\newcaptionbox=\box57
+\titrun=\box58
+\c@@affiliationcounter=\count147
+\c@@affilnum=\count148
+\newcaptionbox=\box59
 \newcaptionboxwid=\dimen161
-\icmlrulerbox=\box58
-\icmlrulercount=\count148
+\icmlrulerbox=\box60
+\icmlrulercount=\count149
 \icmlruleroffset=\dimen162
 \cv@lineheight=\dimen163
 \cv@boxheight=\dimen164
-\cv@tmpbox=\box59
-\cv@refno=\count149
-\cv@tot=\count150
-\cv@tmpc@=\count151
-\cv@tmpc=\count152
+\cv@tmpbox=\box61
+\cv@refno=\count150
+\cv@tot=\count151
+\cv@tmpc@=\count152
+\cv@tmpc=\count153
 )
 Package hyperref Info: Option `draft' set `true' on input line 75.
  (./main.aux
-
-LaTeX Warning: Label `equa_definition_our_regret' multiply defined.
-
 
 LaTeX Warning: Label `figure_ave_loss_topology_occupancy' multiply defined.
 
@@ -554,7 +549,7 @@ LaTeX Font Info:    ... okay on input line 76.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 76.
 LaTeX Font Info:    ... okay on input line 76.
 LaTeX Font Info:    Try loading font information for OT1+ptm on input line 76.
- (/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+ (/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1ptm.fd
 File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
 )
 Package caption Info: Begin \AtBeginDocument code.
@@ -563,20 +558,36 @@ Package caption Info: hyperref package is loaded.
 Package caption Info: subfigure package is loaded.
 Package caption Info: End \AtBeginDocument code.
 
-(/usr/local/texlive/2014/texmf-dist/tex/context/base/supp-pdf.mkii
+(/usr/local/texlive/2018/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count153
+\scratchcounter=\count154
 \scratchdimen=\dimen165
-\scratchbox=\box60
-\nofMPsegments=\count154
-\nofMParguments=\count155
+\scratchbox=\box62
+\nofMPsegments=\count155
+\nofMParguments=\count156
 \everyMPshowfont=\toks32
-\MPscratchCnt=\count156
+\MPscratchCnt=\count157
 \MPscratchDim=\dimen166
-\MPnumerator=\count157
-\makeMPintoPDFobject=\count158
+\MPnumerator=\count158
+\makeMPintoPDFobject=\count159
 \everyMPtoPDFconversion=\toks33
+) (/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
 )
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
 LaTeX Info: Redefining \microtypecontext on input line 76.
 Package microtype Info: Generating PDF output.
 Package microtype Info: Character protrusion enabled (level 2).
@@ -587,37 +598,23 @@ Package microtype Info: Using default expansion set `basictext'.
 Package microtype Info: No adjustment of tracking.
 Package microtype Info: No adjustment of interword spacing.
 Package microtype Info: No adjustment of character kerning.
- (/usr/local/texlive/2014/texmf-dist/tex/latex/microtype/mt-ptm.cfg
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-ptm.cfg
 File: mt-ptm.cfg 2006/04/20 v1.7 microtype config. file: Times (RS)
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
-Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/oberdiek/grfext.sty
-Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
-)
-Package grfext Info: Graphics extension search list:
-(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
-G,.JBIG2,.JB2,.eps]
-(grfext)             \AppendGraphicsExtensions on input line 452.
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
-File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
-e
-))
-\AtBeginShipoutBox=\box61
+\AtBeginShipoutBox=\box63
 
 
 Package hyperref Warning: Draft mode on.
 
 Package hyperref Info: Link coloring ON on input line 76.
-(/usr/local/texlive/2014/texmf-dist/tex/latex/hyperref/nameref.sty
-Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+(/usr/local/texlive/2018/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
-(/usr/local/texlive/2014/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
-Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+(/usr/local/texlive/2018/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2016/05/16 v1.5 Cleanup title references (HO)
 )
-\c@section@level=\count159
+\c@section@level=\count160
 )
 LaTeX Info: Redefining \ref on input line 76.
 LaTeX Info: Redefining \pageref on input line 76.
@@ -628,119 +625,113 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <14.4> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 124.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 124.
-\c@@affil@anon=\count160
+\c@@affil@anon=\count161
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/microtype/mt-cmr.cfg
+(/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-cmr.cfg
 File: mt-cmr.cfg 2013/05/19 v2.2 microtype config. file: Computer Modern Roman 
 (RS)
 )
 LaTeX Font Info:    Try loading font information for U+msa on input line 124.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsa.fd
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/microtype/mt-msa.cfg
+(/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msa.cfg
 File: mt-msa.cfg 2006/02/04 v1.1 microtype config. file: AMS symbols (a) (RS)
 )
 LaTeX Font Info:    Try loading font information for U+msb on input line 124.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/amsfonts/umsb.fd
+(/usr/local/texlive/2018/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-(/usr/local/texlive/2014/texmf-dist/tex/latex/microtype/mt-msb.cfg
+(/usr/local/texlive/2018/texmf-dist/tex/latex/microtype/mt-msb.cfg
 File: mt-msb.cfg 2005/06/01 v1.0 microtype config. file: AMS symbols (b) (RS)
 )
 LaTeX Font Info:    Try loading font information for OML+ptm on input line 135.
 
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omlptm.fd
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omlptm.fd
 File: omlptm.fd 
 )
 LaTeX Font Info:    Font shape `OML/ptm/m/n' in size <9> not available
 (Font)              Font shape `OML/cmm/m/it' tried instead on input line 135.
 LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 138.
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ‡ in font ptmr7t!
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 164.
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [1{/usr/local/texlive/2014/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/omsptm.fd
+File: omsptm.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 164.
+ [1{/usr/local/texlive/2018/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 175.
-
-
-(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/omsptm.fd
-File: omsptm.fd 
-)
-LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 175.
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ‡ in font ptmr7t!
+Overfull \hbox (8.41927pt too wide) detected at line 183
+[]
+ []
 
 
 LaTeX Warning: Reference `equa_definition_previous_regret' on page 2 undefined 
-on input line 202.
+on input line 206.
 
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ‡ in font ptmr7t!
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
  [2]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-
+ [3]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!htbp') on input line 314.
+               Default added (so using `!htbp') on input line 312.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 323--324
+Underfull \hbox (badness 10000) in paragraph at lines 321--322
 [] []\OT1/ptm/m/n/10 (+20) Query the neigh-bors' lo-cal mod-els
  []
 
 
-Underfull \hbox (badness 1057) in paragraph at lines 324--326
+Underfull \hbox (badness 1057) in paragraph at lines 322--324
 [] []\OT1/ptm/m/n/10 (+20) Observe the loss func-tion $\OML/cmm/m/it/10 f[]$\OT
 1/ptm/m/n/10 (+20) , and suf-fer loss
  []
 
-[3]
 LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 377.
- [4]
-
-LaTeX Warning: Reference `equa_definition_static_regret' on page 5 undefined on
- input line 436.
-
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 375.
+[4]
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 451.
+(amsmath)                 on input line 448.
+
+
+Overfull \hbox (27.80971pt too wide) detected at line 455
+[]
+ []
 
 [5]
-Underfull \hbox (badness 1924) in paragraph at lines 503--504
+Underfull \hbox (badness 1924) in paragraph at lines 494--495
 []$\OML/cmm/m/it/10 M$ \OT1/ptm/m/n/10 (+20) is fixed as 10 to de-ter-mine the 
 space of ref-er-
  []
 
 
-Underfull \hbox (badness 2384) in paragraph at lines 503--504
+Underfull \hbox (badness 2384) in paragraph at lines 494--495
 \OT1/ptm/m/n/10 (+20) ti-mal for each dataset sper-ately. We eval-u-ate the
  []
 
 
-Underfull \hbox (badness 1565) in paragraph at lines 503--504
+Underfull \hbox (badness 1565) in paragraph at lines 494--495
 \OT1/ptm/m/n/10 (+20) learn-ing per-for-mance by mea-sur-ing the av-er-age loss
 
  []
 
 
-Underfull \hbox (badness 1975) in paragraph at lines 503--504
+Underfull \hbox (badness 1975) in paragraph at lines 494--495
 [] [][] [][] \OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 x[]\OT1/cmr/
 m/n/10 ; \OML/cmm/m/it/10 ^^X[]\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 (+20) , in-ste
 ad of the dy-namic
@@ -748,73 +739,67 @@ ad of the dy-namic
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 507.
+               Default added (so using `!tbp') on input line 498.
 
 <figure_dynamics.pdf, id=35, 507.69733pt x 234.42342pt>
 File: figure_dynamics.pdf Graphic file (type pdf)
-
 <use figure_dynamics.pdf>
-Package pdftex.def Info: figure_dynamics.pdf used on input line 511.
+Package pdftex.def Info: figure_dynamics.pdf  used on input line 502.
 (pdftex.def)             Requested size: 211.3883pt x 97.60582pt.
-
 <figure_ave_loss_iteration_synthetic.pdf, id=36, 406.14023pt x 298.21452pt>
 File: figure_ave_loss_iteration_synthetic.pdf Graphic file (type pdf)
-
 <use figure_ave_loss_iteration_synthetic.pdf>
-Package pdftex.def Info: figure_ave_loss_iteration_synthetic.pdf used on input 
-line 521.
+Package pdftex.def Info: figure_ave_loss_iteration_synthetic.pdf  used on input
+ line 512.
 (pdftex.def)             Requested size: 112.74019pt x 82.78053pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 521--521
+Underfull \hbox (badness 10000) in paragraph at lines 512--512
 []\OT1/ptm/m/n/9 (+20) (a) \OT1/ptm/m/it/9 (+20) syn-thetic data\OT1/ptm/m/n/9 
 (+20) , $\OT1/cmr/m/n/9 10000$
  []
 
 <figure_ave_loss_iteration_occupancy.pdf, id=37, 396.42758pt x 292.41255pt>
 File: figure_ave_loss_iteration_occupancy.pdf Graphic file (type pdf)
-
 <use figure_ave_loss_iteration_occupancy.pdf>
-Package pdftex.def Info: figure_ave_loss_iteration_occupancy.pdf used on input 
-line 522.
+Package pdftex.def Info: figure_ave_loss_iteration_occupancy.pdf  used on input
+ line 513.
 (pdftex.def)             Requested size: 112.74019pt x 83.15996pt.
-
 <figure_ave_loss_iteration_usenet2.pdf, id=38, 388.44322pt x 297.29309pt>
 File: figure_ave_loss_iteration_usenet2.pdf Graphic file (type pdf)
-
 <use figure_ave_loss_iteration_usenet2.pdf>
-Package pdftex.def Info: figure_ave_loss_iteration_usenet2.pdf used on input li
-ne 523.
+Package pdftex.def Info: figure_ave_loss_iteration_usenet2.pdf  used on input l
+ine 514.
 (pdftex.def)             Requested size: 112.74019pt x 86.28535pt.
-
 <figure_ave_loss_iteration_spam.pdf, id=39, 507.98027pt x 391.39867pt>
 File: figure_ave_loss_iteration_spam.pdf Graphic file (type pdf)
-
 <use figure_ave_loss_iteration_spam.pdf>
-Package pdftex.def Info: figure_ave_loss_iteration_spam.pdf used on input line 
-524.
+Package pdftex.def Info: figure_ave_loss_iteration_spam.pdf  used on input line
+ 515.
 (pdftex.def)             Requested size: 112.74019pt x 86.86644pt.
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 540.
 
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-(/usr/local/texlive/2014/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 531.
+
+(/usr/local/texlive/2018/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
-Package microtype Info: Loading generic settings for font family
+Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `pcr' (encoding: OT1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 10000) in paragraph at lines 540--540
+Underfull \hbox (badness 10000) in paragraph at lines 531--531
 [][][]$\OT1/pcr/m/n/9 https : / / archive . ics . uci . edu / ml / datasets /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 540--540
+Underfull \hbox (badness 10000) in paragraph at lines 531--531
 [][][]$\OT1/pcr/m/n/9 http : / / mlkd . csd . auth . gr / concept _ drift .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 540--540
+Underfull \hbox (badness 10000) in paragraph at lines 531--531
 [][][]$\OT1/pcr/m/n/9 http : / / mlkd . csd . auth . gr / concept _ drift .
  []
 
@@ -824,326 +809,316 @@ Underfull \vbox (badness 4940) has occurred while \output is active []
  [6 <./figure_dynamics.pdf>]
 <figure_ave_loss_network_size_synthetic.pdf, id=60, 517.47185pt x 383.73775pt>
 File: figure_ave_loss_network_size_synthetic.pdf Graphic file (type pdf)
-
 <use figure_ave_loss_network_size_synthetic.pdf>
-Package pdftex.def Info: figure_ave_loss_network_size_synthetic.pdf used on inp
-ut line 567.
+Package pdftex.def Info: figure_ave_loss_network_size_synthetic.pdf  used on in
+put line 558.
 (pdftex.def)             Requested size: 112.74019pt x 83.60281pt.
-
 <figure_ave_loss_network_size_occupancy.pdf, id=61, 396.28432pt x 291.18256pt>
 File: figure_ave_loss_network_size_occupancy.pdf Graphic file (type pdf)
-
 <use figure_ave_loss_network_size_occupancy.pdf>
-Package pdftex.def Info: figure_ave_loss_network_size_occupancy.pdf used on inp
-ut line 568.
+Package pdftex.def Info: figure_ave_loss_network_size_occupancy.pdf  used on in
+put line 559.
 (pdftex.def)             Requested size: 112.74019pt x 82.83682pt.
-
 <figure_ave_loss_network_size_usenet2.pdf, id=62, 394.44363pt x 291.3324pt>
 File: figure_ave_loss_network_size_usenet2.pdf Graphic file (type pdf)
-
 <use figure_ave_loss_network_size_usenet2.pdf>
-Package pdftex.def Info: figure_ave_loss_network_size_usenet2.pdf used on input
- line 569.
+Package pdftex.def Info: figure_ave_loss_network_size_usenet2.pdf  used on inpu
+t line 560.
 (pdftex.def)             Requested size: 112.74019pt x 83.26619pt.
-
 <figure_ave_loss_network_size_spam.pdf, id=63, 394.87123pt x 292.96141pt>
 File: figure_ave_loss_network_size_spam.pdf Graphic file (type pdf)
-
 <use figure_ave_loss_network_size_spam.pdf>
-Package pdftex.def Info: figure_ave_loss_network_size_spam.pdf used on input li
-ne 570.
+Package pdftex.def Info: figure_ave_loss_network_size_spam.pdf  used on input l
+ine 561.
 (pdftex.def)             Requested size: 112.74019pt x 83.64238pt.
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 579.
+               Default added (so using `!tbp') on input line 570.
 
 <figure_ave_loss_topology_synthetic.pdf, id=64, 395.58774pt x 290.54326pt>
 File: figure_ave_loss_topology_synthetic.pdf Graphic file (type pdf)
-
 <use figure_ave_loss_topology_synthetic.pdf>
-Package pdftex.def Info: figure_ave_loss_topology_synthetic.pdf used on input l
-ine 598.
+Package pdftex.def Info: figure_ave_loss_topology_synthetic.pdf  used on input 
+line 589.
 (pdftex.def)             Requested size: 112.74019pt x 82.80124pt.
-
 <figure_ave_loss_topology_occupancy.pdf, id=65, 503.13318pt x 385.47986pt>
 File: figure_ave_loss_topology_occupancy.pdf Graphic file (type pdf)
-
 <use figure_ave_loss_topology_occupancy.pdf>
-Package pdftex.def Info: figure_ave_loss_topology_occupancy.pdf used on input l
-ine 599.
+Package pdftex.def Info: figure_ave_loss_topology_occupancy.pdf  used on input 
+line 590.
 (pdftex.def)             Requested size: 112.74019pt x 86.3763pt.
-
 <figure_ave_loss_topology_usenet2.pdf, id=66, 506.55193pt x 390.24757pt>
 File: figure_ave_loss_topology_usenet2.pdf Graphic file (type pdf)
-
 <use figure_ave_loss_topology_usenet2.pdf>
-Package pdftex.def Info: figure_ave_loss_topology_usenet2.pdf used on input lin
-e 600.
+Package pdftex.def Info: figure_ave_loss_topology_usenet2.pdf  used on input li
+ne 591.
 (pdftex.def)             Requested size: 112.74019pt x 86.85512pt.
-
 <figure_ave_loss_topology_spam.pdf, id=67, 507.85048pt x 390.37573pt>
 File: figure_ave_loss_topology_spam.pdf Graphic file (type pdf)
-
 <use figure_ave_loss_topology_spam.pdf>
-Package pdftex.def Info: figure_ave_loss_topology_spam.pdf used on input line 6
-01.
+Package pdftex.def Info: figure_ave_loss_topology_spam.pdf  used on input line 
+592.
 (pdftex.def)             Requested size: 112.74019pt x 86.65729pt.
- (./main.bbl [7]
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ‡ in font ptmr7t!
-Missing character: There is no Ä in font ptmr7t!
-Missing character: There is no ‡ in font ptmr7t!
- [8]) [9
 
-] [10 <./figure_ave_loss_iteration_synthetic.pdf> <./figure_ave_loss_iteration_
-occupancy.pdf> <./figure_ave_loss_iteration_usenet2.pdf> <./figure_ave_loss_ite
-ration_spam.pdf> <./figure_ave_loss_network_size_synthetic.pdf> <./figure_ave_l
-oss_network_size_occupancy.pdf> <./figure_ave_loss_network_size_usenet2.pdf> <.
-/figure_ave_loss_network_size_spam.pdf> <./figure_ave_loss_topology_synthetic.p
-df> <./figure_ave_loss_topology_occupancy.pdf> <./figure_ave_loss_topology_usen
-et2.pdf> <./figure_ave_loss_topology_spam.pdf>]
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 644.
+(./main.bbl
+Underfull \vbox (badness 10000) has occurred while \output is active []
 
+ [7 <./figure_ave_loss_iteration_synthetic.pdf> <./figure_ave_loss_iteration_oc
+cupancy.pdf> <./figure_ave_loss_iteration_usenet2.pdf> <./figure_ave_loss_itera
+tion_spam.pdf>] [8 <./figure_ave_loss_network_size_synthetic.pdf> <./figure_ave
+_loss_network_size_occupancy.pdf> <./figure_ave_loss_network_size_usenet2.pdf> 
+<./figure_ave_loss_network_size_spam.pdf> <./figure_ave_loss_topology_synthetic
+.pdf> <./figure_ave_loss_topology_occupancy.pdf> <./figure_ave_loss_topology_us
+enet2.pdf> <./figure_ave_loss_topology_spam.pdf>] [9]) [10
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 644.
+]
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 635.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 644.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 635.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 644.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 635.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 644.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 635.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 644.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 635.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 661.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 635.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 661.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 652.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 661.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 652.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 661.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 652.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 661.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 652.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 661.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 652.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 661.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 652.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 661.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 652.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 652.
 
 [11
 
 ]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 661.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 652.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 661.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 652.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 669.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 660.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 669.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 660.
 
 [12] [13]
-Overfull \hbox (2.26186pt too wide) in paragraph at lines 749--749
-[] 
+Overfull \hbox (2.26186pt too wide) detected at line 740
+[]
  []
 
 
-LaTeX Warning: Reference `equa_define_M' on page 14 undefined on input line 749
+LaTeX Warning: Reference `equa_define_M' on page 14 undefined on input line 740
 .
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 763.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 754.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 763.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 754.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 763.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 754.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 763.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 754.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 763.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 754.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 763.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 754.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 763.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 754.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 763.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 754.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 763.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 754.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 763.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 754.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 763.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 754.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 763.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 754.
 
 [14]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 764.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 755.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 755.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 760.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 760.
 
 
 LaTeX Warning: Command \textcircled invalid in math mode on input line 764.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 769.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 769.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 773.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 773.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 764.
 
 [15]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 833.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 824.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 833.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 824.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 833.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 824.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 833.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 824.
 
 
-Overfull \hbox (13.50697pt too wide) in paragraph at lines 833--833
-[] 
+Overfull \hbox (13.50697pt too wide) detected at line 824
+[]
  []
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 833.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 824.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 833.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 824.
 
 [16] [17]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 976.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 967.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 976.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 967.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 976.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 967.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 976.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 967.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 976.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 967.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 976.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 967.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 976.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 967.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 976.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 967.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 976.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 967.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 976.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 967.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 976.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 967.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 976.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 967.
 
 [18]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 976.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 967.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 976.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 967.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 976.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 967.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 976.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 967.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 976.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 967.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 976.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 967.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 987.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 978.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 987.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 978.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 987.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 978.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 987.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 978.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 987.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 978.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 987.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 978.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 987.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 978.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 987.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 978.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 987.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 978.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 987.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 978.
 
 [19]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1061.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1012.
  [20]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1061.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1012.
  (./main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1061.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1061.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1012.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1012.
 
 
 LaTeX Warning: There were undefined references.
@@ -1151,41 +1126,41 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1061.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1012.
  ) 
 Here is how much of TeX's memory you used:
- 10916 strings out of 493117
- 165221 string characters out of 6135432
- 300787 words of memory out of 5000000
- 13873 multiletter control sequences out of 15000+600000
- 52296 words of font info for 269 fonts, out of 8000000 for 9000
+ 11000 strings out of 492649
+ 167170 string characters out of 6129622
+ 310165 words of memory out of 5000000
+ 14386 multiletter control sequences out of 15000+600000
+ 52177 words of font info for 267 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,19n,45p,2026b,544s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/local/texlive/2014/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
-exlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
-xlive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texl
-ive/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texli
-ve/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texliv
-e/2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/
-2014/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/20
-14/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2014
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2014/t
-exmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2014/texm
-f-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2014/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2014/texmf-dist
-/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2014/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2014/texmf-dist/fo
-nts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2014/texmf-dist/font
-s/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2014/texmf-dist/fonts/
-type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2014/texmf-dist/fo
-nts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2014/texmf-dis
-t/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2014/texmf-
-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2014/texmf-dist/fon
-ts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/u
-rw/times/utmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/u
-tmr8a.pfb></usr/local/texlive/2014/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
+ 36i,19n,45p,2026b,543s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/local/texlive/2018/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/t
+exlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/te
+xlive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texl
+ive/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texli
+ve/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texliv
+e/2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/
+2018/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/20
+18/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2018
+/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2018/t
+exmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2018/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2018/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2018/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2018/texmf-dist/
+fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2018/texmf-dist/fo
+nts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2018/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2018/texmf-dist/fonts/
+type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2018/texmf-dist/fo
+nts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2018/texmf-dis
+t/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2018/texmf-
+dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2018/texmf-dist/fon
+ts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/u
+rw/times/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/u
+tmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on main.pdf (20 pages, 634262 bytes).
+Output written on main.pdf (20 pages, 634039 bytes).
 PDF statistics:
  346 PDF objects out of 1000 (max. 8388607)
  246 compressed objects within 3 object streams
