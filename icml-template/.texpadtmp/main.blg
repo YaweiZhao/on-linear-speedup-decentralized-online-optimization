@@ -5,45 +5,45 @@ The style file: abbrvnat.bst
 Database file #1: ../reference.bib
 Warning--entry type for "introduction-online-optimization" isn't style-file defined
 --line 59 of file ../reference.bib
-You've used 42 entries,
+You've used 41 entries,
             2773 wiz_defined-function locations,
-            867 strings with 12812 characters,
-and the built_in function-call counts, 22931 in all, are:
-= -- 2036
-> -- 1356
+            860 strings with 12599 characters,
+and the built_in function-call counts, 22425 in all, are:
+= -- 1990
+> -- 1326
 < -- 28
-+ -- 454
-- -- 410
-* -- 1917
-:= -- 3362
-add.period$ -- 128
-call.type$ -- 42
-change.case$ -- 259
-chr.to.int$ -- 40
-cite$ -- 84
-duplicate$ -- 1064
-empty$ -- 1852
-format.name$ -- 468
-if$ -- 4936
++ -- 444
+- -- 401
+* -- 1869
+:= -- 3285
+add.period$ -- 125
+call.type$ -- 41
+change.case$ -- 253
+chr.to.int$ -- 39
+cite$ -- 82
+duplicate$ -- 1043
+empty$ -- 1811
+format.name$ -- 458
+if$ -- 4832
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 41
-newline$ -- 217
-num.names$ -- 176
-pop$ -- 534
+missing$ -- 40
+newline$ -- 212
+num.names$ -- 172
+pop$ -- 524
 preamble$ -- 1
-purify$ -- 217
+purify$ -- 212
 quote$ -- 0
-skip$ -- 852
+skip$ -- 837
 stack$ -- 0
-substring$ -- 993
-swap$ -- 239
+substring$ -- 966
+swap$ -- 238
 text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 462
+type$ -- 451
 warning$ -- 0
-while$ -- 192
+while$ -- 187
 width$ -- 0
-write$ -- 551
+write$ -- 538
 (There was 1 warning)

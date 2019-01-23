@@ -326,6 +326,7 @@ Denote $\bar{\x}_t = \frac{1}{n}\sum_{i=1}^n \x_{i,t}$. We can verify that $\bar
 \subsection{Dynamic regret of DOG}
 \label{subsection_theoretical_analysis}
 Next we show the dynamic regret of DOG in the following. Before that, we first make some common assumption used in our analysis. 
+Denote the function $F_{i,t}$ by
 \begin{align}
 \nonumber
 F_{i,t}(\cdot) := \EE_{\xi_{i,t} \sim D_{i,t}} f_{i,t}(\cdot; \xi_{i,t}).
@@ -384,15 +385,15 @@ Choosing
 \end{align}
 \end{Corollary}
 For simpler discussion, let us treat $R$, $G$, and $1-\rho$ as constants. The dynamic regret can simplified into $O(n\sqrt{MT}G + \sqrt{nMT}\sigma)$. If $M=0$, the dynamic regret degenerates the static regret $O(n\sqrt{T}G + \sqrt{nT}\sigma)$.
-The discussion for the dynamic regret is conducted in the following
+The discussion for the dynamic regret is conducted in the following aspects.
 \begin{itemize}
 \item ({\bf Tightness.}) To see the tightness, we consider a few special cases:
 \begin{itemize}
 \item ($\sigma= 0$ and $n=1$.) It degenerates to the vanilla online learning setting but with dynamic regret. The implied static regret $O(\sqrt{TM})$ is consistent with the dynamic regret result in \citet{Zhao:2018wx}, which is proven to be optimum. 
-\item ($G=0$ and $M=0$.) It degenerates to the decentralized optimization scenario \citet{Duchi:2012hp,Tang:2018un}. The static regret $O(\sqrt{nT}\sigma)$ implies the convergence rate $\sigma / \sqrt{nT}$, which is consistent with the result in \citet{Duchi:2012hp,Tang:2018un}. 
+\item ($G=0$ and $M=0$.) It degenerates to the decentralized optimization scenario \citet{Tang:2018un}. The static regret $O(\sqrt{nT}\sigma)$ implies the convergence rate $\sigma / \sqrt{nT}$, which is consistent with the result in \citet{Tang:2018un}. 
 \end{itemize}
 \item ({\bf Insight.}) Consider the baseline that all users do not communicate but only run local online gradient. It is not hard to verify that the static regret for this baseline approach is $O(n\sqrt{T}G + n\sqrt{T}\sigma)$. Comparing to the static regret ($O(n\sqrt{T}G + \sqrt{nT}\sigma)$) with iterative communication, the improvement is only on the stochastic component. Denote that $G$ measures the magnitude of the adversarial component and $\sigma$ measures the stochastic component. This result reveals an important observation that \emph{the communication does not really help improve the adversarial component, only the stochastic component can benefit from the communication.} This observation makes quite sense, since if the users' private data are totally arbitrary, there is no reason they can benefit to each other by exchanging anything.
-\item ({\bf Improve existing dynamic regret in decentralized setting.}) \citet{8015179Shahram} only considers the adversary loss, and provides $\Ocal{n^{\frac{3}{2}}\sqrt{\frac{MT}{1-\rho}} }$ regret for DOG. Compared with the result in \citet{8015179Shahram}, our regret enjoys the state-of-the-art dependence on $T$ and $M$, and meanwhile improves the dependence on $n$.
+\item ({\bf Improve existing dynamic regret in decentralized setting.}) \citet{8015179Shahram} only considers the adversary loss, and provides $\Ocal{n^{\frac{3}{2}}\sqrt{\frac{MT}{1-\rho}} }$ regret for DOG. Compared with the result in \citet{8015179Shahram}, our regret enjoys the state-of-the-art dependence on $T$ and $M$, and meanwhile improves the dependence on $n$. The improvement is caused by a better bound of the difference between the local model $\x_{i,t}$ and its average $\bar{\x}_t$ at time $t$ (see Lemma \ref{Lemma_x_variance_norm_square}). 
 \item ({\bf Improve existing static regret in the decentralized setting.}) When using the dynamic regret defined in \eqref{equa_define_other_regret}, but choosing local model $\x_{i,t}$, instead of $\x_{j,t}$, to feed the local loss function $f_{i,t}$, \citet{pmlr-v70-zhang17g} provides $\Ocal{n T^{\frac{3}{4}}}$ static regret for the decentralized online conditional gradient method. Our analysis shows that the regret can be improved to $\Ocal{n\sqrt{T}G+\sqrt{nT}\sigma}$ by using DOG. 
 \end{itemize} 
 
@@ -413,7 +414,7 @@ Choosing
 The result suggests that $\x_{i,t}$ approaches to $\bar{\x}_t$ roughly in the rate $O(1/{T})$ (treat $M$ and $\rho$ as constants.), which is faster than the convergence of the averaged regret $O(1/\sqrt{T})$ from Corollary~\ref{corollary_regret_upper_bound}. 
 
 \subsection{Dynamic regret under different definition}
-For any online algorithm $A\in\Acal$, existing researeches \citep{pmlr-v70-zhang17g} define the regret by using any local model, e.g., $\x_{j,t}$, instead of $\x_{i,t}$ on the $i$-th node. It is defined by 
+For any online algorithm $A\in\Acal$, the existing researech \citet{pmlr-v70-zhang17g} defines the regret by using any local model, e.g., $\x_{j,t}$, instead of $\x_{i,t}$ on the $i$-th node. It is defined by 
 \begin{align}
 \label{equa_define_other_regret}
 & \widehat{\Rcal}_T^{A}(\x_{j,t}) \\ \nonumber
@@ -456,7 +457,7 @@ As illustrated in Corollary \ref{corollary_implied_other_regret_bound}, we obtai
 
 For simplicity, in the experiments we only consider online logistic regression with squared $\ell_2$ norm regularization, i.e., $f_{i,t}(\x;\xi_{i,t}) = \log\lrincir{1+\exp(-\y_{i,t}\A_{i,t}\Tr \x)} + \frac{\gamma}{2}\lrnorm{\x}^2$, where $\gamma = 10^{-3}$ is a given hyper-parameter. Under this setting, we compare the proposed Decentralized Online Gradient method (DOG) and the Centralized Online Gradient method (COG). 
 
-$M$ is fixed as 10 to determine the space of reference points. The learning rate $\eta$ is tuned to be optimal for each dataset sperately. We evaluate the learning performance by measuring the average loss $\frac{1}{nT}\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t};\xi_{i,t})$, instead of the dynamic regret $\EE_{\Xi_{n,T}\sim \Dcal_{n,T}}\sum_{i=1}^n\sum_{t=1}^T \lrincir{ f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^{\ast}) }$, since the optimal reference point $\{\x_t^\ast\}^T_{t=1}$ is the same for both DOG and COG.   
+The dynamic budget $M$ is fixed as 10 to determine the space of reference points. The learning rate $\eta$ is tuned to be optimal for each dataset sperately. We evaluate the learning performance by measuring the average loss $\frac{1}{nT}\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t};\xi_{i,t})$, instead of the dynamic regret $\EE_{\Xi_{n,T}\sim \Dcal_{n,T}}\sum_{i=1}^n\sum_{t=1}^T \lrincir{ f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^{\ast}) }$, since the optimal reference point $\{\x_t^\ast\}^T_{t=1}$ is the same for both DOG and COG.   
 
 \subsection{Datasets}
 
