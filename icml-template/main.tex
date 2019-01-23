@@ -250,51 +250,13 @@ It essentially assumes that the optimal model would not change over time. Howeve
 \nonumber
 \Rcal_T^{A} := & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \left[\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t};\xi_{i,t}) \right]
 \\ \label{equa_definition_our_regret}
-& - \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\min_{\{\x_t^\star\}_{t=1}^T \in \mathcal{L}_{M}^T}  \left[\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_t^\ast;\xi_{i,t}) \right],
+& - \min_{\{\x_t^\star\}_{t=1}^T \in \mathcal{L}_{M}^T}  \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \left[\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_t^\ast;\xi_{i,t}) \right],
 \end{align}
 where $\mathcal{L}_M^T$ is defined by
 \begin{align}
 \nonumber
 \Lcal_{M}^T = \left\{\{\z_t\}_{t=1}^T : \sum\limits_{t=1}^{T-1}\|\z_{t+1}-\z_t\|\le M \right\}.
 \end{align} $\mathcal{L}_M^T$ restricts how much the optimal model may change over time. When $M=0$, the dynamic regret degenerates to the static regret.
-
-%
-%Suppose we have $n$ workers, among which the $i$-th one will receive the $t$-th loss $f_{i,t}(\x_{i,t};\xi_{i,t})$ at the $t-$th iteration, where $\x_{i,t}$ is the model on the node $i$ at the $t$-th iteration, and $\xi_{i,t}$ represents the stochasticness of the private data, which is drawn from some distribution $D_{i,t}$ for the $i$-th node at the time $t$. If we do not consider the dynamic setup, all nodes want to make their models converge to the best model $\x^\ast$, which is defined by
-%\begin{align}
-%\nonumber
-%\x^\ast := \argmin_{\x} \sum\limits_{i=1}^n\sum\limits_{t=1}^T \EE_{\xi_{i,t} \sim \Dcal_{i,t}} f_{i,t}(\x; \xi_{i,t}).
-%\end{align}
-%However, the static optimal model $\x^\ast$ does not exist in the dynamic environment. For example, when we want to conduct music recommendation to a user, his/her preference to music may change over time as his/her situation.  Thus, the optimal model should be time-varying over time. It leads to the dynamics of the optimal recommendation model.  Therefore, we allow the optimal model can change as the times goes, and denote them by $\{\x_t^*\}_{t=1}^T$. Formally, given the budget of dynamics $M$, the feasible reference points $\{\x_t^\ast\}_{t=1}^T$ satisfy
-%\begin{align*}
-%\sum\limits_{t=1}^{T-1}\|\x_{t+1}^*-\x_t^*\|\le M,
-%\end{align*}
-%where $M$ is used to control how quickly the optimal model can change. When $M=0$, all $\x_t^\ast$s are same, and it degenerates to the static online learning problem. When the dynamic environment changes significantly, $M$ becomes large to model the dynamics. Let us take an example to explain the dynamics.   
-%
-%
-%
-%
-%Denote $\Lcal_{M}^T = \left\{\{\z_t\}_{t=1}^T : \sum\limits_{t=1}^{T-1}\|\z_{t+1}-\z_t\|\le M \right\}$.  We define a new dynamic regret as follows.
-%\begin{Definition}
-%\label{define_our_new_dynamic_regret}
-%For any a decentralized online algorithm $A \in \Acal$, we define its dynamic regret $\Rcal_T^{A}$ by
-%\begin{align}
-%\label{equa_definition_our_regret}
-%\Rcal_T^{A} := & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \sum_{i=1}^n\sum_{t=1}^T \lrincir{f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^\ast;\xi_{i,t}) },
-%\end{align}  where
-%$\{\x_t^\ast\}_{t=1}^T$ is defined by
-%\begin{align*}
-%	\{\x_t^*\}_{t=1}^T:=\argmin_{\{\z_t\}_{t=1}^T \in \Lcal_{M}^T} \sum\limits_{i=1}^n\sum\limits_{t=1}^T \EE_{\xi_{i,t} \sim \Dcal_{i,t}} f_{i,t}(\z_t; \xi_{i,t}).
-%\end{align*}
-%\end{Definition} 
-%Here, $\x_{i,t}$ is the model played by an online algorithm $A$ at the $t$-th iteration. $\xi_{i,t}$ represents the stochastic factor in the local model, which is drawn from the distribution $D_{i,t}$ for the $i$-th node at the time $t$.  It is the major difference between our new regret and the previous regret. When we do not exploit the relation among local models, e.g. $\x_{i,t}$, our new dynamic regret \eqref{equa_definition_our_regret} de-generates to the classic definition \eqref{equa_definition_previous_regret}. Specifically, for any a decentralized online algorithm $A \in \Acal$, the previous dynamic regret  $\widetilde{\Rcal}_T^{A}$ is usually defined by
-%\begin{align}
-%\label{equa_definition_previous_regret}
-%\widetilde{\Rcal}_T^{A} := &  \sum_{i=1}^n\sum_{t=1}^T \lrincir{ f_{i,t}(\x_{i,t}) - f_{i,t}(\x_t^\ast) },
-%\end{align} subject to $\sum_{t=1}^{T-1} \lrnorm{\x_{t+1}^\ast - \x_t^\ast} \le M$.  In \eqref{equa_definition_previous_regret}, the classic online learning in a decentralized network treats all the data as the adversary data in default, which ignores the potential relation among local models $\{\x_{i,t}\}_{i=1}^n$ at time $t$. But, those local models are not independent in many practical scenarios. For example, users' perference to music may be impacted by a popular trend in the Internet at the same time. In the decentralized online learning, every node shares its private model to neighbours, and the regret caused by the stochastic part of data would be decreased effectively. Exploiting the potential relation among local models is helpful to reduce the regret, and learn a better model, which is varified by the theoretical results in Section \ref{subsection_theoretical_analysis}.
-
-
-
-
 
 
 
@@ -446,7 +408,7 @@ Use Assumption \ref{assumption_bounded_gradient_domain}, and choose
 \end{Theorem}
 The result suggests that $\x_{i,t}$ approaches to $\bar{\x}_t$ roughly in the rate $O(1/{T})$, which is faster than the convergence of the averaged regret $O(1/\sqrt{T})$ from Corollary~\ref{corollary_regret_upper_bound}. 
 
-{\rc \textbf{Something wrong!!!!!!}
+{\rc 
 For any online algorithm $A\in\Acal$, existing researeches \citep{pmlr-v70-zhang17g} define the regret by using any local model, e.g., $\x_{j,t}$, instead of $\x_{i,t}$ on the $i$-th node. It is defined by 
 \begin{align}
 \label{equa_define_other_regret}
@@ -457,16 +419,16 @@ For any online algorithm $A\in\Acal$, existing researeches \citep{pmlr-v70-zhang
 where $\x_{j,t}$ is any local model for the $j$-th node with $j\in[n]$ at the time $t$. Inspired by Theorem \ref{theorem_regret_upper_bound} and Theorem \ref{theorem_local_models_closer}, we find that the existing regret $\widehat{\Rcal}_T^{\textsc{DOG}}(\x_{j,t})$ can be bounded by the following theorem.
 \begin{Theorem}
 \label{theorem_implied_other_regret_bound}
-Recall 
+Denote constants $C_1$ and $C_2$ by
 \begin{align}
 \nonumber
-C := & \frac{L + 2\eta L^2  + 4L^2 \eta}{(1-\rho)^2} +2L.
+C_1 := & \frac{40+\sqrt{n}}{2\sqrt{n}} + \frac{1+n}{n(1-\rho)^2}, \\ \nonumber
+C_2 := & \frac{L + 2\eta L^2  + 4L^2 \eta}{(1-\rho)^2} +2L,
 \end{align}  Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing $\eta>0$ in Algorithm \ref{algo_DOG}, we have
 \begin{align}
 \nonumber
-&\widehat{\Rcal}_T^{\textsc{DOG}}(\x_{j,t}) \\ \nonumber
-\lesssim & \lrincir{\frac{41 T n}{2} + \frac{nT}{2(1-\rho)^2}} \eta G^2 +  \eta T\sigma^2 \\ \nonumber
-& + C nT\eta^2 G^2  + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  }
+\widehat{\Rcal}_T^{\textsc{DOG}}(\x_{j,t}) \lesssim & C_1 \eta n\sqrt{n} T G^2 +\eta T\sigma^2 + C_2  nT\eta^2 G^2  \\ \nonumber
+&  + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  }.
 \end{align}
 \end{Theorem} Choosing an appropriate learning rate $\eta$, we successfully obtain $\Ocal{n\sqrt{T}G + \sqrt{nT}\sigma}$ regret for the regret $\widehat{\Rcal}_T^{\textsc{DOG}}(\x_{j,t})$.
 \begin{Corollary}
@@ -474,16 +436,16 @@ C := & \frac{L + 2\eta L^2  + 4L^2 \eta}{(1-\rho)^2} +2L.
 Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing 
 \begin{align}
 \nonumber
-\eta = \sqrt{\frac{(1-\rho)^2 \lrincir{nM\sqrt{R} + nR}}{ nTG^2 + T\sigma^2 }}
+\eta = \sqrt{\frac{(1-\rho)^2 \lrincir{nM\sqrt{R} + nR}}{ n^{\frac{3}{2}}TG^2 + T\sigma^2 }}
 \end{align} in Algorithm \ref{algo_DOG}, we have
 \begin{align}
 \nonumber
 & \widehat{\Rcal}_T^{\textsc{DOG}}(\x_{j,t}) \\ \nonumber
-\lesssim & n\lrincir{M+\sqrt{R}} + \frac{\sqrt{T\lrincir{M+\sqrt{R}}(n^2G^2 + n\sigma^2)}}{1-\rho}.
+\lesssim & n\lrincir{M+\sqrt{R}} + \frac{\sqrt{T\lrincir{M+\sqrt{R}}(n^\frac{5}{2}G^2 + n\sigma^2)}}{1-\rho}.
 \end{align}
 \end{Corollary} 
 
-Using the definition of regret $\widehat{\Rcal}_T^{A}(\x_{j,t})$ with $M=0$, \citet{pmlr-v70-zhang17g} presents $\Ocal{n T^\frac{3}{4}}$ static regret for decentralized online conditional gradient method, and \citet{tkde-6311406} presents $\Ocal{n\sqrt{T}}$ static regret for decentralized autonomous online learning method. But, Theorem \ref{theorem_implied_other_regret_bound} and Corollary \ref{corollary_implied_other_regret_bound} show that our new analysis framework provides $\Ocal{n\sqrt{TM}G + \sqrt{nTM}\sigma}$ dynamic regret for DOG, which improves the existing result in \citet{pmlr-v70-zhang17g}, and extends both of those results in the dynamic setting.
+%Using the definition of regret $\widehat{\Rcal}_T^{A}(\x_{j,t})$ with $M=0$, \citet{pmlr-v70-zhang17g} presents $\Ocal{n T^\frac{3}{4}}$ static regret for decentralized online conditional gradient method, and \citet{tkde-6311406} presents $\Ocal{n\sqrt{T}}$ static regret for decentralized autonomous online learning method. But, Theorem \ref{theorem_implied_other_regret_bound} and Corollary \ref{corollary_implied_other_regret_bound} show that our new analysis framework provides $\Ocal{n\sqrt{TM}G + \sqrt{nTM}\sigma}$ dynamic regret for DOG, which improves the existing result in \citet{pmlr-v70-zhang17g}, and extends both of those results in the dynamic setting.
 
 
 
@@ -996,25 +958,38 @@ Setting $\eta = \sqrt{\frac{(1-\rho) \lrincir{nM\sqrt{R} + nR}}{ nTG^2 + T\sigma
 \begin{align}
 \nonumber
 \widehat{\Rcal}_T^{A}(\x_{j,t}) = & \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{j,t};\xi_{i,t})\right ]  - \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\min_{\{\x_{i,t}^\ast\}_{t=1}^T \in \Lcal_M^T}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{i,t}^\ast;\xi_{i,t})\right ] \\ \nonumber
-= & \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T \lrincir{f_{i,t}(\x_{j,t};\xi_{i,t}) - f_{i,t}(\x_{i,t};\xi_{i,t})}\right ]  \\ \nonumber
-& + \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{i,t};\xi_{i,t})\right ] - \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\min_{\{\x_{i,t}^\ast\}_{t=1}^T \in \Lcal_M^T}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{i,t}^\ast;\xi_{i,t})\right ] \\ \nonumber
+= & \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T \lrincir{f_{i,t}(\x_{j,t};\xi_{i,t}) - f_{i,t}(\x_{i,t};\xi_{i,t})}\right ]  \\ \label{equa_implied_other_regret_temp0}
+& + \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{i,t};\xi_{i,t})\right ] - \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\min_{\{\x_{i,t}^\ast\}_{t=1}^T \in \Lcal_M^T}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{i,t}^\ast;\xi_{i,t})\right ].
 \end{align}
 
+Additionally, we have
 \begin{align}
 \nonumber
 & \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T \lrincir{f_{i,t}(\x_{j,t};\xi_{i,t}) - f_{i,t}(\x_{i,t};\xi_{i,t})}\right ] \\ \nonumber
 \le & \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T \lrangle{\nabla f_{i,t}(\x_{i,t};\xi_{i,t}), \x_{j,t} - \x_{i,t}}\right ] \\ \nonumber
-\le & \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T \lrincir{ \frac{\eta}{2}\lrnorm{\nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 + \frac{1}{2\eta} \lrnorm{\x_{j,t} - \x_{i,t}}^2 }\right ] \\ \nonumber
-\le & \frac{\eta n T G^2}{2} + \frac{1}{2\eta} \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\sum_{i=1}^n \sum_{t=1}^T \lrnorm{\x_{j,t} - \x_{i,t}}^2 \\ \nonumber
-\le & \frac{\eta n T G^2}{2} + \frac{1}{\eta} \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\sum_{i=1}^n \sum_{t=1}^T \lrincir{ \lrnorm{\x_{j,t} -\bar{\x}_t}^2 + \lrnorm{\bar{\x}_t - \x_{i,t}}^2} \\ \nonumber
-\le & \frac{\eta n T G^2}{2} + \frac{1}{\eta} \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\sum_{i=1}^n \sum_{t=1}^T \lrnorm{\bar{\x}_t - \x_{i,t}}^2 + \frac{n}{\eta} \EE_{\Xi_{n,T} \sim \Dcal_{n,T}} \sum_{t=1}^T\lrnorm{\x_{j,t} -\bar{\x}_t}^2  \\ \nonumber
-\le & \frac{\eta n T G^2}{2} + \frac{1}{\eta} \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\sum_{i=1}^n \sum_{t=1}^T \lrnorm{\bar{\x}_t - \x_{i,t}}^2 + \frac{n}{\eta} \EE_{\Xi_{n,T} \sim \Dcal_{n,T}} \sum_{j=1}^n\sum_{t=1}^T\lrnorm{\x_{j,t} -\bar{\x}_t}^2  \\ \nonumber
-\le & \frac{\eta n T G^2}{2} + \frac{1+n}{\eta} \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\sum_{i=1}^n \sum_{t=1}^T \lrnorm{\bar{\x}_t - \x_{i,t}}^2 \\ \nonumber
-\le & \frac{\eta n T G^2}{2} + \frac{(1+n)nT\eta G^2}{(1-\rho)^2} 
+\le & \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T \lrincir{ \frac{\eta\sqrt{n}}{2}\lrnorm{\nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 + \frac{1}{2\eta\sqrt{n}} \lrnorm{\x_{j,t} - \x_{i,t}}^2 }\right ] \\ \nonumber
+\le & \frac{\eta n\sqrt{n} T G^2}{2} + \frac{1}{2\eta\sqrt{n}} \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\sum_{i=1}^n \sum_{t=1}^T \lrnorm{\x_{j,t} - \x_{i,t}}^2 \\ \nonumber
+\le & \frac{\eta n\sqrt{n} T G^2}{2} + \frac{1}{\eta\sqrt{n}} \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\sum_{i=1}^n \sum_{t=1}^T \lrincir{ \lrnorm{\x_{j,t} -\bar{\x}_t}^2 + \lrnorm{\bar{\x}_t - \x_{i,t}}^2} \\ \nonumber
+\le & \frac{\eta n\sqrt{n} T G^2}{2} + \frac{1}{\eta\sqrt{n}} \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\sum_{i=1}^n \sum_{t=1}^T \lrnorm{\bar{\x}_t - \x_{i,t}}^2 + \frac{\sqrt{n}}{\eta} \EE_{\Xi_{n,T} \sim \Dcal_{n,T}} \sum_{t=1}^T\lrnorm{\x_{j,t} -\bar{\x}_t}^2  \\ \nonumber
+\le & \frac{\eta n\sqrt{n} T G^2}{2} + \frac{1}{\eta\sqrt{n}} \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\sum_{i=1}^n \sum_{t=1}^T \lrnorm{\bar{\x}_t - \x_{i,t}}^2 + \frac{\sqrt{n}}{\eta} \EE_{\Xi_{n,T} \sim \Dcal_{n,T}} \sum_{j=1}^n\sum_{t=1}^T\lrnorm{\x_{j,t} -\bar{\x}_t}^2  \\ \nonumber
+= & \frac{\eta n\sqrt{n} T G^2}{2} + \frac{\frac{1}{\sqrt{n}}+\sqrt{n}}{\eta} \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\sum_{i=1}^n \sum_{t=1}^T \lrnorm{\bar{\x}_t - \x_{i,t}}^2 \\ \label{equa_implied_other_regret_temp1}
+\le & \frac{\eta n\sqrt{n} T G^2}{2} + \frac{\lrincir{\frac{1}{\sqrt{n}}+\sqrt{n}}nT\eta G^2}{(1-\rho)^2}. 
+\end{align} The last inequality holds due to Lemma \ref{Lemma_x_variance_norm_square}.
+
+According to Theorem \ref{theorem_regret_upper_bound}, we have
+\begin{align}
+\nonumber
+& \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{i,t};\xi_{i,t})\right ] - \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\min_{\{\x_{i,t}^\ast\}_{t=1}^T \in \Lcal_M^T}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{i,t}^\ast;\xi_{i,t})\right ] \\ \label{equa_implied_other_regret_temp2}
+\le & 20\eta T n G^2 +  \eta T\sigma^2 + \lrincir{\frac{L + 2\eta L^2  + 4L^2 \eta}{(1-\rho)^2} +2L}  nT\eta^2 G^2    + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  }.
 \end{align}
 
-
-
+Substituting \eqref{equa_implied_other_regret_temp1} and \eqref{equa_implied_other_regret_temp2} into \eqref{equa_implied_other_regret_temp0}, we have
+\begin{align}
+\nonumber
+& \widehat{\Rcal}_T^{A}(\x_{j,t}) \\ \nonumber
+= & \frac{\eta n\sqrt{n} T G^2}{2} + \frac{\lrincir{\frac{1}{\sqrt{n}}+\sqrt{n}}nT\eta G^2}{(1-\rho)^2} + 20\eta T n G^2 +  \eta T\sigma^2 + \lrincir{\frac{L + 2\eta L^2  + 4L^2 \eta}{(1-\rho)^2} +2L}  nT\eta^2 G^2    + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  } \\ \nonumber
+= & \lrincir{\frac{40+\sqrt{n}}{2\sqrt{n}} + \frac{1+n}{n(1-\rho)^2}}\eta n\sqrt{n} T G^2 +\eta T\sigma^2 + \lrincir{\frac{L + 2\eta L^2  + 4L^2 \eta}{(1-\rho)^2} +2L}  nT\eta^2 G^2    + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  }.
+\end{align} It completes the proof.
 
 
 \end{proof}
@@ -1024,31 +999,6 @@ Setting $\eta = \sqrt{\frac{(1-\rho) \lrincir{nM\sqrt{R} + nR}}{ nTG^2 + T\sigma
 
 
 
-
-
-
-%\begin{Lemma}
-%\label{Lemma_assumption_discussion}
-%Assume $\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2 \le G$. It implies
-%\begin{align}
-%\nonumber
-%\EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2  \le  \sigma^2 + G.
-%\end{align}
-%\end{Lemma}
-%\begin{proof}
-%We have
-%\begin{align}
-%\nonumber
-%&\EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2 \\ \nonumber 
-%= & \EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t}) - \EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t}) + \EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t})}^2 \\ \nonumber
-%= & \EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t}) - \EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t})}^2 + \lrnorm{\EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t})}^2 \\ \nonumber
-%& + 2\EE_{ \xi_{i,t} \sim D_{i,t} }\lrangle{\nabla h_t(\x;\xi_{i,t}) - \EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t}),\EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t})} \\ \nonumber
-%= & \EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t}) - \EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t})}^2 + \lrnorm{\EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t})}^2  \\ \nonumber
-%\le & \EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t}) - \EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t})}^2 + \EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2  \\ \nonumber
-%\le & \sigma^2 + G.
-%\end{align} It thus completes the proof.
-%\end{proof}
-%
 
 
 
