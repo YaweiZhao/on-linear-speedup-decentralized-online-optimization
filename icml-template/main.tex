@@ -413,7 +413,7 @@ Use Assumption \ref{assumption_bounded_gradient_domain}, and choose
 \end{align} in Algorithm \ref{algo_DOG}. We have 
 \begin{align}
 \nonumber
-{1\over nT}\left[\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{i=1}^n\sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2\right] \lesssim \frac{\lrincir{M + \sqrt{R}}}{(1-\rho)T}.
+{1\over nT}\left[\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{i=1}^n\sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2\right] \lesssim \frac{M + \sqrt{R}}{(1-\rho)T}.
 \end{align}
 \end{Theorem}
 The result suggests that $\x_{i,t}$ approaches to $\bar{\x}_t$ roughly in the rate $O(1/{T})$, which is faster than the convergence of the averaged regret $O(1/\sqrt{T})$ from Corollary~\ref{corollary_regret_upper_bound}. 
@@ -949,7 +949,7 @@ Thus, we  have
 \le & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T \lrincir{ \sum_{s=1}^{t-1} \eta \rho^{t-s-1} \lrnorm{\G_s}_F}^2  \\ \nonumber
 \refabovecir{\le}{\textcircled{1}} & \frac{\eta^2}{(1-\rho)^2} \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \lrincir{  \sum_{t=1}^T \lrnorm{\G_t}_F^2 } \\ \nonumber
 = & \frac{\eta^2}{(1-\rho)^2} \lrincir{ \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T \sum_{i=1}^n  \lrnorm{\nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 } \\ \nonumber
-\refabovecir{=}{\textcircled{2}} & \frac{nT\eta^2 G^2 }{(1-\rho)^2}.
+\le & \frac{nT\eta^2 G^2 }{(1-\rho)^2}.
 \end{align} $\textcircled{1}$ holds due to Lemma \ref{Lemma_hanlin_2}. 
 \end{proof}
 
@@ -967,9 +967,9 @@ Setting $\eta = \sqrt{\frac{(1-\rho) \lrincir{nM\sqrt{R} + nR}}{ nTG^2 + T\sigma
 
 \begin{align}
 \nonumber
-\widehat{\Rcal}_T^{A}(\x_{j,t}) = & \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{j,t};\xi_{i,t})\right ]  - \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\min_{\{\x_{i,t}^\ast\}_{t=1}^T \in \Lcal_M^T}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{i,t}^\ast;\xi_{i,t})\right ] \\ \nonumber
+\widehat{\Rcal}_T^{A}(\x_{j,t}) = & \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{j,t};\xi_{i,t})\right ]  - \min_{\{\x_{i,t}^\ast\}_{t=1}^T \in \Lcal_M^T} \EE_{\Xi_{n,T} \sim \Dcal_{n,T}} \left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{i,t}^\ast;\xi_{i,t})\right ] \\ \nonumber
 = & \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T \lrincir{f_{i,t}(\x_{j,t};\xi_{i,t}) - f_{i,t}(\x_{i,t};\xi_{i,t})}\right ]  \\ \label{equa_implied_other_regret_temp0}
-& + \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{i,t};\xi_{i,t})\right ] - \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\min_{\{\x_{i,t}^\ast\}_{t=1}^T \in \Lcal_M^T}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{i,t}^\ast;\xi_{i,t})\right ].
+& + \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{i,t};\xi_{i,t})\right ] - \min_{\{\x_{i,t}^\ast\}_{t=1}^T \in \Lcal_M^T}\EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{i,t}^\ast;\xi_{i,t})\right ].
 \end{align}
 
 Additionally, we have
