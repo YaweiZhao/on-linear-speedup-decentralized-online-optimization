@@ -444,7 +444,10 @@ Use Assumption \ref{assumption_bounded_gradient_domain}, and choose
 {1\over nT}\left[\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{i=1}^n\sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2\right] \lesssim \frac{\lrincir{M + \sqrt{R}}}{(1-\rho)T}.
 \end{align}
 \end{Theorem}
-The result suggests that $\x_{i,t}$ approaches to $\bar{\x}_t$ roughly in the rate $O(1/{T})$, which is faster than the convergence of the averaged regret $O(1/\sqrt{T})$ from Corollary~\ref{corollary_regret_upper_bound}. For any online algorithm $A\in\Acal$, existing researeches \citep{pmlr-v70-zhang17g} define the regret by using any local model, e.g., $\x_{j,t}$, instead of $\x_{i,t}$ on the $i$-th node. It is defined by 
+The result suggests that $\x_{i,t}$ approaches to $\bar{\x}_t$ roughly in the rate $O(1/{T})$, which is faster than the convergence of the averaged regret $O(1/\sqrt{T})$ from Corollary~\ref{corollary_regret_upper_bound}. 
+
+{\rc \textbf{Something wrong!!!!!!}
+For any online algorithm $A\in\Acal$, existing researeches \citep{pmlr-v70-zhang17g} define the regret by using any local model, e.g., $\x_{j,t}$, instead of $\x_{i,t}$ on the $i$-th node. It is defined by 
 \begin{align}
 \label{equa_define_other_regret}
 & \widehat{\Rcal}_T^{A}(\x_{j,t}) \\ \nonumber
@@ -484,7 +487,7 @@ Using the definition of regret $\widehat{\Rcal}_T^{A}(\x_{j,t})$ with $M=0$, \ci
 
 
 
-
+}
 
 \section{Empirical studies}
 
@@ -982,6 +985,46 @@ Thus, we  have
 \begin{proof}
 Setting $\eta = \sqrt{\frac{(1-\rho) \lrincir{nM\sqrt{R} + nR}}{ nTG^2 + T\sigma^2 }}$ into Lemma \ref{Lemma_x_variance_norm_square}, we finally complete the proof.
 \end{proof}
+
+
+
+
+
+\textbf{Proof to Theorem \ref{theorem_implied_other_regret_bound}:}
+\begin{proof}
+
+\begin{align}
+\nonumber
+\widehat{\Rcal}_T^{A}(\x_{j,t}) = & \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{j,t};\xi_{i,t})\right ]  - \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\min_{\{\x_{i,t}^\ast\}_{t=1}^T \in \Lcal_M^T}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{i,t}^\ast;\xi_{i,t})\right ] \\ \nonumber
+= & \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T \lrincir{f_{i,t}(\x_{j,t};\xi_{i,t}) - f_{i,t}(\x_{i,t};\xi_{i,t})}\right ]  \\ \nonumber
+& + \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{i,t};\xi_{i,t})\right ] - \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\min_{\{\x_{i,t}^\ast\}_{t=1}^T \in \Lcal_M^T}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{i,t}^\ast;\xi_{i,t})\right ] \\ \nonumber
+\end{align}
+
+\begin{align}
+\nonumber
+& \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T \lrincir{f_{i,t}(\x_{j,t};\xi_{i,t}) - f_{i,t}(\x_{i,t};\xi_{i,t})}\right ] \\ \nonumber
+\le & \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T \lrangle{\nabla f_{i,t}(\x_{i,t};\xi_{i,t}), \x_{j,t} - \x_{i,t}}\right ] \\ \nonumber
+\le & \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T \lrincir{ \frac{\eta}{2}\lrnorm{\nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 + \frac{1}{2\eta} \lrnorm{\x_{j,t} - \x_{i,t}}^2 }\right ] \\ \nonumber
+\le & \frac{\eta n T G^2}{2} + \frac{1}{2\eta} \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\sum_{i=1}^n \sum_{t=1}^T \lrnorm{\x_{j,t} - \x_{i,t}}^2 \\ \nonumber
+\le & \frac{\eta n T G^2}{2} + \frac{1}{\eta} \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\sum_{i=1}^n \sum_{t=1}^T \lrincir{ \lrnorm{\x_{j,t} -\bar{\x}_t}^2 + \lrnorm{\bar{\x}_t - \x_{i,t}}^2} \\ \nonumber
+\le & \frac{\eta n T G^2}{2} + \frac{1}{\eta} \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\sum_{i=1}^n \sum_{t=1}^T \lrnorm{\bar{\x}_t - \x_{i,t}}^2 + \frac{n}{\eta} \EE_{\Xi_{n,T} \sim \Dcal_{n,T}} \sum_{t=1}^T\lrnorm{\x_{j,t} -\bar{\x}_t}^2  \\ \nonumber
+\le & \frac{\eta n T G^2}{2} + \frac{1}{\eta} \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\sum_{i=1}^n \sum_{t=1}^T \lrnorm{\bar{\x}_t - \x_{i,t}}^2 + \frac{n}{\eta} \EE_{\Xi_{n,T} \sim \Dcal_{n,T}} \sum_{j=1}^n\sum_{t=1}^T\lrnorm{\x_{j,t} -\bar{\x}_t}^2  \\ \nonumber
+\le & \frac{\eta n T G^2}{2} + \frac{1+n}{\eta} \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\sum_{i=1}^n \sum_{t=1}^T \lrnorm{\bar{\x}_t - \x_{i,t}}^2 \\ \nonumber
+\le & \frac{\eta n T G^2}{2} + \frac{(1+n)nT\eta G^2}{(1-\rho)^2} 
+\end{align}
+
+
+
+
+
+\end{proof}
+
+
+
+
+
+
+
 
 
 %\begin{Lemma}

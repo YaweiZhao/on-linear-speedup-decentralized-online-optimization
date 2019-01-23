@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  22 JAN 2019 22:44
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  22 JAN 2019 23:22
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1024,12 +1024,13 @@ LaTeX Warning: Command \textcircled invalid in math mode on input line 978.
 
 LaTeX Warning: Command \textcircled invalid in math mode on input line 978.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1012.
 [19]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1012.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1052.
+ [20]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1052.
  (/Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/icml-template/.texpadtmp/main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1012.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1012.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1052.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 1052.
 
 
 LaTeX Warning: There were undefined references.
@@ -1037,7 +1038,7 @@ LaTeX Warning: There were undefined references.
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1012.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1052.
  ) 
 Here is how much of TeX's memory you used:
  10919 strings out of 493089
@@ -1048,10 +1049,10 @@ Here is how much of TeX's memory you used:
  1141 hyphenation exceptions out of 8191
  36i,19n,45p,2026b,544s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/icml-template/.texpadtmp/main.pdf (19 pages, 631600 bytes).
+Output written on /Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/icml-template/.texpadtmp/main.pdf (20 pages, 634212 bytes).
 PDF statistics:
- 343 PDF objects out of 1000 (max. 8388607)
- 244 compressed objects within 3 object streams
+ 346 PDF objects out of 1000 (max. 8388607)
+ 246 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  38466 words of extra memory for PDF output out of 42996 (max. 10000000)
 
