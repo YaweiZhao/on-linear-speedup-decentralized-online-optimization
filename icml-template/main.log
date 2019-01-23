@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  23 JAN 2019 01:27
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (TeX Live 2018) (preloaded format=pdflatex 2018.4.16)  23 JAN 2019 02:01
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1160,7 +1160,7 @@ ts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/u
 rw/times/utmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/u
 tmr8a.pfb></usr/local/texlive/2018/texmf-dist/fonts/type1/urw/times/utmri8a.pfb
 >
-Output written on main.pdf (20 pages, 634039 bytes).
+Output written on main.pdf (20 pages, 634032 bytes).
 PDF statistics:
  346 PDF objects out of 1000 (max. 8388607)
  246 compressed objects within 3 object streams

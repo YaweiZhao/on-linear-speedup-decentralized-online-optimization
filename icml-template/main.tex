@@ -169,7 +169,7 @@ However, this bound can also be achieved by running the online learning algorith
 
 \emph{Can people really get benefit from the decentralized online learning by exchanging information?}
 
-In this paper, we mainly study when can the communication really help decentralized online learning to minimize its regret. Specifically, we assume the loss function $f_{i,t}$ is a combination of an adversary loss and a stochastic loss. Then we prove that decentralized online gradient can achieve a static regret bound of $\Ocal{n\sqrt{T} + \sqrt{nT}\sigma}$ ($\sigma$ measures the stochasticness of the private data), where the first component of the bound is due to the adversary loss while the second component is due to the stochastic loss.
+In this paper, we mainly study when can the communication really help decentralized online learning to minimize its regret. Specifically, we assume the loss function $f_{i,t}$ is a combination of an adversary loss and a stochastic loss. Then we prove that decentralized online gradient can achieve a static regret bound of $\Ocal{n\sqrt{T} + \sqrt{nT}\sigma}$ ($\sigma$ measures the randomness of the private data), where the first component of the bound is due to the adversary loss while the second component is due to the stochastic loss.
 Moreover, if a dynamic sequence of models with a budget $M$ is used as the reference points, the dynamic regret of the decentralized online gradient is $\Ocal{n\sqrt{TM} + \sqrt{nTM}\sigma}$. This shows the communication can help to minimize the stochastic losses, rather than the adversary losses. This result is further verified empirically by extensive experiments on several real datasets.
 
 
