@@ -426,7 +426,8 @@ The discussion for the dynamic regret is conducted in the following
 \end{itemize}
 \item ({\bf Insight.}) Consider the baseline that all users do not communicate but only run local online gradient. It is not hard to verify that the static regret for this baseline approach is $O(n\sqrt{T}G + n\sqrt{T}\sigma)$. Comparing to the static regret ($O(n\sqrt{T}G + \sqrt{nT}\sigma)$) with iterative communication, the improvement is only on the stochastic component. Recall that $G$ measures the magnitude of the adversarial component and $\sigma$ measures the stochastic component. This result reveals an important observation that \emph{the communication does not really help improve the adversarial component, only the stochastic component can benefit from the communication.} This observation makes quite sense, since if the users' private data are totally arbitrary, there is no reason they can benefit to each other by exchanging anything.
 \item ({\bf Improve existing dynamic regret in decentralized setting.}) \citet{8015179Shahram} only considers the adversary loss, and provides $\Ocal{n^{\frac{3}{2}}\sqrt{\frac{MT}{1-\rho}} }$ regret for DOG. Compared with the result in \citet{8015179Shahram}, our regret enjoys the state-of-the-art dependence on $T$ and $M$, and meanwhile improves the dependence on $n$.
-\item ({\bf Improve existing static regret in the decentralized setting \citep{pmlr-v70-zhang17g}.}) When setting $M=0$ in the  regret defined in \eqref{equa_definition_static_regret}, \citet{pmlr-v70-zhang17g} provides $\Ocal{n T^{\frac{3}{4}}}$ static regret for the decentralized online conditional gradient method. Our analysis shows that the regret can be improved to $\Ocal{n\sqrt{T}G+\sqrt{nT}\sigma}$ by using DOG. 
+\item ({\bf Improve existing static regret in the decentralized setting.}) 
+\citep{pmlr-v70-zhang17g} measures the performance of an online algorithm by using the regret defined in \eqref{equa_definition_static_regret} with $M=0$.  When choosing $\x_{i,t}$ to feed the loss function $f_{i,t}$, $\widehat{\Rcal}_T^{A}(\x_{i,t})$ becomes $\Rcal_T^A$ equivalently. In the case, \citet{pmlr-v70-zhang17g} provides $\Ocal{n T^{\frac{3}{4}}}$ static regret for the decentralized online conditional gradient method. But, our analysis shows that the regret can be improved to $\Ocal{n\sqrt{T}G+\sqrt{nT}\sigma}$ by using DOG. 
 \end{itemize} 
 
 Next we discuss how close all local models $\x_{i,t}$'s close to their average at each time. The following result suggests that $\x_{i,t}$'s are getting closer and closer over iterations.
@@ -445,11 +446,12 @@ Use Assumption \ref{assumption_bounded_gradient_domain}, and choose
 \end{Theorem}
 The result suggests that $\x_{i,t}$ approaches to $\bar{\x}_t$ roughly in the rate $O(1/{T})$, which is faster than the convergence of the averaged regret $O(1/\sqrt{T})$ from Corollary~\ref{corollary_regret_upper_bound}. For any online algorithm $A\in\Acal$, existing researeches \citep{pmlr-v70-zhang17g} define the regret by using any local model, e.g., $\x_{j,t}$, instead of $\x_{i,t}$ on the $i$-th node. It is defined by 
 \begin{align}
-\nonumber
-\widehat{\Rcal}_T^{A}(\x_{j,t}) := & \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{j,t};\xi_{i,t})\right ] \\ \nonumber
+\label{equa_define_other_regret}
+& \widehat{\Rcal}_T^{A}(\x_{j,t}) \\ \nonumber
+:= & \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{j,t};\xi_{i,t})\right ] \\ \nonumber
 & - \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\min_{\{\x_{i,t}^\ast\}_{t=1}^T \in \Lcal_M^T}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{i,t}^\ast;\xi_{i,t})\right ],
 \end{align} 
-where $\x_{j,t}$ is the local model for the $j$-th node with $j\in[n]$ at the time $t$. Inspired by Theorem \ref{theorem_local_models_closer}, we find that the existing regret $\widehat{\Rcal}_T^{\textsc{DOG}}(\x_{j,t})$ can be bounded by the following theorem.
+where $\x_{j,t}$ is any local model for the $j$-th node with $j\in[n]$ at the time $t$. Inspired by Theorem \ref{theorem_regret_upper_bound} and Theorem \ref{theorem_local_models_closer}, we find that the existing regret $\widehat{\Rcal}_T^{\textsc{DOG}}(\x_{j,t})$ can be bounded by the following theorem.
 \begin{Theorem}
 \label{theorem_implied_other_regret_bound}
 Recall 
@@ -476,7 +478,9 @@ Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing
 & \widehat{\Rcal}_T^{\textsc{DOG}}(\x_{j,t}) \\ \nonumber
 \lesssim & n\lrincir{M+\sqrt{R}} + \frac{\sqrt{T\lrincir{M+\sqrt{R}}(n^2G^2 + n\sigma^2)}}{1-\rho}.
 \end{align}
-\end{Corollary} Using the definition of regret $\widehat{\Rcal}_T^{A}(\x_{j,t})$ with $M=0$, \citet{pmlr-v70-zhang17g} presents $\Ocal{n T^\frac{3}{4}}$ static regret for decentralized online conditional gradient method, and \citet{tkde-6311406} presents $\Ocal{n\sqrt{T}}$ static regret for decentralized autonomous online learning method. But, Theorem \ref{theorem_implied_other_regret_bound} and Corollary \ref{corollary_implied_other_regret_bound} show that our new analysis framework provides $\Ocal{n\sqrt{TM}G + \sqrt{nTM}\sigma}$ dynamic regret for DOG, which improves the existing result in \citet{pmlr-v70-zhang17g}, and extends both of those regret in the dynamic setting.
+\end{Corollary} 
+
+Using the definition of regret $\widehat{\Rcal}_T^{A}(\x_{j,t})$ with $M=0$, \citet{pmlr-v70-zhang17g} presents $\Ocal{n T^\frac{3}{4}}$ static regret for decentralized online conditional gradient method, and \citet{tkde-6311406} presents $\Ocal{n\sqrt{T}}$ static regret for decentralized autonomous online learning method. But, Theorem \ref{theorem_implied_other_regret_bound} and Corollary \ref{corollary_implied_other_regret_bound} show that our new analysis framework provides $\Ocal{n\sqrt{TM}G + \sqrt{nTM}\sigma}$ dynamic regret for DOG, which improves the existing result in \citet{pmlr-v70-zhang17g}, and extends both of those results in the dynamic setting.
 
 
 
@@ -980,28 +984,28 @@ Setting $\eta = \sqrt{\frac{(1-\rho) \lrincir{nM\sqrt{R} + nR}}{ nTG^2 + T\sigma
 \end{proof}
 
 
-\begin{Lemma}
-\label{Lemma_assumption_discussion}
-Assume $\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2 \le G$. It implies
-\begin{align}
-\nonumber
-\EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2  \le  \sigma^2 + G.
-\end{align}
-\end{Lemma}
-\begin{proof}
-We have
-\begin{align}
-\nonumber
-&\EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2 \\ \nonumber 
-= & \EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t}) - \EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t}) + \EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t})}^2 \\ \nonumber
-= & \EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t}) - \EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t})}^2 + \lrnorm{\EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t})}^2 \\ \nonumber
-& + 2\EE_{ \xi_{i,t} \sim D_{i,t} }\lrangle{\nabla h_t(\x;\xi_{i,t}) - \EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t}),\EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t})} \\ \nonumber
-= & \EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t}) - \EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t})}^2 + \lrnorm{\EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t})}^2  \\ \nonumber
-\le & \EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t}) - \EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t})}^2 + \EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2  \\ \nonumber
-\le & \sigma^2 + G.
-\end{align} It thus completes the proof.
-\end{proof}
-
+%\begin{Lemma}
+%\label{Lemma_assumption_discussion}
+%Assume $\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2 \le G$. It implies
+%\begin{align}
+%\nonumber
+%\EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2  \le  \sigma^2 + G.
+%\end{align}
+%\end{Lemma}
+%\begin{proof}
+%We have
+%\begin{align}
+%\nonumber
+%&\EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2 \\ \nonumber 
+%= & \EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t}) - \EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t}) + \EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t})}^2 \\ \nonumber
+%= & \EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t}) - \EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t})}^2 + \lrnorm{\EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t})}^2 \\ \nonumber
+%& + 2\EE_{ \xi_{i,t} \sim D_{i,t} }\lrangle{\nabla h_t(\x;\xi_{i,t}) - \EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t}),\EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t})} \\ \nonumber
+%= & \EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t}) - \EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t})}^2 + \lrnorm{\EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t})}^2  \\ \nonumber
+%\le & \EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t}) - \EE_{ \xi_{i,t} \sim D_{i,t} }\nabla h_t(\x;\xi_{i,t})}^2 + \EE_{ \xi_{i,t} \sim D_{i,t} }\lrnorm{\nabla h_t(\x;\xi_{i,t})}^2  \\ \nonumber
+%\le & \sigma^2 + G.
+%\end{align} It thus completes the proof.
+%\end{proof}
+%
 
 
 
