@@ -424,7 +424,7 @@ For any online algorithm $A\in\Acal$, existing researeches \citep{pmlr-v70-zhang
 \label{equa_define_other_regret}
 & \widehat{\Rcal}_T^{A}(\x_{j,t}) \\ \nonumber
 := & \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{j,t};\xi_{i,t})\right ] \\ \nonumber
-& - \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\min_{\{\x_{i,t}^\ast\}_{t=1}^T \in \Lcal_M^T}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{i,t}^\ast;\xi_{i,t})\right ],
+& - \min_{\{\x_{i,t}^\ast\}_{t=1}^T \in \Lcal_M^T} \EE_{\Xi_{n,T} \sim \Dcal_{n,T}} \left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{i,t}^\ast;\xi_{i,t})\right ],
 \end{align} 
 where $\x_{j,t}$ is any local model for the $j$-th node with $j\in[n]$ at the time $t$. Inspired by Theorem \ref{theorem_regret_upper_bound} and Theorem \ref{theorem_local_models_closer}, we find that the existing regret $\widehat{\Rcal}_T^{\textsc{DOG}}(\x_{j,t})$ can be bounded by the following theorem.
 \begin{Theorem}
@@ -446,12 +446,12 @@ C_2 := & \frac{L + 2\eta L^2  + 4L^2 \eta}{(1-\rho)^2} +2L,
 Using Assumption \ref{assumption_bounded_gradient_domain}, and choosing 
 \begin{align}
 \nonumber
-\eta = \sqrt{\frac{(1-\rho)^2 \lrincir{nM\sqrt{R} + nR}}{ n^{\frac{3}{2}}TG^2 + T\sigma^2 }}
+\eta = \sqrt{\frac{(1-\rho)^2 n\lrincir{M\sqrt{R} + R}}{ n^{\frac{3}{2}}TG^2 + T\sigma^2 }}
 \end{align} in Algorithm \ref{algo_DOG}, we have
 \begin{align}
 \nonumber
 & \widehat{\Rcal}_T^{\textsc{DOG}}(\x_{j,t}) \\ \nonumber
-\lesssim & n\lrincir{M+\sqrt{R}} + \frac{\sqrt{T\lrincir{M+\sqrt{R}}(n^\frac{5}{2}G^2 + n\sigma^2)}}{1-\rho}.
+\lesssim & \sqrt{n}\lrincir{M+\sqrt{R}} + \frac{\sqrt{T\lrincir{M+\sqrt{R}}(n^\frac{5}{2}G^2 + n\sigma^2)}}{1-\rho}.
 \end{align}
 \end{Corollary} 
 
