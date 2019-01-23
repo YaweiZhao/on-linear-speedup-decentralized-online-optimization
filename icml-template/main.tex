@@ -67,7 +67,8 @@
 
 % The \icmltitle you define below is probably too long as a header.
 % Therefore, a short form for the running title is supplied here:
-\icmltitlerunning{Decentralized Online Learning: Exchanging Local Models to Track Dynamics}
+% \icmltitlerunning{Decentralized Online Learning: Exchanging Local Models to Track Dynamics}
+\icmltitlerunning{Decentralized Online Learning: Take Benefits from Others' Data without Sharing Your Own to Track Global Dynamics}
 
 
 
@@ -76,7 +77,7 @@
 \begin{document}
 
 \twocolumn[
-\icmltitle{Decentralized Online Learning: Exchanging Local Models to Track Dynamics}
+\icmltitle{Decentralized Online Learning: Take Benefits from Others' Data without Sharing Your Own and Track Global Dynamics}
 
 % It is OKAY to include author information, even for blind
 % submissions: the style file will automatically remove it for you
@@ -164,14 +165,17 @@ Decentralized online learning attracts more and more attentions recently, mainly
 \item ({\bf Utilize all computational resource}) It can utilize the computational resource (of edging devices) by avoiding collecting all the loss functions (or equivalently data) to one central node and put all computational burden on a single node. %which will result in heavy communication cost for the network and extremely high computational cost for the node.
 \item ({\bf Protect data privacy}) It can help many data providers collaborate to better minimize their cumulative loss, while at the same time protecting the data privacy as much as possible. 
 \end{itemize}
-Theoretically, the best static regret bound of a decentralized online learning algorithm is $\Ocal{n\sqrt{T}}$ for convex loss functions as far as we know~\citep{6760092,tkde-6311406}, where $n$ is the number computational nodes and $T$ is the number of iterations.
-However, this bound can also be achieved by running the online learning algorithm independently on each computational node (or user) \emph{without} any communication, since the regret of an online algorithm is $\Ocal{\sqrt{T}}$ for convex loss functions~\citep{Hazan2016Introduction,ShalevShwartz:2012dz}. This reminds us to ask a fundamental question: 
+However, the current theoretical study does not explain why people need to use decentralized online learning, since the currently best regret result for decentralized online learning ($\Ocal{n\sqrt{T}}$) for convex loss functions~\citep{6760092,tkde-6311406}) is equal to the overall regret if each node (user) only runs local online gradient without any communication with others\footnote{$n$ is the number of nodes or users and $T$ is the total number of iterations. The regret of an online algorithm is $\Ocal{\sqrt{T}}$ for convex loss functions~\citep{Hazan2016Introduction,ShalevShwartz:2012dz}. Therefore, the overall regret is $n\sqrt{T}$ if all users do not communicate.}. 
 
-\emph{Can people really get benefit from the decentralized online learning by exchanging information?}
 
-In this paper, we mainly study when can the communication really help decentralized online learning to minimize its regret. Specifically, we assume the loss function $f_{i,t}$ is a combination of an adversary loss and a stochastic loss. Then we prove that decentralized online gradient can achieve a static regret bound of $\Ocal{n\sqrt{T} + \sqrt{nT}\sigma}$ ($\sigma$ measures the randomness of the private data), where the first component of the bound is due to the adversary loss while the second component is due to the stochastic loss.
-Moreover, if a dynamic sequence of models with a budget $M$ is used as the reference points, the dynamic regret of the decentralized online gradient is $\Ocal{n\sqrt{TM} + \sqrt{nTM}\sigma}$. This shows the communication can help to minimize the stochastic losses, rather than the adversary losses. This result is further verified empirically by extensive experiments on several real datasets.
+% Theoretically, the best static regret bound of a decentralized online learning algorithm is $\Ocal{n\sqrt{T}}$ for convex loss functions as far as we know~\citep{6760092,tkde-6311406}, where $n$ is the number computational nodes and $T$ is the number of iterations. However, this bound can also be achieved by running the online learning algorithm independently on each computational node (or user) \emph{without} any communication, since the regret of an online algorithm is $\Ocal{\sqrt{T}}$ for convex loss functions~\citep{Hazan2016Introduction,ShalevShwartz:2012dz}. 
 
+Therefore, this reminds us to ask a fundamental question: 
+
+\emph{Can people really get benefit with respect to the regret from the decentralized online learning by exchanging information?}
+
+In this paper, we mainly study when can the communication really help decentralized online learning to minimize its regret. Specifically, we distinguish two components in the loss function $f_{i,t}$: the adversary component and the random compoent. Then we prove that decentralized online gradient can achieve a static regret bound of $\Ocal{n\sqrt{T} + \sqrt{nT}\sigma}$ ($\sigma$ measures the randomness of the private data), where the first component of the bound is due to the adversary loss while the second component is due to the stochastic loss.
+Moreover, if a dynamic sequence of models with a budget $M$ is used as the reference points, the dynamic regret of the decentralized online gradient is $\Ocal{n\sqrt{TM} + \sqrt{nTM}\sigma}$. {\rc To Peilin: say something to motivate why we want to use dynamic regret.} This shows the communication can help to minimize the stochastic losses, rather than the adversary losses. This result is further verified empirically by extensive experiments on several real datasets.
 
 \paragraph{Notations and definitions}
 In the paper, we make the following notations.
@@ -179,9 +183,10 @@ In the paper, we make the following notations.
 \item For any $i\in[n]$ and $t\in[T]$, the random variable $\xi_{i,t}$ is subject to a distribution $D_{i,t}$, that is, $\xi_{i,t} \sim D_{i,t}$. Besides, a set of random variables $\Xi_{n,T}$ and the corresponding set of distributions are defined by
 \begin{align}
 \nonumber
-\Xi_{n,T} = \{ \xi_{i,t} \}_{1\le i \le n, 1 \le t \le T}, \text{~and~} \Dcal_{n,T} = \{ D_{i,t} \}_{1 \le t \le T},
+\Xi_{n,T} = & \{ \xi_{i,t} \}_{1\le i \le n, 1 \le t \le T}, \\
+\Dcal_{n,T} = & \{ D_{i,t} \}_{1 \le t \le T},
 \end{align} respectively. For math brevity, we use the notation $\Xi_{n,T} \sim \Dcal_{n,T}$ to represent that $\xi_{i,t} \sim D_{i,t}$ holds for any $i\in[n]$ and $t\in[T]$. $\EE$ represents mathematical expectation.
-\item For a decentralized network, we use $\W \in\RR^{n\times n}$ to represent its confusion matrix. It is a symmetric doublely stochastic matrix, which implies that every element of $\W$ is non-negative, $\W \1 = \1$, and $\1\Tr\W  = \1\Tr$. We use $\{\lambda_i\}_{i=1}^n$ with $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$ to represent its eigenvalues. 
+\item For a decentralized network, we use $\W \in\RR^{n\times n}$ to represent its confusion matrix. It is a symmetric doublely stochastic matrix, which implies that every element of $\W$ is non-negative, $\W \1 = \1$, and $\1\Tr\W  = \1\Tr$. We use $\{\lambda_i\}_{i=1}^n$ with $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$ to represent its eigenvalues. Note that $\lambda_1 = 1$.
 \item $\nabla$ represents gradient operator. $\lrnorm{\cdot}$ represents the $\ell_2$ norm in default.
 \item $\lesssim$ represents ``less than equal up to a constant factor".
 \item $\Acal$ represents the set of all online algorithms.
@@ -348,8 +353,8 @@ The detailed description of the DOG algorithm can be found in Algorithm~\ref{alg
 Denote
 \begin{align}
 \nonumber
-\X_t = &  [\x_{1,t}, \x_{2,t}, ..., \x_{n,t}] \in \RR^{d\times n}, \\ \nonumber
-\G_t = & [\nabla f_{1,t}(\x_{1,t};\xi_{1,t}), ..., \nabla f_{n,t}(\x_{n,t};\xi_{n,t})] \in \RR^{d\times n}.
+\X_t := &  [\x_{1,t}, \x_{2,t}, ..., \x_{n,t}] \in \RR^{d\times n}, \\ \nonumber
+\G_t := & [\nabla f_{1,t}(\x_{1,t};\xi_{1,t}), ..., \nabla f_{n,t}(\x_{n,t};\xi_{n,t})] \in \RR^{d\times n}.
 \end{align} 
 From the global view of point, the updating rule of DOG can be cast into the following form
 \begin{align}
@@ -451,7 +456,7 @@ The result suggests that $\x_{i,t}$ approaches to $\bar{\x}_t$ roughly in the ra
 \begin{align}
 \nonumber
 \widehat{\Rcal}_T^{A}(\x_{j,t}) := & \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{j,t};\xi_{i,t})\right ] \\ \nonumber
-& - \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\min_{\{\x_{i,t}^\ast\}_{t=1}^T \in \Lcal_M^T}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{i,t}^\ast;\xi_{i,t})\right ],
+ - \min_{\{\x_{i,t}^\ast\}_{t=1}^T \in \Lcal_M^T} & \EE_{\Xi_{n,T} \sim \Dcal_{n,T}} \left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{i,t}^\ast;\xi_{i,t})\right ],
 \end{align} 
 where $\x_{j,t}$ is the local model for the $j$-th node with $j\in[n]$ at the time $t$. Inspired by Theorem \ref{theorem_local_models_closer}, we find that the existing regret $\widehat{\Rcal}_T^{\textsc{DOG}}(\x_{j,t})$ can be bounded by the following theorem.
 \begin{Theorem}
