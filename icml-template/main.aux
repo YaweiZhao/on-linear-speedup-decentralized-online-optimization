@@ -23,7 +23,6 @@
 \citation{Hazan2016Introduction,ShalevShwartz:2012dz,introduction-online-optimization}
 \citation{8015179Shahram,Kamp:2014:CDO,Koppel-8352032,Zhang2018,pmlr-v70-zhang17g,Xu2015,tcns-7353155,cdc-7798923,acc-7172037,tcns-7479495,Benczur:2018ww,tkde-6311406}
 \citation{8015179Shahram}
-\citation{8015179Shahram}
 \citation{Kamp:2014:CDO}
 \citation{Zhang2018}
 \citation{Xu2015}
@@ -42,27 +41,26 @@
 \citation{Zhao:2018wx}
 \citation{Herbster1998,Gyorgy:2005wo,Gyorgy:2012wa,Gyorgy:2016,Mourtada:2017vn,JMLR:v17:13-533,NIPS2016_6536,cesabianchi:hal,pmlr-v84-mohri18a,pmlr-v54-jun17a}
 \newlabel{equa_definition_static_regret}{{2}{3}{}{equation.3.2}{}}
-\newlabel{equa_definition_our_regret}{{3}{3}{}{equation.3.3}{}}
+\citation{7903733,8320863,Yuan:2016ur}
+\newlabel{equa_definition_our_regret}{{3}{4}{}{equation.3.3}{}}
 \newlabel{sec:algorithm}{{4}{4}{}{section.4}{}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
 \newlabel{algo_DOG}{{1}{4}{\textsc {DOG}: Decentralized Online Gradient method.\relax }{algorithm.1}{}}
 \newlabel{subsection_theoretical_analysis}{{4.2}{4}{}{subsection.4.2}{}}
 \newlabel{assumption_bounded_gradient_domain}{{1}{4}{}{Assumption.1}{}}
 \citation{Zhao:2018wx}
-\citation{Duchi:2012hp,Tang:2018un}
-\citation{Duchi:2012hp,Tang:2018un}
+\citation{Tang:2018un}
+\citation{Tang:2018un}
 \citation{8015179Shahram}
 \citation{8015179Shahram}
-\citation{pmlr-v70-zhang17g}
-\citation{pmlr-v70-zhang17g}
 \citation{pmlr-v70-zhang17g}
 \newlabel{theorem_regret_upper_bound}{{1}{5}{}{Theorem.1}{}}
 \newlabel{corollary_regret_upper_bound}{{1}{5}{}{Corollary.1}{}}
 \newlabel{equa_result_Corollary}{{4}{5}{}{equation.4.4}{}}
-\newlabel{theorem_local_models_closer}{{2}{5}{}{Theorem.2}{}}
 \citation{pmlr-v70-zhang17g}
-\citation{tkde-6311406}
 \citation{pmlr-v70-zhang17g}
+\newlabel{theorem_local_models_closer}{{2}{6}{}{Theorem.2}{}}
+\newlabel{equa_define_other_regret}{{5}{6}{}{equation.4.5}{}}
 \newlabel{theorem_implied_other_regret_bound}{{3}{6}{}{Theorem.3}{}}
 \newlabel{corollary_implied_other_regret_bound}{{2}{6}{}{Corollary.2}{}}
 \newlabel{figure_dynamics}{{1(a)}{6}{Subfigure 1(a)}{subfigure.1.1}{}}
@@ -78,7 +76,15 @@
 \newlabel{figure_ave_loss_iteration_spam}{{2(d)}{7}{Subfigure 2(d)}{subfigure.2.4}{}}
 \newlabel{sub@figure_ave_loss_iteration_spam}{{(d)}{7}{Subfigure 2(d)\relax }{subfigure.2.4}{}}
 \newlabel{figure_compare_loss}{{2}{7}{The average loss yielded by DOG is comparable to that yielded by COG.\relax }{figure.caption.2}{}}
-\newlabel{table_rho}{{1}{7}{$\rho $ in different topologies used in our experiment. A large $1-\rho $ represents good connectivity of the communication network. ``NC" represents the \textit {No connected} topology, ``FC" represents the \textit {Fully connected} topology, and ``WS" represents the \textit {WattsStrogatz} topology.\relax }{table.caption.4}{}}
+\newlabel{figure_ave_loss_network_size_synthetic}{{3(a)}{7}{Subfigure 3(a)}{subfigure.3.1}{}}
+\newlabel{sub@figure_ave_loss_network_size_synthetic}{{(a)}{7}{Subfigure 3(a)\relax }{subfigure.3.1}{}}
+\newlabel{figure_ave_loss_network_size_occupancy}{{3(b)}{7}{Subfigure 3(b)}{subfigure.3.2}{}}
+\newlabel{sub@figure_ave_loss_network_size_occupancy}{{(b)}{7}{Subfigure 3(b)\relax }{subfigure.3.2}{}}
+\newlabel{figure_ave_loss_network_size_usenet2}{{3(c)}{7}{Subfigure 3(c)}{subfigure.3.3}{}}
+\newlabel{sub@figure_ave_loss_network_size_usenet2}{{(c)}{7}{Subfigure 3(c)\relax }{subfigure.3.3}{}}
+\newlabel{figure_ave_loss_network_size_spam}{{3(d)}{7}{Subfigure 3(d)}{subfigure.3.4}{}}
+\newlabel{sub@figure_ave_loss_network_size_spam}{{(d)}{7}{Subfigure 3(d)\relax }{subfigure.3.4}{}}
+\newlabel{figure_compare_network_size}{{3}{7}{The average loss yielded by DOG is insensitive to the network size.\relax }{figure.caption.3}{}}
 \bibdata{reference}
 \bibcite{JMLR:v17:13-533}{{1}{2016}{{Adamskiy et~al.}}{{Adamskiy, Koolen, Chernov, and Vovk}}}
 \bibcite{tcns-7353155}{{2}{2017}{{Akbari et~al.}}{{Akbari, Gharesifard, and Linder}}}
@@ -86,21 +92,6 @@
 \bibcite{Benczur:2018ww}{{4}{2018}{{Bencz{\'u}r et~al.}}{{Bencz{\'u}r, Kocsis, and P{\'a}lovics}}}
 \bibcite{introduction-online-optimization}{{5}{2011}{{Bubeck}}{{}}}
 \bibcite{cesabianchi:hal}{{6}{2012}{{Cesa-Bianchi et~al.}}{{Cesa-Bianchi, Gaillard, Lugosi, and Stoltz}}}
-\bibcite{Duchi:2012hp}{{7}{2012}{{{Duchi, John C} et~al.}}{{{Duchi, John C}, {Agarwal, Alekh}, and {Wainwright, Martin J}}}}
-\bibcite{Gyorgy:2016}{{8}{2016}{{Gy\"{o}rgy and Szepesv\'{a}ri}}{{}}}
-\bibcite{Gyorgy:2005wo}{{9}{2005}{{Gy{\"o}rgy et~al.}}{{Gy{\"o}rgy, Linder, and Lugosi}}}
-\bibcite{Gyorgy:2012wa}{{10}{2012}{{Gyorgy et~al.}}{{Gyorgy, Linder, and Lugosi}}}
-\bibcite{Hall:2013vr}{{11}{2013}{{Hall and Willett}}{{}}}
-\bibcite{Hall:2015ct}{{12}{2015}{{Hall and Willett}}{{}}}
-\newlabel{figure_ave_loss_network_size_synthetic}{{3(a)}{8}{Subfigure 3(a)}{subfigure.3.1}{}}
-\newlabel{sub@figure_ave_loss_network_size_synthetic}{{(a)}{8}{Subfigure 3(a)\relax }{subfigure.3.1}{}}
-\newlabel{figure_ave_loss_network_size_occupancy}{{3(b)}{8}{Subfigure 3(b)}{subfigure.3.2}{}}
-\newlabel{sub@figure_ave_loss_network_size_occupancy}{{(b)}{8}{Subfigure 3(b)\relax }{subfigure.3.2}{}}
-\newlabel{figure_ave_loss_network_size_usenet2}{{3(c)}{8}{Subfigure 3(c)}{subfigure.3.3}{}}
-\newlabel{sub@figure_ave_loss_network_size_usenet2}{{(c)}{8}{Subfigure 3(c)\relax }{subfigure.3.3}{}}
-\newlabel{figure_ave_loss_network_size_spam}{{3(d)}{8}{Subfigure 3(d)}{subfigure.3.4}{}}
-\newlabel{sub@figure_ave_loss_network_size_spam}{{(d)}{8}{Subfigure 3(d)\relax }{subfigure.3.4}{}}
-\newlabel{figure_compare_network_size}{{3}{8}{The average loss yielded by DOG is insensitive to the network size.\relax }{figure.caption.3}{}}
 \newlabel{figure_ave_loss_topology_synthetic}{{4(a)}{8}{Subfigure 4(a)}{subfigure.4.1}{}}
 \newlabel{sub@figure_ave_loss_topology_synthetic}{{(a)}{8}{Subfigure 4(a)\relax }{subfigure.4.1}{}}
 \newlabel{figure_ave_loss_topology_occupancy}{{4(b)}{8}{Subfigure 4(b)}{subfigure.4.2}{}}
@@ -109,7 +100,14 @@
 \newlabel{sub@figure_ave_loss_topology_occupancy}{{(c)}{8}{Subfigure 4(c)\relax }{subfigure.4.3}{}}
 \newlabel{figure_ave_loss_topology_spam}{{4(d)}{8}{Subfigure 4(d)}{subfigure.4.4}{}}
 \newlabel{sub@figure_ave_loss_topology_spam}{{(d)}{8}{Subfigure 4(d)\relax }{subfigure.4.4}{}}
-\newlabel{figure_compare_topology}{{4}{8}{The average loss yielded by DOG is insensitive to the topology of the network.\relax }{figure.caption.5}{}}
+\newlabel{figure_compare_topology}{{4}{8}{The average loss yielded by DOG is insensitive to the topology of the network.\relax }{figure.caption.4}{}}
+\newlabel{table_rho}{{1}{8}{$\rho $ in different topologies used in our experiment. A large $1-\rho $ represents good connectivity of the communication network. ``DC" represents the \textit {Disconnected} topology, ``FC" represents the \textit {Fully connected} topology, ``Ring" represents the \textit {ring} topology, and ``WS" represents the \textit {WattsStrogatz} topology.\relax }{table.caption.5}{}}
+\bibcite{Duchi:2012hp}{{7}{2012}{{{Duchi, John C} et~al.}}{{{Duchi, John C}, {Agarwal, Alekh}, and {Wainwright, Martin J}}}}
+\bibcite{Gyorgy:2016}{{8}{2016}{{Gy\"{o}rgy and Szepesv\'{a}ri}}{{}}}
+\bibcite{Gyorgy:2005wo}{{9}{2005}{{Gy{\"o}rgy et~al.}}{{Gy{\"o}rgy, Linder, and Lugosi}}}
+\bibcite{Gyorgy:2012wa}{{10}{2012}{{Gyorgy et~al.}}{{Gyorgy, Linder, and Lugosi}}}
+\bibcite{Hall:2013vr}{{11}{2013}{{Hall and Willett}}{{}}}
+\bibcite{Hall:2015ct}{{12}{2015}{{Hall and Willett}}{{}}}
 \bibcite{Hazan2016Introduction}{{13}{2016}{{Hazan}}{{}}}
 \bibcite{Herbster1998}{{14}{1998}{{Herbster and Warmuth}}{{}}}
 \bibcite{6760092}{{15}{2013}{{Hosseini et~al.}}{{Hosseini, Chapman, and Mesbahi}}}
@@ -138,12 +136,12 @@
 \bibcite{Zhao:2018wx}{{38}{2018}{{Zhao et~al.}}{{Zhao, Qiu, and Liu}}}
 \bibcite{Zinkevich:2003}{{39}{2003}{{Zinkevich}}{{}}}
 \bibstyle{abbrvnat}
-\newlabel{equa_thoerem_update_rule_equivalent}{{5}{13}{Appendix}{equation.6.5}{}}
-\newlabel{equa_I3_temp}{{6}{14}{Appendix}{equation.6.6}{}}
+\newlabel{equa_thoerem_update_rule_equivalent}{{6}{13}{Appendix}{equation.6.6}{}}
+\newlabel{equa_I3_temp}{{7}{14}{Appendix}{equation.6.7}{}}
 \newlabel{Lemma_gradient_norm_bound}{{1}{15}{}{Lemma.1}{}}
-\newlabel{equa_Lemma_gradient_norm_temp0}{{8}{16}{Appendix}{equation.6.8}{}}
-\newlabel{equa_Lemma_gradient_norm_temp1}{{9}{16}{Appendix}{equation.6.9}{}}
-\newlabel{equa_Lemma_gradient_norm_temp2}{{10}{16}{Appendix}{equation.6.10}{}}
+\newlabel{equa_Lemma_gradient_norm_temp0}{{9}{16}{Appendix}{equation.6.9}{}}
+\newlabel{equa_Lemma_gradient_norm_temp1}{{10}{16}{Appendix}{equation.6.10}{}}
+\newlabel{equa_Lemma_gradient_norm_temp2}{{11}{16}{Appendix}{equation.6.11}{}}
 \citation{Tang:2018un}
 \newlabel{Lemma_average_update_rule}{{2}{17}{}{Lemma.2}{}}
 \citation{Tang:2018un}
@@ -155,4 +153,6 @@
 \newlabel{Lemma_hanlin_2}{{4}{18}{Lemma $6$ in \citep {Tang:2018un}}{Lemma.4}{}}
 \newlabel{theorem_privious_dog_regret}{{4}{18}{Implied by Theorem $3$ and Corollary $4$ in \citet {8015179Shahram}}{Theorem.4}{}}
 \newlabel{Lemma_x_variance_norm_square}{{5}{18}{}{Lemma.5}{}}
-\newlabel{Lemma_assumption_discussion}{{6}{19}{}{Lemma.6}{}}
+\newlabel{equa_implied_other_regret_temp0}{{13}{20}{Appendix}{equation.6.13}{}}
+\newlabel{equa_implied_other_regret_temp1}{{14}{20}{Appendix}{equation.6.14}{}}
+\newlabel{equa_implied_other_regret_temp2}{{15}{20}{Appendix}{equation.6.15}{}}
