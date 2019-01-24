@@ -73,7 +73,7 @@
 
 
 
-\hypersetup{draft}% need to be commit before submitting paper
+%\hypersetup{draft}% need to be commit before submitting paper
 \begin{document}
 
 \twocolumn[
@@ -141,14 +141,7 @@ Decentralized Online Learning (online learning in decentralized networks) attrac
 Typically, the cooperation is achieved by letting the data providers exchange their models between neighbors, e.g., recommendation model. However, the best regret bound for a decentralized online learning algorithm is $\Ocal{n\sqrt{T}}$, where $n$ is the number of nodes (or users) and $T$ is the number of iterations. This is clearly insignificant since this bound can be achieved \emph{without} any communication in the networks. This reminds us to ask a fundamental question: \emph{Can people really get benefit from the decentralized online learning by exchanging information?}
 In this paper, we studied when and why the communication can help the decentralized online learning to reduce the regret.
 Specifically, each loss function is characterized by two components: the adversarial component and the stochastic component.
-%we assume each loss function consists of an adversarial loss and a stochastic loss.
-Under this characterization, we show that decentralized online gradient (DOG) enjoys a regret bound  $\Ocal{n\sqrt{T}G + \sqrt{nT}\sigma}$, where $G$ measures the magnitude of the adversarial component in the private data (or equivalently the local loss function) and $\sigma$ measures the randomness within the private data. This regret suggests that people can get benefits from the randomness in the private data by exchanging private information. Another important contribution of this paper is to consider the dynamic regret -- a more practical regret to track users' interest dynamics.
-%For this bound, the $\Ocal{n\sqrt{T}}$ is due to the adversary loss, while the $\Ocal{\sqrt{nT}\sigma}$ is due to the stochastic loss, which indicates that.
-%the online stochastic setting is more suitable for decentralized online learning.
-Empirical studies are also conducted to validate our analysis. 
-
-%In addition, to consider more practical scenario we allow users' interest changing over time (it means that the optimal model changes over time), unlike most online works which assume that the optimal prediction model is constant. 
-%This study indicates the possibility of a new framework of data service: all users can take benefit from their private data without sharing them.
+Under this characterization, we show that decentralized online gradient (DOG) enjoys a regret bound  $\Ocal{n\sqrt{T}G + \sqrt{nT}\sigma}$, where $G$ measures the magnitude of the adversarial component in the private data (or equivalently the local loss function) and $\sigma$ measures the randomness within the private data. This regret suggests that people can get benefits from the randomness in the private data by exchanging private information. Another important contribution of this paper is to consider the dynamic regret -- a more practical regret to track users' interest dynamics. Empirical studies are also conducted to validate our analysis. 
 \end{abstract}
 
 
@@ -162,7 +155,7 @@ The goal of decentralized online learning usually is to minimize its static regr
 
 Decentralized online learning attracts more and more attentions recently, mainly because it is believed by the community that it enjoys the following advantages for real-world large-scale applications:
 \begin{itemize}
-\item ({\bf Utilize all computational resource}) It can utilize the computational resource (of edging devices) by avoiding collecting all the loss functions (or equivalently data) to one central node and to put all computational burden on a single node. %which will result in heavy communication cost for the network and extremely high computational cost for the node.
+\item ({\bf Utilize all computational resource}) It can utilize the computational resource (of edging devices) by avoiding collecting all the loss functions (or equivalently data) to one central node and putting all computational burden on a single node. %which will result in heavy communication cost for the network and extremely high computational cost for the node.
 \item ({\bf Protect data privacy}) It can help many data providers collaborate to better minimize their cumulative loss, while at the same time protecting the data privacy as much as possible. 
 \end{itemize}
 However, the current theoretical study does not explain why people need to use decentralized online learning, since the currently best regret result for decentralized online learning ($\Ocal{n\sqrt{T}}$) for convex loss functions~\citep{6760092,tkde-6311406}) is equal to the overall regret if each node (user) only runs local online gradient without any communication with others\footnote{$n$ is the number of nodes or users and $T$ is the total number of iterations. The regret of an online algorithm is $\Ocal{\sqrt{T}}$ for convex loss functions~\citep{Hazan2016Introduction,ShalevShwartz:2012dz}. Therefore, the overall regret is $n\sqrt{T}$ if all users do not communicate.}. 
