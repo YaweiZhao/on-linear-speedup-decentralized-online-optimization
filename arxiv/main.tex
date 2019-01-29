@@ -13,7 +13,7 @@
 \usepackage{subfigure}
 \usepackage{tabularx}
 \usepackage{pifont}
-\usepackage[noend]{algpseudocode}
+\usepackage{algpseudocode}
 \usepackage{bm}
 \usepackage{array}
 \usepackage{balance}
@@ -56,18 +56,16 @@
 
 
 \author{
-  $^{1,2}$Yawei Zhao\footnote{Equal contribution.}, $^3$Shuang Qiu$^\ast$, and $^{2}$Ji Liu \\
+  $^{1,2}$Yawei Zhao\footnote{Equal contribution.}, $^2$Chen Yu$^\ast$, $^{3}$Peilin Zhao, and $^{2}$Ji Liu \\
   % School of Computer$^1$\\
   $^1$National University of Defense Technology, Changsha, China\\
   $^2$University of Rochester, Rochester, USA \\
-  $^3$University of Michigan, Ann Arbor, USA \\
-  % Department of Computer Science$^2$ \\
-  % School of Computer Science$^3$ \\
-  \texttt{zhaoyawei@nudt.edu.cn}, \\
-  \texttt{qiush@umich.edu}, \texttt{ji.liu.uwisc@gmail.com} \\
+  $^3$ Tencent AI Lab, Shenzhen, China\\
+  \texttt{zhaoyawei@nudt.edu.cn}, 
+  \texttt{yuchen92328@gmail.com}, \\\texttt{peilinzhao@hotmail.com}, \texttt{ji.liu.uwisc@gmail.com} \\
 }
 
-
+\date{}
 
 \begin{document}
 
@@ -115,8 +113,7 @@ In the paper, we make the following notations.
 \item For any $i\in[n]$ and $t\in[T]$, the random variable $\xi_{i,t}$ is subject to a distribution $D_{i,t}$, that is, $\xi_{i,t} \sim D_{i,t}$. Besides, a set of random variables $\Xi_{n,T}$ and the corresponding set of distributions are defined by
 \begin{align}
 \nonumber
-\Xi_{n,T} = & \{ \xi_{i,t} \}_{1\le i \le n, 1 \le t \le T}, \\
-\Dcal_{n,T} = & \{ D_{i,t} \}_{1\le i \le n, 1 \le t \le T},
+\Xi_{n,T} =  \{ \xi_{i,t} \}_{1\le i \le n, 1 \le t \le T}, {~~~~}\Dcal_{n,T} =  \{ D_{i,t} \}_{1\le i \le n, 1 \le t \le T},
 \end{align} respectively. For math brevity, we use the notation $\Xi_{n,T} \sim \Dcal_{n,T}$ to represent that $\xi_{i,t} \sim D_{i,t}$ holds for any $i\in[n]$ and $t\in[T]$. $\EE$ represents mathematical expectation.
 \item For a decentralized network, we use $\W \in\RR^{n\times n}$ to represent its confusion matrix. It is a symmetric doublely stochastic matrix, which implies that every element of $\W$ is non-negative, $\W \1 = \1$, and $\1\Tr\W  = \1\Tr$. We use $\{\lambda_i\}_{i=1}^n$ with $\lambda_1 \ge \lambda_2 \ge \cdots \ge \lambda_n$ to represent its eigenvalues. Note that $\lambda_1 = 1$.
 \item $\nabla$ represents gradient operator. $\lrnorm{\cdot}$ represents the $\ell_2$ norm in default.
@@ -161,8 +158,7 @@ $\xi_{i,t}$'s are independent to each other in terms of $i$ and $t$, characterin
 To measure the efficacy of a decentralized online learning algorithm $A\in\Acal$, a commonly used performance measure is the  \emph{static} regret which is defined as
 \begin{align}
 \label{equa_definition_static_regret}
-& \widetilde{\Rcal}_T^{A} \\ \nonumber 
-:= & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \left[\sum_{i=1}^n\sum_{t=1}^T \lrincir{f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x^\ast;\xi_{i,t}} \right],
+\widetilde{\Rcal}_T^{A} :=  \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \left[\sum_{i=1}^n\sum_{t=1}^T \lrincir{f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x^\ast;\xi_{i,t}} \right],
 \end{align} 
 where $\x^\ast=\arg \min_\x \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x;\xi_{i,t}) $.
 
@@ -170,9 +166,7 @@ where $\x^\ast=\arg \min_\x \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \sum_{i=1}^n\sum
 The static regret essentially assumes that the optimal model would not change over time. However, in many practical online learning application scenarios, the optimal model may evolve over time. For example, when we want to conduct music recommendation to a user, user's preference to music may change over time as his/her situation.  Thus, the optimal model $\x^\ast$ should change over time. It leads to the dynamics of the optimal recommendation model. Therefore, for any online algorithm $A\in\Acal$, we choose to use the \emph{dynamic} regret as the metric:
 \begin{align}
 \label{equa_definition_our_regret}
-\Rcal_T^{A} := & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \left[\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t};\xi_{i,t}) \right]
-\\ \nonumber
-& - \min_{\{\x_t^\star\}_{t=1}^T \in \mathcal{L}_{M}^T}  \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\left[\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_t^\ast;\xi_{i,t}) \right],
+\Rcal_T^{A} :=  \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }  \left[\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_{i,t};\xi_{i,t}) \right] - \min_{\{\x_t^\star\}_{t=1}^T \in \mathcal{L}_{M}^T}  \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} }\left[\sum_{i=1}^n\sum_{t=1}^T f_{i,t}(\x_t^\ast;\xi_{i,t}) \right],
 \end{align}
 where $\mathcal{L}_M^T$ is defined by
 \begin{align}
@@ -201,11 +195,11 @@ In the section, we introduce the DOG algorithm, followed by the analysis for the
    \For {$t=1,2, ..., T$}
             \State $\slash\slash$ For all users (say the $i$-th node $i\in[n]$)
             % \State \indent Predict $\x_{i,t}$.
-                        \State \indent Query the neighbors' local models $\{\x_{j,t}\}_{j\in \text{user $i$'s neighbor set}}$;
-            \State \indent Observe the loss function $f_{i,t}$, and suffer loss $f_{i,t}(\x_{i,t};\xi_{i,t})$;
+                        \State Query the neighbors' local models $\{\x_{j,t}\}_{j\in \text{user $i$'s neighbor set}}$;
+            \State Observe the loss function $f_{i,t}$, and suffer loss $f_{i,t}(\x_{i,t};\xi_{i,t})$;
             %\State \textbf{Update:}
-            \State \indent Query the gradient $\nabla f_{i,t}(\x_{i,t};\xi_{i,t})$;
-            \State \indent Update the local model by 
+            \State Query the gradient $\nabla f_{i,t}(\x_{i,t};\xi_{i,t})$;
+            \State Update the local model by 
             \[\x_{i,t+1} = \sum_{j=1}^n \W_{i,j}\x_{j,t} - \eta \nabla f_{i,t}(\x_{i,t};\xi_{i,t});\]
        \EndFor
    \end{algorithmic}
@@ -284,8 +278,7 @@ C := & \frac{L + 2\eta L^2  + 4L^2 \eta}{(1-\rho)^2} +2L.
 \end{align} Choosing $\eta>0$ in Algorithm \ref{algo_DOG}, under Assumption \ref{assumption_bounded_gradient_domain} we have
 \begin{align}
 \nonumber
-& \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T\sum_{i=1}^n f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^\ast;\xi_{i,t}) \\ \nonumber
-\le & 20\eta T n G^2 +  \eta T\sigma^2 + C nT\eta^2 G^2    + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  }.
+\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T\sum_{i=1}^n f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^\ast;\xi_{i,t}) \le  20\eta T n G^2 +  \eta T\sigma^2 + C nT\eta^2 G^2    + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  }.
 \end{align}
 \end{Theorem}
 
@@ -299,8 +292,7 @@ Choosing
 \end{align} in Algorithm \ref{algo_DOG}, under Assumption \ref{assumption_bounded_gradient_domain} we have
 \begin{align}
 \label{equa_result_Corollary}
-& \Rcal_T^{\textsc{DOG}} \\ \nonumber
-\lesssim &  \frac{n\lrincir{M+\sqrt{R}}}{1-\rho} + \sqrt{\frac{T\lrincir{M+\sqrt{R}}(n^2G^2 + n\sigma^2)}{1-\rho}}.
+\Rcal_T^{\textsc{DOG}} \lesssim  \frac{n\lrincir{M+\sqrt{R}}}{1-\rho} + \sqrt{\frac{T\lrincir{M+\sqrt{R}}(n^2G^2 + n\sigma^2)}{1-\rho}}.
 \end{align}
 \end{Corollary}
 For simpler discussion, let us treat $R$, $G$, and $1-\rho$ as constants. The dynamic regret can simplified into $O(n\sqrt{MT}G + \sqrt{nMT}\sigma)$. If $M=0$, the dynamic regret degenerates the static regret $O(n\sqrt{T}G + \sqrt{nT}\sigma)$.
@@ -336,9 +328,7 @@ The result suggests that $\x_{i,t}$ approaches to $\bar{\x}_t$ roughly in the ra
 For any online algorithm $A\in\Acal$, the existing researech \citet{pmlr-v70-zhang17g} defines the regret by using any local model, e.g., $\x_{j,t}$, instead of $\x_{i,t}$ on the $i$-th node. It is defined by 
 \begin{align}
 \label{equa_define_other_regret}
-& \widehat{\Rcal}_T^{A}(\x_{j,t}) \\ \nonumber
-:= & \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{j,t};\xi_{i,t})\right ] \\ \nonumber
-& - \min_{\{\x_{i,t}^\ast\}_{t=1}^T \in \Lcal_M^T} \EE_{\Xi_{n,T} \sim \Dcal_{n,T}} \left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{i,t}^\ast;\xi_{i,t})\right ],
+\widehat{\Rcal}_T^{A}(\x_{j,t}) := \EE_{\Xi_{n,T} \sim \Dcal_{n,T}}\left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{j,t};\xi_{i,t})\right ] - \min_{\{\x_{i,t}^\ast\}_{t=1}^T \in \Lcal_M^T} \EE_{\Xi_{n,T} \sim \Dcal_{n,T}} \left [\sum_{i=1}^n \sum_{t=1}^T f_{i,t}(\x_{i,t}^\ast;\xi_{i,t})\right ],
 \end{align} 
 where $\x_{j,t}$ is any local model for the $j$-th node with $j\in[n]$ at the time $t$. Inspired by Theorem \ref{theorem_regret_upper_bound} and Theorem \ref{theorem_local_models_closer}, we find that the existing regret $\widehat{\Rcal}_T^{\textsc{DOG}}(\x_{j,t})$ can be bounded by the following theorem.
 \begin{Theorem}
@@ -351,8 +341,7 @@ C_2 := & \frac{L + 2\eta L^2  + 4L^2 \eta}{(1-\rho)^2} +2L,
 \end{align} Choosing $\eta>0$ in Algorithm \ref{algo_DOG}, under Assumption \ref{assumption_bounded_gradient_domain} we have
 \begin{align}
 \nonumber
-\widehat{\Rcal}_T^{\textsc{DOG}}(\x_{j,t}) \lesssim & C_1 \eta n\sqrt{n} T G^2 +\eta T\sigma^2 + C_2  nT\eta^2 G^2  \\ \nonumber
-&  + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  }.
+\widehat{\Rcal}_T^{\textsc{DOG}}(\x_{j,t}) \lesssim & C_1 \eta n\sqrt{n} T G^2 +\eta T\sigma^2 + C_2  nT\eta^2 G^2    + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  }.
 \end{align}
 \end{Theorem} Choosing an appropriate learning rate $\eta$, we  can bound the regret $\widehat{\Rcal}_T^{\textsc{DOG}}(\x_{j,t})$ as follows.
 \begin{Corollary}
@@ -364,8 +353,7 @@ Choosing
 \end{align} in Algorithm \ref{algo_DOG}, under Assumption \ref{assumption_bounded_gradient_domain} we have
 \begin{align}
 \nonumber
-& \widehat{\Rcal}_T^{\textsc{DOG}}(\x_{j,t}) \\ \nonumber
-\lesssim & \sqrt{n}\lrincir{M+\sqrt{R}} + \frac{\sqrt{T\lrincir{M+\sqrt{R}}(n^\frac{5}{2}G^2 + n\sigma^2)}}{1-\rho}.
+\widehat{\Rcal}_T^{\textsc{DOG}}(\x_{j,t}) \lesssim \sqrt{n}\lrincir{M+\sqrt{R}} + \frac{\sqrt{T\lrincir{M+\sqrt{R}}(n^\frac{5}{2}G^2 + n\sigma^2)}}{1-\rho}.
 \end{align}
 \end{Corollary} 
 
@@ -375,38 +363,14 @@ As illustrated in Corollary \ref{corollary_implied_other_regret_bound}, we obtai
 \setlength{\abovecaptionskip}{0pt}
 \setlength{\belowcaptionskip}{0pt}
 \centering 
-\subfigure{\includegraphics[width=0.98\columnwidth]{figure_dynamics}\label{figure_dynamics}}
+\subfigure{\includegraphics[width=0.6\columnwidth]{figure_dynamics}\label{figure_dynamics}}
 \caption{An illustration of the dynmaics caused by the time-varying distributions of data. Data distributions $1$ and $2$ satisify $N(1+\sin(t), 1)$ and $N(-1+\sin(t), 1)$, respectively.  Suppose we want to conduct classification between data drawn from distributions $1$ and $2$, respectively. The optimal classification model should change over time.}
 \label{figure_illus_dynamics}
 \end{figure}
 
 \section{Empirical studies}
 
-\begin{figure*}[!h]
-\setlength{\abovecaptionskip}{0pt}
-\setlength{\belowcaptionskip}{0pt}
-\centering 
-\subfigure[\textit{synthetic data}, $10000$ nodes,random topology]{\includegraphics[width=0.51\columnwidth]{figure_ave_loss_iteration_synthetic}\label{figure_ave_loss_iteration}}
-\subfigure[\textit{room-occupancy}, $5$ nodes, ring topology]{\includegraphics[width=0.51\columnwidth]{figure_ave_loss_iteration_occupancy}\label{figure_ave_loss_iteration_occupancy}}
-\subfigure[\textit{usenet2}, $5$ nodes, ring topology]{\includegraphics[width=0.495\columnwidth]{figure_ave_loss_iteration_usenet2}\label{figure_ave_loss_iteration_usenet2}}
-\subfigure[\textit{spam}, $5$ nodes, ring topology]{\includegraphics[width=0.495\columnwidth]{figure_ave_loss_iteration_spam}\label{figure_ave_loss_iteration_spam}}
-%\subfigure[\textit{usenet2}]{\includegraphics[width=0.32\columnwidth]{figure_ave_loss_iteration_usenet2}\label{figure_ave_loss_iteration_usenet2}}
-\caption{The average loss yielded by DOG is comparable to that yielded by COG.}
-\label{figure_compare_loss}
-\end{figure*}
 
-
-\begin{figure*}[!h]
-\setlength{\abovecaptionskip}{0pt}
-\setlength{\belowcaptionskip}{0pt}
-\centering 
-\subfigure[\textit{synthetic data}, random topology]{\includegraphics[width=0.495\columnwidth]{figure_ave_loss_network_size_synthetic}\label{figure_ave_loss_network_size_synthetic}}
-\subfigure[\textit{room-occupancy}, ring topology]{\includegraphics[width=0.495\columnwidth]{figure_ave_loss_network_size_occupancy}\label{figure_ave_loss_network_size_occupancy}}
-\subfigure[\textit{usenet2}, ring topology]{\includegraphics[width=0.495\columnwidth]{figure_ave_loss_network_size_usenet2}\label{figure_ave_loss_network_size_usenet2}}
-\subfigure[\textit{spam}, ring topology]{\includegraphics[width=0.495\columnwidth]{figure_ave_loss_network_size_spam}\label{figure_ave_loss_network_size_spam}}
-\caption{The average loss yielded by DOG is insensitive to the network size.}
-\label{figure_compare_network_size}
-\end{figure*}
 
 
 
@@ -426,17 +390,7 @@ The dynamic budget $M$ is fixed as $10$ to determine the space of reference poin
 \subsection{Datasets}
 
 
-\begin{figure*}[!h]
-\setlength{\abovecaptionskip}{0pt}
-\setlength{\belowcaptionskip}{0pt}
-\centering 
-\subfigure[\textit{synthetic data}, $10000$ nodes]{\includegraphics[width=0.495\columnwidth]{figure_ave_loss_topology_synthetic}\label{figure_ave_loss_topology_synthetic}}
-\subfigure[\textit{room-occupancy}, $20$ nodes]{\includegraphics[width=0.495\columnwidth]{figure_ave_loss_topology_occupancy}\label{figure_ave_loss_topology_occupancy}}
-\subfigure[\textit{usenet2}, $20$ nodes]{\includegraphics[width=0.495\columnwidth]{figure_ave_loss_topology_usenet2}\label{figure_ave_loss_topology_occupancy}}
-\subfigure[\textit{spam}, $20$ nodes]{\includegraphics[width=0.495\columnwidth]{figure_ave_loss_topology_spam}\label{figure_ave_loss_topology_spam}}
-\caption{The average loss yielded by DOG is insensitive to the topology of the network.}
-\label{figure_compare_topology}
-\end{figure*}
+
 
 
 To test the proposed algorithm, we utilized a toy dataset and three real-world datasets, whose details are presented as follows.
@@ -448,6 +402,32 @@ The above dynamics of time-varying distributions are illustrated in Figure~\ref{
 \textbf{Real Data}
 Three real public datasets are \textit{room-occupancy}\footnote{\url{https://archive.ics.uci.edu/ml/datasets/Occupancy+Detection+}},  \textit{usenet2}\footnote{\url{http://mlkd.csd.auth.gr/concept_drift.html}}, and \textit{spam}\footnote{\url{http://mlkd.csd.auth.gr/concept_drift.html}}. \textit{room-occupancy} is a time-series dataset, which is from a natural dynamic enviroment. Both \textit{usenet2} and \textit{spam} are  ``concept drift" \citep{Katakis:2010:TR} datasets, for which the optimal model changes over time. For all dataset, all values of every feature have been normalized to be zero mean and one variance.
 
+
+\begin{figure*}[!]
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{0pt}
+\centering 
+\subfigure[\textit{synthetic data}, $10000$ nodes,random topology]{\includegraphics[width=0.49\columnwidth]{figure_ave_loss_iteration_synthetic}\label{figure_ave_loss_iteration}}
+\subfigure[\textit{room-occupancy}, $5$ nodes, ring topology]{\includegraphics[width=0.49\columnwidth]{figure_ave_loss_iteration_occupancy}\label{figure_ave_loss_iteration_occupancy}}
+\subfigure[\textit{usenet2}, $5$ nodes, ring topology]{\includegraphics[width=0.49\columnwidth]{figure_ave_loss_iteration_usenet2}\label{figure_ave_loss_iteration_usenet2}}
+\subfigure[\textit{spam}, $5$ nodes, ring topology]{\includegraphics[width=0.49\columnwidth]{figure_ave_loss_iteration_spam}\label{figure_ave_loss_iteration_spam}}
+%\subfigure[\textit{usenet2}]{\includegraphics[width=0.32\columnwidth]{figure_ave_loss_iteration_usenet2}\label{figure_ave_loss_iteration_usenet2}}
+\caption{The average loss yielded by DOG is comparable to that yielded by COG.}
+\label{figure_compare_loss}
+\end{figure*}
+
+
+\begin{figure*}[!h]
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{0pt}
+\centering 
+\subfigure[\textit{synthetic data}, random topology]{\includegraphics[width=0.495\columnwidth]{figure_ave_loss_network_size_synthetic}\label{figure_ave_loss_network_size_synthetic}}
+\subfigure[\textit{room-occupancy}, ring topology]{\includegraphics[width=0.495\columnwidth]{figure_ave_loss_network_size_occupancy}\label{figure_ave_loss_network_size_occupancy}}
+\subfigure[\textit{usenet2}, ring topology]{\includegraphics[width=0.495\columnwidth]{figure_ave_loss_network_size_usenet2}\label{figure_ave_loss_network_size_usenet2}}
+\subfigure[\textit{spam}, ring topology]{\includegraphics[width=0.495\columnwidth]{figure_ave_loss_network_size_spam}\label{figure_ave_loss_network_size_spam}}
+\caption{The average loss yielded by DOG is insensitive to the network size.}
+\label{figure_compare_network_size}
+\end{figure*}
 
 \subsection{Results}
 
@@ -469,6 +449,7 @@ Third, the performance DOG is improved in a well-connected network. Figure~\ref{
 
 
 \begin{table}[!]
+\centering
 \begin{tabular}{c|c|c|c|c|c}
 \hline
 $\rho$    & DC & FC & Ring & WS($1$) &  Ws($0.5$) \\ \hline  \hline
@@ -481,7 +462,17 @@ real data     & 1            & 0               &    0.96   &          0.83      
 
  
 
-
+\begin{figure*}[!h]
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{0pt}
+\centering 
+\subfigure[\textit{synthetic data}, $10000$ nodes]{\includegraphics[width=0.495\columnwidth]{figure_ave_loss_topology_synthetic}\label{figure_ave_loss_topology_synthetic}}
+\subfigure[\textit{room-occupancy}, $20$ nodes]{\includegraphics[width=0.495\columnwidth]{figure_ave_loss_topology_occupancy}\label{figure_ave_loss_topology_occupancy}}
+\subfigure[\textit{usenet2}, $20$ nodes]{\includegraphics[width=0.495\columnwidth]{figure_ave_loss_topology_usenet2}\label{figure_ave_loss_topology_occupancy}}
+\subfigure[\textit{spam}, $20$ nodes]{\includegraphics[width=0.495\columnwidth]{figure_ave_loss_topology_spam}\label{figure_ave_loss_topology_spam}}
+\caption{The average loss yielded by DOG is insensitive to the topology of the network.}
+\label{figure_compare_topology}
+\end{figure*}
 
 
 
@@ -505,8 +496,7 @@ We investigate the online learning problem in a decentralized network, where the
 From the regret definition, we have
 \begin{align}
 \nonumber
-& \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \frac{1}{n}\sum_{i=1}^n \lrincir{ f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^\ast;\xi_{i,t}) } \\ \nonumber
-\le & \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \frac{1}{n}\sum_{i=1}^n \lrangle{ \nabla f_{i,t}(\x_{i,t};\xi_{i,t}),  \x_{i,t} - \x_t^\ast } \\ \nonumber
+& \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \frac{1}{n}\sum_{i=1}^n \lrincir{ f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^\ast;\xi_{i,t}) } \le  \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \frac{1}{n}\sum_{i=1}^n \lrangle{ \nabla f_{i,t}(\x_{i,t};\xi_{i,t}),  \x_{i,t} - \x_t^\ast } \\ \nonumber
 = & \underbrace{ \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \frac{1}{n}\sum_{i=1}^n   \lrincir{\lrangle{\nabla  f_{i,t}(\x_{i,t};\xi_{i,t}), \x_{i,t} - \bar{\x}_t } + \lrangle{\nabla  f_{i,t}(\x_{i,t};\xi_{i,t}), \bar{\x}_t - \bar{\x}_{t+1} } } }_{I_1(t)} \\ \nonumber 
 &+ \underbrace{ \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrangle{\frac{1}{n}\sum_{i=1}^n\nabla f_{i,t}(\x_{i,t};\xi_{i,t}), \bar{\x}_{t+1} - \x_t^\ast } }_{I_2(t)}. \nonumber
 \end{align}
@@ -532,13 +522,10 @@ For $J_2(t)$, we have
 = & \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrangle{\frac{1}{n}\sum_{i=1}^n\nabla f_{i,t}(\x_{i,t};\xi_{i,t}), \bar{\x}_t - \bar{\x}_{t+1} } \\ \nonumber
 \le & \frac{\eta}{2}\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrnorm{\frac{1}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 + \frac{1}{2\eta} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2  \\ \nonumber
 \le & \frac{\eta}{2}\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{\frac{1}{n}\sum_{i=1}^n \lrincir{\nabla  f_{i,t}(\x_{i,t};\xi_{i,t}) - \nabla F_{i,t}(\x_{i,t}) + \nabla F_{i,t}(\x_{i,t})} }^2 + \frac{1}{2\eta} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2  \\ \nonumber
-\le &  \eta\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{\frac{1}{n}\sum_{i=1}^n \lrincir{ \nabla f_{i,t}(\x_{i,t};\xi_{i,t}) - \nabla F_{i,t}(\x_{i,t}) } }^2 + \eta \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\lrnorm{\frac{1}{n}\sum_{i=1}^n\nabla F_{i,t}(\x_{i,t})}^2 \\ \nonumber 
-& + \frac{1}{2\eta} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2  \\ \nonumber
+\le &  \eta\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{\frac{1}{n}\sum_{i=1}^n \lrincir{ \nabla f_{i,t}(\x_{i,t};\xi_{i,t}) - \nabla F_{i,t}(\x_{i,t}) } }^2 + \eta \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\lrnorm{\frac{1}{n}\sum_{i=1}^n\nabla F_{i,t}(\x_{i,t})}^2  + \frac{1}{2\eta} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2  \\ \nonumber
 \refabovecir{\le}{\textcircled{1}} & \frac{\eta}{n} \sigma^2 + \eta \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\lrnorm{ \frac{1}{n}\sum_{i=1}^n \lrincir{ \nabla F_{i,t}(\x_{i,t}) - \nabla F_{i,t}(\bar{\x}_t) + \nabla F_{i,t}(\bar{\x}_t) } }^2 + \frac{1}{2\eta} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 \\ \nonumber
-\le & \frac{\eta}{n} \sigma^2 + 2\eta \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\lrnorm{\frac{1}{n}\sum_{i=1}^n \lrincir{ \nabla F_{i,t}(\x_{i,t}) - \nabla F_{i,t}(\bar{\x}_t) } }^2 \\ \nonumber 
-& + 2\eta \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2 + \frac{1}{2\eta} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 \\ \nonumber
-\le & \frac{\eta}{n} \sigma^2 + \frac{2\eta}{n} \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\sum_{i=1}^n\lrnorm{ \nabla F_{i,t}(\x_{i,t}) - \nabla F_{i,t}(\bar{\x}_t)  }^2 \\ \nonumber 
-& + 2\eta \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2 + \frac{1}{2\eta} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 \\ \nonumber
+\le & \frac{\eta}{n} \sigma^2 + 2\eta \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\lrnorm{\frac{1}{n}\sum_{i=1}^n \lrincir{ \nabla F_{i,t}(\x_{i,t}) - \nabla F_{i,t}(\bar{\x}_t) } }^2 + 2\eta \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2 + \frac{1}{2\eta} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 \\ \nonumber
+\le & \frac{\eta}{n} \sigma^2 + \frac{2\eta}{n} \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\sum_{i=1}^n\lrnorm{ \nabla F_{i,t}(\x_{i,t}) - \nabla F_{i,t}(\bar{\x}_t)  }^2 + 2\eta \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2 + \frac{1}{2\eta} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 \\ \nonumber
 \refabovecir{\le}{\textcircled{2}} & \frac{\eta}{n} \sigma^2 + \frac{2\eta L^2}{n}\EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t }^2 + 2\eta \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2 + \frac{1}{2\eta} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2.
 \end{align} $\textcircled{1}$ holds due to
 \begin{align}
@@ -557,8 +544,7 @@ For $J_2(t)$, we have
 = &  (J_1(t) + J_2(t)) \\ \nonumber
 = &   \lrincir{ \frac{L}{n}\EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t}^2 +\frac{\eta}{n} \sigma^2 + \frac{2\eta L^2}{n}\EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t }^2 } \\ \nonumber
 & +  \lrincir{ 2\eta \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2 + \frac{1}{2\eta} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2 } \\ \nonumber
-\le &   \lrincir{ \frac{L}{n} + \frac{2\eta L^2}{n} }\EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\sum_{i=1}^n\lrnorm{\x_{i,t} - \bar{\x}_t }^2   + 2\eta  \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2 \\ \nonumber 
-&+ \frac{\eta  \sigma^2}{n} +  \frac{1}{2\eta} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2.
+\le &   \lrincir{ \frac{L}{n} + \frac{2\eta L^2}{n} }\EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\sum_{i=1}^n\lrnorm{\x_{i,t} - \bar{\x}_t }^2   + 2\eta  \EE_{ \Xi_{n,t-1} \sim \Dcal_{t-1} }\lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2 + \frac{\eta  \sigma^2}{n} +  \frac{1}{2\eta} \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrnorm{ \bar{\x}_t - \bar{\x}_{t+1}}^2.
 \end{align}
 
 Therefore, we have 
@@ -593,8 +579,7 @@ It is trivial to verify that \eqref{equa_thoerem_update_rule_equivalent} satisfi
 \end{align} We thus have 
 \begin{align}
 \nonumber
-\bar{\x}_{t+1} = & \argmin_{\z\in\RR^d} \phi(\z) \\ \nonumber
-= & \argmin_{\z\in\RR^d} \lrangle{\frac{1}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t}), \z} + \frac{1}{2\eta}\lrnorm{\z - \bar{\x}_t}^2.
+\bar{\x}_{t+1} = \argmin_{\z\in\RR^d} \phi(\z) = \argmin_{\z\in\RR^d} \lrangle{\frac{1}{n}\sum_{i=1}^n \nabla f_{i,t}(\x_{i,t};\xi_{i,t}), \z} + \frac{1}{2\eta}\lrnorm{\z - \bar{\x}_t}^2.
 \end{align} Furthermore, denote a new auxiliary variable $\bar{\x}_{\tau}$ as  
 \begin{align}
 \nonumber
@@ -655,8 +640,7 @@ $\textcircled{1}$ holds due to Lemma \ref{Lemma_gradient_norm_bound}. That is, w
 \end{align} $\textcircled{3}$ holds due to 
 \begin{align}
 \nonumber
-& \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrincir{F_{i,t}(\bar{\x}_t) - F_{i,t}(\bar{\x}_{t+1}) } \\ \nonumber 
-\le & \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrangle{\nabla F_{i,t}(\bar{\x}_t), \bar{\x}_t - \bar{\x}_{t+1}} \\ \nonumber
+\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrincir{F_{i,t}(\bar{\x}_t) - F_{i,t}(\bar{\x}_{t+1}) } \le & \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrangle{\nabla F_{i,t}(\bar{\x}_t), \bar{\x}_t - \bar{\x}_{t+1}} \\ \nonumber
 = & \EE_{ \Xi_{n,t} \sim \Dcal_{n,t} } \lrangle{\nabla F_{i,t}(\bar{\x}_t), \frac{\eta}{n}\sum_{i=1}^n\nabla f_{i,t}(\x_{i,t};\xi_{i,t}) } \\ \nonumber
 \le & \eta\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrincir{ \frac{1}{2}\lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2 + \frac{1}{2} \lrnorm{\frac{1}{n}\sum_{i=1}^n\nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 }\\ \nonumber
 \le & \eta\EE_{ \Xi_{n,t} \sim \Dcal_{n,t} }\lrincir{ \frac{1}{2}\lrnorm{\nabla F_{i,t}(\bar{\x}_t)}^2 + \frac{1}{2n}\sum_{i=1}^n\lrnorm{\nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 }\\ \nonumber
@@ -850,8 +834,7 @@ Denote that
 Therefore, we obtain
 \begin{align}
 \nonumber
-& \sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t}^2 \\ \nonumber
-\refabovecir{=}{\textcircled{1}} & \sum_{i=1}^n \lrnorm{ \sum_{s=1}^{t-1} \eta \bar{\G}_s - \eta \G_s \W^{t-s-1}\e_i }^2   \\ \nonumber
+\sum_{i=1}^n \lrnorm{\x_{i,t} - \bar{\x}_t}^2 \refabovecir{=}{\textcircled{1}} & \sum_{i=1}^n \lrnorm{ \sum_{s=1}^{t-1} \eta \bar{\G}_s - \eta \G_s \W^{t-s-1}\e_i }^2   \\ \nonumber
 \refabovecir{=}{\textcircled{2}} & \lrnorm{ \sum_{s=1}^{t-1} \eta \G_s\v_1 \v_1\Tr - \eta \G_s \W^{t-s-1} }^2_F   \\ \nonumber
 \refabovecir{\le}{\textcircled{3}} & \lrincir{ \eta \rho^{t-s-1} \lrnorm{\sum_{s=1}^{t-1}\G_s}_F}^2 \\ \nonumber
 \le & \lrincir{ \sum_{s=1}^{t-1} \eta \rho^{t-s-1} \lrnorm{\G_s}_F}^2.
@@ -861,8 +844,7 @@ Therefore, we obtain
 Thus, we  have
 \begin{align}
 \nonumber
-& \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{i=1}^n\sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2  \\ \nonumber 
-\le & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T \lrincir{ \sum_{s=1}^{t-1} \eta \rho^{t-s-1} \lrnorm{\G_s}_F}^2  \\ \nonumber
+\EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{i=1}^n\sum_{t=1}^T \lrnorm{\x_{i,t} - \bar{\x}_t}^2 \le & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T \lrincir{ \sum_{s=1}^{t-1} \eta \rho^{t-s-1} \lrnorm{\G_s}_F}^2  \\ \nonumber
 \refabovecir{\le}{\textcircled{1}} & \frac{\eta^2}{(1-\rho)^2} \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \lrincir{  \sum_{t=1}^T \lrnorm{\G_t}_F^2 } \\ \nonumber
 = & \frac{\eta^2}{(1-\rho)^2} \lrincir{ \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T \sum_{i=1}^n  \lrnorm{\nabla f_{i,t}(\x_{i,t};\xi_{i,t})}^2 } \\ \nonumber
 \le & \frac{nT\eta^2 G^2 }{(1-\rho)^2}.
