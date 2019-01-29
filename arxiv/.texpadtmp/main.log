@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  19 JAN 2019 16:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  29 JAN 2019 10:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -32,9 +32,11 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \symAMSb=\mathgroup5
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-)) (/usr/local/texlive/2015/texmf-dist/tex/latex/algorithms/algorithm.sty
-Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
- (/usr/local/texlive/2015/texmf-dist/tex/latex/float/float.sty
+)) (./algorithm.sty
+Package: algorithm 
+
+Document Style `algorithm' - floating environment
+(/usr/local/texlive/2015/texmf-dist/tex/latex/float/float.sty
 Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \c@float@type=\count87
 \float@exts=\toks15
@@ -353,31 +355,28 @@ LaTeX Info: Redefining \cite on input line 694.
 \c@Remark=\count132
  (/Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/arxiv/.texpadtmp/main.aux
 
-LaTeX Warning: Label `sect_introduction' multiply defined.
+LaTeX Warning: Label `figure_ave_loss_topology_occupancy' multiply defined.
 
 
-LaTeX Warning: Label `figure_decen_cen_ave_loss_iterations_net_types_occupancy' multiply defined.
-
-
-LaTeX Warning: Label `sub@figure_decen_cen_ave_loss_iterations_net_types_occupancy' multiply defined.
+LaTeX Warning: Label `sub@figure_ave_loss_topology_occupancy' multiply defined.
 
 )
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 72.
+LaTeX Font Info:    ... okay on input line 72.
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: subfigure package is loaded.
@@ -407,7 +406,7 @@ Package grfext Info: Graphics extension search list:
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
 \AtBeginShipoutBox=\box31
-Package hyperref Info: Link coloring ON on input line 56.
+Package hyperref Info: Link coloring ON on input line 72.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
  (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
@@ -415,421 +414,417 @@ Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
 \c@section@level=\count139
 )
-LaTeX Info: Redefining \ref on input line 56.
-LaTeX Info: Redefining \pageref on input line 56.
-LaTeX Info: Redefining \nameref on input line 56.
+LaTeX Info: Redefining \ref on input line 72.
+LaTeX Info: Redefining \pageref on input line 72.
+LaTeX Info: Redefining \nameref on input line 72.
  (/Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/arxiv/.texpadtmp/main.out) (/Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/arxiv/.texpadtmp/main.out)
 \@outlinefile=\write3
 \openout3 = `main.out'.
 
-LaTeX Font Info:    Try loading font information for U+msa on input line 61.
+LaTeX Font Info:    Try loading font information for U+msa on input line 77.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 61.
+LaTeX Font Info:    Try loading font information for U+msb on input line 77.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-
-LaTeX Warning: No \author given.
-
-[1
-
-{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 85.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 77.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/base/omscmr.fd
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <8> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 77.
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <6> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 77.
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ‡ in font cmr10!
+ [1
+
+{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 85.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 97.
+ [2]
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ‡ in font cmr10!
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ‡ in font cmr10!
- [2] [3]
+ [3] [4]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!htbp') on input line 166.
+               Default added (so using `!htbp') on input line 195.
 
-Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 167.
-[4]
+Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on input line 196.
+[5]
 LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 204.
- [5] [6]
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 258.
+ [6]
+
+Package amsmath Warning: Foreign command \over;
+(amsmath)                \frac or \genfrac should be used instead
+(amsmath)                 on input line 331.
+
+[7] [8]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 317.
+               Default added (so using `!tbp') on input line 374.
 
-<figure_dynamics.pdf, id=335, 532.74876pt x 230.26427pt>
+<figure_dynamics.pdf, id=382, 507.69733pt x 234.42342pt>
 File: figure_dynamics.pdf Graphic file (type pdf)
  <use figure_dynamics.pdf>
-Package pdftex.def Info: figure_dynamics.pdf used on input line 321.
-(pdftex.def)             Requested size: 328.82707pt x 142.12993pt.
- <figure_decen_cen_ave_loss_iterations.pdf, id=336, 531.80229pt x 396.87093pt>
-File: figure_decen_cen_ave_loss_iterations.pdf Graphic file (type pdf)
- <use figure_decen_cen_ave_loss_iterations.pdf>
-Package pdftex.def Info: figure_decen_cen_ave_loss_iterations.pdf used on input line 331.
-(pdftex.def)             Requested size: 225.4804pt x 168.27126pt.
- <figure_decen_cen_ave_loss_iterations_occupancy.pdf, id=337, 532.79692pt x 390.36913pt>
-File: figure_decen_cen_ave_loss_iterations_occupancy.pdf Graphic file (type pdf)
- <use figure_decen_cen_ave_loss_iterations_occupancy.pdf>
-Package pdftex.def Info: figure_decen_cen_ave_loss_iterations_occupancy.pdf used on input line 332.
-(pdftex.def)             Requested size: 225.4804pt x 165.20479pt.
- <figure_decen_cen_ave_loss_iterations_usenet2.pdf, id=338, 524.25316pt x 396.80978pt>
-File: figure_decen_cen_ave_loss_iterations_usenet2.pdf Graphic file (type pdf)
- <use figure_decen_cen_ave_loss_iterations_usenet2.pdf>
-Package pdftex.def Info: figure_decen_cen_ave_loss_iterations_usenet2.pdf used on input line 333.
-(pdftex.def)             Requested size: 225.4804pt x 170.66725pt.
- <figure_decen_cen_ave_loss_iterations_spam.pdf, id=339, 529.26443pt x 395.96121pt>
-File: figure_decen_cen_ave_loss_iterations_spam.pdf Graphic file (type pdf)
- <use figure_decen_cen_ave_loss_iterations_spam.pdf>
-Package pdftex.def Info: figure_decen_cen_ave_loss_iterations_spam.pdf used on input line 334.
-(pdftex.def)             Requested size: 225.4804pt x 168.6891pt.
+Package pdftex.def Info: figure_dynamics.pdf used on input line 378.
+(pdftex.def)             Requested size: 460.35791pt x 212.5673pt.
+ <figure_ave_loss_iteration_synthetic.pdf, id=383, 406.14023pt x 298.21452pt>
+File: figure_ave_loss_iteration_synthetic.pdf Graphic file (type pdf)
+ <use figure_ave_loss_iteration_synthetic.pdf>
+Package pdftex.def Info: figure_ave_loss_iteration_synthetic.pdf used on input line 389.
+(pdftex.def)             Requested size: 239.57248pt x 175.91318pt.
+ <figure_ave_loss_iteration_occupancy.pdf, id=384, 396.42758pt x 292.41255pt>
+File: figure_ave_loss_iteration_occupancy.pdf Graphic file (type pdf)
+ <use figure_ave_loss_iteration_occupancy.pdf>
+Package pdftex.def Info: figure_ave_loss_iteration_occupancy.pdf used on input line 390.
+(pdftex.def)             Requested size: 239.57248pt x 176.71158pt.
+ <figure_ave_loss_iteration_usenet2.pdf, id=385, 388.44322pt x 297.29309pt>
+File: figure_ave_loss_iteration_usenet2.pdf Graphic file (type pdf)
+ <use figure_ave_loss_iteration_usenet2.pdf>
+Package pdftex.def Info: figure_ave_loss_iteration_usenet2.pdf used on input line 391.
+(pdftex.def)             Requested size: 232.52643pt x 177.96442pt.
+ <figure_ave_loss_iteration_spam.pdf, id=386, 507.98027pt x 391.39867pt>
+File: figure_ave_loss_iteration_spam.pdf Graphic file (type pdf)
+ <use figure_ave_loss_iteration_spam.pdf>
+Package pdftex.def Info: figure_ave_loss_iteration_spam.pdf used on input line 392.
+(pdftex.def)             Requested size: 232.52643pt x 179.16167pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[7 <./figure_dynamics.pdf>] [8 <./figure_decen_cen_ave_loss_iterations.pdf> <./figure_decen_cen_ave_loss_iterations_occupancy.pdf> <./figure_decen_cen_ave_loss_iterations_usenet2.pdf> <./figure_decen_cen_ave_loss_iterations_spam.pdf>] <figure_decen_cen_ave_loss_nodes.pdf, id=441, 532.71991pt x 396.05757pt>
-File: figure_decen_cen_ave_loss_nodes.pdf Graphic file (type pdf)
- <use figure_decen_cen_ave_loss_nodes.pdf>
-Package pdftex.def Info: figure_decen_cen_ave_loss_nodes.pdf used on input line 378.
-(pdftex.def)             Requested size: 225.4804pt x 167.6363pt.
- <figure_decen_cen_ave_loss_nodes_occupancy.pdf, id=442, 525.35683pt x 396.18042pt>
-File: figure_decen_cen_ave_loss_nodes_occupancy.pdf Graphic file (type pdf)
- <use figure_decen_cen_ave_loss_nodes_occupancy.pdf>
-Package pdftex.def Info: figure_decen_cen_ave_loss_nodes_occupancy.pdf used on input line 379.
-(pdftex.def)             Requested size: 225.4804pt x 170.0399pt.
- <figure_decen_cen_ave_loss_nodes_usenet2.pdf, id=443, 516.58916pt x 396.28252pt>
-File: figure_decen_cen_ave_loss_nodes_usenet2.pdf Graphic file (type pdf)
- <use figure_decen_cen_ave_loss_nodes_usenet2.pdf>
-Package pdftex.def Info: figure_decen_cen_ave_loss_nodes_usenet2.pdf used on input line 380.
-(pdftex.def)             Requested size: 225.4804pt x 172.96803pt.
- <figure_decen_cen_ave_loss_nodes_spam.pdf, id=444, 524.86336pt x 397.08841pt>
-File: figure_decen_cen_ave_loss_nodes_spam.pdf Graphic file (type pdf)
- <use figure_decen_cen_ave_loss_nodes_spam.pdf>
-Package pdftex.def Info: figure_decen_cen_ave_loss_nodes_spam.pdf used on input line 381.
-(pdftex.def)             Requested size: 225.4804pt x 170.58714pt.
- <figure_decen_cen_ave_loss_iterations_net_types.pdf, id=446, 532.0484pt x 389.54594pt>
-File: figure_decen_cen_ave_loss_iterations_net_types.pdf Graphic file (type pdf)
- <use figure_decen_cen_ave_loss_iterations_net_types.pdf>
-Package pdftex.def Info: figure_decen_cen_ave_loss_iterations_net_types.pdf used on input line 395.
-(pdftex.def)             Requested size: 225.4804pt x 165.08823pt.
- <figure_decen_cen_ave_loss_iterations_net_types_occupancy.pdf, id=447, 525.4415pt x 389.03242pt>
-File: figure_decen_cen_ave_loss_iterations_net_types_occupancy.pdf Graphic file (type pdf)
- <use figure_decen_cen_ave_loss_iterations_net_types_occupancy.pdf>
-Package pdftex.def Info: figure_decen_cen_ave_loss_iterations_net_types_occupancy.pdf used on input line 396.
-(pdftex.def)             Requested size: 225.4804pt x 166.94232pt.
- <figure_decen_cen_ave_loss_iterations_net_types_usenet2.pdf, id=448, 515.8609pt x 395.60147pt>
-File: figure_decen_cen_ave_loss_iterations_net_types_usenet2.pdf Graphic file (type pdf)
- <use figure_decen_cen_ave_loss_iterations_net_types_usenet2.pdf>
-Package pdftex.def Info: figure_decen_cen_ave_loss_iterations_net_types_usenet2.pdf used on input line 397.
-(pdftex.def)             Requested size: 225.4804pt x 172.91223pt.
- <figure_decen_cen_ave_loss_iterations_net_types_spam.pdf, id=449, 523.19164pt x 395.50311pt>
-File: figure_decen_cen_ave_loss_iterations_net_types_spam.pdf Graphic file (type pdf)
- <use figure_decen_cen_ave_loss_iterations_net_types_spam.pdf>
-Package pdftex.def Info: figure_decen_cen_ave_loss_iterations_net_types_spam.pdf used on input line 398.
-(pdftex.def)             Requested size: 225.4804pt x 170.44925pt.
+<figure_ave_loss_network_size_synthetic.pdf, id=387, 517.47185pt x 383.73775pt>
+File: figure_ave_loss_network_size_synthetic.pdf Graphic file (type pdf)
+ <use figure_ave_loss_network_size_synthetic.pdf>
+Package pdftex.def Info: figure_ave_loss_network_size_synthetic.pdf used on input line 403.
+(pdftex.def)             Requested size: 232.52643pt x 172.4286pt.
+ <figure_ave_loss_network_size_occupancy.pdf, id=388, 396.28432pt x 291.18256pt>
+File: figure_ave_loss_network_size_occupancy.pdf Graphic file (type pdf)
+ <use figure_ave_loss_network_size_occupancy.pdf>
+Package pdftex.def Info: figure_ave_loss_network_size_occupancy.pdf used on input line 404.
+(pdftex.def)             Requested size: 232.52643pt x 170.85428pt.
+ <figure_ave_loss_network_size_usenet2.pdf, id=389, 394.44363pt x 291.3324pt>
+File: figure_ave_loss_network_size_usenet2.pdf Graphic file (type pdf)
+ <use figure_ave_loss_network_size_usenet2.pdf>
+Package pdftex.def Info: figure_ave_loss_network_size_usenet2.pdf used on input line 405.
+(pdftex.def)             Requested size: 232.52643pt x 171.74237pt.
+ <figure_ave_loss_network_size_spam.pdf, id=390, 394.87123pt x 292.96141pt>
+File: figure_ave_loss_network_size_spam.pdf Graphic file (type pdf)
+ <use figure_ave_loss_network_size_spam.pdf>
+Package pdftex.def Info: figure_ave_loss_network_size_spam.pdf used on input line 406.
+(pdftex.def)             Requested size: 232.52643pt x 172.51941pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[9 <./figure_decen_cen_ave_loss_nodes.pdf> <./figure_decen_cen_ave_loss_nodes_occupancy.pdf> <./figure_decen_cen_ave_loss_nodes_usenet2.pdf> <./figure_decen_cen_ave_loss_nodes_spam.pdf>] (/Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/arxiv/.texpadtmp/main.bbl [10 <./figure_decen_cen_ave_loss_iterations_net_types.pdf> <./figure_decen_cen_ave_loss_iterations_net_types_occupancy.pdf> <./figure_decen_cen_ave_loss_iterations_net_types_usenet2.pdf> <./figure_decen_cen_ave_loss_iterations_net_types_spam.pdf>]
+<figure_ave_loss_topology_synthetic.pdf, id=391, 506.88814pt x 389.68808pt>
+File: figure_ave_loss_topology_synthetic.pdf Graphic file (type pdf)
+ <use figure_ave_loss_topology_synthetic.pdf>
+Package pdftex.def Info: figure_ave_loss_topology_synthetic.pdf used on input line 433.
+(pdftex.def)             Requested size: 232.52643pt x 178.76515pt.
+ <figure_ave_loss_topology_occupancy.pdf, id=392, 502.9296pt x 386.30293pt>
+File: figure_ave_loss_topology_occupancy.pdf Graphic file (type pdf)
+ <use figure_ave_loss_topology_occupancy.pdf>
+Package pdftex.def Info: figure_ave_loss_topology_occupancy.pdf used on input line 434.
+(pdftex.def)             Requested size: 232.52643pt x 178.60335pt.
+ <figure_ave_loss_topology_usenet2.pdf, id=393, 506.26102pt x 390.85834pt>
+File: figure_ave_loss_topology_usenet2.pdf Graphic file (type pdf)
+ <use figure_ave_loss_topology_usenet2.pdf>
+Package pdftex.def Info: figure_ave_loss_topology_usenet2.pdf used on input line 435.
+(pdftex.def)             Requested size: 232.52643pt x 179.52266pt.
+ <figure_ave_loss_topology_spam.pdf, id=394, 506.63985pt x 390.10695pt>
+File: figure_ave_loss_topology_spam.pdf Graphic file (type pdf)
+ <use figure_ave_loss_topology_spam.pdf>
+Package pdftex.def Info: figure_ave_loss_topology_spam.pdf used on input line 436.
+(pdftex.def)             Requested size: 232.52643pt x 179.04659pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[9 <./figure_dynamics.pdf>]
+
+LaTeX Warning: No positions in optional float specifier.
+               Default added (so using `!tbp') on input line 471.
+
+[10] (/Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/arxiv/.texpadtmp/main.bbl [11]
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ‡ in font cmr10!
- [11]
 Missing character: There is no Ä in font cmr10!
 Missing character: There is no ‡ in font cmr10!
-) [12]
+ [12]) [13] [14 <./figure_ave_loss_iteration_synthetic.pdf> <./figure_ave_loss_iteration_occupancy.pdf> <./figure_ave_loss_iteration_usenet2.pdf> <./figure_ave_loss_iteration_spam.pdf>] [15 <./figure_ave_loss_network_size_synthetic.pdf> <./figure_ave_loss_network_size_occupancy.pdf> <./figure_ave_loss_network_size_usenet2.pdf> <./figure_ave_loss_network_size_spam.pdf>] [16 <./figure_ave_loss_topology_synthetic.pdf> <./figure_ave_loss_topology_occupancy.pdf> <./figure_ave_loss_topology_usenet2.pdf> <./figure_ave_loss_topology_spam.pdf>]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 451.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 526.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 451.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 526.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 451.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 526.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 451.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 526.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 451.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 526.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 451.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 526.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 465.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 543.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 465.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 543.
 
-Missing character: There is no ã in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ‚ in font cmr10!
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 465.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 543.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 465.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 543.
 
-Missing character: There is no ã in font cmr10!
-Missing character: There is no € in font cmr10!
-Missing character: There is no ‚ in font cmr10!
-[13]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 465.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 543.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 465.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 543.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 482.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 543.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 482.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 543.
 
+[17
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 482.
+]
 
+LaTeX Warning: Command \textcircled invalid in math mode on input line 543.
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 482.
 
+LaTeX Warning: Command \textcircled invalid in math mode on input line 543.
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 482.
 
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 482.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 482.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 482.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 482.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 482.
-
-[14]
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 490.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 490.
-
-[15] [16]
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 604.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 604.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 604.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 604.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 604.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 604.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 604.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 604.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 604.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 604.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 604.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 604.
-
-[17]
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 605.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 605.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 609.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 609.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 613.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 613.
-
-[18]
-Overfull \hbox (30.30824pt too wide) in paragraph at lines 680--680
+Overfull \hbox (17.7417pt too wide) in paragraph at lines 551--551
 [] 
  []
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 697.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 551.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 697.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 551.
 
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 697.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 697.
-
-
-Overfull \hbox (47.52226pt too wide) in paragraph at lines 697--697
+[18] [19]
+Overfull \hbox (20.32933pt too wide) in paragraph at lines 631--631
 [] 
  []
 
-[19]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 697.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 697.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 645.
 
 
-Overfull \hbox (45.06807pt too wide) in paragraph at lines 726--726
+LaTeX Warning: Command \textcircled invalid in math mode on input line 645.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 645.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 645.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 645.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 645.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 645.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 645.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 645.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 645.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 645.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 645.
+
+
+Overfull \hbox (5.24008pt too wide) in paragraph at lines 645--645
 [] 
  []
 
-[20] [21]
+[20]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 851.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 851.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 646.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 851.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 646.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 851.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 651.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 851.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 651.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 851.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 655.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 851.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 655.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 851.
+Overfull \hbox (13.49706pt too wide) in paragraph at lines 699--699
+[] 
+ []
+
+[21]
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 715.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 851.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 715.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 851.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 715.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 851.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 715.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 851.
+Overfull \hbox (31.57445pt too wide) in paragraph at lines 715--715
+[] 
+ []
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 715.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 715.
 
 [22]
+Overfull \hbox (14.34476pt too wide) in paragraph at lines 734--734
+[] 
+ []
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 851.
+[23] [24]
 
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 851.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 851.
-
-
-LaTeX Warning: Command \textcircled invalid in math mode on input line 851.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 858.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 851.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 858.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 851.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 858.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 862.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 858.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 862.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 858.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 862.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 858.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 862.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 858.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 862.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 858.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 862.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 858.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 862.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 858.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 862.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 858.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 862.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 858.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 862.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 858.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 862.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 858.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 862.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 858.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 896.
-[23]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 896.
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 858.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 858.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 858.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 869.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 869.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 869.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 869.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 869.
+
+
+LaTeX Warning: Command \textcircled invalid in math mode on input line 869.
+
+[25]
+Overfull \hbox (28.90434pt too wide) in paragraph at lines 916--916
+[] 
+ []
+
+[26]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 921.
+ [27]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 921.
  (/Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/arxiv/.texpadtmp/main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 896.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 896.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 921.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 921.
 Package rerunfilecheck Info: File `main.out' has not changed.
-(rerunfilecheck)             Checksum: 9AF1F85021343C54F0943708405852D5;793.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 896.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 921.
  ) 
 Here is how much of TeX's memory you used:
- 8949 strings out of 493089
- 135705 string characters out of 6134842
- 232042 words of memory out of 5000000
- 12135 multiletter control sequences out of 15000+600000
- 22037 words of font info for 80 fonts, out of 8000000 for 9000
+ 8990 strings out of 493089
+ 135484 string characters out of 6134842
+ 231155 words of memory out of 5000000
+ 12161 multiletter control sequences out of 15000+600000
+ 22551 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 36i,19n,38p,1981b,472s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on /Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/arxiv/.texpadtmp/main.pdf (23 pages, 791898 bytes).
+ 36i,19n,38p,1175b,490s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmcsc10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr17.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2015/texmf-d
+ist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt12.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt8.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
+Output written on /Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/arxiv/.texpadtmp/main.pdf (27 pages, 777545 bytes).
 PDF statistics:
- 797 PDF objects out of 1000 (max. 8388607)
- 681 compressed objects within 7 object streams
- 125 named destinations out of 1000 (max. 500000)
+ 880 PDF objects out of 1000 (max. 8388607)
+ 756 compressed objects within 8 object streams
+ 139 named destinations out of 1000 (max. 500000)
  170 words of extra memory for PDF output out of 10000 (max. 10000000)
 

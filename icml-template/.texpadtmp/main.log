@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  23 JAN 2019 16:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.1.10)  23 JAN 2019 19:06
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -592,12 +592,12 @@ LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
 (Font)              Font shape `OT1/ptm/b/n' tried instead on input line 139.
 Missing character: There is no Ä in font ptmr7t!
 Missing character: There is no ‡ in font ptmr7t!
-LaTeX Font Info:    Try loading font information for OMS+ptm on input line 165.
+LaTeX Font Info:    Try loading font information for OMS+ptm on input line 158.
  (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/omsptm.fd
 File: omsptm.fd 
 )
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 165.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 158.
  [1{/usr/local/texlive/2015/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 
@@ -611,7 +611,7 @@ Missing character: There is no ‡ in font ptmr7t!
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
-Overfull \hbox (2.23349pt too wide) in paragraph at lines 234--236
+Overfull \hbox (2.23349pt too wide) in paragraph at lines 227--229
 \OT1/ptm/m/n/10 (-20) where $\OT1/cmr/bx/n/10 x[] \OT1/cmr/m/n/10 = [] [][] [][] [][] [][] \OML/cmm/m/it/10 f[]\OT1/cmr/m/n/10 (\OT1/cmr/bx/n/10 x\OT1/cmr/m/n/10 ; \OML/cmm/m/it/10 ^^X[]\OT1/cmr/m/n/10 )$\OT1/ptm/m/n/10 (-20) . 
  []
 
@@ -621,79 +621,79 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [3]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!htbp') on input line 276.
+               Default added (so using `!htbp') on input line 269.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 285--286
+Underfull \hbox (badness 10000) in paragraph at lines 278--279
 [] []\OT1/ptm/m/n/10 (+20) Query the neigh-bors' lo-cal mod-els
  []
 
 
-Underfull \hbox (badness 1057) in paragraph at lines 286--288
+Underfull \hbox (badness 1057) in paragraph at lines 279--281
 [] []\OT1/ptm/m/n/10 (+20) Observe the loss func-tion $\OML/cmm/m/it/10 f[]$\OT1/ptm/m/n/10 (+20) , and suf-fer loss
  []
 
 LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <10> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 339.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 332.
 [4] [5]
 
 Package amsmath Warning: Foreign command \over;
 (amsmath)                \frac or \genfrac should be used instead
-(amsmath)                 on input line 412.
+(amsmath)                 on input line 405.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 453--454
+Underfull \hbox (badness 10000) in paragraph at lines 446--447
 []\OT1/ptm/m/n/10 (+20) As il-lus-trated in Corol-lary [][]2[][], we ob-tain
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 453--454
+Underfull \hbox (badness 10000) in paragraph at lines 446--447
 []$ \OT1/ptm/m/n/10 (+20) dy-namic re-gret for
  []
 
 
-Underfull \hbox (badness 1859) in paragraph at lines 453--454
+Underfull \hbox (badness 1859) in paragraph at lines 446--447
 \OT1/ptm/m/n/10 (+20) for de-cen-tral-ized on-line con-di-tional gra-di-ent method.
  []
 
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 455.
+               Default added (so using `!tbp') on input line 448.
 
 <figure_dynamics.pdf, id=307, 507.69733pt x 234.42342pt>
 File: figure_dynamics.pdf Graphic file (type pdf)
  <use figure_dynamics.pdf>
-Package pdftex.def Info: figure_dynamics.pdf used on input line 459.
+Package pdftex.def Info: figure_dynamics.pdf used on input line 452.
 (pdftex.def)             Requested size: 230.17894pt x 106.28365pt.
  <figure_ave_loss_iteration_synthetic.pdf, id=308, 406.14023pt x 298.21452pt>
 File: figure_ave_loss_iteration_synthetic.pdf Graphic file (type pdf)
  <use figure_ave_loss_iteration_synthetic.pdf>
-Package pdftex.def Info: figure_ave_loss_iteration_synthetic.pdf used on input line 470.
+Package pdftex.def Info: figure_ave_loss_iteration_synthetic.pdf used on input line 463.
 (pdftex.def)             Requested size: 119.78622pt x 87.95432pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 470--470
+Underfull \hbox (badness 10000) in paragraph at lines 463--463
 []\OT1/ptm/m/n/9 (+20) (a) \OT1/ptm/m/it/9 (+20) syn-thetic data\OT1/ptm/m/n/9 (+20) , $\OT1/cmr/m/n/9 10000$
  []
 
 <figure_ave_loss_iteration_occupancy.pdf, id=309, 396.42758pt x 292.41255pt>
 File: figure_ave_loss_iteration_occupancy.pdf Graphic file (type pdf)
  <use figure_ave_loss_iteration_occupancy.pdf>
-Package pdftex.def Info: figure_ave_loss_iteration_occupancy.pdf used on input line 471.
+Package pdftex.def Info: figure_ave_loss_iteration_occupancy.pdf used on input line 464.
 (pdftex.def)             Requested size: 119.78622pt x 88.35355pt.
 
-Underfull \hbox (badness 2401) in paragraph at lines 471--471
+Underfull \hbox (badness 2401) in paragraph at lines 464--464
 []\OT1/ptm/m/n/9 (+20) (b) \OT1/ptm/m/it/9 (+20) room-occupancy\OT1/ptm/m/n/9 (+20) , $\OT1/cmr/m/n/9 5$ \OT1/ptm/m/n/9 (+20) nodes,
  []
 
 <figure_ave_loss_iteration_usenet2.pdf, id=310, 388.44322pt x 297.29309pt>
 File: figure_ave_loss_iteration_usenet2.pdf Graphic file (type pdf)
  <use figure_ave_loss_iteration_usenet2.pdf>
-Package pdftex.def Info: figure_ave_loss_iteration_usenet2.pdf used on input line 472.
+Package pdftex.def Info: figure_ave_loss_iteration_usenet2.pdf used on input line 465.
 (pdftex.def)             Requested size: 116.26321pt x 88.97993pt.
  <figure_ave_loss_iteration_spam.pdf, id=311, 507.98027pt x 391.39867pt>
 File: figure_ave_loss_iteration_spam.pdf Graphic file (type pdf)
  <use figure_ave_loss_iteration_spam.pdf>
-Package pdftex.def Info: figure_ave_loss_iteration_spam.pdf used on input line 473.
+Package pdftex.def Info: figure_ave_loss_iteration_spam.pdf used on input line 466.
 (pdftex.def)             Requested size: 116.26321pt x 89.57785pt.
 
 
@@ -702,22 +702,22 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 <figure_ave_loss_network_size_synthetic.pdf, id=312, 517.47185pt x 383.73775pt>
 File: figure_ave_loss_network_size_synthetic.pdf Graphic file (type pdf)
  <use figure_ave_loss_network_size_synthetic.pdf>
-Package pdftex.def Info: figure_ave_loss_network_size_synthetic.pdf used on input line 484.
+Package pdftex.def Info: figure_ave_loss_network_size_synthetic.pdf used on input line 477.
 (pdftex.def)             Requested size: 116.26321pt x 86.2143pt.
  <figure_ave_loss_network_size_occupancy.pdf, id=313, 396.28432pt x 291.18256pt>
 File: figure_ave_loss_network_size_occupancy.pdf Graphic file (type pdf)
  <use figure_ave_loss_network_size_occupancy.pdf>
-Package pdftex.def Info: figure_ave_loss_network_size_occupancy.pdf used on input line 485.
+Package pdftex.def Info: figure_ave_loss_network_size_occupancy.pdf used on input line 478.
 (pdftex.def)             Requested size: 116.26321pt x 85.42714pt.
  <figure_ave_loss_network_size_usenet2.pdf, id=314, 394.44363pt x 291.3324pt>
 File: figure_ave_loss_network_size_usenet2.pdf Graphic file (type pdf)
  <use figure_ave_loss_network_size_usenet2.pdf>
-Package pdftex.def Info: figure_ave_loss_network_size_usenet2.pdf used on input line 486.
+Package pdftex.def Info: figure_ave_loss_network_size_usenet2.pdf used on input line 479.
 (pdftex.def)             Requested size: 116.26321pt x 85.87119pt.
  <figure_ave_loss_network_size_spam.pdf, id=315, 394.87123pt x 292.96141pt>
 File: figure_ave_loss_network_size_spam.pdf Graphic file (type pdf)
  <use figure_ave_loss_network_size_spam.pdf>
-Package pdftex.def Info: figure_ave_loss_network_size_spam.pdf used on input line 487.
+Package pdftex.def Info: figure_ave_loss_network_size_spam.pdf used on input line 480.
 (pdftex.def)             Requested size: 116.26321pt x 86.25746pt.
 
 
@@ -727,40 +727,40 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Underfull \vbox (badness 1147) has occurred while \output is active []
 
  [6 <./figure_dynamics.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 505--506
+Underfull \hbox (badness 10000) in paragraph at lines 498--499
 \OT1/ptm/m/n/10 (+20) instead of us-ing the dy-namic re-gret
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 505--506
+Underfull \hbox (badness 10000) in paragraph at lines 498--499
 [][] [][] [][] []$
  []
 
 <figure_ave_loss_topology_synthetic.pdf, id=343, 506.88814pt x 389.68808pt>
 File: figure_ave_loss_topology_synthetic.pdf Graphic file (type pdf)
  <use figure_ave_loss_topology_synthetic.pdf>
-Package pdftex.def Info: figure_ave_loss_topology_synthetic.pdf used on input line 514.
+Package pdftex.def Info: figure_ave_loss_topology_synthetic.pdf used on input line 507.
 (pdftex.def)             Requested size: 116.26321pt x 89.37663pt.
  <figure_ave_loss_topology_occupancy.pdf, id=344, 502.9296pt x 386.30293pt>
 File: figure_ave_loss_topology_occupancy.pdf Graphic file (type pdf)
  <use figure_ave_loss_topology_occupancy.pdf>
-Package pdftex.def Info: figure_ave_loss_topology_occupancy.pdf used on input line 515.
+Package pdftex.def Info: figure_ave_loss_topology_occupancy.pdf used on input line 508.
 (pdftex.def)             Requested size: 116.26321pt x 89.30167pt.
  <figure_ave_loss_topology_usenet2.pdf, id=345, 506.26102pt x 390.85834pt>
 File: figure_ave_loss_topology_usenet2.pdf Graphic file (type pdf)
  <use figure_ave_loss_topology_usenet2.pdf>
-Package pdftex.def Info: figure_ave_loss_topology_usenet2.pdf used on input line 516.
+Package pdftex.def Info: figure_ave_loss_topology_usenet2.pdf used on input line 509.
 (pdftex.def)             Requested size: 116.26321pt x 89.75835pt.
  <figure_ave_loss_topology_spam.pdf, id=346, 506.63985pt x 390.10695pt>
 File: figure_ave_loss_topology_spam.pdf Graphic file (type pdf)
  <use figure_ave_loss_topology_spam.pdf>
-Package pdftex.def Info: figure_ave_loss_topology_spam.pdf used on input line 517.
+Package pdftex.def Info: figure_ave_loss_topology_spam.pdf used on input line 510.
 (pdftex.def)             Requested size: 116.26321pt x 89.52031pt.
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-LaTeX Font Info:    Try loading font information for OT1+pcr on input line 530.
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 523.
 (/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/ot1pcr.fd
 File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
 )
@@ -769,17 +769,17 @@ Package microtype Info: Loading generic settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Underfull \hbox (badness 10000) in paragraph at lines 530--530
+Underfull \hbox (badness 10000) in paragraph at lines 523--523
 [][][][][]$\OT1/pcr/m/n/9 https : / / archive . ics . uci . edu / ml / datasets /
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 530--530
+Underfull \hbox (badness 10000) in paragraph at lines 523--523
 [][][][][]$\OT1/pcr/m/n/9 http : / / mlkd . csd . auth . gr / concept _ drift .
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 530--530
+Underfull \hbox (badness 10000) in paragraph at lines 523--523
 [][][][][]$\OT1/pcr/m/n/9 http : / / mlkd . csd . auth . gr / concept _ drift .
  []
 
@@ -789,7 +789,7 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
  [7 <./figure_ave_loss_iteration_synthetic.pdf> <./figure_ave_loss_iteration_occupancy.pdf> <./figure_ave_loss_iteration_usenet2.pdf> <./figure_ave_loss_iteration_spam.pdf> <./figure_ave_loss_network_size_synthetic.pdf> <./figure_ave_loss_network_size_occupancy.pdf> <./figure_ave_loss_network_size_usenet2.pdf> <./figure_ave_loss_network_size_spam.pdf>]
 
 LaTeX Warning: No positions in optional float specifier.
-               Default added (so using `!tbp') on input line 552.
+               Default added (so using `!tbp') on input line 545.
 
 
 Underfull \vbox (badness 10000) has occurred while \output is active []
@@ -809,249 +809,249 @@ Overfull \vbox (2.48755pt too high) has occurred while \output is active []
 
  [9]) [10]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 607.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 600.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 607.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 600.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 607.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 600.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 607.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 600.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 607.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 600.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 607.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 600.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 624.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 617.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 624.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 617.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 624.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 617.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 624.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 617.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 624.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 617.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 624.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 617.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 624.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 617.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 624.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 617.
 
 [11
 
 ]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 624.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 617.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 624.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 617.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 632.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 625.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 632.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 625.
 
 [12] [13]
-Overfull \hbox (2.26186pt too wide) in paragraph at lines 712--712
+Overfull \hbox (2.26186pt too wide) in paragraph at lines 705--705
 [] 
  []
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 726.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 719.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 726.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 719.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 726.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 719.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 726.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 719.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 726.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 719.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 726.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 719.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 726.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 719.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 726.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 719.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 726.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 719.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 726.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 719.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 726.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 719.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 726.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 719.
 
 [14]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 727.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 720.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 727.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 720.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 732.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 725.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 732.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 725.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 736.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 729.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 736.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 729.
 
 [15]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 796.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 789.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 796.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 789.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 796.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 789.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 796.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 789.
 
 
-Overfull \hbox (13.50697pt too wide) in paragraph at lines 796--796
+Overfull \hbox (13.50697pt too wide) in paragraph at lines 789--789
 [] 
  []
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 796.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 789.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 796.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 789.
 
 [16] [17]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 939.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 932.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 939.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 932.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 939.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 932.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 939.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 932.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 939.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 932.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 939.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 932.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 939.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 932.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 939.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 932.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 939.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 932.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 939.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 932.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 939.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 932.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 939.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 932.
 
 [18]
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 939.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 932.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 939.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 932.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 939.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 932.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 939.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 932.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 939.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 932.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 939.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 932.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 950.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 943.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 950.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 943.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 950.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 943.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 950.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 943.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 950.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 943.
 
 
-LaTeX Warning: Command \textcircled invalid in math mode on input line 950.
+LaTeX Warning: Command \textcircled invalid in math mode on input line 943.
 
 [19]
-Overfull \hbox (10.83687pt too wide) in paragraph at lines 997--997
+Overfull \hbox (10.83687pt too wide) in paragraph at lines 990--990
 [] 
  []
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1002.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 995.
 [20]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 1002.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 995.
  (/Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/icml-template/.texpadtmp/main.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1002.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1002.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 995.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 995.
 Package rerunfilecheck Info: File `main.out' has not changed.
 (rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1002.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 995.
  ) 
 Here is how much of TeX's memory you used:
  11055 strings out of 493089
  168530 string characters out of 6134842
- 306508 words of memory out of 5000000
+ 307500 words of memory out of 5000000
  13905 multiletter control sequences out of 15000+600000
  51891 words of font info for 264 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  36i,19n,45p,1181b,544s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2015/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/local/texlive/2015/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on /Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/icml-template/.texpadtmp/main.pdf (20 pages, 661789 bytes).
+Output written on /Users/yawei/Documents/Submission/on-linear-speedup-decentralized-online-optimization/icml-template/.texpadtmp/main.pdf (20 pages, 661819 bytes).
 PDF statistics:
  766 PDF objects out of 1000 (max. 8388607)
  661 compressed objects within 7 object streams

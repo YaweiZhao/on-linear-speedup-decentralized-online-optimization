@@ -16,14 +16,14 @@
 \gdef\HyperFirstAtBeginDocument#1{#1}
 \providecommand\HyField@AuxAddToFields[1]{}
 \providecommand\HyField@AuxAddToCoFields[2]{}
-\citation{Hazan2016Introduction,ShalevShwartz:2012dz,Duchi:2011}
-\citation{Hazan2016Introduction,ShalevShwartz:2012dz}
+\citation{8015179Shahram,Kamp:2014:CDO,Koppel-8352032,Zhang2018,pmlr-v70-zhang17g,Xu2015,tcns-7353155,cdc-7798923,acc-7172037,tcns-7479495,Benczur:2018ww,tkde-6311406}
 \@writefile{toc}{\contentsline {section}{\numberline {1}Introduction}{1}{section.1}}
 \newlabel{sect_introduction}{{1}{1}{Introduction}{section.1}{}}
-\newlabel{sect_introduction}{{1}{1}{Introduction}{section.1}{}}
+\citation{6760092,tkde-6311406}
 \citation{Hazan2016Introduction,ShalevShwartz:2012dz}
+\citation{Hazan2016Introduction,ShalevShwartz:2012dz,introduction-online-optimization}
+\@writefile{toc}{\contentsline {paragraph}{Notations and definitions}{2}{section*.1}}
 \citation{8015179Shahram,Kamp:2014:CDO,Koppel-8352032,Zhang2018,pmlr-v70-zhang17g,Xu2015,tcns-7353155,cdc-7798923,acc-7172037,tcns-7479495,Benczur:2018ww,tkde-6311406}
-\citation{8015179Shahram}
 \citation{8015179Shahram}
 \citation{Kamp:2014:CDO}
 \citation{Zhang2018}
@@ -31,11 +31,8 @@
 \citation{tcns-7353155}
 \citation{cdc-7798923}
 \citation{acc-7172037,tcns-7479495}
+\citation{6760092}
 \citation{tkde-6311406}
-\@writefile{toc}{\contentsline {paragraph}{Notations and definitions}{2}{section*.1}}
-\@writefile{toc}{\contentsline {section}{\numberline {2}Related work}{2}{section.2}}
-\newlabel{sect_related_work}{{2}{2}{Related work}{section.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Decentralized online learning}{2}{subsection.2.1}}
 \citation{Zinkevich:2003,Hall:2015ct,Hall:2013vr,Jadbabaie:2015wg,Yang:2016ud,Bedi:2018te,Zhang:2016wl,Mokhtari:2016jz,Zhang:2018tu,Gyorgy:2016,NIPS2016_6536,Zhao:2018wx}
 \citation{Zinkevich:2003}
 \citation{Hall:2015ct,Hall:2013vr}
@@ -43,92 +40,55 @@
 \citation{Gyorgy:2016}
 \citation{Gyorgy:2016}
 \citation{Zhao:2018wx}
+\@writefile{toc}{\contentsline {section}{\numberline {2}Related work}{3}{section.2}}
+\newlabel{sect_related_work}{{2}{3}{Related work}{section.2}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.1}Decentralized online learning}{3}{subsection.2.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Dynamic regret}{3}{subsection.2.2}}
 \citation{Herbster1998,Gyorgy:2005wo,Gyorgy:2012wa,Gyorgy:2016,Mourtada:2017vn,JMLR:v17:13-533,NIPS2016_6536,cesabianchi:hal,pmlr-v84-mohri18a,pmlr-v54-jun17a}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Regret in dynamic environment}{3}{subsection.2.2}}
-\@writefile{toc}{\contentsline {section}{\numberline {3}Problem formulation}{3}{section.3}}
-\newlabel{equa_definition_our_regret}{{1}{3}{Problem formulation}{equation.3.1}{}}
-\newlabel{equa_define_M}{{2}{4}{Problem formulation}{equation.3.2}{}}
-\newlabel{equa_definition_previous_regret}{{3}{4}{Problem formulation}{equation.3.3}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4}Decentralized online gradient method}{4}{section.4}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Algorithm}{4}{subsection.4.1}}
-\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces \textsc  {DOG}: Decentralized Online Gradient method.\relax }}{4}{algorithm.1}}
+\@writefile{toc}{\contentsline {section}{\numberline {3}Problem formulation}{4}{section.3}}
+\newlabel{equa_definition_static_regret}{{2}{4}{Problem formulation}{equation.3.2}{}}
+\newlabel{equa_definition_our_regret}{{3}{4}{Problem formulation}{equation.3.3}{}}
+\citation{7903733,8320863,Yuan:2016ur}
+\@writefile{toc}{\contentsline {section}{\numberline {4}Decentralized Online Gradient (DOG) algorithm}{5}{section.4}}
+\newlabel{sec:algorithm}{{4}{5}{Decentralized Online Gradient (DOG) algorithm}{section.4}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.1}Algorithm description}{5}{subsection.4.1}}
+\@writefile{loa}{\contentsline {algorithm}{\numberline {1}{\ignorespaces \textsc  {DOG}: Decentralized Online Gradient method.\relax }}{5}{algorithm.1}}
 \providecommand*\caption@xref[2]{\@setref\relax\@undefined{#1}}
-\newlabel{algo_DOG}{{1}{4}{\textsc {DOG}: Decentralized Online Gradient method.\relax }{algorithm.1}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Theoretical analysis}{5}{subsection.4.2}}
-\newlabel{subsection_theoretical_analysis}{{4.2}{5}{Theoretical analysis}{subsection.4.2}{}}
-\newlabel{assumption_bounded_gradient_domain}{{1}{5}{}{Assumption.1}{}}
-\newlabel{theorem_regret_upper_bound}{{1}{5}{}{Theorem.1}{}}
+\newlabel{algo_DOG}{{1}{5}{\textsc {DOG}: Decentralized Online Gradient method.\relax }{algorithm.1}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2}Dynamic regret of DOG}{6}{subsection.4.2}}
+\newlabel{subsection_theoretical_analysis}{{4.2}{6}{Dynamic regret of DOG}{subsection.4.2}{}}
+\newlabel{assumption_bounded_gradient_domain}{{1}{6}{}{Assumption.1}{}}
+\newlabel{theorem_regret_upper_bound}{{1}{6}{}{Theorem.1}{}}
 \citation{Zhao:2018wx}
+\citation{Tang:2018un}
+\citation{Tang:2018un}
 \citation{8015179Shahram}
 \citation{8015179Shahram}
-\citation{8015179Shahram}
-\citation{8015179Shahram}
-\citation{8015179Shahram}
-\citation{8015179Shahram,pmlr-v70-zhang17g,tcns-7353155}
-\newlabel{corollary_regret_upper_bound}{{1}{6}{}{Corollary.1}{}}
-\newlabel{equa_result_corollary}{{4}{6}{}{equation.4.4}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Connections with previous work}{6}{subsection.4.3}}
-\newlabel{theorem_privious_dog_regret}{{2}{6}{Implied by Theorem $3$ and Corollary $4$ in \citet {8015179Shahram}}{Theorem.2}{}}
-\newlabel{lemma_x_variance_norm_square}{{1}{6}{}{Lemma.1}{}}
-\newlabel{figure_dynamics}{{1(a)}{7}{Subfigure 1(a)}{subfigure.1.1}{}}
-\newlabel{sub@figure_dynamics}{{(a)}{7}{Subfigure 1(a)\relax }{subfigure.1.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces An illustration of the dynmaics caused by the time-varying distributions of data. Data distributions $1$ and $2$ satisify $N(1+\qopname  \relax o{sin}(t), 1)$ and $N(-1+\qopname  \relax o{sin}(t), 1)$, respectively. Data distribution $3$ is the sum of them, which changes over time. \relax }}{7}{figure.caption.2}}
-\newlabel{figure_illus_dynamics}{{1}{7}{An illustration of the dynmaics caused by the time-varying distributions of data. Data distributions $1$ and $2$ satisify $N(1+\sin (t), 1)$ and $N(-1+\sin (t), 1)$, respectively. Data distribution $3$ is the sum of them, which changes over time. \relax }{figure.caption.2}{}}
-\newlabel{lemma_assumption_discussion}{{2}{7}{}{Lemma.2}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {5}Empirical studies}{7}{section.5}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Datasets}{7}{subsection.5.1}}
+\citation{pmlr-v70-zhang17g}
+\newlabel{corollary_regret_upper_bound}{{1}{7}{}{Corollary.1}{}}
+\newlabel{equa_result_Corollary}{{4}{7}{}{equation.4.4}{}}
+\newlabel{theorem_local_models_closer}{{2}{7}{}{Theorem.2}{}}
+\citation{pmlr-v70-zhang17g}
+\citation{pmlr-v70-zhang17g}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.3}Dynamic regret under different definition}{8}{subsection.4.3}}
+\newlabel{equa_define_other_regret}{{5}{8}{Dynamic regret under different definition}{equation.4.5}{}}
+\newlabel{theorem_implied_other_regret_bound}{{3}{8}{}{Theorem.3}{}}
+\newlabel{corollary_implied_other_regret_bound}{{2}{8}{}{Corollary.2}{}}
+\newlabel{figure_dynamics}{{1(a)}{9}{Subfigure 1(a)}{subfigure.1.1}{}}
+\newlabel{sub@figure_dynamics}{{(a)}{9}{Subfigure 1(a)\relax }{subfigure.1.1}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces An illustration of the dynmaics caused by the time-varying distributions of data. Data distributions $1$ and $2$ satisify $N(1+\qopname  \relax o{sin}(t), 1)$ and $N(-1+\qopname  \relax o{sin}(t), 1)$, respectively. Suppose we want to conduct classification between data drawn from distributions $1$ and $2$, respectively. The optimal classification model should change over time.\relax }}{9}{figure.caption.2}}
+\newlabel{figure_illus_dynamics}{{1}{9}{An illustration of the dynmaics caused by the time-varying distributions of data. Data distributions $1$ and $2$ satisify $N(1+\sin (t), 1)$ and $N(-1+\sin (t), 1)$, respectively. Suppose we want to conduct classification between data drawn from distributions $1$ and $2$, respectively. The optimal classification model should change over time.\relax }{figure.caption.2}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {5}Empirical studies}{9}{section.5}}
 \citation{Katakis:2010:TR}
-\newlabel{figure_decen_cen_ave_loss_iterations}{{2(a)}{8}{Subfigure 2(a)}{subfigure.2.1}{}}
-\newlabel{sub@figure_decen_cen_ave_loss_iterations}{{(a)}{8}{Subfigure 2(a)\relax }{subfigure.2.1}{}}
-\newlabel{figure_decen_cen_ave_loss_iterations_occupancy}{{2(b)}{8}{Subfigure 2(b)}{subfigure.2.2}{}}
-\newlabel{sub@figure_decen_cen_ave_loss_iterations_occupancy}{{(b)}{8}{Subfigure 2(b)\relax }{subfigure.2.2}{}}
-\newlabel{figure_decen_cen_ave_loss_iterations_usenet2}{{2(c)}{8}{Subfigure 2(c)}{subfigure.2.3}{}}
-\newlabel{sub@figure_decen_cen_ave_loss_iterations_usenet2}{{(c)}{8}{Subfigure 2(c)\relax }{subfigure.2.3}{}}
-\newlabel{figure_decen_cen_ave_loss_iterations_spam}{{2(d)}{8}{Subfigure 2(d)}{subfigure.2.4}{}}
-\newlabel{sub@figure_decen_cen_ave_loss_iterations_spam}{{(d)}{8}{Subfigure 2(d)\relax }{subfigure.2.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The average loss yielded by DOG is comparable to that yielded by COG.\relax }}{8}{figure.caption.3}}
-\newlabel{figure_compare_loss}{{2}{8}{The average loss yielded by DOG is comparable to that yielded by COG.\relax }{figure.caption.3}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\textit {synthetic data}, $100$ nodes}}}{8}{figure.caption.3}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\textit {room-occupancy}, $5$ nodes}}}{8}{figure.caption.3}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\textit {usenet2}, $5$ nodes}}}{8}{figure.caption.3}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\textit {spam}, $5$ nodes}}}{8}{figure.caption.3}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Results}{8}{subsection.5.2}}
-\newlabel{figure_decen_cen_ave_loss_nodes}{{3(a)}{9}{Subfigure 3(a)}{subfigure.3.1}{}}
-\newlabel{sub@figure_decen_cen_ave_loss_nodes}{{(a)}{9}{Subfigure 3(a)\relax }{subfigure.3.1}{}}
-\newlabel{figure_decen_cen_ave_loss_nodes_occupancy}{{3(b)}{9}{Subfigure 3(b)}{subfigure.3.2}{}}
-\newlabel{sub@figure_decen_cen_ave_loss_nodes_occupancy}{{(b)}{9}{Subfigure 3(b)\relax }{subfigure.3.2}{}}
-\newlabel{figure_decen_cen_ave_loss_nodes_usenet2}{{3(c)}{9}{Subfigure 3(c)}{subfigure.3.3}{}}
-\newlabel{sub@figure_decen_cen_ave_loss_nodes_usenet2}{{(c)}{9}{Subfigure 3(c)\relax }{subfigure.3.3}{}}
-\newlabel{figure_decen_cen_ave_loss_nodes_spam}{{3(d)}{9}{Subfigure 3(d)}{subfigure.3.4}{}}
-\newlabel{sub@figure_decen_cen_ave_loss_nodes_spam}{{(d)}{9}{Subfigure 3(d)\relax }{subfigure.3.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The average loss yielded by DOG is insensitive to the network size.\relax }}{9}{figure.caption.4}}
-\newlabel{figure_compare_network_size}{{3}{9}{The average loss yielded by DOG is insensitive to the network size.\relax }{figure.caption.4}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\textit {synthetic data}, ring topology}}}{9}{figure.caption.4}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\textit {room-occupancy}, ring topology}}}{9}{figure.caption.4}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\textit {usenet2}, ring topology}}}{9}{figure.caption.4}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\textit {spam}, ring topology}}}{9}{figure.caption.4}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.1}Datasets}{10}{subsection.5.1}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {5.2}Results}{10}{subsection.5.2}}
 \bibdata{reference}
 \bibcite{JMLR:v17:13-533}{{1}{2016}{{Adamskiy et~al.}}{{Adamskiy, Koolen, Chernov, and Vovk}}}
 \bibcite{tcns-7353155}{{2}{2017}{{Akbari et~al.}}{{Akbari, Gharesifard, and Linder}}}
 \bibcite{Bedi:2018te}{{3}{2018}{{Bedi et~al.}}{{Bedi, Sarma, and Rajawat}}}
 \bibcite{Benczur:2018ww}{{4}{2018}{{Bencz{\'u}r et~al.}}{{Bencz{\'u}r, Kocsis, and P{\'a}lovics}}}
-\newlabel{figure_decen_cen_ave_loss_iterations_net_types}{{4(a)}{10}{Subfigure 4(a)}{subfigure.4.1}{}}
-\newlabel{sub@figure_decen_cen_ave_loss_iterations_net_types}{{(a)}{10}{Subfigure 4(a)\relax }{subfigure.4.1}{}}
-\newlabel{figure_decen_cen_ave_loss_iterations_net_types_occupancy}{{4(b)}{10}{Subfigure 4(b)}{subfigure.4.2}{}}
-\newlabel{sub@figure_decen_cen_ave_loss_iterations_net_types_occupancy}{{(b)}{10}{Subfigure 4(b)\relax }{subfigure.4.2}{}}
-\newlabel{figure_decen_cen_ave_loss_iterations_net_types_occupancy}{{4(c)}{10}{Subfigure 4(c)}{subfigure.4.3}{}}
-\newlabel{sub@figure_decen_cen_ave_loss_iterations_net_types_occupancy}{{(c)}{10}{Subfigure 4(c)\relax }{subfigure.4.3}{}}
-\newlabel{figure_decen_cen_ave_loss_iterations_net_types_spam}{{4(d)}{10}{Subfigure 4(d)}{subfigure.4.4}{}}
-\newlabel{sub@figure_decen_cen_ave_loss_iterations_net_types_spam}{{(d)}{10}{Subfigure 4(d)\relax }{subfigure.4.4}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The average loss yielded by DOG is insensitive to the topology of the network.\relax }}{10}{figure.caption.5}}
-\newlabel{figure_compare_topology}{{4}{10}{The average loss yielded by DOG is insensitive to the topology of the network.\relax }{figure.caption.5}{}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\textit {synthetic data}, $100$ nodes}}}{10}{figure.caption.5}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\textit {room-occupancy}, $20$ nodes}}}{10}{figure.caption.5}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\textit {usenet2}, $20$ nodes}}}{10}{figure.caption.5}}
-\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\textit {spam}, $20$ nodes}}}{10}{figure.caption.5}}
-\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{10}{section.6}}
-\bibcite{cesabianchi:hal}{{5}{2012}{{Cesa-Bianchi et~al.}}{{Cesa-Bianchi, Gaillard, Lugosi, and Stoltz}}}
-\bibcite{Duchi:2011}{{6}{2011}{{Duchi et~al.}}{{Duchi, Hazan, and Singer}}}
+\bibcite{introduction-online-optimization}{{5}{2011}{{Bubeck}}{{}}}
+\bibcite{cesabianchi:hal}{{6}{2012}{{Cesa-Bianchi et~al.}}{{Cesa-Bianchi, Gaillard, Lugosi, and Stoltz}}}
 \bibcite{Gyorgy:2016}{{7}{2016}{{Gy\"{o}rgy and Szepesv\'{a}ri}}{{}}}
 \bibcite{Gyorgy:2005wo}{{8}{2005}{{Gy{\"o}rgy et~al.}}{{Gy{\"o}rgy, Linder, and Lugosi}}}
 \bibcite{Gyorgy:2012wa}{{9}{2012}{{Gyorgy et~al.}}{{Gyorgy, Linder, and Lugosi}}}
@@ -136,40 +96,97 @@
 \bibcite{Hall:2015ct}{{11}{2015}{{Hall and Willett}}{{}}}
 \bibcite{Hazan2016Introduction}{{12}{2016}{{Hazan}}{{}}}
 \bibcite{Herbster1998}{{13}{1998}{{Herbster and Warmuth}}{{}}}
-\bibcite{Jadbabaie:2015wg}{{14}{2015}{{Jadbabaie et~al.}}{{Jadbabaie, Rakhlin, Shahrampour, and Sridharan}}}
-\bibcite{pmlr-v54-jun17a}{{15}{2017}{{Jun et~al.}}{{Jun, Orabona, Wright, and Willett}}}
-\bibcite{Kamp:2014:CDO}{{16}{2014}{{Kamp et~al.}}{{Kamp, Boley, Keren, Schuster, and Sharfman}}}
-\bibcite{Katakis:2010:TR}{{17}{2010}{{Katakis et~al.}}{{Katakis, Tsoumakas, and Vlahavas}}}
-\bibcite{Koppel-8352032}{{18}{2018}{{Koppel et~al.}}{{Koppel, Paternain, Richard, and Ribeiro}}}
-\bibcite{cdc-7798923}{{19}{2016}{{Lee et~al.}}{{Lee, Ribeiro, and Zavlanos}}}
-\bibcite{tcns-7479495}{{20}{2018}{{Lee et~al.}}{{Lee, Nedić, and Raginsky}}}
-\bibcite{pmlr-v84-mohri18a}{{21}{2018}{{Mohri and Yang}}{{}}}
-\bibcite{Mokhtari:2016jz}{{22}{2016}{{Mokhtari et~al.}}{{Mokhtari, Shahrampour, Jadbabaie, and Ribeiro}}}
-\bibcite{Mourtada:2017vn}{{23}{2017}{{Mourtada and Maillard}}{{}}}
-\bibcite{acc-7172037}{{24}{2015}{{Nedić et~al.}}{{Nedić, Lee, and Raginsky}}}
-\bibcite{8015179Shahram}{{25}{2018}{{Shahrampour and Jadbabaie}}{{}}}
-\bibcite{ShalevShwartz:2012dz}{{26}{2012}{{Shalev-Shwartz}}{{}}}
-\bibcite{Tang:2018un}{{27}{2018}{{Tang et~al.}}{{Tang, Gan, Zhang, Zhang, and Liu}}}
-\bibcite{NIPS2016_6536}{{28}{2016}{{Wei et~al.}}{{Wei, Hong, and Lu}}}
-\bibcite{Xu2015}{{29}{2015}{{Xu et~al.}}{{Xu, Ling, and Ribeiro}}}
-\bibcite{tkde-6311406}{{30}{2013}{{Yan et~al.}}{{Yan, Sundaram, Vishwanathan, and Qi}}}
-\bibcite{Yang:2016ud}{{31}{2016}{{Yang et~al.}}{{Yang, Zhang, Jin, and Yi}}}
-\bibcite{Zhang2018}{{32}{2018{a}}{{Zhang et~al.}}{{Zhang, Zhao, Hao, Soh, Lee, Miao, and Hoi}}}
-\bibcite{Zhang:2016wl}{{33}{2017{a}}{{Zhang et~al.}}{{Zhang, Yang, Yi, Jin, and Zhou}}}
-\bibcite{Zhang:2018tu}{{34}{2018{b}}{{Zhang et~al.}}{{Zhang, Yang, rong jin, and Zhou}}}
-\bibcite{pmlr-v70-zhang17g}{{35}{2017{b}}{{Zhang et~al.}}{{Zhang, Zhao, Zhu, Hoi, and Zhang}}}
-\bibcite{Zhao:2018wx}{{36}{2018}{{Zhao et~al.}}{{Zhao, Qiu, and Liu}}}
-\bibcite{Zinkevich:2003}{{37}{2003}{{Zinkevich}}{{}}}
+\bibcite{6760092}{{14}{2013}{{Hosseini et~al.}}{{Hosseini, Chapman, and Mesbahi}}}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces $\rho $ in different topologies used in our experiment. A large $1-\rho $ represents good connectivity of the communication network. ``DC" represents the \textit  {Disconnected} topology, ``FC" represents the \textit  {Fully connected} topology, ``Ring" represents the \textit  {ring} topology, and ``WS" represents the \textit  {WattsStrogatz} topology.\relax }}{11}{table.caption.6}}
+\newlabel{table_rho}{{1}{11}{$\rho $ in different topologies used in our experiment. A large $1-\rho $ represents good connectivity of the communication network. ``DC" represents the \textit {Disconnected} topology, ``FC" represents the \textit {Fully connected} topology, ``Ring" represents the \textit {ring} topology, and ``WS" represents the \textit {WattsStrogatz} topology.\relax }{table.caption.6}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {6}Conclusion}{11}{section.6}}
+\bibcite{Jadbabaie:2015wg}{{15}{2015}{{Jadbabaie et~al.}}{{Jadbabaie, Rakhlin, Shahrampour, and Sridharan}}}
+\bibcite{pmlr-v54-jun17a}{{16}{2017}{{Jun et~al.}}{{Jun, Orabona, Wright, and Willett}}}
+\bibcite{Kamp:2014:CDO}{{17}{2014}{{Kamp et~al.}}{{Kamp, Boley, Keren, Schuster, and Sharfman}}}
+\bibcite{Katakis:2010:TR}{{18}{2010}{{Katakis et~al.}}{{Katakis, Tsoumakas, and Vlahavas}}}
+\bibcite{Koppel-8352032}{{19}{2018}{{Koppel et~al.}}{{Koppel, Paternain, Richard, and Ribeiro}}}
+\bibcite{cdc-7798923}{{20}{2016}{{Lee et~al.}}{{Lee, Ribeiro, and Zavlanos}}}
+\bibcite{tcns-7479495}{{21}{2018}{{Lee et~al.}}{{Lee, Nedić, and Raginsky}}}
+\bibcite{pmlr-v84-mohri18a}{{22}{2018}{{Mohri and Yang}}{{}}}
+\bibcite{Mokhtari:2016jz}{{23}{2016}{{Mokhtari et~al.}}{{Mokhtari, Shahrampour, Jadbabaie, and Ribeiro}}}
+\bibcite{Mourtada:2017vn}{{24}{2017}{{Mourtada and Maillard}}{{}}}
+\bibcite{acc-7172037}{{25}{2015}{{Nedić et~al.}}{{Nedić, Lee, and Raginsky}}}
+\bibcite{8015179Shahram}{{26}{2018}{{Shahrampour and Jadbabaie}}{{}}}
+\bibcite{ShalevShwartz:2012dz}{{27}{2012}{{Shalev-Shwartz}}{{}}}
+\bibcite{Tang:2018un}{{28}{2018}{{Tang et~al.}}{{Tang, Gan, Zhang, Zhang, and Liu}}}
+\bibcite{NIPS2016_6536}{{29}{2016}{{Wei et~al.}}{{Wei, Hong, and Lu}}}
+\bibcite{7903733}{{30}{2018}{{Wu et~al.}}{{Wu, Yuan, Ling, Yin, and Sayed}}}
+\bibcite{Xu2015}{{31}{2015}{{Xu et~al.}}{{Xu, Ling, and Ribeiro}}}
+\bibcite{tkde-6311406}{{32}{2013}{{Yan et~al.}}{{Yan, Sundaram, Vishwanathan, and Qi}}}
+\bibcite{Yang:2016ud}{{33}{2016}{{Yang et~al.}}{{Yang, Zhang, Jin, and Yi}}}
+\bibcite{Yuan:2016ur}{{34}{2016}{{Yuan et~al.}}{{Yuan, Ling, and Yin}}}
+\bibcite{8320863}{{35}{2018}{{Zeng and Yin}}{{}}}
+\bibcite{Zhang2018}{{36}{2018{a}}{{Zhang et~al.}}{{Zhang, Zhao, Hao, Soh, Lee, Miao, and Hoi}}}
+\bibcite{Zhang:2016wl}{{37}{2017{a}}{{Zhang et~al.}}{{Zhang, Yang, Yi, Jin, and Zhou}}}
+\bibcite{Zhang:2018tu}{{38}{2018{b}}{{Zhang et~al.}}{{Zhang, Yang, rong jin, and Zhou}}}
+\bibcite{pmlr-v70-zhang17g}{{39}{2017{b}}{{Zhang et~al.}}{{Zhang, Zhao, Zhu, Hoi, and Zhang}}}
+\bibcite{Zhao:2018wx}{{40}{2018}{{Zhao et~al.}}{{Zhao, Qiu, and Liu}}}
+\bibcite{Zinkevich:2003}{{41}{2003}{{Zinkevich}}{{}}}
 \bibstyle{abbrvnat}
-\newlabel{equa_thoerem_update_rule_equivalent}{{5}{16}{Appendix}{equation.6.5}{}}
-\newlabel{equa_I3_temp}{{6}{17}{Appendix}{equation.6.6}{}}
-\newlabel{lemma_stochastic_gradient_norm_bound}{{3}{19}{}{Lemma.3}{}}
-\newlabel{lemma_gradient_norm_bound}{{4}{19}{}{Lemma.4}{}}
-\newlabel{equa_lemma_gradient_norm_temp0}{{9}{19}{Appendix}{equation.6.9}{}}
-\newlabel{equa_lemma_gradient_norm_temp1}{{10}{20}{Appendix}{equation.6.10}{}}
-\newlabel{equa_lemma_gradient_norm_temp2}{{11}{20}{Appendix}{equation.6.11}{}}
+\newlabel{figure_ave_loss_iteration}{{2(a)}{14}{Subfigure 2(a)}{subfigure.2.1}{}}
+\newlabel{sub@figure_ave_loss_iteration}{{(a)}{14}{Subfigure 2(a)\relax }{subfigure.2.1}{}}
+\newlabel{figure_ave_loss_iteration_occupancy}{{2(b)}{14}{Subfigure 2(b)}{subfigure.2.2}{}}
+\newlabel{sub@figure_ave_loss_iteration_occupancy}{{(b)}{14}{Subfigure 2(b)\relax }{subfigure.2.2}{}}
+\newlabel{figure_ave_loss_iteration_usenet2}{{2(c)}{14}{Subfigure 2(c)}{subfigure.2.3}{}}
+\newlabel{sub@figure_ave_loss_iteration_usenet2}{{(c)}{14}{Subfigure 2(c)\relax }{subfigure.2.3}{}}
+\newlabel{figure_ave_loss_iteration_spam}{{2(d)}{14}{Subfigure 2(d)}{subfigure.2.4}{}}
+\newlabel{sub@figure_ave_loss_iteration_spam}{{(d)}{14}{Subfigure 2(d)\relax }{subfigure.2.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The average loss yielded by DOG is comparable to that yielded by COG.\relax }}{14}{figure.caption.3}}
+\newlabel{figure_compare_loss}{{2}{14}{The average loss yielded by DOG is comparable to that yielded by COG.\relax }{figure.caption.3}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\textit {synthetic data}, $10000$ nodes,random topology}}}{14}{figure.caption.3}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\textit {room-occupancy}, $5$ nodes, ring topology}}}{14}{figure.caption.3}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\textit {usenet2}, $5$ nodes, ring topology}}}{14}{figure.caption.3}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\textit {spam}, $5$ nodes, ring topology}}}{14}{figure.caption.3}}
+\newlabel{figure_ave_loss_network_size_synthetic}{{3(a)}{15}{Subfigure 3(a)}{subfigure.3.1}{}}
+\newlabel{sub@figure_ave_loss_network_size_synthetic}{{(a)}{15}{Subfigure 3(a)\relax }{subfigure.3.1}{}}
+\newlabel{figure_ave_loss_network_size_occupancy}{{3(b)}{15}{Subfigure 3(b)}{subfigure.3.2}{}}
+\newlabel{sub@figure_ave_loss_network_size_occupancy}{{(b)}{15}{Subfigure 3(b)\relax }{subfigure.3.2}{}}
+\newlabel{figure_ave_loss_network_size_usenet2}{{3(c)}{15}{Subfigure 3(c)}{subfigure.3.3}{}}
+\newlabel{sub@figure_ave_loss_network_size_usenet2}{{(c)}{15}{Subfigure 3(c)\relax }{subfigure.3.3}{}}
+\newlabel{figure_ave_loss_network_size_spam}{{3(d)}{15}{Subfigure 3(d)}{subfigure.3.4}{}}
+\newlabel{sub@figure_ave_loss_network_size_spam}{{(d)}{15}{Subfigure 3(d)\relax }{subfigure.3.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces The average loss yielded by DOG is insensitive to the network size.\relax }}{15}{figure.caption.4}}
+\newlabel{figure_compare_network_size}{{3}{15}{The average loss yielded by DOG is insensitive to the network size.\relax }{figure.caption.4}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\textit {synthetic data}, random topology}}}{15}{figure.caption.4}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\textit {room-occupancy}, ring topology}}}{15}{figure.caption.4}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\textit {usenet2}, ring topology}}}{15}{figure.caption.4}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\textit {spam}, ring topology}}}{15}{figure.caption.4}}
+\newlabel{figure_ave_loss_topology_synthetic}{{4(a)}{16}{Subfigure 4(a)}{subfigure.4.1}{}}
+\newlabel{sub@figure_ave_loss_topology_synthetic}{{(a)}{16}{Subfigure 4(a)\relax }{subfigure.4.1}{}}
+\newlabel{figure_ave_loss_topology_occupancy}{{4(b)}{16}{Subfigure 4(b)}{subfigure.4.2}{}}
+\newlabel{sub@figure_ave_loss_topology_occupancy}{{(b)}{16}{Subfigure 4(b)\relax }{subfigure.4.2}{}}
+\newlabel{figure_ave_loss_topology_occupancy}{{4(c)}{16}{Subfigure 4(c)}{subfigure.4.3}{}}
+\newlabel{sub@figure_ave_loss_topology_occupancy}{{(c)}{16}{Subfigure 4(c)\relax }{subfigure.4.3}{}}
+\newlabel{figure_ave_loss_topology_spam}{{4(d)}{16}{Subfigure 4(d)}{subfigure.4.4}{}}
+\newlabel{sub@figure_ave_loss_topology_spam}{{(d)}{16}{Subfigure 4(d)\relax }{subfigure.4.4}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces The average loss yielded by DOG is insensitive to the topology of the network.\relax }}{16}{figure.caption.5}}
+\newlabel{figure_compare_topology}{{4}{16}{The average loss yielded by DOG is insensitive to the topology of the network.\relax }{figure.caption.5}{}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(a)}{\ignorespaces {\textit {synthetic data}, $10000$ nodes}}}{16}{figure.caption.5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(b)}{\ignorespaces {\textit {room-occupancy}, $20$ nodes}}}{16}{figure.caption.5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(c)}{\ignorespaces {\textit {usenet2}, $20$ nodes}}}{16}{figure.caption.5}}
+\@writefile{lof}{\contentsline {subfigure}{\numberline{(d)}{\ignorespaces {\textit {spam}, $20$ nodes}}}{16}{figure.caption.5}}
+\newlabel{equa_thoerem_update_rule_equivalent}{{6}{19}{Appendix}{equation.6.6}{}}
+\newlabel{equa_I3_temp}{{7}{20}{Appendix}{equation.6.7}{}}
+\newlabel{Lemma_gradient_norm_bound}{{1}{21}{}{Lemma.1}{}}
+\newlabel{equa_Lemma_gradient_norm_temp0}{{9}{22}{Appendix}{equation.6.9}{}}
+\newlabel{equa_Lemma_gradient_norm_temp1}{{10}{22}{Appendix}{equation.6.10}{}}
+\newlabel{equa_Lemma_gradient_norm_temp2}{{11}{22}{Appendix}{equation.6.11}{}}
+\newlabel{Lemma_average_update_rule}{{2}{23}{}{Lemma.2}{}}
 \citation{Tang:2018un}
-\newlabel{lemma_average_update_rule}{{5}{21}{}{Lemma.5}{}}
 \citation{Tang:2018un}
-\newlabel{lemma_hanlin_1}{{6}{22}{Appeared in Lemma $5$ in \citep {Tang:2018un}}{Lemma.6}{}}
-\newlabel{lemma_hanlin_2}{{7}{22}{Appeared in Lemma $6$ in \citep {Tang:2018un}}{Lemma.7}{}}
+\citation{8015179Shahram}
+\citation{8015179Shahram}
+\citation{8015179Shahram}
+\citation{8015179Shahram}
+\newlabel{Lemma_hanlin_1}{{3}{24}{Lemma $5$ in \citep {Tang:2018un}}{Lemma.3}{}}
+\newlabel{Lemma_hanlin_2}{{4}{24}{Lemma $6$ in \citep {Tang:2018un}}{Lemma.4}{}}
+\newlabel{theorem_privious_dog_regret}{{4}{24}{Implied by Theorem $3$ and Corollary $4$ in \citet {8015179Shahram}}{Theorem.4}{}}
+\newlabel{Lemma_x_variance_norm_square}{{5}{24}{}{Lemma.5}{}}
+\newlabel{equa_implied_other_regret_temp0}{{13}{26}{Appendix}{equation.6.13}{}}
+\newlabel{equa_implied_other_regret_temp1}{{14}{26}{Appendix}{equation.6.14}{}}
+\newlabel{equa_implied_other_regret_temp2}{{15}{27}{Appendix}{equation.6.15}{}}

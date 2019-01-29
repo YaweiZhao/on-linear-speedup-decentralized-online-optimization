@@ -1,4 +1,4 @@
-\begin{thebibliography}{37}
+\begin{thebibliography}{41}
 \providecommand{\natexlab}[1]{#1}
 \providecommand{\url}[1]{\texttt{#1}}
 \expandafter\ifx\csname urlstyle\endcsname\relax
@@ -31,18 +31,15 @@ A.~A. Bencz{\'u}r, L.~Kocsis, and R.~P{\'a}lovics.
 \newblock {Online Machine Learning in Big Data Streams.}
 \newblock \emph{CoRR}, 2018.
 
+\bibitem[Bubeck(2011)]{introduction-online-optimization}
+S.~Bubeck.
+\newblock Introduction to online optimization, December 2011.
+
 \bibitem[Cesa-Bianchi et~al.(2012)Cesa-Bianchi, Gaillard, Lugosi, and
   Stoltz]{cesabianchi:hal}
 N.~Cesa-Bianchi, P.~Gaillard, G.~Lugosi, and G.~Stoltz.
 \newblock {Mirror Descent Meets Fixed Share (and feels no regret)}.
 \newblock In \emph{{NIPS 2012}}, page Paper 471, 2012.
-
-\bibitem[Duchi et~al.(2011)Duchi, Hazan, and Singer]{Duchi:2011}
-J.~Duchi, E.~Hazan, and Y.~Singer.
-\newblock Adaptive subgradient methods for online learning and stochastic
-  optimization.
-\newblock \emph{Journal of Machine Learning Research (JMLR)}, 12:\penalty0
-  2121--2159, 2011.
 
 \bibitem[Gy\"{o}rgy and Szepesv\'{a}ri(2016)]{Gyorgy:2016}
 A.~Gy\"{o}rgy and C.~Szepesv\'{a}ri.
@@ -85,6 +82,12 @@ M.~Herbster and M.~K. Warmuth.
 \newblock Tracking the best expert.
 \newblock \emph{Machine Learning}, 32\penalty0 (2):\penalty0 151--178, Aug
   1998.
+
+\bibitem[Hosseini et~al.(2013)Hosseini, Chapman, and Mesbahi]{6760092}
+S.~Hosseini, A.~Chapman, and M.~Mesbahi.
+\newblock Online distributed optimization via dual averaging.
+\newblock In \emph{52nd IEEE Conference on Decision and Control}, pages
+  1484--1489, Dec 2013.
 
 \bibitem[Jadbabaie et~al.(2015)Jadbabaie, Rakhlin, Shahrampour, and
   Sridharan]{Jadbabaie:2015wg}
@@ -189,6 +192,12 @@ C.-Y. Wei, Y.-T. Hong, and C.-J. Lu.
   editors, \emph{Proceedings of Advances in Neural Information Processing
   Systems}, pages 3972--3980, 2016.
 
+\bibitem[Wu et~al.(2018)Wu, Yuan, Ling, Yin, and Sayed]{7903733}
+T.~Wu, K.~Yuan, Q.~Ling, W.~Yin, and A.~H. Sayed.
+\newblock Decentralized consensus optimization with asynchrony and delays.
+\newblock \emph{IEEE Transactions on Signal and Information Processing over
+  Networks}, 4\penalty0 (2):\penalty0 293--307, June 2018.
+
 \bibitem[Xu et~al.(2015)Xu, Ling, and Ribeiro]{Xu2015}
 H.-F. Xu, Q.~Ling, and A.~Ribeiro.
 \newblock Online learning over a decentralized network through admm.
@@ -208,6 +217,17 @@ T.~Yang, L.~Zhang, R.~Jin, and J.~Yi.
   Online Learning with True and Noisy Gradient.}
 \newblock In \emph{Proceedings of the 34th International Conference on Machine
   Learning (ICML)}, 2016.
+
+\bibitem[Yuan et~al.(2016)Yuan, Ling, and Yin]{Yuan:2016ur}
+K.~Yuan, Q.~Ling, and W.~Yin.
+\newblock {On the Convergence of Decentralized Gradient Descent.}
+\newblock \emph{SIAM Journal on Optimization}, 2016.
+
+\bibitem[Zeng and Yin(2018)]{8320863}
+J.~Zeng and W.~Yin.
+\newblock On nonconvex decentralized gradient descent.
+\newblock \emph{IEEE Transactions on Signal Processing}, 66\penalty0
+  (11):\penalty0 2834--2848, June 2018.
 
 \bibitem[Zhang et~al.(2018{\natexlab{a}})Zhang, Zhao, Hao, Soh, Lee, Miao, and
   Hoi]{Zhang2018}

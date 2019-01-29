@@ -3,44 +3,47 @@ Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
 The top-level auxiliary file: main.aux
 The style file: abbrvnat.bst
 Database file #1: ../reference.bib
-You've used 37 entries,
+Warning--entry type for "introduction-online-optimization" isn't style-file defined
+--line 59 of file ../reference.bib
+You've used 41 entries,
             2773 wiz_defined-function locations,
-            843 strings with 12127 characters,
-and the built_in function-call counts, 20530 in all, are:
-= -- 1829
-> -- 1217
-< -- 25
-+ -- 407
-- -- 368
-* -- 1717
-:= -- 3007
-add.period$ -- 114
-call.type$ -- 37
-change.case$ -- 230
-chr.to.int$ -- 35
-cite$ -- 74
-duplicate$ -- 953
-empty$ -- 1650
-format.name$ -- 419
-if$ -- 4421
+            860 strings with 12599 characters,
+and the built_in function-call counts, 22425 in all, are:
+= -- 1990
+> -- 1326
+< -- 28
++ -- 444
+- -- 401
+* -- 1869
+:= -- 3285
+add.period$ -- 125
+call.type$ -- 41
+change.case$ -- 253
+chr.to.int$ -- 39
+cite$ -- 82
+duplicate$ -- 1043
+empty$ -- 1811
+format.name$ -- 458
+if$ -- 4832
 int.to.chr$ -- 3
 int.to.str$ -- 1
-missing$ -- 37
-newline$ -- 193
-num.names$ -- 156
-pop$ -- 472
+missing$ -- 40
+newline$ -- 212
+num.names$ -- 172
+pop$ -- 524
 preamble$ -- 1
-purify$ -- 193
+purify$ -- 212
 quote$ -- 0
-skip$ -- 763
+skip$ -- 837
 stack$ -- 0
-substring$ -- 905
-swap$ -- 218
-text.length$ -- 15
+substring$ -- 966
+swap$ -- 238
+text.length$ -- 16
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 407
+type$ -- 451
 warning$ -- 0
-while$ -- 173
+while$ -- 187
 width$ -- 0
-write$ -- 490
+write$ -- 538
+(There was 1 warning)
