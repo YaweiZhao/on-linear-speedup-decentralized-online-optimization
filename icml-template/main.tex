@@ -375,7 +375,8 @@ C := & \frac{L + 2\eta L^2  + 4L^2 \eta}{(1-\rho)^2} +2L.
 \begin{align}
 \nonumber
 & \EE_{ \Xi_{n,T} \sim \Dcal_{n,T} } \sum_{t=1}^T\sum_{i=1}^n f_{i,t}(\x_{i,t};\xi_{i,t}) - f_{i,t}(\x_t^\ast;\xi_{i,t}) \\ \nonumber
-\le & 20 \beta \eta T n G^2 +  (1-\beta)\eta T\sigma^2 + (1-\beta) C nT\eta^2 G^2    + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  }.
+\le & 20 \beta \eta T n G^2 +  (1-\beta)\eta T\sigma^2 + (1-\beta) C nT\eta^2 G^2 \\ \nonumber   
+&+ \beta \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  }.
 \end{align}
 \end{Theorem}
 \begin{Corollary}
@@ -392,6 +393,14 @@ Choosing
 &+ \frac{n\lrincir{M+\sqrt{R}}}{1-\rho}
 \end{align}
 \end{Corollary}
+}
+
+\textcolor{blue}{
+NOTE that loss function: $f_{i,t}(\x;\xi_{i,t}) = \beta g_{i,t}(\x) + (1-\beta) h_{i,t}(\x, \xi_{i,t})$.
+}
+
+\textcolor{blue}{
+NOTE that regert: $\Ocal{\beta n\sqrt{MT}G + (1-\beta)\sqrt{nMT}\sigma}$
 }
 
 \begin{Corollary}
