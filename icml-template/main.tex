@@ -362,7 +362,7 @@ C := & \frac{L + 2\eta L^2  + 4L^2 \eta}{(1-\rho)^2} +2L.
 \le & 20\eta T n G^2 +  \eta T\sigma^2 + C nT\eta^2 G^2    + \frac{n}{2\eta}\lrincir{ 4\sqrt{R}M + R  }.
 \end{align}
 \end{Theorem}
-
+\textcolor{red}{
 By choosing an approximate learning rate $\eta$, we obtain sublinear regret as follows.
 \begin{Corollary}
 \label{corollary_regret_upper_bound}
@@ -378,6 +378,7 @@ Choosing
 & + \frac{nM}{ nTG^2 + T\sigma^2 }G^2
 \end{align}
 \end{Corollary}
+}
 For simpler discussion, let us treat $R$, $G$, and $1-\rho$ as constants. The dynamic regret can simplified into $O(n\sqrt{MT}G + \sqrt{nMT}\sigma)$. If $M=0$, the dynamic regret degenerates the static regret $O(n\sqrt{T}G + \sqrt{nT}\sigma)$.
 The discussion for the dynamic regret is conducted in the following aspects.
 \begin{itemize}
